@@ -1,0 +1,6 @@
+translate: true                             # Enable translation 
+key-prefix: tr.   # Key prefix for translation
+import-line: "import 'package:prezza/core/helper/tools.dart';"                             # Import line if needed
+auto-name-key: false                        # Generate keys name 
+template-arb-file: intl_en.arb
+untranslated-messages-file: desiredFileName.txt

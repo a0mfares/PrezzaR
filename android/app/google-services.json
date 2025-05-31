@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "413378035051",
+    "project_id": "prezza-528db",
+    "storage_bucket": "prezza-528db.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:413378035051:android:38217daf1cfa030ceea02e",
+        "android_client_info": {
+          "package_name": "mehani.sim.prezza"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMe5Ga5W7zQWMWrabVcX6lWwRFABC66OQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

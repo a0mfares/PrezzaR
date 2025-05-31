@@ -1,0 +1,1029 @@
+lib
+¦   bloc_observer.dart
+¦   firebase_options.dart
+¦   main.dart
+¦   prezza_page.dart
+¦   tree.txt
+¦   
++---config
+¦       custom_colors.dart
+¦       theme.dart
+¦       txt_themes.dart
+¦       
++---core
+¦   +---constants
+¦   ¦       assets.dart
+¦   ¦       keys.dart
+¦   ¦       urls.dart
+¦   ¦       
+¦   +---extension
+¦   ¦       widget_ext.dart
+¦   ¦       
+¦   +---helper
+¦   ¦       catch_method.dart
+¦   ¦       network.dart
+¦   ¦       tools.dart
+¦   ¦       usecase_helper.dart
+¦   ¦       widgets.dart
+¦   ¦       
+¦   +---service
+¦   ¦       failure_services.dart
+¦   ¦       hive_storage.dart
+¦   ¦       network_config.dart
+¦   ¦       routes.dart
+¦   ¦       routes.gr.dart
+¦   ¦       service_locator.dart
+¦   ¦       
+¦   +---shared
+¦       +---buttons
+¦       ¦       global_btn.dart
+¦       ¦       
+¦       +---widgets
+¦               cached_image.dart
+¦               empty_widget.dart
+¦               gif_prezza.dart
+¦               prezza_btn.dart
+¦               prezza_rating.dart
+¦               prezza_slider_img.dart
+¦               profile_avater_prezza.dart
+¦               qun_widget.dart
+¦               toggle_btn.dart
+¦               under_montains.dart
+¦               
++---features
+¦   +---auth
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       auth_service.dart
+¦   ¦   ¦   ¦       auth_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       user_model.dart
+¦   ¦   ¦   ¦       user_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           auth_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       user_entity.dart
+¦   ¦   ¦   ¦       user_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       auth_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           auth_usecases.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       auth_bloc.dart
+¦   ¦       ¦       auth_bloc.freezed.dart
+¦   ¦       ¦       auth_event.dart
+¦   ¦       ¦       auth_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       choose_user_type_page.dart
+¦   ¦       ¦       forgot_pass_page.dart
+¦   ¦       ¦       login_loading_page.dart
+¦   ¦       ¦       login_page.dart
+¦   ¦       ¦       onboarding_page.dart
+¦   ¦       ¦       otp_verification_page.dart
+¦   ¦       ¦       reset_pass_page.dart
+¦   ¦       ¦       singup_page.dart
+¦   ¦       ¦       welcome_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               
+¦   +---cars
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       car_api_service.dart
+¦   ¦   ¦   ¦       car_api_service.g.dart
+¦   ¦   ¦   ¦       car_service.dart
+¦   ¦   ¦   ¦       car_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       car_model.dart
+¦   ¦   ¦   ¦       car_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           car_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       car_entity.dart
+¦   ¦   ¦   ¦       car_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       car_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           car_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       car_bloc.dart
+¦   ¦       ¦       car_bloc.freezed.dart
+¦   ¦       ¦       car_event.dart
+¦   ¦       ¦       car_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       add_cars_page.dart
+¦   ¦       ¦       cars_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               car_checkout_widget.dart
+¦   ¦               
+¦   +---cart
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       cart_service.dart
+¦   ¦   ¦   ¦       cart_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       cartdetails_model.dart
+¦   ¦   ¦   ¦       cartdetails_model.g.dart
+¦   ¦   ¦   ¦       cartitem_model.dart
+¦   ¦   ¦   ¦       cartitem_model.g.dart
+¦   ¦   ¦   ¦       productoftencart_model.dart
+¦   ¦   ¦   ¦       productoftencart_model.g.dart
+¦   ¦   ¦   ¦       usercart_model.dart
+¦   ¦   ¦   ¦       usercart_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           cart_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       cartdetails_entity.dart
+¦   ¦   ¦   ¦       cartdetails_entity.g.dart
+¦   ¦   ¦   ¦       cartitem_entity.dart
+¦   ¦   ¦   ¦       cartitem_entity.g.dart
+¦   ¦   ¦   ¦       productoftencart_entity.dart
+¦   ¦   ¦   ¦       productoftencart_entity.g.dart
+¦   ¦   ¦   ¦       usercart_entity.dart
+¦   ¦   ¦   ¦       usercart_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       cart_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           cart_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       cart_bloc.dart
+¦   ¦       ¦       cart_bloc.freezed.dart
+¦   ¦       ¦       cart_event.dart
+¦   ¦       ¦       cart_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       cart_details_page.dart
+¦   ¦       ¦       cart_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               cart_item.dart
+¦   ¦               product_often_item_cart.dart
+¦   ¦               
+¦   +---category
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       category_service.dart
+¦   ¦   ¦   ¦       category_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       category_model.dart
+¦   ¦   ¦   ¦       category_model.g.dart
+¦   ¦   ¦   ¦       sponsors_model.dart
+¦   ¦   ¦   ¦       sponsors_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           category_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       category_entity.dart
+¦   ¦   ¦   ¦       category_entity.g.dart
+¦   ¦   ¦   ¦       sponsors_entity.dart
+¦   ¦   ¦   ¦       sponsors_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       category_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           category_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       category_bloc.dart
+¦   ¦       ¦       category_bloc.freezed.dart
+¦   ¦       ¦       category_event.dart
+¦   ¦       ¦       category_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       category_page.dart
+¦   ¦       ¦       sponsors_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               category_sheet_widget.dart
+¦   ¦               
+¦   +---dashboard
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       dashboard_services.dart
+¦   ¦   ¦   ¦       dashboard_services.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       dashboard_bloc.dart
+¦   ¦       ¦       dashboard_event.dart
+¦   ¦       ¦       dashboard_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               
+¦   +---favorites
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       favorite_service.dart
+¦   ¦   ¦   ¦       favorite_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       favvendor_model.dart
+¦   ¦   ¦   ¦       favvendor_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           fav_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       favvendor_entity.dart
+¦   ¦   ¦   ¦       favvendor_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       fav_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           fav_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       fav_bloc.dart
+¦   ¦       ¦       fav_bloc.freezed.dart
+¦   ¦       ¦       fav_event.dart
+¦   ¦       ¦       fav_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       favorites_page.dart
+¦   ¦       ¦       fav_widget.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               fav_item.dart
+¦   ¦               fav_vendor_item.dart
+¦   ¦               
+¦   +---home
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       home_bloc.dart
+¦   ¦       ¦       home_bloc.freezed.dart
+¦   ¦       ¦       home_event.dart
+¦   ¦       ¦       home_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       user_home_page.dart
+¦   ¦       ¦       user_layout_page.dart
+¦   ¦       ¦       vendor_home_page.dart
+¦   ¦       ¦       vendor_layout_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widget
+¦   ¦               prezza_drawer.dart
+¦   ¦               
+¦   +---landing
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       landing_service.dart
+¦   ¦   ¦   ¦       landing_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       appreview_model.dart
+¦   ¦   ¦   ¦       appreview_model.g.dart
+¦   ¦   ¦   ¦       commonissue_model.dart
+¦   ¦   ¦   ¦       commonissue_model.g.dart
+¦   ¦   ¦   ¦       downloadplatforms_model.dart
+¦   ¦   ¦   ¦       downloadplatforms_model.g.dart
+¦   ¦   ¦   ¦       faq_model.dart
+¦   ¦   ¦   ¦       faq_model.g.dart
+¦   ¦   ¦   ¦       socialplatforms_model.dart
+¦   ¦   ¦   ¦       socialplatforms_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           landing_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       appreview_entity.dart
+¦   ¦   ¦   ¦       appreview_entity.g.dart
+¦   ¦   ¦   ¦       commonissue_entity.dart
+¦   ¦   ¦   ¦       commonissue_entity.g.dart
+¦   ¦   ¦   ¦       downloadplatforms_entity.dart
+¦   ¦   ¦   ¦       downloadplatforms_entity.g.dart
+¦   ¦   ¦   ¦       faq_entity.dart
+¦   ¦   ¦   ¦       faq_entity.g.dart
+¦   ¦   ¦   ¦       socialplatforms_entity.dart
+¦   ¦   ¦   ¦       socialplatforms_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       landing_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           landing_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       landing_bloc.dart
+¦   ¦       ¦       landing_bloc.freezed.dart
+¦   ¦       ¦       landing_event.dart
+¦   ¦       ¦       landing_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       feedback_page.dart
+¦   ¦       ¦       help_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               
+¦   +---location
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       location_service.dart
+¦   ¦   ¦   ¦       location_service.g.dart
+¦   ¦   ¦   ¦       map_service.dart
+¦   ¦   ¦   ¦       map_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       address_model.dart
+¦   ¦   ¦   ¦       address_model.g.dart
+¦   ¦   ¦   ¦       branche_model.dart
+¦   ¦   ¦   ¦       branche_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           location_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       address_entity.dart
+¦   ¦   ¦   ¦       address_entity.g.dart
+¦   ¦   ¦   ¦       branche_entity.dart
+¦   ¦   ¦   ¦       branche_entity.g.dart
+¦   ¦   ¦   ¦       current_location_entity.dart
+¦   ¦   ¦   ¦       current_location_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       location_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           location_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       location_bloc.dart
+¦   ¦       ¦       location_bloc.freezed.dart
+¦   ¦       ¦       location_event.dart
+¦   ¦       ¦       location_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       current_location_page.dart
+¦   ¦       ¦       location_add_page.dart
+¦   ¦       ¦       location_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               location_checkout_widget.dart
+¦   ¦               
+¦   +---newsfeed
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       newsfeed_service.dart
+¦   ¦   ¦   ¦       newsfeed_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       comment_model.dart
+¦   ¦   ¦   ¦       comment_model.g.dart
+¦   ¦   ¦   ¦       post_model.dart
+¦   ¦   ¦   ¦       post_model.g.dart
+¦   ¦   ¦   ¦       product_tag_model.dart
+¦   ¦   ¦   ¦       product_tag_model.g.dart
+¦   ¦   ¦   ¦       profile_social_model.dart
+¦   ¦   ¦   ¦       profile_social_model.g.dart
+¦   ¦   ¦   ¦       user_like_model.dart
+¦   ¦   ¦   ¦       user_like_model.g.dart
+¦   ¦   ¦   ¦       user_search_model.dart
+¦   ¦   ¦   ¦       user_search_model.g.dart
+¦   ¦   ¦   ¦       vendor_tag_model.dart
+¦   ¦   ¦   ¦       vendor_tag_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           newsfeed_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       comment_entity.dart
+¦   ¦   ¦   ¦       comment_entity.g.dart
+¦   ¦   ¦   ¦       post_entity.dart
+¦   ¦   ¦   ¦       post_entity.g.dart
+¦   ¦   ¦   ¦       product_tag_entity.dart
+¦   ¦   ¦   ¦       product_tag_entity.g.dart
+¦   ¦   ¦   ¦       profile_social_entity.dart
+¦   ¦   ¦   ¦       profile_social_entity.g.dart
+¦   ¦   ¦   ¦       user_like_entity.dart
+¦   ¦   ¦   ¦       user_like_entity.g.dart
+¦   ¦   ¦   ¦       user_search_entity.dart
+¦   ¦   ¦   ¦       user_search_entity.g.dart
+¦   ¦   ¦   ¦       vendor_tag_entity.dart
+¦   ¦   ¦   ¦       vendor_tag_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       newsfeed_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           newsfeed_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       newsfeed_bloc.dart
+¦   ¦       ¦       newsfeed_bloc.freezed.dart
+¦   ¦       ¦       newsfeed_event.dart
+¦   ¦       ¦       newsfeed_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       create_post_page.dart
+¦   ¦       ¦       mention_item_page.dart
+¦   ¦       ¦       profile_social_page.dart
+¦   ¦       ¦       social_page.dart
+¦   ¦       ¦       tag_vendor_page.dart
+¦   ¦       ¦       users_search_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               add_story_widget.dart
+¦   ¦               comment_widget.dart
+¦   ¦               feed_widget.dart
+¦   ¦               loading_posts_profile.dart
+¦   ¦               loading_users_widget.dart
+¦   ¦               post_loading_widget.dart
+¦   ¦               post_widget.dart
+¦   ¦               profile_loading_page.dart
+¦   ¦               story_widget.dart
+¦   ¦               
+¦   +---notification
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       notify_service.dart
+¦   ¦   ¦   ¦       notify_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       notify_model.dart
+¦   ¦   ¦   ¦       notify_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           notify_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       notify_entity.dart
+¦   ¦   ¦   ¦       notify_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       notify_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           notify_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       notify_bloc.dart
+¦   ¦       ¦       notify_bloc.freezed.dart
+¦   ¦       ¦       notify_event.dart
+¦   ¦       ¦       notify_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       notification_page.dart
+¦   ¦       ¦       notification_vendor_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               
+¦   +---order
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       order_service.dart
+¦   ¦   ¦   ¦       order_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       orderbooking_model.dart
+¦   ¦   ¦   ¦       orderbooking_model.g.dart
+¦   ¦   ¦   ¦       orderdelivery_model.dart
+¦   ¦   ¦   ¦       orderdelivery_model.g.dart
+¦   ¦   ¦   ¦       orderdetails_model.dart
+¦   ¦   ¦   ¦       orderdetails_model.g.dart
+¦   ¦   ¦   ¦       orderitem_model.dart
+¦   ¦   ¦   ¦       orderitem_model.g.dart
+¦   ¦   ¦   ¦       orderpickup_model.dart
+¦   ¦   ¦   ¦       orderpickup_model.g.dart
+¦   ¦   ¦   ¦       order_user_model.dart
+¦   ¦   ¦   ¦       order_user_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           order_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       orderbooking_entity.dart
+¦   ¦   ¦   ¦       orderbooking_entity.g.dart
+¦   ¦   ¦   ¦       orderdelivery_entity.dart
+¦   ¦   ¦   ¦       orderdelivery_entity.g.dart
+¦   ¦   ¦   ¦       orderdetails_entity.dart
+¦   ¦   ¦   ¦       orderdetails_entity.g.dart
+¦   ¦   ¦   ¦       orderitem_entity.dart
+¦   ¦   ¦   ¦       orderitem_entity.g.dart
+¦   ¦   ¦   ¦       orderpickup_entity.dart
+¦   ¦   ¦   ¦       orderpickup_entity.g.dart
+¦   ¦   ¦   ¦       order_user_entity.dart
+¦   ¦   ¦   ¦       order_user_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       order_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           order_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       order_bloc.dart
+¦   ¦       ¦       order_bloc.freezed.dart
+¦   ¦       ¦       order_event.dart
+¦   ¦       ¦       order_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       checkout_page.dart
+¦   ¦       ¦       order_details_page.dart
+¦   ¦       ¦       order_details_vendor_page.dart
+¦   ¦       ¦       order_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               order_item_customer.dart
+¦   ¦               order_item_vendor.dart
+¦   ¦               order_widget.dart
+¦   ¦               reason_page.dart
+¦   ¦               
+¦   +---payment
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       payment_service.dart
+¦   ¦   ¦   ¦       payment_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       creditcard_model.dart
+¦   ¦   ¦   ¦       creditcard_model.g.dart
+¦   ¦   ¦   ¦       vendorcard_model.dart
+¦   ¦   ¦   ¦       vendorcard_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           payment_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       creditcard_entity.dart
+¦   ¦   ¦   ¦       creditcard_entity.g.dart
+¦   ¦   ¦   ¦       vendorcard_entity.dart
+¦   ¦   ¦   ¦       vendorcard_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       payment_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           payment_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       payment_bloc.dart
+¦   ¦       ¦       payment_bloc.freezed.dart
+¦   ¦       ¦       payment_event.dart
+¦   ¦       ¦       payment_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       card_details_page.dart.dart
+¦   ¦       ¦       payment_card_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               payment_checkout_widget.dart
+¦   ¦               
+¦   +---products
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       product_service.dart
+¦   ¦   ¦   ¦       product_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       productdetails_model.dart
+¦   ¦   ¦   ¦       productdetails_model.g.dart
+¦   ¦   ¦   ¦       productitem_model.dart
+¦   ¦   ¦   ¦       productitem_model.g.dart
+¦   ¦   ¦   ¦       productsearch_model.dart
+¦   ¦   ¦   ¦       productsearch_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           product_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       productdetails_entity.dart
+¦   ¦   ¦   ¦       productdetails_entity.g.dart
+¦   ¦   ¦   ¦       productitem_entity.dart
+¦   ¦   ¦   ¦       productitem_entity.g.dart
+¦   ¦   ¦   ¦       productsearch_entity.dart
+¦   ¦   ¦   ¦       productsearch_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       product_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           product_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       product_bloc.dart
+¦   ¦       ¦       product_bloc.freezed.dart
+¦   ¦       ¦       product_event.dart
+¦   ¦       ¦       product_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       product_add_page.dart
+¦   ¦       ¦       product_details_page.dart
+¦   ¦       ¦       product_page.dart
+¦   ¦       ¦       product_vendor_details_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               product_item.dart
+¦   ¦               product_item_prezza.dart
+¦   ¦               
+¦   +---profile
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       profile_service.dart
+¦   ¦   ¦   ¦       profile_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       businessdetails_model.dart
+¦   ¦   ¦   ¦       businessdetails_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           profile_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       businessdetails_entity.dart
+¦   ¦   ¦   ¦       businessdetails_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       profile_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           profile_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       profile_bloc.dart
+¦   ¦       ¦       profile_bloc.freezed.dart
+¦   ¦       ¦       profile_event.dart
+¦   ¦       ¦       profile_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       busines_profile_page.dart
+¦   ¦       ¦       invite_friend_page.dart
+¦   ¦       ¦       pass_change_page.dart
+¦   ¦       ¦       personal_info_page.dart
+¦   ¦       ¦       prezza_settings_page.dart
+¦   ¦       ¦       user_profile_page.dart
+¦   ¦       ¦       vendor_profile_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               
+¦   +---review
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       review_service.dart
+¦   ¦   ¦   ¦       review_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       review_model.dart
+¦   ¦   ¦   ¦       review_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           review_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       review_entity.dart
+¦   ¦   ¦   ¦       review_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       review_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           review_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       review_bloc.dart
+¦   ¦       ¦       review_bloc.freezed.dart
+¦   ¦       ¦       review_event.dart
+¦   ¦       ¦       review_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       review_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               
+¦   +---search
+¦   ¦   +---data
+¦   ¦   ¦   +---datasources
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       search_service.dart
+¦   ¦   ¦   ¦       search_service.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---models
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       vendorsearch_model.dart
+¦   ¦   ¦   ¦       vendorsearch_model.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           search_repo_impl.dart
+¦   ¦   ¦           
+¦   ¦   +---domain
+¦   ¦   ¦   +---entities
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       vendorsearch_entity.dart
+¦   ¦   ¦   ¦       vendorsearch_entity.g.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---repositories
+¦   ¦   ¦   ¦       .gitkeep
+¦   ¦   ¦   ¦       search_repo.dart
+¦   ¦   ¦   ¦       
+¦   ¦   ¦   +---usecases
+¦   ¦   ¦           .gitkeep
+¦   ¦   ¦           search_usecase.dart
+¦   ¦   ¦           
+¦   ¦   +---presentation
+¦   ¦       +---bloc
+¦   ¦       ¦       search_bloc.dart
+¦   ¦       ¦       search_bloc.freezed.dart
+¦   ¦       ¦       search_event.dart
+¦   ¦       ¦       search_state.dart
+¦   ¦       ¦       
+¦   ¦       +---pages
+¦   ¦       ¦       .gitkeep
+¦   ¦       ¦       search_page.dart
+¦   ¦       ¦       
+¦   ¦       +---widgets
+¦   ¦               .gitkeep
+¦   ¦               
+¦   +---vendor
+¦       +---data
+¦       ¦   +---datasources
+¦       ¦   ¦       .gitkeep
+¦       ¦   ¦       vendor_service.dart
+¦       ¦   ¦       vendor_service.g.dart
+¦       ¦   ¦       
+¦       ¦   +---models
+¦       ¦   ¦       .gitkeep
+¦       ¦   ¦       mostordered_model.dart
+¦       ¦   ¦       mostordered_model.g.dart
+¦       ¦   ¦       orderstatuscount_model.dart
+¦       ¦   ¦       orderstatuscount_model.g.dart
+¦       ¦   ¦       reviewa_model.dart
+¦       ¦   ¦       reviewa_model.g.dart
+¦       ¦   ¦       vendorbalance_model.dart
+¦       ¦   ¦       vendorbalance_model.g.dart
+¦       ¦   ¦       vendordetailsbooking_model.dart
+¦       ¦   ¦       vendordetailsbooking_model.g.dart
+¦       ¦   ¦       vendordetails_model.dart
+¦       ¦   ¦       vendordetails_model.g.dart
+¦       ¦   ¦       vendoritem_model.dart
+¦       ¦   ¦       vendoritem_model.g.dart
+¦       ¦   ¦       
+¦       ¦   +---repositories
+¦       ¦           .gitkeep
+¦       ¦           vendor_repo_impl.dart
+¦       ¦           
+¦       +---domain
+¦       ¦   +---entities
+¦       ¦   ¦       .gitkeep
+¦       ¦   ¦       mostordered_entity.dart
+¦       ¦   ¦       mostordered_entity.g.dart
+¦       ¦   ¦       orderstatuscount_entity.dart
+¦       ¦   ¦       orderstatuscount_entity.g.dart
+¦       ¦   ¦       reviewa_entity.dart
+¦       ¦   ¦       reviewa_entity.g.dart
+¦       ¦   ¦       vendorbalance_entity.dart
+¦       ¦   ¦       vendorbalance_entity.g.dart
+¦       ¦   ¦       vendordetailsbooking_entity.dart
+¦       ¦   ¦       vendordetailsbooking_entity.g.dart
+¦       ¦   ¦       vendordetails_entity.dart
+¦       ¦   ¦       vendordetails_entity.g.dart
+¦       ¦   ¦       vendoritem_entity.dart
+¦       ¦   ¦       vendoritem_entity.g.dart
+¦       ¦   ¦       
+¦       ¦   +---repositories
+¦       ¦   ¦       .gitkeep
+¦       ¦   ¦       vendor_repo.dart
+¦       ¦   ¦       
+¦       ¦   +---usecases
+¦       ¦           .gitkeep
+¦       ¦           vendor_usecase.dart
+¦       ¦           
+¦       +---presentation
+¦           +---bloc
+¦           ¦       vendor_bloc.dart
+¦           ¦       vendor_bloc.freezed.dart
+¦           ¦       vendor_event.dart
+¦           ¦       vendor_state.dart
+¦           ¦       
+¦           +---pages
+¦           ¦       .gitkeep
+¦           ¦       all_vendor_page.dart
+¦           ¦       nearby_places_page.dart
+¦           ¦       vendor_details_page.dart
+¦           ¦       
+¦           +---widgets
+¦                   .gitkeep
+¦                   branches_widget.dart
+¦                   shimmer_card_loading.dart
+¦                   vendor_item.dart
+¦                   vendor_sqaur_item.dart
+¦                   
++---generated
+¦   ¦   l10n.dart
+¦   ¦   
+¦   +---intl
+¦           messages_all.dart
+¦           messages_ar.dart
+¦           messages_en.dart
+¦           
++---l10n
+        intl_ar.arb
+        intl_en.arb
+        

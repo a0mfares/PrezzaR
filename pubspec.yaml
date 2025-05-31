@@ -1,0 +1,112 @@
+name: prezza
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 6.0.0+8
+
+environment:
+  sdk: ^3.5.3
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  equatable: ^2.0.5
+  dartz: ^0.10.1
+  sizer: ^3.0.4
+  auto_route: ^9.2.2
+  retrofit: ^4.4.1
+  retrofit_generator: ^9.1.2
+  json_annotation: ^4.9.0
+  flutter_bloc: ^8.1.6
+  bloc: ^8.1.4
+  flutter_localizations:
+    sdk: flutter
+  intl: ^0.19.0
+  pin_code_fields: ^8.0.1
+  flutter_native_splash: ^2.4.1
+  get_it: ^8.0.1
+  dio: ^5.7.0
+  freezed_annotation: ^2.4.4
+  auto_mappr_annotation: ^1.2.0
+  hive_flutter: ^1.1.0
+  loading_animation_widget: ^1.3.0
+  bot_toast: ^4.1.3
+  flutter_svg: ^2.0.14
+  cached_network_image: ^3.4.1
+  flutter_rating_bar: ^4.0.1
+  image_picker: ^1.1.2
+  lottie: ^3.1.3  
+  gif: ^2.3.0
+  another_stepper: ^1.2.2
+  easy_stepper: ^0.8.5+1
+  tutorial_coach_mark: ^1.2.12
+  google_maps_flutter: ^2.10.0
+  timeago: ^3.7.0
+  url_launcher: ^6.3.1
+  flutter_widget_from_html: ^0.15.3
+  local_auth: ^2.3.0
+  geolocator: ^13.0.2
+  place_picker_google: ^0.0.14
+  flutter_session_jwt: ^0.0.7
+  search_choices: ^2.3.1
+  story_view: ^0.16.5
+  image_editor_plus: ^1.0.6
+  extended_image: ^8.3.1
+  connectivity_plus: ^6.1.4
+  shimmer: ^3.0.0
+  google_fonts: ^6.2.1
+  flutter_launcher_icons: ^0.14.3
+  firebase_core: ^3.12.1
+  firebase_crashlytics: ^4.3.4
+  flutter_secure_storage: ^9.2.4
+  sadad_qa_payments: ^1.0.2
+  sadadpay_flutter: ^0.0.5
+  # rive: ^0.13.20
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.13
+  auto_route_generator: ^9.0.0
+  json_serializable: ^6.8.0
+  build_test: ^2.2.2
+  build_web_compilers: ^4.0.11
+  freezed: ^2.5.7
+  auto_mappr: ^1.7.0
+  hive_generator: ^2.0.1
+  console: ^4.1.0
+
+flutter:
+  generate: true
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+  
+flutter_assets:
+  assets_path: assets/
+  output_path: lib/core/constants/
+  filename: assets.dart
+  
+flutter_intl:
+  enabled: true
+  arb_dir: lib/l10n
+  output_dir: lib/generated
+
+
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  remove_alpha_ios: true
+  image_path: "assets/images/logo_small.png"
+  image_path_ios: "assets/images/logo_ip_small.png"
+  adaptive_icon_foreground: "assets/images/logo_small.png"
+  adaptive_icon_background: "#FFFAF0"
+  min_sdk_android: 21 
+ 

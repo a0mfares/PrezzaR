@@ -1,0 +1,2 @@
+D:/Prezza-flutter-app/android/app/.cxx/Debug/33r86r1u/x86_64/CMakeFiles/edit_cache.dir
+D:/Prezza-flutter-app/android/app/.cxx/Debug/33r86r1u/x86_64/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,4 @@
+#include "Generated.xcconfig"
+PRODUCT_BUNDLE_IDENTIFIER = com.prezza.sim;
+DEVELOPMENT_TEAM = NF6475DNWA;
+CODE_SIGN_STYLE = Automatic;
