@@ -2,37 +2,28 @@ workflows:
   ios-release:
     name: iOS Release Workflow
     environment:
-      flutter: stable
-      xcode: latest
       vars:
-        BUNDLE_ID: "com.prezza.sim"  
-        APP_STORE_CONNECT_ISSUER_ID: Encrypted(***)
-        APP_STORE_CONNECT_KEY_IDENTIFIER: Encrypted(***)
-        APP_STORE_CONNECT_PRIVATE_KEY: Encrypted(***)
+        XCODE_WORKSPACE: "Runner.xcworkspace"
+        XCODE_SCHEME: "Runner"
+      flutter: stable
     triggering:
       events:
         - push
     scripts:
-      - name: Set up Flutter
+      - name: Install dependencies
         script: |
           flutter pub get
-      - name: Build iOS Release
+      - name: Build iOS release
         script: |
-          flutter build ios --release --no-codesign
+          flutter build ipa \
+            --release \
+            --no-codesign \
+            --export-options-plist=ios/Runner/export_options.plist
     artifacts:
       - build/ios/ipa/*.ipa
-      - /tmp/xcodebuild_logs/*.log
-      - /Users/builder/export_options.plist
-    code_signing:
-      distribution_type: app_store
-      bundle_identifier: $BUNDLE_ID
-      automatic_code_signing:
-        apple_team_id: NF6475DNWA   
-        use_apple_credentials: true
+      - build/ios/xcarchive/**/*.dSYM
     publishing:
       app_store_connect:
-        auth:
-          issuer_id: $APP_STORE_CONNECT_ISSUER_ID
-          key_identifier: $APP_STORE_CONNECT_KEY_IDENTIFIER
-          private_key: $APP_STORE_CONNECT_PRIVATE_KEY
+        auth: integration
         submit_to_testflight: true
+        submit_to_app_store: false
