@@ -28,6 +28,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app uses the microphone to capture audio for recording videos or using camera</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to your location to provide location-based services.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app uses your location even when in the background to improve the user experience.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
