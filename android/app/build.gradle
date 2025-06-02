@@ -16,7 +16,7 @@ plugins {
 
 android {
     namespace = "mehani.sim.prezza"
-    compileSdk = 34
+    compileSdk = 35
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
