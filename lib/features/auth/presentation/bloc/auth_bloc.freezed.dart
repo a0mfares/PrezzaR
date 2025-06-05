@@ -28,6 +28,7 @@ mixin _$AuthEvent {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +43,7 @@ mixin _$AuthEvent {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +58,7 @@ mixin _$AuthEvent {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +74,7 @@ mixin _$AuthEvent {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +89,7 @@ mixin _$AuthEvent {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +104,7 @@ mixin _$AuthEvent {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -202,6 +208,7 @@ class _$SigninImpl implements _Signin {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return signin(type);
   }
@@ -219,6 +226,7 @@ class _$SigninImpl implements _Signin {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return signin?.call(type);
   }
@@ -236,6 +244,7 @@ class _$SigninImpl implements _Signin {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (signin != null) {
@@ -257,6 +266,7 @@ class _$SigninImpl implements _Signin {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return signin(this);
   }
@@ -274,6 +284,7 @@ class _$SigninImpl implements _Signin {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return signin?.call(this);
   }
@@ -291,6 +302,7 @@ class _$SigninImpl implements _Signin {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (signin != null) {
@@ -390,6 +402,7 @@ class _$SignupImpl implements _Signup {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return signup(type);
   }
@@ -407,6 +420,7 @@ class _$SignupImpl implements _Signup {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return signup?.call(type);
   }
@@ -424,6 +438,7 @@ class _$SignupImpl implements _Signup {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (signup != null) {
@@ -445,6 +460,7 @@ class _$SignupImpl implements _Signup {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return signup(this);
   }
@@ -462,6 +478,7 @@ class _$SignupImpl implements _Signup {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return signup?.call(this);
   }
@@ -479,6 +496,7 @@ class _$SignupImpl implements _Signup {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (signup != null) {
@@ -578,6 +596,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return confirmSignup(type);
   }
@@ -595,6 +614,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return confirmSignup?.call(type);
   }
@@ -612,6 +632,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (confirmSignup != null) {
@@ -633,6 +654,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return confirmSignup(this);
   }
@@ -650,6 +672,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return confirmSignup?.call(this);
   }
@@ -667,6 +690,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (confirmSignup != null) {
@@ -766,6 +790,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return resendOtp(type);
   }
@@ -783,6 +808,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return resendOtp?.call(type);
   }
@@ -800,6 +826,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (resendOtp != null) {
@@ -821,6 +848,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return resendOtp(this);
   }
@@ -838,6 +866,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return resendOtp?.call(this);
   }
@@ -855,6 +884,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (resendOtp != null) {
@@ -954,6 +984,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return forgotPass(type);
   }
@@ -971,6 +1002,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return forgotPass?.call(type);
   }
@@ -988,6 +1020,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (forgotPass != null) {
@@ -1009,6 +1042,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return forgotPass(this);
   }
@@ -1026,6 +1060,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return forgotPass?.call(this);
   }
@@ -1043,6 +1078,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (forgotPass != null) {
@@ -1115,6 +1151,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return createProfile();
   }
@@ -1132,6 +1169,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return createProfile?.call();
   }
@@ -1149,6 +1187,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (createProfile != null) {
@@ -1170,6 +1209,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return createProfile(this);
   }
@@ -1187,6 +1227,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return createProfile?.call(this);
   }
@@ -1204,6 +1245,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (createProfile != null) {
@@ -1268,6 +1310,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return chooseUserType();
   }
@@ -1285,6 +1328,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return chooseUserType?.call();
   }
@@ -1302,6 +1346,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (chooseUserType != null) {
@@ -1323,6 +1368,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return chooseUserType(this);
   }
@@ -1340,6 +1386,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return chooseUserType?.call(this);
   }
@@ -1357,6 +1404,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (chooseUserType != null) {
@@ -1421,6 +1469,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return resetPassword();
   }
@@ -1438,6 +1487,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return resetPassword?.call();
   }
@@ -1455,6 +1505,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -1476,6 +1527,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return resetPassword(this);
   }
@@ -1493,6 +1545,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return resetPassword?.call(this);
   }
@@ -1510,6 +1563,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -1601,6 +1655,7 @@ class _$GetTokenImpl implements _GetToken {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return getToken(type);
   }
@@ -1618,6 +1673,7 @@ class _$GetTokenImpl implements _GetToken {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return getToken?.call(type);
   }
@@ -1635,6 +1691,7 @@ class _$GetTokenImpl implements _GetToken {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (getToken != null) {
@@ -1656,6 +1713,7 @@ class _$GetTokenImpl implements _GetToken {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return getToken(this);
   }
@@ -1673,6 +1731,7 @@ class _$GetTokenImpl implements _GetToken {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return getToken?.call(this);
   }
@@ -1690,6 +1749,7 @@ class _$GetTokenImpl implements _GetToken {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (getToken != null) {
@@ -1762,6 +1822,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     required TResult Function() resetPassword,
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
   }) {
     return getUserInfo();
   }
@@ -1779,6 +1840,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult? Function()? resetPassword,
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
   }) {
     return getUserInfo?.call();
   }
@@ -1796,6 +1858,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult Function()? resetPassword,
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
     required TResult orElse(),
   }) {
     if (getUserInfo != null) {
@@ -1817,6 +1880,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     required TResult Function(_ResetPassword value) resetPassword,
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
   }) {
     return getUserInfo(this);
   }
@@ -1834,6 +1898,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult? Function(_ResetPassword value)? resetPassword,
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
   }) {
     return getUserInfo?.call(this);
   }
@@ -1851,6 +1916,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult Function(_ResetPassword value)? resetPassword,
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
     required TResult orElse(),
   }) {
     if (getUserInfo != null) {
@@ -1862,6 +1928,165 @@ class _$GetUserInfoImpl implements _GetUserInfo {
 
 abstract class _GetUserInfo implements AuthEvent {
   const factory _GetUserInfo() = _$GetUserInfoImpl;
+}
+
+/// @nodoc
+abstract class _$$DeleteAccountImplCopyWith<$Res> {
+  factory _$$DeleteAccountImplCopyWith(
+          _$DeleteAccountImpl value, $Res Function(_$DeleteAccountImpl) then) =
+      __$$DeleteAccountImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$DeleteAccountImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$DeleteAccountImpl>
+    implements _$$DeleteAccountImplCopyWith<$Res> {
+  __$$DeleteAccountImplCopyWithImpl(
+      _$DeleteAccountImpl _value, $Res Function(_$DeleteAccountImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of AuthEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$DeleteAccountImpl implements _DeleteAccount {
+  const _$DeleteAccountImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.deleteAccount()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$DeleteAccountImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String type) signin,
+    required TResult Function(String type) signup,
+    required TResult Function(String type) confirmSignup,
+    required TResult Function(String type) resendOtp,
+    required TResult Function(String type) forgotPass,
+    required TResult Function() createProfile,
+    required TResult Function() chooseUserType,
+    required TResult Function() resetPassword,
+    required TResult Function(String type) getToken,
+    required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
+  }) {
+    return deleteAccount();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String type)? signin,
+    TResult? Function(String type)? signup,
+    TResult? Function(String type)? confirmSignup,
+    TResult? Function(String type)? resendOtp,
+    TResult? Function(String type)? forgotPass,
+    TResult? Function()? createProfile,
+    TResult? Function()? chooseUserType,
+    TResult? Function()? resetPassword,
+    TResult? Function(String type)? getToken,
+    TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
+  }) {
+    return deleteAccount?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String type)? signin,
+    TResult Function(String type)? signup,
+    TResult Function(String type)? confirmSignup,
+    TResult Function(String type)? resendOtp,
+    TResult Function(String type)? forgotPass,
+    TResult Function()? createProfile,
+    TResult Function()? chooseUserType,
+    TResult Function()? resetPassword,
+    TResult Function(String type)? getToken,
+    TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Signin value) signin,
+    required TResult Function(_Signup value) signup,
+    required TResult Function(_ConfirmSignup value) confirmSignup,
+    required TResult Function(_ResendOtp value) resendOtp,
+    required TResult Function(_ForgotPass value) forgotPass,
+    required TResult Function(_CreateProfile value) createProfile,
+    required TResult Function(_ChooseUserType value) chooseUserType,
+    required TResult Function(_ResetPassword value) resetPassword,
+    required TResult Function(_GetToken value) getToken,
+    required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
+  }) {
+    return deleteAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Signin value)? signin,
+    TResult? Function(_Signup value)? signup,
+    TResult? Function(_ConfirmSignup value)? confirmSignup,
+    TResult? Function(_ResendOtp value)? resendOtp,
+    TResult? Function(_ForgotPass value)? forgotPass,
+    TResult? Function(_CreateProfile value)? createProfile,
+    TResult? Function(_ChooseUserType value)? chooseUserType,
+    TResult? Function(_ResetPassword value)? resetPassword,
+    TResult? Function(_GetToken value)? getToken,
+    TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
+  }) {
+    return deleteAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Signin value)? signin,
+    TResult Function(_Signup value)? signup,
+    TResult Function(_ConfirmSignup value)? confirmSignup,
+    TResult Function(_ResendOtp value)? resendOtp,
+    TResult Function(_ForgotPass value)? forgotPass,
+    TResult Function(_CreateProfile value)? createProfile,
+    TResult Function(_ChooseUserType value)? chooseUserType,
+    TResult Function(_ResetPassword value)? resetPassword,
+    TResult Function(_GetToken value)? getToken,
+    TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
+    required TResult orElse(),
+  }) {
+    if (deleteAccount != null) {
+      return deleteAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteAccount implements AuthEvent {
+  const factory _DeleteAccount() = _$DeleteAccountImpl;
 }
 
 /// @nodoc

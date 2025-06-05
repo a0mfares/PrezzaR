@@ -113,9 +113,10 @@ class ServiceLocator {
     sl.registerSingleton<ResetPasswordUsecase>(ResetPasswordUsecase(sl()));
     sl.registerSingleton<ChooseUserTypeUsecase>(ChooseUserTypeUsecase(sl()));
     sl.registerSingleton<GetUserInfoUsecase>(GetUserInfoUsecase(sl()));
+    sl.registerSingleton<DeleteAcountUseCase>(DeleteAcountUseCase(sl()));
 
     sl.registerCachedFactory<AuthBloc>(() =>
-        AuthBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
+        AuthBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(),sl()));
 
     //? ⁡⁣⁢⁢end auth feature⁡
 

@@ -85,4 +85,9 @@ abstract class AuthService {
   );
   @GET(Urls.userInfo)
   Future<HttpResponse> getUserInfo(@Header('Authorization') auth);
+
+  @DELETE(Urls.deleteaccount)
+  Future<HttpResponse> deleteaccount(
+    @Header('Authorization') auth,
+  );
 }

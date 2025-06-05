@@ -48,6 +48,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   final ResetPasswordUsecase _resetPasswordUsecase;
   final ChooseUserTypeUsecase _chooseUserTypeUsecase;
   final GetUserInfoUsecase _getUserInfoUsecase;
+  final DeleteAcountUseCase _deleteAccountUseCase;
   static AuthBloc get(context) => BlocProvider.of(context);
 
   AuthBloc(
@@ -60,6 +61,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       this._createProfileUsecase,
       this._resetPasswordUsecase,
       this._chooseUserTypeUsecase,
+      this._deleteAccountUseCase,
       this._getUserInfoUsecase)
       : super(const _Initial()) {
     on<AuthEvent>((event, emit) async {
@@ -180,6 +182,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             emit(AuthState.failure(e.toString()));
           }
         },
+        
         resendOtp: (type) async {
           emit(const AuthState.loading());
           try {
@@ -311,6 +314,24 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           emit(const AuthState.loading());
           try {
             final result = await _getUserInfoUsecase();
+
+            result.fold(
+              (err) {
+                emit(AuthState.failure(err.getMsg));
+              },
+              (res) {
+                HiveStorage.set(kUser, res);
+                emit(const AuthState.success());
+              },
+            );
+          } catch (e) {
+            emit(AuthState.failure(e.toString()));
+          }
+        },
+        deleteAccount: () async{
+          emit(const AuthState.loading());
+          try {
+            final result = await _deleteAccountUseCase();
 
             result.fold(
               (err) {

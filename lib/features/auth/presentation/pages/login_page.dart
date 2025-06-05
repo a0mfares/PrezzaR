@@ -25,11 +25,11 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   late final AuthBloc bloc;
+  final _formKey =GlobalKey<FormState>();
   @override
   void initState() {
     bloc = AuthBloc.get(context);
-    bloc.loginForm = GlobalKey<FormState>();
-
+    bloc.loginForm = _formKey;
     super.initState();
   }
 
@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Form(
-        key: bloc.loginForm,
+        key: _formKey,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -88,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
                           return null;
                         },
                         onChanged: (v) {
-                          bloc.loginForm.currentState!.validate();
+                          _formKey.currentState!.validate();
                         },
                       ).prezaa(
                         margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -120,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                           return null;
                         },
                         onChanged: (v) {
-                          bloc.loginForm.currentState!.validate();
+                          _formKey.currentState!.validate();
                         },
                       ).prezaa(
                         margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -306,12 +306,7 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                       vSpace(2),
-                      TextButton.icon(
-                        onPressed: () {},
-                        icon: const Icon(Icons.golf_course),
-                        label: Text(tr.continueWithGoogle),
-                      ),
-                      vSpace(1),
+                      
                       TextButton.icon(
                         onPressed: () {
                           bloc.isEmail = !bloc.isEmail;

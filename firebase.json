@@ -1,1 +1,22 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"prezza-528db","appId":"1:413378035051:android:38217daf1cfa030ceea02e","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"prezza-528db","configurations":{"android":"1:413378035051:android:38217daf1cfa030ceea02e","ios":"1:413378035051:ios:51551626978cc1abeea02e"}}}}}}
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "prezza-528db",
+                    "appId": "1:413378035051:android:38217daf1cfa030ceea02e",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "prezza-528db",
+                    "configurations": {
+                        "android": "1:413378035051:android:38217daf1cfa030ceea02e",
+                        "ios": "1:413378035051:ios:51551626978cc1abeea02e"
+                    }
+                }
+            }
+        }
+    }
+}

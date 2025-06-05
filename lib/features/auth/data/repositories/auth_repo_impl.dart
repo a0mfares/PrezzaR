@@ -154,4 +154,9 @@ class AuthRepoImpl implements AuthRepo {
       Map<String, dynamic> data) {
     return execute(() => _auth.confirmRegPhone(data));
   }
+
+  @override
+  Future<Either<FailureServices, void>> deleteaccount() {
+    return execute(() => _auth.deleteaccount(bearerToken));
+  }
 }

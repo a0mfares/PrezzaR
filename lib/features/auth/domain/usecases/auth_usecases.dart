@@ -97,7 +97,16 @@ class ChooseUserTypeUsecase implements UsecaseHelper<void> {
     return _repo.chooseUserType(parm);
   }
 }
+class DeleteAcountUseCase implements UsecaseHelper<void> {
+  final AuthRepo _repo;
 
+  DeleteAcountUseCase(this._repo);
+  @override
+  Future<Either<FailureServices, void>> call(
+      {Map<String, dynamic> parm = const {}}) async {
+    return _repo.deleteaccount();
+  }
+}
 class RefereshTokenUsecase implements UsecaseHelper<String> {
   final AuthRepo _repo;
 

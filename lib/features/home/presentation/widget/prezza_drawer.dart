@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/service/routes.gr.dart';
+import 'package:prezza/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:prezza/prezza_page.dart';
 
 import '../../../../core/constants/assets.dart';
@@ -103,6 +105,26 @@ class PrezzaDrawer extends StatelessWidget {
                 leading: SvgPicture.asset(Assets.assetsImagesAbout),
                 title: Text(tr.about),
                 trailing: const Icon(Icons.arrow_forward_ios),
+              ),
+              const Divider(thickness: 2),
+              ListTile(
+                leading: const Icon(Icons.delete_forever_outlined),
+                title: const Text("Delete account"),
+                trailing: const Icon(Icons.arrow_forward_ios),
+                onTap: () {
+                  showDialogPrezza(
+                      context: context,
+                      title: "Are you sure ?",
+                      onTap: () async {
+                        context
+                            .read<AuthBloc>()
+                            .add(const AuthEvent.deleteAccount());
+                        appRoute.removeLast();
+                        HiveStorage.set(kUser, null);
+                        appRoute.navigate(const LoginRoute());
+                      },
+                      showCancel: true);
+                },
               ),
               const Divider(thickness: 2),
               ListTile(

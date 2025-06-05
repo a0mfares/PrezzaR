@@ -10,7 +10,6 @@ import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/config/txt_themes.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:prezza/generated/l10n.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../core/helper/tools.dart';
@@ -27,10 +26,11 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPPageState extends State<SignUpPage> {
   late final AuthBloc bloc;
+  final _formKey = GlobalKey<FormState>();
   @override
   void initState() {
     bloc = AuthBloc.get(context);
-    bloc.signupForm = GlobalKey<FormState>();
+    bloc.signupForm = _formKey;
     super.initState();
   }
 
@@ -73,7 +73,7 @@ class _SignUpPPageState extends State<SignUpPage> {
       ),
       body: SingleChildScrollView(
         child: Form(
-          key: bloc.signupForm,
+          key: _formKey,
           child: Column(
             children: [
               vSpace(2),
@@ -100,7 +100,8 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  bloc.signupForm.currentState!.validate();
+                  _formKey
+                  .currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -118,7 +119,8 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  bloc.signupForm.currentState!.validate();
+                  _formKey
+                  .currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -155,7 +157,8 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  bloc.signupForm.currentState!.validate();
+                  _formKey
+                  .currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -189,7 +192,8 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  bloc.signupForm.currentState!.validate();
+                  _formKey
+                  .currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -223,7 +227,8 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  bloc.signupForm.currentState!.validate();
+                  _formKey
+                  .currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),

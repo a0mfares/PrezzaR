@@ -35,6 +35,7 @@ class Urls {
   static const String forgotPass = '/Users/password/forgot_password/';
   static const String updatePass = '/Users/password/update_password/';
   static const String userInfo = '/Users/userinfo/';
+  static const String deleteaccount = '/Users/Auth/delete-account/';
   //?END AUTH FEATURE
 
   //! product

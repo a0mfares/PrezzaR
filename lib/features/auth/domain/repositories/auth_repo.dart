@@ -32,6 +32,8 @@ abstract class AuthRepo {
       Map<String, dynamic> data);
   Future<Either<FailureServices, void>> chooseUserType(
       Map<String, dynamic> data);
+  Future<Either<FailureServices, void>> deleteaccount(
+      );
   Future<Either<FailureServices, String>> refreshToken(
       Map<String, dynamic> data);
   Future<Either<FailureServices, void>> sendOtpResetPassEmail(
