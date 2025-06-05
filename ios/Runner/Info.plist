@@ -31,9 +31,11 @@
 	<key>NSMicrophoneUsageDescription</key>
 	<string>This app uses the microphone to capture audio for recording videos or using camera</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>This app needs access to your location to provide location-based services.</string>
+	<string>This app needs access to your location to provide location-based services such as delivering food to your current location.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>This app uses your location even when in the background to improve the user experience.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>capture your moments and share it with your followers.</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
