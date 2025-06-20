@@ -35,7 +35,7 @@ class _LoginLoadingPageState extends State<LoginLoadingPage>
 
         if (isOnBoarded) {
           if (!ifUserAuthenticated()) {
-            appRoute.replace(const LoginRoute());
+            appRoute.replace(UserLayoutHomeRoute());
             appRoute.removeLast();
           } else {
             if (!isCustomer) {

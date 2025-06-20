@@ -142,7 +142,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                               child: ElevatedButton(
                                 onPressed: () {
                                   if (currentIndex == onboarding.length - 1) {
-                                    appRoute.replace(const LoginRoute());
+                                    appRoute.replace(UserLayoutHomeRoute());
                                     appRoute.removeLast();
                                     HiveStorage.set(kOnBoard, true);
                                   } else if (currentIndex == 2) {
