@@ -80,23 +80,23 @@ class _SocialPageState extends State<SocialPage> {
                 trailing: SvgPicture.asset(Assets.assetsImagesGallery),
               ),
             ),
+            // vSpace(3),
+            // SizedBox(
+            //   width: 100.w,
+            //   height: 200,
+            //   child: ListView.builder(
+            //     scrollDirection: Axis.horizontal,
+            //     itemCount: 5,
+            //     itemBuilder: (context, index) {
+            //       if (index == 0) {
+            //         return const AddStoryWidget();
+            //       }
+            //       return const StoryWidget();
+            //     },
+            //   ),
+            // ),
             vSpace(3),
-            SizedBox(
-              width: 100.w,
-              height: 200,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 5,
-                itemBuilder: (context, index) {
-                  if (index == 0) {
-                    return const AddStoryWidget();
-                  }
-                  return const StoryWidget();
-                },
-              ),
-            ),
-            vSpace(3),
-            const Divider(),
+            // const Divider(),
             SizedBox(
               height: 70.h,
               child: BlocBuilder<NewsfeedBloc, NewsfeedState>(
