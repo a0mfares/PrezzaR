@@ -49,20 +49,18 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
   AddressEntity selectedAdress =
       AddressEntity(uuid: '', address: '', landmark: '', title: '');
   LocationBloc(
-      this._addBrancheUsecase,
-      this._getBranchesUsecase,
-      this._updateBrancheUsecase,
-      this._deleteBrancheUsecase,
-      this._addAddressUsecase,
-      this._getAddressesUsecase,
-      this._updateAddressUsecase,
-      this._deleteAddressUsecase,
-      )
-      : super(const _Initial()) {
+    this._addBrancheUsecase,
+    this._getBranchesUsecase,
+    this._updateBrancheUsecase,
+    this._deleteBrancheUsecase,
+    this._addAddressUsecase,
+    this._getAddressesUsecase,
+    this._updateAddressUsecase,
+    this._deleteAddressUsecase,
+  ) : super(const _Initial()) {
     on<LocationEvent>(
       (event, emit) async {
         await event.maybeWhen(
-          
           initializeEditMode: () {
             emit(const LocationState.loading());
             if (!isCustomer) {
@@ -305,6 +303,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
               if (permission == LocationPermission.deniedForever) {
                 // Permissions are denied forever, handle appropriately.
                 emit(LocationState.failure(tr.locationErrorPerm));
+                return;
               }
 
               final result = await Geolocator.getCurrentPosition();
