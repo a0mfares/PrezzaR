@@ -1,6 +1,5 @@
 import 'package:hive/hive.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
-
 import '../../data/models/category_model.dart';
 
 part 'category_entity.g.dart';
@@ -16,9 +15,13 @@ class CategoryEntity extends $CategoryEntity {
   @HiveField(1)
   final String name;
 
+  @HiveField(2)
+  final String imageUrl;
+
   CategoryEntity({
     required this.id,
     required this.name,
+    required this.imageUrl,
   });
 
   CategoryModel toModel() =>
