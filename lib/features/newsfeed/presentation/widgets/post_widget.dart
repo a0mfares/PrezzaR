@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:prezza/core/constants/assets.dart';
+import 'package:prezza/core/constants/urls.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/shared/widgets/cached_image.dart';
@@ -80,7 +81,9 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
               alignment: Alignment.center,
               children: [
                 CachedImage(
-                  imageUrl: widget.post.post_images.first.image,
+                  imageUrl: (widget.post.post_images.first.image
+                          .replaceAll(Urls.baseUrl, ''))
+                      .toString(),
                   fit: BoxFit.cover,
                   width: 100.w,
                   height: 40.h,
