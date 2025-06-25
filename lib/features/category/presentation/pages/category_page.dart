@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:prezza/core/helper/tools.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
@@ -5,6 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prezza/core/helper/widgets.dart';
 import 'package:prezza/core/service/routes.gr.dart';
+import 'package:prezza/core/shared/widgets/cached_image.dart';
 import 'package:prezza/core/shared/widgets/under_montains.dart';
 import 'package:prezza/features/vendor/presentation/widgets/shimmer_card_loading.dart';
 import 'package:prezza/prezza_page.dart';
@@ -83,7 +86,7 @@ class _CategoryPageState extends State<CategoryPage> {
                   }
 
                   final category = bloc.categories[index];
-
+                  log(category.imageUrl.toString(), name: 'Category Image URL');
                   return InkWell(
                     onTap: () {
                       appRoute.navigate(
@@ -106,16 +109,14 @@ class _CategoryPageState extends State<CategoryPage> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             // Replace SvgPicture.asset with Image.network that uses the category imageUrl
-                            Image.network(
-                              category.imageUrl,
-                              height: 60,
-                              width: 60,
-                              fit: BoxFit.cover,
-                              errorBuilder: (context, error, stackTrace) =>
-                                  SvgPicture.asset(
+                            Center(
+                              child: CachedImage(
+                                imageUrl: category.imageUrl ??
                                     Assets.assetsImagesDrink,
-                                    height: 60,
-                                  ),
+                                height: 60,
+                                width: 60,
+                                fit: BoxFit.cover,
+                              ),
                             ),
 
                             // If you want to use CachedNetworkImage for caching, replace above with below:

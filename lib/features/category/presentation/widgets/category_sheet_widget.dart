@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
+import 'package:prezza/core/shared/widgets/cached_image.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../config/txt_themes.dart';
@@ -82,7 +83,17 @@ class _CategorySheetWidgetState extends State<CategorySheetWidget> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SvgPicture.asset(Assets.assetsImagesDrink),
+                            Center(
+                              child: Center(
+                                child: CachedImage(
+                                  imageUrl: category.imageUrl ??
+                                      Assets.assetsImagesDrink,
+                                  height: 60,
+                                  width: 60,
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
                             vSpace(1),
                             Center(
                               child: Text(

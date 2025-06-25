@@ -11,9 +11,7 @@ import '../../../../config/custom_colors.dart';
 import '../../../../core/constants/assets.dart';
 import '../../../../core/helper/tools.dart';
 import '../bloc/newsfeed_bloc.dart';
-import '../widgets/add_story_widget.dart';
 import '../widgets/post_loading_widget.dart';
-import '../widgets/story_widget.dart';
 
 @RoutePage()
 class SocialPage extends StatefulWidget {

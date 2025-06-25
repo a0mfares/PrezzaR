@@ -77,7 +77,7 @@ class BusinessDetailsEntity extends $BusinessDetailsEntity {
       has_booking: false,
       service: '',
       business_logo: '',
-      business_category: CategoryEntity(id: 0, name: ''));
+      business_category: CategoryEntity(id: 0, name: '', imageUrl: ''));
 }
 
 @HiveType(typeId: 54)

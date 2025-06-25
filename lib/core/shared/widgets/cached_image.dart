@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:prezza/core/constants/urls.dart';
 
 import '../../constants/assets.dart';
 
@@ -24,7 +23,7 @@ class CachedImage extends StatelessWidget {
     return ClipRRect(
       borderRadius: radius,
       child: CachedNetworkImage(
-        imageUrl: '${Urls.baseUrl.replaceAll('api', '')}$imageUrl',
+        imageUrl: imageUrl,
         width: width,
         fit: fit,
         height: height,

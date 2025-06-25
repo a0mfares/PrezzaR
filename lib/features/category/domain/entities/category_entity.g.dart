@@ -215,6 +215,7 @@ class $CategoryEntity implements AutoMapprInterface {
     return CategoryEntity(
       id: model.id,
       name: model.name,
+      imageUrl: model.imageUrl,
     );
   }
 }
@@ -236,6 +237,7 @@ class CategoryEntityAdapter extends TypeAdapter<CategoryEntity> {
     return CategoryEntity(
       id: fields[0] as int,
       name: fields[1] as String,
+      imageUrl: fields[2] as String?,
     );
   }
 

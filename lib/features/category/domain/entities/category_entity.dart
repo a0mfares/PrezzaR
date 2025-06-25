@@ -16,7 +16,7 @@ class CategoryEntity extends $CategoryEntity {
   final String name;
 
   @HiveField(2)
-  final String imageUrl;
+  final String? imageUrl;
 
   CategoryEntity({
     required this.id,

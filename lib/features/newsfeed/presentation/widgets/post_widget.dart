@@ -1,9 +1,10 @@
+import 'dart:developer';
+
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:prezza/core/constants/assets.dart';
-import 'package:prezza/core/constants/urls.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/shared/widgets/cached_image.dart';
@@ -33,8 +34,10 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
   }
 
   bool isLoading = false;
+
   @override
   Widget build(BuildContext context) {
+    log(widget.post.post_images.first.image);
     return BlocListener<NewsfeedBloc, NewsfeedState>(
       listener: (context, state) {
         state.maybeMap(
@@ -57,9 +60,12 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
             },
           ),
           ListTile(
-            leading: const CircleAvatar(),
+            leading: CircleAvatar(
+              child: CachedImage(
+                  imageUrl: widget.post.auther_info.profile_picture_url),
+            ),
             title: Text(widget.post.auther_info.user_name),
-            subtitle: const Text('2 hours ago'),
+            subtitle: const Text(''),
             trailing: IconButton(
               icon: const Icon(Icons.more_vert),
               onPressed: () {},
@@ -81,9 +87,8 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
               alignment: Alignment.center,
               children: [
                 CachedImage(
-                  imageUrl: (widget.post.post_images.first.image
-                          .replaceAll(Urls.baseUrl, ''))
-                      .toString(),
+                  key: Key(widget.post.uuid),
+                  imageUrl: widget.post.post_images.first.image,
                   fit: BoxFit.cover,
                   width: 100.w,
                   height: 40.h,
@@ -193,7 +198,7 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
               ),
             ],
           ).margin(margin: const EdgeInsets.symmetric(horizontal: 15)),
-          vSpace(3),
+          vSpace(8),
         ],
       ),
     );
