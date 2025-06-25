@@ -10,6 +10,9 @@ import 'package:prezza/features/vendor/presentation/widgets/shimmer_card_loading
 import 'package:prezza/prezza_page.dart';
 import 'package:sizer/sizer.dart';
 
+// Add CachedNetworkImage if you want caching, else remove the import
+// import 'package:cached_network_image/cached_network_image.dart';
+
 import '../../../../config/txt_themes.dart';
 import '../../../../core/constants/assets.dart';
 import '../bloc/category_bloc.dart';
@@ -18,12 +21,14 @@ import '../widgets/category_sheet_widget.dart';
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key, this.isBooking = false});
   final bool isBooking;
+
   @override
   State<CategoryPage> createState() => _CategoryPageState();
 }
 
 class _CategoryPageState extends State<CategoryPage> {
   late final CategoryBloc bloc;
+
   @override
   void initState() {
     super.initState();
@@ -61,8 +66,10 @@ class _CategoryPageState extends State<CategoryPage> {
                   if (index == 5) {
                     return InkWell(
                       onTap: () {
-                        showPrezzaBtm(context,
-                            CategorySheetWidget(isBooking: widget.isBooking));
+                        showPrezzaBtm(
+                          context,
+                          CategorySheetWidget(isBooking: widget.isBooking),
+                        );
                       },
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -74,7 +81,9 @@ class _CategoryPageState extends State<CategoryPage> {
                       ),
                     );
                   }
+
                   final category = bloc.categories[index];
+
                   return InkWell(
                     onTap: () {
                       appRoute.navigate(
@@ -96,10 +105,36 @@ class _CategoryPageState extends State<CategoryPage> {
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
-                            SvgPicture.asset(
-                              Assets.assetsImagesDrink,
+                            // Replace SvgPicture.asset with Image.network that uses the category imageUrl
+                            Image.network(
+                              category.imageUrl,
                               height: 60,
+                              width: 60,
+                              fit: BoxFit.cover,
+                              errorBuilder: (context, error, stackTrace) =>
+                                  SvgPicture.asset(
+                                    Assets.assetsImagesDrink,
+                                    height: 60,
+                                  ),
                             ),
+
+                            // If you want to use CachedNetworkImage for caching, replace above with below:
+                            /*
+                            CachedNetworkImage(
+                              imageUrl: category.imageUrl,
+                              height: 60,
+                              width: 60,
+                              fit: BoxFit.cover,
+                              placeholder: (context, url) =>
+                                  const CircularProgressIndicator(),
+                              errorWidget: (context, url, error) =>
+                                  SvgPicture.asset(
+                                    Assets.assetsImagesDrink,
+                                    height: 60,
+                                  ),
+                            ),
+                            */
+
                             vSpace(1),
                             Text(
                               category.name,
