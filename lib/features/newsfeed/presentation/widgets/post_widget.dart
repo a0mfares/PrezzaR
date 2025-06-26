@@ -62,7 +62,13 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
           ListTile(
             leading: CircleAvatar(
               child: CachedImage(
-                  imageUrl: widget.post.auther_info.profile_picture_url),
+                  imageUrl: widget.post.auther_info.profile_picture_url
+                          .contains('https%3A')
+                      ? widget.post.auther_info.profile_picture_url.replaceAll(
+                          '/https%3A/prezza-media-state-bucket.s3.us-east-1.amazonaws.com',
+                          '',
+                        )
+                      : widget.post.auther_info.profile_picture_url),
             ),
             title: Text(widget.post.auther_info.user_name),
             subtitle: const Text(''),
@@ -93,19 +99,6 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
                   width: 100.w,
                   height: 40.h,
                 ),
-                // Visibility(
-                //   visible: isLoading,
-                //   child: RiveAnimation.asset(
-                //     Assets.assetsImagesLikeAnime,
-                //     alignment: Alignment.center,
-                //     artboard: 'like',
-                //     fit: BoxFit.cover,
-                //     onInit: (artBoard) {
-                //       setState(() {});
-                //     },
-                //     controllers: [_controller],
-                //   ),
-                // ),
               ],
             ),
           ),

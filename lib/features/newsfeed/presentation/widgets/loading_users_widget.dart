@@ -6,25 +6,23 @@ class LoadingUsersWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Shimmer.fromColors(
-        baseColor: Colors.grey[300]!,
-        highlightColor: Colors.grey[100]!,
-        child: ListView.builder(
-          itemCount: 6, // number of placeholder items
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Container(
-                height: 100,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8),
-                ),
+    return Shimmer.fromColors(
+      baseColor: Colors.grey[300]!,
+      highlightColor: Colors.grey[100]!,
+      child: ListView.builder(
+        itemCount: 6, // number of placeholder items
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: 100,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(8),
               ),
-            );
-          },
-        ),
+            ),
+          );
+        },
       ),
     );
   }

@@ -67,8 +67,7 @@ class _FeedWidgetState extends State<FeedWidget> {
               itemBuilder: (context, index) {
                 final post = bloc.posts[index];
                 return CachedImage(
-                  imageUrl: (post.post_images.first.image
-                      .replaceAll(Urls.baseUrl, '')),
+                  imageUrl: post.post_images.first.image,
                   fit: BoxFit.cover,
                 );
               },

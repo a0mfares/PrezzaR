@@ -119,7 +119,7 @@ class _OnboardingPageState extends State<OnboardingPage>
                                     : 0,
                                 child: TextButton(
                                   onPressed: () {
-                                    appRoute.replace(const LoginRoute());
+                                    appRoute.replace(UserLayoutHomeRoute());
                                     appRoute.removeLast();
                                     HiveStorage.set(kOnBoard, true);
                                   },
