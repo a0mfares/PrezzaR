@@ -47,7 +47,9 @@ class _ChooseUserTypePageState extends State<ChooseUserTypePage> {
                           BotToast.showText(text: err.errMsg);
                         },
                         success: (_) {
-                          if (mounted) {}
+                          if (mounted) {
+                            appRoute.replace(UserLayoutHomeRoute());
+                          }
                         },
                         orElse: () {},
                       );
@@ -77,7 +79,9 @@ class _ChooseUserTypePageState extends State<ChooseUserTypePage> {
                           BotToast.showText(text: err.errMsg);
                         },
                         success: (_) {
-                          if (mounted) {}
+                          if (mounted) {
+                            appRoute.replace(UserLayoutHomeRoute());
+                          }
                         },
                         orElse: () {},
                       );

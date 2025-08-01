@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:developer';
 
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
@@ -175,28 +177,36 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
         },
         auth: () async {
           try {
-            // Check if biometrics are available on the device
             bool canCheckBiometrics = await _localAuth.canCheckBiometrics;
             if (canCheckBiometrics) {
-              // Perform biometric authentication (Fingerprint or Face ID)
               isAuthenticated = await _localAuth.authenticate(
                 localizedReason: tr.plsAuth,
                 options: const AuthenticationOptions(
-                  biometricOnly: false, // Only biometric authentication
+                  biometricOnly: false,
                   sensitiveTransaction: true,
                   useErrorDialogs: true,
                 ),
               );
             }
           } catch (e) {
-            print('Error during authentication: $e');
+            log('Error during authentication: $e', name: "Payment Bloc");
           }
+
           if (isAuthenticated) {
-            if (HiveStorage.get(kPass) == null) {
-              HiveStorage.set<String>(kPass, password.text);
-            } else {
-              add(const PaymentEvent.getVendorCard());
+            final savedPassword = HiveStorage.get<String?>(kPass);
+            final enteredPassword = password.text.trim();
+
+            if (savedPassword == null && enteredPassword.isNotEmpty) {
+              HiveStorage.set<String>(kPass, enteredPassword);
             }
+
+            if ((savedPassword ?? enteredPassword).isEmpty) {
+              BotToast.showText(text: "Please Enter Password First");
+              return;
+            }
+
+            // 🔒 Proceed with request
+            add(const PaymentEvent.getVendorCard());
           }
         },
         addVendorCard: () async {
@@ -226,9 +236,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
             emit(const PaymentState.loading());
           }
         },
-        processToPay: () async {
-        
-        },
+        processToPay: () async {},
         getAccessToken: () async {
           emit(const PaymentState.loading());
           try {

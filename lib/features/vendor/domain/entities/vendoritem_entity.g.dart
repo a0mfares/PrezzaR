@@ -214,14 +214,14 @@ class $VendorItemEntity implements AutoMapprInterface {
           r'Consider setting the whenSourceIsNull parameter on the MapType<VendorItemModel, VendorItemEntity> to handle null values during mapping.');
     }
     return VendorItemEntity(
-      bussiness_name: model.bussiness_name,
-      bussiness_avg_stars: model.bussiness_avg_stars,
-      num_of_reviews: model.num_of_reviews,
-      bussiness_logo: model.bussiness_logo,
-      bussiness_id: model.bussiness_id,
-      is_fav: model.is_fav,
-      distance_in_kilo_meters: model.distance_in_kilo_meters,
-    );
+        bussiness_name: model.bussiness_name,
+        bussiness_avg_stars: model.bussiness_avg_stars,
+        num_of_reviews: model.num_of_reviews,
+        bussiness_logo: model.bussiness_logo,
+        bussiness_id: model.bussiness_id,
+        is_fav: model.is_fav,
+        distance_in_kilo_meters: model.distance_in_kilo_meters,
+        uuid: model.uuid);
   }
 }
 
@@ -240,14 +240,14 @@ class VendorItemEntityAdapter extends TypeAdapter<VendorItemEntity> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return VendorItemEntity(
-      bussiness_name: fields[0] as String,
-      bussiness_avg_stars: fields[1] as int,
-      num_of_reviews: fields[2] as int,
-      bussiness_logo: fields[3] as String,
-      bussiness_id: fields[4] as int,
-      is_fav: fields[5] as bool?,
-      distance_in_kilo_meters: fields[6] as double,
-    );
+        bussiness_name: fields[0] as String,
+        bussiness_avg_stars: fields[1] as int,
+        num_of_reviews: fields[2] as int,
+        bussiness_logo: fields[3] as String,
+        bussiness_id: fields[4] as int,
+        is_fav: fields[5] as bool?,
+        distance_in_kilo_meters: fields[6] as double,
+        uuid: fields[7] as String);
   }
 
   @override

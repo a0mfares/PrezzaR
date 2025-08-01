@@ -82,6 +82,7 @@ class User extends Equatable {
   final String user_type;
   @HiveField(9)
   final String phone;
+
   //test
   User copyWith({
     String? uuid,
@@ -163,7 +164,7 @@ class User extends Equatable {
         user_type,
         phone,
         is_staff,
-        is_superuser
+        is_superuser,
       ];
 }
 

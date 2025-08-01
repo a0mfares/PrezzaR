@@ -41,6 +41,7 @@ class _LocationAddPageState extends State<LocationAddPage> {
 
   @override
   Widget build(BuildContext context) {
+    final h = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         title: Text(tr.addNewAddress),
@@ -114,31 +115,35 @@ class _LocationAddPageState extends State<LocationAddPage> {
                         onTap: () {
                           showPrezzaBtm(
                             context,
-                            PlacePicker(
-                              apiKey: Platform.isAndroid
-                                  ? mapApiKeyAndroid
-                                  : mapApiKeyIos,
-                              onPlacePicked: (LocationResult result) {
-                                bloc.add(LocationEvent.onPickPlace(result));
-                                context.maybePop();
-                              },
-                              enableNearbyPlaces: false,
-                              myLocationButtonEnabled: true,
-                              initialLocation: bloc.initialLocation,
-                              searchInputConfig: const SearchInputConfig(
-                                padding: EdgeInsets.symmetric(
-                                  horizontal: 16.0,
-                                  vertical: 8.0,
+                            SizedBox(
+                              height: h * 0.55,
+                              child: PlacePicker(
+                                apiKey: Platform.isAndroid
+                                    ? mapApiKeyAndroid
+                                    : mapApiKeyIos,
+                                onPlacePicked: (LocationResult result) {
+                                  bloc.add(LocationEvent.onPickPlace(result));
+                                  context.maybePop();
+                                },
+                                enableNearbyPlaces: false,
+                                myLocationButtonEnabled: true,
+                                initialLocation: bloc.initialLocation,
+                                searchInputConfig: const SearchInputConfig(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 16.0,
+                                    vertical: 8.0,
+                                  ),
+                                  autofocus: false,
+                                  textDirection: TextDirection.ltr,
                                 ),
-                                autofocus: false,
-                                textDirection: TextDirection.ltr,
-                              ),
-                              searchInputDecorationConfig:
-                                  const SearchInputDecorationConfig(
-                                hintText:
-                                    "Search for a building, street or ...",
+                                searchInputDecorationConfig:
+                                    const SearchInputDecorationConfig(
+                                  hintText:
+                                      "Search for a building, street or ...",
+                                ),
                               ),
                             ),
+                            true,
                           );
                         },
                         leading: CircleAvatar(

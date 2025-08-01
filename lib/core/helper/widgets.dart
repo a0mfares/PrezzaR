@@ -113,14 +113,33 @@ Future<dynamic> showPrezzaBtm(BuildContext context, Widget content,
     context: context,
     isDismissible: false,
     enableDrag: false,
-    isScrollControlled: isScroll,
+    isScrollControlled: true,
     builder: (context) {
       return StatefulBuilder(
-        builder: (context, StateSetter setState) => Padding(
-          padding: const EdgeInsets.all(20)
-              .copyWith(bottom: MediaQuery.of(context).viewInsets.bottom),
-          child: content,
-        ),
+        builder: (context, StateSetter setState) {
+          final bottomInset = MediaQuery.of(context).viewInsets.bottom;
+
+          return LayoutBuilder(
+            builder: (context, constraints) {
+              return ConstrainedBox(
+                constraints: BoxConstraints(
+                  // Use up to 80% of screen height max
+                  maxHeight: constraints.maxHeight * 0.8,
+                ),
+                child: Padding(
+                  padding:
+                      const EdgeInsets.all(20).copyWith(bottom: bottomInset),
+                  child: isScroll
+                      ? SingleChildScrollView(
+                          physics: const BouncingScrollPhysics(),
+                          child: content,
+                        )
+                      : content,
+                ),
+              );
+            },
+          );
+        },
       );
     },
   );

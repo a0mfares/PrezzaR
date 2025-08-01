@@ -20,7 +20,11 @@ abstract class PaymentService {
     @Header('Authorization') auth,
     @Body() Map<String, dynamic> data,
   );
-
+  @DELETE(Urls.deleteVendorCard)
+  Future<HttpResponse> deleteVendorCards(
+    @Header('Authorization') auth,
+    @Body() Map<String, dynamic> data,
+  );
   @POST(Urls.paymentCards)
   Future<HttpResponse> addCustomerCard(
     @Header('Authorization') auth,

@@ -89,6 +89,7 @@ class _CategoryPageState extends State<CategoryPage> {
                   log(category.imageUrl.toString(), name: 'Category Image URL');
                   return InkWell(
                     onTap: () {
+                      log('Category tapped: ${category.name}');
                       appRoute.navigate(
                         AllVendorRoute(
                           id: category.id.toString(),

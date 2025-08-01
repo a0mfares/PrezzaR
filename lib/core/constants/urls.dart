@@ -140,6 +140,8 @@ class Urls {
   static const String bankCard = '/Vendors/bank_card/';
   static const String bankCardVendor = '/Vendors/update_get_bank_card/';
   static const String paymentCards = '/Customer_Dashboard/payment_cards/';
+  static const String deleteVendorCard = '/Vendors/delete_bank_card/';
+
   //! end payment
 
   //~ landing

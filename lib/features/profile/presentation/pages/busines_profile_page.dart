@@ -1,4 +1,5 @@
 import 'dart:developer';
+import 'dart:io';
 
 import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
@@ -6,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/config/txt_themes.dart';
@@ -30,12 +32,26 @@ class BusinesProfilePage extends StatefulWidget {
 
 class _BusinesProfilePageState extends State<BusinesProfilePage> {
   late final ProfileBloc bloc;
+  late final TextEditingController firstName;
+  late final TextEditingController lastName;
+  late final TextEditingController userName;
   @override
   void initState() {
     bloc = ProfileBloc.get(context);
     bloc.add(const ProfileEvent.initBusiness());
     CategoryBloc.get(context).add(const CategoryEvent.getCategories());
+    firstName = TextEditingController(text: usr.user.first_name);
+    lastName = TextEditingController(text: usr.user.last_name);
+    userName = TextEditingController(text: usr.user.username);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    firstName.dispose();
+    lastName.dispose();
+    userName.dispose();
+    super.dispose();
   }
 
   @override
@@ -74,9 +90,9 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                                   onPickFromGalleryMulti: (multiGallery) {},
                                 );
                               },
-                              provider: FileImage(
-                                bloc.brandLogo,
-                              ),
+                              provider: bloc.brandLogo != null
+                                  ? FileImage(bloc.brandLogo!)
+                                  : null,
                               src:
                                   SvgPicture.asset(Assets.assetsImagesProfile));
                         });

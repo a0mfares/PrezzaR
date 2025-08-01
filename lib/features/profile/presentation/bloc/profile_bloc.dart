@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -18,7 +19,7 @@ part 'profile_bloc.freezed.dart';
 class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   String selectedProviding = '';
   String selectedCategory = '';
-  File brandLogo = File('');
+  File? brandLogo;
   String brandLogoUrl = '';
   Duration openTime = const Duration();
   Duration closeTime = const Duration();
@@ -27,7 +28,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   bool fName = true;
   bool lName = true;
   bool username = true;
-
+  bool editPhone = false;
+  bool editEmail = false;
   bool get isChecked => isOpen24;
   final GlobalKey<FormState> businessForm = GlobalKey();
   final GlobalKey<FormState> personalInfoForm = GlobalKey();
@@ -40,15 +42,19 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final TextEditingController passConfirm = TextEditingController();
   final TextEditingController descripBrand = TextEditingController();
   final TextEditingController password = TextEditingController();
-  final TextEditingController firstName = TextEditingController(text: usr.user.first_name);
-  final TextEditingController lastName = TextEditingController(text: usr.user.last_name);
-  final TextEditingController userName = TextEditingController(text: usr.user.username);
+  final TextEditingController firstName =
+      TextEditingController(text: usr.user.first_name);
+  final TextEditingController lastName =
+      TextEditingController(text: usr.user.last_name);
+  final TextEditingController userName =
+      TextEditingController(text: usr.user.username);
   final AddBusinessDetailsUsecase _addBusinessDetailsUsecase;
   final GetBusinessDetailUsecase _getBusinessDetailUsecase;
   final UpdateUserInfoUsecase _updateUserInfoUsecase;
   final UpdatePassUsecase _updatePassUsecase;
   final GetUserProfileUsecase _getUserProfileUsecase;
-  final passwordRegex = RegExp(r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@\$!%*?&])[A-Za-z\d@\$!%*?&]{8,}\$');
+  final passwordRegex = RegExp(
+      r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@\$!%*?&])[A-Za-z\d@\$!%*?&]{8,}\$');
   File userImg = File('');
 
   BusinessDetailsEntity businessDetails = BusinessDetailsEntity.empty();
@@ -67,25 +73,47 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
           emit(const ProfileState.updateUi());
           brandName.text = business.business_name;
           brandLogoUrl = business.business_logo;
-          brandLogo = File('');
+          brandLogo = null;
           yourRole.text = business.vendor_role;
           branche.text = business.branches.toString();
           selectedCategory = business.business_category.name;
           canBook = business.has_booking;
           descripBrand.text = business.description;
           selectedProviding = business.service;
-          List<String> partsOpen = business.operating_hours_from.split(":");
-          List<String> partsClose = business.operating_hours_to.split(":");
-          openTime = Duration(hours: int.tryParse(partsOpen[0]) ?? 0, minutes: int.tryParse(partsOpen[1]) ?? 0);
-          closeTime = Duration(hours: int.tryParse(partsClose[0]) ?? 0, minutes: int.tryParse(partsClose[1]) ?? 0);
+          try {
+            final partsOpen = business.operating_hours_from.split(":");
+            final partsClose = business.operating_hours_to.split(":");
+
+            if (partsOpen.length == 2 && partsClose.length == 2) {
+              openTime = Duration(
+                hours: int.tryParse(partsOpen[0]) ?? 0,
+                minutes: int.tryParse(partsOpen[1]) ?? 0,
+              );
+              closeTime = Duration(
+                hours: int.tryParse(partsClose[0]) ?? 0,
+                minutes: int.tryParse(partsClose[1]) ?? 0,
+              );
+            } else {
+              log('Invalid time format from backend.');
+            }
+          } catch (e) {
+            log('Error parsing time: $e');
+          }
+
           emit(const ProfileState.successUi());
         },
         changeStatus: (type) {
           emit(const ProfileState.updateUi());
           switch (type) {
-            case 'fname': fName = !fName; break;
-            case 'lname': lName = !lName; break;
-            case 'username': username = !username; break;
+            case 'fname':
+              fName = !fName;
+              break;
+            case 'lname':
+              lName = !lName;
+              break;
+            case 'username':
+              username = !username;
+              break;
           }
           emit(const ProfileState.successUi());
         },
@@ -122,7 +150,13 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
             emit(ProfileState.failure(tr.enterValideData));
             return;
           }
-          emit(!fName ? const ProfileState.loadingFName() : !lName ? const ProfileState.loadingLName() : !username ? const ProfileState.loadingUserName() : const ProfileState.loading());
+          emit(!fName
+              ? const ProfileState.loadingFName()
+              : !lName
+                  ? const ProfileState.loadingLName()
+                  : !username
+                      ? const ProfileState.loadingUserName()
+                      : const ProfileState.loading());
           try {
             dynamic userI = usr.user.profile_picture;
             if (userImg.path.isNotEmpty) {
@@ -168,11 +202,14 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
             emit(ProfileState.failure(e.toString()));
           }
         },
-        selectTime: (isOpen, duration) async => _selectTimeEvent(emit, isOpen, duration),
+        selectTime: (isOpen, duration) async =>
+            _selectTimeEvent(emit, isOpen, duration),
         pickIMage: (logo) async => _pickImageEvent(emit, logo),
-        selectCategory: (category) async => _selectCategoryEvent(emit, category),
+        selectCategory: (category) async =>
+            _selectCategoryEvent(emit, category),
         canBook: () async => _canBookEvent(emit),
-        selectProviding: (providing) async => _selectProvidingEvent(emit, providing),
+        selectProviding: (providing) async =>
+            _selectProvidingEvent(emit, providing),
         selectOpen24: () async => _selectOpen24Event(emit),
         addBusinessDetails: () async => _addBusinessDetailsEvent(emit),
         orElse: () {},
@@ -189,8 +226,10 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   void _selectOpen24Event(Emitter<ProfileState> emit) {
     emit(const ProfileState.updateUi());
     isOpen24 = !isOpen24;
-    openTime = isOpen24 ? const Duration(hours: 0, minutes: 0) : const Duration();
-    closeTime = isOpen24 ? const Duration(hours: 23, minutes: 59) : const Duration();
+    openTime =
+        isOpen24 ? const Duration(hours: 0, minutes: 0) : const Duration();
+    closeTime =
+        isOpen24 ? const Duration(hours: 23, minutes: 59) : const Duration();
     emit(const ProfileState.successUi());
   }
 
@@ -212,7 +251,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     emit(const ProfileState.successUi());
   }
 
-  void _selectTimeEvent(Emitter<ProfileState> emit, bool isOpen, Duration duration) {
+  void _selectTimeEvent(
+      Emitter<ProfileState> emit, bool isOpen, Duration duration) {
     emit(const ProfileState.updateUi());
     if (isOpen) {
       openTime = duration;
@@ -222,10 +262,18 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     emit(const ProfileState.successUi());
   }
 
+  void enableEdit(String feild) {
+    if (feild == "Phone") {
+      editPhone = true;
+    } else {
+      editEmail = true;
+    }
+  }
+
   FutureOr<void> _addBusinessDetailsEvent(Emitter<ProfileState> emit) async {
     try {
       if (!businessForm.currentState!.validate()) return;
-      if (brandLogo.path.isEmpty) {
+      if (brandLogo!.path.isEmpty || brandLogo == null) {
         emit(ProfileState.failure(tr.urBrandLogo));
         return;
       }
@@ -235,7 +283,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       }
       emit(const ProfileState.loading());
 
-      final brandL = await MultipartFile.fromFile(brandLogo.path);
+      final brandL = await MultipartFile.fromFile(brandLogo!.path);
 
       final result = await _addBusinessDetailsUsecase(
         parm: {

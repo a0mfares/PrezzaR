@@ -122,7 +122,7 @@ class _ForgotPassPageState extends State<ResetPassPage> {
                       },
                       success: (_) {
                         if (mounted) {
-                          appRoute.navigate(const LoginRoute());
+                          appRoute.navigate(LoginRoute());
                         }
                       },
                       orElse: () {},

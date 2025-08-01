@@ -29,7 +29,7 @@ class WelcomePage extends StatelessWidget {
                 children: [
                   ElevatedButton(
                     onPressed: () {
-                      appRoute.navigate(const LoginRoute());
+                      appRoute.navigate(LoginRoute());
                     },
                     child: Text(tr.iamUser),
                   ),

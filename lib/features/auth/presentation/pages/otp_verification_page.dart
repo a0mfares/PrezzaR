@@ -80,7 +80,7 @@ class _OtpVerificationState extends State<OtpVerificationPage> {
         title: Text(tr.setupAccount),
         centerTitle: true,
       ).prezzaLeading(onTap: () {
-        appRoute.replace(const LoginRoute());
+        appRoute.replace(LoginRoute());
       }),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

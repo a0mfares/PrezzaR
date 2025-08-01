@@ -121,7 +121,7 @@ class PrezzaDrawer extends StatelessWidget {
                             .add(const AuthEvent.deleteAccount());
                         appRoute.removeLast();
                         HiveStorage.set(kUser, null);
-                        appRoute.navigate(const LoginRoute());
+                        appRoute.navigate(LoginRoute());
                       },
                       showCancel: true);
                 },
@@ -135,7 +135,7 @@ class PrezzaDrawer extends StatelessWidget {
                     onTap: () {
                       appRoute.removeLast();
                       HiveStorage.set(kUser, null);
-                      appRoute.navigate(const LoginRoute());
+                      appRoute.navigate(LoginRoute());
                     },
                     showCancel: true,
                   );

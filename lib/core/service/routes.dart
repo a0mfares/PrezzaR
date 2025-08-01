@@ -228,30 +228,18 @@ class AppRouter extends RootStackRouter {
           // ],
         ),
       ];
-
-  // @override
-  // // TODO: implement guards
-  // List<AutoRouteGuard> get guards => [
-  //       AutoRouteGuard.redirect(
-  //         (resolver) {
-  //           if (HiveStorage.get(kUser) == null) {
-  //             // resolver.redirect(const UserHomeRoute());
-  //             return null;
-  //           }
-  //           return UserHomeRoute();
-  //           // resolver.redirect(const LogirnRoute());
-  //         },
-  //       )
-  //     ];
 }
 
 class PrezzaGuard extends AutoRouteGuard {
   @override
-  void onNavigation(NavigationResolver resolver, StackRouter router) {
-    if (!ifUserAuthenticated()) {
-      resolver.redirect(const LoginRoute());
+  void onNavigation(NavigationResolver resolver, StackRouter router) async {
+    final isAuthenticated = ifUserAuthenticated();
+
+    if (isAuthenticated) {
+      resolver.next(true);
     } else {
-      resolver.next();
+      router.replace(LoginRoute());
+      resolver.next(false);
     }
   }
 }

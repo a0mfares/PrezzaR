@@ -351,6 +351,7 @@ class _AllVendorPageState extends State<AllVendorPage> {
                             final item = bloc.vendorItem[index];
                             return VendorItem(
                               vendor: item,
+                              categoryID: widget.id,
                             );
                           },
                         );

@@ -36,9 +36,9 @@ class HiveStorage {
     box = await Hive.openBox('PrezzaBox');
   }
 
-  static T get<T extends dynamic>(String key) {
+  static T get<T extends dynamic>(String key, {T? defaultValue}) {
     try {
-      return box.get(key, defaultValue: null) as T;
+      return box.get(key, defaultValue: defaultValue) as T;
     } catch (e) {
       rethrow;
     }

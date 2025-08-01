@@ -100,8 +100,7 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  _formKey
-                  .currentState!.validate();
+                  _formKey.currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -119,8 +118,7 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  _formKey
-                  .currentState!.validate();
+                  _formKey.currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -157,8 +155,7 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  _formKey
-                  .currentState!.validate();
+                  _formKey.currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -192,8 +189,7 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  _formKey
-                  .currentState!.validate();
+                  _formKey.currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -227,8 +223,7 @@ class _SignUpPPageState extends State<SignUpPage> {
                   return null;
                 },
                 onFieldSubmitted: (v) {
-                  _formKey
-                  .currentState!.validate();
+                  _formKey.currentState!.validate();
                 },
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
@@ -312,7 +307,7 @@ class _SignUpPPageState extends State<SignUpPage> {
                     },
                     success: (_) {
                       if (mounted) {
-                        appRoute.navigate(
+                        appRoute.replaceAll([
                           OtpVerificationRoute(
                             onSubmit: () {
                               bloc.add(AuthEvent.confirmSignup(
@@ -325,10 +320,10 @@ class _SignUpPPageState extends State<SignUpPage> {
                               ));
                             },
                             onSuccess: () {
-                              appRoute.navigate(const LoginRoute());
+                              appRoute.navigate(LoginRoute());
                             },
                           ),
-                        );
+                        ]);
                       }
                     },
                     orElse: () {},
@@ -349,6 +344,7 @@ class _SignUpPPageState extends State<SignUpPage> {
                       success: () {
                         bool isDone = true;
                         Future.delayed(const Duration(milliseconds: 500), () {
+                          if (!mounted) return;
                           isDone = false;
                           setState(() {});
                         });

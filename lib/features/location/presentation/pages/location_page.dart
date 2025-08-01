@@ -207,6 +207,7 @@ class _LocationPageState extends State<LocationPage> {
                               listener: (context, state) {
                                 state.maybeMap(
                                   successAuth: (_) {
+                                    if (!mounted) return;
                                     if (_.isDelete) {
                                       showDialogPrezza(
                                         context: context,

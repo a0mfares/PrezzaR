@@ -20,7 +20,7 @@ class _LoginWidgetState extends State<LoginWidget> {
     return Center(
       child: ElevatedButton(
         onPressed: () {
-          appRoute.navigate(const LoginRoute());
+          appRoute.navigate(LoginRoute());
         },
         child: Text(tr.login),
       ),

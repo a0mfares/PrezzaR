@@ -75,159 +75,161 @@ class _CardDetailsPageState extends State<CardDetailsPage> {
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Form(
             key: bloc.formCard,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextFormField(
-                  controller: bloc.holderName,
-                  validator: (v) {
-                    if (v!.isEmpty) {
-                      return tr.cardHolderName;
-                    }
-                    return null;
-                  },
-                  onChanged: (v) {
-                    bloc.formCard.currentState!.validate();
-                  },
-                  decoration: InputDecoration(
-                    hintText: tr.enterYourName,
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextFormField(
+                    controller: bloc.holderName,
+                    validator: (v) {
+                      if (v!.isEmpty) {
+                        return tr.cardHolderName;
+                      }
+                      return null;
+                    },
+                    onChanged: (v) {
+                      bloc.formCard.currentState!.validate();
+                    },
+                    decoration: InputDecoration(
+                      hintText: tr.enterYourName,
+                    ),
+                  ).prezaa(
+                    label: tr.cardHolderName,
                   ),
-                ).prezaa(
-                  label: tr.cardHolderName,
-                ),
-                vSpace(3),
-                TextFormField(
-                  validator: (v) {
-                    if (v!.isEmpty) {
-                      return tr.cardNumber;
-                    }
-                    return null;
-                  },
-                  controller: bloc.cardNumber,
-                  inputFormatters: [
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: tr.writeHere,
-                  ),
-                  onChanged: _onCardNumberChanged,
-                  maxLength: 19,
-                ).prezaa(
-                  label: tr.cardNumber,
-                ),
-                TextFormField(
-                  validator: (v) {
-                    if (v!.isEmpty) {
-                      return tr.bankName;
-                    }
-                    return null;
-                  },
-                  onChanged: (v) {
-                    bloc.formCard.currentState!.validate();
-                  },
-                  controller: bloc.bankName,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    hintText: tr.writeHere,
-                  ),
-                ).prezaa(
-                  label: tr.bankName,
-                ),
-                vSpace(3),
-                Visibility(
-                  visible: isCustomer,
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextFormField(
-                          controller: bloc.expirDate,
-                          validator: (v) {
-                            if (v!.isEmpty) {
-                              return tr.expiryDate;
-                            }
-                            if ((int.parse('${v[0]}${v[1]}')) > 12) {
-                              return tr.enterValideDate;
-                            }
-                            return null;
-                          },
-                          inputFormatters: [
-                            FilteringTextInputFormatter.digitsOnly,
-                            CardMonthInputFormatter(),
-                          ],
-                          keyboardType: TextInputType.number,
-                          maxLength: 5,
-                          onChanged: (v) {
-                            bloc.formCard.currentState!.validate();
-                          },
-                          decoration: const InputDecoration(
-                            hintText: '03/25',
-                          ),
-                        ).prezaa(
-                          label: tr.expiryDate,
-                        ),
-                      ),
-                      hSpace(3),
-                      Expanded(
-                        child: TextFormField(
-                          controller: bloc.cvv ,
-                          validator: (v) {
-                            if (v!.isEmpty) {
-                              return tr.cvv;
-                            }
-                            return null;
-                          },
-                          onChanged: (v) {
-                            bloc.formCard.currentState!.validate();
-                          },
-                          decoration: const InputDecoration(
-                            hintText: '123',
-                          ),
-                        ).prezaa(
-                          label: tr.cvv,
-                        ),
-                      ),
+                  vSpace(3),
+                  TextFormField(
+                    validator: (v) {
+                      if (v!.isEmpty) {
+                        return tr.cardNumber;
+                      }
+                      return null;
+                    },
+                    controller: bloc.cardNumber,
+                    inputFormatters: [
+                      FilteringTextInputFormatter.digitsOnly,
                     ],
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                      hintText: tr.writeHere,
+                    ),
+                    onChanged: _onCardNumberChanged,
+                    maxLength: 19,
+                  ).prezaa(
+                    label: tr.cardNumber,
                   ),
-                ),
-                vSpace(3),
-                BlocConsumer<PaymentBloc, PaymentState>(
-                  listener: (context, state) {
-                    state.maybeMap(
-                      failure: (er) {
-                        BotToast.showText(text: er.err);
-                      },
-                      success: (er) {
-                        if (mounted) {
-                          appRoute.back();
-                        }
-                      },
-                      orElse: () {},
-                    );
-                  },
-                  builder: (context, state) {
-                    return ElevatedButton(
-                      onPressed: () {
-                        if (isCustomer) {
-                          bloc.add(const PaymentEvent.addCustomerCard());
-                        } else {
-                          bloc.add(const PaymentEvent.addVendorCard());
-                        }
-                      },
-                      child: state.maybeWhen(
-                        loading: () => LoadingAnimationWidget.twistingDots(
-                            leftDotColor: lightCoral,
-                            rightDotColor: lightCream,
-                            size: 20),
-                        failure: (v) => Text(tr.add),
-                        success: () => Text(tr.add),
-                        orElse: () => Text(tr.add),
-                      ),
-                    );
-                  },
-                ),
-                vSpace(4),
-              ],
+                  TextFormField(
+                    validator: (v) {
+                      if (v!.isEmpty) {
+                        return tr.bankName;
+                      }
+                      return null;
+                    },
+                    onChanged: (v) {
+                      bloc.formCard.currentState!.validate();
+                    },
+                    controller: bloc.bankName,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      hintText: tr.writeHere,
+                    ),
+                  ).prezaa(
+                    label: tr.bankName,
+                  ),
+                  vSpace(3),
+                  Visibility(
+                    visible: isCustomer,
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            controller: bloc.expirDate,
+                            validator: (v) {
+                              if (v!.isEmpty) {
+                                return tr.expiryDate;
+                              }
+                              if ((int.parse('${v[0]}${v[1]}')) > 12) {
+                                return tr.enterValideDate;
+                              }
+                              return null;
+                            },
+                            inputFormatters: [
+                              FilteringTextInputFormatter.digitsOnly,
+                              CardMonthInputFormatter(),
+                            ],
+                            keyboardType: TextInputType.number,
+                            maxLength: 5,
+                            onChanged: (v) {
+                              bloc.formCard.currentState!.validate();
+                            },
+                            decoration: const InputDecoration(
+                              hintText: '03/25',
+                            ),
+                          ).prezaa(
+                            label: tr.expiryDate,
+                          ),
+                        ),
+                        hSpace(3),
+                        Expanded(
+                          child: TextFormField(
+                            controller: bloc.cvv,
+                            validator: (v) {
+                              if (v!.isEmpty) {
+                                return tr.cvv;
+                              }
+                              return null;
+                            },
+                            onChanged: (v) {
+                              bloc.formCard.currentState!.validate();
+                            },
+                            decoration: const InputDecoration(
+                              hintText: '123',
+                            ),
+                          ).prezaa(
+                            label: tr.cvv,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  vSpace(3),
+                  BlocConsumer<PaymentBloc, PaymentState>(
+                    listener: (context, state) {
+                      state.maybeMap(
+                        failure: (er) {
+                          BotToast.showText(text: er.err);
+                        },
+                        successAdded: (er) {
+                          if (mounted) {
+                            appRoute.back();
+                          }
+                        },
+                        orElse: () {},
+                      );
+                    },
+                    builder: (context, state) {
+                      return ElevatedButton(
+                        onPressed: () {
+                          if (isCustomer) {
+                            bloc.add(const PaymentEvent.addCustomerCard());
+                          } else {
+                            bloc.add(const PaymentEvent.addVendorCard());
+                          }
+                        },
+                        child: state.maybeWhen(
+                          loading: () => LoadingAnimationWidget.twistingDots(
+                              leftDotColor: lightCoral,
+                              rightDotColor: lightCream,
+                              size: 20),
+                          failure: (v) => Text(tr.add),
+                          success: () => Text(tr.add),
+                          orElse: () => Text(tr.add),
+                        ),
+                      );
+                    },
+                  ),
+                  vSpace(4),
+                ],
+              ),
             ),
           ),
         ),

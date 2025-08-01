@@ -20,6 +20,25 @@ class VendorProfilePage extends StatefulWidget {
 }
 
 class _VendorProfilePageState extends State<VendorProfilePage> {
+  late final TextEditingController firstName;
+  late final TextEditingController lastName;
+  late final TextEditingController userName;
+  @override
+  void initState() {
+    firstName = TextEditingController(text: usr.user.first_name);
+    lastName = TextEditingController(text: usr.user.last_name);
+    userName = TextEditingController(text: usr.user.username);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    firstName.dispose();
+    lastName.dispose();
+    userName.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -153,7 +172,7 @@ class _VendorProfilePageState extends State<VendorProfilePage> {
                     appRoute.removeLast();
                     HiveStorage.set(kUser, null);
                     HiveStorage.set(kBusiness, null);
-                    appRoute.navigate(const LoginRoute());
+                    appRoute.navigate(LoginRoute());
                   },
                   showCancel: true,
                 );

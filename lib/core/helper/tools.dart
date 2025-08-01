@@ -30,7 +30,12 @@ Future<String> accessToken() async =>
 
 bool get ifNewUser => usr.user.user_type == 'NotSet';
 
-bool ifUserAuthenticated() => HiveStorage.get(kUser) != null;
+bool ifUserAuthenticated() {
+  log('=== USER AUTHENTICATION DEBUG ===');
+  log('User UUID: ${usr.user.uuid}');
+  log('User access Token: ${usr.tokens.access}');
+  return usr.user.uuid.isNotEmpty;
+}
 
 BuildContext currentCTX = appRoute.navigatorKey.currentContext!;
 
@@ -152,7 +157,8 @@ TextTheme get tstyle =>
 
 UserEntity get usr => HiveStorage.get<UserEntity?>(kUser) ?? UserEntity.empty();
 BusinessDetailsEntity get business =>
-    HiveStorage.get<BusinessDetailsEntity>(kBusiness);
+    HiveStorage.get<BusinessDetailsEntity>(kBusiness,
+        defaultValue: BusinessDetailsEntity.empty());
 List<CategoryEntity> get categories =>
     HiveStorage.get<List<CategoryEntity>>(kCategories);
 bool get isLocationSelected => HiveStorage.get(kCurLocation) != null;

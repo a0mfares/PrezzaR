@@ -25,10 +25,26 @@ class PersonalInfoPage extends StatefulWidget {
 
 class _PersonalInfoPageState extends State<PersonalInfoPage> {
   late final ProfileBloc bloc;
+
+  late final TextEditingController firstName;
+  late final TextEditingController lastName;
+  late final TextEditingController userName;
   @override
   void initState() {
     bloc = ProfileBloc.get(context);
+
+    firstName = TextEditingController(text: usr.user.first_name);
+    lastName = TextEditingController(text: usr.user.last_name);
+    userName = TextEditingController(text: usr.user.username);
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    firstName.dispose();
+    lastName.dispose();
+    userName.dispose();
+    super.dispose();
   }
 
   @override
@@ -87,7 +103,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                                   bloc.personalInfoForm.currentState!
                                       .validate();
                                 },
-                                controller: bloc.firstName,
+                                controller: firstName,
                                 decoration: InputDecoration(
                                   fillColor: lightCream,
                                   labelText: tr.firstName,
@@ -127,7 +143,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                               width: 20.w,
                               child: TextFormField(
                                 readOnly: bloc.lName,
-                                controller: bloc.lastName,
+                                controller: lastName,
                                 validator: (v) {
                                   if (v!.isEmpty) {
                                     return tr.plsEnterLName;
@@ -190,7 +206,7 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                                   bloc.personalInfoForm.currentState!
                                       .validate();
                                 },
-                                controller: bloc.userName,
+                                controller: userName,
                                 decoration: InputDecoration(
                                   fillColor: lightCream,
                                   labelText: tr.username,
@@ -250,7 +266,11 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                             ),
                           ),
                         ),
-                        trailing: const Icon(Icons.arrow_forward_ios),
+                        trailing: GestureDetector(
+                            onTap: () {
+                              bloc.enableEdit("Phone");
+                            },
+                            child: const Icon(Icons.arrow_forward_ios)),
                       ).prezza(padding: EdgeInsets.zero),
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20),
@@ -269,7 +289,11 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                             ),
                           ),
                         ),
-                        trailing: const Icon(Icons.arrow_forward_ios),
+                        trailing: GestureDetector(
+                            onTap: () {
+                              bloc.enableEdit("Email");
+                            },
+                            child: const Icon(Icons.arrow_forward_ios)),
                       ).prezza(padding: EdgeInsets.zero),
                       const Padding(
                         padding: EdgeInsets.symmetric(horizontal: 20),

@@ -62,7 +62,7 @@ class FavVendorItemWidget extends StatelessWidget {
                 builder: (context, state) {
                   return state.maybeWhen(
                     loading: () => defLoadingCenter,
-                    successDeleted: () {
+                    successDeleted: (vendor) {
                       return Icon(
                         Icons.check,
                         color: primary,

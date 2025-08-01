@@ -17,7 +17,9 @@ import '../../../../core/constants/assets.dart';
 
 @RoutePage()
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  final VoidCallback? onLoginSuccess;
+
+  const LoginPage({super.key, this.onLoginSuccess});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -25,7 +27,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   late final AuthBloc bloc;
-  final _formKey =GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
   @override
   void initState() {
     bloc = AuthBloc.get(context);
@@ -183,8 +185,7 @@ class _LoginPageState extends State<LoginPage> {
                                                       : 'phone',
                                                 ));
                                               }, onSuccess: () {
-                                                appRoute.navigate(
-                                                    const LoginRoute());
+                                                appRoute.navigate(LoginRoute());
                                               }));
 
                                               bloc.add(AuthEvent.resendOtp(
@@ -273,6 +274,8 @@ class _LoginPageState extends State<LoginPage> {
                                 bool isDone = true;
                                 Future.delayed(
                                     const Duration(milliseconds: 500), () {
+                                  if (!mounted) return; // ✅ Prevent crash
+
                                   isDone = false;
                                   setState(() {});
                                 });
@@ -306,7 +309,6 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                       vSpace(2),
-                      
                       TextButton.icon(
                         onPressed: () {
                           bloc.isEmail = !bloc.isEmail;

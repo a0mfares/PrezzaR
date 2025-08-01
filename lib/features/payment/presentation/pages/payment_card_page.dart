@@ -31,12 +31,15 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
   void initState() {
     bloc = PaymentBloc.get(context);
     // bloc.add(const PaymentEvent.getCreditCards());
-    
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+    final w = MediaQuery.of(context).size.width;
+    final h = MediaQuery.of(context).size.height;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -155,10 +158,11 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
                               title: tr.deleteCard,
                               subTitle: tr.areUSureDeleteCard,
                               onTap: () {
-                                // bloc.add(
-                                //   PaymentEvent.deleteCustomerCard(bloc.vendorCard),
-                                // );
-                                // context.maybePop();
+                                bloc.add(
+                                  PaymentEvent.deleteVendorCard(
+                                      bloc.vendorCard.card_last_four_digits),
+                                );
+                                context.maybePop();
                               },
                             );
                           },
@@ -235,7 +239,8 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
                                               Center(
                                                 child: Column(
                                                   mainAxisAlignment:
-                                                      MainAxisAlignment.center,
+                                                      MainAxisAlignment
+                                                          .spaceEvenly,
                                                   children: [
                                                     Text(tr.useBiometrics),
                                                     vSpace(3),
@@ -272,7 +277,7 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
                                                 MainAxisAlignment.spaceAround,
                                             children: [
                                               SizedBox(
-                                                width: 200,
+                                                width: w * 0.4,
                                                 height: 50,
                                                 child: TextButton(
                                                   onPressed: () {
@@ -283,7 +288,7 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
                                               ),
                                               hSpace(1),
                                               SizedBox(
-                                                width: 200,
+                                                width: w * 0.4,
                                                 height: 50,
                                                 child: ElevatedButton(
                                                   onPressed: () {
