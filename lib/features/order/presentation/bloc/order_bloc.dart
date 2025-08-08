@@ -300,13 +300,14 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
                 instanceId = res;
                 // emit(const OrderState.());
                 final token = await accessToken();
+                log(token, name: 'Sadad Access Token');
                 if (instanceId.isNotEmpty) {
                   await Navigator.push(ctx, MaterialPageRoute(
                     builder: (context) {
                       return PaymentScreen(
                         orderId: res,
-                        googleMerchantID: 'BCR2DN6TR6Y7Z2CJ',
-                        googleMerchantName: 'Sadad Payment Solutions',
+                        googleMerchantID: 'BCR2DN7T5D3MBXIM',
+                        googleMerchantName: 'Prezza',
                         productDetail: CartBloc.get(ctx)
                             .cartDetails
                             .cart_items
@@ -335,6 +336,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
                       );
                     },
                   )).then((value) async {
+                    if (value == null) return;
                     if (value['status'] == success) {
                       if (selectedType == 'delivery') {
                         add(const OrderEvent.addOrderDeliveryMode());

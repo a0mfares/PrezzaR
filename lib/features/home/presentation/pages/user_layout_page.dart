@@ -2,10 +2,12 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prezza/config/custom_colors.dart';
+import 'package:prezza/core/service/routes.gr.dart';
 import 'package:prezza/features/newsfeed/presentation/bloc/newsfeed_bloc.dart';
 import 'package:prezza/features/newsfeed/presentation/pages/social_page.dart';
 import 'package:prezza/features/order/presentation/pages/order_page.dart';
 import 'package:prezza/features/vendor/presentation/bloc/vendor_bloc.dart';
+import 'package:prezza/prezza_page.dart';
 
 import '../../../../core/constants/assets.dart';
 import '../../../../core/helper/tools.dart';
@@ -64,10 +66,14 @@ class _UserLayoutHomePageState extends State<UserLayoutHomePage> {
               scaffold.currentState!.openDrawer();
             }
             if (v == 2) {
-              CategoryBloc.get(context)
-                  .add(const CategoryEvent.getCategories(true));
-              VendorBloc.get(context)
-                  .add(const VendorEvent.getNearbyPlaces('booking'));
+              if (!ifUserAuthenticated()) {
+                appRoute.navigate(LoginRoute());
+              } else {
+                CategoryBloc.get(context)
+                    .add(const CategoryEvent.getCategories(true));
+                VendorBloc.get(context)
+                    .add(const VendorEvent.getNearbyPlaces('booking'));
+              }
             }
             if (v == 0) {
               CategoryBloc.get(context)
@@ -76,7 +82,11 @@ class _UserLayoutHomePageState extends State<UserLayoutHomePage> {
                   .add(const VendorEvent.getNearbyPlaces('normal'));
             }
             if (v == 1) {
-              NewsfeedBloc.get(context).add(const NewsfeedEvent.fetchPosts());
+              if (!ifUserAuthenticated()) {
+                appRoute.navigate(LoginRoute());
+              } else {
+                NewsfeedBloc.get(context).add(const NewsfeedEvent.fetchPosts());
+              }
             }
           },
           currentIndex: selectedIndex,

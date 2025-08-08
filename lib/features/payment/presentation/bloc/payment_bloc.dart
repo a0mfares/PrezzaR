@@ -241,7 +241,28 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
             emit(const PaymentState.loading());
           }
         },
-        processToPay: () async {},
+        processToPay: () async {
+          emit(const PaymentState.loading());
+          final token = await accessToken();
+          try {
+            final result = await sadadPay.createInvoice(
+              invoices: [],
+              token: token,
+            );
+
+            result.fold(
+              (err) {
+                emit(PaymentState.failure(err.getMsg));
+              },
+              (res) {
+                log('Invoice Created: $res');
+                emit(const PaymentState.success());
+              },
+            );
+          } catch (e) {
+            emit(PaymentState.failure(e.toString()));
+          }
+        },
         getAccessToken: () async {
           emit(const PaymentState.loading());
           try {
