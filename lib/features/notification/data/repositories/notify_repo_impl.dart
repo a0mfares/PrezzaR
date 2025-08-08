@@ -17,7 +17,8 @@ class NotifyRepoImpl extends NotifyRepo {
   Future<Either<FailureServices, List<NotifyEntity>>> getAllNotification(
       String type, int numOfNotify) {
     return execute(() async {
-      final result = await _service.getNotifications(bearerToken, type, numOfNotify);
+      final result =
+          await _service.getNotifications(bearerToken, type, numOfNotify);
       return List<NotifyEntity>.from((result.data['data'] as List)
           .map((e) => NotifyEntity.fromModel(NotifyModel.fromMap(e))));
     });

@@ -88,7 +88,8 @@ class CarRepoImpl implements CarRepo {
   }
 
   Future<void> authorizationApi() async {
-    if (HiveStorage.get(kCarApitoken) != null) {
+    if (HiveStorage.get(kCarApitoken, defaultValue: null).toString() !=
+        "null") {
       log('is not empty token');
       final isExpire = await FlutterSessionJwt.isTokenExpired();
       if (isExpire) {

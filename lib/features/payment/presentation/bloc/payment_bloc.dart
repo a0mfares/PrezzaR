@@ -62,7 +62,9 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
           try {
             final result = await _getCardCustomerUsecase(
               parm: {
-                'password': HiveStorage.get<String?>(kPass) ?? password.text,
+                'password': HiveStorage.get<String?>(kPass,
+                        defaultValue: password.text) ??
+                    password.text,
               },
             );
 
@@ -76,7 +78,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
               },
             );
           } catch (e) {
-            emit(const PaymentState.loading());
+            emit(PaymentState.failure(e.toString()));
           }
         },
         deleteCustomerCard: (id) async {
@@ -157,7 +159,9 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
           try {
             final result = await _getCreditCardsUsecase(
               parm: {
-                'password': HiveStorage.get<String?>(kPass) ?? password.text,
+                'password': HiveStorage.get<String?>(kPass,
+                        defaultValue: password.text) ??
+                    password.text,
               },
             );
 
@@ -193,7 +197,8 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
           }
 
           if (isAuthenticated) {
-            final savedPassword = HiveStorage.get<String?>(kPass);
+            final savedPassword =
+                HiveStorage.get<String?>(kPass, defaultValue: null);
             final enteredPassword = password.text.trim();
 
             if (savedPassword == null && enteredPassword.isNotEmpty) {
@@ -246,6 +251,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
                 emit(PaymentState.failure(err.getMsg));
               },
               (res) {
+                log('Access Token: $res');
                 emit(const PaymentState.success());
               },
             );

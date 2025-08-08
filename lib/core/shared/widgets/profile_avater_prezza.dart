@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -20,6 +22,7 @@ class ProfileAvater extends StatelessWidget {
   final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
+    log('ProfileAvater: $src, $provider');
     return Stack(
       clipBehavior: Clip.none,
       children: [

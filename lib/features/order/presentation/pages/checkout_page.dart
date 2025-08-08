@@ -42,8 +42,23 @@ class _CheckoutPageState extends State<CheckoutPage> {
   initState() {
     bloc = OrderBloc.get(context);
     cartBloc = CartBloc.get(context);
+    final paymentBloc = PaymentBloc.get(context);
+    paymentBloc.add(const PaymentEvent.getAccessToken());
+    // Initialize order type based on business type
+    _initializeOrderType();
 
     super.initState();
+  }
+
+  void _initializeOrderType() {
+    final businessType = cartBloc.cartDetails.cart_business_type;
+
+    if (businessType == 'Delivery only') {
+      bloc.add(const OrderEvent.selectOrderType('delivery'));
+    } else if (businessType == 'Pickup only') {
+      bloc.add(const OrderEvent.selectOrderType('pickup'));
+    }
+    // For 'Delivery & Pickup', let user choose via dropdown
   }
 
   @override
@@ -100,6 +115,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
           child: Column(
             children: [
               vSpace(5),
+              // Show dropdown only for businesses that support both delivery and pickup
               Visibility(
                 visible: cartBloc.cartDetails.cart_business_type ==
                     'Delivery & Pickup',
@@ -107,36 +123,88 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   builder: (context, state) {
                     return state.maybeWhen(
                       orElse: () {
-                        return DropdownButton(
-                          hint: Text(orderType[bloc.selectedType] ??
-                              tr.selectOrderType),
-                          items: [
-                            DropdownMenuItem(
-                              value: 'pickup',
-                              child: Text(tr.pickup),
+                        return Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 20),
+                          child: DropdownButtonFormField<String>(
+                            value: bloc.selectedType.isEmpty
+                                ? null
+                                : bloc.selectedType,
+                            hint: Text(tr.selectOrderType),
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
                             ),
-                            DropdownMenuItem(
-                              value: 'delivery',
-                              child: Text(tr.delivery),
-                            ),
-                          ],
-                          onChanged: (v) {
-                            bloc.add(OrderEvent.selectOrderType(v.toString()));
-                          },
+                            items: [
+                              DropdownMenuItem(
+                                value: 'pickup',
+                                child: Text(tr.pickup),
+                              ),
+                              DropdownMenuItem(
+                                value: 'delivery',
+                                child: Text(tr.delivery),
+                              ),
+                            ],
+                            onChanged: (v) {
+                              if (v != null) {
+                                bloc.add(OrderEvent.selectOrderType(v));
+                              }
+                            },
+                            validator: (value) {
+                              if (value == null || value.isEmpty) {
+                                return tr.selectOrderType;
+                              }
+                              return null;
+                            },
+                          ),
                         );
                       },
                     );
                   },
                 ),
               ),
+              // Show current order type for single-type businesses
+              Visibility(
+                visible: cartBloc.cartDetails.cart_business_type !=
+                    'Delivery & Pickup',
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: Row(
+                    children: [
+                      Icon(
+                        cartBloc.cartDetails.cart_business_type ==
+                                'Delivery only'
+                            ? Icons.delivery_dining
+                            : Icons.directions_car,
+                        color: primary,
+                      ),
+                      hSpace(10),
+                      Text(
+                        cartBloc.cartDetails.cart_business_type ==
+                                'Delivery only'
+                            ? tr.delivery
+                            : tr.pickup,
+                        style: tstyle.bodyLarge!
+                            .copyWith(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               vSpace(3),
               BlocBuilder<OrderBloc, OrderState>(
                 builder: (context, state) {
                   return Visibility(
-                    visible: cartBloc.cartDetails.cart_business_type ==
-                            'Delivery & Pickup'
-                        ? bloc.selectedType == 'pickup'
-                        : false,
+                    visible: (cartBloc.cartDetails.cart_business_type ==
+                                'Delivery & Pickup' &&
+                            bloc.selectedType == 'pickup') ||
+                        cartBloc.cartDetails.cart_business_type ==
+                            'Pickup only',
                     child: BranchesWidget(
                       selectedBranch: bloc.selectedBranch,
                       onBranchSelected: (v) {
@@ -151,7 +219,6 @@ class _CheckoutPageState extends State<CheckoutPage> {
               Container(
                 height: 25.h,
                 width: 95.w,
-                // padding: const EdgeInsets.all(3),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Colors.grey, width: 2),
@@ -178,10 +245,16 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                     },
                                     initialCameraPosition: CameraPosition(
                                       target: LatLng(
-                                        bloc.selectedType == 'pickup'
+                                        (bloc.selectedType == 'pickup' ||
+                                                cartBloc.cartDetails
+                                                        .cart_business_type ==
+                                                    'Pickup only')
                                             ? bloc.selectedBranch.latitude
                                             : currentLocation.latitude,
-                                        bloc.selectedType == 'pickup'
+                                        (bloc.selectedType == 'pickup' ||
+                                                cartBloc.cartDetails
+                                                        .cart_business_type ==
+                                                    'Pickup only')
                                             ? bloc.selectedBranch.longitude
                                             : currentLocation.longitude,
                                       ),
@@ -197,55 +270,73 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       BlocBuilder<OrderBloc, OrderState>(
                         builder: (context, state) {
                           return Container(
-                            height: 100,
-                            padding: const EdgeInsets.symmetric(horizontal: 15),
-                            color: Colors.white,
-                            child: Row(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  padding: const EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    border: Border.all(color: primary),
-                                  ),
-                                  child: SvgPicture.asset(
-                                    Assets.assetsImagesLocation,
-                                  ),
-                                ),
-                                hSpace(3),
-                                Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    SizedBox(
-                                      width: 70.w,
-                                      child: Text(
-                                        bloc.selectedType == 'delivery'
-                                            ? currentLocation.locationName
-                                            : bloc
-                                                .selectedBranch.branch_address,
-                                        overflow: TextOverflow.ellipsis,
-                                        style: tstyle.bodyLarge!.copyWith(
-                                            fontWeight: FontWeight.bold),
-                                      ),
+                              height: 100,
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              color: Colors.white,
+                              child: Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    padding: const EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      border: Border.all(color: primary),
                                     ),
-                                    Visibility(
-                                      visible: bloc.selectedType == 'pickup',
-                                      child: Text(
-                                          bloc.selectedBranch.branch_landmark,
-                                          style: tstyle.bodyLarge),
+                                    child: SvgPicture.asset(
+                                      Assets.assetsImagesLocation,
                                     ),
-                                    Text(
-                                        '${tr.phone}: ${cartBloc.cartDetails.vendor_phone_number}',
-                                        style: tstyle.bodyLarge),
-                                    Text('${tr.arrivesIn} ${bloc.arrivelTime}',
-                                        style: tstyle.bodyLarge)
-                                  ],
-                                )
-                              ],
-                            ),
-                          );
+                                  ),
+                                  hSpace(8),
+                                  Expanded(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          width: double.infinity,
+                                          child: Text(
+                                            (bloc.selectedType == 'delivery' ||
+                                                    cartBloc.cartDetails
+                                                            .cart_business_type ==
+                                                        'Delivery only')
+                                                ? currentLocation.locationName
+                                                : bloc.selectedBranch
+                                                    .branch_address,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: tstyle.bodyLarge!.copyWith(
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                        Visibility(
+                                          visible:
+                                              (bloc.selectedType == 'pickup' ||
+                                                  cartBloc.cartDetails
+                                                          .cart_business_type ==
+                                                      'Pickup only'),
+                                          child: Text(
+                                            bloc.selectedBranch.branch_landmark,
+                                            style: tstyle.bodyLarge,
+                                            overflow: TextOverflow.ellipsis,
+                                          ),
+                                        ),
+                                        Text(
+                                          '${tr.phone}: ${cartBloc.cartDetails.vendor_phone_number}',
+                                          style: tstyle.bodyLarge,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                        Text(
+                                          '${tr.arrivesIn} ${bloc.arrivelTime}',
+                                          style: tstyle.bodyLarge,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ));
                         },
                       ),
                     ],
@@ -257,7 +348,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 builder: (context, state) {
                   return state.maybeWhen(orElse: () {
                     return Visibility(
-                      visible: bloc.selectedType != 'delivery',
+                      visible: (bloc.selectedType == 'pickup' ||
+                          cartBloc.cartDetails.cart_business_type ==
+                              'Pickup only'),
                       child: TextFormField(
                         controller: TextEditingController(
                             text: formatDuration(bloc.scheduleOrder)),
@@ -275,7 +368,6 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           if (int.parse(v!.split(':').last) < 4) {
                             return tr.arrivalTimeError;
                           }
-
                           return null;
                         },
                         decoration: InputDecoration(
@@ -325,9 +417,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 builder: (context, state) {
                   return Column(
                     children: [
-                      if (bloc.selectedType == 'pickup' ||
+                      if ((bloc.selectedType == 'pickup' ||
                           cartBloc.cartDetails.cart_business_type ==
-                              'Pickup only') ...[
+                              'Pickup only')) ...[
                         Align(
                           alignment: AlignmentDirectional.topStart,
                           child: Text(
@@ -348,9 +440,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           ),
                         ),
                       ],
-                      if (bloc.selectedType == 'delivery' ||
+                      if ((bloc.selectedType == 'delivery' ||
                           cartBloc.cartDetails.cart_business_type ==
-                              'Delivery only') ...[
+                              'Delivery only')) ...[
                         Align(
                           alignment: AlignmentDirectional.topStart,
                           child: Text(
@@ -484,6 +576,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
               vSpace(3),
               ElevatedButton(
                 onPressed: () async {
+                  if (cartBloc.cartDetails.cart_business_type ==
+                          'Delivery & Pickup' &&
+                      bloc.selectedType.isEmpty) {
+                    BotToast.showText(text: tr.selectOrderType);
+                    return;
+                  }
+
                   bloc.add(const OrderEvent.createOrderInstace());
                 },
                 child: Text(tr.proceed),

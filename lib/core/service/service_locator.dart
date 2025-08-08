@@ -115,8 +115,8 @@ class ServiceLocator {
     sl.registerSingleton<GetUserInfoUsecase>(GetUserInfoUsecase(sl()));
     sl.registerSingleton<DeleteAcountUseCase>(DeleteAcountUseCase(sl()));
 
-    sl.registerCachedFactory<AuthBloc>(() =>
-        AuthBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(),sl()));
+    sl.registerCachedFactory<AuthBloc>(() => AuthBloc(
+        sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
 
     //? ⁡⁣⁢⁢end auth feature⁡
 
@@ -138,7 +138,11 @@ class ServiceLocator {
     sl.registerSingleton<UpdatePassUsecase>(UpdatePassUsecase(sl()));
     sl.registerSingleton<GetBusinessDetailUsecase>(
         GetBusinessDetailUsecase(sl()));
-    sl.registerFactory(() => ProfileBloc(sl(), sl(), sl(), sl(), sl()));
+    sl.registerSingleton<UpdateBusinessDetailsUsecase>(
+      UpdateBusinessDetailsUsecase(sl()),
+    );
+
+    sl.registerFactory(() => ProfileBloc(sl(), sl(), sl(), sl(), sl(), sl()));
     //! profile
 
     //~ payment

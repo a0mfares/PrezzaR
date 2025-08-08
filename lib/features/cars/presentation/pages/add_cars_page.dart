@@ -120,27 +120,46 @@ class _AddCarsPageState extends State<AddCarsPage> {
                 vSpace(3),
                 BlocBuilder<CarBloc, CarState>(
                   builder: (context, state) {
-                    return state.maybeWhen(orElse: () {
-                      return SearchChoices.single(
+                    return state.maybeWhen(
+                      success: () {
+                        return SearchChoices.single(
+                          padding: EdgeInsets.zero,
+                          isExpanded: true,
+                          underline: const SizedBox(),
+                          hint: Text(
+                            bloc.selectedModel.isEmpty
+                                ? "Select Model"
+                                : bloc.selectedModel,
+                          ),
+                          items: bloc.models
+                              .map(
+                                (e) => DropdownMenuItem(
+                                  value: e,
+                                  child: Text(e),
+                                ),
+                              )
+                              .toList(),
+                          onChanged: (v) {
+                            bloc.add(CarEvent.selectModel(v!));
+                          },
+                        ).prezza();
+                      },
+                      loading: () => SearchChoices.single(
                         padding: EdgeInsets.zero,
                         isExpanded: true,
                         underline: const SizedBox(),
-                        hint: Text(bloc.selectedModel),
-                        items: bloc.models
-                            .map(
-                              (e) => DropdownMenuItem(
-                                value: e,
-                                child: Text(
-                                  e,
-                                ),
-                              ),
-                            )
-                            .toList(),
+                        hint: Text(
+                          bloc.selectedModel.isEmpty
+                              ? "Select Model"
+                              : bloc.selectedModel,
+                        ),
+                        items: [],
                         onChanged: (v) {
                           bloc.add(CarEvent.selectModel(v!));
                         },
-                      ).prezza();
-                    });
+                      ).prezza(),
+                      orElse: () => const SizedBox.shrink(),
+                    );
                   },
                 ),
                 vSpace(3),

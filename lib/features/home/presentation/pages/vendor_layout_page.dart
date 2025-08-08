@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -34,8 +36,7 @@ class _VendorLayoutPageState extends State<VendorLayoutPage> {
   void initState() {
     selectedIndex = widget.index ?? selectedIndex;
     CategoryBloc.get(context).add(const CategoryEvent.getCategories());
-    if (HiveStorage.get(kTurorial) == null &&
-        HiveStorage.get(kBusiness) == BusinessDetailsEntity.empty()) {
+    if (HiveStorage.get(kBusiness) == null) {
       _setupTargets();
       _showTutorial();
     }

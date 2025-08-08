@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -69,6 +71,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         signin: (type) async {
           if (!loginForm.currentState!.validate()) return;
           emit(const AuthState.loading());
+
           try {
             final result = await _signinUsecase(parm: {
               'type': type,
@@ -80,17 +83,23 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               'email': email.text,
               'password': password.text,
             });
-            result.fold((failure) {
-              emit(AuthState.failure(failure.getMsg));
-            }, (success) {
-              HiveStorage.set(kUser, success);
 
-              if (ifNewUser) {
-                emit(const AuthState.failure('complete setup'));
-              } else {
-                emit(const AuthState.success());
-              }
-            });
+            // Handle the result with proper async/await
+            await result.fold(
+              (failure) async {
+                emit(AuthState.failure(failure.getMsg));
+              },
+              (success) async {
+                // Await the storage operation to ensure token is saved
+                await HiveStorage.set(kUser, success);
+
+                if (ifNewUser) {
+                  emit(const AuthState.failure('complete setup'));
+                } else {
+                  emit(const AuthState.success());
+                }
+              },
+            );
           } catch (e) {
             emit(AuthState.failure(e.toString()));
           }
@@ -143,7 +152,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           try {
             final result = await _createProfileUsecase(
               parm: {
-                'user_uuid': HiveStorage.get(kUid),
+                'user_uuid': HiveStorage.get(kUid, defaultValue: ''),
                 'first_name': firstName.text,
                 'last_name': lastName.text,
                 'confirm_password': confirmPass.text,
@@ -169,7 +178,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           try {
             final result = await _confirmSignUpUsecase(parm: {
               'type': type,
-              'user_uuid': HiveStorage.get(kUid),
+              'user_uuid': HiveStorage.get(kUid, defaultValue: ''),
               'otp': otp,
             });
 
@@ -182,7 +191,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             emit(AuthState.failure(e.toString()));
           }
         },
-        
         resendOtp: (type) async {
           emit(const AuthState.loading());
           try {
@@ -265,7 +273,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             final result = await _resetPasswordUsecase(parm: {
               'new_password': password.text,
               'confirm_password': confirmPass.text,
-              'token': HiveStorage.get(kToken)
+              'token': HiveStorage.get(kToken, defaultValue: '')
             });
 
             result.fold(
@@ -283,8 +291,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         chooseUserType: () async {
           emit(const AuthState.loading());
           try {
-            final userId = HiveStorage.get(kUid);
-            if (userId == null) {
+            final userId = HiveStorage.get(kUid, defaultValue: '');
+            if (userId.isEmpty) {
               emit(const AuthState.failure('User ID not found'));
               return;
             }
@@ -328,7 +336,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             emit(AuthState.failure(e.toString()));
           }
         },
-        deleteAccount: () async{
+        deleteAccount: () async {
           emit(const AuthState.loading());
           try {
             final result = await _deleteAccountUseCase();

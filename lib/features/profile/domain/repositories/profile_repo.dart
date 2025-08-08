@@ -12,6 +12,9 @@ abstract class ProfileRepo {
       Map<String, dynamic> data);
   Future<Either<FailureServices, void>> updatePass(Map<String, dynamic> data);
   Future<Either<FailureServices, BusinessDetailsEntity>> getBusinessDetails();
+  Future<Either<FailureServices, void>> updateBusinessDetails(
+      Map<String, dynamic> data);
+
   Future<Either<FailureServices, void>> addFavorites(Map<String, dynamic> data);
   Future<Either<FailureServices, void>> getFavorites(Map<String, dynamic> data);
   Future<Either<FailureServices, void>> deleteFavoritesItem(

@@ -33,76 +33,81 @@ class AppRouter extends RootStackRouter {
         ),
         AutoRoute(
           page: LoginLoadingRoute.page,
-          // guards: [PrezzaGuard()],
+          //
           initial: true,
         ),
         AutoRoute(
           page: OnboardingRoute.page,
-          // guards: [PrezzaGuard()],
+          //
         ),
         AutoRoute(
           page: CreatePostRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: TagVendorRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: MentionItemRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: SocialRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: LocationRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: AddCarsRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: CarsRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: FeedbackRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: FavoritesRoute.page,
-          guards: [PrezzaGuard()],
+
+          // initial: true,
+        ),
+        AutoRoute(
+          page: OtpVerificationRoute.page,
+
           // initial: true,
         ),
         AutoRoute(
           page: CartDetailsRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: ProductDetailsRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: VendorDetailsRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: CartRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
@@ -111,101 +116,100 @@ class AppRouter extends RootStackRouter {
         ),
         AutoRoute(
           page: AllVendorRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: PersonalInfoRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: InviteFriendRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: NotificationRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: VendorLayoutRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: OrderRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: OrderDetailsRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: LocationAddRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: PrezzaSettingsRoute.page,
-          // guards: [PrezzaGuard()],
+          //
           // initial: true,
         ),
         AutoRoute(
           page: CheckoutRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: UserProfileRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: BusinesProfileRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: UserLayoutHomeRoute.page,
-          // initial: true,
         ),
         AutoRoute(
           page: PaymentCardRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: CardDetailsRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: VendorLayoutRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: OrderDetailsVendorRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: ReviewRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: ProductAddRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
           page: ReasonRoute.page,
-          guards: [PrezzaGuard()],
+
           // initial: true,
         ),
         AutoRoute(
@@ -233,7 +237,12 @@ class AppRouter extends RootStackRouter {
 class PrezzaGuard extends AutoRouteGuard {
   @override
   void onNavigation(NavigationResolver resolver, StackRouter router) async {
-    final isAuthenticated = ifUserAuthenticated();
+    var isAuthenticated = ifUserAuthenticated();
+
+    if (!isAuthenticated) {
+      await Future.delayed(const Duration(milliseconds: 100));
+      isAuthenticated = ifUserAuthenticated();
+    }
 
     if (isAuthenticated) {
       resolver.next(true);

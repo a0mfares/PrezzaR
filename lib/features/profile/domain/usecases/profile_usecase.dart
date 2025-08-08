@@ -65,3 +65,15 @@ class UpdateUserInfoUsecase implements UsecaseHelper<User> {
     return _repo.updateUserInfo(parm);
   }
 }
+
+class UpdateBusinessDetailsUsecase implements UsecaseHelper<void> {
+  final ProfileRepo _repo;
+
+  UpdateBusinessDetailsUsecase(this._repo);
+
+  @override
+  Future<Either<FailureServices, void>> call(
+      {Map<String, dynamic> parm = const {}}) async {
+    return _repo.updateBusinessDetails(parm);
+  }
+}

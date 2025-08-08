@@ -1,13 +1,11 @@
 import 'dart:developer';
-import 'dart:io';
-
 import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/config/txt_themes.dart';
@@ -77,24 +75,45 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                     BlocBuilder<ProfileBloc, ProfileState>(
                       builder: (context, state) {
                         return state.maybeWhen(orElse: () {
-                          return ProfileAvater(
-                              onTap: () {
-                                showPrezzaImagePicker(
-                                  context: context,
-                                  onPickFromCamera: (camera) {
-                                    bloc.add(ProfileEvent.pickIMage(camera));
-                                  },
-                                  onPickFromGallery: (gallery) {
-                                    bloc.add(ProfileEvent.pickIMage(gallery));
-                                  },
-                                  onPickFromGalleryMulti: (multiGallery) {},
-                                );
-                              },
-                              provider: bloc.brandLogo != null
-                                  ? FileImage(bloc.brandLogo!)
-                                  : null,
-                              src:
-                                  SvgPicture.asset(Assets.assetsImagesProfile));
+                          return BlocBuilder<ProfileBloc, ProfileState>(
+                            builder: (context, state) {
+                              return state.maybeWhen(
+                                orElse: () {
+                                  return BlocBuilder<ProfileBloc, ProfileState>(
+                                    builder: (context, state) {
+                                      return ProfileAvater(
+                                        onTap: () {
+                                          showPrezzaImagePicker(
+                                            context: context,
+                                            onPickFromCamera: (camera) {
+                                              bloc.add(ProfileEvent.pickIMage(
+                                                  camera));
+                                            },
+                                            onPickFromGallery: (gallery) {
+                                              bloc.add(ProfileEvent.pickIMage(
+                                                  gallery));
+                                            },
+                                            onPickFromGalleryMulti:
+                                                (multiGallery) {},
+                                          );
+                                        },
+                                        provider: bloc.brandLogoUrl != '' &&
+                                                bloc.brandLogo == null
+                                            ? CachedNetworkImageProvider(
+                                                bloc.brandLogoUrl,
+                                                scale: 0.5)
+                                            : bloc.brandLogo != null
+                                                ? FileImage(bloc.brandLogo!)
+                                                : null,
+                                        src: SvgPicture.asset(
+                                            Assets.assetsImagesProfile),
+                                      );
+                                    },
+                                  );
+                                },
+                              );
+                            },
+                          );
                         });
                       },
                     ),
@@ -414,7 +433,7 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                   builder: (context, state) {
                     return ElevatedButton(
                       onPressed: () {
-                        bloc.add(const ProfileEvent.addBusinessDetails());
+                        bloc.add(const ProfileEvent.updateBusinessDetails());
                       },
                       child: state.maybeWhen(
                         loading: () => LoadingAnimationWidget.twistingDots(

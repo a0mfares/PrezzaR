@@ -6,9 +6,9 @@ import 'package:prezza/features/search/domain/entities/vendorsearch_entity.dart'
 
 import '../../features/auth/domain/entities/user_entity.dart';
 
-const String kUser = 'user';
-const String kUid = 'uid';
-const String kToken = 'token';
+String kUser = 'user';
+String kUid = 'uid';
+String kToken = 'token';
 const String kCategories = 'categories';
 const String kBusiness = 'business';
 const String kPass = 'pass';

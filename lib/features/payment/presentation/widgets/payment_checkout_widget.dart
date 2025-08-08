@@ -35,51 +35,51 @@ class _PaymentCheckoutWidgetState extends State<PaymentCheckoutWidget> {
   Widget build(BuildContext context) {
     return BlocBuilder<PaymentBloc, PaymentState>(
       builder: (context, state) {
-        return state.maybeWhen(success: () {
-          return Column(
-            children: [
-              Column(
-                children: bloc.customerCard.map((e) {
-                  return RadioListTile(
-                    value: e.uuid,
-                    title: Text(
-                      e.card_holder_name,
-                      // style: tstyle.headlineSmall,
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                    subtitle: Text(
-                        '* * * * * * * * * * * * * * * * ${e.last_4_digits}'),
-                    groupValue: widget.selectedCard,
-                    onChanged: widget.onChanged,
-                  );
-                }).toList(),
-              ),
-              PrezzaBtn(
-                onTap: () {
-                  appRoute.navigate(const CardDetailsRoute());
-                },
-                icon: Icon(
-                  Icons.add,
-                  color: primary,
+        return state.maybeWhen(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          success: () {
+            if (bloc.customerCard.isEmpty) {
+              return Center(
+                child: PrezzaBtn(
+                  onTap: () {
+                    appRoute.navigate(const CardDetailsRoute());
+                  },
+                  icon: Icon(Icons.add, color: primary),
+                  title: tr.addPaymentMethod,
                 ),
-                title: tr.addPaymentMethod,
-              )
-            ],
-          );
-        }, orElse: () {
-          return Center(
-            child: PrezzaBtn(
-              onTap: () {
-                appRoute.navigate(const CardDetailsRoute());
-              },
-              icon: Icon(
-                Icons.add,
-                color: primary,
-              ),
-              title: tr.addPaymentMethod,
-            ),
-          );
-        });
+              );
+            }
+            return Column(
+              children: [
+                Flexible(
+                  child: ListView(
+                    children: bloc.customerCard.map((e) {
+                      return RadioListTile(
+                        value: e.uuid,
+                        title: Text(
+                          e.card_holder_name,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        subtitle: Text('${"*" * 12}${e.last_4_digits}'),
+                        groupValue: widget.selectedCard,
+                        onChanged: widget.onChanged,
+                      );
+                    }).toList(),
+                  ),
+                ),
+                PrezzaBtn(
+                  onTap: () {
+                    appRoute.navigate(const CardDetailsRoute());
+                  },
+                  icon: Icon(Icons.add, color: primary),
+                  title: tr.addPaymentMethod,
+                )
+              ],
+            );
+          },
+          failure: (err) => Center(child: Text(err)),
+          orElse: () => const SizedBox(),
+        );
       },
     );
   }

@@ -206,7 +206,9 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
                     children: [
                       TextButton.icon(
                         onPressed: () {
-                          if (HiveStorage.get(kPass) == null) {
+                          if (HiveStorage.get(kPass, defaultValue: null)
+                                  .toString() ==
+                              "null") {
                             showPrezzaBtm(
                                 context,
                                 Column(

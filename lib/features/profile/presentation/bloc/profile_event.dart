@@ -16,6 +16,6 @@ class ProfileEvent with _$ProfileEvent {
   const factory ProfileEvent.changeStatus(String type) = _changeStatus;
   const factory ProfileEvent.updatePass() = _UpdatePass;
   const factory ProfileEvent.initBusiness() = _InitBusiness;
-
+  const factory ProfileEvent.updateBusinessDetails() = _UpdateBusinessDetails;
   const factory ProfileEvent.getBusinessDetails() = _GetBusinessDetails;
 }

@@ -228,64 +228,6 @@ class _SignUpPPageState extends State<SignUpPage> {
               ).prezaa(
                 margin: const EdgeInsets.symmetric(horizontal: 20),
               ),
-              // // choose user type
-              // vSpace(1),
-              // Container(
-              //   margin: const EdgeInsets.symmetric(horizontal: 20),
-              //   child: Column(
-              //     crossAxisAlignment: CrossAxisAlignment.start,
-              //     children: [
-              //       Padding(
-              //         padding: const EdgeInsets.only(left: 1),
-              //         child: Text(
-              //           currentLocal == 'ar' ? "أنا" : "I'm a",
-              //           textAlign: TextAlign.start,
-              //           style: tstyle.bodyLarge!.copyWith(
-              //             fontSize: 18.sp,
-              //           ),
-              //         ),
-              //       ),
-              //       Container(
-              //         margin: const EdgeInsets.symmetric(vertical: 1),
-              //         decoration: BoxDecoration(
-              //           border: Border.all(color: Colors.grey),
-              //           color: Colors.grey.withOpacity(0.15),
-              //           borderRadius: BorderRadius.circular(10),
-              //         ),
-              //         child: Row(
-              //           children: [
-              //             Expanded(
-              //               child: RadioListTile(
-              //                 toggleable: true,
-              //                 title: Text(tr.iamUser),
-              //                 value: 'user',
-              //                 groupValue: bloc.selectedType,
-              //                 onChanged: (value) {
-              //                   setState(() {
-              //                     bloc.selectedType = value.toString();
-              //                   });
-              //                 },
-              //               ),
-              //             ),
-              //             Expanded(
-              //               child: RadioListTile(
-              //                 toggleable: true,
-              //                 title: Text(tr.iamVendor),
-              //                 value: 'vendor',
-              //                 groupValue: bloc.selectedType,
-              //                 onChanged: (value) {
-              //                   setState(() {
-              //                     bloc.selectedType = value.toString();
-              //                   });
-              //                 },
-              //               ),
-              //             ),
-              //           ],
-              //         ),
-              //       ),
-              //     ],
-              //   ),
-              // ),
               vSpace(1),
               buildValidationRules(),
               RadioListTile(

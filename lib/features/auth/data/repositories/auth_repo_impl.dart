@@ -105,7 +105,12 @@ class AuthRepoImpl implements AuthRepo {
   @override
   Future<Either<FailureServices, UserEntity>> getUserInfo() async {
     return execute(() async {
-      final result = await _auth.getUserInfo(bearerToken);
+      final currentUser = usr;
+      if (currentUser.tokens.access.isEmpty) {
+        throw Exception('No authenticated user found');
+      }
+
+      final result = await _auth.getUserInfo(currentUser.tokens.access);
       return UserEntity.fromModel(UserModel.fromMap(result.data['data']));
     });
   }
@@ -157,6 +162,6 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<FailureServices, void>> deleteaccount() {
-    return execute(() => _auth.deleteaccount(bearerToken));
+    return execute(() => _auth.deleteaccount(usr.tokens.access));
   }
 }

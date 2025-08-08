@@ -58,7 +58,8 @@ class _AllVendorPageState extends State<AllVendorPage> {
           toolbarHeight: 80,
           backgroundColor: floralWhite,
           title: Text(
-            tr.deliveringTo(HiveStorage.get<CurrentLocationEntity>(kCurLocation)
+            tr.deliveringTo(HiveStorage.get<CurrentLocationEntity>(kCurLocation,
+                    defaultValue: CurrentLocationEntity.empty())
                 .locationName),
             overflow: TextOverflow.ellipsis,
           ),

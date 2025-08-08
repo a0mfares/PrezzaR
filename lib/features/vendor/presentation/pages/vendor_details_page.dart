@@ -79,7 +79,6 @@ class _VendorProfilePageState extends State<VendorDetailsPage> {
                     ),
                     child: CachedImage(
                       imageUrl: bloc.vendorDetails.business_logo,
-                      placeHolder: Assets.assetsImagesLogo2,
                     ),
                   ),
                 )

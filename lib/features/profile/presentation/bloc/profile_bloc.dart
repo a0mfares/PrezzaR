@@ -53,6 +53,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
   final UpdateUserInfoUsecase _updateUserInfoUsecase;
   final UpdatePassUsecase _updatePassUsecase;
   final GetUserProfileUsecase _getUserProfileUsecase;
+  final UpdateBusinessDetailsUsecase _updateBusinessDetailsUsecase;
   final passwordRegex = RegExp(
       r'^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@\$!%*?&])[A-Za-z\d@\$!%*?&]{8,}\$');
   File userImg = File('');
@@ -66,6 +67,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     this._updateUserInfoUsecase,
     this._getUserProfileUsecase,
     this._updatePassUsecase,
+    this._updateBusinessDetailsUsecase,
   ) : super(const _Initial()) {
     on<ProfileEvent>((event, emit) async {
       await event.maybeWhen(
@@ -145,11 +147,18 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
             emit(ProfileState.failure(e.toString()));
           }
         },
+        updateBusinessDetails: () async => _updateBusinessDetailsEvent(emit),
         updateUserInfo: () async {
           if (!personalInfoForm.currentState!.validate()) {
             emit(ProfileState.failure(tr.enterValideData));
             return;
           }
+
+          // Track which field is being updated
+          bool isUpdatingFName = !fName;
+          bool isUpdatingLName = !lName;
+          bool isUpdatingUsername = !username;
+
           emit(!fName
               ? const ProfileState.loadingFName()
               : !lName
@@ -175,7 +184,19 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
               (res) {
                 password.clear();
                 final updatedUser = usr.copyWith(user: res);
+
+                // Update storage and global variable
                 HiveStorage.set<UserEntity>(kUser, updatedUser);
+
+                // Update controllers with new values
+                firstName.text = res.first_name;
+                lastName.text = res.last_name;
+                userName.text = res.username;
+
+                if (isUpdatingFName) fName = true;
+                if (isUpdatingLName) lName = true;
+                if (isUpdatingUsername) username = true;
+
                 emit(const ProfileState.successUpdated());
                 emit(const ProfileState.success());
               },
@@ -270,6 +291,65 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     }
   }
 
+  FutureOr<void> _updateBusinessDetailsEvent(Emitter<ProfileState> emit) async {
+    try {
+      if (!businessForm.currentState!.validate()) return;
+
+      // Check if user provided a new logo OR if there's an existing logo URL
+      if ((brandLogo == null || brandLogo!.path.isEmpty) &&
+          brandLogoUrl.isEmpty) {
+        emit(ProfileState.failure(tr.urBrandLogo));
+        return;
+      }
+
+      if (selectedProviding.isEmpty) {
+        emit(ProfileState.failure(tr.providingPrompt));
+        return;
+      }
+
+      emit(const ProfileState.loading());
+
+      // Determine what to send for business_logo
+      dynamic businessLogoToSend;
+
+      if (brandLogo != null && brandLogo!.path.isNotEmpty) {
+        // User selected a new logo file
+        businessLogoToSend = await MultipartFile.fromFile(brandLogo!.path);
+      } else {
+        // Keep the existing logo URL
+        businessLogoToSend = brandLogoUrl;
+      }
+
+      final result = await _updateBusinessDetailsUsecase(
+        parm: {
+          'user_uuid': usr.user.uuid,
+          'business_name': brandName.text,
+          'business_type': selectedCategory,
+          'branches': branche.text,
+          'vendor_role': yourRole.text,
+          'description': descripBrand.text,
+          'operating_hours_from': formatDuration(openTime),
+          'operating_hours_to': formatDuration(closeTime),
+          'service': selectedProviding,
+          'business_logo': businessLogoToSend,
+          'has_booking': canBook ? 'True' : 'False',
+        },
+      );
+      result.fold(
+        (err) {
+          emit(ProfileState.failure(err.getMsg));
+          emit(const ProfileState.initial());
+        },
+        (res) {
+          emit(const ProfileState.success());
+          add(const ProfileEvent.getBusinessDetails());
+        },
+      );
+    } catch (e) {
+      emit(ProfileState.failure(e.toString()));
+    }
+  }
+
   FutureOr<void> _addBusinessDetailsEvent(Emitter<ProfileState> emit) async {
     try {
       if (!businessForm.currentState!.validate()) return;
@@ -285,6 +365,9 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
 
       final brandL = await MultipartFile.fromFile(brandLogo!.path);
 
+      debugPrint(
+          'Selected Category: $selectedCategory, Selected Providing: $selectedProviding , Selected Open Time: $openTime, Selected Close Time: $closeTime , Brand Logo Path: ${brandL.filename}');
+
       final result = await _addBusinessDetailsUsecase(
         parm: {
           'user_uuid': usr.user.uuid,
@@ -296,7 +379,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
           'operating_hours_from': formatDuration(openTime),
           'operating_hours_to': formatDuration(closeTime),
           'service': selectedProviding,
-          'files': brandL,
+          'business_logo': brandL,
           'has_booking': canBook ? 'True' : 'False',
         },
       );

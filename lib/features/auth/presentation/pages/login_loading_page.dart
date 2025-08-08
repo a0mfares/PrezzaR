@@ -3,7 +3,10 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:gif/gif.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:prezza/core/helper/tools.dart';
+import 'package:prezza/features/profile/domain/entities/businessdetails_entity.dart';
+import 'package:prezza/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../config/custom_colors.dart';
@@ -30,7 +33,8 @@ class _LoginLoadingPageState extends State<LoginLoadingPage>
     controller = GifController(vsync: this);
 
     WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final isOnBoarded = HiveStorage.get(kOnBoard) as bool? ?? false;
+      final isOnBoarded =
+          HiveStorage.get(kOnBoard, defaultValue: false) as bool? ?? false;
       final isAuth = ifUserAuthenticated();
       final userType = usr.user.user_type;
 
@@ -53,6 +57,8 @@ class _LoginLoadingPageState extends State<LoginLoadingPage>
       }
 
       if (userType == UserType.vendor.name) {
+        HiveStorage.set(kBusiness, BusinessDetailsEntity.empty());
+        ProfileBloc.get(context).add(const ProfileEvent.getBusinessDetails());
         appRoute.replace(VendorLayoutRoute());
       } else {
         appRoute.replace(UserLayoutHomeRoute());

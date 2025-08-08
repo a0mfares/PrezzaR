@@ -53,11 +53,16 @@ class _PaymentService implements PaymentService {
   }
 
   @override
-  Future<HttpResponse<dynamic>> getAccessToken() async {
+  Future<HttpResponse<dynamic>> getAccessToken(
+    String auth,
+    Map<String, dynamic> data,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _headers = <String, dynamic>{r'Authorization': auth};
+    _headers.removeWhere((k, v) => v == null);
+    final _data = <String, dynamic>{};
+    _data.addAll(data);
     final _options = _setStreamType<HttpResponse<dynamic>>(Options(
       method: 'POST',
       headers: _headers,
@@ -92,7 +97,7 @@ class _PaymentService implements PaymentService {
     final _data = <String, dynamic>{};
     _data.addAll(data);
     final _options = _setStreamType<HttpResponse<dynamic>>(Options(
-      method: 'POST',
+      method: 'GET',
       headers: _headers,
       extra: _extra,
     )

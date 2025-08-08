@@ -30,6 +30,7 @@ mixin _$ProfileEvent {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -47,6 +48,7 @@ mixin _$ProfileEvent {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,6 +66,7 @@ mixin _$ProfileEvent {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) =>
@@ -82,6 +85,8 @@ mixin _$ProfileEvent {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -99,6 +104,7 @@ mixin _$ProfileEvent {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +122,7 @@ mixin _$ProfileEvent {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) =>
@@ -223,6 +230,7 @@ class _$PickImageImpl implements _PickImage {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return pickIMage(logo);
@@ -243,6 +251,7 @@ class _$PickImageImpl implements _PickImage {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return pickIMage?.call(logo);
@@ -263,6 +272,7 @@ class _$PickImageImpl implements _PickImage {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -287,6 +297,8 @@ class _$PickImageImpl implements _PickImage {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return pickIMage(this);
@@ -307,6 +319,7 @@ class _$PickImageImpl implements _PickImage {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return pickIMage?.call(this);
@@ -327,6 +340,7 @@ class _$PickImageImpl implements _PickImage {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -431,6 +445,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return selectCategory(cateogry);
@@ -451,6 +466,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return selectCategory?.call(cateogry);
@@ -471,6 +487,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -495,6 +512,8 @@ class _$SelectCategoryImpl implements _SelectCategory {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return selectCategory(this);
@@ -515,6 +534,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return selectCategory?.call(this);
@@ -535,6 +555,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -646,6 +667,7 @@ class _$SelecteTimeImpl implements _SelecteTime {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return selectTime(isOpen, duration);
@@ -666,6 +688,7 @@ class _$SelecteTimeImpl implements _SelecteTime {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return selectTime?.call(isOpen, duration);
@@ -686,6 +709,7 @@ class _$SelecteTimeImpl implements _SelecteTime {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -710,6 +734,8 @@ class _$SelecteTimeImpl implements _SelecteTime {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return selectTime(this);
@@ -730,6 +756,7 @@ class _$SelecteTimeImpl implements _SelecteTime {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return selectTime?.call(this);
@@ -750,6 +777,7 @@ class _$SelecteTimeImpl implements _SelecteTime {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -856,6 +884,7 @@ class _$SelectProvidingImpl implements _SelectProviding {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return selectProviding(providing);
@@ -876,6 +905,7 @@ class _$SelectProvidingImpl implements _SelectProviding {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return selectProviding?.call(providing);
@@ -896,6 +926,7 @@ class _$SelectProvidingImpl implements _SelectProviding {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -920,6 +951,8 @@ class _$SelectProvidingImpl implements _SelectProviding {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return selectProviding(this);
@@ -940,6 +973,7 @@ class _$SelectProvidingImpl implements _SelectProviding {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return selectProviding?.call(this);
@@ -960,6 +994,7 @@ class _$SelectProvidingImpl implements _SelectProviding {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1036,6 +1071,7 @@ class _$SelectOpen24Impl implements _SelectOpen24 {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return selectOpen24();
@@ -1056,6 +1092,7 @@ class _$SelectOpen24Impl implements _SelectOpen24 {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return selectOpen24?.call();
@@ -1076,6 +1113,7 @@ class _$SelectOpen24Impl implements _SelectOpen24 {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1100,6 +1138,8 @@ class _$SelectOpen24Impl implements _SelectOpen24 {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return selectOpen24(this);
@@ -1120,6 +1160,7 @@ class _$SelectOpen24Impl implements _SelectOpen24 {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return selectOpen24?.call(this);
@@ -1140,6 +1181,7 @@ class _$SelectOpen24Impl implements _SelectOpen24 {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1207,6 +1249,7 @@ class _$CanBookImpl implements _CanBook {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return canBook();
@@ -1227,6 +1270,7 @@ class _$CanBookImpl implements _CanBook {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return canBook?.call();
@@ -1247,6 +1291,7 @@ class _$CanBookImpl implements _CanBook {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1271,6 +1316,8 @@ class _$CanBookImpl implements _CanBook {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return canBook(this);
@@ -1291,6 +1338,7 @@ class _$CanBookImpl implements _CanBook {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return canBook?.call(this);
@@ -1311,6 +1359,7 @@ class _$CanBookImpl implements _CanBook {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1378,6 +1427,7 @@ class _$AddBusinessDetailsImpl implements _AddBusinessDetails {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return addBusinessDetails();
@@ -1398,6 +1448,7 @@ class _$AddBusinessDetailsImpl implements _AddBusinessDetails {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return addBusinessDetails?.call();
@@ -1418,6 +1469,7 @@ class _$AddBusinessDetailsImpl implements _AddBusinessDetails {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1442,6 +1494,8 @@ class _$AddBusinessDetailsImpl implements _AddBusinessDetails {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return addBusinessDetails(this);
@@ -1462,6 +1516,7 @@ class _$AddBusinessDetailsImpl implements _AddBusinessDetails {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return addBusinessDetails?.call(this);
@@ -1482,6 +1537,7 @@ class _$AddBusinessDetailsImpl implements _AddBusinessDetails {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1549,6 +1605,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return getUserInfo();
@@ -1569,6 +1626,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return getUserInfo?.call();
@@ -1589,6 +1647,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1613,6 +1672,8 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return getUserInfo(this);
@@ -1633,6 +1694,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return getUserInfo?.call(this);
@@ -1653,6 +1715,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1720,6 +1783,7 @@ class _$UpdateUserInfoImpl implements _UpdateUserInfo {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return updateUserInfo();
@@ -1740,6 +1804,7 @@ class _$UpdateUserInfoImpl implements _UpdateUserInfo {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return updateUserInfo?.call();
@@ -1760,6 +1825,7 @@ class _$UpdateUserInfoImpl implements _UpdateUserInfo {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1784,6 +1850,8 @@ class _$UpdateUserInfoImpl implements _UpdateUserInfo {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return updateUserInfo(this);
@@ -1804,6 +1872,7 @@ class _$UpdateUserInfoImpl implements _UpdateUserInfo {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return updateUserInfo?.call(this);
@@ -1824,6 +1893,7 @@ class _$UpdateUserInfoImpl implements _UpdateUserInfo {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1918,6 +1988,7 @@ class _$changeStatusImpl implements _changeStatus {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return changeStatus(type);
@@ -1938,6 +2009,7 @@ class _$changeStatusImpl implements _changeStatus {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return changeStatus?.call(type);
@@ -1958,6 +2030,7 @@ class _$changeStatusImpl implements _changeStatus {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -1982,6 +2055,8 @@ class _$changeStatusImpl implements _changeStatus {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return changeStatus(this);
@@ -2002,6 +2077,7 @@ class _$changeStatusImpl implements _changeStatus {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return changeStatus?.call(this);
@@ -2022,6 +2098,7 @@ class _$changeStatusImpl implements _changeStatus {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -2097,6 +2174,7 @@ class _$UpdatePassImpl implements _UpdatePass {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return updatePass();
@@ -2117,6 +2195,7 @@ class _$UpdatePassImpl implements _UpdatePass {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return updatePass?.call();
@@ -2137,6 +2216,7 @@ class _$UpdatePassImpl implements _UpdatePass {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -2161,6 +2241,8 @@ class _$UpdatePassImpl implements _UpdatePass {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return updatePass(this);
@@ -2181,6 +2263,7 @@ class _$UpdatePassImpl implements _UpdatePass {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return updatePass?.call(this);
@@ -2201,6 +2284,7 @@ class _$UpdatePassImpl implements _UpdatePass {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -2268,6 +2352,7 @@ class _$InitBusinessImpl implements _InitBusiness {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return initBusiness();
@@ -2288,6 +2373,7 @@ class _$InitBusinessImpl implements _InitBusiness {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return initBusiness?.call();
@@ -2308,6 +2394,7 @@ class _$InitBusinessImpl implements _InitBusiness {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -2332,6 +2419,8 @@ class _$InitBusinessImpl implements _InitBusiness {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return initBusiness(this);
@@ -2352,6 +2441,7 @@ class _$InitBusinessImpl implements _InitBusiness {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return initBusiness?.call(this);
@@ -2372,6 +2462,7 @@ class _$InitBusinessImpl implements _InitBusiness {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -2384,6 +2475,186 @@ class _$InitBusinessImpl implements _InitBusiness {
 
 abstract class _InitBusiness implements ProfileEvent {
   const factory _InitBusiness() = _$InitBusinessImpl;
+}
+
+/// @nodoc
+abstract class _$$UpdateBusinessDetailsImplCopyWith<$Res> {
+  factory _$$UpdateBusinessDetailsImplCopyWith(
+          _$UpdateBusinessDetailsImpl value,
+          $Res Function(_$UpdateBusinessDetailsImpl) then) =
+      __$$UpdateBusinessDetailsImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UpdateBusinessDetailsImplCopyWithImpl<$Res>
+    extends _$ProfileEventCopyWithImpl<$Res, _$UpdateBusinessDetailsImpl>
+    implements _$$UpdateBusinessDetailsImplCopyWith<$Res> {
+  __$$UpdateBusinessDetailsImplCopyWithImpl(_$UpdateBusinessDetailsImpl _value,
+      $Res Function(_$UpdateBusinessDetailsImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProfileEvent
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UpdateBusinessDetailsImpl implements _UpdateBusinessDetails {
+  const _$UpdateBusinessDetailsImpl();
+
+  @override
+  String toString() {
+    return 'ProfileEvent.updateBusinessDetails()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateBusinessDetailsImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(File logo) pickIMage,
+    required TResult Function(String cateogry) selectCategory,
+    required TResult Function(bool isOpen, Duration duration) selectTime,
+    required TResult Function(String providing) selectProviding,
+    required TResult Function() selectOpen24,
+    required TResult Function() canBook,
+    required TResult Function() addBusinessDetails,
+    required TResult Function() getUserInfo,
+    required TResult Function() updateUserInfo,
+    required TResult Function(String type) changeStatus,
+    required TResult Function() updatePass,
+    required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
+    required TResult Function() getBusinessDetails,
+  }) {
+    return updateBusinessDetails();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(File logo)? pickIMage,
+    TResult? Function(String cateogry)? selectCategory,
+    TResult? Function(bool isOpen, Duration duration)? selectTime,
+    TResult? Function(String providing)? selectProviding,
+    TResult? Function()? selectOpen24,
+    TResult? Function()? canBook,
+    TResult? Function()? addBusinessDetails,
+    TResult? Function()? getUserInfo,
+    TResult? Function()? updateUserInfo,
+    TResult? Function(String type)? changeStatus,
+    TResult? Function()? updatePass,
+    TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
+    TResult? Function()? getBusinessDetails,
+  }) {
+    return updateBusinessDetails?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(File logo)? pickIMage,
+    TResult Function(String cateogry)? selectCategory,
+    TResult Function(bool isOpen, Duration duration)? selectTime,
+    TResult Function(String providing)? selectProviding,
+    TResult Function()? selectOpen24,
+    TResult Function()? canBook,
+    TResult Function()? addBusinessDetails,
+    TResult Function()? getUserInfo,
+    TResult Function()? updateUserInfo,
+    TResult Function(String type)? changeStatus,
+    TResult Function()? updatePass,
+    TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
+    TResult Function()? getBusinessDetails,
+    required TResult orElse(),
+  }) {
+    if (updateBusinessDetails != null) {
+      return updateBusinessDetails();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickImage value) pickIMage,
+    required TResult Function(_SelectCategory value) selectCategory,
+    required TResult Function(_SelecteTime value) selectTime,
+    required TResult Function(_SelectProviding value) selectProviding,
+    required TResult Function(_SelectOpen24 value) selectOpen24,
+    required TResult Function(_CanBook value) canBook,
+    required TResult Function(_AddBusinessDetails value) addBusinessDetails,
+    required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_UpdateUserInfo value) updateUserInfo,
+    required TResult Function(_changeStatus value) changeStatus,
+    required TResult Function(_UpdatePass value) updatePass,
+    required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
+    required TResult Function(_GetBusinessDetails value) getBusinessDetails,
+  }) {
+    return updateBusinessDetails(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickImage value)? pickIMage,
+    TResult? Function(_SelectCategory value)? selectCategory,
+    TResult? Function(_SelecteTime value)? selectTime,
+    TResult? Function(_SelectProviding value)? selectProviding,
+    TResult? Function(_SelectOpen24 value)? selectOpen24,
+    TResult? Function(_CanBook value)? canBook,
+    TResult? Function(_AddBusinessDetails value)? addBusinessDetails,
+    TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_UpdateUserInfo value)? updateUserInfo,
+    TResult? Function(_changeStatus value)? changeStatus,
+    TResult? Function(_UpdatePass value)? updatePass,
+    TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
+    TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
+  }) {
+    return updateBusinessDetails?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickImage value)? pickIMage,
+    TResult Function(_SelectCategory value)? selectCategory,
+    TResult Function(_SelecteTime value)? selectTime,
+    TResult Function(_SelectProviding value)? selectProviding,
+    TResult Function(_SelectOpen24 value)? selectOpen24,
+    TResult Function(_CanBook value)? canBook,
+    TResult Function(_AddBusinessDetails value)? addBusinessDetails,
+    TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_UpdateUserInfo value)? updateUserInfo,
+    TResult Function(_changeStatus value)? changeStatus,
+    TResult Function(_UpdatePass value)? updatePass,
+    TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
+    TResult Function(_GetBusinessDetails value)? getBusinessDetails,
+    required TResult orElse(),
+  }) {
+    if (updateBusinessDetails != null) {
+      return updateBusinessDetails(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateBusinessDetails implements ProfileEvent {
+  const factory _UpdateBusinessDetails() = _$UpdateBusinessDetailsImpl;
 }
 
 /// @nodoc
@@ -2439,6 +2710,7 @@ class _$GetBusinessDetailsImpl implements _GetBusinessDetails {
     required TResult Function(String type) changeStatus,
     required TResult Function() updatePass,
     required TResult Function() initBusiness,
+    required TResult Function() updateBusinessDetails,
     required TResult Function() getBusinessDetails,
   }) {
     return getBusinessDetails();
@@ -2459,6 +2731,7 @@ class _$GetBusinessDetailsImpl implements _GetBusinessDetails {
     TResult? Function(String type)? changeStatus,
     TResult? Function()? updatePass,
     TResult? Function()? initBusiness,
+    TResult? Function()? updateBusinessDetails,
     TResult? Function()? getBusinessDetails,
   }) {
     return getBusinessDetails?.call();
@@ -2479,6 +2752,7 @@ class _$GetBusinessDetailsImpl implements _GetBusinessDetails {
     TResult Function(String type)? changeStatus,
     TResult Function()? updatePass,
     TResult Function()? initBusiness,
+    TResult Function()? updateBusinessDetails,
     TResult Function()? getBusinessDetails,
     required TResult orElse(),
   }) {
@@ -2503,6 +2777,8 @@ class _$GetBusinessDetailsImpl implements _GetBusinessDetails {
     required TResult Function(_changeStatus value) changeStatus,
     required TResult Function(_UpdatePass value) updatePass,
     required TResult Function(_InitBusiness value) initBusiness,
+    required TResult Function(_UpdateBusinessDetails value)
+        updateBusinessDetails,
     required TResult Function(_GetBusinessDetails value) getBusinessDetails,
   }) {
     return getBusinessDetails(this);
@@ -2523,6 +2799,7 @@ class _$GetBusinessDetailsImpl implements _GetBusinessDetails {
     TResult? Function(_changeStatus value)? changeStatus,
     TResult? Function(_UpdatePass value)? updatePass,
     TResult? Function(_InitBusiness value)? initBusiness,
+    TResult? Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult? Function(_GetBusinessDetails value)? getBusinessDetails,
   }) {
     return getBusinessDetails?.call(this);
@@ -2543,6 +2820,7 @@ class _$GetBusinessDetailsImpl implements _GetBusinessDetails {
     TResult Function(_changeStatus value)? changeStatus,
     TResult Function(_UpdatePass value)? updatePass,
     TResult Function(_InitBusiness value)? initBusiness,
+    TResult Function(_UpdateBusinessDetails value)? updateBusinessDetails,
     TResult Function(_GetBusinessDetails value)? getBusinessDetails,
     required TResult orElse(),
   }) {

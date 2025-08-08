@@ -17,13 +17,10 @@ void main() async {
   await HiveStorage.init();
   ServiceLocator().initializeServiceLocator();
   Bloc.observer = BlocPrezzaOberser();
-  if (HiveStorage.get(kOnBoard) == null) {
-    HiveStorage.set(kOnBoard, false);
-  }
+  HiveStorage.get(kOnBoard, defaultValue: false);
 
-  if (HiveStorage.get(kLocale) == null) {
-    HiveStorage.set(kLocale, 'en');
-  }
+  HiveStorage.get(kLocale, defaultValue: 'en');
+
   runApp(const PrezzaPage());
 
   FlutterError.onError = (errorDetails) {

@@ -35,7 +35,7 @@ class _FavWidgetState extends State<FavWidget> {
       builder: (context, state) {
         return state.maybeWhen(
           loading: () => defLoadingCenter,
-          failure: (err) => EmptyWidget(title: err),
+          failure: (err) => FailureWidget(error: tr.noFav),
           orElse: () {
             if (bloc.favVendors.isEmpty) {
               return FailureWidget(error: tr.noFav);

@@ -57,7 +57,11 @@ class _UserHomePageState extends State<UserHomePage> {
         actions: [
           InkWell(
             onTap: () {
-              appRoute.navigate(const CartRoute());
+              if (!ifUserAuthenticated()) {
+                appRoute.navigate(LoginRoute());
+              } else {
+                appRoute.navigate(const CartRoute());
+              }
             },
             child: BlocBuilder<CartBloc, CartState>(
               builder: (context, state) {
@@ -101,7 +105,11 @@ class _UserHomePageState extends State<UserHomePage> {
                 color: Colors.white,
                 child: ListTile(
                   onTap: () {
-                    appRoute.navigate(const CreatePostRoute());
+                    if (!ifUserAuthenticated()) {
+                      appRoute.navigate(LoginRoute());
+                    } else {
+                      appRoute.navigate(const CreatePostRoute());
+                    }
                   },
                   // minTileHeight: 8.h,
                   minVerticalPadding: 20,

@@ -12,7 +12,7 @@ Future<Either<FailureServices, T>> execute<T>(
   var connectivityResult = await Connectivity().checkConnectivity();
   if (!connectivityResult.contains(ConnectivityResult.none)) {
     final res = await Dio(BaseOptions(
-      connectTimeout: const Duration(seconds: 5),
+      connectTimeout: const Duration(seconds: 10),
       sendTimeout: const Duration(seconds: 5),
       receiveTimeout: const Duration(seconds: 5),
     )).get('https://www.google.com');

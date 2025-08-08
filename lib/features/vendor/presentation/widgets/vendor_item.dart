@@ -151,17 +151,9 @@ class VendorItem extends StatelessWidget {
                           context, isInFavorites, vendorId);
                     },
                     successDeleted: (deletedVendorId) {
-                      // Show success icon only for this vendor
                       if (deletedVendorId == vendorId) {
-                        return CircleAvatar(
-                          backgroundColor: lightCream,
-                          radius: 30,
-                          child: Icon(
-                            Icons.check,
-                            color: primary,
-                            size: 30,
-                          ),
-                        );
+                        return _buildFavoriteButton(
+                            context, isInFavorites, vendorId);
                       }
                       return _buildFavoriteButton(
                           context, isInFavorites, vendorId);

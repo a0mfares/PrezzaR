@@ -25,12 +25,27 @@ class FavVendorItemWidget extends StatelessWidget {
       child: Column(
         children: [
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              CachedNetworkImage(
-                imageUrl: vendor.bussiness_logo,
-              ).prezzaImage(),
-              hSpace(1),
+              Container(
+                width: 80,
+                height: 80,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: primary,
+                    width: 3.0,
+                  ),
+                  color: lightCream,
+                ),
+                child: ClipOval(
+                  child: CachedNetworkImage(
+                    fit: BoxFit.cover,
+                    imageUrl: vendor.bussiness_logo,
+                  ).prezzaImage(),
+                ),
+              ),
+              hSpace(5),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -47,6 +62,7 @@ class FavVendorItemWidget extends StatelessWidget {
                   ),
                 ],
               ),
+              const Spacer(),
               BlocConsumer<FavBloc, FavState>(
                 listener: (context, state) {
                   state.maybeMap(
@@ -86,7 +102,7 @@ class FavVendorItemWidget extends StatelessWidget {
               )
             ],
           ).margin(
-            margin: const EdgeInsets.symmetric(vertical: 5),
+            margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
           ),
           const Divider(),
         ],

@@ -216,13 +216,13 @@ class GetPostsBlogUsecase extends UsecaseHelper<List<PostEntity>> {
   }
 }
 
-class GetSavedPostsUsecase extends UsecaseHelper<void> {
+class GetSavedPostsUsecase extends UsecaseHelper<List<PostEntity>> {
   final NewsfeedRepo _repo;
 
   GetSavedPostsUsecase(this._repo);
 
   @override
-  Future<Either<FailureServices, void>> call(
+  Future<Either<FailureServices, List<PostEntity>>> call(
       {Map<String, dynamic> parm = const {}}) {
     return _repo.getSavedPosts(parm);
   }

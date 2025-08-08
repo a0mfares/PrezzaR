@@ -8,7 +8,8 @@ abstract class PaymentRepo {
       Map<String, dynamic> data);
   Future<Either<FailureServices, void>> addCardVendor(
       Map<String, dynamic> data);
-  Future<Either<FailureServices, String>> getAccessToken();
+  Future<Either<FailureServices, String>> getAccessToken(
+      Map<String, dynamic> data);
 
   Future<Either<FailureServices, void>> addCardCustomer(
       Map<String, dynamic> data);

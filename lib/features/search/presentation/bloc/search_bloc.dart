@@ -16,12 +16,15 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
   List<VendorSearchEntity> searchVendorResult = [];
 
   Map<String, List<VendorSearchEntity>> searchVendorResultRecent =
-      (HiveStorage.get(kVendorSearch) as Map?)?.map((key, value) => MapEntry(
-              key as String,
-              (value as List)
-                  .map((e) => VendorSearchEntity.fromModel(
-                      VendorSearchModel.fromJson(e)))
-                  .toList())) ??
+      (HiveStorage.get(
+                  kVendorSearch,
+                  defaultValue: <String, List<VendorSearchEntity>>{}) as Map?)
+              ?.map((key, value) => MapEntry(
+                  key as String,
+                  (value as List)
+                      .map((e) => VendorSearchEntity.fromModel(
+                          VendorSearchModel.fromJson(e)))
+                      .toList())) ??
           {};
 
   bool isRecentSearch(VendorSearchEntity vendor) =>

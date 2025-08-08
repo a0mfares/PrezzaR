@@ -11,6 +11,7 @@ import 'package:prezza/features/order/domain/entities/orderbooking_entity.dart';
 import 'package:prezza/features/order/domain/entities/orderdetails_entity.dart';
 import 'package:prezza/features/order/domain/entities/orderitem_entity.dart';
 import 'package:prezza/features/order/domain/usecases/order_usecase.dart';
+import 'package:prezza/features/payment/presentation/bloc/payment_bloc.dart';
 import 'package:sadad_qa_payments/sadad_qa_payments.dart';
 
 import '../../../../core/constants/assets.dart';
@@ -187,6 +188,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
               'branch_id': '',
               'status': 'pending',
               'customer_phone': phoneController.text,
+              "order_type": selectedType,
             });
             result.fold(
               (er) {
@@ -210,6 +212,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
               'cart_uuid': CartBloc.get(currentCTX).cartDetails.uuid,
               'customer_phone': phoneController.text,
               'status': 'pending',
+              'order_type': selectedType,
             });
             result.fold(
               (er) {
@@ -241,6 +244,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
                   hours: arrivelIn.inHours + scheduleOrder.inHours,
                   minutes: arrivelIn.inMinutes + scheduleOrder.inMinutes)),
               'car_uuid': selectedCar,
+              'order_type': selectedType,
             });
             result.fold(
               (er) {
@@ -287,6 +291,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
               'status': 'pending',
               'business_id': CartBloc.get(currentCTX).businessId,
             });
+
             await result.fold(
               (er) {
                 emit(OrderState.failure(er.getMsg));
@@ -294,8 +299,8 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
               (res) async {
                 instanceId = res;
                 // emit(const OrderState.());
+                final token = await accessToken();
                 if (instanceId.isNotEmpty) {
-                  final token = await accessToken();
                   await Navigator.push(ctx, MaterialPageRoute(
                     builder: (context) {
                       return PaymentScreen(

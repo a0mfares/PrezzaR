@@ -8,6 +8,7 @@ import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/core/service/hive_storage.dart';
 import 'package:prezza/features/auth/domain/entities/user_entity.dart';
 import 'package:prezza/features/category/domain/entities/category_entity.dart';
+import 'package:prezza/features/location/domain/entities/address_entity.dart';
 import 'package:prezza/features/profile/domain/entities/businessdetails_entity.dart';
 import 'package:prezza/prezza_page.dart';
 import 'package:sizer/sizer.dart';
@@ -50,7 +51,12 @@ Map<String, dynamic> orderType = {
   'delivery': tr.delivery,
 };
 
-final currentLocation = HiveStorage.get<CurrentLocationEntity>(kCurLocation);
+final currentLocation = HiveStorage.get<CurrentLocationEntity>(kCurLocation,
+    defaultValue: CurrentLocationEntity(
+      latitude: 0,
+      longitude: 0,
+      locationName: '',
+    ));
 
 List<String> get sortItems => SortBy.values.map((e) {
       if (e == SortBy.distance_sort) {
@@ -72,8 +78,12 @@ String sortKey(String title) {
   }
 }
 
-CurrentLocationEntity currentLoc = HiveStorage.get(kCurLocation) ??
-    CurrentLocationEntity(latitude: 0, longitude: 0, locationName: '');
+CurrentLocationEntity currentLoc = HiveStorage.get(kCurLocation,
+    defaultValue: CurrentLocationEntity(
+      latitude: 0,
+      longitude: 0,
+      locationName: '',
+    ));
 
 String convertDurationToHHMM(String durationText) {
   int hours = 0;
@@ -141,9 +151,11 @@ Map<String, dynamic> operationHourByKey = {
   tr.wholeWeak: '24hours',
   tr.openNow: 'open_now',
 };
-String get currentLocal => HiveStorage.get(kLocale);
-String bearerToken = 'Bearer ${usr.tokens.access}';
-String bearerTokenCarApi = 'Bearer ${HiveStorage.get(kCarApitoken)}';
+String get currentLocal => HiveStorage.get(kLocale, defaultValue: 'en');
+String get bearerToken =>
+    'Bearer ${HiveStorage.get<UserEntity?>(kUser, defaultValue: UserEntity.empty())?.tokens.access ?? ''}';
+String bearerTokenCarApi =
+    'Bearer ${HiveStorage.get(kCarApitoken, defaultValue: '')}';
 Widget get defLoadingCenter => Center(
       child: LoadingAnimationWidget.twistingDots(
           leftDotColor: lightCoral, rightDotColor: lightCream, size: 20),
@@ -156,12 +168,16 @@ TextTheme get tstyle =>
     Theme.of(appRoute.navigatorKey.currentContext!).textTheme;
 
 UserEntity get usr => HiveStorage.get<UserEntity?>(kUser) ?? UserEntity.empty();
+
 BusinessDetailsEntity get business =>
     HiveStorage.get<BusinessDetailsEntity>(kBusiness,
         defaultValue: BusinessDetailsEntity.empty());
 List<CategoryEntity> get categories =>
-    HiveStorage.get<List<CategoryEntity>>(kCategories);
-bool get isLocationSelected => HiveStorage.get(kCurLocation) != null;
+    HiveStorage.get<List<CategoryEntity>>(kCategories, defaultValue: []);
+bool get isLocationSelected =>
+    HiveStorage.get(kCurLocation,
+        defaultValue: CurrentLocationEntity.empty()) !=
+    CurrentLocationEntity.empty();
 bool get isCustomer => usr.user.user_type == UserType.customer.name;
 
 void launchPhoneDialer(String phoneNumber) async {

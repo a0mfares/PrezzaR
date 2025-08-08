@@ -148,12 +148,14 @@ class VendorBloc extends Bloc<VendorEvent, VendorState> {
             final result = await _getVendorItemDetailsUsecase(
               parm: {
                 'id': id,
-                'user_latitude':
-                    HiveStorage.get<CurrentLocationEntity>(kCurLocation)
-                        .latitude,
-                'user_longitude':
-                    HiveStorage.get<CurrentLocationEntity>(kCurLocation)
-                        .longitude,
+                'user_latitude': HiveStorage.get<CurrentLocationEntity>(
+                        kCurLocation,
+                        defaultValue: CurrentLocationEntity.empty())
+                    .latitude,
+                'user_longitude': HiveStorage.get<CurrentLocationEntity>(
+                        kCurLocation,
+                        defaultValue: CurrentLocationEntity.empty())
+                    .longitude,
               },
             );
             result.fold(
@@ -177,11 +179,14 @@ class VendorBloc extends Bloc<VendorEvent, VendorState> {
           try {
             final result = await _getVendorItemDetailsBookingUsecase(parm: {
               'id': id,
-              'user_latitude':
-                  HiveStorage.get<CurrentLocationEntity>(kCurLocation).latitude,
-              'user_longitude':
-                  HiveStorage.get<CurrentLocationEntity>(kCurLocation)
-                      .longitude,
+              'user_latitude': HiveStorage.get<CurrentLocationEntity>(
+                      kCurLocation,
+                      defaultValue: CurrentLocationEntity.empty())
+                  .latitude,
+              'user_longitude': HiveStorage.get<CurrentLocationEntity>(
+                      kCurLocation,
+                      defaultValue: CurrentLocationEntity.empty())
+                  .longitude,
             });
             result.fold(
               (err) {
@@ -205,11 +210,14 @@ class VendorBloc extends Bloc<VendorEvent, VendorState> {
               'type': type,
               'business_category_id': id,
               'service': selectedService,
-              'user_latitude':
-                  HiveStorage.get<CurrentLocationEntity>(kCurLocation).latitude,
-              'user_longitude':
-                  HiveStorage.get<CurrentLocationEntity>(kCurLocation)
-                      .longitude,
+              'user_latitude': HiveStorage.get<CurrentLocationEntity>(
+                      kCurLocation,
+                      defaultValue: CurrentLocationEntity.empty())
+                  .latitude,
+              'user_longitude': HiveStorage.get<CurrentLocationEntity>(
+                      kCurLocation,
+                      defaultValue: CurrentLocationEntity.empty())
+                  .longitude,
             });
             result.fold(
               (err) {
@@ -231,11 +239,14 @@ class VendorBloc extends Bloc<VendorEvent, VendorState> {
           try {
             final result = await _getNearbyPlacesUsecase(parm: {
               'type': type,
-              'user_latitude':
-                  HiveStorage.get<CurrentLocationEntity>(kCurLocation).latitude,
-              'user_longitude':
-                  HiveStorage.get<CurrentLocationEntity>(kCurLocation)
-                      .longitude,
+              'user_latitude': HiveStorage.get<CurrentLocationEntity>(
+                      kCurLocation,
+                      defaultValue: CurrentLocationEntity.empty())
+                  .latitude,
+              'user_longitude': HiveStorage.get<CurrentLocationEntity>(
+                      kCurLocation,
+                      defaultValue: CurrentLocationEntity.empty())
+                  .longitude,
             });
 
             result.fold(

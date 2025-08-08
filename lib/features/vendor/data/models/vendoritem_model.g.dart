@@ -8,15 +8,15 @@ part of 'vendoritem_model.dart';
 
 VendorItemModel _$VendorItemModelFromJson(Map<String, dynamic> json) =>
     VendorItemModel(
-        bussiness_name: json['bussiness_name'] as String,
-        bussiness_avg_stars: (json['bussiness_avg_stars'] as num).toInt(),
-        num_of_reviews: (json['num_of_reviews'] as num).toInt(),
-        bussiness_logo: json['bussiness_logo'] as String,
-        bussiness_id: (json['bussiness_id'] as num).toInt(),
-        distance_in_kilo_meters:
-            (json['distance_in_kilo_meters'] as num).toDouble(),
-        is_fav: json['is_fav'] as bool?,
-        uuid: json["uuid"] ?? "");
+      bussiness_name: json['bussiness_name'] as String,
+      bussiness_avg_stars: (json['bussiness_avg_stars'] as num).toInt(),
+      num_of_reviews: (json['num_of_reviews'] as num).toInt(),
+      bussiness_logo: json['bussiness_logo'] as String,
+      bussiness_id: (json['bussiness_id'] as num).toInt(),
+      distance_in_kilo_meters:
+          (json['distance_in_kilo_meters'] as num).toDouble(),
+      is_fav: json['is_fav'] as bool?,
+    );
 
 Map<String, dynamic> _$VendorItemModelToJson(VendorItemModel instance) =>
     <String, dynamic>{
@@ -27,5 +27,4 @@ Map<String, dynamic> _$VendorItemModelToJson(VendorItemModel instance) =>
       'bussiness_id': instance.bussiness_id,
       'is_fav': instance.is_fav,
       'distance_in_kilo_meters': instance.distance_in_kilo_meters,
-      'uuid': instance.uuid
     };

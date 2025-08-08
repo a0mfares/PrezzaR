@@ -154,7 +154,8 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                 BotToast.showText(text: e.err);
               },
               success: (_) {
-                if (HiveStorage.get(kTutorialProduct) == null) {
+                if (HiveStorage.get(kTutorialProduct, defaultValue: null) ==
+                    null) {
                   scrollToTargetAndShowTutorial();
                 }
               },
@@ -197,6 +198,13 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
                           tr.priceWithCurrency(bloc.product.price_range, 'QAR'),
                           style: tstyle.headlineSmall,
                         ),
+                      ],
+                    ).margin(
+                      margin: const EdgeInsets.symmetric(horizontal: 26),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
                         Text(
                           '${tr.estimatedTime}: ${10}',
                           style: tstyle.bodyLarge!.copyWith(color: teal),

@@ -27,7 +27,7 @@ class CartItem extends StatelessWidget {
       color: floralWhite,
       elevation: 3,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 20),
         child: Row(
           children: [
             CachedImage(imageUrl: cartItem.product_image),

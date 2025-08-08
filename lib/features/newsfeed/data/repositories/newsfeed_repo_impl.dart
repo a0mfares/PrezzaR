@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:prezza/core/helper/network.dart';
@@ -138,9 +140,15 @@ class NewsfeedRepoImpl extends NewsfeedRepo {
   }
 
   @override
-  Future<Either<FailureServices, void>> getSavedPosts(
+  Future<Either<FailureServices, List<PostEntity>>> getSavedPosts(
       Map<String, dynamic> query) {
-    return execute(() => _service.getSavedPosts(bearerToken, query));
+    return execute(() async {
+      final result = await _service.getSavedPosts(bearerToken, query);
+      final postsData = result.data['data']?['data'] ?? [];
+      return List<PostEntity>.from(
+        postsData.map((e) => PostEntity.fromModel(PostModel.fromMap(e))),
+      );
+    });
   }
 
   @override

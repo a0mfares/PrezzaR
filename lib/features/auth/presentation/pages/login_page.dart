@@ -249,7 +249,7 @@ class _LoginPageState extends State<LoginPage> {
                             },
                             success: (_) {
                               if (mounted) {
-                                appRoute.navigate(const LoginLoadingRoute());
+                                appRoute.replace(const LoginLoadingRoute());
                               }
                             },
                             orElse: () {},
@@ -263,6 +263,7 @@ class _LoginPageState extends State<LoginPage> {
                                   bloc.isEmail ? 'email' : 'phone',
                                 ),
                               );
+                              setState(() {});
                             },
                             child: state.maybeWhen(
                               loading: () =>
@@ -273,9 +274,8 @@ class _LoginPageState extends State<LoginPage> {
                               success: () {
                                 bool isDone = true;
                                 Future.delayed(
-                                    const Duration(milliseconds: 500), () {
-                                  if (!mounted) return; // ✅ Prevent crash
-
+                                    const Duration(milliseconds: 1000), () {
+                                  if (!mounted) return;
                                   isDone = false;
                                   setState(() {});
                                 });

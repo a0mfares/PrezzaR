@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:prezza/core/helper/usecase_helper.dart';
@@ -19,19 +21,22 @@ class GetVendorCardsUsecase implements UsecaseHelper<VendorCardEntity> {
   }
 }
 
-class GetAccessTokenUsecase implements UsecaseHelper<void> {
+class GetAccessTokenUsecase implements UsecaseHelper<String> {
   final PaymentRepo _repo;
 
   GetAccessTokenUsecase(this._repo);
 
   @override
-  Future<Either<FailureServices, void>> call(
+  Future<Either<FailureServices, String>> call(
       {Map<String, dynamic> parm = const {}}) async {
     const storage = FlutterSecureStorage();
-    final result = await _repo.getAccessToken();
+    final result = await _repo.getAccessToken(parm);
     result.fold(
-      (err) {},
+      (err) {
+        log('Error getting access token: $err');
+      },
       (res) {
+        log('Access token retrieved: $res');
         storage.write(key: 'sadad-pay', value: res);
       },
     );

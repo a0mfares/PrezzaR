@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:prezza/core/helper/network.dart';
@@ -44,6 +46,7 @@ class ProfileRepoImpl implements ProfileRepo {
   Future<Either<FailureServices, BusinessDetailsEntity>> getBusinessDetails() {
     return execute(() async {
       final result = await _service.getVendorDetails(bearerToken);
+      log("Business Details: ${result.data}");
       return BusinessDetailsEntity.fromModel(
           BusinessDetailsModel.fromMpa(result.data['data']));
     });
@@ -71,5 +74,13 @@ class ProfileRepoImpl implements ProfileRepo {
   @override
   Future<Either<FailureServices, void>> updatePass(Map<String, dynamic> data) {
     return execute(() => _service.updatePass(bearerToken, data));
+  }
+
+  @override
+  Future<Either<FailureServices, void>> updateBusinessDetails(
+      Map<String, dynamic> data) {
+    return execute(() async {
+      await _service.updateBusinessDetails(bearerToken, FormData.fromMap(data));
+    });
   }
 }

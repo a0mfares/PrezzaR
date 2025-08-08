@@ -71,7 +71,7 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
       listener: (context, state) {
         state.maybeMap(
           success: (v) {
-            if (HiveStorage.get(kCurLocation) == null) {
+            if (HiveStorage.get(kCurLocation, defaultValue: null) == null) {
               showPrezzaBtm(
                 context,
                 PlacePicker(
@@ -155,10 +155,17 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                   child: Text(
-                    HiveStorage.get(kCurLocation) == null
+                    HiveStorage.get(kCurLocation,
+                                    defaultValue: CurrentLocationEntity.empty())
+                                .toString() ==
+                            "null"
                         ? tr.currentLocation
-                        : HiveStorage.get<CurrentLocationEntity>(kCurLocation)
-                            .locationName,
+                        : HiveStorage.get<CurrentLocationEntity>(kCurLocation,
+                            defaultValue: CurrentLocationEntity(
+                              latitude: 0,
+                              longitude: 0,
+                              locationName: '',
+                            )).locationName,
                     style: tstyle.bodyLarge,
                   ),
                 ),
@@ -212,10 +219,16 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                   child: Text(
-                    HiveStorage.get(kCurLocation) == null
+                    HiveStorage.get(kCurLocation, defaultValue: null)
+                                .toString() ==
+                            "null"
                         ? tr.currentLocation
-                        : HiveStorage.get<CurrentLocationEntity>(kCurLocation)
-                            .locationName,
+                        : HiveStorage.get<CurrentLocationEntity>(kCurLocation,
+                            defaultValue: CurrentLocationEntity(
+                              latitude: 0,
+                              longitude: 0,
+                              locationName: '',
+                            )).locationName,
                     style: tstyle.bodyLarge,
                   ),
                 ),

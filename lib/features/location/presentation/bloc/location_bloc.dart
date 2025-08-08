@@ -103,7 +103,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
               print('Error during authentication: $e');
             }
             if (isAuthenticated) {
-              if (HiveStorage.get(kPass) == null) {
+              if (HiveStorage.get(kPass, defaultValue: null) == null) {
                 HiveStorage.set<String>(kPass, password.text);
               }
               emit(LocationState.successAuth(isEdit));
@@ -189,7 +189,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
             try {
               final result = await _deleteBrancheUsecase(parm: {
                 'branche_id': id,
-                'password': HiveStorage.get(kPass),
+                'password': HiveStorage.get(kPass, defaultValue: ''),
                 'user_uuid': usr.user.uuid,
               });
               result.fold((err) {
@@ -209,7 +209,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
                 parm: {
                   'branche_id': selectedBranche.id,
                   'user_uuid': usr.user.uuid,
-                  'password': HiveStorage.get(kPass),
+                  'password': HiveStorage.get(kPass, defaultValue: ''),
                   'branch_address': brancheAddress.text,
                   'branch_landmark': brancheLandMark.text,
                   'longitude': resultPlace.latLng!.longitude,

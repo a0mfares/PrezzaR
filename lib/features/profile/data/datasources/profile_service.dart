@@ -46,4 +46,9 @@ abstract class ProfileService {
     @Header('Authorization') auth,
     @Body() Map<String, dynamic> data,
   );
+  @PUT(Urls.updateBusinessDetails)
+  Future<HttpResponse> updateBusinessDetails(
+    @Header('Authorization') auth,
+    @Body() FormData data,
+  );
 }

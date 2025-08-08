@@ -7,6 +7,7 @@ import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/helper/widgets.dart';
 import 'package:prezza/core/service/hive_storage.dart';
+import 'package:prezza/features/auth/domain/entities/user_entity.dart';
 
 import '../../../../core/service/routes.gr.dart';
 import '../../../../prezza_page.dart';
@@ -19,24 +20,61 @@ class VendorProfilePage extends StatefulWidget {
   State<VendorProfilePage> createState() => _VendorProfilePageState();
 }
 
-class _VendorProfilePageState extends State<VendorProfilePage> {
+class _VendorProfilePageState extends State<VendorProfilePage>
+    with WidgetsBindingObserver {
   late final TextEditingController firstName;
   late final TextEditingController lastName;
   late final TextEditingController userName;
+
   @override
   void initState() {
-    firstName = TextEditingController(text: usr.user.first_name);
-    lastName = TextEditingController(text: usr.user.last_name);
-    userName = TextEditingController(text: usr.user.username);
     super.initState();
+    WidgetsBinding.instance.addObserver(this);
+    _initializeControllers();
   }
 
   @override
   void dispose() {
+    WidgetsBinding.instance.removeObserver(this);
     firstName.dispose();
     lastName.dispose();
     userName.dispose();
     super.dispose();
+  }
+
+  void _initializeControllers() {
+    final latestUser =
+        HiveStorage.get<UserEntity>(kUser, defaultValue: UserEntity.empty());
+
+    firstName = TextEditingController(text: latestUser.user.first_name);
+    lastName = TextEditingController(text: latestUser.user.last_name);
+    userName = TextEditingController(text: latestUser.user.username);
+  }
+
+  void _refreshUserData() {
+    // Get the latest user data from storage
+    final latestUser =
+        HiveStorage.get<UserEntity>(kUser, defaultValue: UserEntity.empty());
+
+    firstName.text = latestUser.user.first_name;
+    lastName.text = latestUser.user.last_name;
+    userName.text = latestUser.user.username;
+    setState(() {}); // Trigger rebuild to show updated data
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    if (state == AppLifecycleState.resumed) {
+      // App came back to foreground, refresh data
+      _refreshUserData();
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // This runs every time the page becomes visible
+    _refreshUserData();
   }
 
   @override
@@ -58,7 +96,6 @@ class _VendorProfilePageState extends State<VendorProfilePage> {
           children: [
             Container(
               height: 150,
-              // padding: EdgeInsets.only(left: 35, top: 30, bottom: 20),
               width: double.infinity,
               decoration: BoxDecoration(
                 color: lightCoral,
@@ -70,7 +107,6 @@ class _VendorProfilePageState extends State<VendorProfilePage> {
               child: Stack(
                 alignment: Alignment.center,
                 clipBehavior: Clip.none,
-                // crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Positioned(
                     top: 100,
@@ -89,8 +125,10 @@ class _VendorProfilePageState extends State<VendorProfilePage> {
             vSpace(5),
             const Divider(thickness: 2),
             ListTile(
-              onTap: () {
-                appRoute.navigate(const PersonalInfoRoute());
+              onTap: () async {
+                // Navigate and refresh data when returning
+                await appRoute.navigate(const PersonalInfoRoute());
+                _refreshUserData();
               },
               titleTextStyle: TextStyle(
                 color: primary,
@@ -102,8 +140,9 @@ class _VendorProfilePageState extends State<VendorProfilePage> {
             ),
             const Divider(thickness: 2),
             ListTile(
-              onTap: () {
-                appRoute.navigate(const BusinesProfileRoute());
+              onTap: () async {
+                await appRoute.navigate(const BusinesProfileRoute());
+                _refreshUserData();
               },
               titleTextStyle: TextStyle(
                 color: primary,
@@ -115,8 +154,9 @@ class _VendorProfilePageState extends State<VendorProfilePage> {
             ),
             const Divider(thickness: 2),
             ListTile(
-              onTap: () {
-                appRoute.navigate(const PrezzaSettingsRoute());
+              onTap: () async {
+                await appRoute.navigate(const PrezzaSettingsRoute());
+                _refreshUserData();
               },
               titleTextStyle: TextStyle(
                 color: primary,
@@ -128,8 +168,9 @@ class _VendorProfilePageState extends State<VendorProfilePage> {
             ),
             const Divider(thickness: 2),
             ListTile(
-              onTap: () {
-                appRoute.navigate(const FeedbackRoute());
+              onTap: () async {
+                await appRoute.navigate(const FeedbackRoute());
+                _refreshUserData();
               },
               titleTextStyle: TextStyle(
                 color: primary,
@@ -141,8 +182,9 @@ class _VendorProfilePageState extends State<VendorProfilePage> {
             ),
             const Divider(thickness: 2),
             ListTile(
-              onTap: () {
-                appRoute.navigate(const HelpRoute());
+              onTap: () async {
+                await appRoute.navigate(const HelpRoute());
+                _refreshUserData();
               },
               titleTextStyle: TextStyle(
                 color: primary,

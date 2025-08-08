@@ -5,11 +5,11 @@ class Urls {
   static const String baseUrlCars = 'https://carapi.app/api';
 
   static const String arrivelTime = '/maps/api/directions/json?';
-  static const String makes = '/makes';
-  static const String models = '/models';
+  static const String makes = '/makes/v2';
+  static const String models = '/models/v2';
   static const String years = '/years';
   static const String getAccessToken = '/card-payment/get-token/';
-  static const String bodies = '/bodies';
+  static const String bodies = '/bodies/v2';
   static const String loginCarApi = '/Customer_Dashboard/car_app_token';
   //& auth phone
   static const String signupPhone = '/PhoneRegistration/register/';
@@ -133,6 +133,8 @@ class Urls {
   static const String categories = '/Vendors/business/categories/';
   static const String categoryBooking =
       '/Booking/GetBookingBussinessCategories/';
+  static const String updateBusinessDetails =
+      '/Vendors/update_business_details/';
   //* end profile
   // static const String notifySocket = '';
 

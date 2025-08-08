@@ -16,7 +16,7 @@ abstract class NewsfeedRepo {
 
   Future<Either<FailureServices, List<PostEntity>>> getPosts(
       Map<String, dynamic> query);
-  Future<Either<FailureServices, void>> getSavedPosts(
+  Future<Either<FailureServices, List<PostEntity>>> getSavedPosts(
       Map<String, dynamic> query);
   Future<Either<FailureServices, void>> followUser(Map<String, dynamic> body);
   Future<Either<FailureServices, void>> unFollowUser(Map<String, dynamic> body);

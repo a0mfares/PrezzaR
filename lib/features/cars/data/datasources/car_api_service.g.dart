@@ -41,7 +41,7 @@ class _CarApiService implements CarApiService {
     )
         .compose(
           _dio.options,
-          '/makes',
+          '/makes/v2',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -74,7 +74,7 @@ class _CarApiService implements CarApiService {
     )
         .compose(
           _dio.options,
-          '/bodies',
+          '/bodies/v2',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -107,7 +107,7 @@ class _CarApiService implements CarApiService {
     )
         .compose(
           _dio.options,
-          '/models',
+          '/models/v2',
           queryParameters: queryParameters,
           data: _data,
         )

@@ -264,13 +264,18 @@ class NewsfeedBloc extends Bloc<NewsfeedEvent, NewsfeedState> {
               'user_uuid': uuid,
             });
             result.fold((err) {
+              log('getUserPosts: Error - ${err.getMsg}');
               emit(NewsfeedState.failure(err.getMsg));
             }, (res) {
-              log('getUserPosts: Number of posts fetched: \\${res.length}');
+              log('getUserPosts: Number of posts fetched: ${res.length}');
+              if (res.isEmpty) {
+                log('getUserPosts: No posts found for user $uuid');
+              }
               posts = res;
               emit(const NewsfeedState.success());
             });
           } catch (e) {
+            log('getUserPosts: Exception - ${e.toString()}');
             emit(NewsfeedState.failure(e.toString()));
           }
         },
@@ -286,7 +291,7 @@ class NewsfeedBloc extends Bloc<NewsfeedEvent, NewsfeedState> {
                 emit(NewsfeedState.failure(err.getMsg));
               },
               (res) {
-                // posts = res;
+                posts = res;
                 emit(const NewsfeedState.success());
               },
             );

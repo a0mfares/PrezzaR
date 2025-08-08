@@ -12,7 +12,6 @@ class VendorItemModel extends VendorItemEntity {
     required super.bussiness_logo,
     required super.bussiness_id,
     required super.distance_in_kilo_meters,
-    required super.uuid,
     super.is_fav,
   });
 

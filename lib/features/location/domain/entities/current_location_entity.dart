@@ -26,4 +26,11 @@ class CurrentLocationEntity {
       locationName: result.formattedAddress!,
     );
   }
+  factory CurrentLocationEntity.empty() {
+    return CurrentLocationEntity(
+      latitude: 0.0,
+      longitude: 0.0,
+      locationName: '',
+    );
+  }
 }

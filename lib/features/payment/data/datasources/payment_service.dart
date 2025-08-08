@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -14,8 +16,11 @@ abstract class PaymentService {
     @Body() Map<String, dynamic> data,
   );
   @POST(Urls.getAccessToken)
-  Future<HttpResponse> getAccessToken();
-  @POST(Urls.bankCardVendor)
+  Future<HttpResponse> getAccessToken(
+    @Header('Authorization') String auth,
+    @Body() Map<String, dynamic> data,
+  );
+  @GET(Urls.bankCardVendor)
   Future<HttpResponse> getPaymentCards(
     @Header('Authorization') auth,
     @Body() Map<String, dynamic> data,

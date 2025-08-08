@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:prezza/core/helper/network.dart';
 import 'package:prezza/core/helper/tools.dart';
@@ -53,8 +55,11 @@ class PaymentRepoImpl implements PaymentRepo {
   }
 
   @override
-  Future<Either<FailureServices, String>> getAccessToken() {
-    return execute(
-        () async => (await _service.getAccessToken()).data['accessToken']);
+  Future<Either<FailureServices, String>> getAccessToken(data) {
+    return execute(() async {
+      final res = await _service.getAccessToken(bearerToken, data);
+      log(data.toString(), name: 'getAccessToken Response');
+      return res.data['accessToken'];
+    });
   }
 }
