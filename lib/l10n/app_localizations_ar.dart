@@ -138,8 +138,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get continueWithEmailInst => 'استخدام البريد الإلكتروني بدلاً من ذلك';
 
   @override
-  String get enterEmailOrPhone =>
-      'أدخل البريد الإلكتروني أو رقم الهاتف المرتبط بحسابك';
+  String get enterEmailOrPhone => 'أدخل البريد الإلكتروني أو رقم الهاتف المرتبط بحسابك';
 
   @override
   String get changePass => 'تغيير كلمة المرور';
@@ -177,8 +176,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get companyDetails => 'تفاصيل الشركة';
 
   @override
-  String get tellUsAbout =>
-      'أخبرنا عن عملك (سيشاهد العملاء هذه المعلومات على تطبيق بريزا للبحث والتواصل معك)';
+  String get tellUsAbout => 'أخبرنا عن عملك (سيشاهد العملاء هذه المعلومات على تطبيق بريزا للبحث والتواصل معك)';
 
   @override
   String get urBrandLogo => 'شعار علامتك التجارية';
@@ -823,16 +821,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get orderUpdate => 'تحديثات الطلبات';
 
   @override
-  String get orderUpdateSubTitle =>
-      'إشعارات عند وضع الطلب، أثناء التجهيز، وعند التسليم.';
+  String get orderUpdateSubTitle => 'إشعارات عند وضع الطلب، أثناء التجهيز، وعند التسليم.';
 
   @override
-  String get promotionsSubTitle =>
-      'إشعارات عن الخصومات، العروض الخاصة، والعروض الموسمية.';
+  String get promotionsSubTitle => 'إشعارات عن الخصومات، العروض الخاصة، والعروض الموسمية.';
 
   @override
-  String get appUpdatesSubTitle =>
-      'إشعارات تتعلق بالتغييرات المهمة في التطبيق، الميزات الجديدة، أو التحديثات.';
+  String get appUpdatesSubTitle => 'إشعارات تتعلق بالتغييرات المهمة في التطبيق، الميزات الجديدة، أو التحديثات.';
 
   @override
   String get applePay => 'الدفع با ابل';
@@ -927,12 +922,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get plsAuth => 'يرجى التوثيق لعرض بطاقتك';
 
   @override
-  String get useBiometrics =>
-      'هل ترغب في استخدام بيانات التعريف البيومترية لعرض البطاقة؟';
+  String get useBiometrics => 'هل ترغب في استخدام بيانات التعريف البيومترية لعرض البطاقة؟';
 
   @override
-  String get locationErrorPerm =>
-      'لقد تم رفض أذونات الموقع بشكل دائم، ولا يمكننا طلب الأذونات.';
+  String get locationErrorPerm => 'لقد تم رفض أذونات الموقع بشكل دائم، ولا يمكننا طلب الأذونات.';
 
   @override
   String get areUSureDeleteLocation => 'هل أنت متأكد من حذف هذا الموقع؟';
@@ -1087,8 +1080,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get areSureLogout => 'هل أنت متأكد أنك تريد تسجيل الخروج؟';
 
   @override
-  String get areSureExitProduct =>
-      'هل أنت متأكد أنك تريد الخروج؟\nسيتم مسح البيانات الحالية ولن يتم حفظها.';
+  String get areSureExitProduct => 'هل أنت متأكد أنك تريد الخروج؟\nسيتم مسح البيانات الحالية ولن يتم حفظها.';
 
   @override
   String get caughtUp => 'لقد اطلعت على كل شيء!';
@@ -1097,8 +1089,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get plsSelectImg => 'يرجى اختيار صورة';
 
   @override
-  String get youCanScroll =>
-      'يمكنك التمرير لأعلى أو لأسفل\nلاستكشاف المزيد من العناصر الجانبية ويمكنك الضغط لعرض العناصر';
+  String get youCanScroll => 'يمكنك التمرير لأعلى أو لأسفل\nلاستكشاف المزيد من العناصر الجانبية ويمكنك الضغط لعرض العناصر';
 
   @override
   String get plsSelectCategory => 'يرجى اختيار الفئة';
@@ -1113,8 +1104,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get selectLocationNear => 'حدد الموقع لرؤية الأماكن القريبة';
 
   @override
-  String get tabHereToChangeLocation =>
-      'اضغط هنا لتغيير موقعك، إذا لم تتم إضافة الموقع فلن تظهر الأماكن القريبة.';
+  String get tabHereToChangeLocation => 'اضغط هنا لتغيير موقعك، إذا لم تتم إضافة الموقع فلن تظهر الأماكن القريبة.';
 
   @override
   String get seeMore => 'عرض المزيد';

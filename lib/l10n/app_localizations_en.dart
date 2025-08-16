@@ -138,8 +138,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get continueWithEmailInst => 'Continue with email address instead';
 
   @override
-  String get enterEmailOrPhone =>
-      'Enter your email address or phone\n number associated with your\n account';
+  String get enterEmailOrPhone => 'Enter your email address or phone\n number associated with your\n account';
 
   @override
   String get changePass => 'Change Password';
@@ -177,8 +176,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get companyDetails => 'Company Details';
 
   @override
-  String get tellUsAbout =>
-      'Tell us about your business ( your customers will see this information on Prezza app to search and contact you )';
+  String get tellUsAbout => 'Tell us about your business ( your customers will see this information on Prezza app to search and contact you )';
 
   @override
   String get urBrandLogo => 'Your brand logo';
@@ -570,8 +568,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get invitationLink =>
-      'Send your friends your personal invitation link or code';
+  String get invitationLink => 'Send your friends your personal invitation link or code';
 
   @override
   String get freePoints => 'Enjoy your free 3,000 pts';
@@ -824,16 +821,13 @@ class AppLocalizationsEn extends AppLocalizations {
   String get orderUpdate => 'Order Update';
 
   @override
-  String get orderUpdateSubTitle =>
-      'notifications for when the order is placed, in progress, and delivered.';
+  String get orderUpdateSubTitle => 'notifications for when the order is placed, in progress, and delivered.';
 
   @override
-  String get promotionsSubTitle =>
-      'notifications for discounts, special deals, and seasonal offers.';
+  String get promotionsSubTitle => 'notifications for discounts, special deals, and seasonal offers.';
 
   @override
-  String get appUpdatesSubTitle =>
-      'Notifications regarding important app changes, new features, or updates.';
+  String get appUpdatesSubTitle => 'Notifications regarding important app changes, new features, or updates.';
 
   @override
   String get applePay => 'Apple pay';
@@ -853,8 +847,7 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String get youCantCancel =>
-      'Order Cannot be cancelled it is being prepared now';
+  String get youCantCancel => 'Order Cannot be cancelled it is being prepared now';
 
   @override
   String get categories => 'Categories';
@@ -932,8 +925,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get useBiometrics => 'Use biometrics to show card?';
 
   @override
-  String get locationErrorPerm =>
-      'Location permissions are permanently denied, we cannot request permissions.';
+  String get locationErrorPerm => 'Location permissions are permanently denied, we cannot request permissions.';
 
   @override
   String get areUSureDeleteLocation => 'Are you sure delete this location';
@@ -1064,8 +1056,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get orderAhead => 'Order Ahead';
 
   @override
-  String get orderAheadTitle =>
-      'Order Any thing now and pick it up whenever you want !';
+  String get orderAheadTitle => 'Order Any thing now and pick it up whenever you want !';
 
   @override
   String get bookTable => 'Book your Table';
@@ -1077,8 +1068,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get allFav => 'All Your Favorite Places';
 
   @override
-  String get allFavTitle =>
-      'From Productive Families, Restaurants, Coffee Shops and even Hotels !';
+  String get allFavTitle => 'From Productive Families, Restaurants, Coffee Shops and even Hotels !';
 
   @override
   String get successUpdate => 'Success update';
@@ -1090,8 +1080,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get areSureLogout => 'Are you sure logout?';
 
   @override
-  String get areSureExitProduct =>
-      'Are you sure you want to exit?\n The current data will be erased and will not be saved.';
+  String get areSureExitProduct => 'Are you sure you want to exit?\n The current data will be erased and will not be saved.';
 
   @override
   String get caughtUp => 'You`re all caught up!';
@@ -1100,8 +1089,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get plsSelectImg => 'Please Select Image';
 
   @override
-  String get youCanScroll =>
-      'You can scroll up or down\nto explore more side items and you can press to show items';
+  String get youCanScroll => 'You can scroll up or down\nto explore more side items and you can press to show items';
 
   @override
   String get plsSelectCategory => 'Please select category';
@@ -1116,8 +1104,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get selectLocationNear => 'Select location to see nearby places';
 
   @override
-  String get tabHereToChangeLocation =>
-      'Tab here to change your location if location not added the nearby places not shown.';
+  String get tabHereToChangeLocation => 'Tab here to change your location if location not added the nearby places not shown.';
 
   @override
   String get seeMore => 'See More';
@@ -1129,8 +1116,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get ratingTitle => 'Rating';
 
   @override
-  String get passwordIsRequired =>
-      'Password is required to update personal info';
+  String get passwordIsRequired => 'Password is required to update personal info';
 
   @override
   String get anySpecialRequest => 'Any Special Request?';
@@ -1151,8 +1137,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get failedTransaction => 'failed to complete transaction';
 
   @override
-  String get arrivalTimeError =>
-      'Arrival time must be more than 3 minutes from now';
+  String get arrivalTimeError => 'Arrival time must be more than 3 minutes from now';
 
   @override
   String get retry => 'Retry';
