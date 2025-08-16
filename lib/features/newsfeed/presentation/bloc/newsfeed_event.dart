@@ -8,6 +8,13 @@ class NewsfeedEvent with _$NewsfeedEvent {
   const factory NewsfeedEvent.getUsers() = _GetUsers;
   const factory NewsfeedEvent.follow(uuid) = _Follow;
   const factory NewsfeedEvent.unFollow(uuid) = _UnFollow;
+  const factory NewsfeedEvent.getUserFollowers(String uuid) = _GetUserFollowers;
+  const factory NewsfeedEvent.getUserFollowing(String uuid) = _GetUserFollowing;
+  const factory NewsfeedEvent.getUserStories(String uuid) = _GetUserStories;
+  const factory NewsfeedEvent.deleteUserStory(String uuid) = _DeleteUserStory;
+  const factory NewsfeedEvent.addUserStory(String uuid) = _AddUserStory;
+  const factory NewsfeedEvent.addTagPost(String uuid) = _AddTagPost;
+
   const factory NewsfeedEvent.getUserPosts(String uuid) = _GetUserPosts;
   const factory NewsfeedEvent.savePost(String uuid) = _SavePost;
   const factory NewsfeedEvent.getSavedPosts(String uuid) = _GetSavedPosts;

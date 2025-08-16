@@ -16,6 +16,7 @@ import 'package:prezza/core/service/hive_storage.dart';
 import 'package:prezza/core/shared/widgets/empty_widget.dart';
 import 'package:prezza/core/shared/widgets/toggle_btn.dart';
 import 'package:prezza/core/shared/widgets/under_montains.dart';
+import 'package:prezza/features/cart/presentation/bloc/cart_bloc.dart';
 import 'package:prezza/features/location/domain/entities/current_location_entity.dart';
 import 'package:sizer/sizer.dart';
 
@@ -44,7 +45,7 @@ class _AllVendorPageState extends State<AllVendorPage> {
     bloc = VendorBloc.get(context);
     bloc.categoryId = widget.id;
     bloc.add(VendorEvent.getVendorByCategory(widget.id, widget.type));
-
+    CartBloc.get(context).add(const CartEvent.getUserCart());
     super.initState();
   }
 
@@ -73,7 +74,23 @@ class _AllVendorPageState extends State<AllVendorPage> {
                 width: 7.w,
               ),
             ),
-            const CircleAvatar().badgeBtn(count: 4, bgColor: primary),
+            InkWell(
+              onTap: () {
+                appRoute.navigate(const CartRoute());
+              },
+              child: BlocBuilder<CartBloc, CartState>(
+                builder: (context, state) {
+                  return state.maybeWhen(
+                    orElse: () {
+                      return const CircleAvatar().badgeBtn(
+                        count: CartBloc.get(context).cartItems.length,
+                        bgColor: primary,
+                      );
+                    },
+                  );
+                },
+              ),
+            )
           ],
           bottom: TabBar(
             // controller: _controller,

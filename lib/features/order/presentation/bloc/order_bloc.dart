@@ -302,7 +302,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
                 final token = await accessToken();
                 log(token, name: 'Sadad Access Token');
                 if (instanceId.isNotEmpty) {
-                  await Navigator.push(ctx, MaterialPageRoute(
+                  final result = await Navigator.push(ctx, MaterialPageRoute(
                     builder: (context) {
                       return PaymentScreen(
                         orderId: res,
@@ -321,7 +321,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
                         email: usr.user.email,
                         mobile: phoneController.text,
                         token: token,
-                        packageMode: PackageMode.debug,
+                        packageMode: PackageMode.release,
                         isWalletEnabled: false,
                         paymentTypes: const [
                           PaymentType.creditCard,
@@ -335,19 +335,20 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
                         themeColor: primary,
                       );
                     },
-                  )).then((value) async {
-                    if (value == null) return;
-                    if (value['status'] == success) {
-                      if (selectedType == 'delivery') {
-                        add(const OrderEvent.addOrderDeliveryMode());
-                      }
-                      if (selectedType == 'pickup') {
-                        add(const OrderEvent.addOrderPickUpMode());
-                      }
-                    } else if (value['status'] == error) {
-                      emit(OrderState.failure(tr.failedTransaction));
+                  ));
+                  log("Waiting for payment result...");
+                  log(result.toString(), name: 'Payment Result');
+                  if (result == null) return;
+                  if (result['status'] == success) {
+                    if (selectedType == 'delivery') {
+                      add(const OrderEvent.addOrderDeliveryMode());
                     }
-                  });
+                    if (selectedType == 'pickup') {
+                      add(const OrderEvent.addOrderPickUpMode());
+                    }
+                  } else if (result['status'] == error) {
+                    emit(OrderState.failure(tr.failedTransaction));
+                  }
                 }
               },
             );

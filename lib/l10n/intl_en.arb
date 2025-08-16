@@ -454,5 +454,6 @@
   "searchITem": "Search Items",
   "addPhoneNum": "Add Phone Number",
   "failedTransaction": "failed to complete transaction",
-  "arrivalTimeError": "Arrival time must be more than 3 minutes from now"
+  "arrivalTimeError": "Arrival time must be more than 3 minutes from now",
+  "retry": "Retry"
 }

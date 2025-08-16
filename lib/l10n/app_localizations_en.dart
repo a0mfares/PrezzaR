@@ -1153,4 +1153,7 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get arrivalTimeError =>
       'Arrival time must be more than 3 minutes from now';
+
+  @override
+  String get retry => 'Retry';
 }

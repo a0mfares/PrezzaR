@@ -30,7 +30,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
   final DeleteCardCustomerUsecase _deleteCardCustomerUsecase;
   final GetCardCustomerUsecase _getCardCustomerUsecase;
   final GetAccessTokenUsecase _getAccessTokenUsecase;
-  SadadPay sadadPay = SadadPay(env: Environment.dev);
+  SadadPay sadadPay = SadadPay(env: Environment.prod);
   bool isAuthenticated = false;
   String invoiceKey = '';
   static PaymentBloc get(context) => BlocProvider.of(context);
@@ -241,28 +241,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
             emit(const PaymentState.loading());
           }
         },
-        processToPay: () async {
-          emit(const PaymentState.loading());
-          final token = await accessToken();
-          try {
-            final result = await sadadPay.createInvoice(
-              invoices: [],
-              token: token,
-            );
-
-            result.fold(
-              (err) {
-                emit(PaymentState.failure(err.getMsg));
-              },
-              (res) {
-                log('Invoice Created: $res');
-                emit(const PaymentState.success());
-              },
-            );
-          } catch (e) {
-            emit(PaymentState.failure(e.toString()));
-          }
-        },
+        processToPay: () async {},
         getAccessToken: () async {
           emit(const PaymentState.loading());
           try {

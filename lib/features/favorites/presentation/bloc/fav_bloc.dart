@@ -12,40 +12,35 @@ part 'fav_bloc.freezed.dart';
 
 class FavBloc extends Bloc<FavEvent, FavState> {
   static FavBloc get(context) => BlocProvider.of(context);
+
   final AddFavVendorUsecase _addFavVendorUsecase;
   final DeleteFavVendorUsecase _deleteFavVendorUsecase;
   final GetFavVendorUsecase _getFavVendorUsecase;
+
   List<FavVendorEntity> favVendors = [];
+  Set<String> loadingVendors = {}; // Track vendor loading states
 
-  // Track loading state for individual vendors
-  Set<String> loadingVendors = {};
-
-  // Check if vendor is already in favorites
   bool alreadyInFav(String id) => favVendors.any((e) => e.uuid == id);
-
-  // Check if specific vendor is loading
   bool isVendorLoading(String id) => loadingVendors.contains(id);
 
-  FavBloc(this._addFavVendorUsecase, this._deleteFavVendorUsecase,
-      this._getFavVendorUsecase)
-      : super(const _Initial()) {
+  FavBloc(
+    this._addFavVendorUsecase,
+    this._deleteFavVendorUsecase,
+    this._getFavVendorUsecase,
+  ) : super(const FavState.initial()) {
     on<FavEvent>((event, emit) async {
       await event.maybeWhen(
         addFavVendor: (id) async {
-          // Check if already in favorites
           if (alreadyInFav(id)) {
             emit(const FavState.failure('Already in favorites'));
             return;
           }
 
           try {
-            // Add to loading set
             loadingVendors.add(id);
             emit(FavState.vendorLoading(id));
 
-            final result = await _addFavVendorUsecase(parm: {
-              'id': id,
-            });
+            final result = await _addFavVendorUsecase(parm: {'id': id});
             result.fold(
               (l) {
                 loadingVendors.remove(id);
@@ -54,7 +49,7 @@ class FavBloc extends Bloc<FavEvent, FavState> {
               (r) {
                 loadingVendors.remove(id);
                 emit(FavState.successAdded(id));
-                add(const FavEvent.getFavVendors());
+                emit(const FavState.success());
               },
             );
           } catch (e) {
@@ -64,13 +59,10 @@ class FavBloc extends Bloc<FavEvent, FavState> {
         },
         deleteFavVendor: (id) async {
           try {
-            // Add to loading set
             loadingVendors.add(id);
             emit(FavState.vendorLoading(id));
 
-            final result = await _deleteFavVendorUsecase(parm: {
-              'uuid': id,
-            });
+            final result = await _deleteFavVendorUsecase(parm: {'uuid': id});
             result.fold(
               (l) {
                 loadingVendors.remove(id);
@@ -78,8 +70,9 @@ class FavBloc extends Bloc<FavEvent, FavState> {
               },
               (r) {
                 loadingVendors.remove(id);
+                favVendors.removeWhere((e) => e.uuid == id);
                 emit(FavState.successDeleted(id));
-                add(const FavEvent.getFavVendors());
+                emit(const FavState.success());
               },
             );
           } catch (e) {
@@ -95,7 +88,9 @@ class FavBloc extends Bloc<FavEvent, FavState> {
               (l) => emit(FavState.failure(l.getMsg)),
               (r) {
                 favVendors = r;
-                log(favVendors[0].toString());
+                if (favVendors.isNotEmpty) {
+                  log("First vendor: ${favVendors.first}");
+                }
                 emit(const FavState.success());
               },
             );

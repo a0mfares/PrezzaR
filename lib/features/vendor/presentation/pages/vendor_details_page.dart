@@ -9,6 +9,7 @@ import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/service/routes.gr.dart';
 import 'package:prezza/core/shared/widgets/cached_image.dart';
+import 'package:prezza/features/cart/presentation/bloc/cart_bloc.dart';
 import 'package:prezza/features/products/presentation/pages/product_vendor_details_page.dart';
 import 'package:prezza/prezza_page.dart';
 import 'package:sizer/sizer.dart';
@@ -35,6 +36,7 @@ class _VendorProfilePageState extends State<VendorDetailsPage> {
     bloc.add(VendorEvent.getVendorDetails(widget.id));
     ProductBloc.get(context)
         .add(ProductEvent.getProductCateogries(widget.id, 'customer'));
+    CartBloc.get(context).add(const CartEvent.getUserCart());
     super.initState();
   }
 
@@ -43,15 +45,23 @@ class _VendorProfilePageState extends State<VendorDetailsPage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          CircleAvatar(
-            backgroundColor: lightCream,
-            radius: 30,
-            child: SvgPicture.asset(
-              Assets.assetsImagesShoppingCart,
-              width: 25,
-              colorFilter: ColorFilter.mode(primary, BlendMode.srcIn),
+          InkWell(
+            onTap: () {
+              appRoute.navigate(const CartRoute());
+            },
+            child: BlocBuilder<CartBloc, CartState>(
+              builder: (context, state) {
+                return state.maybeWhen(
+                  orElse: () {
+                    return const CircleAvatar().badgeBtn(
+                      count: CartBloc.get(context).cartItems.length,
+                      bgColor: primary,
+                    );
+                  },
+                );
+              },
             ),
-          ),
+          )
         ],
       ).prezzaLeading(),
       body: SingleChildScrollView(

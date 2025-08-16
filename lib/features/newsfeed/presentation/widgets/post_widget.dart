@@ -24,12 +24,12 @@ class PostWidget extends StatefulWidget {
 
 class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
   late final NewsfeedBloc bloc;
+
   // late final RiveAnimationController _controller;
   @override
   void initState() {
     bloc = NewsfeedBloc.get(context);
     bloc.add(NewsfeedEvent.getLikes(widget.post.uuid));
-    // _controller = SimpleAnimation('preview', autoplay: false);
     super.initState();
   }
 

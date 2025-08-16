@@ -8,6 +8,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:prezza/features/auth/domain/entities/user_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/post_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/profile_social_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/user_search_entity.dart';
@@ -59,8 +60,11 @@ class NewsfeedBloc extends Bloc<NewsfeedEvent, NewsfeedState> {
   TextEditingController content = TextEditingController();
   TextEditingController comment = TextEditingController();
   TextEditingController search = TextEditingController();
-
+  List<UserEntity> userFollowing = [];
+  List<UserEntity> userFollowers = [];
   List<PostEntity> posts = [];
+  List<PostEntity> userPosts = [];
+  List<PostEntity> savedPosts = [];
   ProfileSocialEntity profile = ProfileSocialEntity.empty();
   List<UserSearchEntity> users = [];
   List<UserLikeEntity> userLikes = [];
@@ -119,6 +123,44 @@ class NewsfeedBloc extends Bloc<NewsfeedEvent, NewsfeedState> {
               (res) {
                 products = res;
                 emit(const NewsfeedState.success());
+              },
+            );
+          } catch (e) {
+            emit(NewsfeedState.failure(e.toString()));
+          }
+        },
+        getUserFollowing: (uuid) async {
+          emit(const NewsfeedState.loadingFollowing());
+          try {
+            final result = await _getUserFollowingUsecase(parm: {
+              'user_uuid': uuid,
+            });
+            result.fold(
+              (err) {
+                emit(NewsfeedState.failure(err.getMsg));
+              },
+              (res) {
+                // userFollowing = res;
+                // emit(const NewsfeedState.successFollowing());
+              },
+            );
+          } catch (e) {
+            emit(NewsfeedState.failure(e.toString()));
+          }
+        },
+        getUserFollowers: (uuid) async {
+          emit(const NewsfeedState.loadingFollowers());
+          try {
+            final result = await _getUserFollowerUsecase(parm: {
+              'user_uuid': uuid,
+            });
+            result.fold(
+              (err) {
+                emit(NewsfeedState.failure(err.getMsg));
+              },
+              (res) {
+                // userFollowers = res;
+                // emit( NewsfeedState.successFollowers(userFollowers));
               },
             );
           } catch (e) {
@@ -257,47 +299,100 @@ class NewsfeedBloc extends Bloc<NewsfeedEvent, NewsfeedState> {
           }
         },
         getUserPosts: (uuid) async {
-          posts.clear();
+          log('getUserPosts: Starting for user $uuid');
+
+          // Clear user posts specifically
+          userPosts.clear();
+          log('getUserPosts: User posts cleared, current length: ${userPosts.length}');
+
+          // Emit loading state
           emit(const NewsfeedState.loadingPosts());
+          log('getUserPosts: Emitted loadingPosts state');
+
           try {
+            log('getUserPosts: Calling _getPostsUsecase with params: {user_uuid: $uuid}');
+
             final result = await _getPostsUsecase(parm: {
               'user_uuid': uuid,
             });
+
+            log('getUserPosts: _getPostsUsecase completed');
+
             result.fold((err) {
-              log('getUserPosts: Error - ${err.getMsg}');
+              log('getUserPosts: Error received - ${err.getMsg}');
               emit(NewsfeedState.failure(err.getMsg));
             }, (res) {
-              log('getUserPosts: Number of posts fetched: ${res.length}');
+              log('getUserPosts: Success - Received ${res.length} user posts');
+
               if (res.isEmpty) {
-                log('getUserPosts: No posts found for user $uuid');
+                log('getUserPosts: WARNING - No posts found for user $uuid');
+              } else {
+                log('getUserPosts: First few post IDs: ${res.take(3).map((p) => p.uuid ?? 'null').toList()}');
               }
-              posts = res;
+
+              userPosts = res;
+              log('getUserPosts: Posts assigned - userPosts: ${userPosts.length}, posts: ${posts.length}');
+
+              // Emit success state
               emit(const NewsfeedState.success());
+              log('getUserPosts: Emitted success state');
             });
           } catch (e) {
-            log('getUserPosts: Exception - ${e.toString()}');
+            log('getUserPosts: Exception caught - ${e.toString()}');
             emit(NewsfeedState.failure(e.toString()));
           }
+
+          log('getUserPosts: Method completed');
         },
         getSavedPosts: (uuid) async {
-          posts.clear();
+          log('getSavedPosts: Starting for user $uuid');
+
+          // Clear saved posts specifically
+          savedPosts.clear();
+          log('getSavedPosts: Saved posts cleared, current length: ${savedPosts.length}');
+
+          // Emit loading state
           emit(const NewsfeedState.loadingPosts());
+          log('getSavedPosts: Emitted loadingPosts state');
+
           try {
+            log('getSavedPosts: Calling _getSavedPostsUsecase with params: {user_uuid: $uuid}');
+
             final result = await _getSavedPostsUsecase(parm: {
               'user_uuid': uuid,
             });
+
+            log('getSavedPosts: _getSavedPostsUsecase completed');
+
             result.fold(
               (err) {
+                log('getSavedPosts: Error received - ${err.getMsg}');
                 emit(NewsfeedState.failure(err.getMsg));
               },
               (res) {
-                posts = res;
+                log('getSavedPosts: Success - Received ${res.length} saved posts');
+
+                if (res.isEmpty) {
+                  log('getSavedPosts: WARNING - No saved posts found for user $uuid');
+                } else {
+                  log('getSavedPosts: First few post IDs: ${res.take(3).map((p) => p.uuid ?? 'null').toList()}');
+                }
+
+                // Assign to savedPosts and also update main posts list
+                savedPosts = res;
+                log('getSavedPosts: Posts assigned - savedPosts: ${savedPosts.length}, posts: ${posts.length}');
+
+                // Emit success state
                 emit(const NewsfeedState.success());
+                log('getSavedPosts: Emitted success state');
               },
             );
           } catch (e) {
+            log('getSavedPosts: Exception caught - ${e.toString()}');
             emit(NewsfeedState.failure(e.toString()));
           }
+
+          log('getSavedPosts: Method completed');
         },
         savePost: (uuid) async {
           emit(const NewsfeedState.loadingPosts());

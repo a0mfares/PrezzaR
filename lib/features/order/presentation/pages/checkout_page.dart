@@ -42,8 +42,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
   initState() {
     bloc = OrderBloc.get(context);
     cartBloc = CartBloc.get(context);
-    final paymentBloc = PaymentBloc.get(context);
-    paymentBloc.add(const PaymentEvent.getAccessToken());
+
     // Initialize order type based on business type
     _initializeOrderType();
 

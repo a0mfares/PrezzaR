@@ -26,7 +26,7 @@ class UserHomePage extends StatefulWidget {
 class _UserHomePageState extends State<UserHomePage> {
   @override
   void initState() {
-    CartBloc.get(context).add(const CartEvent.getCartLength());
+    CartBloc.get(context).add(const CartEvent.getUserCart());
 
     super.initState();
   }
@@ -68,7 +68,7 @@ class _UserHomePageState extends State<UserHomePage> {
                 return state.maybeWhen(
                   orElse: () {
                     return const CircleAvatar().badgeBtn(
-                      count: CartBloc.get(context).cartLength,
+                      count: CartBloc.get(context).cartItems.length,
                       bgColor: primary,
                     );
                   },

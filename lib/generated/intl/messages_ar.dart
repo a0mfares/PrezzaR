@@ -65,7 +65,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "addOption": MessageLookupByLibrary.simpleMessage("إضافة خيار"),
         "addPaymentMethod":
             MessageLookupByLibrary.simpleMessage("إضافة وسيلة دفع"),
-        "addPhoneNum": MessageLookupByLibrary.simpleMessage("Add Phone Number"),
+        "addPhoneNum": MessageLookupByLibrary.simpleMessage("إضافة رقم هاتف"),
         "addPhotos": MessageLookupByLibrary.simpleMessage("إضافة صور"),
         "addSize": MessageLookupByLibrary.simpleMessage("إضافة حجم"),
         "addToCart": MessageLookupByLibrary.simpleMessage("إضافة إلى السلة"),
@@ -82,7 +82,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "جميع العناصر الجانبيه مطلوبه"),
         "and": MessageLookupByLibrary.simpleMessage(" و "),
         "anySpecialRequest":
-            MessageLookupByLibrary.simpleMessage("Any Special Request?"),
+            MessageLookupByLibrary.simpleMessage("أي طلبات خاصة ؟"),
         "appUpdates": MessageLookupByLibrary.simpleMessage("تحديثات التطبيق"),
         "appUpdatesSubTitle": MessageLookupByLibrary.simpleMessage(
             "إشعارات تتعلق بالتغييرات المهمة في التطبيق، الميزات الجديدة، أو التحديثات."),
@@ -103,7 +103,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "areUSureDeleteLocation": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد من حذف هذا الموقع؟"),
         "arrivalTimeError": MessageLookupByLibrary.simpleMessage(
-            "Arrival time must be more than 3 minutes from now"),
+            "وقت الوصول يجب ان يكون اكثر من ثلاث دقائق"),
         "arrivesIn": MessageLookupByLibrary.simpleMessage("سيصل خلال:"),
         "bankName": MessageLookupByLibrary.simpleMessage("اسم البنك"),
         "bookTable": MessageLookupByLibrary.simpleMessage("احجز طاولتك"),
@@ -245,8 +245,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "extraCharge": MessageLookupByLibrary.simpleMessage("رسوم إضافية"),
         "extraname": MessageLookupByLibrary.simpleMessage("اسم الإضافة"),
         "extras": MessageLookupByLibrary.simpleMessage("الإضافات"),
-        "failedTransaction": MessageLookupByLibrary.simpleMessage(
-            "failed to complete transaction"),
+        "failedTransaction":
+            MessageLookupByLibrary.simpleMessage("حدث خأ اثناء اكمال العملية"),
         "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "feed": MessageLookupByLibrary.simpleMessage("الخلاصة"),
         "feedback": MessageLookupByLibrary.simpleMessage("التقييم"),
@@ -330,7 +330,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "noPlaces": MessageLookupByLibrary.simpleMessage("لا توجد أماكن"),
         "noPosts":
             MessageLookupByLibrary.simpleMessage("ليس لديك اي منشورات حاليا!"),
-        "noResautrants": MessageLookupByLibrary.simpleMessage("No Resaurants"),
+        "noResautrants": MessageLookupByLibrary.simpleMessage("لا يوجد مطاعم"),
         "noSavedPosts":
             MessageLookupByLibrary.simpleMessage("لا يوجد منشورات الان!"),
         "noSponsers": MessageLookupByLibrary.simpleMessage("لا تتوفر اعلانات"),
@@ -366,8 +366,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "overallRating":
             MessageLookupByLibrary.simpleMessage("تقييم التطبيق العام"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
-        "passwordIsRequired": MessageLookupByLibrary.simpleMessage(
-            "Password is required to update personal info"),
+        "passwordIsRequired":
+            MessageLookupByLibrary.simpleMessage("كلمة المرور مطلوبة"),
         "passwordValidaton": MessageLookupByLibrary.simpleMessage(
             "يجب أن تكون كلمات المرور على الأقل 8 أحرف:"),
         "payWith": MessageLookupByLibrary.simpleMessage("الدفع باستخدام"),
@@ -435,7 +435,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "question": MessageLookupByLibrary.simpleMessage("سؤال"),
         "rateUs": MessageLookupByLibrary.simpleMessage("قيّمنا"),
         "rating": m9,
-        "ratingTitle": MessageLookupByLibrary.simpleMessage("Rating"),
+        "ratingTitle": MessageLookupByLibrary.simpleMessage("التقييم"),
         "reject": MessageLookupByLibrary.simpleMessage("رفض"),
         "remove": MessageLookupByLibrary.simpleMessage("إزالة"),
         "removeFollower": MessageLookupByLibrary.simpleMessage("إزالة متابع"),
@@ -446,6 +446,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "requiredField": MessageLookupByLibrary.simpleMessage("حقل مطلوب"),
         "resendCode":
             MessageLookupByLibrary.simpleMessage("إعادة إرسال الكود خلال: "),
+        "retry": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
         "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
         "role": MessageLookupByLibrary.simpleMessage("دورك"),
         "roleInCompany":
@@ -458,10 +459,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "scheduleOrder": MessageLookupByLibrary.simpleMessage("جدولة الطلب"),
         "searchCoffe": MessageLookupByLibrary.simpleMessage(
             "ابحث عن المقاهي، المطاعم، وغيرها"),
-        "searchITem": MessageLookupByLibrary.simpleMessage("Search Items"),
+        "searchITem": MessageLookupByLibrary.simpleMessage("البحث عن العناصر"),
         "seeAllReviews":
             MessageLookupByLibrary.simpleMessage("عرض جميع التقييمات"),
-        "seeMore": MessageLookupByLibrary.simpleMessage("See More"),
+        "seeMore": MessageLookupByLibrary.simpleMessage("عرض المزيد"),
         "selectLocationNear": MessageLookupByLibrary.simpleMessage(
             "حدد الموقع لرؤية الأماكن القريبة"),
         "selectOrderType":

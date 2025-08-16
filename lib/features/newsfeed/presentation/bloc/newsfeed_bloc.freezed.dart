@@ -24,6 +24,12 @@ mixin _$NewsfeedEvent {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -55,6 +61,12 @@ mixin _$NewsfeedEvent {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -85,6 +97,12 @@ mixin _$NewsfeedEvent {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -116,6 +134,12 @@ mixin _$NewsfeedEvent {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -145,6 +169,12 @@ mixin _$NewsfeedEvent {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -174,6 +204,12 @@ mixin _$NewsfeedEvent {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -293,6 +329,12 @@ class _$PickupImageImpl implements _PickupImage {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -327,6 +369,12 @@ class _$PickupImageImpl implements _PickupImage {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -360,6 +408,12 @@ class _$PickupImageImpl implements _PickupImage {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -397,6 +451,12 @@ class _$PickupImageImpl implements _PickupImage {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -429,6 +489,12 @@ class _$PickupImageImpl implements _PickupImage {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -461,6 +527,12 @@ class _$PickupImageImpl implements _PickupImage {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -548,6 +620,12 @@ class _$CreatePostImpl implements _CreatePost {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -582,6 +660,12 @@ class _$CreatePostImpl implements _CreatePost {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -615,6 +699,12 @@ class _$CreatePostImpl implements _CreatePost {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -652,6 +742,12 @@ class _$CreatePostImpl implements _CreatePost {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -684,6 +780,12 @@ class _$CreatePostImpl implements _CreatePost {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -716,6 +818,12 @@ class _$CreatePostImpl implements _CreatePost {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -795,6 +903,12 @@ class _$FetchPostsImpl implements _FetchPosts {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -829,6 +943,12 @@ class _$FetchPostsImpl implements _FetchPosts {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -862,6 +982,12 @@ class _$FetchPostsImpl implements _FetchPosts {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -899,6 +1025,12 @@ class _$FetchPostsImpl implements _FetchPosts {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -931,6 +1063,12 @@ class _$FetchPostsImpl implements _FetchPosts {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -963,6 +1101,12 @@ class _$FetchPostsImpl implements _FetchPosts {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -1042,6 +1186,12 @@ class _$GetUsersImpl implements _GetUsers {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -1076,6 +1226,12 @@ class _$GetUsersImpl implements _GetUsers {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -1109,6 +1265,12 @@ class _$GetUsersImpl implements _GetUsers {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -1146,6 +1308,12 @@ class _$GetUsersImpl implements _GetUsers {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -1178,6 +1346,12 @@ class _$GetUsersImpl implements _GetUsers {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -1210,6 +1384,12 @@ class _$GetUsersImpl implements _GetUsers {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -1314,6 +1494,12 @@ class _$FollowImpl implements _Follow {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -1348,6 +1534,12 @@ class _$FollowImpl implements _Follow {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -1381,6 +1573,12 @@ class _$FollowImpl implements _Follow {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -1418,6 +1616,12 @@ class _$FollowImpl implements _Follow {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -1450,6 +1654,12 @@ class _$FollowImpl implements _Follow {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -1482,6 +1692,12 @@ class _$FollowImpl implements _Follow {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -1594,6 +1810,12 @@ class _$UnFollowImpl implements _UnFollow {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -1628,6 +1850,12 @@ class _$UnFollowImpl implements _UnFollow {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -1661,6 +1889,12 @@ class _$UnFollowImpl implements _UnFollow {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -1698,6 +1932,12 @@ class _$UnFollowImpl implements _UnFollow {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -1730,6 +1970,12 @@ class _$UnFollowImpl implements _UnFollow {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -1762,6 +2008,12 @@ class _$UnFollowImpl implements _UnFollow {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -1799,6 +2051,1918 @@ abstract class _UnFollow implements NewsfeedEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$UnFollowImplCopyWith<_$UnFollowImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetUserFollowersImplCopyWith<$Res> {
+  factory _$$GetUserFollowersImplCopyWith(_$GetUserFollowersImpl value,
+          $Res Function(_$GetUserFollowersImpl) then) =
+      __$$GetUserFollowersImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String uuid});
+}
+
+/// @nodoc
+class __$$GetUserFollowersImplCopyWithImpl<$Res>
+    extends _$NewsfeedEventCopyWithImpl<$Res, _$GetUserFollowersImpl>
+    implements _$$GetUserFollowersImplCopyWith<$Res> {
+  __$$GetUserFollowersImplCopyWithImpl(_$GetUserFollowersImpl _value,
+      $Res Function(_$GetUserFollowersImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uuid = null,
+  }) {
+    return _then(_$GetUserFollowersImpl(
+      null == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetUserFollowersImpl implements _GetUserFollowers {
+  const _$GetUserFollowersImpl(this.uuid);
+
+  @override
+  final String uuid;
+
+  @override
+  String toString() {
+    return 'NewsfeedEvent.getUserFollowers(uuid: $uuid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserFollowersImpl &&
+            (identical(other.uuid, uuid) || other.uuid == uuid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uuid);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserFollowersImplCopyWith<_$GetUserFollowersImpl> get copyWith =>
+      __$$GetUserFollowersImplCopyWithImpl<_$GetUserFollowersImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(File img) pickupImage,
+    required TResult Function() createPost,
+    required TResult Function() fetchPosts,
+    required TResult Function() getUsers,
+    required TResult Function(dynamic uuid) follow,
+    required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
+    required TResult Function(String uuid) getUserPosts,
+    required TResult Function(String uuid) savePost,
+    required TResult Function(String uuid) getSavedPosts,
+    required TResult Function(String uuid) getUserInfo,
+    required TResult Function(String postId) likePost,
+    required TResult Function(String postId) unLikePost,
+    required TResult Function(String commentId, String postId) unLikeCmment,
+    required TResult Function(String commentId, dynamic replyId)
+        deleteReplayComment,
+    required TResult Function(String postId) getLikes,
+    required TResult Function(String postId) addComment,
+    required TResult Function(String commentId) editComment,
+    required TResult Function(String commentId, String postId, String content)
+        deleteComment,
+    required TResult Function(String postId) getComments,
+    required TResult Function(String commentId) replayComment,
+    required TResult Function(String commentId, String postId) likeComment,
+    required TResult Function(String commentId) getCommentLikes,
+    required TResult Function(String commentId) getCommentReplaies,
+    required TResult Function() getTagVendor,
+    required TResult Function() getTagProduct,
+  }) {
+    return getUserFollowers(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(File img)? pickupImage,
+    TResult? Function()? createPost,
+    TResult? Function()? fetchPosts,
+    TResult? Function()? getUsers,
+    TResult? Function(dynamic uuid)? follow,
+    TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
+    TResult? Function(String uuid)? getUserPosts,
+    TResult? Function(String uuid)? savePost,
+    TResult? Function(String uuid)? getSavedPosts,
+    TResult? Function(String uuid)? getUserInfo,
+    TResult? Function(String postId)? likePost,
+    TResult? Function(String postId)? unLikePost,
+    TResult? Function(String commentId, String postId)? unLikeCmment,
+    TResult? Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult? Function(String postId)? getLikes,
+    TResult? Function(String postId)? addComment,
+    TResult? Function(String commentId)? editComment,
+    TResult? Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult? Function(String postId)? getComments,
+    TResult? Function(String commentId)? replayComment,
+    TResult? Function(String commentId, String postId)? likeComment,
+    TResult? Function(String commentId)? getCommentLikes,
+    TResult? Function(String commentId)? getCommentReplaies,
+    TResult? Function()? getTagVendor,
+    TResult? Function()? getTagProduct,
+  }) {
+    return getUserFollowers?.call(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(File img)? pickupImage,
+    TResult Function()? createPost,
+    TResult Function()? fetchPosts,
+    TResult Function()? getUsers,
+    TResult Function(dynamic uuid)? follow,
+    TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
+    TResult Function(String uuid)? getUserPosts,
+    TResult Function(String uuid)? savePost,
+    TResult Function(String uuid)? getSavedPosts,
+    TResult Function(String uuid)? getUserInfo,
+    TResult Function(String postId)? likePost,
+    TResult Function(String postId)? unLikePost,
+    TResult Function(String commentId, String postId)? unLikeCmment,
+    TResult Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult Function(String postId)? getLikes,
+    TResult Function(String postId)? addComment,
+    TResult Function(String commentId)? editComment,
+    TResult Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult Function(String postId)? getComments,
+    TResult Function(String commentId)? replayComment,
+    TResult Function(String commentId, String postId)? likeComment,
+    TResult Function(String commentId)? getCommentLikes,
+    TResult Function(String commentId)? getCommentReplaies,
+    TResult Function()? getTagVendor,
+    TResult Function()? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (getUserFollowers != null) {
+      return getUserFollowers(uuid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickupImage value) pickupImage,
+    required TResult Function(_CreatePost value) createPost,
+    required TResult Function(_FetchPosts value) fetchPosts,
+    required TResult Function(_GetUsers value) getUsers,
+    required TResult Function(_Follow value) follow,
+    required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
+    required TResult Function(_GetUserPosts value) getUserPosts,
+    required TResult Function(_SavePost value) savePost,
+    required TResult Function(_GetSavedPosts value) getSavedPosts,
+    required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_LikePost value) likePost,
+    required TResult Function(_UnLikePost value) unLikePost,
+    required TResult Function(_UnLikeCmment value) unLikeCmment,
+    required TResult Function(_DeleteReplayComment value) deleteReplayComment,
+    required TResult Function(_GetLikes value) getLikes,
+    required TResult Function(_AddComment value) addComment,
+    required TResult Function(_EditComment value) editComment,
+    required TResult Function(_DeleteComment value) deleteComment,
+    required TResult Function(_GetComments value) getComments,
+    required TResult Function(_ReplayComment value) replayComment,
+    required TResult Function(_LikeComment value) likeComment,
+    required TResult Function(_GetCommentLikes value) getCommentLikes,
+    required TResult Function(_GetCommentReplaies value) getCommentReplaies,
+    required TResult Function(_GetTagVendor value) getTagVendor,
+    required TResult Function(_GetTagProduct value) getTagProduct,
+  }) {
+    return getUserFollowers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickupImage value)? pickupImage,
+    TResult? Function(_CreatePost value)? createPost,
+    TResult? Function(_FetchPosts value)? fetchPosts,
+    TResult? Function(_GetUsers value)? getUsers,
+    TResult? Function(_Follow value)? follow,
+    TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
+    TResult? Function(_GetUserPosts value)? getUserPosts,
+    TResult? Function(_SavePost value)? savePost,
+    TResult? Function(_GetSavedPosts value)? getSavedPosts,
+    TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_LikePost value)? likePost,
+    TResult? Function(_UnLikePost value)? unLikePost,
+    TResult? Function(_UnLikeCmment value)? unLikeCmment,
+    TResult? Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult? Function(_GetLikes value)? getLikes,
+    TResult? Function(_AddComment value)? addComment,
+    TResult? Function(_EditComment value)? editComment,
+    TResult? Function(_DeleteComment value)? deleteComment,
+    TResult? Function(_GetComments value)? getComments,
+    TResult? Function(_ReplayComment value)? replayComment,
+    TResult? Function(_LikeComment value)? likeComment,
+    TResult? Function(_GetCommentLikes value)? getCommentLikes,
+    TResult? Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult? Function(_GetTagVendor value)? getTagVendor,
+    TResult? Function(_GetTagProduct value)? getTagProduct,
+  }) {
+    return getUserFollowers?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickupImage value)? pickupImage,
+    TResult Function(_CreatePost value)? createPost,
+    TResult Function(_FetchPosts value)? fetchPosts,
+    TResult Function(_GetUsers value)? getUsers,
+    TResult Function(_Follow value)? follow,
+    TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
+    TResult Function(_GetUserPosts value)? getUserPosts,
+    TResult Function(_SavePost value)? savePost,
+    TResult Function(_GetSavedPosts value)? getSavedPosts,
+    TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_LikePost value)? likePost,
+    TResult Function(_UnLikePost value)? unLikePost,
+    TResult Function(_UnLikeCmment value)? unLikeCmment,
+    TResult Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult Function(_GetLikes value)? getLikes,
+    TResult Function(_AddComment value)? addComment,
+    TResult Function(_EditComment value)? editComment,
+    TResult Function(_DeleteComment value)? deleteComment,
+    TResult Function(_GetComments value)? getComments,
+    TResult Function(_ReplayComment value)? replayComment,
+    TResult Function(_LikeComment value)? likeComment,
+    TResult Function(_GetCommentLikes value)? getCommentLikes,
+    TResult Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult Function(_GetTagVendor value)? getTagVendor,
+    TResult Function(_GetTagProduct value)? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (getUserFollowers != null) {
+      return getUserFollowers(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetUserFollowers implements NewsfeedEvent {
+  const factory _GetUserFollowers(final String uuid) = _$GetUserFollowersImpl;
+
+  String get uuid;
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetUserFollowersImplCopyWith<_$GetUserFollowersImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetUserFollowingImplCopyWith<$Res> {
+  factory _$$GetUserFollowingImplCopyWith(_$GetUserFollowingImpl value,
+          $Res Function(_$GetUserFollowingImpl) then) =
+      __$$GetUserFollowingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String uuid});
+}
+
+/// @nodoc
+class __$$GetUserFollowingImplCopyWithImpl<$Res>
+    extends _$NewsfeedEventCopyWithImpl<$Res, _$GetUserFollowingImpl>
+    implements _$$GetUserFollowingImplCopyWith<$Res> {
+  __$$GetUserFollowingImplCopyWithImpl(_$GetUserFollowingImpl _value,
+      $Res Function(_$GetUserFollowingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uuid = null,
+  }) {
+    return _then(_$GetUserFollowingImpl(
+      null == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetUserFollowingImpl implements _GetUserFollowing {
+  const _$GetUserFollowingImpl(this.uuid);
+
+  @override
+  final String uuid;
+
+  @override
+  String toString() {
+    return 'NewsfeedEvent.getUserFollowing(uuid: $uuid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserFollowingImpl &&
+            (identical(other.uuid, uuid) || other.uuid == uuid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uuid);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserFollowingImplCopyWith<_$GetUserFollowingImpl> get copyWith =>
+      __$$GetUserFollowingImplCopyWithImpl<_$GetUserFollowingImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(File img) pickupImage,
+    required TResult Function() createPost,
+    required TResult Function() fetchPosts,
+    required TResult Function() getUsers,
+    required TResult Function(dynamic uuid) follow,
+    required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
+    required TResult Function(String uuid) getUserPosts,
+    required TResult Function(String uuid) savePost,
+    required TResult Function(String uuid) getSavedPosts,
+    required TResult Function(String uuid) getUserInfo,
+    required TResult Function(String postId) likePost,
+    required TResult Function(String postId) unLikePost,
+    required TResult Function(String commentId, String postId) unLikeCmment,
+    required TResult Function(String commentId, dynamic replyId)
+        deleteReplayComment,
+    required TResult Function(String postId) getLikes,
+    required TResult Function(String postId) addComment,
+    required TResult Function(String commentId) editComment,
+    required TResult Function(String commentId, String postId, String content)
+        deleteComment,
+    required TResult Function(String postId) getComments,
+    required TResult Function(String commentId) replayComment,
+    required TResult Function(String commentId, String postId) likeComment,
+    required TResult Function(String commentId) getCommentLikes,
+    required TResult Function(String commentId) getCommentReplaies,
+    required TResult Function() getTagVendor,
+    required TResult Function() getTagProduct,
+  }) {
+    return getUserFollowing(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(File img)? pickupImage,
+    TResult? Function()? createPost,
+    TResult? Function()? fetchPosts,
+    TResult? Function()? getUsers,
+    TResult? Function(dynamic uuid)? follow,
+    TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
+    TResult? Function(String uuid)? getUserPosts,
+    TResult? Function(String uuid)? savePost,
+    TResult? Function(String uuid)? getSavedPosts,
+    TResult? Function(String uuid)? getUserInfo,
+    TResult? Function(String postId)? likePost,
+    TResult? Function(String postId)? unLikePost,
+    TResult? Function(String commentId, String postId)? unLikeCmment,
+    TResult? Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult? Function(String postId)? getLikes,
+    TResult? Function(String postId)? addComment,
+    TResult? Function(String commentId)? editComment,
+    TResult? Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult? Function(String postId)? getComments,
+    TResult? Function(String commentId)? replayComment,
+    TResult? Function(String commentId, String postId)? likeComment,
+    TResult? Function(String commentId)? getCommentLikes,
+    TResult? Function(String commentId)? getCommentReplaies,
+    TResult? Function()? getTagVendor,
+    TResult? Function()? getTagProduct,
+  }) {
+    return getUserFollowing?.call(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(File img)? pickupImage,
+    TResult Function()? createPost,
+    TResult Function()? fetchPosts,
+    TResult Function()? getUsers,
+    TResult Function(dynamic uuid)? follow,
+    TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
+    TResult Function(String uuid)? getUserPosts,
+    TResult Function(String uuid)? savePost,
+    TResult Function(String uuid)? getSavedPosts,
+    TResult Function(String uuid)? getUserInfo,
+    TResult Function(String postId)? likePost,
+    TResult Function(String postId)? unLikePost,
+    TResult Function(String commentId, String postId)? unLikeCmment,
+    TResult Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult Function(String postId)? getLikes,
+    TResult Function(String postId)? addComment,
+    TResult Function(String commentId)? editComment,
+    TResult Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult Function(String postId)? getComments,
+    TResult Function(String commentId)? replayComment,
+    TResult Function(String commentId, String postId)? likeComment,
+    TResult Function(String commentId)? getCommentLikes,
+    TResult Function(String commentId)? getCommentReplaies,
+    TResult Function()? getTagVendor,
+    TResult Function()? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (getUserFollowing != null) {
+      return getUserFollowing(uuid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickupImage value) pickupImage,
+    required TResult Function(_CreatePost value) createPost,
+    required TResult Function(_FetchPosts value) fetchPosts,
+    required TResult Function(_GetUsers value) getUsers,
+    required TResult Function(_Follow value) follow,
+    required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
+    required TResult Function(_GetUserPosts value) getUserPosts,
+    required TResult Function(_SavePost value) savePost,
+    required TResult Function(_GetSavedPosts value) getSavedPosts,
+    required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_LikePost value) likePost,
+    required TResult Function(_UnLikePost value) unLikePost,
+    required TResult Function(_UnLikeCmment value) unLikeCmment,
+    required TResult Function(_DeleteReplayComment value) deleteReplayComment,
+    required TResult Function(_GetLikes value) getLikes,
+    required TResult Function(_AddComment value) addComment,
+    required TResult Function(_EditComment value) editComment,
+    required TResult Function(_DeleteComment value) deleteComment,
+    required TResult Function(_GetComments value) getComments,
+    required TResult Function(_ReplayComment value) replayComment,
+    required TResult Function(_LikeComment value) likeComment,
+    required TResult Function(_GetCommentLikes value) getCommentLikes,
+    required TResult Function(_GetCommentReplaies value) getCommentReplaies,
+    required TResult Function(_GetTagVendor value) getTagVendor,
+    required TResult Function(_GetTagProduct value) getTagProduct,
+  }) {
+    return getUserFollowing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickupImage value)? pickupImage,
+    TResult? Function(_CreatePost value)? createPost,
+    TResult? Function(_FetchPosts value)? fetchPosts,
+    TResult? Function(_GetUsers value)? getUsers,
+    TResult? Function(_Follow value)? follow,
+    TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
+    TResult? Function(_GetUserPosts value)? getUserPosts,
+    TResult? Function(_SavePost value)? savePost,
+    TResult? Function(_GetSavedPosts value)? getSavedPosts,
+    TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_LikePost value)? likePost,
+    TResult? Function(_UnLikePost value)? unLikePost,
+    TResult? Function(_UnLikeCmment value)? unLikeCmment,
+    TResult? Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult? Function(_GetLikes value)? getLikes,
+    TResult? Function(_AddComment value)? addComment,
+    TResult? Function(_EditComment value)? editComment,
+    TResult? Function(_DeleteComment value)? deleteComment,
+    TResult? Function(_GetComments value)? getComments,
+    TResult? Function(_ReplayComment value)? replayComment,
+    TResult? Function(_LikeComment value)? likeComment,
+    TResult? Function(_GetCommentLikes value)? getCommentLikes,
+    TResult? Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult? Function(_GetTagVendor value)? getTagVendor,
+    TResult? Function(_GetTagProduct value)? getTagProduct,
+  }) {
+    return getUserFollowing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickupImage value)? pickupImage,
+    TResult Function(_CreatePost value)? createPost,
+    TResult Function(_FetchPosts value)? fetchPosts,
+    TResult Function(_GetUsers value)? getUsers,
+    TResult Function(_Follow value)? follow,
+    TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
+    TResult Function(_GetUserPosts value)? getUserPosts,
+    TResult Function(_SavePost value)? savePost,
+    TResult Function(_GetSavedPosts value)? getSavedPosts,
+    TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_LikePost value)? likePost,
+    TResult Function(_UnLikePost value)? unLikePost,
+    TResult Function(_UnLikeCmment value)? unLikeCmment,
+    TResult Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult Function(_GetLikes value)? getLikes,
+    TResult Function(_AddComment value)? addComment,
+    TResult Function(_EditComment value)? editComment,
+    TResult Function(_DeleteComment value)? deleteComment,
+    TResult Function(_GetComments value)? getComments,
+    TResult Function(_ReplayComment value)? replayComment,
+    TResult Function(_LikeComment value)? likeComment,
+    TResult Function(_GetCommentLikes value)? getCommentLikes,
+    TResult Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult Function(_GetTagVendor value)? getTagVendor,
+    TResult Function(_GetTagProduct value)? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (getUserFollowing != null) {
+      return getUserFollowing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetUserFollowing implements NewsfeedEvent {
+  const factory _GetUserFollowing(final String uuid) = _$GetUserFollowingImpl;
+
+  String get uuid;
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetUserFollowingImplCopyWith<_$GetUserFollowingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$GetUserStoriesImplCopyWith<$Res> {
+  factory _$$GetUserStoriesImplCopyWith(_$GetUserStoriesImpl value,
+          $Res Function(_$GetUserStoriesImpl) then) =
+      __$$GetUserStoriesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String uuid});
+}
+
+/// @nodoc
+class __$$GetUserStoriesImplCopyWithImpl<$Res>
+    extends _$NewsfeedEventCopyWithImpl<$Res, _$GetUserStoriesImpl>
+    implements _$$GetUserStoriesImplCopyWith<$Res> {
+  __$$GetUserStoriesImplCopyWithImpl(
+      _$GetUserStoriesImpl _value, $Res Function(_$GetUserStoriesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uuid = null,
+  }) {
+    return _then(_$GetUserStoriesImpl(
+      null == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetUserStoriesImpl implements _GetUserStories {
+  const _$GetUserStoriesImpl(this.uuid);
+
+  @override
+  final String uuid;
+
+  @override
+  String toString() {
+    return 'NewsfeedEvent.getUserStories(uuid: $uuid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$GetUserStoriesImpl &&
+            (identical(other.uuid, uuid) || other.uuid == uuid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uuid);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$GetUserStoriesImplCopyWith<_$GetUserStoriesImpl> get copyWith =>
+      __$$GetUserStoriesImplCopyWithImpl<_$GetUserStoriesImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(File img) pickupImage,
+    required TResult Function() createPost,
+    required TResult Function() fetchPosts,
+    required TResult Function() getUsers,
+    required TResult Function(dynamic uuid) follow,
+    required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
+    required TResult Function(String uuid) getUserPosts,
+    required TResult Function(String uuid) savePost,
+    required TResult Function(String uuid) getSavedPosts,
+    required TResult Function(String uuid) getUserInfo,
+    required TResult Function(String postId) likePost,
+    required TResult Function(String postId) unLikePost,
+    required TResult Function(String commentId, String postId) unLikeCmment,
+    required TResult Function(String commentId, dynamic replyId)
+        deleteReplayComment,
+    required TResult Function(String postId) getLikes,
+    required TResult Function(String postId) addComment,
+    required TResult Function(String commentId) editComment,
+    required TResult Function(String commentId, String postId, String content)
+        deleteComment,
+    required TResult Function(String postId) getComments,
+    required TResult Function(String commentId) replayComment,
+    required TResult Function(String commentId, String postId) likeComment,
+    required TResult Function(String commentId) getCommentLikes,
+    required TResult Function(String commentId) getCommentReplaies,
+    required TResult Function() getTagVendor,
+    required TResult Function() getTagProduct,
+  }) {
+    return getUserStories(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(File img)? pickupImage,
+    TResult? Function()? createPost,
+    TResult? Function()? fetchPosts,
+    TResult? Function()? getUsers,
+    TResult? Function(dynamic uuid)? follow,
+    TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
+    TResult? Function(String uuid)? getUserPosts,
+    TResult? Function(String uuid)? savePost,
+    TResult? Function(String uuid)? getSavedPosts,
+    TResult? Function(String uuid)? getUserInfo,
+    TResult? Function(String postId)? likePost,
+    TResult? Function(String postId)? unLikePost,
+    TResult? Function(String commentId, String postId)? unLikeCmment,
+    TResult? Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult? Function(String postId)? getLikes,
+    TResult? Function(String postId)? addComment,
+    TResult? Function(String commentId)? editComment,
+    TResult? Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult? Function(String postId)? getComments,
+    TResult? Function(String commentId)? replayComment,
+    TResult? Function(String commentId, String postId)? likeComment,
+    TResult? Function(String commentId)? getCommentLikes,
+    TResult? Function(String commentId)? getCommentReplaies,
+    TResult? Function()? getTagVendor,
+    TResult? Function()? getTagProduct,
+  }) {
+    return getUserStories?.call(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(File img)? pickupImage,
+    TResult Function()? createPost,
+    TResult Function()? fetchPosts,
+    TResult Function()? getUsers,
+    TResult Function(dynamic uuid)? follow,
+    TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
+    TResult Function(String uuid)? getUserPosts,
+    TResult Function(String uuid)? savePost,
+    TResult Function(String uuid)? getSavedPosts,
+    TResult Function(String uuid)? getUserInfo,
+    TResult Function(String postId)? likePost,
+    TResult Function(String postId)? unLikePost,
+    TResult Function(String commentId, String postId)? unLikeCmment,
+    TResult Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult Function(String postId)? getLikes,
+    TResult Function(String postId)? addComment,
+    TResult Function(String commentId)? editComment,
+    TResult Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult Function(String postId)? getComments,
+    TResult Function(String commentId)? replayComment,
+    TResult Function(String commentId, String postId)? likeComment,
+    TResult Function(String commentId)? getCommentLikes,
+    TResult Function(String commentId)? getCommentReplaies,
+    TResult Function()? getTagVendor,
+    TResult Function()? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (getUserStories != null) {
+      return getUserStories(uuid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickupImage value) pickupImage,
+    required TResult Function(_CreatePost value) createPost,
+    required TResult Function(_FetchPosts value) fetchPosts,
+    required TResult Function(_GetUsers value) getUsers,
+    required TResult Function(_Follow value) follow,
+    required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
+    required TResult Function(_GetUserPosts value) getUserPosts,
+    required TResult Function(_SavePost value) savePost,
+    required TResult Function(_GetSavedPosts value) getSavedPosts,
+    required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_LikePost value) likePost,
+    required TResult Function(_UnLikePost value) unLikePost,
+    required TResult Function(_UnLikeCmment value) unLikeCmment,
+    required TResult Function(_DeleteReplayComment value) deleteReplayComment,
+    required TResult Function(_GetLikes value) getLikes,
+    required TResult Function(_AddComment value) addComment,
+    required TResult Function(_EditComment value) editComment,
+    required TResult Function(_DeleteComment value) deleteComment,
+    required TResult Function(_GetComments value) getComments,
+    required TResult Function(_ReplayComment value) replayComment,
+    required TResult Function(_LikeComment value) likeComment,
+    required TResult Function(_GetCommentLikes value) getCommentLikes,
+    required TResult Function(_GetCommentReplaies value) getCommentReplaies,
+    required TResult Function(_GetTagVendor value) getTagVendor,
+    required TResult Function(_GetTagProduct value) getTagProduct,
+  }) {
+    return getUserStories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickupImage value)? pickupImage,
+    TResult? Function(_CreatePost value)? createPost,
+    TResult? Function(_FetchPosts value)? fetchPosts,
+    TResult? Function(_GetUsers value)? getUsers,
+    TResult? Function(_Follow value)? follow,
+    TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
+    TResult? Function(_GetUserPosts value)? getUserPosts,
+    TResult? Function(_SavePost value)? savePost,
+    TResult? Function(_GetSavedPosts value)? getSavedPosts,
+    TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_LikePost value)? likePost,
+    TResult? Function(_UnLikePost value)? unLikePost,
+    TResult? Function(_UnLikeCmment value)? unLikeCmment,
+    TResult? Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult? Function(_GetLikes value)? getLikes,
+    TResult? Function(_AddComment value)? addComment,
+    TResult? Function(_EditComment value)? editComment,
+    TResult? Function(_DeleteComment value)? deleteComment,
+    TResult? Function(_GetComments value)? getComments,
+    TResult? Function(_ReplayComment value)? replayComment,
+    TResult? Function(_LikeComment value)? likeComment,
+    TResult? Function(_GetCommentLikes value)? getCommentLikes,
+    TResult? Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult? Function(_GetTagVendor value)? getTagVendor,
+    TResult? Function(_GetTagProduct value)? getTagProduct,
+  }) {
+    return getUserStories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickupImage value)? pickupImage,
+    TResult Function(_CreatePost value)? createPost,
+    TResult Function(_FetchPosts value)? fetchPosts,
+    TResult Function(_GetUsers value)? getUsers,
+    TResult Function(_Follow value)? follow,
+    TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
+    TResult Function(_GetUserPosts value)? getUserPosts,
+    TResult Function(_SavePost value)? savePost,
+    TResult Function(_GetSavedPosts value)? getSavedPosts,
+    TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_LikePost value)? likePost,
+    TResult Function(_UnLikePost value)? unLikePost,
+    TResult Function(_UnLikeCmment value)? unLikeCmment,
+    TResult Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult Function(_GetLikes value)? getLikes,
+    TResult Function(_AddComment value)? addComment,
+    TResult Function(_EditComment value)? editComment,
+    TResult Function(_DeleteComment value)? deleteComment,
+    TResult Function(_GetComments value)? getComments,
+    TResult Function(_ReplayComment value)? replayComment,
+    TResult Function(_LikeComment value)? likeComment,
+    TResult Function(_GetCommentLikes value)? getCommentLikes,
+    TResult Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult Function(_GetTagVendor value)? getTagVendor,
+    TResult Function(_GetTagProduct value)? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (getUserStories != null) {
+      return getUserStories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GetUserStories implements NewsfeedEvent {
+  const factory _GetUserStories(final String uuid) = _$GetUserStoriesImpl;
+
+  String get uuid;
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$GetUserStoriesImplCopyWith<_$GetUserStoriesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DeleteUserStoryImplCopyWith<$Res> {
+  factory _$$DeleteUserStoryImplCopyWith(_$DeleteUserStoryImpl value,
+          $Res Function(_$DeleteUserStoryImpl) then) =
+      __$$DeleteUserStoryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String uuid});
+}
+
+/// @nodoc
+class __$$DeleteUserStoryImplCopyWithImpl<$Res>
+    extends _$NewsfeedEventCopyWithImpl<$Res, _$DeleteUserStoryImpl>
+    implements _$$DeleteUserStoryImplCopyWith<$Res> {
+  __$$DeleteUserStoryImplCopyWithImpl(
+      _$DeleteUserStoryImpl _value, $Res Function(_$DeleteUserStoryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uuid = null,
+  }) {
+    return _then(_$DeleteUserStoryImpl(
+      null == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteUserStoryImpl implements _DeleteUserStory {
+  const _$DeleteUserStoryImpl(this.uuid);
+
+  @override
+  final String uuid;
+
+  @override
+  String toString() {
+    return 'NewsfeedEvent.deleteUserStory(uuid: $uuid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteUserStoryImpl &&
+            (identical(other.uuid, uuid) || other.uuid == uuid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uuid);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteUserStoryImplCopyWith<_$DeleteUserStoryImpl> get copyWith =>
+      __$$DeleteUserStoryImplCopyWithImpl<_$DeleteUserStoryImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(File img) pickupImage,
+    required TResult Function() createPost,
+    required TResult Function() fetchPosts,
+    required TResult Function() getUsers,
+    required TResult Function(dynamic uuid) follow,
+    required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
+    required TResult Function(String uuid) getUserPosts,
+    required TResult Function(String uuid) savePost,
+    required TResult Function(String uuid) getSavedPosts,
+    required TResult Function(String uuid) getUserInfo,
+    required TResult Function(String postId) likePost,
+    required TResult Function(String postId) unLikePost,
+    required TResult Function(String commentId, String postId) unLikeCmment,
+    required TResult Function(String commentId, dynamic replyId)
+        deleteReplayComment,
+    required TResult Function(String postId) getLikes,
+    required TResult Function(String postId) addComment,
+    required TResult Function(String commentId) editComment,
+    required TResult Function(String commentId, String postId, String content)
+        deleteComment,
+    required TResult Function(String postId) getComments,
+    required TResult Function(String commentId) replayComment,
+    required TResult Function(String commentId, String postId) likeComment,
+    required TResult Function(String commentId) getCommentLikes,
+    required TResult Function(String commentId) getCommentReplaies,
+    required TResult Function() getTagVendor,
+    required TResult Function() getTagProduct,
+  }) {
+    return deleteUserStory(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(File img)? pickupImage,
+    TResult? Function()? createPost,
+    TResult? Function()? fetchPosts,
+    TResult? Function()? getUsers,
+    TResult? Function(dynamic uuid)? follow,
+    TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
+    TResult? Function(String uuid)? getUserPosts,
+    TResult? Function(String uuid)? savePost,
+    TResult? Function(String uuid)? getSavedPosts,
+    TResult? Function(String uuid)? getUserInfo,
+    TResult? Function(String postId)? likePost,
+    TResult? Function(String postId)? unLikePost,
+    TResult? Function(String commentId, String postId)? unLikeCmment,
+    TResult? Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult? Function(String postId)? getLikes,
+    TResult? Function(String postId)? addComment,
+    TResult? Function(String commentId)? editComment,
+    TResult? Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult? Function(String postId)? getComments,
+    TResult? Function(String commentId)? replayComment,
+    TResult? Function(String commentId, String postId)? likeComment,
+    TResult? Function(String commentId)? getCommentLikes,
+    TResult? Function(String commentId)? getCommentReplaies,
+    TResult? Function()? getTagVendor,
+    TResult? Function()? getTagProduct,
+  }) {
+    return deleteUserStory?.call(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(File img)? pickupImage,
+    TResult Function()? createPost,
+    TResult Function()? fetchPosts,
+    TResult Function()? getUsers,
+    TResult Function(dynamic uuid)? follow,
+    TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
+    TResult Function(String uuid)? getUserPosts,
+    TResult Function(String uuid)? savePost,
+    TResult Function(String uuid)? getSavedPosts,
+    TResult Function(String uuid)? getUserInfo,
+    TResult Function(String postId)? likePost,
+    TResult Function(String postId)? unLikePost,
+    TResult Function(String commentId, String postId)? unLikeCmment,
+    TResult Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult Function(String postId)? getLikes,
+    TResult Function(String postId)? addComment,
+    TResult Function(String commentId)? editComment,
+    TResult Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult Function(String postId)? getComments,
+    TResult Function(String commentId)? replayComment,
+    TResult Function(String commentId, String postId)? likeComment,
+    TResult Function(String commentId)? getCommentLikes,
+    TResult Function(String commentId)? getCommentReplaies,
+    TResult Function()? getTagVendor,
+    TResult Function()? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (deleteUserStory != null) {
+      return deleteUserStory(uuid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickupImage value) pickupImage,
+    required TResult Function(_CreatePost value) createPost,
+    required TResult Function(_FetchPosts value) fetchPosts,
+    required TResult Function(_GetUsers value) getUsers,
+    required TResult Function(_Follow value) follow,
+    required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
+    required TResult Function(_GetUserPosts value) getUserPosts,
+    required TResult Function(_SavePost value) savePost,
+    required TResult Function(_GetSavedPosts value) getSavedPosts,
+    required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_LikePost value) likePost,
+    required TResult Function(_UnLikePost value) unLikePost,
+    required TResult Function(_UnLikeCmment value) unLikeCmment,
+    required TResult Function(_DeleteReplayComment value) deleteReplayComment,
+    required TResult Function(_GetLikes value) getLikes,
+    required TResult Function(_AddComment value) addComment,
+    required TResult Function(_EditComment value) editComment,
+    required TResult Function(_DeleteComment value) deleteComment,
+    required TResult Function(_GetComments value) getComments,
+    required TResult Function(_ReplayComment value) replayComment,
+    required TResult Function(_LikeComment value) likeComment,
+    required TResult Function(_GetCommentLikes value) getCommentLikes,
+    required TResult Function(_GetCommentReplaies value) getCommentReplaies,
+    required TResult Function(_GetTagVendor value) getTagVendor,
+    required TResult Function(_GetTagProduct value) getTagProduct,
+  }) {
+    return deleteUserStory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickupImage value)? pickupImage,
+    TResult? Function(_CreatePost value)? createPost,
+    TResult? Function(_FetchPosts value)? fetchPosts,
+    TResult? Function(_GetUsers value)? getUsers,
+    TResult? Function(_Follow value)? follow,
+    TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
+    TResult? Function(_GetUserPosts value)? getUserPosts,
+    TResult? Function(_SavePost value)? savePost,
+    TResult? Function(_GetSavedPosts value)? getSavedPosts,
+    TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_LikePost value)? likePost,
+    TResult? Function(_UnLikePost value)? unLikePost,
+    TResult? Function(_UnLikeCmment value)? unLikeCmment,
+    TResult? Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult? Function(_GetLikes value)? getLikes,
+    TResult? Function(_AddComment value)? addComment,
+    TResult? Function(_EditComment value)? editComment,
+    TResult? Function(_DeleteComment value)? deleteComment,
+    TResult? Function(_GetComments value)? getComments,
+    TResult? Function(_ReplayComment value)? replayComment,
+    TResult? Function(_LikeComment value)? likeComment,
+    TResult? Function(_GetCommentLikes value)? getCommentLikes,
+    TResult? Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult? Function(_GetTagVendor value)? getTagVendor,
+    TResult? Function(_GetTagProduct value)? getTagProduct,
+  }) {
+    return deleteUserStory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickupImage value)? pickupImage,
+    TResult Function(_CreatePost value)? createPost,
+    TResult Function(_FetchPosts value)? fetchPosts,
+    TResult Function(_GetUsers value)? getUsers,
+    TResult Function(_Follow value)? follow,
+    TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
+    TResult Function(_GetUserPosts value)? getUserPosts,
+    TResult Function(_SavePost value)? savePost,
+    TResult Function(_GetSavedPosts value)? getSavedPosts,
+    TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_LikePost value)? likePost,
+    TResult Function(_UnLikePost value)? unLikePost,
+    TResult Function(_UnLikeCmment value)? unLikeCmment,
+    TResult Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult Function(_GetLikes value)? getLikes,
+    TResult Function(_AddComment value)? addComment,
+    TResult Function(_EditComment value)? editComment,
+    TResult Function(_DeleteComment value)? deleteComment,
+    TResult Function(_GetComments value)? getComments,
+    TResult Function(_ReplayComment value)? replayComment,
+    TResult Function(_LikeComment value)? likeComment,
+    TResult Function(_GetCommentLikes value)? getCommentLikes,
+    TResult Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult Function(_GetTagVendor value)? getTagVendor,
+    TResult Function(_GetTagProduct value)? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (deleteUserStory != null) {
+      return deleteUserStory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DeleteUserStory implements NewsfeedEvent {
+  const factory _DeleteUserStory(final String uuid) = _$DeleteUserStoryImpl;
+
+  String get uuid;
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$DeleteUserStoryImplCopyWith<_$DeleteUserStoryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddUserStoryImplCopyWith<$Res> {
+  factory _$$AddUserStoryImplCopyWith(
+          _$AddUserStoryImpl value, $Res Function(_$AddUserStoryImpl) then) =
+      __$$AddUserStoryImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String uuid});
+}
+
+/// @nodoc
+class __$$AddUserStoryImplCopyWithImpl<$Res>
+    extends _$NewsfeedEventCopyWithImpl<$Res, _$AddUserStoryImpl>
+    implements _$$AddUserStoryImplCopyWith<$Res> {
+  __$$AddUserStoryImplCopyWithImpl(
+      _$AddUserStoryImpl _value, $Res Function(_$AddUserStoryImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uuid = null,
+  }) {
+    return _then(_$AddUserStoryImpl(
+      null == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddUserStoryImpl implements _AddUserStory {
+  const _$AddUserStoryImpl(this.uuid);
+
+  @override
+  final String uuid;
+
+  @override
+  String toString() {
+    return 'NewsfeedEvent.addUserStory(uuid: $uuid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddUserStoryImpl &&
+            (identical(other.uuid, uuid) || other.uuid == uuid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uuid);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddUserStoryImplCopyWith<_$AddUserStoryImpl> get copyWith =>
+      __$$AddUserStoryImplCopyWithImpl<_$AddUserStoryImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(File img) pickupImage,
+    required TResult Function() createPost,
+    required TResult Function() fetchPosts,
+    required TResult Function() getUsers,
+    required TResult Function(dynamic uuid) follow,
+    required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
+    required TResult Function(String uuid) getUserPosts,
+    required TResult Function(String uuid) savePost,
+    required TResult Function(String uuid) getSavedPosts,
+    required TResult Function(String uuid) getUserInfo,
+    required TResult Function(String postId) likePost,
+    required TResult Function(String postId) unLikePost,
+    required TResult Function(String commentId, String postId) unLikeCmment,
+    required TResult Function(String commentId, dynamic replyId)
+        deleteReplayComment,
+    required TResult Function(String postId) getLikes,
+    required TResult Function(String postId) addComment,
+    required TResult Function(String commentId) editComment,
+    required TResult Function(String commentId, String postId, String content)
+        deleteComment,
+    required TResult Function(String postId) getComments,
+    required TResult Function(String commentId) replayComment,
+    required TResult Function(String commentId, String postId) likeComment,
+    required TResult Function(String commentId) getCommentLikes,
+    required TResult Function(String commentId) getCommentReplaies,
+    required TResult Function() getTagVendor,
+    required TResult Function() getTagProduct,
+  }) {
+    return addUserStory(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(File img)? pickupImage,
+    TResult? Function()? createPost,
+    TResult? Function()? fetchPosts,
+    TResult? Function()? getUsers,
+    TResult? Function(dynamic uuid)? follow,
+    TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
+    TResult? Function(String uuid)? getUserPosts,
+    TResult? Function(String uuid)? savePost,
+    TResult? Function(String uuid)? getSavedPosts,
+    TResult? Function(String uuid)? getUserInfo,
+    TResult? Function(String postId)? likePost,
+    TResult? Function(String postId)? unLikePost,
+    TResult? Function(String commentId, String postId)? unLikeCmment,
+    TResult? Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult? Function(String postId)? getLikes,
+    TResult? Function(String postId)? addComment,
+    TResult? Function(String commentId)? editComment,
+    TResult? Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult? Function(String postId)? getComments,
+    TResult? Function(String commentId)? replayComment,
+    TResult? Function(String commentId, String postId)? likeComment,
+    TResult? Function(String commentId)? getCommentLikes,
+    TResult? Function(String commentId)? getCommentReplaies,
+    TResult? Function()? getTagVendor,
+    TResult? Function()? getTagProduct,
+  }) {
+    return addUserStory?.call(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(File img)? pickupImage,
+    TResult Function()? createPost,
+    TResult Function()? fetchPosts,
+    TResult Function()? getUsers,
+    TResult Function(dynamic uuid)? follow,
+    TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
+    TResult Function(String uuid)? getUserPosts,
+    TResult Function(String uuid)? savePost,
+    TResult Function(String uuid)? getSavedPosts,
+    TResult Function(String uuid)? getUserInfo,
+    TResult Function(String postId)? likePost,
+    TResult Function(String postId)? unLikePost,
+    TResult Function(String commentId, String postId)? unLikeCmment,
+    TResult Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult Function(String postId)? getLikes,
+    TResult Function(String postId)? addComment,
+    TResult Function(String commentId)? editComment,
+    TResult Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult Function(String postId)? getComments,
+    TResult Function(String commentId)? replayComment,
+    TResult Function(String commentId, String postId)? likeComment,
+    TResult Function(String commentId)? getCommentLikes,
+    TResult Function(String commentId)? getCommentReplaies,
+    TResult Function()? getTagVendor,
+    TResult Function()? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (addUserStory != null) {
+      return addUserStory(uuid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickupImage value) pickupImage,
+    required TResult Function(_CreatePost value) createPost,
+    required TResult Function(_FetchPosts value) fetchPosts,
+    required TResult Function(_GetUsers value) getUsers,
+    required TResult Function(_Follow value) follow,
+    required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
+    required TResult Function(_GetUserPosts value) getUserPosts,
+    required TResult Function(_SavePost value) savePost,
+    required TResult Function(_GetSavedPosts value) getSavedPosts,
+    required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_LikePost value) likePost,
+    required TResult Function(_UnLikePost value) unLikePost,
+    required TResult Function(_UnLikeCmment value) unLikeCmment,
+    required TResult Function(_DeleteReplayComment value) deleteReplayComment,
+    required TResult Function(_GetLikes value) getLikes,
+    required TResult Function(_AddComment value) addComment,
+    required TResult Function(_EditComment value) editComment,
+    required TResult Function(_DeleteComment value) deleteComment,
+    required TResult Function(_GetComments value) getComments,
+    required TResult Function(_ReplayComment value) replayComment,
+    required TResult Function(_LikeComment value) likeComment,
+    required TResult Function(_GetCommentLikes value) getCommentLikes,
+    required TResult Function(_GetCommentReplaies value) getCommentReplaies,
+    required TResult Function(_GetTagVendor value) getTagVendor,
+    required TResult Function(_GetTagProduct value) getTagProduct,
+  }) {
+    return addUserStory(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickupImage value)? pickupImage,
+    TResult? Function(_CreatePost value)? createPost,
+    TResult? Function(_FetchPosts value)? fetchPosts,
+    TResult? Function(_GetUsers value)? getUsers,
+    TResult? Function(_Follow value)? follow,
+    TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
+    TResult? Function(_GetUserPosts value)? getUserPosts,
+    TResult? Function(_SavePost value)? savePost,
+    TResult? Function(_GetSavedPosts value)? getSavedPosts,
+    TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_LikePost value)? likePost,
+    TResult? Function(_UnLikePost value)? unLikePost,
+    TResult? Function(_UnLikeCmment value)? unLikeCmment,
+    TResult? Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult? Function(_GetLikes value)? getLikes,
+    TResult? Function(_AddComment value)? addComment,
+    TResult? Function(_EditComment value)? editComment,
+    TResult? Function(_DeleteComment value)? deleteComment,
+    TResult? Function(_GetComments value)? getComments,
+    TResult? Function(_ReplayComment value)? replayComment,
+    TResult? Function(_LikeComment value)? likeComment,
+    TResult? Function(_GetCommentLikes value)? getCommentLikes,
+    TResult? Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult? Function(_GetTagVendor value)? getTagVendor,
+    TResult? Function(_GetTagProduct value)? getTagProduct,
+  }) {
+    return addUserStory?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickupImage value)? pickupImage,
+    TResult Function(_CreatePost value)? createPost,
+    TResult Function(_FetchPosts value)? fetchPosts,
+    TResult Function(_GetUsers value)? getUsers,
+    TResult Function(_Follow value)? follow,
+    TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
+    TResult Function(_GetUserPosts value)? getUserPosts,
+    TResult Function(_SavePost value)? savePost,
+    TResult Function(_GetSavedPosts value)? getSavedPosts,
+    TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_LikePost value)? likePost,
+    TResult Function(_UnLikePost value)? unLikePost,
+    TResult Function(_UnLikeCmment value)? unLikeCmment,
+    TResult Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult Function(_GetLikes value)? getLikes,
+    TResult Function(_AddComment value)? addComment,
+    TResult Function(_EditComment value)? editComment,
+    TResult Function(_DeleteComment value)? deleteComment,
+    TResult Function(_GetComments value)? getComments,
+    TResult Function(_ReplayComment value)? replayComment,
+    TResult Function(_LikeComment value)? likeComment,
+    TResult Function(_GetCommentLikes value)? getCommentLikes,
+    TResult Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult Function(_GetTagVendor value)? getTagVendor,
+    TResult Function(_GetTagProduct value)? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (addUserStory != null) {
+      return addUserStory(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddUserStory implements NewsfeedEvent {
+  const factory _AddUserStory(final String uuid) = _$AddUserStoryImpl;
+
+  String get uuid;
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddUserStoryImplCopyWith<_$AddUserStoryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddTagPostImplCopyWith<$Res> {
+  factory _$$AddTagPostImplCopyWith(
+          _$AddTagPostImpl value, $Res Function(_$AddTagPostImpl) then) =
+      __$$AddTagPostImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String uuid});
+}
+
+/// @nodoc
+class __$$AddTagPostImplCopyWithImpl<$Res>
+    extends _$NewsfeedEventCopyWithImpl<$Res, _$AddTagPostImpl>
+    implements _$$AddTagPostImplCopyWith<$Res> {
+  __$$AddTagPostImplCopyWithImpl(
+      _$AddTagPostImpl _value, $Res Function(_$AddTagPostImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? uuid = null,
+  }) {
+    return _then(_$AddTagPostImpl(
+      null == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddTagPostImpl implements _AddTagPost {
+  const _$AddTagPostImpl(this.uuid);
+
+  @override
+  final String uuid;
+
+  @override
+  String toString() {
+    return 'NewsfeedEvent.addTagPost(uuid: $uuid)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddTagPostImpl &&
+            (identical(other.uuid, uuid) || other.uuid == uuid));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, uuid);
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddTagPostImplCopyWith<_$AddTagPostImpl> get copyWith =>
+      __$$AddTagPostImplCopyWithImpl<_$AddTagPostImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(File img) pickupImage,
+    required TResult Function() createPost,
+    required TResult Function() fetchPosts,
+    required TResult Function() getUsers,
+    required TResult Function(dynamic uuid) follow,
+    required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
+    required TResult Function(String uuid) getUserPosts,
+    required TResult Function(String uuid) savePost,
+    required TResult Function(String uuid) getSavedPosts,
+    required TResult Function(String uuid) getUserInfo,
+    required TResult Function(String postId) likePost,
+    required TResult Function(String postId) unLikePost,
+    required TResult Function(String commentId, String postId) unLikeCmment,
+    required TResult Function(String commentId, dynamic replyId)
+        deleteReplayComment,
+    required TResult Function(String postId) getLikes,
+    required TResult Function(String postId) addComment,
+    required TResult Function(String commentId) editComment,
+    required TResult Function(String commentId, String postId, String content)
+        deleteComment,
+    required TResult Function(String postId) getComments,
+    required TResult Function(String commentId) replayComment,
+    required TResult Function(String commentId, String postId) likeComment,
+    required TResult Function(String commentId) getCommentLikes,
+    required TResult Function(String commentId) getCommentReplaies,
+    required TResult Function() getTagVendor,
+    required TResult Function() getTagProduct,
+  }) {
+    return addTagPost(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(File img)? pickupImage,
+    TResult? Function()? createPost,
+    TResult? Function()? fetchPosts,
+    TResult? Function()? getUsers,
+    TResult? Function(dynamic uuid)? follow,
+    TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
+    TResult? Function(String uuid)? getUserPosts,
+    TResult? Function(String uuid)? savePost,
+    TResult? Function(String uuid)? getSavedPosts,
+    TResult? Function(String uuid)? getUserInfo,
+    TResult? Function(String postId)? likePost,
+    TResult? Function(String postId)? unLikePost,
+    TResult? Function(String commentId, String postId)? unLikeCmment,
+    TResult? Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult? Function(String postId)? getLikes,
+    TResult? Function(String postId)? addComment,
+    TResult? Function(String commentId)? editComment,
+    TResult? Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult? Function(String postId)? getComments,
+    TResult? Function(String commentId)? replayComment,
+    TResult? Function(String commentId, String postId)? likeComment,
+    TResult? Function(String commentId)? getCommentLikes,
+    TResult? Function(String commentId)? getCommentReplaies,
+    TResult? Function()? getTagVendor,
+    TResult? Function()? getTagProduct,
+  }) {
+    return addTagPost?.call(uuid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(File img)? pickupImage,
+    TResult Function()? createPost,
+    TResult Function()? fetchPosts,
+    TResult Function()? getUsers,
+    TResult Function(dynamic uuid)? follow,
+    TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
+    TResult Function(String uuid)? getUserPosts,
+    TResult Function(String uuid)? savePost,
+    TResult Function(String uuid)? getSavedPosts,
+    TResult Function(String uuid)? getUserInfo,
+    TResult Function(String postId)? likePost,
+    TResult Function(String postId)? unLikePost,
+    TResult Function(String commentId, String postId)? unLikeCmment,
+    TResult Function(String commentId, dynamic replyId)? deleteReplayComment,
+    TResult Function(String postId)? getLikes,
+    TResult Function(String postId)? addComment,
+    TResult Function(String commentId)? editComment,
+    TResult Function(String commentId, String postId, String content)?
+        deleteComment,
+    TResult Function(String postId)? getComments,
+    TResult Function(String commentId)? replayComment,
+    TResult Function(String commentId, String postId)? likeComment,
+    TResult Function(String commentId)? getCommentLikes,
+    TResult Function(String commentId)? getCommentReplaies,
+    TResult Function()? getTagVendor,
+    TResult Function()? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (addTagPost != null) {
+      return addTagPost(uuid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_PickupImage value) pickupImage,
+    required TResult Function(_CreatePost value) createPost,
+    required TResult Function(_FetchPosts value) fetchPosts,
+    required TResult Function(_GetUsers value) getUsers,
+    required TResult Function(_Follow value) follow,
+    required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
+    required TResult Function(_GetUserPosts value) getUserPosts,
+    required TResult Function(_SavePost value) savePost,
+    required TResult Function(_GetSavedPosts value) getSavedPosts,
+    required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_LikePost value) likePost,
+    required TResult Function(_UnLikePost value) unLikePost,
+    required TResult Function(_UnLikeCmment value) unLikeCmment,
+    required TResult Function(_DeleteReplayComment value) deleteReplayComment,
+    required TResult Function(_GetLikes value) getLikes,
+    required TResult Function(_AddComment value) addComment,
+    required TResult Function(_EditComment value) editComment,
+    required TResult Function(_DeleteComment value) deleteComment,
+    required TResult Function(_GetComments value) getComments,
+    required TResult Function(_ReplayComment value) replayComment,
+    required TResult Function(_LikeComment value) likeComment,
+    required TResult Function(_GetCommentLikes value) getCommentLikes,
+    required TResult Function(_GetCommentReplaies value) getCommentReplaies,
+    required TResult Function(_GetTagVendor value) getTagVendor,
+    required TResult Function(_GetTagProduct value) getTagProduct,
+  }) {
+    return addTagPost(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_PickupImage value)? pickupImage,
+    TResult? Function(_CreatePost value)? createPost,
+    TResult? Function(_FetchPosts value)? fetchPosts,
+    TResult? Function(_GetUsers value)? getUsers,
+    TResult? Function(_Follow value)? follow,
+    TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
+    TResult? Function(_GetUserPosts value)? getUserPosts,
+    TResult? Function(_SavePost value)? savePost,
+    TResult? Function(_GetSavedPosts value)? getSavedPosts,
+    TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_LikePost value)? likePost,
+    TResult? Function(_UnLikePost value)? unLikePost,
+    TResult? Function(_UnLikeCmment value)? unLikeCmment,
+    TResult? Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult? Function(_GetLikes value)? getLikes,
+    TResult? Function(_AddComment value)? addComment,
+    TResult? Function(_EditComment value)? editComment,
+    TResult? Function(_DeleteComment value)? deleteComment,
+    TResult? Function(_GetComments value)? getComments,
+    TResult? Function(_ReplayComment value)? replayComment,
+    TResult? Function(_LikeComment value)? likeComment,
+    TResult? Function(_GetCommentLikes value)? getCommentLikes,
+    TResult? Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult? Function(_GetTagVendor value)? getTagVendor,
+    TResult? Function(_GetTagProduct value)? getTagProduct,
+  }) {
+    return addTagPost?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_PickupImage value)? pickupImage,
+    TResult Function(_CreatePost value)? createPost,
+    TResult Function(_FetchPosts value)? fetchPosts,
+    TResult Function(_GetUsers value)? getUsers,
+    TResult Function(_Follow value)? follow,
+    TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
+    TResult Function(_GetUserPosts value)? getUserPosts,
+    TResult Function(_SavePost value)? savePost,
+    TResult Function(_GetSavedPosts value)? getSavedPosts,
+    TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_LikePost value)? likePost,
+    TResult Function(_UnLikePost value)? unLikePost,
+    TResult Function(_UnLikeCmment value)? unLikeCmment,
+    TResult Function(_DeleteReplayComment value)? deleteReplayComment,
+    TResult Function(_GetLikes value)? getLikes,
+    TResult Function(_AddComment value)? addComment,
+    TResult Function(_EditComment value)? editComment,
+    TResult Function(_DeleteComment value)? deleteComment,
+    TResult Function(_GetComments value)? getComments,
+    TResult Function(_ReplayComment value)? replayComment,
+    TResult Function(_LikeComment value)? likeComment,
+    TResult Function(_GetCommentLikes value)? getCommentLikes,
+    TResult Function(_GetCommentReplaies value)? getCommentReplaies,
+    TResult Function(_GetTagVendor value)? getTagVendor,
+    TResult Function(_GetTagProduct value)? getTagProduct,
+    required TResult orElse(),
+  }) {
+    if (addTagPost != null) {
+      return addTagPost(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddTagPost implements NewsfeedEvent {
+  const factory _AddTagPost(final String uuid) = _$AddTagPostImpl;
+
+  String get uuid;
+
+  /// Create a copy of NewsfeedEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$AddTagPostImplCopyWith<_$AddTagPostImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1876,6 +4040,12 @@ class _$GetUserPostsImpl implements _GetUserPosts {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -1910,6 +4080,12 @@ class _$GetUserPostsImpl implements _GetUserPosts {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -1943,6 +4119,12 @@ class _$GetUserPostsImpl implements _GetUserPosts {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -1980,6 +4162,12 @@ class _$GetUserPostsImpl implements _GetUserPosts {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -2012,6 +4200,12 @@ class _$GetUserPostsImpl implements _GetUserPosts {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -2044,6 +4238,12 @@ class _$GetUserPostsImpl implements _GetUserPosts {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -2158,6 +4358,12 @@ class _$SavePostImpl implements _SavePost {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -2192,6 +4398,12 @@ class _$SavePostImpl implements _SavePost {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -2225,6 +4437,12 @@ class _$SavePostImpl implements _SavePost {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -2262,6 +4480,12 @@ class _$SavePostImpl implements _SavePost {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -2294,6 +4518,12 @@ class _$SavePostImpl implements _SavePost {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -2326,6 +4556,12 @@ class _$SavePostImpl implements _SavePost {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -2440,6 +4676,12 @@ class _$GetSavedPostsImpl implements _GetSavedPosts {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -2474,6 +4716,12 @@ class _$GetSavedPostsImpl implements _GetSavedPosts {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -2507,6 +4755,12 @@ class _$GetSavedPostsImpl implements _GetSavedPosts {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -2544,6 +4798,12 @@ class _$GetSavedPostsImpl implements _GetSavedPosts {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -2576,6 +4836,12 @@ class _$GetSavedPostsImpl implements _GetSavedPosts {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -2608,6 +4874,12 @@ class _$GetSavedPostsImpl implements _GetSavedPosts {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -2722,6 +4994,12 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -2756,6 +5034,12 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -2789,6 +5073,12 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -2826,6 +5116,12 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -2858,6 +5154,12 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -2890,6 +5192,12 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -3004,6 +5312,12 @@ class _$LikePostImpl implements _LikePost {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -3038,6 +5352,12 @@ class _$LikePostImpl implements _LikePost {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -3071,6 +5391,12 @@ class _$LikePostImpl implements _LikePost {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -3108,6 +5434,12 @@ class _$LikePostImpl implements _LikePost {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -3140,6 +5472,12 @@ class _$LikePostImpl implements _LikePost {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -3172,6 +5510,12 @@ class _$LikePostImpl implements _LikePost {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -3286,6 +5630,12 @@ class _$UnLikePostImpl implements _UnLikePost {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -3320,6 +5670,12 @@ class _$UnLikePostImpl implements _UnLikePost {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -3353,6 +5709,12 @@ class _$UnLikePostImpl implements _UnLikePost {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -3390,6 +5752,12 @@ class _$UnLikePostImpl implements _UnLikePost {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -3422,6 +5790,12 @@ class _$UnLikePostImpl implements _UnLikePost {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -3454,6 +5828,12 @@ class _$UnLikePostImpl implements _UnLikePost {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -3577,6 +5957,12 @@ class _$UnLikeCmmentImpl implements _UnLikeCmment {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -3611,6 +5997,12 @@ class _$UnLikeCmmentImpl implements _UnLikeCmment {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -3644,6 +6036,12 @@ class _$UnLikeCmmentImpl implements _UnLikeCmment {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -3681,6 +6079,12 @@ class _$UnLikeCmmentImpl implements _UnLikeCmment {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -3713,6 +6117,12 @@ class _$UnLikeCmmentImpl implements _UnLikeCmment {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -3745,6 +6155,12 @@ class _$UnLikeCmmentImpl implements _UnLikeCmment {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -3869,6 +6285,12 @@ class _$DeleteReplayCommentImpl implements _DeleteReplayComment {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -3903,6 +6325,12 @@ class _$DeleteReplayCommentImpl implements _DeleteReplayComment {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -3936,6 +6364,12 @@ class _$DeleteReplayCommentImpl implements _DeleteReplayComment {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -3973,6 +6407,12 @@ class _$DeleteReplayCommentImpl implements _DeleteReplayComment {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -4005,6 +6445,12 @@ class _$DeleteReplayCommentImpl implements _DeleteReplayComment {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -4037,6 +6483,12 @@ class _$DeleteReplayCommentImpl implements _DeleteReplayComment {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -4154,6 +6606,12 @@ class _$GetLikesImpl implements _GetLikes {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -4188,6 +6646,12 @@ class _$GetLikesImpl implements _GetLikes {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -4221,6 +6685,12 @@ class _$GetLikesImpl implements _GetLikes {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -4258,6 +6728,12 @@ class _$GetLikesImpl implements _GetLikes {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -4290,6 +6766,12 @@ class _$GetLikesImpl implements _GetLikes {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -4322,6 +6804,12 @@ class _$GetLikesImpl implements _GetLikes {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -4436,6 +6924,12 @@ class _$AddCommentImpl implements _AddComment {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -4470,6 +6964,12 @@ class _$AddCommentImpl implements _AddComment {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -4503,6 +7003,12 @@ class _$AddCommentImpl implements _AddComment {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -4540,6 +7046,12 @@ class _$AddCommentImpl implements _AddComment {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -4572,6 +7084,12 @@ class _$AddCommentImpl implements _AddComment {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -4604,6 +7122,12 @@ class _$AddCommentImpl implements _AddComment {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -4719,6 +7243,12 @@ class _$EditCommentImpl implements _EditComment {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -4753,6 +7283,12 @@ class _$EditCommentImpl implements _EditComment {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -4786,6 +7322,12 @@ class _$EditCommentImpl implements _EditComment {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -4823,6 +7365,12 @@ class _$EditCommentImpl implements _EditComment {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -4855,6 +7403,12 @@ class _$EditCommentImpl implements _EditComment {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -4887,6 +7441,12 @@ class _$EditCommentImpl implements _EditComment {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -5018,6 +7578,12 @@ class _$DeleteCommentImpl implements _DeleteComment {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -5052,6 +7618,12 @@ class _$DeleteCommentImpl implements _DeleteComment {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -5085,6 +7657,12 @@ class _$DeleteCommentImpl implements _DeleteComment {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -5122,6 +7700,12 @@ class _$DeleteCommentImpl implements _DeleteComment {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -5154,6 +7738,12 @@ class _$DeleteCommentImpl implements _DeleteComment {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -5186,6 +7776,12 @@ class _$DeleteCommentImpl implements _DeleteComment {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -5304,6 +7900,12 @@ class _$GetCommentsImpl implements _GetComments {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -5338,6 +7940,12 @@ class _$GetCommentsImpl implements _GetComments {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -5371,6 +7979,12 @@ class _$GetCommentsImpl implements _GetComments {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -5408,6 +8022,12 @@ class _$GetCommentsImpl implements _GetComments {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -5440,6 +8060,12 @@ class _$GetCommentsImpl implements _GetComments {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -5472,6 +8098,12 @@ class _$GetCommentsImpl implements _GetComments {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -5587,6 +8219,12 @@ class _$ReplayCommentImpl implements _ReplayComment {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -5621,6 +8259,12 @@ class _$ReplayCommentImpl implements _ReplayComment {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -5654,6 +8298,12 @@ class _$ReplayCommentImpl implements _ReplayComment {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -5691,6 +8341,12 @@ class _$ReplayCommentImpl implements _ReplayComment {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -5723,6 +8379,12 @@ class _$ReplayCommentImpl implements _ReplayComment {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -5755,6 +8417,12 @@ class _$ReplayCommentImpl implements _ReplayComment {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -5878,6 +8546,12 @@ class _$LikeCommentImpl implements _LikeComment {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -5912,6 +8586,12 @@ class _$LikeCommentImpl implements _LikeComment {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -5945,6 +8625,12 @@ class _$LikeCommentImpl implements _LikeComment {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -5982,6 +8668,12 @@ class _$LikeCommentImpl implements _LikeComment {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -6014,6 +8706,12 @@ class _$LikeCommentImpl implements _LikeComment {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -6046,6 +8744,12 @@ class _$LikeCommentImpl implements _LikeComment {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -6164,6 +8868,12 @@ class _$GetCommentLikesImpl implements _GetCommentLikes {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -6198,6 +8908,12 @@ class _$GetCommentLikesImpl implements _GetCommentLikes {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -6231,6 +8947,12 @@ class _$GetCommentLikesImpl implements _GetCommentLikes {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -6268,6 +8990,12 @@ class _$GetCommentLikesImpl implements _GetCommentLikes {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -6300,6 +9028,12 @@ class _$GetCommentLikesImpl implements _GetCommentLikes {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -6332,6 +9066,12 @@ class _$GetCommentLikesImpl implements _GetCommentLikes {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -6449,6 +9189,12 @@ class _$GetCommentReplaiesImpl implements _GetCommentReplaies {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -6483,6 +9229,12 @@ class _$GetCommentReplaiesImpl implements _GetCommentReplaies {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -6516,6 +9268,12 @@ class _$GetCommentReplaiesImpl implements _GetCommentReplaies {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -6553,6 +9311,12 @@ class _$GetCommentReplaiesImpl implements _GetCommentReplaies {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -6585,6 +9349,12 @@ class _$GetCommentReplaiesImpl implements _GetCommentReplaies {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -6617,6 +9387,12 @@ class _$GetCommentReplaiesImpl implements _GetCommentReplaies {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -6705,6 +9481,12 @@ class _$GetTagVendorImpl implements _GetTagVendor {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -6739,6 +9521,12 @@ class _$GetTagVendorImpl implements _GetTagVendor {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -6772,6 +9560,12 @@ class _$GetTagVendorImpl implements _GetTagVendor {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -6809,6 +9603,12 @@ class _$GetTagVendorImpl implements _GetTagVendor {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -6841,6 +9641,12 @@ class _$GetTagVendorImpl implements _GetTagVendor {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -6873,6 +9679,12 @@ class _$GetTagVendorImpl implements _GetTagVendor {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -6952,6 +9764,12 @@ class _$GetTagProductImpl implements _GetTagProduct {
     required TResult Function() getUsers,
     required TResult Function(dynamic uuid) follow,
     required TResult Function(dynamic uuid) unFollow,
+    required TResult Function(String uuid) getUserFollowers,
+    required TResult Function(String uuid) getUserFollowing,
+    required TResult Function(String uuid) getUserStories,
+    required TResult Function(String uuid) deleteUserStory,
+    required TResult Function(String uuid) addUserStory,
+    required TResult Function(String uuid) addTagPost,
     required TResult Function(String uuid) getUserPosts,
     required TResult Function(String uuid) savePost,
     required TResult Function(String uuid) getSavedPosts,
@@ -6986,6 +9804,12 @@ class _$GetTagProductImpl implements _GetTagProduct {
     TResult? Function()? getUsers,
     TResult? Function(dynamic uuid)? follow,
     TResult? Function(dynamic uuid)? unFollow,
+    TResult? Function(String uuid)? getUserFollowers,
+    TResult? Function(String uuid)? getUserFollowing,
+    TResult? Function(String uuid)? getUserStories,
+    TResult? Function(String uuid)? deleteUserStory,
+    TResult? Function(String uuid)? addUserStory,
+    TResult? Function(String uuid)? addTagPost,
     TResult? Function(String uuid)? getUserPosts,
     TResult? Function(String uuid)? savePost,
     TResult? Function(String uuid)? getSavedPosts,
@@ -7019,6 +9843,12 @@ class _$GetTagProductImpl implements _GetTagProduct {
     TResult Function()? getUsers,
     TResult Function(dynamic uuid)? follow,
     TResult Function(dynamic uuid)? unFollow,
+    TResult Function(String uuid)? getUserFollowers,
+    TResult Function(String uuid)? getUserFollowing,
+    TResult Function(String uuid)? getUserStories,
+    TResult Function(String uuid)? deleteUserStory,
+    TResult Function(String uuid)? addUserStory,
+    TResult Function(String uuid)? addTagPost,
     TResult Function(String uuid)? getUserPosts,
     TResult Function(String uuid)? savePost,
     TResult Function(String uuid)? getSavedPosts,
@@ -7056,6 +9886,12 @@ class _$GetTagProductImpl implements _GetTagProduct {
     required TResult Function(_GetUsers value) getUsers,
     required TResult Function(_Follow value) follow,
     required TResult Function(_UnFollow value) unFollow,
+    required TResult Function(_GetUserFollowers value) getUserFollowers,
+    required TResult Function(_GetUserFollowing value) getUserFollowing,
+    required TResult Function(_GetUserStories value) getUserStories,
+    required TResult Function(_DeleteUserStory value) deleteUserStory,
+    required TResult Function(_AddUserStory value) addUserStory,
+    required TResult Function(_AddTagPost value) addTagPost,
     required TResult Function(_GetUserPosts value) getUserPosts,
     required TResult Function(_SavePost value) savePost,
     required TResult Function(_GetSavedPosts value) getSavedPosts,
@@ -7088,6 +9924,12 @@ class _$GetTagProductImpl implements _GetTagProduct {
     TResult? Function(_GetUsers value)? getUsers,
     TResult? Function(_Follow value)? follow,
     TResult? Function(_UnFollow value)? unFollow,
+    TResult? Function(_GetUserFollowers value)? getUserFollowers,
+    TResult? Function(_GetUserFollowing value)? getUserFollowing,
+    TResult? Function(_GetUserStories value)? getUserStories,
+    TResult? Function(_DeleteUserStory value)? deleteUserStory,
+    TResult? Function(_AddUserStory value)? addUserStory,
+    TResult? Function(_AddTagPost value)? addTagPost,
     TResult? Function(_GetUserPosts value)? getUserPosts,
     TResult? Function(_SavePost value)? savePost,
     TResult? Function(_GetSavedPosts value)? getSavedPosts,
@@ -7120,6 +9962,12 @@ class _$GetTagProductImpl implements _GetTagProduct {
     TResult Function(_GetUsers value)? getUsers,
     TResult Function(_Follow value)? follow,
     TResult Function(_UnFollow value)? unFollow,
+    TResult Function(_GetUserFollowers value)? getUserFollowers,
+    TResult Function(_GetUserFollowing value)? getUserFollowing,
+    TResult Function(_GetUserStories value)? getUserStories,
+    TResult Function(_DeleteUserStory value)? deleteUserStory,
+    TResult Function(_AddUserStory value)? addUserStory,
+    TResult Function(_AddTagPost value)? addTagPost,
     TResult Function(_GetUserPosts value)? getUserPosts,
     TResult Function(_SavePost value)? savePost,
     TResult Function(_GetSavedPosts value)? getSavedPosts,
@@ -7165,11 +10013,22 @@ mixin _$NewsfeedState {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -7187,11 +10046,21 @@ mixin _$NewsfeedState {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -7209,11 +10078,21 @@ mixin _$NewsfeedState {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -7232,11 +10111,23 @@ mixin _$NewsfeedState {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -7254,11 +10145,21 @@ mixin _$NewsfeedState {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -7276,11 +10177,21 @@ mixin _$NewsfeedState {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -7361,11 +10272,22 @@ class _$InitialImpl implements _Initial {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -7386,11 +10308,21 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -7411,11 +10343,21 @@ class _$InitialImpl implements _Initial {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -7440,11 +10382,23 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -7465,11 +10419,21 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -7490,11 +10454,21 @@ class _$InitialImpl implements _Initial {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -7562,11 +10536,22 @@ class _$LoadingImpl implements _Loading {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -7587,11 +10572,21 @@ class _$LoadingImpl implements _Loading {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -7612,11 +10607,21 @@ class _$LoadingImpl implements _Loading {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -7641,11 +10646,23 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -7666,11 +10683,21 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -7691,11 +10718,21 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -7763,11 +10800,22 @@ class _$SuccessImpl implements _Success {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -7788,11 +10836,21 @@ class _$SuccessImpl implements _Success {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -7813,11 +10871,21 @@ class _$SuccessImpl implements _Success {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -7842,11 +10910,23 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -7867,11 +10947,21 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -7892,11 +10982,21 @@ class _$SuccessImpl implements _Success {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -7964,11 +11064,22 @@ class _$LoadingWidgetImpl implements _LoadingWidget {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -7989,11 +11100,21 @@ class _$LoadingWidgetImpl implements _LoadingWidget {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -8014,11 +11135,21 @@ class _$LoadingWidgetImpl implements _LoadingWidget {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -8043,11 +11174,23 @@ class _$LoadingWidgetImpl implements _LoadingWidget {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -8068,11 +11211,21 @@ class _$LoadingWidgetImpl implements _LoadingWidget {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -8093,11 +11246,21 @@ class _$LoadingWidgetImpl implements _LoadingWidget {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -8165,11 +11328,22 @@ class _$LoadigProfileImpl implements _LoadigProfile {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -8190,11 +11364,21 @@ class _$LoadigProfileImpl implements _LoadigProfile {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -8215,11 +11399,21 @@ class _$LoadigProfileImpl implements _LoadigProfile {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -8244,11 +11438,23 @@ class _$LoadigProfileImpl implements _LoadigProfile {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -8269,11 +11475,21 @@ class _$LoadigProfileImpl implements _LoadigProfile {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -8294,11 +11510,21 @@ class _$LoadigProfileImpl implements _LoadigProfile {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -8366,11 +11592,22 @@ class _$LoadingPostsImpl implements _LoadingPosts {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -8391,11 +11628,21 @@ class _$LoadingPostsImpl implements _LoadingPosts {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -8416,11 +11663,21 @@ class _$LoadingPostsImpl implements _LoadingPosts {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -8445,11 +11702,23 @@ class _$LoadingPostsImpl implements _LoadingPosts {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -8470,11 +11739,21 @@ class _$LoadingPostsImpl implements _LoadingPosts {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -8495,11 +11774,21 @@ class _$LoadingPostsImpl implements _LoadingPosts {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -8567,11 +11856,22 @@ class _$PostSavedImpl implements _PostSaved {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -8592,11 +11892,21 @@ class _$PostSavedImpl implements _PostSaved {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -8617,11 +11927,21 @@ class _$PostSavedImpl implements _PostSaved {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -8646,11 +11966,23 @@ class _$PostSavedImpl implements _PostSaved {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -8671,11 +12003,21 @@ class _$PostSavedImpl implements _PostSaved {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -8696,11 +12038,21 @@ class _$PostSavedImpl implements _PostSaved {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -8768,11 +12120,22 @@ class _$LoadingLikeImpl implements _LoadingLike {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -8793,11 +12156,21 @@ class _$LoadingLikeImpl implements _LoadingLike {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -8818,11 +12191,21 @@ class _$LoadingLikeImpl implements _LoadingLike {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -8847,11 +12230,23 @@ class _$LoadingLikeImpl implements _LoadingLike {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -8872,11 +12267,21 @@ class _$LoadingLikeImpl implements _LoadingLike {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -8897,11 +12302,21 @@ class _$LoadingLikeImpl implements _LoadingLike {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -8969,11 +12384,22 @@ class _$LoadingCommentImpl implements _LoadingComment {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -8994,11 +12420,21 @@ class _$LoadingCommentImpl implements _LoadingComment {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -9019,11 +12455,21 @@ class _$LoadingCommentImpl implements _LoadingComment {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -9048,11 +12494,23 @@ class _$LoadingCommentImpl implements _LoadingComment {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -9073,11 +12531,21 @@ class _$LoadingCommentImpl implements _LoadingComment {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -9098,11 +12566,21 @@ class _$LoadingCommentImpl implements _LoadingComment {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -9118,6 +12596,1330 @@ class _$LoadingCommentImpl implements _LoadingComment {
 
 abstract class _LoadingComment implements NewsfeedState {
   const factory _LoadingComment() = _$LoadingCommentImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingCommentLikesImplCopyWith<$Res> {
+  factory _$$LoadingCommentLikesImplCopyWith(_$LoadingCommentLikesImpl value,
+          $Res Function(_$LoadingCommentLikesImpl) then) =
+      __$$LoadingCommentLikesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingCommentLikesImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$LoadingCommentLikesImpl>
+    implements _$$LoadingCommentLikesImplCopyWith<$Res> {
+  __$$LoadingCommentLikesImplCopyWithImpl(_$LoadingCommentLikesImpl _value,
+      $Res Function(_$LoadingCommentLikesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadingCommentLikesImpl implements _LoadingCommentLikes {
+  const _$LoadingCommentLikesImpl();
+
+  @override
+  String toString() {
+    return 'NewsfeedState.loadingCommentLikes()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingCommentLikesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return loadingCommentLikes();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return loadingCommentLikes?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingCommentLikes != null) {
+      return loadingCommentLikes();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return loadingCommentLikes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return loadingCommentLikes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingCommentLikes != null) {
+      return loadingCommentLikes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingCommentLikes implements NewsfeedState {
+  const factory _LoadingCommentLikes() = _$LoadingCommentLikesImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingCommentReplaiesImplCopyWith<$Res> {
+  factory _$$LoadingCommentReplaiesImplCopyWith(
+          _$LoadingCommentReplaiesImpl value,
+          $Res Function(_$LoadingCommentReplaiesImpl) then) =
+      __$$LoadingCommentReplaiesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingCommentReplaiesImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$LoadingCommentReplaiesImpl>
+    implements _$$LoadingCommentReplaiesImplCopyWith<$Res> {
+  __$$LoadingCommentReplaiesImplCopyWithImpl(
+      _$LoadingCommentReplaiesImpl _value,
+      $Res Function(_$LoadingCommentReplaiesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadingCommentReplaiesImpl implements _LoadingCommentReplaies {
+  const _$LoadingCommentReplaiesImpl();
+
+  @override
+  String toString() {
+    return 'NewsfeedState.loadingCommentReplaies()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoadingCommentReplaiesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return loadingCommentReplaies();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return loadingCommentReplaies?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingCommentReplaies != null) {
+      return loadingCommentReplaies();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return loadingCommentReplaies(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return loadingCommentReplaies?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingCommentReplaies != null) {
+      return loadingCommentReplaies(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingCommentReplaies implements NewsfeedState {
+  const factory _LoadingCommentReplaies() = _$LoadingCommentReplaiesImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingFollowersImplCopyWith<$Res> {
+  factory _$$LoadingFollowersImplCopyWith(_$LoadingFollowersImpl value,
+          $Res Function(_$LoadingFollowersImpl) then) =
+      __$$LoadingFollowersImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingFollowersImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$LoadingFollowersImpl>
+    implements _$$LoadingFollowersImplCopyWith<$Res> {
+  __$$LoadingFollowersImplCopyWithImpl(_$LoadingFollowersImpl _value,
+      $Res Function(_$LoadingFollowersImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadingFollowersImpl implements _LoadingFollowers {
+  const _$LoadingFollowersImpl();
+
+  @override
+  String toString() {
+    return 'NewsfeedState.loadingFollowers()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingFollowersImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return loadingFollowers();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return loadingFollowers?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingFollowers != null) {
+      return loadingFollowers();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return loadingFollowers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return loadingFollowers?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingFollowers != null) {
+      return loadingFollowers(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingFollowers implements NewsfeedState {
+  const factory _LoadingFollowers() = _$LoadingFollowersImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingFollowingImplCopyWith<$Res> {
+  factory _$$LoadingFollowingImplCopyWith(_$LoadingFollowingImpl value,
+          $Res Function(_$LoadingFollowingImpl) then) =
+      __$$LoadingFollowingImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingFollowingImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$LoadingFollowingImpl>
+    implements _$$LoadingFollowingImplCopyWith<$Res> {
+  __$$LoadingFollowingImplCopyWithImpl(_$LoadingFollowingImpl _value,
+      $Res Function(_$LoadingFollowingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadingFollowingImpl implements _LoadingFollowing {
+  const _$LoadingFollowingImpl();
+
+  @override
+  String toString() {
+    return 'NewsfeedState.loadingFollowing()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingFollowingImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return loadingFollowing();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return loadingFollowing?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingFollowing != null) {
+      return loadingFollowing();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return loadingFollowing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return loadingFollowing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingFollowing != null) {
+      return loadingFollowing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingFollowing implements NewsfeedState {
+  const factory _LoadingFollowing() = _$LoadingFollowingImpl;
+}
+
+/// @nodoc
+abstract class _$$LoadingUserStoriesImplCopyWith<$Res> {
+  factory _$$LoadingUserStoriesImplCopyWith(_$LoadingUserStoriesImpl value,
+          $Res Function(_$LoadingUserStoriesImpl) then) =
+      __$$LoadingUserStoriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoadingUserStoriesImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$LoadingUserStoriesImpl>
+    implements _$$LoadingUserStoriesImplCopyWith<$Res> {
+  __$$LoadingUserStoriesImplCopyWithImpl(_$LoadingUserStoriesImpl _value,
+      $Res Function(_$LoadingUserStoriesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$LoadingUserStoriesImpl implements _LoadingUserStories {
+  const _$LoadingUserStoriesImpl();
+
+  @override
+  String toString() {
+    return 'NewsfeedState.loadingUserStories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoadingUserStoriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return loadingUserStories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return loadingUserStories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingUserStories != null) {
+      return loadingUserStories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return loadingUserStories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return loadingUserStories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (loadingUserStories != null) {
+      return loadingUserStories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoadingUserStories implements NewsfeedState {
+  const factory _LoadingUserStories() = _$LoadingUserStoriesImpl;
 }
 
 /// @nodoc
@@ -9171,11 +13973,22 @@ class _$LoadingCommentReplayImpl implements _LoadingCommentReplay {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -9196,11 +14009,21 @@ class _$LoadingCommentReplayImpl implements _LoadingCommentReplay {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -9221,11 +14044,21 @@ class _$LoadingCommentReplayImpl implements _LoadingCommentReplay {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -9250,11 +14083,23 @@ class _$LoadingCommentReplayImpl implements _LoadingCommentReplay {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -9275,11 +14120,21 @@ class _$LoadingCommentReplayImpl implements _LoadingCommentReplay {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -9300,11 +14155,21 @@ class _$LoadingCommentReplayImpl implements _LoadingCommentReplay {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -9372,11 +14237,22 @@ class _$SuccessLikeImpl implements _SuccessLike {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -9397,11 +14273,21 @@ class _$SuccessLikeImpl implements _SuccessLike {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -9422,11 +14308,21 @@ class _$SuccessLikeImpl implements _SuccessLike {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -9451,11 +14347,23 @@ class _$SuccessLikeImpl implements _SuccessLike {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -9476,11 +14384,21 @@ class _$SuccessLikeImpl implements _SuccessLike {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -9501,11 +14419,21 @@ class _$SuccessLikeImpl implements _SuccessLike {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -9573,11 +14501,22 @@ class _$SuccessCommentImpl implements _SuccessComment {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -9598,11 +14537,21 @@ class _$SuccessCommentImpl implements _SuccessComment {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -9623,11 +14572,21 @@ class _$SuccessCommentImpl implements _SuccessComment {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -9652,11 +14611,23 @@ class _$SuccessCommentImpl implements _SuccessComment {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -9677,11 +14648,21 @@ class _$SuccessCommentImpl implements _SuccessComment {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -9702,11 +14683,21 @@ class _$SuccessCommentImpl implements _SuccessComment {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -9775,11 +14766,22 @@ class _$SuccessCommentReplayImpl implements _SuccessCommentReplay {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -9800,11 +14802,21 @@ class _$SuccessCommentReplayImpl implements _SuccessCommentReplay {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -9825,11 +14837,21 @@ class _$SuccessCommentReplayImpl implements _SuccessCommentReplay {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -9854,11 +14876,23 @@ class _$SuccessCommentReplayImpl implements _SuccessCommentReplay {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -9879,11 +14913,21 @@ class _$SuccessCommentReplayImpl implements _SuccessCommentReplay {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -9904,11 +14948,21 @@ class _$SuccessCommentReplayImpl implements _SuccessCommentReplay {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -9976,11 +15030,22 @@ class _$SuccessWidgetImpl implements _SuccessWidget {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -10001,11 +15066,21 @@ class _$SuccessWidgetImpl implements _SuccessWidget {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -10026,11 +15101,21 @@ class _$SuccessWidgetImpl implements _SuccessWidget {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -10055,11 +15140,23 @@ class _$SuccessWidgetImpl implements _SuccessWidget {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -10080,11 +15177,21 @@ class _$SuccessWidgetImpl implements _SuccessWidget {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -10105,11 +15212,21 @@ class _$SuccessWidgetImpl implements _SuccessWidget {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -10125,6 +15242,1502 @@ class _$SuccessWidgetImpl implements _SuccessWidget {
 
 abstract class _SuccessWidget implements NewsfeedState {
   const factory _SuccessWidget() = _$SuccessWidgetImpl;
+}
+
+/// @nodoc
+abstract class _$$SuccessFollowersImplCopyWith<$Res> {
+  factory _$$SuccessFollowersImplCopyWith(_$SuccessFollowersImpl value,
+          $Res Function(_$SuccessFollowersImpl) then) =
+      __$$SuccessFollowersImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<UserEntity> users});
+}
+
+/// @nodoc
+class __$$SuccessFollowersImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$SuccessFollowersImpl>
+    implements _$$SuccessFollowersImplCopyWith<$Res> {
+  __$$SuccessFollowersImplCopyWithImpl(_$SuccessFollowersImpl _value,
+      $Res Function(_$SuccessFollowersImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? users = null,
+  }) {
+    return _then(_$SuccessFollowersImpl(
+      null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessFollowersImpl implements _SuccessFollowers {
+  const _$SuccessFollowersImpl(final List<UserEntity> users) : _users = users;
+
+  final List<UserEntity> _users;
+  @override
+  List<UserEntity> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
+  @override
+  String toString() {
+    return 'NewsfeedState.successFollowers(users: $users)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessFollowersImpl &&
+            const DeepCollectionEquality().equals(other._users, _users));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessFollowersImplCopyWith<_$SuccessFollowersImpl> get copyWith =>
+      __$$SuccessFollowersImplCopyWithImpl<_$SuccessFollowersImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return successFollowers(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return successFollowers?.call(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (successFollowers != null) {
+      return successFollowers(users);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return successFollowers(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return successFollowers?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (successFollowers != null) {
+      return successFollowers(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessFollowers implements NewsfeedState {
+  const factory _SuccessFollowers(final List<UserEntity> users) =
+      _$SuccessFollowersImpl;
+
+  List<UserEntity> get users;
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessFollowersImplCopyWith<_$SuccessFollowersImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessFollowingImplCopyWith<$Res> {
+  factory _$$SuccessFollowingImplCopyWith(_$SuccessFollowingImpl value,
+          $Res Function(_$SuccessFollowingImpl) then) =
+      __$$SuccessFollowingImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<UserEntity> users});
+}
+
+/// @nodoc
+class __$$SuccessFollowingImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$SuccessFollowingImpl>
+    implements _$$SuccessFollowingImplCopyWith<$Res> {
+  __$$SuccessFollowingImplCopyWithImpl(_$SuccessFollowingImpl _value,
+      $Res Function(_$SuccessFollowingImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? users = null,
+  }) {
+    return _then(_$SuccessFollowingImpl(
+      null == users
+          ? _value._users
+          : users // ignore: cast_nullable_to_non_nullable
+              as List<UserEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessFollowingImpl implements _SuccessFollowing {
+  const _$SuccessFollowingImpl(final List<UserEntity> users) : _users = users;
+
+  final List<UserEntity> _users;
+  @override
+  List<UserEntity> get users {
+    if (_users is EqualUnmodifiableListView) return _users;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_users);
+  }
+
+  @override
+  String toString() {
+    return 'NewsfeedState.successFollowing(users: $users)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessFollowingImpl &&
+            const DeepCollectionEquality().equals(other._users, _users));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessFollowingImplCopyWith<_$SuccessFollowingImpl> get copyWith =>
+      __$$SuccessFollowingImplCopyWithImpl<_$SuccessFollowingImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return successFollowing(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return successFollowing?.call(users);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (successFollowing != null) {
+      return successFollowing(users);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return successFollowing(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return successFollowing?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (successFollowing != null) {
+      return successFollowing(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessFollowing implements NewsfeedState {
+  const factory _SuccessFollowing(final List<UserEntity> users) =
+      _$SuccessFollowingImpl;
+
+  List<UserEntity> get users;
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessFollowingImplCopyWith<_$SuccessFollowingImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessUserStoriesImplCopyWith<$Res> {
+  factory _$$SuccessUserStoriesImplCopyWith(_$SuccessUserStoriesImpl value,
+          $Res Function(_$SuccessUserStoriesImpl) then) =
+      __$$SuccessUserStoriesImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$SuccessUserStoriesImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$SuccessUserStoriesImpl>
+    implements _$$SuccessUserStoriesImplCopyWith<$Res> {
+  __$$SuccessUserStoriesImplCopyWithImpl(_$SuccessUserStoriesImpl _value,
+      $Res Function(_$SuccessUserStoriesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$SuccessUserStoriesImpl implements _SuccessUserStories {
+  const _$SuccessUserStoriesImpl();
+
+  @override
+  String toString() {
+    return 'NewsfeedState.successUserStories()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$SuccessUserStoriesImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return successUserStories();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return successUserStories?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (successUserStories != null) {
+      return successUserStories();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return successUserStories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return successUserStories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (successUserStories != null) {
+      return successUserStories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessUserStories implements NewsfeedState {
+  const factory _SuccessUserStories() = _$SuccessUserStoriesImpl;
+}
+
+/// @nodoc
+abstract class _$$SuccessCommentLikesImplCopyWith<$Res> {
+  factory _$$SuccessCommentLikesImplCopyWith(_$SuccessCommentLikesImpl value,
+          $Res Function(_$SuccessCommentLikesImpl) then) =
+      __$$SuccessCommentLikesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<UserLikeEntity> likes});
+}
+
+/// @nodoc
+class __$$SuccessCommentLikesImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$SuccessCommentLikesImpl>
+    implements _$$SuccessCommentLikesImplCopyWith<$Res> {
+  __$$SuccessCommentLikesImplCopyWithImpl(_$SuccessCommentLikesImpl _value,
+      $Res Function(_$SuccessCommentLikesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? likes = null,
+  }) {
+    return _then(_$SuccessCommentLikesImpl(
+      null == likes
+          ? _value._likes
+          : likes // ignore: cast_nullable_to_non_nullable
+              as List<UserLikeEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessCommentLikesImpl implements _SuccessCommentLikes {
+  const _$SuccessCommentLikesImpl(final List<UserLikeEntity> likes)
+      : _likes = likes;
+
+  final List<UserLikeEntity> _likes;
+  @override
+  List<UserLikeEntity> get likes {
+    if (_likes is EqualUnmodifiableListView) return _likes;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_likes);
+  }
+
+  @override
+  String toString() {
+    return 'NewsfeedState.successCommentLikes(likes: $likes)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessCommentLikesImpl &&
+            const DeepCollectionEquality().equals(other._likes, _likes));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_likes));
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessCommentLikesImplCopyWith<_$SuccessCommentLikesImpl> get copyWith =>
+      __$$SuccessCommentLikesImplCopyWithImpl<_$SuccessCommentLikesImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return successCommentLikes(likes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return successCommentLikes?.call(likes);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (successCommentLikes != null) {
+      return successCommentLikes(likes);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return successCommentLikes(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return successCommentLikes?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (successCommentLikes != null) {
+      return successCommentLikes(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessCommentLikes implements NewsfeedState {
+  const factory _SuccessCommentLikes(final List<UserLikeEntity> likes) =
+      _$SuccessCommentLikesImpl;
+
+  List<UserLikeEntity> get likes;
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessCommentLikesImplCopyWith<_$SuccessCommentLikesImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessCommentReplaiesImplCopyWith<$Res> {
+  factory _$$SuccessCommentReplaiesImplCopyWith(
+          _$SuccessCommentReplaiesImpl value,
+          $Res Function(_$SuccessCommentReplaiesImpl) then) =
+      __$$SuccessCommentReplaiesImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<CommentEntity> comments});
+}
+
+/// @nodoc
+class __$$SuccessCommentReplaiesImplCopyWithImpl<$Res>
+    extends _$NewsfeedStateCopyWithImpl<$Res, _$SuccessCommentReplaiesImpl>
+    implements _$$SuccessCommentReplaiesImplCopyWith<$Res> {
+  __$$SuccessCommentReplaiesImplCopyWithImpl(
+      _$SuccessCommentReplaiesImpl _value,
+      $Res Function(_$SuccessCommentReplaiesImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? comments = null,
+  }) {
+    return _then(_$SuccessCommentReplaiesImpl(
+      null == comments
+          ? _value._comments
+          : comments // ignore: cast_nullable_to_non_nullable
+              as List<CommentEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessCommentReplaiesImpl implements _SuccessCommentReplaies {
+  const _$SuccessCommentReplaiesImpl(final List<CommentEntity> comments)
+      : _comments = comments;
+
+  final List<CommentEntity> _comments;
+  @override
+  List<CommentEntity> get comments {
+    if (_comments is EqualUnmodifiableListView) return _comments;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_comments);
+  }
+
+  @override
+  String toString() {
+    return 'NewsfeedState.successCommentReplaies(comments: $comments)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessCommentReplaiesImpl &&
+            const DeepCollectionEquality().equals(other._comments, _comments));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_comments));
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessCommentReplaiesImplCopyWith<_$SuccessCommentReplaiesImpl>
+      get copyWith => __$$SuccessCommentReplaiesImplCopyWithImpl<
+          _$SuccessCommentReplaiesImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function() loadingWidget,
+    required TResult Function() loadigProfile,
+    required TResult Function() loadingPosts,
+    required TResult Function() postSaved,
+    required TResult Function() loadingLike,
+    required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
+    required TResult Function() loadingCommentReplay,
+    required TResult Function() successLike,
+    required TResult Function() successComment,
+    required TResult Function() successCommentReplay,
+    required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
+    required TResult Function() loadingAddComment,
+    required TResult Function() successCreated,
+    required TResult Function(double progress) progress,
+    required TResult Function(String err) failure,
+  }) {
+    return successCommentReplaies(comments);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function()? loadingWidget,
+    TResult? Function()? loadigProfile,
+    TResult? Function()? loadingPosts,
+    TResult? Function()? postSaved,
+    TResult? Function()? loadingLike,
+    TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
+    TResult? Function()? loadingCommentReplay,
+    TResult? Function()? successLike,
+    TResult? Function()? successComment,
+    TResult? Function()? successCommentReplay,
+    TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult? Function()? loadingAddComment,
+    TResult? Function()? successCreated,
+    TResult? Function(double progress)? progress,
+    TResult? Function(String err)? failure,
+  }) {
+    return successCommentReplaies?.call(comments);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function()? loadingWidget,
+    TResult Function()? loadigProfile,
+    TResult Function()? loadingPosts,
+    TResult Function()? postSaved,
+    TResult Function()? loadingLike,
+    TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
+    TResult Function()? loadingCommentReplay,
+    TResult Function()? successLike,
+    TResult Function()? successComment,
+    TResult Function()? successCommentReplay,
+    TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
+    TResult Function()? loadingAddComment,
+    TResult Function()? successCreated,
+    TResult Function(double progress)? progress,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (successCommentReplaies != null) {
+      return successCommentReplaies(comments);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_LoadingWidget value) loadingWidget,
+    required TResult Function(_LoadigProfile value) loadigProfile,
+    required TResult Function(_LoadingPosts value) loadingPosts,
+    required TResult Function(_PostSaved value) postSaved,
+    required TResult Function(_LoadingLike value) loadingLike,
+    required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
+    required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
+    required TResult Function(_SuccessLike value) successLike,
+    required TResult Function(_SuccessComment value) successComment,
+    required TResult Function(_SuccessCommentReplay value) successCommentReplay,
+    required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
+    required TResult Function(_LoadingAddComment value) loadingAddComment,
+    required TResult Function(_SuccessCreated value) successCreated,
+    required TResult Function(_Progress value) progress,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return successCommentReplaies(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_LoadingWidget value)? loadingWidget,
+    TResult? Function(_LoadigProfile value)? loadigProfile,
+    TResult? Function(_LoadingPosts value)? loadingPosts,
+    TResult? Function(_PostSaved value)? postSaved,
+    TResult? Function(_LoadingLike value)? loadingLike,
+    TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
+    TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult? Function(_SuccessLike value)? successLike,
+    TResult? Function(_SuccessComment value)? successComment,
+    TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult? Function(_LoadingAddComment value)? loadingAddComment,
+    TResult? Function(_SuccessCreated value)? successCreated,
+    TResult? Function(_Progress value)? progress,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return successCommentReplaies?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_LoadingWidget value)? loadingWidget,
+    TResult Function(_LoadigProfile value)? loadigProfile,
+    TResult Function(_LoadingPosts value)? loadingPosts,
+    TResult Function(_PostSaved value)? postSaved,
+    TResult Function(_LoadingLike value)? loadingLike,
+    TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
+    TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
+    TResult Function(_SuccessLike value)? successLike,
+    TResult Function(_SuccessComment value)? successComment,
+    TResult Function(_SuccessCommentReplay value)? successCommentReplay,
+    TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
+    TResult Function(_LoadingAddComment value)? loadingAddComment,
+    TResult Function(_SuccessCreated value)? successCreated,
+    TResult Function(_Progress value)? progress,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (successCommentReplaies != null) {
+      return successCommentReplaies(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessCommentReplaies implements NewsfeedState {
+  const factory _SuccessCommentReplaies(final List<CommentEntity> comments) =
+      _$SuccessCommentReplaiesImpl;
+
+  List<CommentEntity> get comments;
+
+  /// Create a copy of NewsfeedState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessCommentReplaiesImplCopyWith<_$SuccessCommentReplaiesImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -10177,11 +16790,22 @@ class _$LoadingAddCommentImpl implements _LoadingAddComment {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -10202,11 +16826,21 @@ class _$LoadingAddCommentImpl implements _LoadingAddComment {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -10227,11 +16861,21 @@ class _$LoadingAddCommentImpl implements _LoadingAddComment {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -10256,11 +16900,23 @@ class _$LoadingAddCommentImpl implements _LoadingAddComment {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -10281,11 +16937,21 @@ class _$LoadingAddCommentImpl implements _LoadingAddComment {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -10306,11 +16972,21 @@ class _$LoadingAddCommentImpl implements _LoadingAddComment {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -10378,11 +17054,22 @@ class _$SuccessCreatedImpl implements _SuccessCreated {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -10403,11 +17090,21 @@ class _$SuccessCreatedImpl implements _SuccessCreated {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -10428,11 +17125,21 @@ class _$SuccessCreatedImpl implements _SuccessCreated {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -10457,11 +17164,23 @@ class _$SuccessCreatedImpl implements _SuccessCreated {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -10482,11 +17201,21 @@ class _$SuccessCreatedImpl implements _SuccessCreated {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -10507,11 +17236,21 @@ class _$SuccessCreatedImpl implements _SuccessCreated {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -10607,11 +17346,22 @@ class _$ProgressImpl implements _Progress {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -10632,11 +17382,21 @@ class _$ProgressImpl implements _Progress {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -10657,11 +17417,21 @@ class _$ProgressImpl implements _Progress {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -10686,11 +17456,23 @@ class _$ProgressImpl implements _Progress {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -10711,11 +17493,21 @@ class _$ProgressImpl implements _Progress {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -10736,11 +17528,21 @@ class _$ProgressImpl implements _Progress {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,
@@ -10843,11 +17645,22 @@ class _$FailureImpl implements _Failure {
     required TResult Function() postSaved,
     required TResult Function() loadingLike,
     required TResult Function() loadingComment,
+    required TResult Function() loadingCommentLikes,
+    required TResult Function() loadingCommentReplaies,
+    required TResult Function() loadingFollowers,
+    required TResult Function() loadingFollowing,
+    required TResult Function() loadingUserStories,
     required TResult Function() loadingCommentReplay,
     required TResult Function() successLike,
     required TResult Function() successComment,
     required TResult Function() successCommentReplay,
     required TResult Function() successWidget,
+    required TResult Function(List<UserEntity> users) successFollowers,
+    required TResult Function(List<UserEntity> users) successFollowing,
+    required TResult Function() successUserStories,
+    required TResult Function(List<UserLikeEntity> likes) successCommentLikes,
+    required TResult Function(List<CommentEntity> comments)
+        successCommentReplaies,
     required TResult Function() loadingAddComment,
     required TResult Function() successCreated,
     required TResult Function(double progress) progress,
@@ -10868,11 +17681,21 @@ class _$FailureImpl implements _Failure {
     TResult? Function()? postSaved,
     TResult? Function()? loadingLike,
     TResult? Function()? loadingComment,
+    TResult? Function()? loadingCommentLikes,
+    TResult? Function()? loadingCommentReplaies,
+    TResult? Function()? loadingFollowers,
+    TResult? Function()? loadingFollowing,
+    TResult? Function()? loadingUserStories,
     TResult? Function()? loadingCommentReplay,
     TResult? Function()? successLike,
     TResult? Function()? successComment,
     TResult? Function()? successCommentReplay,
     TResult? Function()? successWidget,
+    TResult? Function(List<UserEntity> users)? successFollowers,
+    TResult? Function(List<UserEntity> users)? successFollowing,
+    TResult? Function()? successUserStories,
+    TResult? Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult? Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult? Function()? loadingAddComment,
     TResult? Function()? successCreated,
     TResult? Function(double progress)? progress,
@@ -10893,11 +17716,21 @@ class _$FailureImpl implements _Failure {
     TResult Function()? postSaved,
     TResult Function()? loadingLike,
     TResult Function()? loadingComment,
+    TResult Function()? loadingCommentLikes,
+    TResult Function()? loadingCommentReplaies,
+    TResult Function()? loadingFollowers,
+    TResult Function()? loadingFollowing,
+    TResult Function()? loadingUserStories,
     TResult Function()? loadingCommentReplay,
     TResult Function()? successLike,
     TResult Function()? successComment,
     TResult Function()? successCommentReplay,
     TResult Function()? successWidget,
+    TResult Function(List<UserEntity> users)? successFollowers,
+    TResult Function(List<UserEntity> users)? successFollowing,
+    TResult Function()? successUserStories,
+    TResult Function(List<UserLikeEntity> likes)? successCommentLikes,
+    TResult Function(List<CommentEntity> comments)? successCommentReplaies,
     TResult Function()? loadingAddComment,
     TResult Function()? successCreated,
     TResult Function(double progress)? progress,
@@ -10922,11 +17755,23 @@ class _$FailureImpl implements _Failure {
     required TResult Function(_PostSaved value) postSaved,
     required TResult Function(_LoadingLike value) loadingLike,
     required TResult Function(_LoadingComment value) loadingComment,
+    required TResult Function(_LoadingCommentLikes value) loadingCommentLikes,
+    required TResult Function(_LoadingCommentReplaies value)
+        loadingCommentReplaies,
+    required TResult Function(_LoadingFollowers value) loadingFollowers,
+    required TResult Function(_LoadingFollowing value) loadingFollowing,
+    required TResult Function(_LoadingUserStories value) loadingUserStories,
     required TResult Function(_LoadingCommentReplay value) loadingCommentReplay,
     required TResult Function(_SuccessLike value) successLike,
     required TResult Function(_SuccessComment value) successComment,
     required TResult Function(_SuccessCommentReplay value) successCommentReplay,
     required TResult Function(_SuccessWidget value) successWidget,
+    required TResult Function(_SuccessFollowers value) successFollowers,
+    required TResult Function(_SuccessFollowing value) successFollowing,
+    required TResult Function(_SuccessUserStories value) successUserStories,
+    required TResult Function(_SuccessCommentLikes value) successCommentLikes,
+    required TResult Function(_SuccessCommentReplaies value)
+        successCommentReplaies,
     required TResult Function(_LoadingAddComment value) loadingAddComment,
     required TResult Function(_SuccessCreated value) successCreated,
     required TResult Function(_Progress value) progress,
@@ -10947,11 +17792,21 @@ class _$FailureImpl implements _Failure {
     TResult? Function(_PostSaved value)? postSaved,
     TResult? Function(_LoadingLike value)? loadingLike,
     TResult? Function(_LoadingComment value)? loadingComment,
+    TResult? Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult? Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult? Function(_LoadingFollowers value)? loadingFollowers,
+    TResult? Function(_LoadingFollowing value)? loadingFollowing,
+    TResult? Function(_LoadingUserStories value)? loadingUserStories,
     TResult? Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult? Function(_SuccessLike value)? successLike,
     TResult? Function(_SuccessComment value)? successComment,
     TResult? Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult? Function(_SuccessWidget value)? successWidget,
+    TResult? Function(_SuccessFollowers value)? successFollowers,
+    TResult? Function(_SuccessFollowing value)? successFollowing,
+    TResult? Function(_SuccessUserStories value)? successUserStories,
+    TResult? Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult? Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult? Function(_LoadingAddComment value)? loadingAddComment,
     TResult? Function(_SuccessCreated value)? successCreated,
     TResult? Function(_Progress value)? progress,
@@ -10972,11 +17827,21 @@ class _$FailureImpl implements _Failure {
     TResult Function(_PostSaved value)? postSaved,
     TResult Function(_LoadingLike value)? loadingLike,
     TResult Function(_LoadingComment value)? loadingComment,
+    TResult Function(_LoadingCommentLikes value)? loadingCommentLikes,
+    TResult Function(_LoadingCommentReplaies value)? loadingCommentReplaies,
+    TResult Function(_LoadingFollowers value)? loadingFollowers,
+    TResult Function(_LoadingFollowing value)? loadingFollowing,
+    TResult Function(_LoadingUserStories value)? loadingUserStories,
     TResult Function(_LoadingCommentReplay value)? loadingCommentReplay,
     TResult Function(_SuccessLike value)? successLike,
     TResult Function(_SuccessComment value)? successComment,
     TResult Function(_SuccessCommentReplay value)? successCommentReplay,
     TResult Function(_SuccessWidget value)? successWidget,
+    TResult Function(_SuccessFollowers value)? successFollowers,
+    TResult Function(_SuccessFollowing value)? successFollowing,
+    TResult Function(_SuccessUserStories value)? successUserStories,
+    TResult Function(_SuccessCommentLikes value)? successCommentLikes,
+    TResult Function(_SuccessCommentReplaies value)? successCommentReplaies,
     TResult Function(_LoadingAddComment value)? loadingAddComment,
     TResult Function(_SuccessCreated value)? successCreated,
     TResult Function(_Progress value)? progress,

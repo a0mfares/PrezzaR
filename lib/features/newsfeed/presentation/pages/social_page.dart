@@ -1,11 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:prezza/core/service/routes.gr.dart';
 import 'package:prezza/features/newsfeed/presentation/widgets/post_widget.dart';
 import 'package:prezza/prezza_page.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../../../config/custom_colors.dart';
 import '../../../../core/constants/assets.dart';
@@ -22,13 +21,13 @@ class SocialPage extends StatefulWidget {
 }
 
 class _SocialPageState extends State<SocialPage> {
-  late final NewsfeedBloc bloc;
+  late NewsfeedBloc bloc;
 
   @override
-  void initState() {
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     bloc = NewsfeedBloc.get(context);
     bloc.add(const NewsfeedEvent.fetchPosts());
-    super.initState();
   }
 
   @override
@@ -41,10 +40,7 @@ class _SocialPageState extends State<SocialPage> {
             appRoute.navigate(ProfileSocialRoute(userId: usr.user.uuid));
           },
           icon: const CircleAvatar(
-            // radius: 70,
-            child: Icon(
-              Icons.person,
-            ),
+            child: Icon(Icons.person),
           ),
         ),
         actions: [
@@ -56,68 +52,76 @@ class _SocialPageState extends State<SocialPage> {
           ),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            vSpace(3),
-            Card(
-              elevation: 10,
-              color: Colors.white,
-              child: ListTile(
-                onTap: () {
-                  appRoute.navigate(const CreatePostRoute());
-                },
-                leading: const Icon(Icons.image),
-                title: Text(
-                  tr.shareExp,
-                  style: tstyle.bodyLarge!.copyWith(
-                    color: primary,
-                    fontWeight: FontWeight.bold,
+      body: Column(
+        children: [
+          vSpace(3),
+          Card(
+            elevation: 10,
+            color: Colors.white,
+            child: ListTile(
+              onTap: () {
+                appRoute.navigate(const CreatePostRoute());
+              },
+              leading: const Icon(Icons.image),
+              title: Text(
+                tr.shareExp,
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: primary,
+                      fontWeight: FontWeight.bold,
+                    ),
+              ),
+              trailing: SvgPicture.asset(Assets.assetsImagesGallery),
+            ),
+          ),
+          vSpace(3),
+          Expanded(
+            child: BlocBuilder<NewsfeedBloc, NewsfeedState>(
+              builder: (context, state) {
+                return state.maybeWhen(
+                  loadingPosts: () => const LoadingPostWidget(),
+                  failure: (error) => Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text('Error: $error'),
+                        ElevatedButton(
+                          onPressed: () {
+                            bloc.add(const NewsfeedEvent.fetchPosts());
+                          },
+                          child: Text(tr.retry),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-                trailing: SvgPicture.asset(Assets.assetsImagesGallery),
-              ),
-            ),
-            // vSpace(3),
-            // SizedBox(
-            //   width: 100.w,
-            //   height: 200,
-            //   child: ListView.builder(
-            //     scrollDirection: Axis.horizontal,
-            //     itemCount: 5,
-            //     itemBuilder: (context, index) {
-            //       if (index == 0) {
-            //         return const AddStoryWidget();
-            //       }
-            //       return const StoryWidget();
-            //     },
-            //   ),
-            // ),
-            vSpace(3),
-            // const Divider(),
-            SizedBox(
-              height: 70.h,
-              child: BlocBuilder<NewsfeedBloc, NewsfeedState>(
-                builder: (context, state) {
-                  return state.maybeWhen(
-                    loading: () {
-                      return const LoadingPostWidget();
-                    },
-                    orElse: () {
-                      return ListView.builder(
-                        itemCount: bloc.posts.length,
-                        itemBuilder: (context, index) {
-                          final post = bloc.posts[index];
-                          return PostWidget(post: post);
-                        },
+                  orElse: () {
+                    if (bloc.posts.isEmpty) {
+                      return Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SvgPicture.asset(
+                              Assets.assetsImagesNoData,
+                              width: 200,
+                            ),
+                            vSpace(3),
+                            Text(tr.noPosts),
+                          ],
+                        ),
                       );
-                    },
-                  );
-                },
-              ),
+                    }
+                    return ListView.builder(
+                      itemCount: bloc.posts.length,
+                      itemBuilder: (context, index) {
+                        final post = bloc.posts[index];
+                        return PostWidget(post: post);
+                      },
+                    );
+                  },
+                );
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

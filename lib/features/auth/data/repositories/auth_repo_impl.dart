@@ -162,6 +162,6 @@ class AuthRepoImpl implements AuthRepo {
 
   @override
   Future<Either<FailureServices, void>> deleteaccount() {
-    return execute(() => _auth.deleteaccount(usr.tokens.access));
+    return execute(() => _auth.deleteaccount(bearerToken));
   }
 }

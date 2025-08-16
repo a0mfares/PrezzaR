@@ -24,32 +24,33 @@ class _FavWidgetState extends State<FavWidget> {
 
   @override
   void initState() {
+    super.initState();
     bloc = FavBloc.get(context);
     bloc.add(const FavEvent.getFavVendors());
-    super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavBloc, FavState>(
       builder: (context, state) {
-        return state.maybeWhen(
+        return state.when(
+          initial: () => defLoadingCenter,
           loading: () => defLoadingCenter,
-          failure: (err) => FailureWidget(error: tr.noFav),
-          orElse: () {
+          failure: (err) => FailureWidget(error: err),
+          success: () {
             if (bloc.favVendors.isEmpty) {
-              return FailureWidget(error: tr.noFav);
+              // Empty state (not failure)
+              return EmptyWidget(title: tr.noFav);
             }
             return Column(
               children: [
                 ListTile(
-                  onTap: () {
-                    appRoute.navigate(const FavoritesRoute());
-                  },
+                  onTap: () => appRoute.navigate(const FavoritesRoute()),
                   title: Text(
                     tr.favorites,
-                    style:
-                        tstyle.bodyLarge!.copyWith(fontWeight: FontWeight.bold),
+                    style: tstyle.bodyLarge!.copyWith(
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
@@ -57,37 +58,28 @@ class _FavWidgetState extends State<FavWidget> {
                       Text(tr.viewAll,
                           style: clickableText.copyWith(color: primary)),
                       hSpace(2),
-                      const Icon(
-                        Icons.arrow_forward_ios,
-                        size: 13,
-                      ),
+                      const Icon(Icons.arrow_forward_ios, size: 13),
                     ],
                   ),
                 ),
                 SizedBox(
                   height: 30.h,
                   width: 100.w,
-                  child: state.maybeWhen(
-                    loading: () => defLoadingCenter,
-                    failure: (err) => EmptyWidget(title: err),
-                    orElse: () {
-                      return ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: bloc.favVendors.length,
-                        itemBuilder: (context, index) {
-                          final item = bloc.favVendors[index];
-                          return FavItem(fav: item);
-                        },
-                      );
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: bloc.favVendors.length,
+                    itemBuilder: (context, index) {
+                      final item = bloc.favVendors[index];
+                      return FavItem(fav: item);
                     },
-                    // orElse: () {
-                    //   return const UnderMontains();
-                    // },
                   ),
                 ),
               ],
             );
           },
+          vendorLoading: (_) => defLoadingCenter,
+          successAdded: (_) => defLoadingCenter,
+          successDeleted: (_) => defLoadingCenter,
         );
       },
     );

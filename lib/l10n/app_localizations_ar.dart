@@ -1117,20 +1117,19 @@ class AppLocalizationsAr extends AppLocalizations {
       'اضغط هنا لتغيير موقعك، إذا لم تتم إضافة الموقع فلن تظهر الأماكن القريبة.';
 
   @override
-  String get seeMore => 'See More';
+  String get seeMore => 'عرض المزيد';
 
   @override
-  String get noResautrants => 'No Resaurants';
+  String get noResautrants => 'لا يوجد مطاعم';
 
   @override
-  String get ratingTitle => 'Rating';
+  String get ratingTitle => 'التقييم';
 
   @override
-  String get passwordIsRequired =>
-      'Password is required to update personal info';
+  String get passwordIsRequired => 'كلمة المرور مطلوبة';
 
   @override
-  String get anySpecialRequest => 'Any Special Request?';
+  String get anySpecialRequest => 'أي طلبات خاصة ؟';
 
   @override
   String get plsActivatePhone => 'يرجى تفعيل رقم هاتفك';
@@ -1139,15 +1138,17 @@ class AppLocalizationsAr extends AppLocalizations {
   String get verifyPhone => 'تأكيد رقم الهاتف';
 
   @override
-  String get searchITem => 'Search Items';
+  String get searchITem => 'البحث عن العناصر';
 
   @override
-  String get addPhoneNum => 'Add Phone Number';
+  String get addPhoneNum => 'إضافة رقم هاتف';
 
   @override
-  String get failedTransaction => 'failed to complete transaction';
+  String get failedTransaction => 'حدث خأ اثناء اكمال العملية';
 
   @override
-  String get arrivalTimeError =>
-      'Arrival time must be more than 3 minutes from now';
+  String get arrivalTimeError => 'وقت الوصول يجب ان يكون اكثر من ثلاث دقائق';
+
+  @override
+  String get retry => 'إعادة المحاولة';
 }

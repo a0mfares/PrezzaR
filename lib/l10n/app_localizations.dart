@@ -2311,6 +2311,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Arrival time must be more than 3 minutes from now'**
   String get arrivalTimeError;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
 }
 
 class _AppLocalizationsDelegate
