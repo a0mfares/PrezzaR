@@ -28,78 +28,124 @@ class FavBloc extends Bloc<FavEvent, FavState> {
     this._deleteFavVendorUsecase,
     this._getFavVendorUsecase,
   ) : super(const FavState.initial()) {
-    on<FavEvent>((event, emit) async {
-      await event.maybeWhen(
-        addFavVendor: (id) async {
-          if (alreadyInFav(id)) {
-            emit(const FavState.failure('Already in favorites'));
-            return;
-          }
+    // Register event handlers
+    on<_AddFavVendor>(_onAddFavVendor);
+    on<_DeleteFavVendor>(_onDeleteFavVendor);
+    on<_GetFavVendors>(_onGetFavVendors);
+  }
 
-          try {
-            loadingVendors.add(id);
-            emit(FavState.vendorLoading(id));
+  Future<void> _onAddFavVendor(
+    _AddFavVendor event,
+    Emitter<FavState> emit,
+  ) async {
+    if (alreadyInFav(event.id)) {
+      emit(const FavState.failure('Already in favorites'));
+      return;
+    }
 
-            final result = await _addFavVendorUsecase(parm: {'id': id});
-            result.fold(
-              (l) {
-                loadingVendors.remove(id);
-                emit(FavState.failure(l.getMsg));
-              },
-              (r) {
-                loadingVendors.remove(id);
-                emit(FavState.successAdded(id));
-                emit(const FavState.success());
-              },
-            );
-          } catch (e) {
-            loadingVendors.remove(id);
-            emit(FavState.failure(e.toString()));
-          }
-        },
-        deleteFavVendor: (id) async {
-          try {
-            loadingVendors.add(id);
-            emit(FavState.vendorLoading(id));
+    try {
+      loadingVendors.add(event.id);
+      emit(FavState.vendorLoading(event.id));
 
-            final result = await _deleteFavVendorUsecase(parm: {'uuid': id});
-            result.fold(
-              (l) {
-                loadingVendors.remove(id);
-                emit(FavState.failure(l.getMsg));
-              },
-              (r) {
-                loadingVendors.remove(id);
-                favVendors.removeWhere((e) => e.uuid == id);
-                emit(FavState.successDeleted(id));
-                emit(const FavState.success());
-              },
-            );
-          } catch (e) {
-            loadingVendors.remove(id);
-            emit(FavState.failure(e.toString()));
-          }
+      final result = await _addFavVendorUsecase(parm: {'id': event.id});
+
+      result.fold(
+        (error) {
+          loadingVendors.remove(event.id);
+          emit(FavState.failure(error.getMsg));
         },
-        getFavVendors: () async {
-          try {
-            emit(const FavState.loading());
-            final result = await _getFavVendorUsecase();
-            result.fold(
-              (l) => emit(FavState.failure(l.getMsg)),
-              (r) {
-                favVendors = r;
-                if (favVendors.isNotEmpty) {
-                  log("First vendor: ${favVendors.first}");
-                }
-                emit(const FavState.success());
-              },
-            );
-          } catch (e) {
-            emit(FavState.failure(e.toString()));
-          }
+        (vendor) {
+          loadingVendors.remove(event.id);
+
+          emit(FavState.successAdded(event.id));
+          log('Added vendor ${event.id} to favorites');
         },
-        orElse: () {},
       );
-    });
+    } catch (e) {
+      loadingVendors.remove(event.id);
+      emit(FavState.failure(e.toString()));
+    }
+  }
+
+  Future<void> _onDeleteFavVendor(
+    _DeleteFavVendor event,
+    Emitter<FavState> emit,
+  ) async {
+    if (!alreadyInFav(event.id)) {
+      emit(const FavState.failure('Vendor not in favorites'));
+      return;
+    }
+
+    try {
+      loadingVendors.add(event.id);
+      emit(FavState.vendorLoading(event.id));
+
+      final result = await _deleteFavVendorUsecase(parm: {'uuid': event.id});
+
+      result.fold(
+        (error) {
+          loadingVendors.remove(event.id);
+          emit(FavState.failure(error.getMsg));
+        },
+        (success) {
+          loadingVendors.remove(event.id);
+          favVendors.removeWhere((vendor) => vendor.uuid == event.id);
+          emit(FavState.successDeleted(event.id));
+          log('Removed vendor ${event.id} from favorites');
+        },
+      );
+    } catch (e) {
+      loadingVendors.remove(event.id);
+      emit(FavState.failure(e.toString()));
+    }
+  }
+
+  Future<void> _onGetFavVendors(
+    _GetFavVendors event,
+    Emitter<FavState> emit,
+  ) async {
+    try {
+      emit(const FavState.loading());
+
+      final result = await _getFavVendorUsecase();
+
+      result.fold(
+        (error) {
+          log('Error loading favorite vendors: ${error.getMsg}');
+          emit(FavState.failure(error.getMsg));
+        },
+        (vendors) {
+          favVendors = vendors;
+          log('Loaded ${favVendors.length} favorite vendors');
+
+          if (favVendors.isNotEmpty) {
+            log("First vendor: ${favVendors.first}");
+          }
+
+          emit(FavState.vendorsLoaded(favVendors));
+        },
+      );
+    } catch (e) {
+      log('Exception loading favorite vendors: $e');
+      emit(FavState.failure(e.toString()));
+    }
+  }
+
+  // Helper method to get vendor by ID
+  FavVendorEntity? getVendorById(String id) {
+    try {
+      return favVendors.firstWhere((vendor) => vendor.uuid == id);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Helper method to toggle favorite status
+  void toggleFavorite(String vendorId) {
+    if (alreadyInFav(vendorId)) {
+      add(FavEvent.deleteFavVendor(vendorId));
+    } else {
+      add(FavEvent.addFavVendor(vendorId));
+    }
   }
 }

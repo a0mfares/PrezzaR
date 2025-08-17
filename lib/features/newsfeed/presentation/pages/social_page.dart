@@ -77,7 +77,6 @@ class _SocialPageState extends State<SocialPage> {
           Expanded(
             child: BlocBuilder<NewsfeedBloc, NewsfeedState>(
               builder: (context, state) {
-                // Always use bloc.posts so data persists across states
                 final posts = bloc.posts;
 
                 if (state == const NewsfeedState.loadingPosts()) {

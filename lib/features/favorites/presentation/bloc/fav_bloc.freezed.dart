@@ -496,6 +496,7 @@ mixin _$FavState {
     required TResult Function(String vendorId) vendorLoading,
     required TResult Function(String vendorId) successAdded,
     required TResult Function(String vendorId) successDeleted,
+    required TResult Function(List<FavVendorEntity> vendors) vendorsLoaded,
     required TResult Function(String err) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -507,6 +508,7 @@ mixin _$FavState {
     TResult? Function(String vendorId)? vendorLoading,
     TResult? Function(String vendorId)? successAdded,
     TResult? Function(String vendorId)? successDeleted,
+    TResult? Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult? Function(String err)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -518,6 +520,7 @@ mixin _$FavState {
     TResult Function(String vendorId)? vendorLoading,
     TResult Function(String vendorId)? successAdded,
     TResult Function(String vendorId)? successDeleted,
+    TResult Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult Function(String err)? failure,
     required TResult orElse(),
   }) =>
@@ -530,6 +533,7 @@ mixin _$FavState {
     required TResult Function(_VendorLoading value) vendorLoading,
     required TResult Function(_SuccessAdded value) successAdded,
     required TResult Function(_SuccessDeleted value) successDeleted,
+    required TResult Function(_VendorsLoaded value) vendorsLoaded,
     required TResult Function(_Failure value) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -541,6 +545,7 @@ mixin _$FavState {
     TResult? Function(_VendorLoading value)? vendorLoading,
     TResult? Function(_SuccessAdded value)? successAdded,
     TResult? Function(_SuccessDeleted value)? successDeleted,
+    TResult? Function(_VendorsLoaded value)? vendorsLoaded,
     TResult? Function(_Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -552,6 +557,7 @@ mixin _$FavState {
     TResult Function(_VendorLoading value)? vendorLoading,
     TResult Function(_SuccessAdded value)? successAdded,
     TResult Function(_SuccessDeleted value)? successDeleted,
+    TResult Function(_VendorsLoaded value)? vendorsLoaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) =>
@@ -625,6 +631,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String vendorId) vendorLoading,
     required TResult Function(String vendorId) successAdded,
     required TResult Function(String vendorId) successDeleted,
+    required TResult Function(List<FavVendorEntity> vendors) vendorsLoaded,
     required TResult Function(String err) failure,
   }) {
     return initial();
@@ -639,6 +646,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String vendorId)? vendorLoading,
     TResult? Function(String vendorId)? successAdded,
     TResult? Function(String vendorId)? successDeleted,
+    TResult? Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult? Function(String err)? failure,
   }) {
     return initial?.call();
@@ -653,6 +661,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(String vendorId)? vendorLoading,
     TResult Function(String vendorId)? successAdded,
     TResult Function(String vendorId)? successDeleted,
+    TResult Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult Function(String err)? failure,
     required TResult orElse(),
   }) {
@@ -671,6 +680,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_VendorLoading value) vendorLoading,
     required TResult Function(_SuccessAdded value) successAdded,
     required TResult Function(_SuccessDeleted value) successDeleted,
+    required TResult Function(_VendorsLoaded value) vendorsLoaded,
     required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
@@ -685,6 +695,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_VendorLoading value)? vendorLoading,
     TResult? Function(_SuccessAdded value)? successAdded,
     TResult? Function(_SuccessDeleted value)? successDeleted,
+    TResult? Function(_VendorsLoaded value)? vendorsLoaded,
     TResult? Function(_Failure value)? failure,
   }) {
     return initial?.call(this);
@@ -699,6 +710,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(_VendorLoading value)? vendorLoading,
     TResult Function(_SuccessAdded value)? successAdded,
     TResult Function(_SuccessDeleted value)? successDeleted,
+    TResult Function(_VendorsLoaded value)? vendorsLoaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -760,6 +772,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(String vendorId) vendorLoading,
     required TResult Function(String vendorId) successAdded,
     required TResult Function(String vendorId) successDeleted,
+    required TResult Function(List<FavVendorEntity> vendors) vendorsLoaded,
     required TResult Function(String err) failure,
   }) {
     return loading();
@@ -774,6 +787,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(String vendorId)? vendorLoading,
     TResult? Function(String vendorId)? successAdded,
     TResult? Function(String vendorId)? successDeleted,
+    TResult? Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult? Function(String err)? failure,
   }) {
     return loading?.call();
@@ -788,6 +802,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(String vendorId)? vendorLoading,
     TResult Function(String vendorId)? successAdded,
     TResult Function(String vendorId)? successDeleted,
+    TResult Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult Function(String err)? failure,
     required TResult orElse(),
   }) {
@@ -806,6 +821,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_VendorLoading value) vendorLoading,
     required TResult Function(_SuccessAdded value) successAdded,
     required TResult Function(_SuccessDeleted value) successDeleted,
+    required TResult Function(_VendorsLoaded value) vendorsLoaded,
     required TResult Function(_Failure value) failure,
   }) {
     return loading(this);
@@ -820,6 +836,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_VendorLoading value)? vendorLoading,
     TResult? Function(_SuccessAdded value)? successAdded,
     TResult? Function(_SuccessDeleted value)? successDeleted,
+    TResult? Function(_VendorsLoaded value)? vendorsLoaded,
     TResult? Function(_Failure value)? failure,
   }) {
     return loading?.call(this);
@@ -834,6 +851,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_VendorLoading value)? vendorLoading,
     TResult Function(_SuccessAdded value)? successAdded,
     TResult Function(_SuccessDeleted value)? successDeleted,
+    TResult Function(_VendorsLoaded value)? vendorsLoaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -895,6 +913,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function(String vendorId) vendorLoading,
     required TResult Function(String vendorId) successAdded,
     required TResult Function(String vendorId) successDeleted,
+    required TResult Function(List<FavVendorEntity> vendors) vendorsLoaded,
     required TResult Function(String err) failure,
   }) {
     return success();
@@ -909,6 +928,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(String vendorId)? vendorLoading,
     TResult? Function(String vendorId)? successAdded,
     TResult? Function(String vendorId)? successDeleted,
+    TResult? Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult? Function(String err)? failure,
   }) {
     return success?.call();
@@ -923,6 +943,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(String vendorId)? vendorLoading,
     TResult Function(String vendorId)? successAdded,
     TResult Function(String vendorId)? successDeleted,
+    TResult Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult Function(String err)? failure,
     required TResult orElse(),
   }) {
@@ -941,6 +962,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_VendorLoading value) vendorLoading,
     required TResult Function(_SuccessAdded value) successAdded,
     required TResult Function(_SuccessDeleted value) successDeleted,
+    required TResult Function(_VendorsLoaded value) vendorsLoaded,
     required TResult Function(_Failure value) failure,
   }) {
     return success(this);
@@ -955,6 +977,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_VendorLoading value)? vendorLoading,
     TResult? Function(_SuccessAdded value)? successAdded,
     TResult? Function(_SuccessDeleted value)? successDeleted,
+    TResult? Function(_VendorsLoaded value)? vendorsLoaded,
     TResult? Function(_Failure value)? failure,
   }) {
     return success?.call(this);
@@ -969,6 +992,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(_VendorLoading value)? vendorLoading,
     TResult Function(_SuccessAdded value)? successAdded,
     TResult Function(_SuccessDeleted value)? successDeleted,
+    TResult Function(_VendorsLoaded value)? vendorsLoaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -1058,6 +1082,7 @@ class _$VendorLoadingImpl implements _VendorLoading {
     required TResult Function(String vendorId) vendorLoading,
     required TResult Function(String vendorId) successAdded,
     required TResult Function(String vendorId) successDeleted,
+    required TResult Function(List<FavVendorEntity> vendors) vendorsLoaded,
     required TResult Function(String err) failure,
   }) {
     return vendorLoading(vendorId);
@@ -1072,6 +1097,7 @@ class _$VendorLoadingImpl implements _VendorLoading {
     TResult? Function(String vendorId)? vendorLoading,
     TResult? Function(String vendorId)? successAdded,
     TResult? Function(String vendorId)? successDeleted,
+    TResult? Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult? Function(String err)? failure,
   }) {
     return vendorLoading?.call(vendorId);
@@ -1086,6 +1112,7 @@ class _$VendorLoadingImpl implements _VendorLoading {
     TResult Function(String vendorId)? vendorLoading,
     TResult Function(String vendorId)? successAdded,
     TResult Function(String vendorId)? successDeleted,
+    TResult Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult Function(String err)? failure,
     required TResult orElse(),
   }) {
@@ -1104,6 +1131,7 @@ class _$VendorLoadingImpl implements _VendorLoading {
     required TResult Function(_VendorLoading value) vendorLoading,
     required TResult Function(_SuccessAdded value) successAdded,
     required TResult Function(_SuccessDeleted value) successDeleted,
+    required TResult Function(_VendorsLoaded value) vendorsLoaded,
     required TResult Function(_Failure value) failure,
   }) {
     return vendorLoading(this);
@@ -1118,6 +1146,7 @@ class _$VendorLoadingImpl implements _VendorLoading {
     TResult? Function(_VendorLoading value)? vendorLoading,
     TResult? Function(_SuccessAdded value)? successAdded,
     TResult? Function(_SuccessDeleted value)? successDeleted,
+    TResult? Function(_VendorsLoaded value)? vendorsLoaded,
     TResult? Function(_Failure value)? failure,
   }) {
     return vendorLoading?.call(this);
@@ -1132,6 +1161,7 @@ class _$VendorLoadingImpl implements _VendorLoading {
     TResult Function(_VendorLoading value)? vendorLoading,
     TResult Function(_SuccessAdded value)? successAdded,
     TResult Function(_SuccessDeleted value)? successDeleted,
+    TResult Function(_VendorsLoaded value)? vendorsLoaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -1229,6 +1259,7 @@ class _$SuccessAddedImpl implements _SuccessAdded {
     required TResult Function(String vendorId) vendorLoading,
     required TResult Function(String vendorId) successAdded,
     required TResult Function(String vendorId) successDeleted,
+    required TResult Function(List<FavVendorEntity> vendors) vendorsLoaded,
     required TResult Function(String err) failure,
   }) {
     return successAdded(vendorId);
@@ -1243,6 +1274,7 @@ class _$SuccessAddedImpl implements _SuccessAdded {
     TResult? Function(String vendorId)? vendorLoading,
     TResult? Function(String vendorId)? successAdded,
     TResult? Function(String vendorId)? successDeleted,
+    TResult? Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult? Function(String err)? failure,
   }) {
     return successAdded?.call(vendorId);
@@ -1257,6 +1289,7 @@ class _$SuccessAddedImpl implements _SuccessAdded {
     TResult Function(String vendorId)? vendorLoading,
     TResult Function(String vendorId)? successAdded,
     TResult Function(String vendorId)? successDeleted,
+    TResult Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult Function(String err)? failure,
     required TResult orElse(),
   }) {
@@ -1275,6 +1308,7 @@ class _$SuccessAddedImpl implements _SuccessAdded {
     required TResult Function(_VendorLoading value) vendorLoading,
     required TResult Function(_SuccessAdded value) successAdded,
     required TResult Function(_SuccessDeleted value) successDeleted,
+    required TResult Function(_VendorsLoaded value) vendorsLoaded,
     required TResult Function(_Failure value) failure,
   }) {
     return successAdded(this);
@@ -1289,6 +1323,7 @@ class _$SuccessAddedImpl implements _SuccessAdded {
     TResult? Function(_VendorLoading value)? vendorLoading,
     TResult? Function(_SuccessAdded value)? successAdded,
     TResult? Function(_SuccessDeleted value)? successDeleted,
+    TResult? Function(_VendorsLoaded value)? vendorsLoaded,
     TResult? Function(_Failure value)? failure,
   }) {
     return successAdded?.call(this);
@@ -1303,6 +1338,7 @@ class _$SuccessAddedImpl implements _SuccessAdded {
     TResult Function(_VendorLoading value)? vendorLoading,
     TResult Function(_SuccessAdded value)? successAdded,
     TResult Function(_SuccessDeleted value)? successDeleted,
+    TResult Function(_VendorsLoaded value)? vendorsLoaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -1401,6 +1437,7 @@ class _$SuccessDeletedImpl implements _SuccessDeleted {
     required TResult Function(String vendorId) vendorLoading,
     required TResult Function(String vendorId) successAdded,
     required TResult Function(String vendorId) successDeleted,
+    required TResult Function(List<FavVendorEntity> vendors) vendorsLoaded,
     required TResult Function(String err) failure,
   }) {
     return successDeleted(vendorId);
@@ -1415,6 +1452,7 @@ class _$SuccessDeletedImpl implements _SuccessDeleted {
     TResult? Function(String vendorId)? vendorLoading,
     TResult? Function(String vendorId)? successAdded,
     TResult? Function(String vendorId)? successDeleted,
+    TResult? Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult? Function(String err)? failure,
   }) {
     return successDeleted?.call(vendorId);
@@ -1429,6 +1467,7 @@ class _$SuccessDeletedImpl implements _SuccessDeleted {
     TResult Function(String vendorId)? vendorLoading,
     TResult Function(String vendorId)? successAdded,
     TResult Function(String vendorId)? successDeleted,
+    TResult Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult Function(String err)? failure,
     required TResult orElse(),
   }) {
@@ -1447,6 +1486,7 @@ class _$SuccessDeletedImpl implements _SuccessDeleted {
     required TResult Function(_VendorLoading value) vendorLoading,
     required TResult Function(_SuccessAdded value) successAdded,
     required TResult Function(_SuccessDeleted value) successDeleted,
+    required TResult Function(_VendorsLoaded value) vendorsLoaded,
     required TResult Function(_Failure value) failure,
   }) {
     return successDeleted(this);
@@ -1461,6 +1501,7 @@ class _$SuccessDeletedImpl implements _SuccessDeleted {
     TResult? Function(_VendorLoading value)? vendorLoading,
     TResult? Function(_SuccessAdded value)? successAdded,
     TResult? Function(_SuccessDeleted value)? successDeleted,
+    TResult? Function(_VendorsLoaded value)? vendorsLoaded,
     TResult? Function(_Failure value)? failure,
   }) {
     return successDeleted?.call(this);
@@ -1475,6 +1516,7 @@ class _$SuccessDeletedImpl implements _SuccessDeleted {
     TResult Function(_VendorLoading value)? vendorLoading,
     TResult Function(_SuccessAdded value)? successAdded,
     TResult Function(_SuccessDeleted value)? successDeleted,
+    TResult Function(_VendorsLoaded value)? vendorsLoaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -1494,6 +1536,190 @@ abstract class _SuccessDeleted implements FavState {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessDeletedImplCopyWith<_$SuccessDeletedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$VendorsLoadedImplCopyWith<$Res> {
+  factory _$$VendorsLoadedImplCopyWith(
+          _$VendorsLoadedImpl value, $Res Function(_$VendorsLoadedImpl) then) =
+      __$$VendorsLoadedImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<FavVendorEntity> vendors});
+}
+
+/// @nodoc
+class __$$VendorsLoadedImplCopyWithImpl<$Res>
+    extends _$FavStateCopyWithImpl<$Res, _$VendorsLoadedImpl>
+    implements _$$VendorsLoadedImplCopyWith<$Res> {
+  __$$VendorsLoadedImplCopyWithImpl(
+      _$VendorsLoadedImpl _value, $Res Function(_$VendorsLoadedImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of FavState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? vendors = null,
+  }) {
+    return _then(_$VendorsLoadedImpl(
+      null == vendors
+          ? _value._vendors
+          : vendors // ignore: cast_nullable_to_non_nullable
+              as List<FavVendorEntity>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VendorsLoadedImpl implements _VendorsLoaded {
+  const _$VendorsLoadedImpl(final List<FavVendorEntity> vendors)
+      : _vendors = vendors;
+
+  final List<FavVendorEntity> _vendors;
+  @override
+  List<FavVendorEntity> get vendors {
+    if (_vendors is EqualUnmodifiableListView) return _vendors;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_vendors);
+  }
+
+  @override
+  String toString() {
+    return 'FavState.vendorsLoaded(vendors: $vendors)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$VendorsLoadedImpl &&
+            const DeepCollectionEquality().equals(other._vendors, _vendors));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_vendors));
+
+  /// Create a copy of FavState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$VendorsLoadedImplCopyWith<_$VendorsLoadedImpl> get copyWith =>
+      __$$VendorsLoadedImplCopyWithImpl<_$VendorsLoadedImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String vendorId) vendorLoading,
+    required TResult Function(String vendorId) successAdded,
+    required TResult Function(String vendorId) successDeleted,
+    required TResult Function(List<FavVendorEntity> vendors) vendorsLoaded,
+    required TResult Function(String err) failure,
+  }) {
+    return vendorsLoaded(vendors);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String vendorId)? vendorLoading,
+    TResult? Function(String vendorId)? successAdded,
+    TResult? Function(String vendorId)? successDeleted,
+    TResult? Function(List<FavVendorEntity> vendors)? vendorsLoaded,
+    TResult? Function(String err)? failure,
+  }) {
+    return vendorsLoaded?.call(vendors);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String vendorId)? vendorLoading,
+    TResult Function(String vendorId)? successAdded,
+    TResult Function(String vendorId)? successDeleted,
+    TResult Function(List<FavVendorEntity> vendors)? vendorsLoaded,
+    TResult Function(String err)? failure,
+    required TResult orElse(),
+  }) {
+    if (vendorsLoaded != null) {
+      return vendorsLoaded(vendors);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_VendorLoading value) vendorLoading,
+    required TResult Function(_SuccessAdded value) successAdded,
+    required TResult Function(_SuccessDeleted value) successDeleted,
+    required TResult Function(_VendorsLoaded value) vendorsLoaded,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return vendorsLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_VendorLoading value)? vendorLoading,
+    TResult? Function(_SuccessAdded value)? successAdded,
+    TResult? Function(_SuccessDeleted value)? successDeleted,
+    TResult? Function(_VendorsLoaded value)? vendorsLoaded,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return vendorsLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_VendorLoading value)? vendorLoading,
+    TResult Function(_SuccessAdded value)? successAdded,
+    TResult Function(_SuccessDeleted value)? successDeleted,
+    TResult Function(_VendorsLoaded value)? vendorsLoaded,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (vendorsLoaded != null) {
+      return vendorsLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _VendorsLoaded implements FavState {
+  const factory _VendorsLoaded(final List<FavVendorEntity> vendors) =
+      _$VendorsLoadedImpl;
+
+  List<FavVendorEntity> get vendors;
+
+  /// Create a copy of FavState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$VendorsLoadedImplCopyWith<_$VendorsLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1571,6 +1797,7 @@ class _$FailureImpl implements _Failure {
     required TResult Function(String vendorId) vendorLoading,
     required TResult Function(String vendorId) successAdded,
     required TResult Function(String vendorId) successDeleted,
+    required TResult Function(List<FavVendorEntity> vendors) vendorsLoaded,
     required TResult Function(String err) failure,
   }) {
     return failure(err);
@@ -1585,6 +1812,7 @@ class _$FailureImpl implements _Failure {
     TResult? Function(String vendorId)? vendorLoading,
     TResult? Function(String vendorId)? successAdded,
     TResult? Function(String vendorId)? successDeleted,
+    TResult? Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult? Function(String err)? failure,
   }) {
     return failure?.call(err);
@@ -1599,6 +1827,7 @@ class _$FailureImpl implements _Failure {
     TResult Function(String vendorId)? vendorLoading,
     TResult Function(String vendorId)? successAdded,
     TResult Function(String vendorId)? successDeleted,
+    TResult Function(List<FavVendorEntity> vendors)? vendorsLoaded,
     TResult Function(String err)? failure,
     required TResult orElse(),
   }) {
@@ -1617,6 +1846,7 @@ class _$FailureImpl implements _Failure {
     required TResult Function(_VendorLoading value) vendorLoading,
     required TResult Function(_SuccessAdded value) successAdded,
     required TResult Function(_SuccessDeleted value) successDeleted,
+    required TResult Function(_VendorsLoaded value) vendorsLoaded,
     required TResult Function(_Failure value) failure,
   }) {
     return failure(this);
@@ -1631,6 +1861,7 @@ class _$FailureImpl implements _Failure {
     TResult? Function(_VendorLoading value)? vendorLoading,
     TResult? Function(_SuccessAdded value)? successAdded,
     TResult? Function(_SuccessDeleted value)? successDeleted,
+    TResult? Function(_VendorsLoaded value)? vendorsLoaded,
     TResult? Function(_Failure value)? failure,
   }) {
     return failure?.call(this);
@@ -1645,6 +1876,7 @@ class _$FailureImpl implements _Failure {
     TResult Function(_VendorLoading value)? vendorLoading,
     TResult Function(_SuccessAdded value)? successAdded,
     TResult Function(_SuccessDeleted value)? successDeleted,
+    TResult Function(_VendorsLoaded value)? vendorsLoaded,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
