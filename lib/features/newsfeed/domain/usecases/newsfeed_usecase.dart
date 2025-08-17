@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:prezza/core/helper/usecase_helper.dart';
 import 'package:prezza/core/service/failure_services.dart';
+import 'package:prezza/features/newsfeed/domain/entities/follower_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/product_tag_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/vendor_tag_entity.dart';
 import 'package:prezza/features/newsfeed/domain/repositories/newsfeed_repo.dart';
@@ -252,25 +253,25 @@ class GetRepliesUsecase extends UsecaseHelper<List<CommentEntity>> {
   }
 }
 
-class GetUserFollowerUsecase extends UsecaseHelper<void> {
+class GetUserFollowerUsecase extends UsecaseHelper<List<FollowerEntity>> {
   final NewsfeedRepo _repo;
 
   GetUserFollowerUsecase(this._repo);
 
   @override
-  Future<Either<FailureServices, void>> call(
+  Future<Either<FailureServices, List<FollowerEntity>>> call(
       {Map<String, dynamic> parm = const {}}) {
     return _repo.getUserFollower(parm);
   }
 }
 
-class GetUserFollowingUsecase extends UsecaseHelper<void> {
+class GetUserFollowingUsecase extends UsecaseHelper<List<FollowerEntity>> {
   final NewsfeedRepo _repo;
 
   GetUserFollowingUsecase(this._repo);
 
   @override
-  Future<Either<FailureServices, void>> call(
+  Future<Either<FailureServices, List<FollowerEntity>>> call(
       {Map<String, dynamic> parm = const {}}) {
     return _repo.getUserFollowing(parm);
   }

@@ -21,7 +21,7 @@ class SocialPage extends StatefulWidget {
 }
 
 class _SocialPageState extends State<SocialPage> {
-  late NewsfeedBloc bloc;
+  late final NewsfeedBloc bloc;
 
   @override
   void didChangeDependencies() {
@@ -77,13 +77,19 @@ class _SocialPageState extends State<SocialPage> {
           Expanded(
             child: BlocBuilder<NewsfeedBloc, NewsfeedState>(
               builder: (context, state) {
-                return state.maybeWhen(
-                  loadingPosts: () => const LoadingPostWidget(),
-                  failure: (error) => Center(
+                // Always use bloc.posts so data persists across states
+                final posts = bloc.posts;
+
+                if (state == const NewsfeedState.loadingPosts()) {
+                  return const LoadingPostWidget();
+                }
+
+                if (state == const NewsfeedState.failure('')) {
+                  return Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text('Error: $error'),
+                        const Text('Error: '),
                         ElevatedButton(
                           onPressed: () {
                             bloc.add(const NewsfeedEvent.fetchPosts());
@@ -92,30 +98,30 @@ class _SocialPageState extends State<SocialPage> {
                         ),
                       ],
                     ),
-                  ),
-                  orElse: () {
-                    if (bloc.posts.isEmpty) {
-                      return Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            SvgPicture.asset(
-                              Assets.assetsImagesNoData,
-                              width: 200,
-                            ),
-                            vSpace(3),
-                            Text(tr.noPosts),
-                          ],
+                  );
+                }
+
+                if (posts.isEmpty) {
+                  return Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          Assets.assetsImagesNoData,
+                          width: 200,
                         ),
-                      );
-                    }
-                    return ListView.builder(
-                      itemCount: bloc.posts.length,
-                      itemBuilder: (context, index) {
-                        final post = bloc.posts[index];
-                        return PostWidget(post: post);
-                      },
-                    );
+                        vSpace(3),
+                        Text(tr.noPosts),
+                      ],
+                    ),
+                  );
+                }
+
+                return ListView.builder(
+                  itemCount: posts.length,
+                  itemBuilder: (context, index) {
+                    final post = posts[index];
+                    return PostWidget(post: post);
                   },
                 );
               },

@@ -7,7 +7,6 @@ import 'package:prezza/features/newsfeed/domain/entities/post_entity.dart';
 import 'package:prezza/features/newsfeed/presentation/bloc/newsfeed_bloc.dart';
 import 'package:prezza/features/newsfeed/presentation/widgets/loading_posts_profile.dart';
 import 'package:prezza/features/newsfeed/presentation/widgets/post_widget.dart';
-import 'dart:developer';
 
 class FeedWidget extends StatefulWidget {
   const FeedWidget({
@@ -51,13 +50,9 @@ class _FeedWidgetState extends State<FeedWidget>
   void _initializeFeed() {
     if (hasInitialized) return;
 
-    log('FeedWidget: Initializing with userId: ${widget.userId}, isFeedPosts: ${widget.isFeedPosts}');
-
     if (widget.isFeedPosts) {
-      log('FeedWidget: Fetching user posts...');
       bloc.add(NewsfeedEvent.getUserPosts(widget.userId));
     } else {
-      log('FeedWidget: Fetching saved posts...');
       bloc.add(NewsfeedEvent.getSavedPosts(widget.userId));
     }
 
@@ -65,7 +60,6 @@ class _FeedWidgetState extends State<FeedWidget>
   }
 
   void _retryFetch() {
-    log('FeedWidget: Retrying fetch...');
     if (widget.isFeedPosts) {
       bloc.add(NewsfeedEvent.getUserPosts(widget.userId));
     } else {
@@ -79,32 +73,19 @@ class _FeedWidgetState extends State<FeedWidget>
 
     return BlocBuilder<NewsfeedBloc, NewsfeedState>(
       builder: (context, state) {
+        // Pick correct list from bloc
         final posts = widget.isFeedPosts ? bloc.userPosts : bloc.savedPosts;
 
         return state.maybeWhen(
-          loading: () {
-            log('FeedWidget: Showing loading state');
-            return const ShimmerPostsGrid();
-          },
-          loadingPosts: () {
-            log('FeedWidget: Showing loading posts state');
-            return const ShimmerPostsGrid();
-          },
-          success: () {
-            log('FeedWidget: Success state - Posts count: ${posts.length}');
-            return posts.isNotEmpty
-                ? _buildPostsContent(posts)
-                : _buildEmptyContent();
-          },
-          failure: (error) {
-            log('FeedWidget: Error state: $error');
-            return _buildErrorContent(error);
-          },
+          loading: () => const ShimmerPostsGrid(),
+          loadingPosts: () => const ShimmerPostsGrid(),
+          failure: (error) => _buildErrorContent(error),
           orElse: () {
-            log('FeedWidget: OrElse state - Posts count: ${posts.length}');
-            return posts.isNotEmpty
-                ? _buildPostsContent(posts)
-                : _buildEmptyContent();
+            if (posts.isNotEmpty) {
+              return _buildPostsContent(posts);
+            } else {
+              return _buildEmptyContent(isFeed: widget.isFeedPosts);
+            }
           },
         );
       },
@@ -112,8 +93,6 @@ class _FeedWidgetState extends State<FeedWidget>
   }
 
   Widget _buildPostsContent(List<PostEntity> posts) {
-    log('FeedWidget: Building grid with ${posts.length} posts');
-
     return RefreshIndicator(
       onRefresh: () async => _retryFetch(),
       child: ListView.builder(
@@ -121,15 +100,13 @@ class _FeedWidgetState extends State<FeedWidget>
         itemCount: posts.length,
         itemBuilder: (context, index) {
           final post = posts[index];
-          log('FeedWidget: Rendering post $index - ID: ${post.uuid}');
-
           return PostWidget(post: post);
         },
       ),
     );
   }
 
-  Widget _buildEmptyContent() {
+  Widget _buildEmptyContent({required bool isFeed}) {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -140,7 +117,7 @@ class _FeedWidgetState extends State<FeedWidget>
           ),
           vSpace(3),
           Text(
-            widget.isFeedPosts ? tr.noPosts : tr.noSavedPosts,
+            isFeed ? tr.noPosts : tr.noSavedPosts,
             style: tstyle.bodyLarge,
           ),
           vSpace(2),

@@ -22,9 +22,9 @@ class _UsersSearchPageState extends State<UsersSearchPage> {
 
   @override
   void initState() {
+    super.initState();
     bloc = NewsfeedBloc.get(context);
     bloc.add(const NewsfeedEvent.getUsers());
-    super.initState();
   }
 
   @override
@@ -36,17 +36,20 @@ class _UsersSearchPageState extends State<UsersSearchPage> {
       body: BlocBuilder<NewsfeedBloc, NewsfeedState>(
         builder: (context, state) {
           return state.maybeWhen(
-            loading: () {
-              return const LoadingUsersWidget();
-            },
-            orElse: () {
+            loadingUsers: () => const LoadingUsersWidget(),
+            usersLoaded: (users) {
+              if (users.isEmpty) {
+                return const Center(child: Text("No Users Found"));
+              }
               return ListView.builder(
-                itemCount: bloc.users.length,
+                itemCount: users.length,
                 itemBuilder: (context, index) {
-                  final user = bloc.users[index];
+                  final user = users[index];
                   return ListTile(
                     onTap: () {
-                      appRoute.navigate(ProfileSocialRoute(userId: user.uuid));
+                      appRoute.navigate(
+                        ProfileSocialRoute(userId: user.uuid),
+                      );
                     },
                     title: Text(user.username),
                     trailing: SizedBox(
@@ -64,6 +67,10 @@ class _UsersSearchPageState extends State<UsersSearchPage> {
                 },
               );
             },
+            failure: (error) => Center(
+              child: Text("Error: $error"),
+            ),
+            orElse: () => const SizedBox.shrink(),
           );
         },
       ),

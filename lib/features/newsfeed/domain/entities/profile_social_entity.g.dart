@@ -220,6 +220,8 @@ class $ProfileSocialEntity implements AutoMapprInterface {
       profile_picture_url: model.profile_picture_url,
       number_of_followers: model.number_of_followers,
       number_of_following: model.number_of_following,
+      bio: model.bio,
+      is_following: model.is_following,
     );
   }
 }
@@ -245,13 +247,15 @@ class ProfileSocialEntityAdapter extends TypeAdapter<ProfileSocialEntity> {
       profile_picture_url: fields[3] as String,
       number_of_followers: fields[4] as int,
       number_of_following: fields[5] as int,
+      bio: fields[6] as String?,
+      is_following: fields[7] as bool?,
     );
   }
 
   @override
   void write(BinaryWriter writer, ProfileSocialEntity obj) {
     writer
-      ..writeByte(6)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.uuid)
       ..writeByte(1)
@@ -263,7 +267,11 @@ class ProfileSocialEntityAdapter extends TypeAdapter<ProfileSocialEntity> {
       ..writeByte(4)
       ..write(obj.number_of_followers)
       ..writeByte(5)
-      ..write(obj.number_of_following);
+      ..write(obj.number_of_following)
+      ..writeByte(6)
+      ..write(obj.bio)
+      ..writeByte(7)
+      ..write(obj.is_following);
   }
 
   @override

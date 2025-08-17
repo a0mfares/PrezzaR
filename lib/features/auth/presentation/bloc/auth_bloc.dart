@@ -23,7 +23,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   bool recieveOffer = false;
   bool isVisable = false;
-  bool isEmail = true;
+  bool isEmail = false;
 
   GlobalKey<FormState> loginForm = GlobalKey();
   GlobalKey<FormState> signupForm = GlobalKey();

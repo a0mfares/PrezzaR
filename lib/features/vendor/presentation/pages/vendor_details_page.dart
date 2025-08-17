@@ -45,23 +45,74 @@ class _VendorProfilePageState extends State<VendorDetailsPage> {
     return Scaffold(
       appBar: AppBar(
         actions: [
-          InkWell(
-            onTap: () {
+          InkWell(onTap: () {
+            if (!ifUserAuthenticated()) {
+              appRoute.navigate(LoginRoute());
+            } else {
               appRoute.navigate(const CartRoute());
+            }
+          }, child: BlocBuilder<CartBloc, CartState>(
+            builder: (context, state) {
+              final cartBloc = CartBloc.get(context);
+
+              return state.maybeWhen(
+                loading: () {
+                  return const CircleAvatar().badgeBtn(
+                    count: cartBloc.cartLength,
+                    bgColor: primary,
+                  );
+                },
+                success: () {
+                  return const CircleAvatar().badgeBtn(
+                    count: cartBloc.cartLength,
+                    bgColor: primary,
+                  );
+                },
+                successAdded: () {
+                  return const CircleAvatar().badgeBtn(
+                    count: cartBloc.cartLength,
+                    bgColor: primary,
+                  );
+                },
+                successDeleted: () {
+                  return const CircleAvatar().badgeBtn(
+                    count: cartBloc.cartLength,
+                    bgColor: primary,
+                  );
+                },
+                successUpdate: () {
+                  return const CircleAvatar().badgeBtn(
+                    count: cartBloc.cartLength,
+                    bgColor: primary,
+                  );
+                },
+                successCleared: () {
+                  return const CircleAvatar().badgeBtn(
+                    count: 0,
+                    bgColor: primary,
+                  );
+                },
+                failureGetUserCart: (error) {
+                  return const CircleAvatar().badgeBtn(
+                    count: 0,
+                    bgColor: primary,
+                  );
+                },
+                failureGetCartDetails: (error) {
+                  return const CircleAvatar().badgeBtn(
+                    count: cartBloc.cartLength, // Show last known count
+                    bgColor: primary,
+                  );
+                },
+                orElse: () {
+                  return const CircleAvatar().badgeBtn(
+                    count: cartBloc.cartLength,
+                    bgColor: primary,
+                  );
+                },
+              );
             },
-            child: BlocBuilder<CartBloc, CartState>(
-              builder: (context, state) {
-                return state.maybeWhen(
-                  orElse: () {
-                    return const CircleAvatar().badgeBtn(
-                      count: CartBloc.get(context).cartItems.length,
-                      bgColor: primary,
-                    );
-                  },
-                );
-              },
-            ),
-          )
+          ))
         ],
       ).prezzaLeading(),
       body: SingleChildScrollView(

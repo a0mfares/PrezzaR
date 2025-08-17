@@ -57,20 +57,23 @@ class _CreatePostPageState extends State<CreatePostPage> {
         listener: (context, state) {
           state.maybeMap(
             progress: (v) {
+              // Show loading progress
+              BotToast.showLoading();
+              log('Upload progress: ${v.progress}%');
+            },
+            postCreated: (v) {
+              BotToast.closeAllLoading();
+              BotToast.showText(text: 'Post created successfully');
+              // Navigate back to home and refresh posts
               appRoute.navigate(UserLayoutHomeRoute(index: 1));
               appRoute.removeLast();
-              log(v.progress.toString());
-            },
-            successCreated: (v) {
-              BotToast.closeAllLoading();
-              appRoute.back();
             },
             failure: (v) {
               BotToast.closeAllLoading();
-              BotToast.showText(text: v.err);
+              BotToast.showText(text: v.message);
             },
-            success: (v) {
-              BotToast.closeAllLoading();
+            loading: (v) {
+              BotToast.showLoading();
             },
             orElse: () {},
           );
@@ -82,27 +85,98 @@ class _CreatePostPageState extends State<CreatePostPage> {
               title: Text(usr.user.username),
             ),
             vSpace(2),
-            TextFormField(
-              controller: bloc.content,
-              decoration: InputDecoration(
-                hintText: tr.shareExperience,
-                hintStyle: tstyle.headlineSmall!.copyWith(
-                  color: Colors.grey,
-                ),
-                fillColor: Colors.transparent,
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: TextFormField(
+                controller:
+                    bloc.contentController, // Fixed: use contentController
+                maxLines: 5,
+                decoration: InputDecoration(
+                  hintText: tr.shareExperience,
+                  hintStyle: tstyle.headlineSmall!.copyWith(
+                    color: Colors.grey,
+                  ),
+                  fillColor: Colors.transparent,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
                 ),
               ),
             ),
             BlocBuilder<NewsfeedBloc, NewsfeedState>(
               builder: (context, state) {
                 return state.maybeWhen(
+                  imageSelected: (file, bytes) {
+                    // Show selected image
+                    return Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.all(16.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(color: Colors.grey.shade300),
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.file(
+                            file,
+                            fit: BoxFit.cover,
+                            width: double.infinity,
+                          ),
+                        ),
+                      ),
+                    );
+                  },
                   orElse: () {
-                    return Visibility(
-                      visible: bloc.img.path.isNotEmpty,
-                      child: Image.file(
-                        bloc.img,
+                    // Show placeholder or selected image from bloc
+                    if (bloc.selectedImage != null) {
+                      return Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.all(16.0),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.grey.shade300),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(10),
+                            child: Image.file(
+                              bloc.selectedImage!,
+                              fit: BoxFit.cover,
+                              width: double.infinity,
+                            ),
+                          ),
+                        ),
+                      );
+                    }
+                    return Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.all(16.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          border: Border.all(
+                            color: Colors.grey.shade300,
+                            style: BorderStyle.solid,
+                          ),
+                        ),
+                        child: Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(
+                                Icons.image_outlined,
+                                size: 64,
+                                color: Colors.grey.shade400,
+                              ),
+                              const SizedBox(height: 16),
+                              Text(
+                                'No image selected',
+                                style: TextStyle(
+                                  color: Colors.grey.shade600,
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     );
                   },
@@ -128,10 +202,12 @@ class _CreatePostPageState extends State<CreatePostPage> {
                 showPrezzaImagePicker(
                   context: context,
                   onPickFromCamera: (result) {
-                    bloc.add(NewsfeedEvent.pickupImage(result));
+                    bloc.add(NewsfeedEvent.pickupImage(
+                        result)); // Fixed: use correct event
                   },
                   onPickFromGallery: (result) {
-                    bloc.add(NewsfeedEvent.pickupImage(result));
+                    bloc.add(NewsfeedEvent.pickupImage(
+                        result)); // Fixed: use correct event
                   },
                 );
               },

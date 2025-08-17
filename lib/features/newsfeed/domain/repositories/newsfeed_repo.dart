@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:prezza/core/service/failure_services.dart';
+import 'package:prezza/features/newsfeed/domain/entities/follower_entity.dart';
 
 import '../entities/comment_entity.dart';
 import '../entities/post_entity.dart';
@@ -20,9 +21,9 @@ abstract class NewsfeedRepo {
       Map<String, dynamic> query);
   Future<Either<FailureServices, void>> followUser(Map<String, dynamic> body);
   Future<Either<FailureServices, void>> unFollowUser(Map<String, dynamic> body);
-  Future<Either<FailureServices, void>> getUserFollower(
+  Future<Either<FailureServices, List<FollowerEntity>>> getUserFollower(
       Map<String, dynamic> query);
-  Future<Either<FailureServices, void>> getUserFollowing(
+  Future<Either<FailureServices, List<FollowerEntity>>> getUserFollowing(
       Map<String, dynamic> query);
   Future<Either<FailureServices, List<PostEntity>>> getPostsBlog(
       Map<String, dynamic> query);

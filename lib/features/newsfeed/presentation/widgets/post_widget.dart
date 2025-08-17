@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,6 +16,7 @@ import '../bloc/newsfeed_bloc.dart';
 class PostWidget extends StatefulWidget {
   const PostWidget({super.key, required this.post});
   final PostEntity post;
+
   @override
   State<PostWidget> createState() => _PostWidgetState();
 }
@@ -25,125 +24,133 @@ class PostWidget extends StatefulWidget {
 class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
   late final NewsfeedBloc bloc;
 
-  // late final RiveAnimationController _controller;
   @override
   void initState() {
+    super.initState();
     bloc = NewsfeedBloc.get(context);
     bloc.add(NewsfeedEvent.getLikes(widget.post.uuid));
-    super.initState();
   }
-
-  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
-    log(widget.post.post_images.first.image);
     return BlocListener<NewsfeedBloc, NewsfeedState>(
       listener: (context, state) {
-        state.maybeMap(
-          postSaved: (_) {
+        state.maybeWhen(
+          postSaved: () {
             BotToast.showText(text: tr.postSaved);
+          },
+          failure: (error) {
+            BotToast.showText(text: error);
           },
           orElse: () {},
         );
       },
       child: Column(
         children: [
+          // upload progress bar
           BlocBuilder<NewsfeedBloc, NewsfeedState>(
             builder: (context, state) {
               return state.maybeWhen(
-                progress: (progress) {
-                  return LinearProgressIndicator(value: progress / 100);
-                },
+                progress: (progress) =>
+                    LinearProgressIndicator(value: progress / 100),
                 orElse: () => const SizedBox(),
               );
             },
           ),
+
+          // Post header
           ListTile(
             leading: CircleAvatar(
               child: CachedImage(
-                  imageUrl: widget.post.auther_info.profile_picture_url
-                          .contains('https%3A')
-                      ? widget.post.auther_info.profile_picture_url.replaceAll(
-                          '/https%3A/prezza-media-state-bucket.s3.us-east-1.amazonaws.com',
-                          '',
-                        )
-                      : widget.post.auther_info.profile_picture_url),
+                imageUrl: widget.post.auther_info.profile_picture_url
+                        .contains('https%3A')
+                    ? widget.post.auther_info.profile_picture_url.replaceAll(
+                        '/https%3A/prezza-media-state-bucket.s3.us-east-1.amazonaws.com',
+                        '',
+                      )
+                    : widget.post.auther_info.profile_picture_url,
+              ),
             ),
             title: Text(widget.post.auther_info.user_name),
-            subtitle: const Text(''),
             trailing: IconButton(
               icon: const Icon(Icons.more_vert),
               onPressed: () {},
             ),
           ),
-          vSpace(2),
+
+          // Post text
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: Text(widget.post.contant)),
+              alignment: AlignmentDirectional.centerStart,
+              child: Text(widget.post.contant),
+            ),
           ),
+
           vSpace(2),
+
+          // Post image
           InkWell(
             onDoubleTap: () {
               bloc.add(NewsfeedEvent.likePost(widget.post.uuid));
             },
-            child: Stack(
-              alignment: Alignment.center,
-              children: [
-                CachedImage(
-                  key: Key(widget.post.uuid),
-                  imageUrl: widget.post.post_images.first.image,
-                  fit: BoxFit.cover,
-                  width: 100.w,
-                  height: 40.h,
-                ),
-              ],
+            child: CachedImage(
+              key: Key(widget.post.uuid),
+              imageUrl: widget.post.post_images.first.image,
+              fit: BoxFit.cover,
+              width: 100.w,
+              height: 40.h,
             ),
           ),
 
-          Row(
-            children: [
-              BlocListener<NewsfeedBloc, NewsfeedState>(
-                listener: (context, state) {
-                  state.maybeMap(
-                    loadingLike: (_) {
-                      isLoading = true;
-                      // _controller.isActive = true;
-                      // setState(() {});
+          // Likes & comments row
+          BlocBuilder<NewsfeedBloc, NewsfeedState>(
+            builder: (context, state) {
+              final likes = state.maybeWhen(
+                likesLoaded: (postId, likes) => likes.length,
+                orElse: () => widget.post.number_of_likes,
+              );
+
+              final comments = state.maybeWhen(
+                commentsLoaded: (postId, comments) => comments.length,
+                orElse: () => widget.post.number_of_comments,
+              );
+
+              return Row(
+                children: [
+                  IconButton(
+                    icon: Icon(Icons.favorite, color: primary),
+                    onPressed: () {
+                      bloc.add(NewsfeedEvent.likePost(widget.post.uuid));
                     },
-                    successLike: (_) async {
-                      // _controller.isActive = true;
-                      // await Future.delayed(const Duration(seconds: 1), () {
-                      //   _controller.isActive = false;
-                      //   isLoading = false;
-                      //   setState(() {});
-                      // });
+                  ),
+                  Text(likes.toString()),
+                  IconButton(
+                    icon: SvgPicture.asset(Assets.assetsImagesComment),
+                    onPressed: () {
+                      showModalBottomSheet(
+                        context: context,
+                        useSafeArea: true,
+                        isScrollControlled: true,
+                        builder: (context) {
+                          return CommentWidget(
+                            uuid: widget.post.uuid,
+                            onLoadData: () {
+                              bloc.add(
+                                  NewsfeedEvent.getComments(widget.post.uuid));
+                            },
+                          );
+                        },
+                      );
                     },
-                    orElse: () {
-                      return;
-                    },
-                  );
-                },
-                child: IconButton(
-                  icon: Icon(Icons.favorite, color: primary),
-                  onPressed: () {
-                    bloc.add(NewsfeedEvent.likePost(widget.post.uuid));
-                  },
-                ),
-              ),
-              Text(widget.post.number_of_likes.toString()),
-              IconButton(
-                icon: SvgPicture.asset(Assets.assetsImagesComment),
-                onPressed: () {},
-              ),
-              Text(widget.post.number_of_comments.toString()),
-            ],
-          ).margin(
-            margin: const EdgeInsets.symmetric(horizontal: 10),
+                  ),
+                  Text(comments.toString()),
+                ],
+              ).margin(margin: const EdgeInsets.symmetric(horizontal: 10));
+            },
           ),
-          // vSpace(1),
+
+          // Actions row
           Row(
             children: [
               InkWell(
@@ -160,7 +167,6 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
                   showModalBottomSheet(
                     context: context,
                     useSafeArea: true,
-                    enableDrag: false,
                     isScrollControlled: true,
                     builder: (context) {
                       return CommentWidget(
@@ -191,6 +197,7 @@ class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
               ),
             ],
           ).margin(margin: const EdgeInsets.symmetric(horizontal: 15)),
+
           vSpace(8),
         ],
       ),

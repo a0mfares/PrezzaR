@@ -25,6 +25,7 @@ class CommentWidget extends StatefulWidget {
   final VoidCallback onLoadData;
   final bool isReplys;
   final String uuid;
+
   @override
   State<CommentWidget> createState() => _CommentWidgetState();
 }
@@ -34,9 +35,9 @@ class _CommentWidgetState extends State<CommentWidget> {
 
   @override
   void initState() {
+    super.initState();
     bloc = NewsfeedBloc.get(context);
     widget.onLoadData();
-    super.initState();
   }
 
   @override
@@ -50,26 +51,19 @@ class _CommentWidgetState extends State<CommentWidget> {
           BlocBuilder<NewsfeedBloc, NewsfeedState>(
             builder: (context, state) {
               return state.maybeWhen(
-                loadingComment: () =>
+                loadingComments: () =>
                     const Expanded(child: ShimmerLoadingListV()),
-                orElse: () {
-                  if (bloc.comments.isEmpty && !widget.isReplys ||
-                      bloc.replysComment.isEmpty && widget.isReplys) {
+                commentsLoaded: (postId, comments) {
+                  if (comments.isEmpty && !widget.isReplys) {
                     return Expanded(child: EmptyWidget(title: tr.noComment));
                   }
                   return Expanded(
                     child: RefreshIndicator(
-                      onRefresh: () async {
-                        widget.onLoadData();
-                      },
+                      onRefresh: () async => widget.onLoadData(),
                       child: ListView.builder(
-                        itemCount: widget.isReplys
-                            ? bloc.replysComment.length
-                            : bloc.comments.length,
+                        itemCount: comments.length,
                         itemBuilder: (context, index) {
-                          final comment = widget.isReplys
-                              ? bloc.replysComment[index]
-                              : bloc.comments[index];
+                          final comment = comments[index];
                           return CommentItem(
                             comment: comment,
                             postId: widget.uuid,
@@ -80,22 +74,44 @@ class _CommentWidgetState extends State<CommentWidget> {
                     ),
                   );
                 },
+                repliesLoaded: (replys) {
+                  if (replys.isEmpty && widget.isReplys) {
+                    return Expanded(child: EmptyWidget(title: tr.noComment));
+                  }
+                  return Expanded(
+                    child: RefreshIndicator(
+                      onRefresh: () async => widget.onLoadData(),
+                      child: ListView.builder(
+                        itemCount: replys.length,
+                        itemBuilder: (context, index) {
+                          final reply = replys[index];
+                          return CommentItem(
+                            comment: reply,
+                            postId: widget.uuid,
+                            isReply: true,
+                          );
+                        },
+                      ),
+                    ),
+                  );
+                },
+                failure: (err) =>
+                    Expanded(child: Center(child: Text("Error: $err"))),
+                orElse: () => const Expanded(child: SizedBox.shrink()),
               );
             },
           ),
+
+          /// Input field for adding comment/reply
           TextFormField(
-            controller: bloc.comment,
+            controller: bloc.commentController,
             decoration: InputDecoration(
               hintText: tr.writeHere,
               suffixIcon: BlocConsumer<NewsfeedBloc, NewsfeedState>(
                 listener: (context, state) {
                   state.maybeMap(
-                    successComment: (_) {
-                      bloc.comment.clear();
-                    },
-                    failure: (err) {
-                      BotToast.showText(text: err.err);
-                    },
+                    commentAdded: (_) => bloc.commentController.clear(),
+                    failure: (err) => BotToast.showText(text: err.message),
                     orElse: () {},
                   );
                 },
@@ -111,10 +127,7 @@ class _CommentWidgetState extends State<CommentWidget> {
                             bloc.add(NewsfeedEvent.addComment(widget.uuid));
                           }
                         },
-                        icon: Icon(
-                          Icons.send,
-                          color: primary,
-                        ),
+                        icon: Icon(Icons.send, color: primary),
                       );
                     },
                   );
@@ -209,7 +222,7 @@ class _CommentItemState extends State<CommentItem> {
                     visible: widget.comment.number_of_replies != null,
                     child: InkWell(
                       onTap: () {
-                        bloc.comment.clear();
+                        bloc.commentController.clear();
                         showModalBottomSheet(
                           context: context,
                           useSafeArea: true,

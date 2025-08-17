@@ -5,11 +5,13 @@ import 'package:dio/dio.dart';
 import 'package:prezza/core/helper/network.dart';
 import 'package:prezza/core/service/failure_services.dart';
 import 'package:prezza/features/newsfeed/data/models/comment_model.dart';
+import 'package:prezza/features/newsfeed/data/models/follower_model.dart';
 import 'package:prezza/features/newsfeed/data/models/post_model.dart';
 import 'package:prezza/features/newsfeed/data/models/product_tag_model.dart';
 import 'package:prezza/features/newsfeed/data/models/user_like_model.dart';
 import 'package:prezza/features/newsfeed/data/models/user_search_model.dart';
 import 'package:prezza/features/newsfeed/data/models/vendor_tag_model.dart';
+import 'package:prezza/features/newsfeed/domain/entities/follower_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/product_tag_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/profile_social_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/user_search_entity.dart';
@@ -167,15 +169,31 @@ class NewsfeedRepoImpl extends NewsfeedRepo {
   }
 
   @override
-  Future<Either<FailureServices, void>> getUserFollower(
+  Future<Either<FailureServices, List<FollowerEntity>>> getUserFollower(
       Map<String, dynamic> query) {
-    return execute(() => _service.getUserFollower(bearerToken, query));
+    return execute(() async {
+      final result = await _service.getUserFollower(bearerToken, query);
+
+      // result should be a FollowerListModel
+      final listModel = FollowerListModel.fromJson(result.data);
+
+      // convert to entity list
+      return listModel.data.map((e) => e.toEntity()).toList();
+    });
   }
 
   @override
-  Future<Either<FailureServices, void>> getUserFollowing(
+  Future<Either<FailureServices, List<FollowerEntity>>> getUserFollowing(
       Map<String, dynamic> query) {
-    return execute(() => _service.getUserFollowing(bearerToken, query));
+    return execute(() async {
+      final result = await _service.getUserFollowing(bearerToken, query);
+
+      // result should be a FollowerListModel
+      final listModel = FollowerListModel.fromJson(result.data);
+
+      // convert to entity list
+      return listModel.data.map((e) => e.toEntity()).toList();
+    });
   }
 
   @override
