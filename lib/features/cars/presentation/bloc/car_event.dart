@@ -13,6 +13,5 @@ class CarEvent with _$CarEvent {
   const factory CarEvent.selectType(String type) = _SelectType;
   const factory CarEvent.pickImage(File img) = _PickImage;
   const factory CarEvent.intializeEditMode() = _IntializeEditMode;
-  
   const factory CarEvent.getCars() = _GetCars;
 }

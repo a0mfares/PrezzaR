@@ -71,7 +71,9 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
       listener: (context, state) {
         state.maybeMap(
           success: (v) {
-            if (HiveStorage.get(kCurLocation, defaultValue: null) == null) {
+            // FIX 1: Retrieve the value first, then check for null
+            final location = HiveStorage.get(kCurLocation);
+            if (location == null) {
               showPrezzaBtm(
                 context,
                 PlacePicker(
@@ -96,8 +98,8 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
                     textDirection: TextDirection.ltr,
                   ),
                   searchInputDecorationConfig:
-                      const SearchInputDecorationConfig(
-                    hintText: "Search for a building, street or ...",
+                       SearchInputDecorationConfig(
+                    hintText: tr.searchForLocation,
                   ),
                 ),
               );
@@ -125,11 +127,6 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
                       setState(() {});
                       context.maybePop();
                     },
-                    // localizationConfig: LocalizationConfig(
-                    //     languageCode: 'ar',
-                    //     findingPlace: 'findingPlace',
-                    //     noResultsFound: 'noResultsFound',
-                    //     unnamedLocation: 'unnamedLocation'),
                     enableNearbyPlaces: false,
                     myLocationButtonEnabled: true,
                     initialLocation: bloc.initialLocation,
@@ -142,8 +139,8 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
                       textDirection: TextDirection.ltr,
                     ),
                     searchInputDecorationConfig:
-                        const SearchInputDecorationConfig(
-                      hintText: "Search for a building, street or ...",
+                         SearchInputDecorationConfig(
+                      hintText: tr.searchForLocation,
                     ),
                   ),
                 );
@@ -155,10 +152,8 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                   child: Text(
-                    HiveStorage.get(kCurLocation,
-                                    defaultValue: CurrentLocationEntity.empty())
-                                .toString() ==
-                            "null"
+                    // FIX 2: Simplified null check
+                    HiveStorage.get(kCurLocation) == null
                         ? tr.currentLocation
                         : HiveStorage.get<CurrentLocationEntity>(kCurLocation,
                             defaultValue: CurrentLocationEntity(
@@ -189,11 +184,6 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
                       setState(() {});
                       context.maybePop();
                     },
-                    // localizationConfig: LocalizationConfig(
-                    //     languageCode: 'ar',
-                    //     findingPlace: 'findingPlace',
-                    //     noResultsFound: 'noResultsFound',
-                    //     unnamedLocation: 'unnamedLocation'),
                     enableNearbyPlaces: false,
                     myLocationButtonEnabled: true,
                     initialLocation: bloc.initialLocation,
@@ -206,8 +196,8 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
                       textDirection: TextDirection.ltr,
                     ),
                     searchInputDecorationConfig:
-                        const SearchInputDecorationConfig(
-                      hintText: "Search for a building, street or ...",
+                         SearchInputDecorationConfig(
+                      hintText: tr.searchForLocation,
                     ),
                   ),
                 );
@@ -219,9 +209,8 @@ class _CurrentLocationPageState extends State<CurrentLocationPage> {
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
                   child: Text(
-                    HiveStorage.get(kCurLocation, defaultValue: null)
-                                .toString() ==
-                            "null"
+                    // FIX 3: Simplified null check
+                    HiveStorage.get(kCurLocation) == null
                         ? tr.currentLocation
                         : HiveStorage.get<CurrentLocationEntity>(kCurLocation,
                             defaultValue: CurrentLocationEntity(

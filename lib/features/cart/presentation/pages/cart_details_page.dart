@@ -11,6 +11,7 @@ import 'package:prezza/core/service/routes.gr.dart';
 import 'package:prezza/core/shared/widgets/under_montains.dart';
 import 'package:prezza/features/cart/presentation/bloc/cart_bloc.dart';
 import 'package:prezza/features/cart/presentation/widgets/product_often_item_cart.dart';
+import 'package:prezza/features/location/presentation/bloc/location_bloc.dart';
 import 'package:prezza/prezza_page.dart';
 import 'package:sizer/sizer.dart';
 
@@ -31,6 +32,7 @@ class _CartPageState extends State<CartDetailsPage> {
   void initState() {
     bloc = CartBloc.get(context);
     bloc.add(const CartEvent.getCartDetails());
+    LocationBloc.get(context).add(const LocationEvent.getInitialLocation());
     super.initState();
   }
 
@@ -263,7 +265,9 @@ class _CartPageState extends State<CartDetailsPage> {
                 children: [
                   Expanded(
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        appRoute.navigate(UserLayoutHomeRoute());
+                      },
                       child: Text(tr.addItem),
                     ),
                   ),
@@ -271,6 +275,7 @@ class _CartPageState extends State<CartDetailsPage> {
                   Expanded(
                     child: ElevatedButton(
                       onPressed: () {
+                        
                         appRoute.navigate(const CheckoutRoute());
                       },
                       child: Text(tr.placeOrder),

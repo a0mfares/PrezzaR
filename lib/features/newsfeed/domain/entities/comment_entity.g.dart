@@ -221,6 +221,7 @@ class $CommentEntity implements AutoMapprInterface {
       is_i_comment_owner: model.is_i_comment_owner,
       is_i_replay_owner: model.is_i_replay_owner,
       user_info: model.user_info,
+      is_liked: model.is_liked,
     );
   }
 }
@@ -245,16 +246,17 @@ class CommentEntityAdapter extends TypeAdapter<CommentEntity> {
       number_of_likes: fields[2] as int?,
       number_of_replies: fields[3] as int?,
       created_at: fields[4] as String,
-      is_i_comment_owner: fields[5] as bool?,
-      is_i_replay_owner: fields[7] as bool?,
+      is_i_comment_owner: fields[5] as bool,
+      is_i_replay_owner: fields[7] as bool,
       user_info: fields[6] as UserInfoEntity,
+      is_liked: fields[8] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, CommentEntity obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.uuid)
       ..writeByte(1)
@@ -269,6 +271,8 @@ class CommentEntityAdapter extends TypeAdapter<CommentEntity> {
       ..write(obj.is_i_comment_owner)
       ..writeByte(7)
       ..write(obj.is_i_replay_owner)
+      ..writeByte(8)
+      ..write(obj.is_liked)
       ..writeByte(6)
       ..write(obj.user_info);
   }

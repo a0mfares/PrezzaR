@@ -3,10 +3,9 @@ import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:gif/gif.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:prezza/core/helper/tools.dart';
-import 'package:prezza/features/profile/domain/entities/businessdetails_entity.dart';
 import 'package:prezza/features/profile/presentation/bloc/profile_bloc.dart';
+import 'package:prezza/features/vendor/presentation/bloc/vendor_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 import '../../../../config/custom_colors.dart';
@@ -27,44 +26,43 @@ class _LoginLoadingPageState extends State<LoginLoadingPage>
     with TickerProviderStateMixin {
   late final GifController controller;
 
-  @override
-  void initState() {
-    super.initState();
-    controller = GifController(vsync: this);
-
-    WidgetsBinding.instance.addPostFrameCallback((_) async {
-      final isOnBoarded =
-          HiveStorage.get(kOnBoard, defaultValue: false) as bool? ?? false;
-      final isAuth = ifUserAuthenticated();
+ @override
+void initState() {
+  super.initState();
+  controller = GifController(vsync: this);
+  WidgetsBinding.instance.addPostFrameCallback((_) async {
+    final isOnBoarded = HiveStorage.get(kOnBoard) as bool? ?? false;
+    final isAuth = ifUserAuthenticated();
+    
+    log('🟢 isOnBoarded: $isOnBoarded');
+    log('🟢 isAuth: $isAuth');
+    
+    await Future.delayed(const Duration(seconds: 1));
+    if (!mounted) return;
+    
+    if (!isOnBoarded) {
+      appRoute.replace(const OnboardingRoute());
+      return;
+    }
+    
+    // FIXED: Check if user IS authenticated
+    if (isAuth) {
       final userType = usr.user.user_type;
-
-      log('🟢 isOnBoarded: $isOnBoarded');
-      log('🟢 isAuth: $isAuth');
       log('🟢 userType: $userType');
-
-      await Future.delayed(const Duration(seconds: 1));
-
-      if (!mounted) return;
-
-      if (!isOnBoarded) {
-        appRoute.replace(const OnboardingRoute());
-        return;
-      }
-
-      if (!isAuth) {
-        appRoute.replace(UserLayoutHomeRoute());
-        return;
-      }
-
+      
       if (userType == UserType.vendor.name) {
-        HiveStorage.set(kBusiness, BusinessDetailsEntity.empty());
         ProfileBloc.get(context).add(const ProfileEvent.getBusinessDetails());
+        VendorBloc.get(context).add(const VendorEvent.getOrdersStatus());
         appRoute.replace(VendorLayoutRoute());
       } else {
         appRoute.replace(UserLayoutHomeRoute());
       }
-    });
-  }
+    } else {
+      // If not authenticated, go back to login
+      appRoute.replace(UserLayoutHomeRoute());
+    }
+  });
+}
 
   @override
   void dispose() {

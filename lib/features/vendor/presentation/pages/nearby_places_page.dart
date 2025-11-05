@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:prezza/core/constants/assets.dart';
 import 'package:prezza/core/helper/tools.dart';
-import 'package:prezza/core/service/hive_storage.dart';
 import 'package:prezza/features/vendor/presentation/bloc/vendor_bloc.dart';
 import 'package:sizer/sizer.dart';
 

@@ -51,6 +51,8 @@ class _AllVendorPageState extends State<AllVendorPage> {
 
   @override
   Widget build(BuildContext context) {
+    log("Building AllVendorPage with id: ${widget.id}, type: ${widget.type}");
+
     return DefaultTabController(
       length: 3,
       child: Scaffold(
@@ -129,7 +131,7 @@ class _AllVendorPageState extends State<AllVendorPage> {
                   },
                   failureGetCartDetails: (error) {
                     return const CircleAvatar().badgeBtn(
-                      count: cartBloc.cartLength, // Show last known count
+                      count: cartBloc.cartLength,
                       bgColor: primary,
                     );
                   },
@@ -144,7 +146,6 @@ class _AllVendorPageState extends State<AllVendorPage> {
             ))
           ],
           bottom: TabBar(
-            // controller: _controller,
             unselectedLabelColor: primary,
             indicatorColor: primary,
             dividerColor: lightCream,
@@ -349,7 +350,6 @@ class _AllVendorPageState extends State<AllVendorPage> {
                                       padding: const EdgeInsets.all(10),
                                       decoration: BoxDecoration(
                                         shape: BoxShape.circle,
-                                        // color: primary,
                                         border: Border.all(color: primary),
                                       ),
                                       child: SvgPicture.asset(
@@ -421,6 +421,7 @@ class _AllVendorPageState extends State<AllVendorPage> {
                             return VendorItem(
                               vendor: item,
                               categoryID: widget.id,
+                              type: widget.type,
                             );
                           },
                         );

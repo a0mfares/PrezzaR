@@ -15,6 +15,8 @@ class PostModel extends PostEntity {
     required super.auther_info,
     required super.post_tags,
     required super.post_images,
+    super.is_liked = false,
+    super.is_saved = false,
   });
 
   factory PostModel.fromMap(Map<String, dynamic> json) =>

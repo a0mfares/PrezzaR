@@ -46,10 +46,11 @@ class _CarsPageState extends State<CarsPage> {
           listener: (context, state) {
             state.maybeMap(
               successDelete: (v) {
-                BotToast.showText(text: 'Car deleted success');
+                BotToast.showText(text: tr.carDeletedSuccess);
+                bloc.add(const CarEvent.getCars());
               },
               failure: (v) {
-                BotToast.showText(text: v.err);
+                BotToast.showText(text: v.error);
               },
               orElse: () {},
             );
@@ -57,7 +58,7 @@ class _CarsPageState extends State<CarsPage> {
           builder: (context, state) {
             return state.maybeWhen(
               loading: () => defLoadingCenter,
-              success: () {
+              carsLoaded: () {
                 return ListView.builder(
                   itemCount: bloc.cars.length + 1,
                   itemBuilder: (context, index) {
@@ -77,9 +78,10 @@ class _CarsPageState extends State<CarsPage> {
                       );
                     }
                     final car = bloc.cars[index];
-                    return SizedBox(
+                    return Container(
                       width: 100.w,
                       height: 20.w,
+                      margin: const EdgeInsets.symmetric(vertical: 8),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
@@ -100,13 +102,11 @@ class _CarsPageState extends State<CarsPage> {
                               InkWell(
                                 onTap: () {
                                   bloc.selectedCar = car;
-                                  appRoute
-                                      .navigate(AddCarsRoute(editMode: true));
+                                  appRoute.navigate(AddCarsRoute(editMode: true));
                                 },
                                 child: CircleAvatar(
                                   backgroundColor: primary,
-                                  child:
-                                      SvgPicture.asset(Assets.assetsImagesEdit),
+                                  child: SvgPicture.asset(Assets.assetsImagesEdit),
                                 ),
                               ),
                               hSpace(3),
@@ -124,8 +124,7 @@ class _CarsPageState extends State<CarsPage> {
                                 },
                                 child: CircleAvatar(
                                   backgroundColor: lightCream,
-                                  child: SvgPicture.asset(
-                                      Assets.assetsImagesTrash),
+                                  child: SvgPicture.asset(Assets.assetsImagesTrash),
                                 ),
                               )
                             ],

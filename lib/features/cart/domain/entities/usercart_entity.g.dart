@@ -215,6 +215,7 @@ class $UserCartEntity implements AutoMapprInterface {
     return UserCartEntity(
       uuid: model.uuid,
       bussiness_info: model.bussiness_info,
+      is_closed: model.is_closed,
     );
   }
 }
@@ -236,17 +237,20 @@ class UserCartEntityAdapter extends TypeAdapter<UserCartEntity> {
     return UserCartEntity(
       uuid: fields[0] as String,
       bussiness_info: fields[1] as Bussiness_info,
+      is_closed: fields[2] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, UserCartEntity obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
       ..write(obj.uuid)
       ..writeByte(1)
-      ..write(obj.bussiness_info);
+      ..write(obj.bussiness_info)
+      ..writeByte(2)
+      ..write(obj.is_closed);
   }
 
   @override

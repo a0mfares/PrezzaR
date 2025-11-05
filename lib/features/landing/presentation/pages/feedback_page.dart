@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -82,7 +84,7 @@ class _FeedbackPageState extends State<FeedbackPage> {
                                       Assets.assetsImagesStarEMpty),
                                 ),
                                 onRatingUpdate: (rating) {
-                                  print(rating);
+                                  log(rating.toString());
                                 },
                               ),
                               hSpace(1),

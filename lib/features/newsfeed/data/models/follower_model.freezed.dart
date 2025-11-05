@@ -24,12 +24,8 @@ mixin _$FollowerModel {
   bool get isIFollowedHim => throw _privateConstructorUsedError;
   bool get isHeFollowedMe => throw _privateConstructorUsedError;
 
-  /// Serializes this FollowerModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FollowerModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $FollowerModelCopyWith<FollowerModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -58,8 +54,6 @@ class _$FollowerModelCopyWithImpl<$Res, $Val extends FollowerModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of FollowerModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -83,8 +77,6 @@ class _$FollowerModelCopyWithImpl<$Res, $Val extends FollowerModel>
     ) as $Val);
   }
 
-  /// Create a copy of FollowerModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $FollowerInfoModelCopyWith<$Res> get followerInfo {
@@ -119,8 +111,6 @@ class __$$FollowerModelImplCopyWithImpl<$Res>
       _$FollowerModelImpl _value, $Res Function(_$FollowerModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FollowerModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -181,14 +171,12 @@ class _$FollowerModelImpl implements _FollowerModel {
                 other.isHeFollowedMe == isHeFollowedMe));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode =>
       Object.hash(runtimeType, followerInfo, isIFollowedHim, isHeFollowedMe);
 
-  /// Create a copy of FollowerModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FollowerModelImplCopyWith<_$FollowerModelImpl> get copyWith =>
@@ -217,11 +205,8 @@ abstract class _FollowerModel implements FollowerModel {
   bool get isIFollowedHim;
   @override
   bool get isHeFollowedMe;
-
-  /// Create a copy of FollowerModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FollowerModelImplCopyWith<_$FollowerModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -239,12 +224,8 @@ mixin _$FollowerInfoModel {
   int get numberOfFollowers => throw _privateConstructorUsedError;
   int get numberOfFollowing => throw _privateConstructorUsedError;
 
-  /// Serializes this FollowerInfoModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FollowerInfoModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $FollowerInfoModelCopyWith<FollowerInfoModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -274,8 +255,6 @@ class _$FollowerInfoModelCopyWithImpl<$Res, $Val extends FollowerInfoModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of FollowerInfoModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -340,8 +319,6 @@ class __$$FollowerInfoModelImplCopyWithImpl<$Res>
       $Res Function(_$FollowerInfoModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FollowerInfoModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -431,14 +408,12 @@ class _$FollowerInfoModelImpl implements _FollowerInfoModel {
                 other.numberOfFollowing == numberOfFollowing));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, uuid, fullName, userName,
       profilePictureUrl, numberOfFollowers, numberOfFollowing);
 
-  /// Create a copy of FollowerInfoModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FollowerInfoModelImplCopyWith<_$FollowerInfoModelImpl> get copyWith =>
@@ -477,11 +452,8 @@ abstract class _FollowerInfoModel implements FollowerInfoModel {
   int get numberOfFollowers;
   @override
   int get numberOfFollowing;
-
-  /// Create a copy of FollowerInfoModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FollowerInfoModelImplCopyWith<_$FollowerInfoModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -495,12 +467,8 @@ mixin _$FollowerListModel {
   String get status => throw _privateConstructorUsedError;
   List<FollowerModel> get data => throw _privateConstructorUsedError;
 
-  /// Serializes this FollowerListModel to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-
-  /// Create a copy of FollowerListModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $FollowerListModelCopyWith<FollowerListModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -524,8 +492,6 @@ class _$FollowerListModelCopyWithImpl<$Res, $Val extends FollowerListModel>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of FollowerListModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -564,8 +530,6 @@ class __$$FollowerListModelImplCopyWithImpl<$Res>
       $Res Function(_$FollowerListModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FollowerListModel
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -619,14 +583,12 @@ class _$FollowerListModelImpl implements _FollowerListModel {
             const DeepCollectionEquality().equals(other._data, _data));
   }
 
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType, status, const DeepCollectionEquality().hash(_data));
 
-  /// Create a copy of FollowerListModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FollowerListModelImplCopyWith<_$FollowerListModelImpl> get copyWith =>
@@ -653,11 +615,8 @@ abstract class _FollowerListModel implements FollowerListModel {
   String get status;
   @override
   List<FollowerModel> get data;
-
-  /// Create a copy of FollowerListModel
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FollowerListModelImplCopyWith<_$FollowerListModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

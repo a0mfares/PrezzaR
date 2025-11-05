@@ -1,13 +1,14 @@
 import 'dart:developer';
 
 import 'package:bot_toast/bot_toast.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/service/routes.gr.dart';
 import 'package:prezza/core/shared/widgets/cached_image.dart';
+import 'package:prezza/features/cart/presentation/bloc/cart_bloc.dart';
+import 'package:prezza/features/order/presentation/bloc/order_bloc.dart';
 import 'package:prezza/features/vendor/presentation/bloc/vendor_bloc.dart';
 import 'package:prezza/prezza_page.dart';
 import 'package:sizer/sizer.dart';
@@ -33,9 +34,18 @@ class VendorItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        appRoute.navigate(
-            VendorDetailsRoute(id: vendor.bussiness_id.toString(), type: type));
-      },
+        log('Vendor Type Tapped: $type');
+      if (type == 'booking') {
+        CartBloc.get(context).businessId = vendor.bussiness_id.toString();
+        OrderBloc.get(context).selectedType = "booking";
+        appRoute.navigate(const CheckoutRoute());
+      } else {
+        appRoute.navigate(VendorDetailsRoute(
+          id: vendor.bussiness_id.toString(),
+          type: type
+        ));
+      }
+},
       child: Column(
         children: [
           Row(
@@ -116,6 +126,7 @@ class VendorItem extends StatelessWidget {
                   final vendorId = vendor.bussiness_id.toString();
 
                   // Check if this specific vendor is loading
+                  // ignore: unused_local_variable
                   final isThisVendorLoading = favBloc.isVendorLoading(vendorId);
 
                   // Check if this vendor is in favorites

@@ -5,8 +5,6 @@ import 'package:prezza/features/order/presentation/widgets/order_widget.dart';
 
 import '../../../../config/custom_colors.dart';
 import '../../../../core/helper/tools.dart';
-import '../../../../core/service/routes.gr.dart';
-import '../../../../prezza_page.dart';
 
 @RoutePage()
 class OrderPage extends StatefulWidget {
@@ -38,10 +36,10 @@ class _OrderPageState extends State<OrderPage> {
                 tstyle.bodyLarge!.copyWith(fontWeight: FontWeight.w400),
             tabs: [
               Tab(
-                text: isCustomer ? tr.ongoing : tr.runningOrders,
+                text: isCustomer ? tr.ongoing : tr.pendingOrders,
               ),
               Tab(
-                text: isCustomer ? tr.history : tr.pendingOrders,
+                text: isCustomer ? tr.history : tr.runningOrders,
               ),
             ],
           ),

@@ -17,10 +17,10 @@ class ResetPassPage extends StatefulWidget {
   const ResetPassPage({super.key});
 
   @override
-  State<ResetPassPage> createState() => _ForgotPassPageState();
+  State<ResetPassPage> createState() => _ResetPassPageState();
 }
 
-class _ForgotPassPageState extends State<ResetPassPage> {
+class _ResetPassPageState extends State<ResetPassPage> {
   late final AuthBloc bloc;
 
   @override

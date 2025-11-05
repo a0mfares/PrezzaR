@@ -1,13 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:prezza/core/constants/assets.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/helper/tools.dart';
-import 'package:prezza/core/shared/widgets/cached_image.dart';
 import 'package:prezza/core/shared/widgets/empty_widget.dart';
-import 'package:prezza/core/shared/widgets/prezza_rating.dart';
-import 'package:sizer/sizer.dart';
 
 @RoutePage()
 class ReviewPage extends StatefulWidget {
@@ -24,7 +19,7 @@ class _ReviewPageState extends State<ReviewPage> {
       appBar: AppBar(
         title: Text(tr.reviews),
       ).prezzaLeading(),
-      body: Column(
+      body: const Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // const Divider(),

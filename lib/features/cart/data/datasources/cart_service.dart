@@ -41,6 +41,12 @@ abstract class CartService {
     @Body() FormData body,
   );
 
+  @PATCH(Urls.closeCart)
+  Future<HttpResponse> closeCart(
+    @Header('Authorization') String token,
+    @Body() Map<String, dynamic> body,
+  );
+
   @PATCH(Urls.updateItemQun)
   Future<HttpResponse> updateItemQun(
     @Header('Authorization') String token,

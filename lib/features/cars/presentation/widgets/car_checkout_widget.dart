@@ -8,10 +8,15 @@ import '../../../../prezza_page.dart';
 import '../bloc/car_bloc.dart';
 
 class CarCheckoutWidget extends StatefulWidget {
-  const CarCheckoutWidget(
-      {super.key, required this.selectedCar, required this.onChanged});
+  const CarCheckoutWidget({
+    super.key,
+    required this.selectedCar,
+    required this.onChanged,
+  });
+
   final String selectedCar;
   final Function(String?) onChanged;
+
   @override
   State<CarCheckoutWidget> createState() => _CarCheckoutWidgetState();
 }
@@ -32,18 +37,24 @@ class _CarCheckoutWidgetState extends State<CarCheckoutWidget> {
       builder: (context, state) {
         return state.maybeWhen(
           loading: () => defLoadingCenter,
-          success: () {
+          carsLoaded: () {
             return Column(
               children: [
                 Column(
                   children: bloc.cars
                       .map(
-                        (e) => RadioListTile(
-                          value: e.uuid,
+                        (e) => CheckboxListTile(
+                          value: widget.selectedCar == e.uuid,
                           title: Text(e.brand, style: tstyle.bodyLarge),
                           subtitle: Text('${e.model}, ${e.car_plat_number}'),
-                          groupValue: widget.selectedCar,
-                          onChanged: widget.onChanged,
+                          activeColor: primary,
+                          onChanged: (val) {
+                            if (val == true) {
+                              widget.onChanged(e.uuid);
+                            } else {
+                              widget.onChanged(null);
+                            }
+                          },
                         ),
                       )
                       .toList(),
@@ -83,12 +94,18 @@ class _CarCheckoutWidgetState extends State<CarCheckoutWidget> {
                 );
               }
               final car = bloc.cars[index];
-              return RadioListTile(
-                value: car.uuid,
+              return CheckboxListTile(
+                value: widget.selectedCar == car.uuid,
                 title: Text(car.brand, style: tstyle.bodyLarge),
                 subtitle: Text('${car.model}, ${car.car_plat_number}'),
-                groupValue: widget.selectedCar,
-                onChanged: widget.onChanged,
+                activeColor: primary,
+                onChanged: (val) {
+                  if (val == true) {
+                    widget.onChanged(car.uuid);
+                  } else {
+                    widget.onChanged(null);
+                  }
+                },
               );
             },
           ),

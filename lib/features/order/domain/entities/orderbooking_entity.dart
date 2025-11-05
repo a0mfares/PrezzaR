@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 import 'package:equatable/equatable.dart';
@@ -18,7 +18,7 @@ class OrderBookingEntity extends $OrderBookingEntity {
   final String arrival_date;
 
   @HiveField(2)
-  final String customer_phone;
+  final String? customer_phone;
 
   @HiveField(3)
   final int number_of_seats;
@@ -39,7 +39,7 @@ class OrderBookingEntity extends $OrderBookingEntity {
   OrderBookingEntity({
     required this.uuid,
     required this.arrival_date,
-    required this.customer_phone,
+    this.customer_phone,
     required this.number_of_seats,
     required this.branch_info,
   });

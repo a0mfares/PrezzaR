@@ -17,7 +17,6 @@ import 'package:tutorial_coach_mark/tutorial_coach_mark.dart';
 
 import '../../../../core/helper/tools.dart';
 import '../../../category/presentation/bloc/category_bloc.dart';
-import '../../../profile/domain/entities/businessdetails_entity.dart';
 
 @RoutePage()
 class VendorLayoutPage extends StatefulWidget {
@@ -65,7 +64,7 @@ class _VendorLayoutPageState extends State<VendorLayoutPage> {
     TutorialCoachMark(
       targets: targets,
       colorShadow: lightCream,
-      textSkip: "SKIP",
+      textSkip: tr.skip,
       paddingFocus: 10,
       opacityShadow: 0.8,
       onClickTarget: (t) {
@@ -88,7 +87,7 @@ class _VendorLayoutPageState extends State<VendorLayoutPage> {
         TutorialCoachMark(
           targets: targets,
           colorShadow: lightCream,
-          textSkip: "SKIP",
+          textSkip: tr.skip,
           paddingFocus: 10,
           opacityShadow: 0.8,
           onClickTarget: (v) {
@@ -103,7 +102,7 @@ class _VendorLayoutPageState extends State<VendorLayoutPage> {
         ).show(context: context);
       },
       onSkip: () {
-        print("Tutorial Skipped");
+        log("Tutorial Skipped");
         return true;
       },
     ).show(context: context);

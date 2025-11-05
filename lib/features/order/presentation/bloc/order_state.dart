@@ -1,3 +1,4 @@
+// order_state.dart
 part of 'order_bloc.dart';
 
 @freezed
@@ -9,7 +10,6 @@ class OrderState with _$OrderState {
   const factory OrderState.openPhoneInput() = _OpenPhoneInput;
   const factory OrderState.successOrdered() = _SuccessOrdered;
   const factory OrderState.successOrderDetails() = _SuccessOrderDetails;
-
-  const factory OrderState.updateUi() = _UpdateUi;
+  const factory OrderState.updateUi([int? timestamp]) = _UpdateUi;
   const factory OrderState.successUi() = _SuccessUi;
 }

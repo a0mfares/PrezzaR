@@ -42,7 +42,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   static String m10(price) => "الإجمالي: ${price}";
 
-  static String m11(time) => "يمكنك إلغاؤه خلال ${time} دقيقة كحد أقصى";
+  static String m11(count) =>
+      "${count} ${Intl.plural(count, one: 'بائع', other: 'بائعين')} في المفضلة";
+
+  static String m12(time) => "يمكنك إلغاؤه خلال ${time} دقيقة كحد أقصى";
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
@@ -59,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "addItem": MessageLookupByLibrary.simpleMessage("إضافة عنصر"),
         "addItems": MessageLookupByLibrary.simpleMessage("إضافة عناصر"),
         "addLocation": MessageLookupByLibrary.simpleMessage("إضافة موقع جديد"),
+        "addLocationButton":
+            MessageLookupByLibrary.simpleMessage("إضافة موقع جديد"),
         "addNewAddress":
             MessageLookupByLibrary.simpleMessage("إضافة عنوان جديد"),
         "addNewCar": MessageLookupByLibrary.simpleMessage("إضافة سيارة جديدة"),
@@ -66,9 +71,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "addPaymentMethod":
             MessageLookupByLibrary.simpleMessage("إضافة وسيلة دفع"),
         "addPhoneNum": MessageLookupByLibrary.simpleMessage("إضافة رقم هاتف"),
+        "addPhotoToStory":
+            MessageLookupByLibrary.simpleMessage("إضافة صورة إلى القصة"),
         "addPhotos": MessageLookupByLibrary.simpleMessage("إضافة صور"),
         "addSize": MessageLookupByLibrary.simpleMessage("إضافة حجم"),
+        "addStory": MessageLookupByLibrary.simpleMessage("إضافة قصة"),
         "addToCart": MessageLookupByLibrary.simpleMessage("إضافة إلى السلة"),
+        "addVideoToStory":
+            MessageLookupByLibrary.simpleMessage("إضافة فيديو إلى القصة"),
+        "addedToFavorites":
+            MessageLookupByLibrary.simpleMessage("تمت الإضافة إلى المفضلة"),
         "address": MessageLookupByLibrary.simpleMessage("العنوان"),
         "addressRequired":
             MessageLookupByLibrary.simpleMessage("العنوان مطلوب"),
@@ -77,9 +89,13 @@ class MessageLookup extends MessageLookupByLibrary {
         "allFavTitle": MessageLookupByLibrary.simpleMessage(
             "من الأسر المنتجة، المطاعم، المقاهي، وحتى الفنادق!"),
         "allNotifications": MessageLookupByLibrary.simpleMessage("الكل"),
+        "allNotificationsMarkedAsRead": MessageLookupByLibrary.simpleMessage(
+            "تم تحديد جميع الإشعارات كمقروءة"),
         "allRestaurants": MessageLookupByLibrary.simpleMessage("جميع المطاعم"),
         "allSideItemRequired": MessageLookupByLibrary.simpleMessage(
             "جميع العناصر الجانبيه مطلوبه"),
+        "alreadyInFavorites":
+            MessageLookupByLibrary.simpleMessage("موجود بالفعل في المفضلة"),
         "and": MessageLookupByLibrary.simpleMessage(" و "),
         "anySpecialRequest":
             MessageLookupByLibrary.simpleMessage("أي طلبات خاصة ؟"),
@@ -102,19 +118,33 @@ class MessageLookup extends MessageLookupByLibrary {
             "هل أنت متأكد من حذف هذه البطاقة"),
         "areUSureDeleteLocation": MessageLookupByLibrary.simpleMessage(
             "هل أنت متأكد من حذف هذا الموقع؟"),
+        "areYouSure": MessageLookupByLibrary.simpleMessage("هل أنت متأكد؟"),
         "arrivalTimeError": MessageLookupByLibrary.simpleMessage(
             "وقت الوصول يجب ان يكون اكثر من ثلاث دقائق"),
         "arrivesIn": MessageLookupByLibrary.simpleMessage("سيصل خلال:"),
+        "authRequired": MessageLookupByLibrary.simpleMessage("مطلوب مصادقة"),
+        "averageRating": MessageLookupByLibrary.simpleMessage("متوسط التقييم"),
         "bankName": MessageLookupByLibrary.simpleMessage("اسم البنك"),
+        "biometricAuth":
+            MessageLookupByLibrary.simpleMessage("استخدم المصادقة البيومترية"),
         "bookTable": MessageLookupByLibrary.simpleMessage("احجز طاولتك"),
         "bookTableTitle": MessageLookupByLibrary.simpleMessage(
             "احجز مكانك واستعد للأيام المزدحمة"),
         "booking": MessageLookupByLibrary.simpleMessage("الحجز"),
         "bookingCanceled":
             MessageLookupByLibrary.simpleMessage("تم إلغاء الحجز"),
+        "bookingDate": MessageLookupByLibrary.simpleMessage("تاريخ الحجز"),
+        "bookingDateRequired":
+            MessageLookupByLibrary.simpleMessage("تاريخ الحجز مطلوب"),
         "bookingSuccessful":
             MessageLookupByLibrary.simpleMessage("تم الحجز بنجاح"),
+        "branchAdded":
+            MessageLookupByLibrary.simpleMessage("تم إضافة الفرع بنجاح"),
+        "branchDeleted":
+            MessageLookupByLibrary.simpleMessage("تم حذف الفرع بنجاح"),
         "branchLocation": MessageLookupByLibrary.simpleMessage("مواقع\nالفروع"),
+        "branchUpdated":
+            MessageLookupByLibrary.simpleMessage("تم تحديث الفرع بنجاح"),
         "branches": MessageLookupByLibrary.simpleMessage("الفروع"),
         "branchesCountPrompt":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال عدد الفروع"),
@@ -125,6 +155,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "breakdown": MessageLookupByLibrary.simpleMessage("تفصيل"),
         "businessDescription":
             MessageLookupByLibrary.simpleMessage("وصف النشاط التجاري"),
+        "businessDetails": MessageLookupByLibrary.simpleMessage("تفاصيل العمل"),
         "businessInfo": MessageLookupByLibrary.simpleMessage("معلومات العمل"),
         "businessType":
             MessageLookupByLibrary.simpleMessage("نوع النشاط التجاري"),
@@ -133,13 +164,26 @@ class MessageLookup extends MessageLookupByLibrary {
         "byCreating":
             MessageLookupByLibrary.simpleMessage("بإنشاء حساب فإنك توافق على"),
         "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+        "carAddedSuccess":
+            MessageLookupByLibrary.simpleMessage("تمت إضافة السيارة بنجاح"),
+        "carDeletedSuccess":
+            MessageLookupByLibrary.simpleMessage("تم حذف السيارة بنجاح"),
+        "carUpdatedSuccess":
+            MessageLookupByLibrary.simpleMessage("تم تحديث السيارة بنجاح"),
         "cardHolderName":
             MessageLookupByLibrary.simpleMessage("اسم حامل البطاقة"),
         "cardNumber": MessageLookupByLibrary.simpleMessage("رقم البطاقة"),
         "cart": MessageLookupByLibrary.simpleMessage("السلة"),
+        "cartClearedSuccess":
+            MessageLookupByLibrary.simpleMessage("تم إفراغ السلة بنجاح"),
+        "cartClosedSuccess":
+            MessageLookupByLibrary.simpleMessage("تم إغلاق السلة بنجاح"),
         "cartEmpty": MessageLookupByLibrary.simpleMessage("سلتك فارغة"),
+        "cartIdEmpty": MessageLookupByLibrary.simpleMessage("معرف السلة فارغ"),
         "cash": MessageLookupByLibrary.simpleMessage("نقدًا"),
         "categories": MessageLookupByLibrary.simpleMessage("الفئات"),
+        "categoryLoadingError":
+            MessageLookupByLibrary.simpleMessage("خطأ في تحميل الفئات"),
         "caughtUp":
             MessageLookupByLibrary.simpleMessage("لقد اطلعت على كل شيء!"),
         "changePass": MessageLookupByLibrary.simpleMessage("تغيير كلمة المرور"),
@@ -152,10 +196,16 @@ class MessageLookup extends MessageLookupByLibrary {
         "chooseDrink":
             MessageLookupByLibrary.simpleMessage("اختر مشروبك الغازي"),
         "chooseYourSideItem": m0,
+        "clearAllNotifications":
+            MessageLookupByLibrary.simpleMessage("مسح جميع الإشعارات"),
         "clearCart": MessageLookupByLibrary.simpleMessage("إفراغ السلة"),
         "clickAgain": MessageLookupByLibrary.simpleMessage(
             "اضغط مرة أخرى لإضافة عنصر جديد"),
         "clickShowItems":
+            MessageLookupByLibrary.simpleMessage("اضغط هنا لعرض العناصر"),
+        "clickToAddNewItem": MessageLookupByLibrary.simpleMessage(
+            "اضغط مرة أخرى لإضافة عنصر جديد"),
+        "clickToShowItems":
             MessageLookupByLibrary.simpleMessage("اضغط هنا لعرض العناصر"),
         "clientReason":
             MessageLookupByLibrary.simpleMessage("أخبر العميل بسبب الرفض"),
@@ -163,11 +213,33 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("يمكن للعملاء حجز مواعيد معي"),
         "closeHoursPrompt":
             MessageLookupByLibrary.simpleMessage("يرجى اختيار ساعات الإغلاق"),
+        "commentAdded":
+            MessageLookupByLibrary.simpleMessage("تمت إضافة التعليق"),
+        "commentAddedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم إضافة التعليق بنجاح"),
+        "commentDeleted":
+            MessageLookupByLibrary.simpleMessage("تم حذف التعليق"),
+        "commentDeletedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم حذف التعليق بنجاح"),
         "comments": MessageLookupByLibrary.simpleMessage("التعليقات"),
         "commonIssues": MessageLookupByLibrary.simpleMessage("المشاكل الشائعة"),
         "companyDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الشركة"),
         "complete": MessageLookupByLibrary.simpleMessage("إكمال"),
+        "completeSetup": MessageLookupByLibrary.simpleMessage("أكمل الإعداد"),
         "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
+        "confirmClearAllNotifications": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من مسح جميع الإشعارات؟"),
+        "confirmDeleteBranch": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من حذف هذا الفرع؟"),
+        "confirmDeleteComment": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من حذف هذا التعليق؟"),
+        "confirmDeleteLocation": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من حذف هذا الموقع؟"),
+        "confirmDeletePost": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من حذف هذا المنشور؟ لا يمكن التراجع عن هذا الإجراء."),
+        "confirmDeleteReply": MessageLookupByLibrary.simpleMessage(
+            "هل أنت متأكد من حذف هذا الرد؟"),
+        "confirmLocation": MessageLookupByLibrary.simpleMessage("تأكيد الموقع"),
         "confirmPass":
             MessageLookupByLibrary.simpleMessage("تأكيد كلمة المرور"),
         "continueWithEmail": MessageLookupByLibrary.simpleMessage(
@@ -180,6 +252,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "تسجيل الدخول باستخدام الهاتف"),
         "continueWithPhoneInst": MessageLookupByLibrary.simpleMessage(
             "استخدام رقم الهاتف بدلاً من ذلك"),
+        "couponAddedSuccess":
+            MessageLookupByLibrary.simpleMessage("تم تطبيق الكوبون بنجاح"),
+        "couponRemovedSuccess":
+            MessageLookupByLibrary.simpleMessage("تم إزالة الكوبون بنجاح"),
         "createAccount": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
         "createPost": MessageLookupByLibrary.simpleMessage("إنشاء منشور"),
         "credit": MessageLookupByLibrary.simpleMessage("بطاقة ائتمان"),
@@ -188,13 +264,18 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("إضافة موقعك الحالي"),
         "customerOpinions":
             MessageLookupByLibrary.simpleMessage("آراء العملاء عنا"),
+        "customerReviews":
+            MessageLookupByLibrary.simpleMessage("تقييمات العملاء"),
         "cvv": MessageLookupByLibrary.simpleMessage("الرمز الأمني"),
         "daily": MessageLookupByLibrary.simpleMessage("يومي"),
+        "delete": MessageLookupByLibrary.simpleMessage("حذف"),
+        "deleteAccount": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
         "deleteBranche": MessageLookupByLibrary.simpleMessage("حذف الفرع"),
         "deleteCar": MessageLookupByLibrary.simpleMessage("حذف السيارة"),
         "deleteCard": MessageLookupByLibrary.simpleMessage("حذف البطاقة"),
         "deleteComment": MessageLookupByLibrary.simpleMessage("حذف التعليق"),
         "deleteLocation": MessageLookupByLibrary.simpleMessage("حذف الموقع"),
+        "deletePost": MessageLookupByLibrary.simpleMessage("حذف المنشور"),
         "deleteProduct": MessageLookupByLibrary.simpleMessage("حذف المنتج"),
         "deleteReply": MessageLookupByLibrary.simpleMessage("حذف الرد"),
         "deletedProduct": MessageLookupByLibrary.simpleMessage("تم حذف المنتج"),
@@ -211,6 +292,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "description": MessageLookupByLibrary.simpleMessage("الوصف"),
         "descriptionPrompt":
             MessageLookupByLibrary.simpleMessage("يرجى إدخال الوصف"),
+        "discountNotifications": MessageLookupByLibrary.simpleMessage(
+            "إشعارات حول الخصومات، العروض الخاصة، والعروض الموسمية."),
         "discoverProducts":
             MessageLookupByLibrary.simpleMessage("استكشف المنتجات"),
         "distance": MessageLookupByLibrary.simpleMessage("المسافة"),
@@ -220,8 +303,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "dropOrder": MessageLookupByLibrary.simpleMessage("إلغاء الطلب"),
         "editEmailAddress":
             MessageLookupByLibrary.simpleMessage("تعديل البريد الإلكتروني"),
+        "editLocation": MessageLookupByLibrary.simpleMessage("تعديل الموقع"),
         "editPhoneNumber":
             MessageLookupByLibrary.simpleMessage("تعديل رقم الهاتف"),
+        "editPost": MessageLookupByLibrary.simpleMessage("تعديل المنشور"),
         "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
         "emailNotFound":
             MessageLookupByLibrary.simpleMessage("البريد الإلكتروني غير موجود"),
@@ -229,9 +314,15 @@ class MessageLookup extends MessageLookupByLibrary {
             "البريد الإلكتروني أو كلمة المرور غير صحيحة"),
         "emailOtp": MessageLookupByLibrary.simpleMessage(
             "سنرسل لك رمز OTP بالبريد الإلكتروني"),
+        "emptyLocationList":
+            MessageLookupByLibrary.simpleMessage("لم تتم إضافة مواقع بعد"),
+        "enableLocationServices": MessageLookupByLibrary.simpleMessage(
+            "يرجى تمكين خدمات الموقع للمتابعة"),
         "enjoy": MessageLookupByLibrary.simpleMessage("استمتع"),
         "enterEmailOrPhone": MessageLookupByLibrary.simpleMessage(
             "أدخل البريد الإلكتروني أو رقم الهاتف المرتبط بحسابك"),
+        "enterNumberOfSeats":
+            MessageLookupByLibrary.simpleMessage("أدخل عدد المقاعد"),
         "enterValideCard":
             MessageLookupByLibrary.simpleMessage("ادخل بيانات بطاقة صالحه"),
         "enterValideData":
@@ -239,17 +330,121 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterValideDate":
             MessageLookupByLibrary.simpleMessage("ادخل تاريخ صالح"),
         "enterYourName": MessageLookupByLibrary.simpleMessage("أدخل اسمك"),
+        "error": MessageLookupByLibrary.simpleMessage("خطأ"),
+        "errorLoadingData":
+            MessageLookupByLibrary.simpleMessage("خطأ في تحميل البيانات"),
+        "errorLoadingFavorites":
+            MessageLookupByLibrary.simpleMessage("خطأ في تحميل المفضلة"),
         "estimatedTime": MessageLookupByLibrary.simpleMessage("الوقت المتوقع"),
         "expectedPreparingTime": m2,
         "expiryDate": MessageLookupByLibrary.simpleMessage("تاريخ الانتهاء"),
         "extraCharge": MessageLookupByLibrary.simpleMessage("رسوم إضافية"),
         "extraname": MessageLookupByLibrary.simpleMessage("اسم الإضافة"),
         "extras": MessageLookupByLibrary.simpleMessage("الإضافات"),
+        "failedToAddComment":
+            MessageLookupByLibrary.simpleMessage("فشل في إضافة التعليق"),
+        "failedToAddReply":
+            MessageLookupByLibrary.simpleMessage("فشل في إضافة الرد"),
+        "failedToAddReview":
+            MessageLookupByLibrary.simpleMessage("فشل في إضافة التقييم"),
+        "failedToAddStory":
+            MessageLookupByLibrary.simpleMessage("فشل في إضافة القصة"),
+        "failedToCreatePost":
+            MessageLookupByLibrary.simpleMessage("فشل في إنشاء المنشور"),
+        "failedToDeleteComment":
+            MessageLookupByLibrary.simpleMessage("فشل في حذف التعليق"),
+        "failedToDeleteReply":
+            MessageLookupByLibrary.simpleMessage("فشل في حذف الرد"),
+        "failedToDeleteStory":
+            MessageLookupByLibrary.simpleMessage("فشل في حذف القصة"),
+        "failedToFollowUser":
+            MessageLookupByLibrary.simpleMessage("فشل في متابعة المستخدم"),
+        "failedToLikeComment":
+            MessageLookupByLibrary.simpleMessage("فشل في الإعجاب بالتعليق"),
+        "failedToLikePost":
+            MessageLookupByLibrary.simpleMessage("فشل في الإعجاب بالمنشور"),
+        "failedToLoadBusinessDetails":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل تفاصيل العمل"),
+        "failedToLoadComments":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل التعليقات"),
+        "failedToLoadCommonIssues": MessageLookupByLibrary.simpleMessage(
+            "فشل في تحميل المشاكل الشائعة"),
+        "failedToLoadDownloadPlatforms":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل منصات التنزيل"),
+        "failedToLoadFAQ": MessageLookupByLibrary.simpleMessage(
+            "فشل في تحميل الأسئلة الشائعة"),
+        "failedToLoadFavorites":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل المفضلة"),
+        "failedToLoadLikes":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل الإعجابات"),
+        "failedToLoadNotifications":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل الإشعارات"),
+        "failedToLoadPosts":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل المنشورات"),
+        "failedToLoadProducts":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل المنتجات"),
+        "failedToLoadProfile":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل الملف الشخصي"),
+        "failedToLoadReplies":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل الردود"),
+        "failedToLoadReviews":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل التقييمات"),
+        "failedToLoadSavedPosts": MessageLookupByLibrary.simpleMessage(
+            "فشل في تحميل المنشورات المحفوظة"),
+        "failedToLoadSocialPlatforms": MessageLookupByLibrary.simpleMessage(
+            "فشل في تحميل منصات التواصل الاجتماعي"),
+        "failedToLoadUserPosts": MessageLookupByLibrary.simpleMessage(
+            "فشل في تحميل منشورات المستخدم"),
+        "failedToLoadUsers":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل المستخدمين"),
+        "failedToLoadVendors":
+            MessageLookupByLibrary.simpleMessage("فشل في تحميل البائعين"),
+        "failedToMarkAllNotificationsAsRead":
+            MessageLookupByLibrary.simpleMessage(
+                "فشل في تحديد جميع الإشعارات كمقروءة"),
+        "failedToMarkNotificationAsRead":
+            MessageLookupByLibrary.simpleMessage("فشل في تحديد الإشعار كمقروء"),
+        "failedToSavePost":
+            MessageLookupByLibrary.simpleMessage("فشل في حفظ المنشور"),
+        "failedToUnfollowUser": MessageLookupByLibrary.simpleMessage(
+            "فشل في إلغاء متابعة المستخدم"),
+        "failedToUnlikeComment": MessageLookupByLibrary.simpleMessage(
+            "فشل في إلغاء الإعجاب بالتعليق"),
+        "failedToUnlikePost": MessageLookupByLibrary.simpleMessage(
+            "فشل في إلغاء الإعجاب بالمنشور"),
+        "failedToViewStory":
+            MessageLookupByLibrary.simpleMessage("فشل في عرض القصة"),
         "failedTransaction":
             MessageLookupByLibrary.simpleMessage("حدث خأ اثناء اكمال العملية"),
+        "failureAddCoupon":
+            MessageLookupByLibrary.simpleMessage("فشل في تطبيق الكوبون"),
+        "failureAddItem": MessageLookupByLibrary.simpleMessage(
+            "فشل في إضافة العنصر إلى السلة"),
+        "failureClearCart":
+            MessageLookupByLibrary.simpleMessage("فشل في إفراغ السلة"),
+        "failureCloseCart":
+            MessageLookupByLibrary.simpleMessage("فشل في إغلاق السلة"),
+        "failureGetCartDetails": MessageLookupByLibrary.simpleMessage(
+            "فشل في الحصول على تفاصيل السلة"),
+        "failureGetCategories":
+            MessageLookupByLibrary.simpleMessage("فشل في الحصول على الفئات"),
+        "failureGetOftenProductCart": MessageLookupByLibrary.simpleMessage(
+            "فشل في الحصول على المنتجات المطلوبة بشكل متكرر"),
+        "failureGetPreparingTime": MessageLookupByLibrary.simpleMessage(
+            "فشل في الحصول على وقت التحضير"),
+        "failureGetSponsors":
+            MessageLookupByLibrary.simpleMessage("فشل في الحصول على الرعاة"),
+        "failureGetUserCart": MessageLookupByLibrary.simpleMessage(
+            "فشل في الحصول على سلة المستخدم"),
+        "failureRemoveItem": MessageLookupByLibrary.simpleMessage(
+            "فشل في إزالة العنصر من السلة"),
+        "failureUpdateItem":
+            MessageLookupByLibrary.simpleMessage("فشل في تحديث كمية العنصر"),
         "favorites": MessageLookupByLibrary.simpleMessage("المفضلة"),
         "feed": MessageLookupByLibrary.simpleMessage("الخلاصة"),
         "feedback": MessageLookupByLibrary.simpleMessage("التقييم"),
+        "fillAllCarFields": MessageLookupByLibrary.simpleMessage(
+            "يرجى ملء جميع الحقول واختيار صورة"),
         "filterSearch": MessageLookupByLibrary.simpleMessage("تصفية البحث"),
         "firstName": MessageLookupByLibrary.simpleMessage("الاسم الأول"),
         "follow": MessageLookupByLibrary.simpleMessage("متابعة"),
@@ -275,8 +470,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "hiMsg": m3,
         "history": MessageLookupByLibrary.simpleMessage("السجل"),
         "home": MessageLookupByLibrary.simpleMessage("الرئيسية"),
+        "houseNumberHint":
+            MessageLookupByLibrary.simpleMessage("رقم المنزل / الشقة / المبنى"),
         "iamUser": MessageLookupByLibrary.simpleMessage("أنا مستخدم"),
         "iamVendor": MessageLookupByLibrary.simpleMessage("أنا بائع"),
+        "importantNotifications": MessageLookupByLibrary.simpleMessage(
+            "إشعارات حول تغييرات التطبيق الهامة أو التحديثات الجديدة."),
         "incorectPass":
             MessageLookupByLibrary.simpleMessage("كلمة المرور غير صحيحة"),
         "invitationLink": MessageLookupByLibrary.simpleMessage(
@@ -284,12 +483,22 @@ class MessageLookup extends MessageLookupByLibrary {
         "inviteEarnPoints": m4,
         "inviteFriends": MessageLookupByLibrary.simpleMessage("دعوة الأصدقاء"),
         "itemAdded": MessageLookupByLibrary.simpleMessage("تم إضافة العنصر"),
+        "itemAddedSuccess": MessageLookupByLibrary.simpleMessage(
+            "تم إضافة العنصر إلى السلة بنجاح"),
         "itemDetails": MessageLookupByLibrary.simpleMessage("تفاصيل العنصر"),
         "itemName": MessageLookupByLibrary.simpleMessage("اسم العنصر"),
+        "itemRemovedSuccess": MessageLookupByLibrary.simpleMessage(
+            "تم إزالة العنصر من السلة بنجاح"),
+        "itemUpdatedSuccess":
+            MessageLookupByLibrary.simpleMessage("تم تحديث كمية العنصر بنجاح"),
+        "itemUuidEmpty":
+            MessageLookupByLibrary.simpleMessage("معرف العنصر فارغ"),
         "iwantRecive": MessageLookupByLibrary.simpleMessage(
             "أريد تلقي أحدث العروض والتحديثات"),
         "km": m5,
         "landmark": MessageLookupByLibrary.simpleMessage("معلم قريب"),
+        "landmarkHint":
+            MessageLookupByLibrary.simpleMessage("مثلاً بالقرب من مدرسة ABC"),
         "languagePreference":
             MessageLookupByLibrary.simpleMessage("تفضيل اللغة"),
         "lastName": MessageLookupByLibrary.simpleMessage("الاسم الأخير"),
@@ -298,13 +507,56 @@ class MessageLookup extends MessageLookupByLibrary {
         "licensePlate": MessageLookupByLibrary.simpleMessage("رقم اللوحة"),
         "likes": MessageLookupByLibrary.simpleMessage("الإعجابات"),
         "loLetter": MessageLookupByLibrary.simpleMessage("حرف صغير واحد (a-z)"),
+        "loadingComments":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل التعليقات..."),
+        "loadingLikes":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل الإعجابات..."),
+        "loadingNotifications":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل الإشعارات..."),
+        "loadingPosts":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل المنشورات..."),
+        "loadingProducts":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل المنتجات..."),
+        "loadingProfile":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل الملف الشخصي..."),
+        "loadingReplies":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل الردود..."),
+        "loadingStory":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل القصة..."),
+        "loadingUsers":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل المستخدمين..."),
+        "loadingVendors":
+            MessageLookupByLibrary.simpleMessage("جاري تحميل البائعين..."),
+        "locationAccessRequired": MessageLookupByLibrary.simpleMessage(
+            "مطلوب الوصول إلى الموقع لعمل هذه الميزة بشكل صحيح"),
+        "locationAdded":
+            MessageLookupByLibrary.simpleMessage("تم إضافة الموقع بنجاح"),
+        "locationDeleted":
+            MessageLookupByLibrary.simpleMessage("تم حذف الموقع بنجاح"),
+        "locationError": MessageLookupByLibrary.simpleMessage("خطأ في الموقع"),
         "locationErrorPerm": MessageLookupByLibrary.simpleMessage(
             "لقد تم رفض أذونات الموقع بشكل دائم، ولا يمكننا طلب الأذونات."),
+        "locationPermissionRequired": MessageLookupByLibrary.simpleMessage(
+            "مطلوب إذن الموقع لاستخدام هذه الميزة"),
+        "locationPermissionsDenied":
+            MessageLookupByLibrary.simpleMessage("تم رفض أذونات الموقع"),
+        "locationPermissionsDeniedForever":
+            MessageLookupByLibrary.simpleMessage(
+                "تم رفض أذونات الموقع بشكل دائم"),
+        "locationPicker": MessageLookupByLibrary.simpleMessage("منتقي الموقع"),
+        "locationServicesDisabled":
+            MessageLookupByLibrary.simpleMessage("خدمات الموقع معطلة"),
+        "locationUpdated":
+            MessageLookupByLibrary.simpleMessage("تم تحديث الموقع بنجاح"),
         "locations": MessageLookupByLibrary.simpleMessage("مواقعك"),
         "login": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
         "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
         "makeOrder": MessageLookupByLibrary.simpleMessage("تقديم طلب"),
+        "markAllAsRead":
+            MessageLookupByLibrary.simpleMessage("تحديد الكل كمقروء"),
         "mentionItem": MessageLookupByLibrary.simpleMessage("اذكر العنصر"),
+        "missingRequiredParams":
+            MessageLookupByLibrary.simpleMessage("معلمات مطلوبة مفقودة"),
         "monthly": MessageLookupByLibrary.simpleMessage("شهري"),
         "more": MessageLookupByLibrary.simpleMessage("المزيد"),
         "mostOrderedThisWeek":
@@ -313,7 +565,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "myLikeAdd":
             MessageLookupByLibrary.simpleMessage("ربما ترغب في الإضافة"),
         "nameCategory":
-            MessageLookupByLibrary.simpleMessage("سمِّ الفئة الجديدة"),
+            MessageLookupByLibrary.simpleMessage("سمِّ الفئة الجديدة"),
         "newEmail": MessageLookupByLibrary.simpleMessage(
             "أدخل بريدك الإلكتروني الجديد"),
         "newItems": MessageLookupByLibrary.simpleMessage("عناصر جديدة"),
@@ -322,20 +574,77 @@ class MessageLookup extends MessageLookupByLibrary {
         "newsFeed": MessageLookupByLibrary.simpleMessage("آخر الأخبار"),
         "next": MessageLookupByLibrary.simpleMessage("التالي"),
         "noComment": MessageLookupByLibrary.simpleMessage("لا يوجد تعليقات"),
+        "noCommentsFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على تعليقات"),
+        "noCommonIssuesFound": MessageLookupByLibrary.simpleMessage(
+            "لم يتم العثور على مشاكل شائعة"),
         "noCreditCards":
             MessageLookupByLibrary.simpleMessage("لا توجد بطاقات ائتمان"),
+        "noDataAvailable":
+            MessageLookupByLibrary.simpleMessage("لا توجد بيانات متاحة"),
+        "noDownloadPlatformsFound": MessageLookupByLibrary.simpleMessage(
+            "لم يتم العثور على منصات تنزيل"),
+        "noFAQFound": MessageLookupByLibrary.simpleMessage(
+            "لم يتم العثور على أسئلة شائعة"),
         "noFav": MessageLookupByLibrary.simpleMessage("لا يوجد لديك مفضلة"),
+        "noFavoritesFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على مفضلات"),
+        "noLikesFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على إعجابات"),
+        "noLocationsFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على مواقع"),
         "noNotifications":
             MessageLookupByLibrary.simpleMessage("لا توجد إشعارات جديدة"),
+        "noNotificationsAvailable":
+            MessageLookupByLibrary.simpleMessage("لا توجد إشعارات متاحة"),
+        "noOrdersAvailable":
+            MessageLookupByLibrary.simpleMessage("لا توجد طلبات متاحة"),
         "noPlaces": MessageLookupByLibrary.simpleMessage("لا توجد أماكن"),
         "noPosts":
             MessageLookupByLibrary.simpleMessage("ليس لديك اي منشورات حاليا!"),
+        "noProductsAvailable":
+            MessageLookupByLibrary.simpleMessage("لا توجد منتجات متاحة"),
+        "noProductsFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على منتجات"),
+        "noRepliesFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على ردود"),
         "noResautrants": MessageLookupByLibrary.simpleMessage("لا يوجد مطاعم"),
+        "noReviewsFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على تقييمات"),
         "noSavedPosts":
             MessageLookupByLibrary.simpleMessage("لا يوجد منشورات الان!"),
+        "noSocialPlatformsFound": MessageLookupByLibrary.simpleMessage(
+            "لم يتم العثور على منصات تواصل اجتماعي"),
         "noSponsers": MessageLookupByLibrary.simpleMessage("لا تتوفر اعلانات"),
+        "noSponsorsAvailable":
+            MessageLookupByLibrary.simpleMessage("لا توجد رعاة متاحة"),
+        "noStoriesAvailable":
+            MessageLookupByLibrary.simpleMessage("لا توجد قصص متاحة"),
+        "noUserPosts":
+            MessageLookupByLibrary.simpleMessage("لا توجد منشورات للمستخدم"),
+        "noUsersFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على مستخدمين"),
+        "noVendorsFound":
+            MessageLookupByLibrary.simpleMessage("لم يتم العثور على بائعين"),
         "notSet": MessageLookupByLibrary.simpleMessage("لم يتم تعين"),
+        "notificationHistory":
+            MessageLookupByLibrary.simpleMessage("سجل الإشعارات"),
+        "notificationMarkedAsRead":
+            MessageLookupByLibrary.simpleMessage("تم تحديد الإشعار كمقروء"),
+        "notificationPreferences":
+            MessageLookupByLibrary.simpleMessage("تفضيلات الإشعارات"),
+        "notificationSettings":
+            MessageLookupByLibrary.simpleMessage("إعدادات الإشعارات"),
         "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+        "notificationsCleared":
+            MessageLookupByLibrary.simpleMessage("تم مسح الإشعارات"),
+        "notificationsEmpty":
+            MessageLookupByLibrary.simpleMessage("لقد اطلعت على كل شيء!"),
+        "notificationsEmptySubtitle":
+            MessageLookupByLibrary.simpleMessage("لا توجد إشعارات بعد"),
+        "numberOfSeats": MessageLookupByLibrary.simpleMessage("عدد المقاعد"),
+        "numberOfSeatsRequired":
+            MessageLookupByLibrary.simpleMessage("عدد المقاعد مطلوب"),
         "oftenOrderedWith":
             MessageLookupByLibrary.simpleMessage("غالبًا ما يُطلب مع"),
         "ok": MessageLookupByLibrary.simpleMessage("موافق"),
@@ -347,6 +656,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("يرجى اختيار ساعات العمل"),
         "openNow": MessageLookupByLibrary.simpleMessage("مفتوح الآن"),
         "operatingHours": MessageLookupByLibrary.simpleMessage("ساعات العمل"),
+        "optimisticUpdate":
+            MessageLookupByLibrary.simpleMessage("جاري التحديث..."),
         "or": MessageLookupByLibrary.simpleMessage("أو"),
         "orderAccepted": MessageLookupByLibrary.simpleMessage("تم قبول الطلب"),
         "orderAhead": MessageLookupByLibrary.simpleMessage("اطلب مسبقًا"),
@@ -354,11 +665,14 @@ class MessageLookup extends MessageLookupByLibrary {
             "اطلب أي شيء الآن واستلمه متى شئت!"),
         "orderDetails": MessageLookupByLibrary.simpleMessage("تفاصيل الطلب"),
         "orderId": m6,
+        "orderNotifications": MessageLookupByLibrary.simpleMessage(
+            "إشعارات حول الطلبات المقدمة، الجارية، والمسلّمة."),
         "orderOutForDelivery":
             MessageLookupByLibrary.simpleMessage("طلبك في الطريق للتوصيل"),
         "orderPlaced": MessageLookupByLibrary.simpleMessage("تم تقديم طلبك"),
         "orderPreparing": m7,
         "orderRejected": MessageLookupByLibrary.simpleMessage("تم رفض الطلب"),
+        "orderStatus": MessageLookupByLibrary.simpleMessage("حالة الطلب"),
         "orderUpdate": MessageLookupByLibrary.simpleMessage("تحديثات الطلبات"),
         "orderUpdateSubTitle": MessageLookupByLibrary.simpleMessage(
             "إشعارات عند وضع الطلب، أثناء التجهيز، وعند التسليم."),
@@ -366,6 +680,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "overallRating":
             MessageLookupByLibrary.simpleMessage("تقييم التطبيق العام"),
         "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
+        "passwordAuth":
+            MessageLookupByLibrary.simpleMessage("أدخل كلمة المرور"),
         "passwordIsRequired":
             MessageLookupByLibrary.simpleMessage("كلمة المرور مطلوبة"),
         "passwordValidaton": MessageLookupByLibrary.simpleMessage(
@@ -415,7 +731,17 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("يرجى اختيار صورة"),
         "popularPlaces":
             MessageLookupByLibrary.simpleMessage("الأماكن الشهيرة بالقرب منك"),
+        "popularProducts":
+            MessageLookupByLibrary.simpleMessage("المنتجات الشائعة"),
+        "postCreatedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم إنشاء المنشور بنجاح"),
+        "postDeleted": MessageLookupByLibrary.simpleMessage("تم حذف المنشور"),
         "postSaved": MessageLookupByLibrary.simpleMessage("تم الحفظ"),
+        "postSavedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم حفظ المنشور بنجاح"),
+        "postUnsavedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم إلغاء حفظ المنشور بنجاح"),
+        "posts": MessageLookupByLibrary.simpleMessage("المنشورات"),
         "preparingTime": MessageLookupByLibrary.simpleMessage("وقت التحضير"),
         "price": MessageLookupByLibrary.simpleMessage("السعر"),
         "priceWithCurrency": m8,
@@ -436,17 +762,33 @@ class MessageLookup extends MessageLookupByLibrary {
         "rateUs": MessageLookupByLibrary.simpleMessage("قيّمنا"),
         "rating": m9,
         "ratingTitle": MessageLookupByLibrary.simpleMessage("التقييم"),
+        "refresh": MessageLookupByLibrary.simpleMessage("تحديث"),
+        "refreshFavorites":
+            MessageLookupByLibrary.simpleMessage("تحديث المفضلة"),
+        "refreshNotifications":
+            MessageLookupByLibrary.simpleMessage("تحديث الإشعارات"),
         "reject": MessageLookupByLibrary.simpleMessage("رفض"),
         "remove": MessageLookupByLibrary.simpleMessage("إزالة"),
         "removeFollower": MessageLookupByLibrary.simpleMessage("إزالة متابع"),
+        "removedFromFavorites":
+            MessageLookupByLibrary.simpleMessage("تمت الإزالة من المفضلة"),
         "reorder": MessageLookupByLibrary.simpleMessage("إعادة الطلب"),
+        "replyAdded": MessageLookupByLibrary.simpleMessage("تمت إضافة الرد"),
+        "replyAddedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم إضافة الرد بنجاح"),
         "replyComment": MessageLookupByLibrary.simpleMessage("الرد علي تعليق"),
+        "replyDeleted": MessageLookupByLibrary.simpleMessage("تم حذف الرد"),
+        "replyDeletedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم حذف الرد بنجاح"),
         "replys": MessageLookupByLibrary.simpleMessage("الردود"),
         "required": MessageLookupByLibrary.simpleMessage("مطلوب"),
         "requiredField": MessageLookupByLibrary.simpleMessage("حقل مطلوب"),
         "resendCode":
             MessageLookupByLibrary.simpleMessage("إعادة إرسال الكود خلال: "),
         "retry": MessageLookupByLibrary.simpleMessage("إعادة المحاولة"),
+        "revenue": MessageLookupByLibrary.simpleMessage("الإيرادات"),
+        "reviewAddedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم إضافة التقييم بنجاح"),
         "reviews": MessageLookupByLibrary.simpleMessage("التقييمات"),
         "role": MessageLookupByLibrary.simpleMessage("دورك"),
         "roleInCompany":
@@ -459,14 +801,32 @@ class MessageLookup extends MessageLookupByLibrary {
         "scheduleOrder": MessageLookupByLibrary.simpleMessage("جدولة الطلب"),
         "searchCoffe": MessageLookupByLibrary.simpleMessage(
             "ابحث عن المقاهي، المطاعم، وغيرها"),
+        "searchForLocation":
+            MessageLookupByLibrary.simpleMessage("ابحث عن مبنى أو شارع أو ..."),
+        "searchForProducts":
+            MessageLookupByLibrary.simpleMessage("البحث عن منتجات"),
+        "searchForUsers":
+            MessageLookupByLibrary.simpleMessage("البحث عن مستخدمين"),
+        "searchForVendors":
+            MessageLookupByLibrary.simpleMessage("البحث عن بائعين"),
         "searchITem": MessageLookupByLibrary.simpleMessage("البحث عن العناصر"),
+        "searchIssues":
+            MessageLookupByLibrary.simpleMessage("البحث عن المشاكل"),
         "seeAllReviews":
             MessageLookupByLibrary.simpleMessage("عرض جميع التقييمات"),
         "seeMore": MessageLookupByLibrary.simpleMessage("عرض المزيد"),
+        "selectBranch":
+            MessageLookupByLibrary.simpleMessage("الرجاء اختيار الفرع"),
+        "selectDate": MessageLookupByLibrary.simpleMessage("اختر التاريخ"),
+        "selectLocation": MessageLookupByLibrary.simpleMessage("اختر الموقع"),
         "selectLocationNear": MessageLookupByLibrary.simpleMessage(
             "حدد الموقع لرؤية الأماكن القريبة"),
+        "selectMake": MessageLookupByLibrary.simpleMessage("اختر الماركة"),
+        "selectModel": MessageLookupByLibrary.simpleMessage("اختر الموديل"),
         "selectOrderType":
             MessageLookupByLibrary.simpleMessage("اختر نوع الطلب"),
+        "selectProduct": MessageLookupByLibrary.simpleMessage("اختر المنتج"),
+        "selectVendor": MessageLookupByLibrary.simpleMessage("اختر البائع"),
         "send": MessageLookupByLibrary.simpleMessage("إرسال"),
         "sendFeedback": MessageLookupByLibrary.simpleMessage("اترك تقييمك"),
         "servicesProvided":
@@ -477,6 +837,11 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("شارك الكود الخاص بي"),
         "shareExp": MessageLookupByLibrary.simpleMessage("شارك تجربتك"),
         "shareExperience": MessageLookupByLibrary.simpleMessage("شارك تجربتك"),
+        "shareFunctionality": MessageLookupByLibrary.simpleMessage(
+            "سيتم تنفيذ وظيفة المشاركة هنا"),
+        "sharePost": MessageLookupByLibrary.simpleMessage("مشاركة المنشور"),
+        "shimmerLoading":
+            MessageLookupByLibrary.simpleMessage("جاري التحميل..."),
         "sideItemName":
             MessageLookupByLibrary.simpleMessage("اسم العنصر الجانبي"),
         "sideItems": MessageLookupByLibrary.simpleMessage("الأطباق الجانبية"),
@@ -499,7 +864,27 @@ class MessageLookup extends MessageLookupByLibrary {
         "specialRequestCart":
             MessageLookupByLibrary.simpleMessage("أي طلب خاص"),
         "sponser": MessageLookupByLibrary.simpleMessage("الرعاة"),
+        "sponsorsLoadingError":
+            MessageLookupByLibrary.simpleMessage("خطأ في تحميل الرعاة"),
+        "story": MessageLookupByLibrary.simpleMessage("قصة"),
+        "storyAdded": MessageLookupByLibrary.simpleMessage("تمت إضافة القصة"),
+        "storyDeleted": MessageLookupByLibrary.simpleMessage("تم حذف القصة"),
+        "storyExpired":
+            MessageLookupByLibrary.simpleMessage("انتهت صلاحية القصة"),
+        "storyUploadComplete":
+            MessageLookupByLibrary.simpleMessage("اكتمل رفع القصة"),
+        "storyUploadFailed":
+            MessageLookupByLibrary.simpleMessage("فشل رفع القصة"),
+        "storyUploadProgress":
+            MessageLookupByLibrary.simpleMessage("تقدم رفع القصة"),
+        "storyViewed": MessageLookupByLibrary.simpleMessage("تم عرض القصة"),
+        "successAdded":
+            MessageLookupByLibrary.simpleMessage("تمت الإضافة بنجاح"),
+        "successDeleted":
+            MessageLookupByLibrary.simpleMessage("تم الحذف بنجاح"),
         "successUpdate":
+            MessageLookupByLibrary.simpleMessage("تم التحديث بنجاح"),
+        "successUpdated":
             MessageLookupByLibrary.simpleMessage("تم التحديث بنجاح"),
         "suggestions": MessageLookupByLibrary.simpleMessage("اقتراحات"),
         "tabHereToChangeLocation": MessageLookupByLibrary.simpleMessage(
@@ -511,6 +896,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "هل ترغب في إخبار العميل بشيء؟"),
         "tellUsAbout": MessageLookupByLibrary.simpleMessage(
             "أخبرنا عن عملك (سيشاهد العملاء هذه المعلومات على تطبيق بريزا للبحث والتواصل معك)"),
+        "temporaryState": MessageLookupByLibrary.simpleMessage("حالة مؤقتة"),
         "terms": MessageLookupByLibrary.simpleMessage("شروط الاستخدام"),
         "thanksPatience":
             MessageLookupByLibrary.simpleMessage("شكراً على صبرك"),
@@ -519,38 +905,59 @@ class MessageLookup extends MessageLookupByLibrary {
         "total": m10,
         "totalRevenue":
             MessageLookupByLibrary.simpleMessage("إجمالي الإيرادات"),
+        "totalReviews":
+            MessageLookupByLibrary.simpleMessage("إجمالي التقييمات"),
         "trackOrder": MessageLookupByLibrary.simpleMessage("تتبع الطلب"),
         "trending":
             MessageLookupByLibrary.simpleMessage("اطلع على الأكثر رواجاً"),
+        "tutorialSkip": MessageLookupByLibrary.simpleMessage("تخطي"),
         "unfollow": MessageLookupByLibrary.simpleMessage("إلغاء المتابعة"),
         "upLetter": MessageLookupByLibrary.simpleMessage("حرف كبير واحد (A-Z)"),
         "uploadPhoto": MessageLookupByLibrary.simpleMessage("رفع صورة"),
+        "uploadProgress": MessageLookupByLibrary.simpleMessage("تقدم الرفع"),
+        "uploading": MessageLookupByLibrary.simpleMessage("جاري الرفع"),
+        "uploadingStory":
+            MessageLookupByLibrary.simpleMessage("جاري رفع القصة..."),
         "urBrandLogo":
             MessageLookupByLibrary.simpleMessage("شعار علامتك التجارية"),
         "urIn": MessageLookupByLibrary.simpleMessage("أنت في"),
         "urKnownName": MessageLookupByLibrary.simpleMessage("اسمك المعروف"),
         "useBiometrics": MessageLookupByLibrary.simpleMessage(
             "هل ترغب في استخدام بيانات التعريف البيومترية لعرض البطاقة؟"),
+        "userFollowedSuccessfully":
+            MessageLookupByLibrary.simpleMessage("تم متابعة المستخدم بنجاح"),
+        "userIdNotFound": MessageLookupByLibrary.simpleMessage(
+            "لم يتم العثور على معرف المستخدم"),
+        "userUnfollowedSuccessfully": MessageLookupByLibrary.simpleMessage(
+            "تم إلغاء متابعة المستخدم بنجاح"),
         "username": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
         "users": MessageLookupByLibrary.simpleMessage("المستخدمين"),
         "vehicleBrand": MessageLookupByLibrary.simpleMessage("ماركة السيارة"),
         "vehicleColor": MessageLookupByLibrary.simpleMessage("لون السيارة"),
         "vehicleModel": MessageLookupByLibrary.simpleMessage("طراز السيارة"),
         "vehicleType": MessageLookupByLibrary.simpleMessage("نوع السيارة"),
+        "vendorBalance": MessageLookupByLibrary.simpleMessage("رصيد البائع"),
+        "vendorNotInFavorites":
+            MessageLookupByLibrary.simpleMessage("البائع ليس في المفضلة"),
+        "vendorsInFavorites": m11,
         "verifyEmail":
             MessageLookupByLibrary.simpleMessage("تأكيد البريد الإلكتروني"),
         "verifyPhone": MessageLookupByLibrary.simpleMessage("تأكيد رقم الهاتف"),
         "viewAll": MessageLookupByLibrary.simpleMessage("عرض الكل"),
         "viewCard": MessageLookupByLibrary.simpleMessage("عرض بطاقتك"),
+        "viewStory": MessageLookupByLibrary.simpleMessage("عرض القصة"),
         "waitingWeAre": MessageLookupByLibrary.simpleMessage(
             "من فضلك انتظر، نحن نصنع السحر."),
         "welcome": MessageLookupByLibrary.simpleMessage("مرحبًا"),
         "welcomeTitle":
             MessageLookupByLibrary.simpleMessage("نحن سعداء بوجودك هنا"),
         "wholeWeak": MessageLookupByLibrary.simpleMessage("خدمة 24/7"),
+        "writeComment": MessageLookupByLibrary.simpleMessage("اكتب تعليق"),
         "writeHere": MessageLookupByLibrary.simpleMessage("اكتب هنا"),
+        "writeReply": MessageLookupByLibrary.simpleMessage("اكتب رد"),
         "yearly": MessageLookupByLibrary.simpleMessage("سنوي"),
-        "youCanCanel": m11,
+        "you": MessageLookupByLibrary.simpleMessage("أنت"),
+        "youCanCancel": m12,
         "youCanScroll": MessageLookupByLibrary.simpleMessage(
             "يمكنك التمرير لأعلى أو لأسفل\nلاستكشاف المزيد من العناصر الجانبية ويمكنك الضغط لعرض العناصر"),
         "youCantCancel": MessageLookupByLibrary.simpleMessage(
@@ -558,7 +965,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "yourCars": MessageLookupByLibrary.simpleMessage("سياراتك"),
         "yourPassNotMatch":
             MessageLookupByLibrary.simpleMessage("كلمات المرور غير متطابقة"),
+        "yourPost": MessageLookupByLibrary.simpleMessage("منشورك"),
         "yourReferralCode":
-            MessageLookupByLibrary.simpleMessage("رمز الدعوه الخاص بكس")
+            MessageLookupByLibrary.simpleMessage("رمز الدعوه الخاص بك")
       };
 }

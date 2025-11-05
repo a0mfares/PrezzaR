@@ -138,9 +138,6 @@ class _$LocationEventCopyWithImpl<$Res, $Val extends LocationEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -157,9 +154,6 @@ class __$$GetBrancheImplCopyWithImpl<$Res>
   __$$GetBrancheImplCopyWithImpl(
       _$GetBrancheImpl _value, $Res Function(_$GetBrancheImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -328,9 +322,6 @@ class __$$AddBrancheImplCopyWithImpl<$Res>
   __$$AddBrancheImplCopyWithImpl(
       _$AddBrancheImpl _value, $Res Function(_$AddBrancheImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -502,8 +493,6 @@ class __$$DeleteBrancheImplCopyWithImpl<$Res>
       _$DeleteBrancheImpl _value, $Res Function(_$DeleteBrancheImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -542,9 +531,7 @@ class _$DeleteBrancheImpl implements _DeleteBranche {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteBrancheImplCopyWith<_$DeleteBrancheImpl> get copyWith =>
@@ -683,10 +670,7 @@ abstract class _DeleteBranche implements LocationEvent {
   const factory _DeleteBranche(final String id) = _$DeleteBrancheImpl;
 
   String get id;
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DeleteBrancheImplCopyWith<_$DeleteBrancheImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -705,9 +689,6 @@ class __$$UpdateBrancheImplCopyWithImpl<$Res>
   __$$UpdateBrancheImplCopyWithImpl(
       _$UpdateBrancheImpl _value, $Res Function(_$UpdateBrancheImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -876,9 +857,6 @@ class __$$GetAddressesImplCopyWithImpl<$Res>
   __$$GetAddressesImplCopyWithImpl(
       _$GetAddressesImpl _value, $Res Function(_$GetAddressesImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1050,8 +1028,6 @@ class __$$DeleteAddressImplCopyWithImpl<$Res>
       _$DeleteAddressImpl _value, $Res Function(_$DeleteAddressImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1090,9 +1066,7 @@ class _$DeleteAddressImpl implements _DeleteAddress {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteAddressImplCopyWith<_$DeleteAddressImpl> get copyWith =>
@@ -1231,10 +1205,7 @@ abstract class _DeleteAddress implements LocationEvent {
   const factory _DeleteAddress(final String id) = _$DeleteAddressImpl;
 
   String get id;
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DeleteAddressImplCopyWith<_$DeleteAddressImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1253,9 +1224,6 @@ class __$$UpdateAddressImplCopyWithImpl<$Res>
   __$$UpdateAddressImplCopyWithImpl(
       _$UpdateAddressImpl _value, $Res Function(_$UpdateAddressImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1424,9 +1392,6 @@ class __$$AddAddressImplCopyWithImpl<$Res>
   __$$AddAddressImplCopyWithImpl(
       _$AddAddressImpl _value, $Res Function(_$AddAddressImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1597,8 +1562,6 @@ class __$$AuthImplCopyWithImpl<$Res>
   __$$AuthImplCopyWithImpl(_$AuthImpl _value, $Res Function(_$AuthImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1638,9 +1601,7 @@ class _$AuthImpl implements _Auth {
   @override
   int get hashCode => Object.hash(runtimeType, isDelete);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AuthImplCopyWith<_$AuthImpl> get copyWith =>
@@ -1779,10 +1740,7 @@ abstract class _Auth implements LocationEvent {
   const factory _Auth(final bool isDelete) = _$AuthImpl;
 
   bool get isDelete;
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AuthImplCopyWith<_$AuthImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1801,9 +1759,6 @@ class __$$InitializeEditModeImplCopyWithImpl<$Res>
   __$$InitializeEditModeImplCopyWithImpl(_$InitializeEditModeImpl _value,
       $Res Function(_$InitializeEditModeImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1975,8 +1930,6 @@ class __$$OnPickPlaceImplCopyWithImpl<$Res>
       _$OnPickPlaceImpl _value, $Res Function(_$OnPickPlaceImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2015,9 +1968,7 @@ class _$OnPickPlaceImpl implements _OnPickPlace {
   @override
   int get hashCode => Object.hash(runtimeType, result);
 
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$OnPickPlaceImplCopyWith<_$OnPickPlaceImpl> get copyWith =>
@@ -2156,10 +2107,7 @@ abstract class _OnPickPlace implements LocationEvent {
   const factory _OnPickPlace(final LocationResult result) = _$OnPickPlaceImpl;
 
   LocationResult get result;
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$OnPickPlaceImplCopyWith<_$OnPickPlaceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2178,9 +2126,6 @@ class __$$GetInitialLocationImplCopyWithImpl<$Res>
   __$$GetInitialLocationImplCopyWithImpl(_$GetInitialLocationImpl _value,
       $Res Function(_$GetInitialLocationImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2349,9 +2294,6 @@ class __$$GetArrivelTimeImplCopyWithImpl<$Res>
   __$$GetArrivelTimeImplCopyWithImpl(
       _$GetArrivelTimeImpl _value, $Res Function(_$GetArrivelTimeImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2612,9 +2554,6 @@ class _$LocationStateCopyWithImpl<$Res, $Val extends LocationState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2631,9 +2570,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2784,9 +2720,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2937,9 +2870,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3090,9 +3020,6 @@ class __$$SuccessPickedImplCopyWithImpl<$Res>
   __$$SuccessPickedImplCopyWithImpl(
       _$SuccessPickedImpl _value, $Res Function(_$SuccessPickedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3243,9 +3170,6 @@ class __$$SuccessAddedImplCopyWithImpl<$Res>
   __$$SuccessAddedImplCopyWithImpl(
       _$SuccessAddedImpl _value, $Res Function(_$SuccessAddedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3396,9 +3320,6 @@ class __$$SuccessUpdatedImplCopyWithImpl<$Res>
   __$$SuccessUpdatedImplCopyWithImpl(
       _$SuccessUpdatedImpl _value, $Res Function(_$SuccessUpdatedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3549,9 +3470,6 @@ class __$$SuccessDeleteImplCopyWithImpl<$Res>
   __$$SuccessDeleteImplCopyWithImpl(
       _$SuccessDeleteImpl _value, $Res Function(_$SuccessDeleteImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3702,9 +3620,6 @@ class __$$UpdatePickedImplCopyWithImpl<$Res>
   __$$UpdatePickedImplCopyWithImpl(
       _$UpdatePickedImpl _value, $Res Function(_$UpdatePickedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3858,8 +3773,6 @@ class __$$SuccessAuthImplCopyWithImpl<$Res>
       _$SuccessAuthImpl _value, $Res Function(_$SuccessAuthImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3899,9 +3812,7 @@ class _$SuccessAuthImpl implements _SuccessAuth {
   @override
   int get hashCode => Object.hash(runtimeType, isDelete);
 
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessAuthImplCopyWith<_$SuccessAuthImpl> get copyWith =>
@@ -4022,10 +3933,7 @@ abstract class _SuccessAuth implements LocationState {
   const factory _SuccessAuth(final bool isDelete) = _$SuccessAuthImpl;
 
   bool get isDelete;
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SuccessAuthImplCopyWith<_$SuccessAuthImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4047,8 +3955,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4087,9 +3993,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -4210,10 +4114,7 @@ abstract class _Failure implements LocationState {
   const factory _Failure(final String err) = _$FailureImpl;
 
   String get err;
-
-  /// Create a copy of LocationState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,6 +1,5 @@
 import '../../data/models/review_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 
 part 'review_entity.g.dart';

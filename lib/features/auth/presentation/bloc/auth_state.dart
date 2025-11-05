@@ -8,4 +8,8 @@ class AuthState with _$AuthState {
   const factory AuthState.failure(String errMsg) = _Failure;
   const factory AuthState.successForgot() = _SuccessForgot;
   const factory AuthState.successOtp() = _SuccessOtp;
+  const factory AuthState.otpSent() = _OtpSent;
+  const factory AuthState.loginSuccess() = _LoginSuccess;
+  const factory AuthState.choseUserType() = _ChoseUserType;
+  
 }

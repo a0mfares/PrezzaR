@@ -12,7 +12,6 @@ class BlocPrezzaOberser extends BlocObserver {
 
   @override
   void onEvent(Bloc bloc, Object? event) {
-    // TODO: implement onEvent
     super.onEvent(bloc, event);
     log('${bloc.runtimeType} = $event', name: 'bloc events');
   }

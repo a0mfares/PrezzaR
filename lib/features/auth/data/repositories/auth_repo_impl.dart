@@ -160,8 +160,17 @@ class AuthRepoImpl implements AuthRepo {
     return execute(() => _auth.confirmRegPhone(data));
   }
 
-  @override
-  Future<Either<FailureServices, void>> deleteaccount() {
-    return execute(() => _auth.deleteaccount(bearerToken));
+@override
+Future<Either<FailureServices, void>> deleteaccount({required String authHeader}) async {
+  final currentUser = usr;
+  if (currentUser.tokens.access.isEmpty) {
+    return Left(FailureServices('No authenticated user found'));
   }
+  
+  final token = currentUser.tokens.access.startsWith('Bearer ') 
+      ? currentUser.tokens.access 
+      : 'Bearer ${currentUser.tokens.access}';
+  
+  return execute(() => _auth.deleteaccount(token));
+}
 }

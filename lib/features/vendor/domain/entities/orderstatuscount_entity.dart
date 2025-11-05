@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 
 import '../../data/models/orderstatuscount_model.dart';

@@ -209,7 +209,7 @@ class _LoginPageState extends State<LoginPage> {
                                     ),
                                   ),
                                 );
-                              } else if (err.errMsg == 'complete setup') {
+                              } else if (err.errMsg == tr.completeSetup) {
                                 BotToast.showCustomText(
                                   duration: const Duration(seconds: 4),
                                   toastBuilder: (_) => Card(
@@ -247,7 +247,7 @@ class _LoginPageState extends State<LoginPage> {
                                 BotToast.showText(text: err.errMsg);
                               }
                             },
-                            success: (_) {
+                            loginSuccess: (_) {
                               if (mounted) {
                                 appRoute.replace(const LoginLoadingRoute());
                               }
@@ -263,7 +263,6 @@ class _LoginPageState extends State<LoginPage> {
                                   bloc.isEmail ? 'email' : 'phone',
                                 ),
                               );
-                              setState(() {});
                             },
                             child: state.maybeWhen(
                               loading: () =>
@@ -274,8 +273,9 @@ class _LoginPageState extends State<LoginPage> {
                               success: () {
                                 bool isDone = true;
                                 Future.delayed(
-                                    const Duration(milliseconds: 1000), () {
-                                  if (!mounted) return;
+                                    const Duration(milliseconds: 500), () {
+                                  if (!mounted) return; 
+
                                   isDone = false;
                                   setState(() {});
                                 });

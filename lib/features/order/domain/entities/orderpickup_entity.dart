@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 import 'package:equatable/equatable.dart';
@@ -19,7 +19,7 @@ class OrderPickupEntity extends $OrderPickupEntity {
   final String arrival_date;
 
   @HiveField(2)
-  final String customer_phone;
+  final String? customer_phone;
 
   @HiveField(3)
   @JsonKey(fromJson: Car.fromMap, toJson: carToMap)
@@ -28,7 +28,7 @@ class OrderPickupEntity extends $OrderPickupEntity {
   OrderPickupEntity({
     required this.uuid,
     required this.arrival_date,
-    required this.customer_phone,
+    this.customer_phone,
     required this.car,
   });
 

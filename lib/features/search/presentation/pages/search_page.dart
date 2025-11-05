@@ -10,6 +10,7 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../config/custom_colors.dart';
 import '../../../../core/helper/tools.dart';
+import '../../../../core/service/routes.gr.dart'; // 添加这个导入
 
 @RoutePage()
 class SearchPage extends StatefulWidget {
@@ -79,9 +80,11 @@ class _SearchPageState extends State<SearchPage> {
                               : const Icon(Icons.search),
                           title: Text(vendor.business_name),
                           onTap: () {
-                            // context.router.push(NearbyPlacesPageRoute(
-                            //   vendor: recentSearch,
-                            // ));
+                            // 导航到供应商详情页面
+                            appRoute.navigate(VendorDetailsRoute(
+                              id: vendor.bussiness_id.toString(), 
+                              type: 'products',
+                            ));
                           },
                           trailing: bloc.isRecentSearch(vendor)
                               ? InkWell(
@@ -123,9 +126,11 @@ class _SearchPageState extends State<SearchPage> {
                           leading: const Icon(Icons.alarm_rounded),
                           title: Text(recentSearch.business_name),
                           onTap: () {
-                            // context.router.push(NearbyPlacesPageRoute(
-                            //   vendor: recentSearch,
-                            // ));
+                            // 导航到供应商详情页面
+                            appRoute.navigate(VendorDetailsRoute(
+                              id: recentSearch.bussiness_id.toString(), 
+                              type: 'products',
+                            ));
                           },
                           trailing: InkWell(
                             onTap: () {

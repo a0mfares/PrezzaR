@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/shared/widgets/cached_image.dart';
 import 'package:sizer/sizer.dart';
@@ -86,7 +85,7 @@ class _CategorySheetWidgetState extends State<CategorySheetWidget> {
                             Center(
                               child: Center(
                                 child: CachedImage(
-                                  imageUrl: category.imageUrl ??
+                                  imageUrl: category.image_url ??
                                       Assets.assetsImagesDrink,
                                   height: 60,
                                   width: 60,

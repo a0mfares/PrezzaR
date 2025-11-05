@@ -131,9 +131,6 @@ class _$CarEventCopyWithImpl<$Res, $Val extends CarEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -150,9 +147,6 @@ class __$$AddCarImplCopyWithImpl<$Res>
   __$$AddCarImplCopyWithImpl(
       _$AddCarImpl _value, $Res Function(_$AddCarImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -318,8 +312,6 @@ class __$$DeleteCarImplCopyWithImpl<$Res>
       _$DeleteCarImpl _value, $Res Function(_$DeleteCarImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -358,9 +350,7 @@ class _$DeleteCarImpl implements _DeleteCar {
   @override
   int get hashCode => Object.hash(runtimeType, uuid);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteCarImplCopyWith<_$DeleteCarImpl> get copyWith =>
@@ -493,10 +483,7 @@ abstract class _DeleteCar implements CarEvent {
   const factory _DeleteCar(final String uuid) = _$DeleteCarImpl;
 
   String get uuid;
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DeleteCarImplCopyWith<_$DeleteCarImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -515,9 +502,6 @@ class __$$UpdateCarImplCopyWithImpl<$Res>
   __$$UpdateCarImplCopyWithImpl(
       _$UpdateCarImpl _value, $Res Function(_$UpdateCarImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -680,9 +664,6 @@ class __$$SearchModelImplCopyWithImpl<$Res>
   __$$SearchModelImplCopyWithImpl(
       _$SearchModelImpl _value, $Res Function(_$SearchModelImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -845,9 +826,6 @@ class __$$searchMakesImplCopyWithImpl<$Res>
   __$$searchMakesImplCopyWithImpl(
       _$searchMakesImpl _value, $Res Function(_$searchMakesImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1010,9 +988,6 @@ class __$$SearshTypesImplCopyWithImpl<$Res>
   __$$SearshTypesImplCopyWithImpl(
       _$SearshTypesImpl _value, $Res Function(_$SearshTypesImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1178,8 +1153,6 @@ class __$$SelectMakeImplCopyWithImpl<$Res>
       _$SelectMakeImpl _value, $Res Function(_$SelectMakeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1218,9 +1191,7 @@ class _$SelectMakeImpl implements _SelectMake {
   @override
   int get hashCode => Object.hash(runtimeType, make);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectMakeImplCopyWith<_$SelectMakeImpl> get copyWith =>
@@ -1353,10 +1324,7 @@ abstract class _SelectMake implements CarEvent {
   const factory _SelectMake(final String make) = _$SelectMakeImpl;
 
   String get make;
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectMakeImplCopyWith<_$SelectMakeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1378,8 +1346,6 @@ class __$$SelectModelImplCopyWithImpl<$Res>
       _$SelectModelImpl _value, $Res Function(_$SelectModelImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1418,9 +1384,7 @@ class _$SelectModelImpl implements _SelectModel {
   @override
   int get hashCode => Object.hash(runtimeType, model);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectModelImplCopyWith<_$SelectModelImpl> get copyWith =>
@@ -1553,10 +1517,7 @@ abstract class _SelectModel implements CarEvent {
   const factory _SelectModel(final String model) = _$SelectModelImpl;
 
   String get model;
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectModelImplCopyWith<_$SelectModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1578,8 +1539,6 @@ class __$$SelectTypeImplCopyWithImpl<$Res>
       _$SelectTypeImpl _value, $Res Function(_$SelectTypeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1618,9 +1577,7 @@ class _$SelectTypeImpl implements _SelectType {
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectTypeImplCopyWith<_$SelectTypeImpl> get copyWith =>
@@ -1753,10 +1710,7 @@ abstract class _SelectType implements CarEvent {
   const factory _SelectType(final String type) = _$SelectTypeImpl;
 
   String get type;
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectTypeImplCopyWith<_$SelectTypeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1778,8 +1732,6 @@ class __$$PickImageImplCopyWithImpl<$Res>
       _$PickImageImpl _value, $Res Function(_$PickImageImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1818,9 +1770,7 @@ class _$PickImageImpl implements _PickImage {
   @override
   int get hashCode => Object.hash(runtimeType, img);
 
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$PickImageImplCopyWith<_$PickImageImpl> get copyWith =>
@@ -1953,10 +1903,7 @@ abstract class _PickImage implements CarEvent {
   const factory _PickImage(final File img) = _$PickImageImpl;
 
   File get img;
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$PickImageImplCopyWith<_$PickImageImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1975,9 +1922,6 @@ class __$$IntializeEditModeImplCopyWithImpl<$Res>
   __$$IntializeEditModeImplCopyWithImpl(_$IntializeEditModeImpl _value,
       $Res Function(_$IntializeEditModeImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2140,9 +2084,6 @@ class __$$GetCarsImplCopyWithImpl<$Res>
   __$$GetCarsImplCopyWithImpl(
       _$GetCarsImpl _value, $Res Function(_$GetCarsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2297,39 +2238,45 @@ mixin _$CarState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
     required TResult Function() successAdded,
-    required TResult Function() successDelete,
     required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
     TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
     TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
     TResult Function()? successAdded,
-    TResult Function()? successDelete,
     TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2337,12 +2284,14 @@ mixin _$CarState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
     required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
     required TResult Function(_Failure value) failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -2350,12 +2299,14 @@ mixin _$CarState {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
     TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
     TResult? Function(_Failure value)? failure,
   }) =>
       throw _privateConstructorUsedError;
@@ -2363,12 +2314,14 @@ mixin _$CarState {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
     TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) =>
@@ -2390,9 +2343,6 @@ class _$CarStateCopyWithImpl<$Res, $Val extends CarState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2409,9 +2359,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2438,13 +2385,15 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
     required TResult Function() successAdded,
-    required TResult Function() successDelete,
     required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
   }) {
     return initial();
   }
@@ -2454,13 +2403,15 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
     TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
     TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
   }) {
     return initial?.call();
   }
@@ -2470,13 +2421,15 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
     TResult Function()? successAdded,
-    TResult Function()? successDelete,
     TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -2490,12 +2443,14 @@ class _$InitialImpl implements _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
     required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
     required TResult Function(_Failure value) failure,
   }) {
     return initial(this);
@@ -2506,12 +2461,14 @@ class _$InitialImpl implements _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
     TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
     TResult? Function(_Failure value)? failure,
   }) {
     return initial?.call(this);
@@ -2522,12 +2479,14 @@ class _$InitialImpl implements _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
     TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -2556,9 +2515,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2585,13 +2541,15 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
     required TResult Function() successAdded,
-    required TResult Function() successDelete,
     required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
   }) {
     return loading();
   }
@@ -2601,13 +2559,15 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
     TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
     TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
   }) {
     return loading?.call();
   }
@@ -2617,13 +2577,15 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
     TResult Function()? successAdded,
-    TResult Function()? successDelete,
     TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -2637,12 +2599,14 @@ class _$LoadingImpl implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
     required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
     required TResult Function(_Failure value) failure,
   }) {
     return loading(this);
@@ -2653,12 +2617,14 @@ class _$LoadingImpl implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
     TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
     TResult? Function(_Failure value)? failure,
   }) {
     return loading?.call(this);
@@ -2669,12 +2635,14 @@ class _$LoadingImpl implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
     TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -2690,38 +2658,35 @@ abstract class _Loading implements CarState {
 }
 
 /// @nodoc
-abstract class _$$SuccessImplCopyWith<$Res> {
-  factory _$$SuccessImplCopyWith(
-          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
-      __$$SuccessImplCopyWithImpl<$Res>;
+abstract class _$$MakesLoadedImplCopyWith<$Res> {
+  factory _$$MakesLoadedImplCopyWith(
+          _$MakesLoadedImpl value, $Res Function(_$MakesLoadedImpl) then) =
+      __$$MakesLoadedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SuccessImplCopyWithImpl<$Res>
-    extends _$CarStateCopyWithImpl<$Res, _$SuccessImpl>
-    implements _$$SuccessImplCopyWith<$Res> {
-  __$$SuccessImplCopyWithImpl(
-      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
+class __$$MakesLoadedImplCopyWithImpl<$Res>
+    extends _$CarStateCopyWithImpl<$Res, _$MakesLoadedImpl>
+    implements _$$MakesLoadedImplCopyWith<$Res> {
+  __$$MakesLoadedImplCopyWithImpl(
+      _$MakesLoadedImpl _value, $Res Function(_$MakesLoadedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$SuccessImpl implements _Success {
-  const _$SuccessImpl();
+class _$MakesLoadedImpl implements _MakesLoaded {
+  const _$MakesLoadedImpl();
 
   @override
   String toString() {
-    return 'CarState.success()';
+    return 'CarState.makesLoaded()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessImpl);
+        (other.runtimeType == runtimeType && other is _$MakesLoadedImpl);
   }
 
   @override
@@ -2732,15 +2697,17 @@ class _$SuccessImpl implements _Success {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
     required TResult Function() successAdded,
-    required TResult Function() successDelete,
     required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
   }) {
-    return success();
+    return makesLoaded();
   }
 
   @override
@@ -2748,15 +2715,17 @@ class _$SuccessImpl implements _Success {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
     TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
     TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
   }) {
-    return success?.call();
+    return makesLoaded?.call();
   }
 
   @override
@@ -2764,17 +2733,19 @@ class _$SuccessImpl implements _Success {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
     TResult Function()? successAdded,
-    TResult Function()? successDelete,
     TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success();
+    if (makesLoaded != null) {
+      return makesLoaded();
     }
     return orElse();
   }
@@ -2784,15 +2755,17 @@ class _$SuccessImpl implements _Success {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
     required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
     required TResult Function(_Failure value) failure,
   }) {
-    return success(this);
+    return makesLoaded(this);
   }
 
   @override
@@ -2800,15 +2773,17 @@ class _$SuccessImpl implements _Success {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
     TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
     TResult? Function(_Failure value)? failure,
   }) {
-    return success?.call(this);
+    return makesLoaded?.call(this);
   }
 
   @override
@@ -2816,24 +2791,494 @@ class _$SuccessImpl implements _Success {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
     TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
-    if (success != null) {
-      return success(this);
+    if (makesLoaded != null) {
+      return makesLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class _Success implements CarState {
-  const factory _Success() = _$SuccessImpl;
+abstract class _MakesLoaded implements CarState {
+  const factory _MakesLoaded() = _$MakesLoadedImpl;
+}
+
+/// @nodoc
+abstract class _$$ModelsLoadedImplCopyWith<$Res> {
+  factory _$$ModelsLoadedImplCopyWith(
+          _$ModelsLoadedImpl value, $Res Function(_$ModelsLoadedImpl) then) =
+      __$$ModelsLoadedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ModelsLoadedImplCopyWithImpl<$Res>
+    extends _$CarStateCopyWithImpl<$Res, _$ModelsLoadedImpl>
+    implements _$$ModelsLoadedImplCopyWith<$Res> {
+  __$$ModelsLoadedImplCopyWithImpl(
+      _$ModelsLoadedImpl _value, $Res Function(_$ModelsLoadedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ModelsLoadedImpl implements _ModelsLoaded {
+  const _$ModelsLoadedImpl();
+
+  @override
+  String toString() {
+    return 'CarState.modelsLoaded()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ModelsLoadedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
+    required TResult Function() successAdded,
+    required TResult Function() successUpdated,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
+  }) {
+    return modelsLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
+    TResult? Function()? successAdded,
+    TResult? Function()? successUpdated,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
+  }) {
+    return modelsLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
+    TResult Function()? successAdded,
+    TResult Function()? successUpdated,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
+    required TResult orElse(),
+  }) {
+    if (modelsLoaded != null) {
+      return modelsLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
+    required TResult Function(_SuccessAdded value) successAdded,
+    required TResult Function(_SuccessUpdated value) successUpdated,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return modelsLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
+    TResult? Function(_SuccessAdded value)? successAdded,
+    TResult? Function(_SuccessUpdated value)? successUpdated,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return modelsLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
+    TResult Function(_SuccessAdded value)? successAdded,
+    TResult Function(_SuccessUpdated value)? successUpdated,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (modelsLoaded != null) {
+      return modelsLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ModelsLoaded implements CarState {
+  const factory _ModelsLoaded() = _$ModelsLoadedImpl;
+}
+
+/// @nodoc
+abstract class _$$TypesLoadedImplCopyWith<$Res> {
+  factory _$$TypesLoadedImplCopyWith(
+          _$TypesLoadedImpl value, $Res Function(_$TypesLoadedImpl) then) =
+      __$$TypesLoadedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$TypesLoadedImplCopyWithImpl<$Res>
+    extends _$CarStateCopyWithImpl<$Res, _$TypesLoadedImpl>
+    implements _$$TypesLoadedImplCopyWith<$Res> {
+  __$$TypesLoadedImplCopyWithImpl(
+      _$TypesLoadedImpl _value, $Res Function(_$TypesLoadedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$TypesLoadedImpl implements _TypesLoaded {
+  const _$TypesLoadedImpl();
+
+  @override
+  String toString() {
+    return 'CarState.typesLoaded()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$TypesLoadedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
+    required TResult Function() successAdded,
+    required TResult Function() successUpdated,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
+  }) {
+    return typesLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
+    TResult? Function()? successAdded,
+    TResult? Function()? successUpdated,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
+  }) {
+    return typesLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
+    TResult Function()? successAdded,
+    TResult Function()? successUpdated,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
+    required TResult orElse(),
+  }) {
+    if (typesLoaded != null) {
+      return typesLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
+    required TResult Function(_SuccessAdded value) successAdded,
+    required TResult Function(_SuccessUpdated value) successUpdated,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return typesLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
+    TResult? Function(_SuccessAdded value)? successAdded,
+    TResult? Function(_SuccessUpdated value)? successUpdated,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return typesLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
+    TResult Function(_SuccessAdded value)? successAdded,
+    TResult Function(_SuccessUpdated value)? successUpdated,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (typesLoaded != null) {
+      return typesLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TypesLoaded implements CarState {
+  const factory _TypesLoaded() = _$TypesLoadedImpl;
+}
+
+/// @nodoc
+abstract class _$$CarsLoadedImplCopyWith<$Res> {
+  factory _$$CarsLoadedImplCopyWith(
+          _$CarsLoadedImpl value, $Res Function(_$CarsLoadedImpl) then) =
+      __$$CarsLoadedImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CarsLoadedImplCopyWithImpl<$Res>
+    extends _$CarStateCopyWithImpl<$Res, _$CarsLoadedImpl>
+    implements _$$CarsLoadedImplCopyWith<$Res> {
+  __$$CarsLoadedImplCopyWithImpl(
+      _$CarsLoadedImpl _value, $Res Function(_$CarsLoadedImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CarsLoadedImpl implements _CarsLoaded {
+  const _$CarsLoadedImpl();
+
+  @override
+  String toString() {
+    return 'CarState.carsLoaded()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CarsLoadedImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
+    required TResult Function() successAdded,
+    required TResult Function() successUpdated,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
+  }) {
+    return carsLoaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
+    TResult? Function()? successAdded,
+    TResult? Function()? successUpdated,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
+  }) {
+    return carsLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
+    TResult Function()? successAdded,
+    TResult Function()? successUpdated,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
+    required TResult orElse(),
+  }) {
+    if (carsLoaded != null) {
+      return carsLoaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
+    required TResult Function(_SuccessAdded value) successAdded,
+    required TResult Function(_SuccessUpdated value) successUpdated,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
+    required TResult Function(_Failure value) failure,
+  }) {
+    return carsLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
+    TResult? Function(_SuccessAdded value)? successAdded,
+    TResult? Function(_SuccessUpdated value)? successUpdated,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
+    TResult? Function(_Failure value)? failure,
+  }) {
+    return carsLoaded?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
+    TResult Function(_SuccessAdded value)? successAdded,
+    TResult Function(_SuccessUpdated value)? successUpdated,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
+    TResult Function(_Failure value)? failure,
+    required TResult orElse(),
+  }) {
+    if (carsLoaded != null) {
+      return carsLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CarsLoaded implements CarState {
+  const factory _CarsLoaded() = _$CarsLoadedImpl;
 }
 
 /// @nodoc
@@ -2850,9 +3295,6 @@ class __$$SuccessAddedImplCopyWithImpl<$Res>
   __$$SuccessAddedImplCopyWithImpl(
       _$SuccessAddedImpl _value, $Res Function(_$SuccessAddedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2879,13 +3321,15 @@ class _$SuccessAddedImpl implements _SuccessAdded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
     required TResult Function() successAdded,
-    required TResult Function() successDelete,
     required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
   }) {
     return successAdded();
   }
@@ -2895,13 +3339,15 @@ class _$SuccessAddedImpl implements _SuccessAdded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
     TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
     TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
   }) {
     return successAdded?.call();
   }
@@ -2911,13 +3357,15 @@ class _$SuccessAddedImpl implements _SuccessAdded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
     TResult Function()? successAdded,
-    TResult Function()? successDelete,
     TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (successAdded != null) {
@@ -2931,12 +3379,14 @@ class _$SuccessAddedImpl implements _SuccessAdded {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
     required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
     required TResult Function(_Failure value) failure,
   }) {
     return successAdded(this);
@@ -2947,12 +3397,14 @@ class _$SuccessAddedImpl implements _SuccessAdded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
     TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
     TResult? Function(_Failure value)? failure,
   }) {
     return successAdded?.call(this);
@@ -2963,12 +3415,14 @@ class _$SuccessAddedImpl implements _SuccessAdded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
     TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -2981,153 +3435,6 @@ class _$SuccessAddedImpl implements _SuccessAdded {
 
 abstract class _SuccessAdded implements CarState {
   const factory _SuccessAdded() = _$SuccessAddedImpl;
-}
-
-/// @nodoc
-abstract class _$$SuccessDeleteImplCopyWith<$Res> {
-  factory _$$SuccessDeleteImplCopyWith(
-          _$SuccessDeleteImpl value, $Res Function(_$SuccessDeleteImpl) then) =
-      __$$SuccessDeleteImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$SuccessDeleteImplCopyWithImpl<$Res>
-    extends _$CarStateCopyWithImpl<$Res, _$SuccessDeleteImpl>
-    implements _$$SuccessDeleteImplCopyWith<$Res> {
-  __$$SuccessDeleteImplCopyWithImpl(
-      _$SuccessDeleteImpl _value, $Res Function(_$SuccessDeleteImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$SuccessDeleteImpl implements _SuccessDelete {
-  const _$SuccessDeleteImpl();
-
-  @override
-  String toString() {
-    return 'CarState.successDelete()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessDeleteImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function() success,
-    required TResult Function() successAdded,
-    required TResult Function() successDelete,
-    required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
-  }) {
-    return successDelete();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function()? success,
-    TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
-    TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
-  }) {
-    return successDelete?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function()? success,
-    TResult Function()? successAdded,
-    TResult Function()? successDelete,
-    TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
-    required TResult orElse(),
-  }) {
-    if (successDelete != null) {
-      return successDelete();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
-    required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
-    required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
-    required TResult Function(_Failure value) failure,
-  }) {
-    return successDelete(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
-    TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
-    TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
-    TResult? Function(_Failure value)? failure,
-  }) {
-    return successDelete?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
-    TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
-    TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
-    TResult Function(_Failure value)? failure,
-    required TResult orElse(),
-  }) {
-    if (successDelete != null) {
-      return successDelete(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SuccessDelete implements CarState {
-  const factory _SuccessDelete() = _$SuccessDeleteImpl;
 }
 
 /// @nodoc
@@ -3144,9 +3451,6 @@ class __$$SuccessUpdatedImplCopyWithImpl<$Res>
   __$$SuccessUpdatedImplCopyWithImpl(
       _$SuccessUpdatedImpl _value, $Res Function(_$SuccessUpdatedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3173,13 +3477,15 @@ class _$SuccessUpdatedImpl implements _SuccessUpdated {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
     required TResult Function() successAdded,
-    required TResult Function() successDelete,
     required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
   }) {
     return successUpdated();
   }
@@ -3189,13 +3495,15 @@ class _$SuccessUpdatedImpl implements _SuccessUpdated {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
     TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
     TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
   }) {
     return successUpdated?.call();
   }
@@ -3205,13 +3513,15 @@ class _$SuccessUpdatedImpl implements _SuccessUpdated {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
     TResult Function()? successAdded,
-    TResult Function()? successDelete,
     TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (successUpdated != null) {
@@ -3225,12 +3535,14 @@ class _$SuccessUpdatedImpl implements _SuccessUpdated {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
     required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
     required TResult Function(_Failure value) failure,
   }) {
     return successUpdated(this);
@@ -3241,12 +3553,14 @@ class _$SuccessUpdatedImpl implements _SuccessUpdated {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
     TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
     TResult? Function(_Failure value)? failure,
   }) {
     return successUpdated?.call(this);
@@ -3257,12 +3571,14 @@ class _$SuccessUpdatedImpl implements _SuccessUpdated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
     TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -3278,38 +3594,35 @@ abstract class _SuccessUpdated implements CarState {
 }
 
 /// @nodoc
-abstract class _$$UpdateUiImplCopyWith<$Res> {
-  factory _$$UpdateUiImplCopyWith(
-          _$UpdateUiImpl value, $Res Function(_$UpdateUiImpl) then) =
-      __$$UpdateUiImplCopyWithImpl<$Res>;
+abstract class _$$SuccessDeleteImplCopyWith<$Res> {
+  factory _$$SuccessDeleteImplCopyWith(
+          _$SuccessDeleteImpl value, $Res Function(_$SuccessDeleteImpl) then) =
+      __$$SuccessDeleteImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$UpdateUiImplCopyWithImpl<$Res>
-    extends _$CarStateCopyWithImpl<$Res, _$UpdateUiImpl>
-    implements _$$UpdateUiImplCopyWith<$Res> {
-  __$$UpdateUiImplCopyWithImpl(
-      _$UpdateUiImpl _value, $Res Function(_$UpdateUiImpl) _then)
+class __$$SuccessDeleteImplCopyWithImpl<$Res>
+    extends _$CarStateCopyWithImpl<$Res, _$SuccessDeleteImpl>
+    implements _$$SuccessDeleteImplCopyWith<$Res> {
+  __$$SuccessDeleteImplCopyWithImpl(
+      _$SuccessDeleteImpl _value, $Res Function(_$SuccessDeleteImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$UpdateUiImpl implements _UpdateUi {
-  const _$UpdateUiImpl();
+class _$SuccessDeleteImpl implements _SuccessDelete {
+  const _$SuccessDeleteImpl();
 
   @override
   String toString() {
-    return 'CarState.updateUi()';
+    return 'CarState.successDelete()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$UpdateUiImpl);
+        (other.runtimeType == runtimeType && other is _$SuccessDeleteImpl);
   }
 
   @override
@@ -3320,15 +3633,17 @@ class _$UpdateUiImpl implements _UpdateUi {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
     required TResult Function() successAdded,
-    required TResult Function() successDelete,
     required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
   }) {
-    return updateUi();
+    return successDelete();
   }
 
   @override
@@ -3336,15 +3651,17 @@ class _$UpdateUiImpl implements _UpdateUi {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
     TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
     TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
   }) {
-    return updateUi?.call();
+    return successDelete?.call();
   }
 
   @override
@@ -3352,17 +3669,19 @@ class _$UpdateUiImpl implements _UpdateUi {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
     TResult Function()? successAdded,
-    TResult Function()? successDelete,
     TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
-    if (updateUi != null) {
-      return updateUi();
+    if (successDelete != null) {
+      return successDelete();
     }
     return orElse();
   }
@@ -3372,15 +3691,17 @@ class _$UpdateUiImpl implements _UpdateUi {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
     required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
     required TResult Function(_Failure value) failure,
   }) {
-    return updateUi(this);
+    return successDelete(this);
   }
 
   @override
@@ -3388,15 +3709,17 @@ class _$UpdateUiImpl implements _UpdateUi {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
     TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
     TResult? Function(_Failure value)? failure,
   }) {
-    return updateUi?.call(this);
+    return successDelete?.call(this);
   }
 
   @override
@@ -3404,59 +3727,58 @@ class _$UpdateUiImpl implements _UpdateUi {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
     TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
-    if (updateUi != null) {
-      return updateUi(this);
+    if (successDelete != null) {
+      return successDelete(this);
     }
     return orElse();
   }
 }
 
-abstract class _UpdateUi implements CarState {
-  const factory _UpdateUi() = _$UpdateUiImpl;
+abstract class _SuccessDelete implements CarState {
+  const factory _SuccessDelete() = _$SuccessDeleteImpl;
 }
 
 /// @nodoc
-abstract class _$$SuccessUIImplCopyWith<$Res> {
-  factory _$$SuccessUIImplCopyWith(
-          _$SuccessUIImpl value, $Res Function(_$SuccessUIImpl) then) =
-      __$$SuccessUIImplCopyWithImpl<$Res>;
+abstract class _$$ImagePickedImplCopyWith<$Res> {
+  factory _$$ImagePickedImplCopyWith(
+          _$ImagePickedImpl value, $Res Function(_$ImagePickedImpl) then) =
+      __$$ImagePickedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SuccessUIImplCopyWithImpl<$Res>
-    extends _$CarStateCopyWithImpl<$Res, _$SuccessUIImpl>
-    implements _$$SuccessUIImplCopyWith<$Res> {
-  __$$SuccessUIImplCopyWithImpl(
-      _$SuccessUIImpl _value, $Res Function(_$SuccessUIImpl) _then)
+class __$$ImagePickedImplCopyWithImpl<$Res>
+    extends _$CarStateCopyWithImpl<$Res, _$ImagePickedImpl>
+    implements _$$ImagePickedImplCopyWith<$Res> {
+  __$$ImagePickedImplCopyWithImpl(
+      _$ImagePickedImpl _value, $Res Function(_$ImagePickedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$SuccessUIImpl implements _SuccessUI {
-  const _$SuccessUIImpl();
+class _$ImagePickedImpl implements _ImagePicked {
+  const _$ImagePickedImpl();
 
   @override
   String toString() {
-    return 'CarState.successUI()';
+    return 'CarState.imagePicked()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SuccessUIImpl);
+        (other.runtimeType == runtimeType && other is _$ImagePickedImpl);
   }
 
   @override
@@ -3467,15 +3789,17 @@ class _$SuccessUIImpl implements _SuccessUI {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
     required TResult Function() successAdded,
-    required TResult Function() successDelete,
     required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
   }) {
-    return successUI();
+    return imagePicked();
   }
 
   @override
@@ -3483,15 +3807,17 @@ class _$SuccessUIImpl implements _SuccessUI {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
     TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
     TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
   }) {
-    return successUI?.call();
+    return imagePicked?.call();
   }
 
   @override
@@ -3499,17 +3825,19 @@ class _$SuccessUIImpl implements _SuccessUI {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
     TResult Function()? successAdded,
-    TResult Function()? successDelete,
     TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
-    if (successUI != null) {
-      return successUI();
+    if (imagePicked != null) {
+      return imagePicked();
     }
     return orElse();
   }
@@ -3519,15 +3847,17 @@ class _$SuccessUIImpl implements _SuccessUI {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
     required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
     required TResult Function(_Failure value) failure,
   }) {
-    return successUI(this);
+    return imagePicked(this);
   }
 
   @override
@@ -3535,15 +3865,17 @@ class _$SuccessUIImpl implements _SuccessUI {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
     TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
     TResult? Function(_Failure value)? failure,
   }) {
-    return successUI?.call(this);
+    return imagePicked?.call(this);
   }
 
   @override
@@ -3551,24 +3883,26 @@ class _$SuccessUIImpl implements _SuccessUI {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
     TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
-    if (successUI != null) {
-      return successUI(this);
+    if (imagePicked != null) {
+      return imagePicked(this);
     }
     return orElse();
   }
 }
 
-abstract class _SuccessUI implements CarState {
-  const factory _SuccessUI() = _$SuccessUIImpl;
+abstract class _ImagePicked implements CarState {
+  const factory _ImagePicked() = _$ImagePickedImpl;
 }
 
 /// @nodoc
@@ -3577,7 +3911,7 @@ abstract class _$$FailureImplCopyWith<$Res> {
           _$FailureImpl value, $Res Function(_$FailureImpl) then) =
       __$$FailureImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String err});
+  $Res call({String error});
 }
 
 /// @nodoc
@@ -3588,17 +3922,15 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? err = null,
+    Object? error = null,
   }) {
     return _then(_$FailureImpl(
-      null == err
-          ? _value.err
-          : err // ignore: cast_nullable_to_non_nullable
+      null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -3607,14 +3939,14 @@ class __$$FailureImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FailureImpl implements _Failure {
-  const _$FailureImpl(this.err);
+  const _$FailureImpl(this.error);
 
   @override
-  final String err;
+  final String error;
 
   @override
   String toString() {
-    return 'CarState.failure(err: $err)';
+    return 'CarState.failure(error: $error)';
   }
 
   @override
@@ -3622,15 +3954,13 @@ class _$FailureImpl implements _Failure {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FailureImpl &&
-            (identical(other.err, err) || other.err == err));
+            (identical(other.error, error) || other.error == error));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, err);
+  int get hashCode => Object.hash(runtimeType, error);
 
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -3641,15 +3971,17 @@ class _$FailureImpl implements _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function() success,
+    required TResult Function() makesLoaded,
+    required TResult Function() modelsLoaded,
+    required TResult Function() typesLoaded,
+    required TResult Function() carsLoaded,
     required TResult Function() successAdded,
-    required TResult Function() successDelete,
     required TResult Function() successUpdated,
-    required TResult Function() updateUi,
-    required TResult Function() successUI,
-    required TResult Function(String err) failure,
+    required TResult Function() successDelete,
+    required TResult Function() imagePicked,
+    required TResult Function(String error) failure,
   }) {
-    return failure(err);
+    return failure(error);
   }
 
   @override
@@ -3657,15 +3989,17 @@ class _$FailureImpl implements _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function()? success,
+    TResult? Function()? makesLoaded,
+    TResult? Function()? modelsLoaded,
+    TResult? Function()? typesLoaded,
+    TResult? Function()? carsLoaded,
     TResult? Function()? successAdded,
-    TResult? Function()? successDelete,
     TResult? Function()? successUpdated,
-    TResult? Function()? updateUi,
-    TResult? Function()? successUI,
-    TResult? Function(String err)? failure,
+    TResult? Function()? successDelete,
+    TResult? Function()? imagePicked,
+    TResult? Function(String error)? failure,
   }) {
-    return failure?.call(err);
+    return failure?.call(error);
   }
 
   @override
@@ -3673,17 +4007,19 @@ class _$FailureImpl implements _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function()? success,
+    TResult Function()? makesLoaded,
+    TResult Function()? modelsLoaded,
+    TResult Function()? typesLoaded,
+    TResult Function()? carsLoaded,
     TResult Function()? successAdded,
-    TResult Function()? successDelete,
     TResult Function()? successUpdated,
-    TResult Function()? updateUi,
-    TResult Function()? successUI,
-    TResult Function(String err)? failure,
+    TResult Function()? successDelete,
+    TResult Function()? imagePicked,
+    TResult Function(String error)? failure,
     required TResult orElse(),
   }) {
     if (failure != null) {
-      return failure(err);
+      return failure(error);
     }
     return orElse();
   }
@@ -3693,12 +4029,14 @@ class _$FailureImpl implements _Failure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Loading value) loading,
-    required TResult Function(_Success value) success,
+    required TResult Function(_MakesLoaded value) makesLoaded,
+    required TResult Function(_ModelsLoaded value) modelsLoaded,
+    required TResult Function(_TypesLoaded value) typesLoaded,
+    required TResult Function(_CarsLoaded value) carsLoaded,
     required TResult Function(_SuccessAdded value) successAdded,
-    required TResult Function(_SuccessDelete value) successDelete,
     required TResult Function(_SuccessUpdated value) successUpdated,
-    required TResult Function(_UpdateUi value) updateUi,
-    required TResult Function(_SuccessUI value) successUI,
+    required TResult Function(_SuccessDelete value) successDelete,
+    required TResult Function(_ImagePicked value) imagePicked,
     required TResult Function(_Failure value) failure,
   }) {
     return failure(this);
@@ -3709,12 +4047,14 @@ class _$FailureImpl implements _Failure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
     TResult? Function(_Loading value)? loading,
-    TResult? Function(_Success value)? success,
+    TResult? Function(_MakesLoaded value)? makesLoaded,
+    TResult? Function(_ModelsLoaded value)? modelsLoaded,
+    TResult? Function(_TypesLoaded value)? typesLoaded,
+    TResult? Function(_CarsLoaded value)? carsLoaded,
     TResult? Function(_SuccessAdded value)? successAdded,
-    TResult? Function(_SuccessDelete value)? successDelete,
     TResult? Function(_SuccessUpdated value)? successUpdated,
-    TResult? Function(_UpdateUi value)? updateUi,
-    TResult? Function(_SuccessUI value)? successUI,
+    TResult? Function(_SuccessDelete value)? successDelete,
+    TResult? Function(_ImagePicked value)? imagePicked,
     TResult? Function(_Failure value)? failure,
   }) {
     return failure?.call(this);
@@ -3725,12 +4065,14 @@ class _$FailureImpl implements _Failure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Loading value)? loading,
-    TResult Function(_Success value)? success,
+    TResult Function(_MakesLoaded value)? makesLoaded,
+    TResult Function(_ModelsLoaded value)? modelsLoaded,
+    TResult Function(_TypesLoaded value)? typesLoaded,
+    TResult Function(_CarsLoaded value)? carsLoaded,
     TResult Function(_SuccessAdded value)? successAdded,
-    TResult Function(_SuccessDelete value)? successDelete,
     TResult Function(_SuccessUpdated value)? successUpdated,
-    TResult Function(_UpdateUi value)? updateUi,
-    TResult Function(_SuccessUI value)? successUI,
+    TResult Function(_SuccessDelete value)? successDelete,
+    TResult Function(_ImagePicked value)? imagePicked,
     TResult Function(_Failure value)? failure,
     required TResult orElse(),
   }) {
@@ -3742,13 +4084,10 @@ class _$FailureImpl implements _Failure {
 }
 
 abstract class _Failure implements CarState {
-  const factory _Failure(final String err) = _$FailureImpl;
+  const factory _Failure(final String error) = _$FailureImpl;
 
-  String get err;
-
-  /// Create a copy of CarState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  String get error;
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

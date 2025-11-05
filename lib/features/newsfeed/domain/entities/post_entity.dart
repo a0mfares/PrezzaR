@@ -37,6 +37,10 @@ class PostEntity extends $PostEntity {
   @JsonKey(fromJson: post_imagesFromMap, toJson: post_imagesToMap)
   final List<PostImagesEntity> post_images;
 
+  @HiveField(8)
+  final bool is_liked;
+  @HiveField(9)
+  final bool is_saved;
   PostEntity({
     required this.uuid,
     required this.contant,
@@ -46,6 +50,9 @@ class PostEntity extends $PostEntity {
     required this.auther_info,
     required this.post_tags,
     required this.post_images,
+    required this.is_liked,
+        required this.is_saved,
+
   });
   factory PostEntity.empty() => PostEntity(
         uuid: '',
@@ -56,6 +63,8 @@ class PostEntity extends $PostEntity {
         auther_info: AutherInfoEntity.empty(),
         post_tags: [],
         post_images: [],
+        is_liked: false,
+        is_saved: false
       );
 
   factory PostEntity.fromModel(PostModel model) =>
@@ -64,7 +73,7 @@ class PostEntity extends $PostEntity {
   static AutherInfoEntity auther_infoFromMap(Map<String, dynamic> json) {
     return AutherInfoEntity.fromJson(json);
   }
-
+ 
   static Map<String, dynamic> auther_infoToMap(AutherInfoEntity instance) {
     return instance.toJson();
   }
@@ -84,6 +93,31 @@ class PostEntity extends $PostEntity {
   static List<Map<String, dynamic>> post_imagesToMap(
       List<PostImagesEntity> items) {
     return items.map((e) => e.toJson()).toList();
+  }
+  PostEntity copyWith({
+    String? uuid,
+    String? contant,
+    int? number_of_likes,
+    int? number_of_comments,
+    String? created_at,
+    AutherInfoEntity? auther_info,
+    List<PostTagsEntity>? post_tags,
+    List<PostImagesEntity>? post_images,
+    bool? is_liked,
+    bool? is_saved,
+  }) {
+    return PostEntity(
+      uuid: uuid ?? this.uuid,
+      contant: contant ?? this.contant,
+      number_of_likes: number_of_likes ?? this.number_of_likes,
+      number_of_comments: number_of_comments ?? this.number_of_comments,
+      created_at: created_at ?? this.created_at,
+      auther_info: auther_info ?? this.auther_info,
+      post_tags: post_tags ?? this.post_tags,
+      post_images: post_images ?? this.post_images,
+      is_liked: is_liked ?? this.is_liked,
+      is_saved: is_saved ?? this.is_saved,
+    );
   }
 }
 

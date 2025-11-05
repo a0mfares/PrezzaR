@@ -1,10 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
-import 'package:prezza/core/constants/assets.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/shared/widgets/under_montains.dart';

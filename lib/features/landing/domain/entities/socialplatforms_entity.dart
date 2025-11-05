@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 import 'package:prezza/features/landing/data/models/socialplatforms_model.dart';
 

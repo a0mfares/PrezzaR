@@ -344,6 +344,18 @@ abstract class AppLocalizations {
   /// **'Verify Email'**
   String get verifyEmail;
 
+  /// No description provided for @plsActivatePhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Please activate your phone'**
+  String get plsActivatePhone;
+
+  /// No description provided for @verifyPhone.
+  ///
+  /// In en, this message translates to:
+  /// **'Verify Phone'**
+  String get verifyPhone;
+
   /// No description provided for @continueWithPhoneInst.
   ///
   /// In en, this message translates to:
@@ -1700,6 +1712,24 @@ abstract class AppLocalizations {
   /// **'Notifications regarding important app changes, new features, or updates.'**
   String get appUpdatesSubTitle;
 
+  /// No description provided for @orderNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications about placed, ongoing, and delivered orders.'**
+  String get orderNotifications;
+
+  /// No description provided for @discountNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications about discounts, special offers, and seasonal promotions.'**
+  String get discountNotifications;
+
+  /// No description provided for @importantNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications about important app changes or new updates.'**
+  String get importantNotifications;
+
   /// No description provided for @applePay.
   ///
   /// In en, this message translates to:
@@ -1724,11 +1754,11 @@ abstract class AppLocalizations {
   /// **'choose your car'**
   String get chooseCar;
 
-  /// No description provided for @youCanCanel.
+  /// No description provided for @youCanCancel.
   ///
   /// In en, this message translates to:
   /// **'You can cancel it within {time} mins max'**
-  String youCanCanel(String time);
+  String youCanCancel(String time);
 
   /// No description provided for @youCantCancel.
   ///
@@ -2135,7 +2165,7 @@ abstract class AppLocalizations {
   /// No description provided for @welcomeTitle.
   ///
   /// In en, this message translates to:
-  /// **'we’re glad that that you are here'**
+  /// **'we\'re glad that that you are here'**
   String get welcomeTitle;
 
   /// No description provided for @orderAhead.
@@ -2276,18 +2306,6 @@ abstract class AppLocalizations {
   /// **'Any Special Request?'**
   String get anySpecialRequest;
 
-  /// No description provided for @plsActivatePhone.
-  ///
-  /// In en, this message translates to:
-  /// **'please activate you phone'**
-  String get plsActivatePhone;
-
-  /// No description provided for @verifyPhone.
-  ///
-  /// In en, this message translates to:
-  /// **'very phone'**
-  String get verifyPhone;
-
   /// No description provided for @searchITem.
   ///
   /// In en, this message translates to:
@@ -2317,6 +2335,1338 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Retry'**
   String get retry;
+
+  /// No description provided for @numberOfSeats.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of Seats'**
+  String get numberOfSeats;
+
+  /// No description provided for @enterNumberOfSeats.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter number of seats'**
+  String get enterNumberOfSeats;
+
+  /// No description provided for @bookingDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking Date'**
+  String get bookingDate;
+
+  /// No description provided for @selectDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Date'**
+  String get selectDate;
+
+  /// No description provided for @numberOfSeatsRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Number of seats is required'**
+  String get numberOfSeatsRequired;
+
+  /// No description provided for @bookingDateRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Booking date is required'**
+  String get bookingDateRequired;
+
+  /// No description provided for @selectBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'Please select a branch'**
+  String get selectBranch;
+
+  /// No description provided for @completeSetup.
+  ///
+  /// In en, this message translates to:
+  /// **'Complete setup'**
+  String get completeSetup;
+
+  /// No description provided for @userIdNotFound.
+  ///
+  /// In en, this message translates to:
+  /// **'User ID not found'**
+  String get userIdNotFound;
+
+  /// No description provided for @selectMake.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Make'**
+  String get selectMake;
+
+  /// No description provided for @selectModel.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Model'**
+  String get selectModel;
+
+  /// No description provided for @carAddedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Car added successfully'**
+  String get carAddedSuccess;
+
+  /// No description provided for @carUpdatedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Car updated successfully'**
+  String get carUpdatedSuccess;
+
+  /// No description provided for @carDeletedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Car deleted successfully'**
+  String get carDeletedSuccess;
+
+  /// No description provided for @fillAllCarFields.
+  ///
+  /// In en, this message translates to:
+  /// **'Please fill all fields and select an image'**
+  String get fillAllCarFields;
+
+  /// No description provided for @cartIdEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart ID is empty'**
+  String get cartIdEmpty;
+
+  /// No description provided for @missingRequiredParams.
+  ///
+  /// In en, this message translates to:
+  /// **'Missing required parameters'**
+  String get missingRequiredParams;
+
+  /// No description provided for @itemUuidEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'Item UUID is empty'**
+  String get itemUuidEmpty;
+
+  /// No description provided for @cartClearedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart cleared successfully'**
+  String get cartClearedSuccess;
+
+  /// No description provided for @itemAddedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Item added to cart successfully'**
+  String get itemAddedSuccess;
+
+  /// No description provided for @itemRemovedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Item removed from cart successfully'**
+  String get itemRemovedSuccess;
+
+  /// No description provided for @itemUpdatedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Item quantity updated successfully'**
+  String get itemUpdatedSuccess;
+
+  /// No description provided for @couponAddedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Coupon applied successfully'**
+  String get couponAddedSuccess;
+
+  /// No description provided for @couponRemovedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Coupon removed successfully'**
+  String get couponRemovedSuccess;
+
+  /// No description provided for @cartClosedSuccess.
+  ///
+  /// In en, this message translates to:
+  /// **'Cart closed successfully'**
+  String get cartClosedSuccess;
+
+  /// No description provided for @failureGetUserCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to get user cart'**
+  String get failureGetUserCart;
+
+  /// No description provided for @failureGetCartDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to get cart details'**
+  String get failureGetCartDetails;
+
+  /// No description provided for @failureClearCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to clear cart'**
+  String get failureClearCart;
+
+  /// No description provided for @failureGetPreparingTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to get preparing time'**
+  String get failureGetPreparingTime;
+
+  /// No description provided for @failureAddItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to add item to cart'**
+  String get failureAddItem;
+
+  /// No description provided for @failureRemoveItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to remove item from cart'**
+  String get failureRemoveItem;
+
+  /// No description provided for @failureUpdateItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to update item quantity'**
+  String get failureUpdateItem;
+
+  /// No description provided for @failureGetOftenProductCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to get often ordered products'**
+  String get failureGetOftenProductCart;
+
+  /// No description provided for @failureAddCoupon.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to apply coupon'**
+  String get failureAddCoupon;
+
+  /// No description provided for @failureCloseCart.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to close cart'**
+  String get failureCloseCart;
+
+  /// No description provided for @failureGetCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to get categories'**
+  String get failureGetCategories;
+
+  /// No description provided for @failureGetSponsors.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to get sponsors'**
+  String get failureGetSponsors;
+
+  /// No description provided for @noSponsorsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No sponsors available'**
+  String get noSponsorsAvailable;
+
+  /// No description provided for @categoryLoadingError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading categories'**
+  String get categoryLoadingError;
+
+  /// No description provided for @sponsorsLoadingError.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading sponsors'**
+  String get sponsorsLoadingError;
+
+  /// No description provided for @alreadyInFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Already in favorites'**
+  String get alreadyInFavorites;
+
+  /// No description provided for @vendorNotInFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor not in favorites'**
+  String get vendorNotInFavorites;
+
+  /// No description provided for @addedToFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Added to favorites'**
+  String get addedToFavorites;
+
+  /// No description provided for @removedFromFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Removed from favorites'**
+  String get removedFromFavorites;
+
+  /// No description provided for @failedToLoadFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load favorites'**
+  String get failedToLoadFavorites;
+
+  /// No description provided for @vendorsInFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} {count, plural, =1{vendor} other{vendors}} in favorites'**
+  String vendorsInFavorites(int count);
+
+  /// No description provided for @errorLoadingFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading favorites'**
+  String get errorLoadingFavorites;
+
+  /// No description provided for @noFavoritesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No favorites found'**
+  String get noFavoritesFound;
+
+  /// No description provided for @refreshFavorites.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh favorites'**
+  String get refreshFavorites;
+
+  /// No description provided for @failedToLoadBusinessDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load business details'**
+  String get failedToLoadBusinessDetails;
+
+  /// No description provided for @error.
+  ///
+  /// In en, this message translates to:
+  /// **'Error'**
+  String get error;
+
+  /// No description provided for @deleteAccount.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete account'**
+  String get deleteAccount;
+
+  /// No description provided for @areYouSure.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure?'**
+  String get areYouSure;
+
+  /// No description provided for @tutorialSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'SKIP'**
+  String get tutorialSkip;
+
+  /// No description provided for @clickToShowItems.
+  ///
+  /// In en, this message translates to:
+  /// **'Click here to show your items'**
+  String get clickToShowItems;
+
+  /// No description provided for @clickToAddNewItem.
+  ///
+  /// In en, this message translates to:
+  /// **'Click again to add a new item'**
+  String get clickToAddNewItem;
+
+  /// No description provided for @averageRating.
+  ///
+  /// In en, this message translates to:
+  /// **'Average Rating'**
+  String get averageRating;
+
+  /// No description provided for @totalReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Reviews'**
+  String get totalReviews;
+
+  /// No description provided for @vendorBalance.
+  ///
+  /// In en, this message translates to:
+  /// **'Vendor Balance'**
+  String get vendorBalance;
+
+  /// No description provided for @noOrdersAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No orders available'**
+  String get noOrdersAvailable;
+
+  /// No description provided for @noProductsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No products available'**
+  String get noProductsAvailable;
+
+  /// No description provided for @noNotificationsAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications available'**
+  String get noNotificationsAvailable;
+
+  /// No description provided for @businessDetails.
+  ///
+  /// In en, this message translates to:
+  /// **'Business Details'**
+  String get businessDetails;
+
+  /// No description provided for @orderStatus.
+  ///
+  /// In en, this message translates to:
+  /// **'Order Status'**
+  String get orderStatus;
+
+  /// No description provided for @revenue.
+  ///
+  /// In en, this message translates to:
+  /// **'Revenue'**
+  String get revenue;
+
+  /// No description provided for @customerReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Customer Reviews'**
+  String get customerReviews;
+
+  /// No description provided for @popularProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Popular Products'**
+  String get popularProducts;
+
+  /// No description provided for @failedToLoadReviews.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load reviews'**
+  String get failedToLoadReviews;
+
+  /// No description provided for @failedToLoadCommonIssues.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load common issues'**
+  String get failedToLoadCommonIssues;
+
+  /// No description provided for @failedToLoadFAQ.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load FAQ'**
+  String get failedToLoadFAQ;
+
+  /// No description provided for @failedToLoadSocialPlatforms.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load social platforms'**
+  String get failedToLoadSocialPlatforms;
+
+  /// No description provided for @failedToLoadDownloadPlatforms.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load download platforms'**
+  String get failedToLoadDownloadPlatforms;
+
+  /// No description provided for @failedToAddReview.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to add review'**
+  String get failedToAddReview;
+
+  /// No description provided for @reviewAddedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Review added successfully'**
+  String get reviewAddedSuccessfully;
+
+  /// No description provided for @searchIssues.
+  ///
+  /// In en, this message translates to:
+  /// **'Search issues'**
+  String get searchIssues;
+
+  /// No description provided for @noReviewsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No reviews found'**
+  String get noReviewsFound;
+
+  /// No description provided for @noCommonIssuesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No common issues found'**
+  String get noCommonIssuesFound;
+
+  /// No description provided for @noFAQFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No FAQ found'**
+  String get noFAQFound;
+
+  /// No description provided for @noSocialPlatformsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No social platforms found'**
+  String get noSocialPlatformsFound;
+
+  /// No description provided for @noDownloadPlatformsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No download platforms found'**
+  String get noDownloadPlatformsFound;
+
+  /// No description provided for @successAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Success added'**
+  String get successAdded;
+
+  /// No description provided for @successUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Success updated'**
+  String get successUpdated;
+
+  /// No description provided for @successDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Success deleted'**
+  String get successDeleted;
+
+  /// No description provided for @locationServicesDisabled.
+  ///
+  /// In en, this message translates to:
+  /// **'Location services are disabled'**
+  String get locationServicesDisabled;
+
+  /// No description provided for @locationPermissionsDenied.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permissions are denied'**
+  String get locationPermissionsDenied;
+
+  /// No description provided for @locationPermissionsDeniedForever.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permissions are permanently denied'**
+  String get locationPermissionsDeniedForever;
+
+  /// No description provided for @houseNumberHint.
+  ///
+  /// In en, this message translates to:
+  /// **'House Number / Flat / Block No.'**
+  String get houseNumberHint;
+
+  /// No description provided for @landmarkHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Near ABC School'**
+  String get landmarkHint;
+
+  /// No description provided for @searchForLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for a building, street or ...'**
+  String get searchForLocation;
+
+  /// No description provided for @noLocationsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No locations found'**
+  String get noLocationsFound;
+
+  /// No description provided for @selectLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Location'**
+  String get selectLocation;
+
+  /// No description provided for @authRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Authentication Required'**
+  String get authRequired;
+
+  /// No description provided for @biometricAuth.
+  ///
+  /// In en, this message translates to:
+  /// **'Use biometric authentication'**
+  String get biometricAuth;
+
+  /// No description provided for @passwordAuth.
+  ///
+  /// In en, this message translates to:
+  /// **'Enter your password'**
+  String get passwordAuth;
+
+  /// No description provided for @locationPicker.
+  ///
+  /// In en, this message translates to:
+  /// **'Location Picker'**
+  String get locationPicker;
+
+  /// No description provided for @confirmLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Confirm Location'**
+  String get confirmLocation;
+
+  /// No description provided for @locationUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Location updated successfully'**
+  String get locationUpdated;
+
+  /// No description provided for @locationAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Location added successfully'**
+  String get locationAdded;
+
+  /// No description provided for @locationDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Location deleted successfully'**
+  String get locationDeleted;
+
+  /// No description provided for @locationError.
+  ///
+  /// In en, this message translates to:
+  /// **'Location error'**
+  String get locationError;
+
+  /// No description provided for @emptyLocationList.
+  ///
+  /// In en, this message translates to:
+  /// **'No locations added yet'**
+  String get emptyLocationList;
+
+  /// No description provided for @addLocationButton.
+  ///
+  /// In en, this message translates to:
+  /// **'Add New Location'**
+  String get addLocationButton;
+
+  /// No description provided for @editLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Location'**
+  String get editLocation;
+
+  /// No description provided for @confirmDeleteLocation.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this location?'**
+  String get confirmDeleteLocation;
+
+  /// No description provided for @confirmDeleteBranch.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this branch?'**
+  String get confirmDeleteBranch;
+
+  /// No description provided for @branchDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch deleted successfully'**
+  String get branchDeleted;
+
+  /// No description provided for @branchUpdated.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch updated successfully'**
+  String get branchUpdated;
+
+  /// No description provided for @branchAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Branch added successfully'**
+  String get branchAdded;
+
+  /// No description provided for @locationPermissionRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Location permission is required to use this feature'**
+  String get locationPermissionRequired;
+
+  /// No description provided for @enableLocationServices.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enable location services to continue'**
+  String get enableLocationServices;
+
+  /// No description provided for @locationAccessRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Location access is required for this feature to work properly'**
+  String get locationAccessRequired;
+
+  /// No description provided for @failedToLoadPosts.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load posts'**
+  String get failedToLoadPosts;
+
+  /// No description provided for @failedToCreatePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to create post'**
+  String get failedToCreatePost;
+
+  /// No description provided for @failedToLoadUserPosts.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load user posts'**
+  String get failedToLoadUserPosts;
+
+  /// No description provided for @failedToLoadSavedPosts.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load saved posts'**
+  String get failedToLoadSavedPosts;
+
+  /// No description provided for @failedToLoadProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load profile'**
+  String get failedToLoadProfile;
+
+  /// No description provided for @failedToLoadComments.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load comments'**
+  String get failedToLoadComments;
+
+  /// No description provided for @failedToLoadReplies.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load replies'**
+  String get failedToLoadReplies;
+
+  /// No description provided for @failedToLoadLikes.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load likes'**
+  String get failedToLoadLikes;
+
+  /// No description provided for @failedToLoadUsers.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load users'**
+  String get failedToLoadUsers;
+
+  /// No description provided for @failedToLoadVendors.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load vendors'**
+  String get failedToLoadVendors;
+
+  /// No description provided for @failedToLoadProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load products'**
+  String get failedToLoadProducts;
+
+  /// No description provided for @failedToFollowUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to follow user'**
+  String get failedToFollowUser;
+
+  /// No description provided for @failedToUnfollowUser.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to unfollow user'**
+  String get failedToUnfollowUser;
+
+  /// No description provided for @failedToLikePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to like post'**
+  String get failedToLikePost;
+
+  /// No description provided for @failedToUnlikePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to unlike post'**
+  String get failedToUnlikePost;
+
+  /// No description provided for @failedToLikeComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to like comment'**
+  String get failedToLikeComment;
+
+  /// No description provided for @failedToUnlikeComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to unlike comment'**
+  String get failedToUnlikeComment;
+
+  /// No description provided for @failedToAddComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to add comment'**
+  String get failedToAddComment;
+
+  /// No description provided for @failedToAddReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to add reply'**
+  String get failedToAddReply;
+
+  /// No description provided for @failedToDeleteComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to delete comment'**
+  String get failedToDeleteComment;
+
+  /// No description provided for @failedToDeleteReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to delete reply'**
+  String get failedToDeleteReply;
+
+  /// No description provided for @failedToSavePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to save post'**
+  String get failedToSavePost;
+
+  /// No description provided for @postCreatedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Post created successfully'**
+  String get postCreatedSuccessfully;
+
+  /// No description provided for @postSavedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Post saved successfully'**
+  String get postSavedSuccessfully;
+
+  /// No description provided for @postUnsavedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Post unsaved successfully'**
+  String get postUnsavedSuccessfully;
+
+  /// No description provided for @userFollowedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'User followed successfully'**
+  String get userFollowedSuccessfully;
+
+  /// No description provided for @userUnfollowedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'User unfollowed successfully'**
+  String get userUnfollowedSuccessfully;
+
+  /// No description provided for @commentAddedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Comment added successfully'**
+  String get commentAddedSuccessfully;
+
+  /// No description provided for @replyAddedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply added successfully'**
+  String get replyAddedSuccessfully;
+
+  /// No description provided for @commentDeletedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Comment deleted successfully'**
+  String get commentDeletedSuccessfully;
+
+  /// No description provided for @replyDeletedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply deleted successfully'**
+  String get replyDeletedSuccessfully;
+
+  /// No description provided for @uploading.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading'**
+  String get uploading;
+
+  /// No description provided for @noUsersFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No users found'**
+  String get noUsersFound;
+
+  /// No description provided for @noVendorsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No vendors found'**
+  String get noVendorsFound;
+
+  /// No description provided for @noProductsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No products found'**
+  String get noProductsFound;
+
+  /// No description provided for @noCommentsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No comments found'**
+  String get noCommentsFound;
+
+  /// No description provided for @noRepliesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No replies found'**
+  String get noRepliesFound;
+
+  /// No description provided for @noLikesFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No likes found'**
+  String get noLikesFound;
+
+  /// No description provided for @searchForUsers.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for users'**
+  String get searchForUsers;
+
+  /// No description provided for @searchForVendors.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for vendors'**
+  String get searchForVendors;
+
+  /// No description provided for @searchForProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Search for products'**
+  String get searchForProducts;
+
+  /// No description provided for @selectVendor.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Vendor'**
+  String get selectVendor;
+
+  /// No description provided for @selectProduct.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Product'**
+  String get selectProduct;
+
+  /// No description provided for @writeComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a comment'**
+  String get writeComment;
+
+  /// No description provided for @writeReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Write a reply'**
+  String get writeReply;
+
+  /// No description provided for @confirmDeleteComment.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this comment?'**
+  String get confirmDeleteComment;
+
+  /// No description provided for @confirmDeleteReply.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this reply?'**
+  String get confirmDeleteReply;
+
+  /// No description provided for @posts.
+  ///
+  /// In en, this message translates to:
+  /// **'Posts'**
+  String get posts;
+
+  /// No description provided for @loadingProfile.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading profile...'**
+  String get loadingProfile;
+
+  /// No description provided for @loadingPosts.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading posts...'**
+  String get loadingPosts;
+
+  /// No description provided for @loadingComments.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading comments...'**
+  String get loadingComments;
+
+  /// No description provided for @loadingReplies.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading replies...'**
+  String get loadingReplies;
+
+  /// No description provided for @loadingLikes.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading likes...'**
+  String get loadingLikes;
+
+  /// No description provided for @loadingUsers.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading users...'**
+  String get loadingUsers;
+
+  /// No description provided for @loadingVendors.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading vendors...'**
+  String get loadingVendors;
+
+  /// No description provided for @loadingProducts.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading products...'**
+  String get loadingProducts;
+
+  /// No description provided for @refresh.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh'**
+  String get refresh;
+
+  /// No description provided for @uploadProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Upload Progress'**
+  String get uploadProgress;
+
+  /// No description provided for @optimisticUpdate.
+  ///
+  /// In en, this message translates to:
+  /// **'Updating...'**
+  String get optimisticUpdate;
+
+  /// No description provided for @temporaryState.
+  ///
+  /// In en, this message translates to:
+  /// **'Temporary state'**
+  String get temporaryState;
+
+  /// No description provided for @postDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Post deleted'**
+  String get postDeleted;
+
+  /// No description provided for @editPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Post'**
+  String get editPost;
+
+  /// No description provided for @deletePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete Post'**
+  String get deletePost;
+
+  /// No description provided for @confirmDeletePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to delete this post? This action cannot be undone.'**
+  String get confirmDeletePost;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @sharePost.
+  ///
+  /// In en, this message translates to:
+  /// **'Share Post'**
+  String get sharePost;
+
+  /// No description provided for @shareFunctionality.
+  ///
+  /// In en, this message translates to:
+  /// **'Share functionality would be implemented here'**
+  String get shareFunctionality;
+
+  /// No description provided for @yourPost.
+  ///
+  /// In en, this message translates to:
+  /// **'Your post'**
+  String get yourPost;
+
+  /// No description provided for @you.
+  ///
+  /// In en, this message translates to:
+  /// **'You'**
+  String get you;
+
+  /// No description provided for @commentAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Comment added'**
+  String get commentAdded;
+
+  /// No description provided for @replyAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply added'**
+  String get replyAdded;
+
+  /// No description provided for @commentDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Comment deleted'**
+  String get commentDeleted;
+
+  /// No description provided for @replyDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Reply deleted'**
+  String get replyDeleted;
+
+  /// No description provided for @noUserPosts.
+  ///
+  /// In en, this message translates to:
+  /// **'No user posts'**
+  String get noUserPosts;
+
+  /// No description provided for @shimmerLoading.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading...'**
+  String get shimmerLoading;
+
+  /// No description provided for @noDataAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No data available'**
+  String get noDataAvailable;
+
+  /// No description provided for @errorLoadingData.
+  ///
+  /// In en, this message translates to:
+  /// **'Error loading data'**
+  String get errorLoadingData;
+
+  /// No description provided for @story.
+  ///
+  /// In en, this message translates to:
+  /// **'Story'**
+  String get story;
+
+  /// No description provided for @addStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Story'**
+  String get addStory;
+
+  /// No description provided for @noStoriesAvailable.
+  ///
+  /// In en, this message translates to:
+  /// **'No stories available'**
+  String get noStoriesAvailable;
+
+  /// No description provided for @loadingStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading story...'**
+  String get loadingStory;
+
+  /// No description provided for @storyAdded.
+  ///
+  /// In en, this message translates to:
+  /// **'Story added'**
+  String get storyAdded;
+
+  /// No description provided for @failedToAddStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to add story'**
+  String get failedToAddStory;
+
+  /// No description provided for @storyDeleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Story deleted'**
+  String get storyDeleted;
+
+  /// No description provided for @failedToDeleteStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to delete story'**
+  String get failedToDeleteStory;
+
+  /// No description provided for @viewStory.
+  ///
+  /// In en, this message translates to:
+  /// **'View Story'**
+  String get viewStory;
+
+  /// No description provided for @storyViewed.
+  ///
+  /// In en, this message translates to:
+  /// **'Story viewed'**
+  String get storyViewed;
+
+  /// No description provided for @failedToViewStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to view story'**
+  String get failedToViewStory;
+
+  /// No description provided for @storyExpired.
+  ///
+  /// In en, this message translates to:
+  /// **'Story expired'**
+  String get storyExpired;
+
+  /// No description provided for @uploadingStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Uploading story...'**
+  String get uploadingStory;
+
+  /// No description provided for @storyUploadProgress.
+  ///
+  /// In en, this message translates to:
+  /// **'Story upload progress'**
+  String get storyUploadProgress;
+
+  /// No description provided for @storyUploadComplete.
+  ///
+  /// In en, this message translates to:
+  /// **'Story upload complete'**
+  String get storyUploadComplete;
+
+  /// No description provided for @storyUploadFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Story upload failed'**
+  String get storyUploadFailed;
+
+  /// No description provided for @addPhotoToStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add photo to story'**
+  String get addPhotoToStory;
+
+  /// No description provided for @addVideoToStory.
+  ///
+  /// In en, this message translates to:
+  /// **'Add video to story'**
+  String get addVideoToStory;
+
+  /// No description provided for @failedToLoadNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to load notifications'**
+  String get failedToLoadNotifications;
+
+  /// No description provided for @failedToMarkNotificationAsRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to mark notification as read'**
+  String get failedToMarkNotificationAsRead;
+
+  /// No description provided for @failedToMarkAllNotificationsAsRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to mark all notifications as read'**
+  String get failedToMarkAllNotificationsAsRead;
+
+  /// No description provided for @notificationMarkedAsRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification marked as read'**
+  String get notificationMarkedAsRead;
+
+  /// No description provided for @allNotificationsMarkedAsRead.
+  ///
+  /// In en, this message translates to:
+  /// **'All notifications marked as read'**
+  String get allNotificationsMarkedAsRead;
+
+  /// No description provided for @notificationsEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'re all caught up!'**
+  String get notificationsEmpty;
+
+  /// No description provided for @notificationsEmptySubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'No notifications yet'**
+  String get notificationsEmptySubtitle;
+
+  /// No description provided for @loadingNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Loading notifications...'**
+  String get loadingNotifications;
+
+  /// No description provided for @refreshNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Refresh notifications'**
+  String get refreshNotifications;
+
+  /// No description provided for @markAllAsRead.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark all as read'**
+  String get markAllAsRead;
+
+  /// No description provided for @notificationSettings.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification settings'**
+  String get notificationSettings;
+
+  /// No description provided for @notificationPreferences.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification preferences'**
+  String get notificationPreferences;
+
+  /// No description provided for @notificationHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Notification history'**
+  String get notificationHistory;
+
+  /// No description provided for @clearAllNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Clear all notifications'**
+  String get clearAllNotifications;
+
+  /// No description provided for @confirmClearAllNotifications.
+  ///
+  /// In en, this message translates to:
+  /// **'Are you sure you want to clear all notifications?'**
+  String get confirmClearAllNotifications;
+
+  /// No description provided for @notificationsCleared.
+  ///
+  /// In en, this message translates to:
+  /// **'Notifications cleared'**
+  String get notificationsCleared;
 }
 
 class _AppLocalizationsDelegate

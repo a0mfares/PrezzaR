@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/features/favorites/domain/usecases/fav_usecase.dart';
 
 import '../../domain/entities/favvendor_entity.dart';
@@ -39,7 +40,7 @@ class FavBloc extends Bloc<FavEvent, FavState> {
     Emitter<FavState> emit,
   ) async {
     if (alreadyInFav(event.id)) {
-      emit(const FavState.failure('Already in favorites'));
+      emit( FavState.failure(tr.alreadyInFavorites));
       return;
     }
 
@@ -72,7 +73,7 @@ class FavBloc extends Bloc<FavEvent, FavState> {
     Emitter<FavState> emit,
   ) async {
     if (!alreadyInFav(event.id)) {
-      emit(const FavState.failure('Vendor not in favorites'));
+      emit(FavState.failure(tr.vendorNotInFavorites));
       return;
     }
 

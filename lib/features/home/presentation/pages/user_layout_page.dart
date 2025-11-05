@@ -32,7 +32,15 @@ class _UserLayoutHomePageState extends State<UserLayoutHomePage> {
     selectedIndex = widget.index ?? selectedIndex;
     super.initState();
   }
-
+  bool checkAuthAndNavigate(int index) {
+    // Check if user is authenticated for protected routes
+    if (!ifUserAuthenticated()) {
+      // Redirect to login if not authenticated
+      appRoute.navigate(LoginRoute());
+      return false;
+    }
+    return true;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +53,7 @@ class _UserLayoutHomePageState extends State<UserLayoutHomePage> {
         const OrderPage(),
         const UserHomePage(),
       ][selectedIndex],
-      bottomNavigationBar: Card(
+       bottomNavigationBar: Card(
         margin: const EdgeInsets.only(bottom: 25, right: 12, left: 12),
         elevation: 10,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
@@ -58,35 +66,42 @@ class _UserLayoutHomePageState extends State<UserLayoutHomePage> {
           showSelectedLabels: true,
           showUnselectedLabels: true,
           onTap: (v) {
+            if (v == 1 || v == 2 || v == 3) {
+              if (!checkAuthAndNavigate(v)) {
+                return; 
+              }
+            }
+            
             if (v != 4) {
               selectedIndex = v;
             }
             setState(() {});
+            
             if (v == 4) {
-              scaffold.currentState!.openDrawer();
-            }
-            if (v == 2) {
               if (!ifUserAuthenticated()) {
                 appRoute.navigate(LoginRoute());
-              } else {
-                CategoryBloc.get(context)
-                    .add(const CategoryEvent.getCategories(true));
-                VendorBloc.get(context)
-                    .add(const VendorEvent.getNearbyPlaces('booking'));
+                return;
               }
+              scaffold.currentState!.openDrawer();
             }
+            
+            if (v == 2) {
+              
+              CategoryBloc.get(context)
+                  .add(const CategoryEvent.getCategories(true));
+              VendorBloc.get(context)
+                  .add(const VendorEvent.getNearbyPlaces('booking'));
+            }
+            
             if (v == 0) {
               CategoryBloc.get(context)
                   .add(const CategoryEvent.getCategories(false));
               VendorBloc.get(context)
                   .add(const VendorEvent.getNearbyPlaces('normal'));
             }
+            
             if (v == 1) {
-              if (!ifUserAuthenticated()) {
-                appRoute.navigate(LoginRoute());
-              } else {
-                NewsfeedBloc.get(context).add(const NewsfeedEvent.fetchPosts());
-              }
+              NewsfeedBloc.get(context).add(const NewsfeedEvent.fetchPosts());
             }
           },
           currentIndex: selectedIndex,

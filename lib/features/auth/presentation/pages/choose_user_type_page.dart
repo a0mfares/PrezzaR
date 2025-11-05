@@ -46,9 +46,9 @@ class _ChooseUserTypePageState extends State<ChooseUserTypePage> {
                         failure: (err) {
                           BotToast.showText(text: err.errMsg);
                         },
-                        success: (_) {
+                        choseUserType: (_) {
                           if (mounted) {
-                            appRoute.replace(UserLayoutHomeRoute());
+                            appRoute.replace(LoginRoute());
                           }
                         },
                         orElse: () {},
@@ -78,9 +78,9 @@ class _ChooseUserTypePageState extends State<ChooseUserTypePage> {
                         failure: (err) {
                           BotToast.showText(text: err.errMsg);
                         },
-                        success: (_) {
+                        choseUserType: (_) {
                           if (mounted) {
-                            appRoute.replace(UserLayoutHomeRoute());
+                            appRoute.replace(LoginRoute());
                           }
                         },
                         orElse: () {},

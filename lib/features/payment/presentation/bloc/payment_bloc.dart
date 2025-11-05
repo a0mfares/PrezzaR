@@ -4,7 +4,6 @@ import 'dart:developer';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:prezza/core/helper/tools.dart';
@@ -14,8 +13,6 @@ import 'package:prezza/features/payment/domain/usecases/payment_usecase.dart';
 import 'package:sadadpay_flutter/config/env.dart';
 import 'package:sadadpay_flutter/sadadpay.dart';
 
-import '../../../../generated/l10n.dart';
-import '../../../cart/presentation/bloc/cart_bloc.dart';
 import '../../domain/entities/vendorcard_entity.dart';
 
 part 'payment_event.dart';

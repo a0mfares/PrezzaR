@@ -49,13 +49,15 @@ class _AddCarsPageState extends State<AddCarsPage> {
         listener: (context, state) {
           state.maybeMap(
             successAdded: (v) {
-              BotToast.showText(text: 'Car added success');
+              BotToast.showText(text: tr.carAddedSuccess);
+              context.maybePop();
             },
             successUpdated: (v) {
-              BotToast.showText(text: 'Car updated success');
+              BotToast.showText(text: tr.carUpdatedSuccess);
+              context.maybePop();
             },
             failure: (v) {
-              BotToast.showText(text: v.err);
+              BotToast.showText(text: v.error);
             },
             orElse: () {},
           );
@@ -68,67 +70,67 @@ class _AddCarsPageState extends State<AddCarsPage> {
               children: [
                 BlocBuilder<CarBloc, CarState>(
                   builder: (context, state) {
-                    return state.maybeWhen(orElse: () {
-                      return ProfileAvater(
-                        onTap: () {
-                          showPrezzaImagePicker(
-                            context: context,
-                            onPickFromCamera: (camera) {
-                              bloc.add(CarEvent.pickImage(camera));
-                            },
-                            onPickFromGallery: (gallery) {
-                              bloc.add(CarEvent.pickImage(gallery));
-                            },
-                            onPickFromGalleryMulti: (multiGallery) {},
-                          );
-                        },
-                        provider: widget.editMode
-                            ? NetworkImage(
-                                '${Urls.baseUrl.replaceAll('api', '')}${bloc.selectedCar.car_image}')
-                            : FileImage(bloc.carImg),
-                        src: SvgPicture.asset(Assets.assetsImagesCar),
-                      );
-                    });
+                    return ProfileAvater(
+                      onTap: () {
+                        showPrezzaImagePicker(
+                          context: context,
+                          onPickFromCamera: (camera) {
+                            bloc.add(CarEvent.pickImage(camera));
+                          },
+                          onPickFromGallery: (gallery) {
+                            bloc.add(CarEvent.pickImage(gallery));
+                          },
+                          onPickFromGalleryMulti: (multiGallery) {},
+                        );
+                      },
+                      provider: (widget.editMode && bloc.carImg == null)
+                          ? NetworkImage(
+                              '${Urls.baseUrl.replaceAll('api', '')}${bloc.selectedCar.car_image}')
+                          : (bloc.carImg != null)
+                              ? FileImage(bloc.carImg!)
+                              : null,
+                      src: SvgPicture.asset(Assets.assetsImagesCar),
+                    );
                   },
                 ),
                 vSpace(3),
                 BlocBuilder<CarBloc, CarState>(
                   builder: (context, state) {
-                    return state.maybeWhen(orElse: () {
-                      return SearchChoices.single(
-                        hint: Text(bloc.selectedMake),
-                        underline: const SizedBox(),
-                        padding: EdgeInsets.zero,
-                        isExpanded: true,
-                        items: bloc.makes
-                            .map(
-                              (e) => DropdownMenuItem(
-                                value: e,
-                                child: Text(
-                                  e,
-                                ),
-                              ),
-                            )
-                            .toList(),
-                        onChanged: (v) {
-                          bloc.add(CarEvent.selectMake(v!));
-                        },
-                      ).prezza();
-                    });
+                    return SearchChoices.single(
+                      hint: Text(bloc.selectedMake.isEmpty
+                          ? tr.selectMake
+                          : bloc.selectedMake),
+                      underline: const SizedBox(),
+                      padding: EdgeInsets.zero,
+                      isExpanded: true,
+                      items: bloc.makes
+                          .map(
+                            (e) => DropdownMenuItem(
+                              value: e,
+                              child: Text(e),
+                            ),
+                          )
+                          .toList(),
+                      onChanged: (v) {
+                        if (v != null) {
+                          bloc.add(CarEvent.selectMake(v));
+                        }
+                      },
+                    ).prezza();
                   },
                 ),
                 vSpace(3),
                 BlocBuilder<CarBloc, CarState>(
                   builder: (context, state) {
                     return state.maybeWhen(
-                      success: () {
+                      modelsLoaded: () {
                         return SearchChoices.single(
                           padding: EdgeInsets.zero,
                           isExpanded: true,
                           underline: const SizedBox(),
                           hint: Text(
                             bloc.selectedModel.isEmpty
-                                ? "Select Model"
+                                ? tr.selectModel
                                 : bloc.selectedModel,
                           ),
                           items: bloc.models
@@ -140,7 +142,9 @@ class _AddCarsPageState extends State<AddCarsPage> {
                               )
                               .toList(),
                           onChanged: (v) {
-                            bloc.add(CarEvent.selectModel(v!));
+                            if (v != null) {
+                              bloc.add(CarEvent.selectModel(v));
+                            }
                           },
                         ).prezza();
                       },
@@ -150,63 +154,77 @@ class _AddCarsPageState extends State<AddCarsPage> {
                         underline: const SizedBox(),
                         hint: Text(
                           bloc.selectedModel.isEmpty
-                              ? "Select Model"
+                              ? tr.selectModel
                               : bloc.selectedModel,
                         ),
-                        items: [],
+                        items: const [],
+                        onChanged: null,
+                      ).prezza(),
+                      orElse: () => SearchChoices.single(
+                        padding: EdgeInsets.zero,
+                        isExpanded: true,
+                        underline: const SizedBox(),
+                        hint: Text(
+                          bloc.selectedModel.isEmpty
+                              ? tr.selectModel
+                              : bloc.selectedModel,
+                        ),
+                        items: bloc.models
+                            .map(
+                              (e) => DropdownMenuItem(
+                                value: e,
+                                child: Text(e),
+                              ),
+                            )
+                            .toList(),
                         onChanged: (v) {
-                          bloc.add(CarEvent.selectModel(v!));
+                          if (v != null) {
+                            bloc.add(CarEvent.selectModel(v));
+                          }
                         },
                       ).prezza(),
-                      orElse: () => const SizedBox.shrink(),
                     );
                   },
                 ),
                 vSpace(3),
                 BlocBuilder<CarBloc, CarState>(
                   builder: (context, state) {
-                    return state.maybeWhen(orElse: () {
-                      return TextFormField(
-                        controller: bloc.vehicleColor,
-                        decoration: InputDecoration(
-                          hintText: tr.vehicleColor,
-                        ),
-                      ).prezaa();
-                    });
+                    return TextFormField(
+                      controller: bloc.vehicleColorController,
+                      decoration: InputDecoration(
+                        hintText: tr.vehicleColor,
+                      ),
+                    ).prezaa();
                   },
                 ),
                 vSpace(3),
                 BlocBuilder<CarBloc, CarState>(
                   builder: (context, state) {
-                    return state.maybeWhen(
-                      orElse: () {
-                        return ListTile(
-                          leading: bloc.selectedType.isEmpty
-                              ? const SizedBox()
-                              : null,
-                          title: Text(
-                              bloc.selectedType.isEmpty
-                                  ? tr.vehicleType
-                                  : bloc.selectedType,
-                              style: redText),
-                          horizontalTitleGap: 55,
-                          onTap: () {
-                            showPrezzaBottomSheet(
-                              context,
-                              tr.vehicleType,
-                              bloc.types,
-                              (v) {
-                                bloc.add(CarEvent.selectType(v));
-                              },
-                              bloc.selectedType,
-                            );
+                    return ListTile(
+                      leading: bloc.selectedType.isEmpty
+                          ? const SizedBox()
+                          : null,
+                      title: Text(
+                          bloc.selectedType.isEmpty
+                              ? tr.vehicleType
+                              : bloc.selectedType,
+                          style: redText),
+                      horizontalTitleGap: 55,
+                      onTap: () {
+                        showPrezzaBottomSheet(
+                          context,
+                          tr.vehicleType,
+                          bloc.types,
+                          (v) {
+                            bloc.add(CarEvent.selectType(v));
                           },
-                          trailing: const Icon(
-                            Icons.keyboard_arrow_down,
-                          ),
-                        ).prezza();
+                          bloc.selectedType,
+                        );
                       },
-                    );
+                      trailing: const Icon(
+                        Icons.keyboard_arrow_down,
+                      ),
+                    ).prezza();
                   },
                 ),
                 vSpace(3),
@@ -221,18 +239,16 @@ class _AddCarsPageState extends State<AddCarsPage> {
                       width: 210,
                       child: BlocBuilder<CarBloc, CarState>(
                         builder: (context, state) {
-                          return state.maybeWhen(orElse: () {
-                            return TextFormField(
-                              controller: bloc.platNumber,
-                              decoration: InputDecoration(
-                                contentPadding: const EdgeInsets.symmetric(
-                                  vertical: 25,
-                                  horizontal: 15,
-                                ),
-                                hintText: tr.licensePlate,
+                          return TextFormField(
+                            controller: bloc.platNumberController,
+                            decoration: InputDecoration(
+                              contentPadding: const EdgeInsets.symmetric(
+                                vertical: 25,
+                                horizontal: 15,
                               ),
-                            );
-                          });
+                              hintText: tr.licensePlate,
+                            ),
+                          );
                         },
                       ),
                     ),
@@ -242,18 +258,21 @@ class _AddCarsPageState extends State<AddCarsPage> {
                 BlocBuilder<CarBloc, CarState>(
                   builder: (context, state) {
                     return ElevatedButton(
-                      onPressed: () {
-                        log(bloc.selectedMake);
-                        log(bloc.selectedModel);
-                        log(bloc.selectedType);
-                        log(bloc.vehicleColor.text);
-                        log(bloc.platNumber.text);
-                        if (widget.editMode) {
-                          bloc.add(const CarEvent.updateCar());
-                        } else {
-                          bloc.add(const CarEvent.addCar());
-                        }
-                      },
+                      onPressed: state.maybeWhen(
+                        loading: () => null,
+                        orElse: () => () {
+                          log(bloc.selectedMake);
+                          log(bloc.selectedModel);
+                          log(bloc.selectedType);
+                          log(bloc.vehicleColorController.text);
+                          log(bloc.platNumberController.text);
+                          if (widget.editMode) {
+                            bloc.add(const CarEvent.updateCar());
+                          } else {
+                            bloc.add(const CarEvent.addCar());
+                          }
+                        },
+                      ),
                       child: state.maybeWhen(
                         loading: () => defLoadingCenter,
                         orElse: () => Text(tr.add),

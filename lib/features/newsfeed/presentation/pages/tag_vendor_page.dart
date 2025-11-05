@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
+import 'package:prezza/core/shared/widgets/cached_image.dart';
 import 'package:prezza/prezza_page.dart';
 
 import '../../../../config/custom_colors.dart';
@@ -18,13 +19,12 @@ class TagVendorPage extends StatefulWidget {
 
 class _TagVendorPageState extends State<TagVendorPage> {
   late final NewsfeedBloc bloc;
-  String? selectedVendorId;
 
   @override
   void initState() {
-    super.initState();
     bloc = NewsfeedBloc.get(context);
     bloc.add(const NewsfeedEvent.getTagVendor());
+    super.initState();
   }
 
   @override
@@ -36,84 +36,64 @@ class _TagVendorPageState extends State<TagVendorPage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // search bar
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: SearchBar(
-              shape: WidgetStatePropertyAll(
-                RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
+              shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12))),
               leading: Icon(Icons.search, color: primary, size: 30),
               hintText: tr.searchCoffe,
             ),
           ),
           vSpace(5),
-
-          // suggestions label
           Text(
             tr.suggestions,
             style: tstyle.headlineSmall!.copyWith(fontWeight: FontWeight.bold),
           ).margin(margin: const EdgeInsets.symmetric(horizontal: 30)),
-
-          // bloc consumer
-          Expanded(
-            child: BlocBuilder<NewsfeedBloc, NewsfeedState>(
-              builder: (context, state) {
-                return state.maybeWhen(
-                  loadingVendors: () => const Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                  vendorsLoaded: (vendors) {
-                    if (vendors.isEmpty) {
-                      return Center(child: Text(tr.noResautrants));
-                    }
-                    return ListView.builder(
-                      itemCount: vendors.length,
+          BlocBuilder<NewsfeedBloc, NewsfeedState>(
+            builder: (context, state) {
+              return state.maybeWhen(
+                // loadin
+                orElse: () {
+                  return Expanded(
+                    child: ListView.builder(
+                      itemCount: bloc.vendors.length,
                       itemBuilder: (context, index) {
-                        final vendor = vendors[index];
+                        final vendor = bloc.vendors[index];
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: ListTile(
+                            leading: const CachedImage(imageUrl: ''),
                             title: Text(vendor.business_name),
                             trailing: CircleAvatar(
                               backgroundColor: lightCream,
-                              child: Radio<String>(
-                                value: vendor.bussiness_id.toString(),
-                                groupValue: selectedVendorId,
+                              child: Radio(
+                                value: vendor.bussiness_id,
+                                groupValue: bloc.selectedVendorId,
                                 onChanged: (v) {
-                                  setState(() {
-                                    selectedVendorId = v;
-                                  });
+                                  bloc.selectedVendorId = v!;
+                                  setState(() {});
                                 },
                               ),
                             ),
                           ),
                         );
                       },
-                    );
-                  },
-                  failure: (error) => Center(
-                    child: Text("Error: $error"),
-                  ),
-                  orElse: () => const SizedBox.shrink(),
-                );
-              },
-            ),
+                    ),
+                  );
+                },
+              );
+            },
           ),
-
-          // Done button
           Center(
             child: Padding(
               padding: const EdgeInsets.all(20),
               child: ElevatedButton(
-                onPressed: () {
-                  appRoute.back();
-                  appRoute.removeLast();
-                },
-                child: Text(tr.done),
-              ),
+                  onPressed: () {
+                    appRoute.back();
+                    appRoute.removeLast();
+                  },
+                  child: Text(tr.done)),
             ),
           )
         ],

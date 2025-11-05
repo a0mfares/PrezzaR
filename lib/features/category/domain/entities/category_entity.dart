@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 import '../../data/models/category_model.dart';
 
@@ -16,12 +16,12 @@ class CategoryEntity extends $CategoryEntity {
   final String name;
 
   @HiveField(2)
-  final String? imageUrl;
+  final String? image_url;
 
   CategoryEntity({
     required this.id,
     required this.name,
-    required this.imageUrl,
+    required this.image_url,
   });
 
   CategoryModel toModel() =>

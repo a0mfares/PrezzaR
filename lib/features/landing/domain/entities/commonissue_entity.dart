@@ -1,5 +1,5 @@
-import 'package:hive/hive.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../data/models/commonissue_model.dart';
 

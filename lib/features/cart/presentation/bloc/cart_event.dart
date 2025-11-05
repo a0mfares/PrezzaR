@@ -19,4 +19,5 @@ class CartEvent with _$CartEvent {
   const factory CartEvent.getOftenOrderdWith() = _GetOftenOrderdWith;
 
   const factory CartEvent.addOrUpdateCoupon() = _AddOrUpdateCoupon;
+  const factory CartEvent.closeCart() = _CloseCart;
 }

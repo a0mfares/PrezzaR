@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/shared/widgets/qun_widget.dart';
 import 'package:prezza/features/products/domain/entities/productitem_entity.dart';
@@ -19,7 +20,7 @@ class _ProductItemPrezzaState extends State<ProductItemPrezza> {
   Widget build(BuildContext context) {
     return Card(
       elevation: 3,
-      color: Colors.white,
+      color: primary.withOpacity(0.1),
       child: Column(
         children: [
           CachedImage(

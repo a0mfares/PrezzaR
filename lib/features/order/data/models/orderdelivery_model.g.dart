@@ -10,7 +10,7 @@ OrderDeliveryModel _$OrderDeliveryModelFromJson(Map<String, dynamic> json) =>
     OrderDeliveryModel(
       uuid: json['uuid'] as String,
       delivery_address: json['delivery_address'] as String,
-      customer_phone: json['customer_phone'] as String,
+      customer_phone: json['customer_phone'] as String?,
     );
 
 Map<String, dynamic> _$OrderDeliveryModelToJson(OrderDeliveryModel instance) =>

@@ -12,10 +12,11 @@ CommentModel _$CommentModelFromJson(Map<String, dynamic> json) => CommentModel(
       number_of_likes: (json['number_of_likes'] as num?)?.toInt(),
       number_of_replies: (json['number_of_replies'] as num?)?.toInt(),
       created_at: json['created_at'] as String,
-      is_i_replay_owner: json['is_i_replay_owner'] as bool?,
-      is_i_comment_owner: json['is_i_comment_owner'] as bool?,
+      is_i_replay_owner: json['is_i_replay_owner'] as bool? ?? false,
+      is_i_comment_owner: json['is_i_comment_owner'] as bool? ?? false,
       user_info: CommentEntity.user_infoFromMap(
           json['user_info'] as Map<String, dynamic>),
+      is_liked: json['is_liked'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$CommentModelToJson(CommentModel instance) =>
@@ -27,5 +28,6 @@ Map<String, dynamic> _$CommentModelToJson(CommentModel instance) =>
       'created_at': instance.created_at,
       'is_i_comment_owner': instance.is_i_comment_owner,
       'is_i_replay_owner': instance.is_i_replay_owner,
+      'is_liked': instance.is_liked,
       'user_info': CommentEntity.user_infoToMap(instance.user_info),
     };

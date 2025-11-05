@@ -1,13 +1,13 @@
+// newsfeed_bloc.dart
 import 'dart:async';
 import 'dart:developer';
 import 'dart:io';
 import 'dart:typed_data';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:prezza/features/newsfeed/domain/entities/follower_entity.dart';
+import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/features/newsfeed/domain/entities/post_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/profile_social_entity.dart';
 import 'package:prezza/features/newsfeed/domain/entities/user_search_entity.dart';
@@ -16,7 +16,7 @@ import 'package:prezza/features/newsfeed/domain/usecases/newsfeed_usecase.dart';
 
 import '../../domain/entities/comment_entity.dart';
 import '../../domain/entities/product_tag_entity.dart';
-import '../../domain/entities/user_like_entity.dart';
+import '../../domain/entities/user_like_entity.dart' hide UserInfoEntity;
 
 part 'newsfeed_event.dart';
 part 'newsfeed_state.dart';
@@ -24,8 +24,6 @@ part 'newsfeed_bloc.freezed.dart';
 
 class NewsfeedBloc extends Bloc<NewsfeedEvent, NewsfeedState> {
   static NewsfeedBloc get(context) => BlocProvider.of(context);
-
-  // Use cases
   final AddCommentReplyUsecase _addCommentReplyUsecase;
   final AddCommentUsecase _addCommentUsecase;
   final AddLikeOnCommentUsecase _addLikeOnCommentUsecase;
@@ -56,601 +54,687 @@ class NewsfeedBloc extends Bloc<NewsfeedEvent, NewsfeedState> {
   final GetTagVendorUsecase _getTagVendorUsecase;
   final GetTagProductUsecase _getTagProductUsecase;
   final GetUsersUsecase _getUsersUsecase;
+  
+  Uint8List imgUint8 = Uint8List(0);
+  File img = File('');
+  TextEditingController content = TextEditingController();
+  TextEditingController comment = TextEditingController();
+  TextEditingController search = TextEditingController();
 
-  // Controllers for form inputs
-  final TextEditingController contentController = TextEditingController();
-  final TextEditingController commentController = TextEditingController();
-  final TextEditingController searchController = TextEditingController();
-
-  // Internal state (consider moving to separate state classes)
-  File? _selectedImage;
-  Uint8List? _selectedImageBytes;
+  // Separate lists for different post types
   List<PostEntity> posts = [];
-  List<PostEntity> savedPosts = [];
   List<PostEntity> userPosts = [];
+  List<PostEntity> savedPosts = [];
+  
+  ProfileSocialEntity profile = ProfileSocialEntity.empty();
+  List<UserSearchEntity> users = [];
+  List<UserLikeEntity> userLikes = [];
+  List<CommentEntity> comments = [];
+  List<CommentEntity> replysComment = [];
+  List<VendorTagEntity> vendors = [];
+  List<ProductTagEntity> products = [];
+  int selectedVendorId = 0;
+  String selectedProductId = '';
 
   NewsfeedBloc(
-    this._addCommentReplyUsecase,
-    this._addCommentUsecase,
-    this._addLikeOnCommentUsecase,
-    this._addLikePostUsecase,
-    this._addStoryUsecase,
-    this._addTagPostUsecase,
-    this._createPostUsecase,
-    this._deleteCommentUsecase,
-    this._deleteCommentReplyUsecase,
-    this._deleteStoryUsecase,
-    this._editCommentUsecase,
-    this._editPostUsecase,
-    this._followUserUsecase,
-    this._getCommentsUsecase,
-    this._getLikesForPostUsecase,
-    this._getPostsUsecase,
-    this._getPostsBlogUsecase,
-    this._getSavedPostsUsecase,
-    this._getStoriesUsecase,
-    this._getRepliesUsecase,
-    this._getUserFollowerUsecase,
-    this._getUserFollowingUsecase,
-    this._getUserInfoUsecase,
-    this._savePostUsecase,
-    this._unFollowUserUsecase,
-    this._unLikeCommentUsecase,
-    this._unLikePostUsecase,
-    this._getUsersUsecase,
-    this._getTagVendorUsecase,
-    this._getTagProductUsecase,
-  ) : super(const NewsfeedState.initial()) {
-    // Register event handlers
-    on<_PickupImage>(_onPickupImage);
-    on<_CreatePost>(_onCreatePost);
-    on<_FetchPosts>(_onFetchPosts);
-    on<_GetUsers>(_onGetUsers);
-    on<_Follow>(_onFollow);
-    on<_UnFollow>(_onUnFollow);
-    on<_GetUserFollowers>(_onGetUserFollowers);
-    on<_GetUserFollowing>(_onGetUserFollowing);
-    on<_GetUserPosts>(_onGetUserPosts);
-    on<_GetSavedPosts>(_onGetSavedPosts);
-    on<_SavePost>(_onSavePost);
-    on<_GetUserInfo>(_onGetUserInfo);
-    on<_LikePost>(_onLikePost);
-    on<_UnLikePost>(_onUnLikePost);
-    on<_GetLikes>(_onGetLikes);
-    on<_AddComment>(_onAddComment);
-    on<_GetComments>(_onGetComments);
-    on<_ReplayComment>(_onReplayComment);
-    on<_GetCommentReplaies>(_onGetCommentReplies);
-    on<_LikeComment>(_onLikeComment);
-    on<_UnLikeCmment>(_onUnLikeComment);
-    on<_DeleteComment>(_onDeleteComment);
-    on<_DeleteReplayComment>(_onDeleteReplayComment);
-    on<_GetTagVendor>(_onGetTagVendor);
-    on<_GetTagProduct>(_onGetTagProduct);
-  }
-
-  @override
-  Future<void> close() {
-    contentController.dispose();
-    commentController.dispose();
-    searchController.dispose();
-    return super.close();
-  }
-
-  // Event handlers
-
-  Future<void> _onPickupImage(
-      _PickupImage event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loading());
-      _selectedImage = event.img;
-      _selectedImageBytes = await event.img.readAsBytes();
-      emit(NewsfeedState.imageSelected(_selectedImage!, _selectedImageBytes!));
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onCreatePost(
-      _CreatePost event, Emitter<NewsfeedState> emit) async {
-    if (_selectedImage == null || contentController.text.trim().isEmpty) {
-      emit(const NewsfeedState.failure('Image and content are required'));
-      return;
-    }
-
-    try {
-      emit(const NewsfeedState.progress(0));
-
-      final multipartFile = await MultipartFile.fromFile(_selectedImage!.path);
-
-      final result = await _createPostUsecase(
-        parm: {
-          'images': [multipartFile],
-          'contant': contentController.text
-              .trim(), // Note: typo in API - 'contant' instead of 'content'
-        },
-        onProgress: (sent, total) {
-          if (!emit.isDone) {
-            final progress = (sent / total) * 100;
-            emit(NewsfeedState.progress(progress));
+      this._addCommentReplyUsecase,
+      this._addCommentUsecase,
+      this._addLikeOnCommentUsecase,
+      this._addLikePostUsecase,
+      this._addStoryUsecase,
+      this._addTagPostUsecase,
+      this._createPostUsecase,
+      this._deleteCommentUsecase,
+      this._deleteCommentReplyUsecase,
+      this._deleteStoryUsecase,
+      this._editCommentUsecase,
+      this._editPostUsecase,
+      this._followUserUsecase,
+      this._getCommentsUsecase,
+      this._getLikesForPostUsecase,
+      this._getPostsUsecase,
+      this._getPostsBlogUsecase,
+      this._getSavedPostsUsecase,
+      this._getStoriesUsecase,
+      this._getRepliesUsecase,
+      this._getUserFollowerUsecase,
+      this._getUserFollowingUsecase,
+      this._getUserInfoUsecase,
+      this._savePostUsecase,
+      this._unFollowUserUsecase,
+      this._unLikeCommentUsecase,
+      this._unLikePostUsecase,
+      this._getUsersUsecase,
+      this._getTagVendorUsecase,
+      this._getTagProductUsecase)
+      : super(const _Initial()) {
+    on<NewsfeedEvent>((event, emit) async {
+      await event.maybeWhen(
+        getTagProduct: () async {
+          emit(const NewsfeedState.loadingTagProduct());
+          try {
+            final result = await _getTagProductUsecase(
+              parm: {
+                'product_name': search.text,
+              },
+            );
+            result.fold(
+              (err) {
+                emit(NewsfeedState.failureTagProduct(err.getMsg));
+              },
+              (res) {
+                products = res;
+                emit(const NewsfeedState.successTagProduct());
+              },
+            );
+          } catch (e) {
+            emit(NewsfeedState.failureTagProduct(e.toString()));
           }
         },
-      );
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) {
-          _clearPostCreationState();
-          emit(const NewsfeedState.postCreated());
+        getTagVendor: () async {
+          emit(const NewsfeedState.loadingTagVendor());
+          try {
+            final result = await _getTagVendorUsecase(
+              parm: {
+                'business_name': search.text,
+              },
+            );
+            result.fold(
+              (err) {
+                emit(NewsfeedState.failureTagVendor(err.getMsg));
+              },
+              (res) {
+                vendors = res;
+                emit(const NewsfeedState.successTagVendor());
+              },
+            );
+          } catch (e) {
+            emit(NewsfeedState.failureTagVendor(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onFetchPosts(
-      _FetchPosts event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingPosts());
-
-      final result = await _getPostsBlogUsecase(parm: {});
-
-      result.fold(
-        (error) {
-          log('fetchPosts: Error - ${error.getMsg}');
-          emit(NewsfeedState.failure(error.getMsg));
+        pickupImage: (result) async {
+          emit(const NewsfeedState.loadingImage());
+          img = result;
+          imgUint8 = await result.readAsBytes();
+          emit(const NewsfeedState.successImage());
         },
-        (posts) {
-          log('fetchPosts: Success - ${posts.length} posts fetched');
-          this.posts = posts;
-          emit(NewsfeedState.postsLoaded(posts));
+        getUsers: () async {
+          emit(const NewsfeedState.loadingUsers());
+          try {
+            final result = await _getUsersUsecase(parm: {});
+            result.fold((err) {
+              emit(NewsfeedState.failureUsers(err.getMsg));
+            }, (res) {
+              users = res;
+              emit(const NewsfeedState.successUsers());
+            });
+          } catch (e) {
+            emit(NewsfeedState.failureUsers(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      log('fetchPosts: Exception - $e');
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onGetUsers(_GetUsers event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingUsers());
-
-      final result = await _getUsersUsecase(parm: {});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (users) => emit(NewsfeedState.usersLoaded(users)),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onFollow(_Follow event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingFollow());
-
-      final result = await _followUserUsecase(parm: {'user_uuid': event.uuid});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) {
-          emit(const NewsfeedState.followSuccess());
-          // Refresh posts to show updated follow status
-          add(const NewsfeedEvent.fetchPosts());
+        follow: (uuid) async {
+          emit(const NewsfeedState.loadingFollow());
+          try {
+            final result = await _followUserUsecase(parm: {
+              'user_uuid': uuid,
+            });
+            result.fold((err) {
+              emit(NewsfeedState.failureFollow(err.getMsg));
+            }, (res) {
+              emit(const NewsfeedState.successFollow());
+              add(const NewsfeedEvent.fetchPosts());
+            });
+          } catch (e) {
+            emit(NewsfeedState.failureFollow(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onUnFollow(_UnFollow event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingFollow());
-
-      final result =
-          await _unFollowUserUsecase(parm: {'user_uuid': event.uuid});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) {
-          emit(const NewsfeedState.unfollowSuccess());
-          // Refresh posts to show updated follow status
-          add(const NewsfeedEvent.fetchPosts());
+        unFollow: (uuid) async {
+          emit(const NewsfeedState.loadingUnfollow());
+          try {
+            final result = await _unFollowUserUsecase(parm: {
+              'user_uuid': uuid,
+            });
+            result.fold((err) {
+              emit(NewsfeedState.failureUnfollow(err.getMsg));
+            }, (res) {
+              emit(const NewsfeedState.successUnfollow());
+              add(const NewsfeedEvent.fetchPosts());
+            });
+          } catch (e) {
+            emit(NewsfeedState.failureUnfollow(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
+        createPost: () async {
+          emit(const NewsfeedState.creatingPost(0));
+          try {
+            final Completer<MultipartFile> image = Completer();
 
-  Future<void> _onGetUserFollowers(
-      _GetUserFollowers event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingFollowers());
-
-      final result =
-          await _getUserFollowerUsecase(parm: {'user_uuid': event.uuid});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (followers) => emit(NewsfeedState.followersLoaded(followers)),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onGetUserFollowing(
-      _GetUserFollowing event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingFollowing());
-
-      final result =
-          await _getUserFollowingUsecase(parm: {'user_uuid': event.uuid});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (following) => emit(NewsfeedState.followingLoaded(following)),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onGetUserPosts(
-      _GetUserPosts event, Emitter<NewsfeedState> emit) async {
-    try {
-      log('getUserPosts: Starting for user ${event.uuid}');
-      emit(const NewsfeedState.loadingPosts());
-
-      final result = await _getPostsUsecase(parm: {'user_uuid': event.uuid});
-
-      result.fold(
-        (error) {
-          log('getUserPosts: Error - ${error.getMsg}');
-          emit(NewsfeedState.failure(error.getMsg));
+            await MultipartFile.fromFile(img.path).then((v) {
+              image.complete(v);
+            });
+            final reImg = await image.future;
+            final result = await _createPostUsecase(
+                parm: {
+                  'images': [reImg],
+                  'contant': content.text,
+                },
+                onProgress: (sent, total) {
+                  double progress = (sent / total) * 100;
+                  log('Upload progress: $progress%');
+                  emit(NewsfeedState.creatingPost(progress));
+                });
+            result.fold(
+              (err) {
+                emit(NewsfeedState.failureCreatePost(err.getMsg));
+              },
+              (res) {
+                img = File('');
+                imgUint8 = Uint8List(0);
+                content.clear();
+                emit(const NewsfeedState.successCreatePost());
+              },
+            );
+          } catch (e) {
+            emit(NewsfeedState.failureCreatePost(e.toString()));
+          }
         },
-        (userPosts) {
-          log('getUserPosts: Success - ${userPosts.length} posts loaded');
-          this.userPosts = userPosts;
-          emit(NewsfeedState.userPostsLoaded(userPosts));
+        fetchPosts: () async {
+          posts.clear();
+          emit(const NewsfeedState.loadingPosts());
+          
+          log('fetchPosts: Fetching posts...');
+          try {
+            final result = await _getPostsBlogUsecase(parm: {});
+            result.fold((err) {
+              log('fetchPosts: Error - ${err.getMsg}');
+              emit(NewsfeedState.failurePosts(err.getMsg));
+            }, (res) {
+              log('fetchPosts: Success - Number of posts fetched: ${res.length}');
+              posts = res;
+              emit(const NewsfeedState.successPosts());
+            });
+          } catch (e) {
+            log('fetchPosts: Exception - ${e.toString()}');
+            emit(NewsfeedState.failurePosts(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      log('getUserPosts: Exception - $e');
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onGetSavedPosts(
-      _GetSavedPosts event, Emitter<NewsfeedState> emit) async {
-    try {
-      log('getSavedPosts: Starting for user ${event.uuid}');
-      emit(const NewsfeedState.loadingSavedPosts());
-
-      final result =
-          await _getSavedPostsUsecase(parm: {'user_uuid': event.uuid});
-
-      result.fold(
-        (error) {
-          log('getSavedPosts: Error - ${error.getMsg}');
-          emit(NewsfeedState.failure(error.getMsg));
+        getUserPosts: (uuid) async {
+          userPosts.clear();
+          emit(const NewsfeedState.loadingUserPosts());
+          try {
+            final result = await _getPostsUsecase(parm: {
+              'user_uuid': uuid,
+            });
+            result.fold((err) {
+              emit(NewsfeedState.failureUserPosts(err.getMsg));
+            }, (res) {
+              log('getUserPosts: Number of posts fetched: ${res.length}');
+              userPosts = res;
+              emit(const NewsfeedState.successUserPosts());
+            });
+          } catch (e) {
+            emit(NewsfeedState.failureUserPosts(e.toString()));
+          }
         },
-        (savedPosts) {
-          log('getSavedPosts: Success - ${savedPosts.length} saved posts loaded');
-          this.savedPosts = savedPosts;
-          emit(NewsfeedState.savedPostsLoaded(savedPosts));
+        getSavedPosts: (uuid) async {
+          savedPosts.clear();
+          emit(const NewsfeedState.loadingSavedPosts());
+          try {
+            final result = await _getSavedPostsUsecase(parm: {
+              'user_uuid': uuid,
+            });
+            result.fold(
+              (err) {
+                emit(NewsfeedState.failureSavedPosts(err.getMsg));
+              },
+              (res) {
+                savedPosts = res;
+                emit(const NewsfeedState.successSavedPosts());
+              },
+            );
+          } catch (e) {
+            emit(NewsfeedState.failureSavedPosts(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      log('getSavedPosts: Exception - $e');
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
+        savePost: (uuid) async {
+          // Update in all lists where the post might exist
+          _updatePostInAllLists(uuid, (post) {
+            return post.copyWith(is_saved: !post.is_saved);
+          });
+          emit(const NewsfeedState.successPostSaved());
 
-  Future<void> _onSavePost(_SavePost event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingSavePost());
-
-      final result = await _savePostUsecase(parm: {'uuid': event.uuid});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) => emit(const NewsfeedState.postSaved()),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onGetUserInfo(
-      _GetUserInfo event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingProfile());
-
-      final result = await _getUserInfoUsecase(parm: {'user_uuid': event.uuid});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (profile) => emit(NewsfeedState.profileLoaded(profile)),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onLikePost(_LikePost event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingLike());
-
-      final result = await _addLikePostUsecase(parm: {'uuid': event.postId});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) => emit(const NewsfeedState.postLiked()),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onUnLikePost(
-      _UnLikePost event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingLike());
-
-      final result = await _unLikePostUsecase(parm: {'uuid': event.postId});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) => emit(const NewsfeedState.postUnliked()),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onGetLikes(_GetLikes event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingLikes());
-
-      final result =
-          await _getLikesForPostUsecase(parm: {'uuid': event.postId});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (likes) => emit(NewsfeedState.likesLoaded(event.postId, likes)),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onAddComment(
-      _AddComment event, Emitter<NewsfeedState> emit) async {
-    if (commentController.text.trim().isEmpty) {
-      emit(const NewsfeedState.failure('Comment cannot be empty'));
-      return;
-    }
-
-    try {
-      emit(const NewsfeedState.loadingAddComment());
-
-      final result = await _addCommentUsecase(parm: {
-        'uuid': event.postId,
-        'content': commentController.text.trim(),
-      });
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) {
-          commentController.clear();
-          emit(const NewsfeedState.commentAdded());
-          // Refresh comments
-          add(NewsfeedEvent.getComments(event.postId));
+          try {
+            final result = await _savePostUsecase(parm: {'uuid': uuid});
+            result.fold((err) {
+              // Revert on error
+              _updatePostInAllLists(uuid, (post) {
+                return post.copyWith(is_saved: !post.is_saved);
+              });
+              emit(NewsfeedState.failurePostSaved(err.getMsg));
+            }, (res) {
+              emit(const NewsfeedState.successPostSaved());
+            });
+          } catch (e) {
+            // Revert on exception
+            _updatePostInAllLists(uuid, (post) {
+              return post.copyWith(is_saved: !post.is_saved);
+            });
+            emit(NewsfeedState.failurePostSaved(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onGetComments(
-      _GetComments event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingComments());
-
-      final result = await _getCommentsUsecase(parm: {'uuid': event.postId});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (comments) =>
-            emit(NewsfeedState.commentsLoaded(event.postId, comments)),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onReplayComment(
-      _ReplayComment event, Emitter<NewsfeedState> emit) async {
-    if (commentController.text.trim().isEmpty) {
-      emit(const NewsfeedState.failure('Reply cannot be empty'));
-      return;
-    }
-
-    try {
-      emit(const NewsfeedState.loadingAddComment());
-
-      final result = await _addCommentReplyUsecase(parm: {
-        'uuid': event.commentId,
-        'content': commentController.text.trim(),
-      });
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) {
-          commentController.clear();
-          emit(const NewsfeedState.replyAdded());
-          // Refresh replies
-          add(NewsfeedEvent.getCommentReplaies(event.commentId));
+        getUserInfo: (uuid) async {
+          emit(const NewsfeedState.loadingProfile());
+          try {
+            final result = await _getUserInfoUsecase(parm: {
+              'user_uuid': uuid,
+            });
+            result.fold((err) {
+              emit(NewsfeedState.failureProfile(err.getMsg));
+            }, (res) {
+              profile = res;
+              emit(const NewsfeedState.successProfile());
+            });
+          } catch (e) {
+            emit(NewsfeedState.failureProfile(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
+        likePost: (postId) async {
+          // Update in all lists where the post might exist
+          _updatePostInAllLists(postId, (post) {
+            final newLikeStatus = !post.is_liked;
+            final newLikeCount = newLikeStatus 
+                ? post.number_of_likes + 1 
+                : post.number_of_likes - 1;
+            return post.copyWith(
+              is_liked: newLikeStatus,
+              number_of_likes: newLikeCount,
+            );
+          });
+          emit(const NewsfeedState.successLikePost());
 
-  Future<void> _onGetCommentReplies(
-      _GetCommentReplaies event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingReplies());
-
-      final result = await _getRepliesUsecase(parm: {'uuid': event.commentId});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (replies) => emit(NewsfeedState.repliesLoaded(replies)),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onLikeComment(
-      _LikeComment event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingCommentLike());
-
-      final result =
-          await _addLikeOnCommentUsecase(parm: {'uuid': event.commentId});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) {
-          emit(const NewsfeedState.commentLiked());
-          // Refresh comments to show updated like status
-          add(NewsfeedEvent.getComments(event.postId));
+          try {
+            final result = await _addLikePostUsecase(parm: {'uuid': postId});
+            result.fold((err) {
+              // Revert on error
+              _updatePostInAllLists(postId, (post) {
+                final newLikeStatus = !post.is_liked;
+                final newLikeCount = newLikeStatus 
+                    ? post.number_of_likes + 1 
+                    : post.number_of_likes - 1;
+                return post.copyWith(
+                  is_liked: newLikeStatus,
+                  number_of_likes: newLikeCount,
+                );
+              });
+              emit(NewsfeedState.failureLikePost(err.getMsg));
+            }, (res) {
+              emit(const NewsfeedState.successLikePost());
+            });
+          } catch (e) {
+            // Revert on exception
+            _updatePostInAllLists(postId, (post) {
+              final newLikeStatus = !post.is_liked;
+              final newLikeCount = newLikeStatus 
+                  ? post.number_of_likes + 1 
+                  : post.number_of_likes - 1;
+              return post.copyWith(
+                is_liked: newLikeStatus,
+                number_of_likes: newLikeCount,
+              );
+            });
+            emit(NewsfeedState.failureLikePost(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
+        unLikePost: (postId) async {
+          // Update in all lists where the post might exist
+          _updatePostInAllLists(postId, (post) {
+            final newLikeStatus = !post.is_liked;
+            final newLikeCount = newLikeStatus 
+                ? post.number_of_likes + 1 
+                : post.number_of_likes - 1;
+            return post.copyWith(
+              is_liked: newLikeStatus,
+              number_of_likes: newLikeCount,
+            );
+          });
+          emit(const NewsfeedState.successUnlikePost());
 
-  Future<void> _onUnLikeComment(
-      _UnLikeCmment event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingCommentLike());
-
-      final result =
-          await _unLikeCommentUsecase(parm: {'uuid': event.commentId});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) {
-          emit(const NewsfeedState.commentUnliked());
-          // Refresh comments to show updated like status
-          add(NewsfeedEvent.getComments(event.postId));
+          try {
+            final result = await _unLikePostUsecase(parm: {'uuid': postId});
+            result.fold((err) {
+              // Revert on error
+              _updatePostInAllLists(postId, (post) {
+                final newLikeStatus = !post.is_liked;
+                final newLikeCount = newLikeStatus 
+                    ? post.number_of_likes + 1 
+                    : post.number_of_likes - 1;
+                return post.copyWith(
+                  is_liked: newLikeStatus,
+                  number_of_likes: newLikeCount,
+                );
+              });
+              emit(NewsfeedState.failureUnlikePost(err.getMsg));
+            }, (res) {
+              emit(const NewsfeedState.successUnlikePost());
+            });
+          } catch (e) {
+            // Revert on exception
+            _updatePostInAllLists(postId, (post) {
+              final newLikeStatus = !post.is_liked;
+              final newLikeCount = newLikeStatus 
+                  ? post.number_of_likes + 1 
+                  : post.number_of_likes - 1;
+              return post.copyWith(
+                is_liked: newLikeStatus,
+                number_of_likes: newLikeCount,
+              );
+            });
+            emit(NewsfeedState.failureUnlikePost(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
+        getLikes: (postId) async {
+          emit(const NewsfeedState.loadingLikes());
+          try {
+            final result =
+                await _getLikesForPostUsecase(parm: {'uuid': postId});
 
-  Future<void> _onDeleteComment(
-      _DeleteComment event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingDeleteComment());
-
-      final result = await _deleteCommentUsecase(parm: {
-        'uuid': event.commentId,
-        'content': event.content,
-      });
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) {
-          emit(const NewsfeedState.commentDeleted());
-          // Refresh comments
-          add(NewsfeedEvent.getComments(event.postId));
+            result.fold((err) {
+              emit(NewsfeedState.failureLikes(err.getMsg));
+            }, (res) {
+              userLikes = res;
+              emit(const NewsfeedState.successLikes());
+            });
+          } catch (e) {
+            emit(NewsfeedState.failureLikes(e.toString()));
+          }
         },
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
+        getComments: (postId) async {
+          emit(const NewsfeedState.loadingComments());
+          try {
+            final result = await _getCommentsUsecase(parm: {'uuid': postId});
 
-  Future<void> _onDeleteReplayComment(
-      _DeleteReplayComment event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingDeleteComment());
-
-      final result =
-          await _deleteCommentReplyUsecase(parm: {'uuid': event.replyId});
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (success) {
-          emit(const NewsfeedState.replyDeleted());
-          // Refresh replies
-          add(NewsfeedEvent.getCommentReplaies(event.commentId));
+            result.fold((err) {
+              emit(NewsfeedState.failureComments(err.getMsg));
+            }, (res) {
+              comments = res;
+              emit(const NewsfeedState.successComments());
+            });
+          } catch (e) {
+            emit(NewsfeedState.failureComments(e.toString()));
+          }
         },
+        getCommentReplaies: (commentId) async {
+          emit(const NewsfeedState.loadingReplies());
+          try {
+            final result = await _getRepliesUsecase(parm: {'uuid': commentId});
+
+            result.fold((err) {
+              emit(NewsfeedState.failureReplies(err.getMsg));
+            }, (res) {
+              replysComment = res;
+              emit(const NewsfeedState.successReplies());
+            });
+          } catch (e) {
+            emit(NewsfeedState.failureReplies(e.toString()));
+          }
+        },
+        addComment: (postId) async {
+          final commentText = comment.text;
+          if (commentText.isEmpty) return;
+          
+          comment.clear();
+          
+          // Create temporary comment
+          final tempComment = CommentEntity(
+            uuid: 'temp_${DateTime.now().millisecondsSinceEpoch}',
+            content: commentText,
+            number_of_likes: 0,
+            number_of_replies: 0,
+            created_at: DateTime.now().toIso8601String(),
+            is_i_comment_owner: true,
+            is_i_replay_owner: false,
+            user_info: UserInfoEntity(
+              uuid: usr.user.uuid,
+              full_name: "${usr.user.first_name} ${usr.user.last_name}",
+              user_name: usr.user.username,
+              profile_picture_url: usr.user.profile_picture,
+            ),
+            is_liked: false,
+          );
+          
+          // Optimistically add comment
+          comments.insert(0, tempComment);
+          emit(const NewsfeedState.successAddComment());
+
+          try {
+            final result = await _addCommentUsecase(parm: {
+              'uuid': postId,
+              'content': commentText,
+            });
+            result.fold(
+              (err) {
+                // Remove temp comment on error
+                comments.removeWhere((c) => c.uuid == tempComment.uuid);
+                emit(NewsfeedState.failureAddComment(err.getMsg));
+              },
+              (res) {
+                // Fetch real comments to replace temp
+                add(NewsfeedEvent.getComments(postId));
+              },
+            );
+          } catch (e) {
+            // Remove temp comment on exception
+            comments.removeWhere((c) => c.uuid == tempComment.uuid);
+            emit(NewsfeedState.failureAddComment(e.toString()));
+          }
+        },
+        replayComment: (commentId) async {
+          final commentText = comment.text;
+          if (commentText.isEmpty) return;
+          
+          comment.clear();
+          
+          // Create temporary reply
+          final tempReply = CommentEntity(
+            uuid: 'temp_${DateTime.now().millisecondsSinceEpoch}',
+            content: commentText,
+            number_of_likes: 0,
+            number_of_replies: 0,
+            created_at: DateTime.now().toIso8601String(),
+            is_i_comment_owner: false,
+            is_i_replay_owner: true,
+            user_info: UserInfoEntity(
+              uuid: usr.user.uuid,
+              full_name: "${usr.user.first_name} ${usr.user.last_name}",
+              user_name: usr.user.username,
+              profile_picture_url: usr.user.profile_picture,
+            ),
+            is_liked: false,
+          );
+          
+          // Optimistically add reply
+          replysComment.insert(0, tempReply);
+          emit(const NewsfeedState.successReplyComment());
+
+          try {
+            final result = await _addCommentReplyUsecase(parm: {
+              'uuid': commentId,
+              'content': commentText,
+            });
+            result.fold(
+              (err) {
+                // Remove temp reply on error
+                replysComment.removeWhere((c) => c.uuid == tempReply.uuid);
+                emit(NewsfeedState.failureReplyComment(err.getMsg));
+              },
+              (res) {
+                // Fetch real replies to replace temp
+                add(NewsfeedEvent.getCommentReplaies(commentId));
+              },
+            );
+          } catch (e) {
+            // Remove temp reply on exception
+            replysComment.removeWhere((c) => c.uuid == tempReply.uuid);
+            emit(NewsfeedState.failureReplyComment(e.toString()));
+          }
+        },
+       likeComment: (commentId, postId) async {
+  final commentIndex = comments.indexWhere((c) => c.uuid == commentId);
+  if (commentIndex == -1) return;
+  
+  final comment = comments[commentIndex];
+  final newLikeStatus = !comment.is_liked;
+  final newLikeCount = newLikeStatus 
+      ? (comment.number_of_likes ?? 0) + 1 
+      : (comment.number_of_likes ?? 0) - 1;
+  
+  // Optimistically update
+  comments[commentIndex] = comment.copyWith(
+    is_liked: newLikeStatus,
+    number_of_likes: newLikeCount,
+  );
+  emit(const NewsfeedState.successLikeComment());
+
+  try {
+    final result = await _addLikeOnCommentUsecase(parm: {
+      'uuid': commentId,
+    });
+    result.fold(
+      (err) {
+        // Revert on error
+        comments[commentIndex] = comment;
+        emit(NewsfeedState.failureLikeComment(err.getMsg));
+      },
+      (res) {
+        emit(const NewsfeedState.successLikeComment());
+      },
+    );
+  } catch (e) {
+    // Revert on exception
+    comments[commentIndex] = comment;
+    emit(NewsfeedState.failureLikeComment(e.toString()));
+  }
+},unLikeCmment: (commentId, postId) async {
+  final commentIndex = comments.indexWhere((c) => c.uuid == commentId);
+  if (commentIndex == -1) return;
+  
+  final comment = comments[commentIndex];
+  final newLikeStatus = !comment.is_liked;
+  final newLikeCount = newLikeStatus 
+      ? (comment.number_of_likes ?? 0) + 1 
+      : (comment.number_of_likes ?? 0) - 1;
+  
+  // Optimistically update
+  comments[commentIndex] = comment.copyWith(
+    is_liked: newLikeStatus,
+    number_of_likes: newLikeCount,
+  );
+  emit(const NewsfeedState.successUnlikeComment());
+
+  try {
+    final result = await _unLikeCommentUsecase(parm: {
+      'uuid': commentId,
+    });
+    result.fold(
+      (err) {
+        // Revert on error
+        comments[commentIndex] = comment;
+        emit(NewsfeedState.failureUnlikeComment(err.getMsg));
+      },
+      (res) {
+        emit(const NewsfeedState.successUnlikeComment());
+      },
+    );
+  } catch (e) {
+    // Revert on exception
+    comments[commentIndex] = comment;
+    emit(NewsfeedState.failureUnlikeComment(e.toString()));
+  }
+},
+        deleteComment: (commentId, postId, content) async {
+          final commentIndex = comments.indexWhere((c) => c.uuid == commentId);
+          if (commentIndex == -1) return;
+          
+          final comment = comments[commentIndex];
+          
+          // Optimistically remove
+          comments.removeAt(commentIndex);
+          emit(const NewsfeedState.successDeleteComment());
+
+          try {
+            final result = await _deleteCommentUsecase(parm: {
+              'uuid': commentId,
+              'content': content,
+            });
+            result.fold(
+              (err) {
+                // Restore comment on error
+                comments.insert(commentIndex, comment);
+                emit(NewsfeedState.failureDeleteComment(err.getMsg));
+              },
+              (res) {
+                emit(const NewsfeedState.successDeleteComment());
+              },
+            );
+          } catch (e) {
+            // Restore comment on exception
+            comments.insert(commentIndex, comment);
+            emit(NewsfeedState.failureDeleteComment(e.toString()));
+          }
+        },
+        deleteReplayComment: (commentId, replyId) async {
+          final replyIndex = replysComment.indexWhere((r) => r.uuid == replyId);
+          if (replyIndex == -1) return;
+          
+          final reply = replysComment[replyIndex];
+          
+          // Optimistically remove
+          replysComment.removeAt(replyIndex);
+          emit(const NewsfeedState.successDeleteReply());
+
+          try {
+            final result = await _deleteCommentReplyUsecase(parm: {
+              'uuid': replyId,
+            });
+            result.fold(
+              (err) {
+                // Restore reply on error
+                replysComment.insert(replyIndex, reply);
+                emit(NewsfeedState.failureDeleteReply(err.getMsg));
+              },
+              (res) {
+                emit(const NewsfeedState.successDeleteReply());
+              },
+            );
+          } catch (e) {
+            // Restore reply on exception
+            replysComment.insert(replyIndex, reply);
+            emit(NewsfeedState.failureDeleteReply(e.toString()));
+          }
+        },
+        orElse: () {},
       );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
+    });
+  }
+
+  // Helper method to update a post across all lists
+  void _updatePostInAllLists(String uuid, PostEntity Function(PostEntity) update) {
+    // Update in main posts list
+    final postIndex = posts.indexWhere((post) => post.uuid == uuid);
+    if (postIndex != -1) {
+      posts[postIndex] = update(posts[postIndex]);
+    }
+    
+    // Update in user posts list
+    final userPostIndex = userPosts.indexWhere((post) => post.uuid == uuid);
+    if (userPostIndex != -1) {
+      userPosts[userPostIndex] = update(userPosts[userPostIndex]);
+    }
+    
+    // Update in saved posts list
+    final savedPostIndex = savedPosts.indexWhere((post) => post.uuid == uuid);
+    if (savedPostIndex != -1) {
+      savedPosts[savedPostIndex] = update(savedPosts[savedPostIndex]);
     }
   }
-
-  Future<void> _onGetTagVendor(
-      _GetTagVendor event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingVendors());
-
-      final result = await _getTagVendorUsecase(parm: {
-        'business_name': searchController.text.trim(),
-      });
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (vendors) => emit(NewsfeedState.vendorsLoaded(vendors)),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  Future<void> _onGetTagProduct(
-      _GetTagProduct event, Emitter<NewsfeedState> emit) async {
-    try {
-      emit(const NewsfeedState.loadingProducts());
-
-      final result = await _getTagProductUsecase(parm: {
-        'product_name': searchController.text.trim(),
-      });
-
-      result.fold(
-        (error) => emit(NewsfeedState.failure(error.getMsg)),
-        (products) => emit(NewsfeedState.productsLoaded(products)),
-      );
-    } catch (e) {
-      emit(NewsfeedState.failure(e.toString()));
-    }
-  }
-
-  // Helper methods
-  void _clearPostCreationState() {
-    _selectedImage = null;
-    _selectedImageBytes = null;
-    contentController.clear();
-  }
-
-  // Getters for UI
-  File? get selectedImage => _selectedImage;
-  Uint8List? get selectedImageBytes => _selectedImageBytes;
 }

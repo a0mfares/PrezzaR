@@ -1,5 +1,5 @@
-import 'package:hive/hive.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:prezza/features/landing/data/models/downloadplatforms_model.dart';
 
 part 'downloadplatforms_entity.g.dart';

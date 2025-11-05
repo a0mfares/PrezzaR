@@ -49,7 +49,7 @@ class StoryWidget extends StatelessWidget {
                     ),
                     vSpace(1),
                     Text(
-                      'user name',
+                      tr.username,
                       style: tstyle.bodyLarge!.copyWith(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,

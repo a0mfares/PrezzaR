@@ -9,10 +9,8 @@ import 'package:sizer/sizer.dart';
 
 import '../../../../config/custom_colors.dart';
 import '../../../../config/txt_themes.dart';
-import '../../../../core/helper/tools.dart';
 import '../../../../core/service/routes.gr.dart';
 import '../../../../prezza_page.dart';
-import '../../../auth/presentation/bloc/auth_bloc.dart';
 
 @RoutePage()
 class PassChangePage extends StatefulWidget {
@@ -174,7 +172,7 @@ class _PassChangePageState extends State<PassChangePage> {
                   listener: (context, state) {
                     state.maybeMap(
                       failure: (err) {
-                        BotToast.showText(text: err.err);
+                        BotToast.showText(text: err.error);
                       },
                       success: (_) {
                         BotToast.showText(text: tr.successUpdate);

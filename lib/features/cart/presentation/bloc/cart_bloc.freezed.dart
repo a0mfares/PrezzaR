@@ -28,6 +28,7 @@ mixin _$CartEvent {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -42,6 +43,7 @@ mixin _$CartEvent {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +58,7 @@ mixin _$CartEvent {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -71,6 +74,7 @@ mixin _$CartEvent {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +89,7 @@ mixin _$CartEvent {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,6 +104,7 @@ mixin _$CartEvent {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -119,9 +125,6 @@ class _$CartEventCopyWithImpl<$Res, $Val extends CartEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -138,9 +141,6 @@ class __$$GetUserCartImplCopyWithImpl<$Res>
   __$$GetUserCartImplCopyWithImpl(
       _$GetUserCartImpl _value, $Res Function(_$GetUserCartImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -175,6 +175,7 @@ class _$GetUserCartImpl implements _GetUserCart {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return getUserCart();
   }
@@ -192,6 +193,7 @@ class _$GetUserCartImpl implements _GetUserCart {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return getUserCart?.call();
   }
@@ -209,6 +211,7 @@ class _$GetUserCartImpl implements _GetUserCart {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (getUserCart != null) {
@@ -230,6 +233,7 @@ class _$GetUserCartImpl implements _GetUserCart {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return getUserCart(this);
   }
@@ -247,6 +251,7 @@ class _$GetUserCartImpl implements _GetUserCart {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return getUserCart?.call(this);
   }
@@ -264,6 +269,7 @@ class _$GetUserCartImpl implements _GetUserCart {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (getUserCart != null) {
@@ -291,9 +297,6 @@ class __$$GetCartDetailsImplCopyWithImpl<$Res>
   __$$GetCartDetailsImplCopyWithImpl(
       _$GetCartDetailsImpl _value, $Res Function(_$GetCartDetailsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -328,6 +331,7 @@ class _$GetCartDetailsImpl implements _GetCartDetails {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return getCartDetails();
   }
@@ -345,6 +349,7 @@ class _$GetCartDetailsImpl implements _GetCartDetails {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return getCartDetails?.call();
   }
@@ -362,6 +367,7 @@ class _$GetCartDetailsImpl implements _GetCartDetails {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (getCartDetails != null) {
@@ -383,6 +389,7 @@ class _$GetCartDetailsImpl implements _GetCartDetails {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return getCartDetails(this);
   }
@@ -400,6 +407,7 @@ class _$GetCartDetailsImpl implements _GetCartDetails {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return getCartDetails?.call(this);
   }
@@ -417,6 +425,7 @@ class _$GetCartDetailsImpl implements _GetCartDetails {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (getCartDetails != null) {
@@ -444,9 +453,6 @@ class __$$ClearCartImplCopyWithImpl<$Res>
   __$$ClearCartImplCopyWithImpl(
       _$ClearCartImpl _value, $Res Function(_$ClearCartImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -481,6 +487,7 @@ class _$ClearCartImpl implements _ClearCart {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return clearCart();
   }
@@ -498,6 +505,7 @@ class _$ClearCartImpl implements _ClearCart {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return clearCart?.call();
   }
@@ -515,6 +523,7 @@ class _$ClearCartImpl implements _ClearCart {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (clearCart != null) {
@@ -536,6 +545,7 @@ class _$ClearCartImpl implements _ClearCart {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return clearCart(this);
   }
@@ -553,6 +563,7 @@ class _$ClearCartImpl implements _ClearCart {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return clearCart?.call(this);
   }
@@ -570,6 +581,7 @@ class _$ClearCartImpl implements _ClearCart {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (clearCart != null) {
@@ -597,9 +609,6 @@ class __$$GetCartLengthImplCopyWithImpl<$Res>
   __$$GetCartLengthImplCopyWithImpl(
       _$GetCartLengthImpl _value, $Res Function(_$GetCartLengthImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -634,6 +643,7 @@ class _$GetCartLengthImpl implements _GetCartLength {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return getCartLength();
   }
@@ -651,6 +661,7 @@ class _$GetCartLengthImpl implements _GetCartLength {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return getCartLength?.call();
   }
@@ -668,6 +679,7 @@ class _$GetCartLengthImpl implements _GetCartLength {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (getCartLength != null) {
@@ -689,6 +701,7 @@ class _$GetCartLengthImpl implements _GetCartLength {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return getCartLength(this);
   }
@@ -706,6 +719,7 @@ class _$GetCartLengthImpl implements _GetCartLength {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return getCartLength?.call(this);
   }
@@ -723,6 +737,7 @@ class _$GetCartLengthImpl implements _GetCartLength {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (getCartLength != null) {
@@ -750,9 +765,6 @@ class __$$GetPreparingTimeImplCopyWithImpl<$Res>
   __$$GetPreparingTimeImplCopyWithImpl(_$GetPreparingTimeImpl _value,
       $Res Function(_$GetPreparingTimeImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -787,6 +799,7 @@ class _$GetPreparingTimeImpl implements _GetPreparingTime {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return getPreparingTime();
   }
@@ -804,6 +817,7 @@ class _$GetPreparingTimeImpl implements _GetPreparingTime {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return getPreparingTime?.call();
   }
@@ -821,6 +835,7 @@ class _$GetPreparingTimeImpl implements _GetPreparingTime {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (getPreparingTime != null) {
@@ -842,6 +857,7 @@ class _$GetPreparingTimeImpl implements _GetPreparingTime {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return getPreparingTime(this);
   }
@@ -859,6 +875,7 @@ class _$GetPreparingTimeImpl implements _GetPreparingTime {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return getPreparingTime?.call(this);
   }
@@ -876,6 +893,7 @@ class _$GetPreparingTimeImpl implements _GetPreparingTime {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (getPreparingTime != null) {
@@ -906,8 +924,6 @@ class __$$AddItemToCartImplCopyWithImpl<$Res>
       _$AddItemToCartImpl _value, $Res Function(_$AddItemToCartImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -952,9 +968,7 @@ class _$AddItemToCartImpl implements _AddItemToCart {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_item));
 
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddItemToCartImplCopyWith<_$AddItemToCartImpl> get copyWith =>
@@ -973,6 +987,7 @@ class _$AddItemToCartImpl implements _AddItemToCart {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return addItemToCart(item);
   }
@@ -990,6 +1005,7 @@ class _$AddItemToCartImpl implements _AddItemToCart {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return addItemToCart?.call(item);
   }
@@ -1007,6 +1023,7 @@ class _$AddItemToCartImpl implements _AddItemToCart {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (addItemToCart != null) {
@@ -1028,6 +1045,7 @@ class _$AddItemToCartImpl implements _AddItemToCart {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return addItemToCart(this);
   }
@@ -1045,6 +1063,7 @@ class _$AddItemToCartImpl implements _AddItemToCart {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return addItemToCart?.call(this);
   }
@@ -1062,6 +1081,7 @@ class _$AddItemToCartImpl implements _AddItemToCart {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (addItemToCart != null) {
@@ -1076,10 +1096,7 @@ abstract class _AddItemToCart implements CartEvent {
       _$AddItemToCartImpl;
 
   Map<String, dynamic> get item;
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AddItemToCartImplCopyWith<_$AddItemToCartImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1101,8 +1118,6 @@ class __$$RemoveItemFromCartImplCopyWithImpl<$Res>
       $Res Function(_$RemoveItemFromCartImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1141,9 +1156,7 @@ class _$RemoveItemFromCartImpl implements _RemoveItemFromCart {
   @override
   int get hashCode => Object.hash(runtimeType, uuid);
 
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoveItemFromCartImplCopyWith<_$RemoveItemFromCartImpl> get copyWith =>
@@ -1163,6 +1176,7 @@ class _$RemoveItemFromCartImpl implements _RemoveItemFromCart {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return removeItemFromCart(uuid);
   }
@@ -1180,6 +1194,7 @@ class _$RemoveItemFromCartImpl implements _RemoveItemFromCart {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return removeItemFromCart?.call(uuid);
   }
@@ -1197,6 +1212,7 @@ class _$RemoveItemFromCartImpl implements _RemoveItemFromCart {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (removeItemFromCart != null) {
@@ -1218,6 +1234,7 @@ class _$RemoveItemFromCartImpl implements _RemoveItemFromCart {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return removeItemFromCart(this);
   }
@@ -1235,6 +1252,7 @@ class _$RemoveItemFromCartImpl implements _RemoveItemFromCart {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return removeItemFromCart?.call(this);
   }
@@ -1252,6 +1270,7 @@ class _$RemoveItemFromCartImpl implements _RemoveItemFromCart {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (removeItemFromCart != null) {
@@ -1266,10 +1285,7 @@ abstract class _RemoveItemFromCart implements CartEvent {
       _$RemoveItemFromCartImpl;
 
   String get uuid;
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$RemoveItemFromCartImplCopyWith<_$RemoveItemFromCartImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1291,8 +1307,6 @@ class __$$UpdateItemQunImplCopyWithImpl<$Res>
       _$UpdateItemQunImpl _value, $Res Function(_$UpdateItemQunImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1340,9 +1354,7 @@ class _$UpdateItemQunImpl implements _UpdateItemQun {
   @override
   int get hashCode => Object.hash(runtimeType, itemId, operation);
 
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$UpdateItemQunImplCopyWith<_$UpdateItemQunImpl> get copyWith =>
@@ -1361,6 +1373,7 @@ class _$UpdateItemQunImpl implements _UpdateItemQun {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return updateItemQun(itemId, operation);
   }
@@ -1378,6 +1391,7 @@ class _$UpdateItemQunImpl implements _UpdateItemQun {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return updateItemQun?.call(itemId, operation);
   }
@@ -1395,6 +1409,7 @@ class _$UpdateItemQunImpl implements _UpdateItemQun {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (updateItemQun != null) {
@@ -1416,6 +1431,7 @@ class _$UpdateItemQunImpl implements _UpdateItemQun {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return updateItemQun(this);
   }
@@ -1433,6 +1449,7 @@ class _$UpdateItemQunImpl implements _UpdateItemQun {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return updateItemQun?.call(this);
   }
@@ -1450,6 +1467,7 @@ class _$UpdateItemQunImpl implements _UpdateItemQun {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (updateItemQun != null) {
@@ -1465,10 +1483,7 @@ abstract class _UpdateItemQun implements CartEvent {
 
   String get itemId;
   String get operation;
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$UpdateItemQunImplCopyWith<_$UpdateItemQunImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1487,9 +1502,6 @@ class __$$GetOftenOrderdWithImplCopyWithImpl<$Res>
   __$$GetOftenOrderdWithImplCopyWithImpl(_$GetOftenOrderdWithImpl _value,
       $Res Function(_$GetOftenOrderdWithImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1524,6 +1536,7 @@ class _$GetOftenOrderdWithImpl implements _GetOftenOrderdWith {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return getOftenOrderdWith();
   }
@@ -1541,6 +1554,7 @@ class _$GetOftenOrderdWithImpl implements _GetOftenOrderdWith {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return getOftenOrderdWith?.call();
   }
@@ -1558,6 +1572,7 @@ class _$GetOftenOrderdWithImpl implements _GetOftenOrderdWith {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (getOftenOrderdWith != null) {
@@ -1579,6 +1594,7 @@ class _$GetOftenOrderdWithImpl implements _GetOftenOrderdWith {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return getOftenOrderdWith(this);
   }
@@ -1596,6 +1612,7 @@ class _$GetOftenOrderdWithImpl implements _GetOftenOrderdWith {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return getOftenOrderdWith?.call(this);
   }
@@ -1613,6 +1630,7 @@ class _$GetOftenOrderdWithImpl implements _GetOftenOrderdWith {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (getOftenOrderdWith != null) {
@@ -1640,9 +1658,6 @@ class __$$AddOrUpdateCouponImplCopyWithImpl<$Res>
   __$$AddOrUpdateCouponImplCopyWithImpl(_$AddOrUpdateCouponImpl _value,
       $Res Function(_$AddOrUpdateCouponImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1677,6 +1692,7 @@ class _$AddOrUpdateCouponImpl implements _AddOrUpdateCoupon {
     required TResult Function(String itemId, String operation) updateItemQun,
     required TResult Function() getOftenOrderdWith,
     required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
   }) {
     return addOrUpdateCoupon();
   }
@@ -1694,6 +1710,7 @@ class _$AddOrUpdateCouponImpl implements _AddOrUpdateCoupon {
     TResult? Function(String itemId, String operation)? updateItemQun,
     TResult? Function()? getOftenOrderdWith,
     TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
   }) {
     return addOrUpdateCoupon?.call();
   }
@@ -1711,6 +1728,7 @@ class _$AddOrUpdateCouponImpl implements _AddOrUpdateCoupon {
     TResult Function(String itemId, String operation)? updateItemQun,
     TResult Function()? getOftenOrderdWith,
     TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
     required TResult orElse(),
   }) {
     if (addOrUpdateCoupon != null) {
@@ -1732,6 +1750,7 @@ class _$AddOrUpdateCouponImpl implements _AddOrUpdateCoupon {
     required TResult Function(_UpdateItemQun value) updateItemQun,
     required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
     required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
   }) {
     return addOrUpdateCoupon(this);
   }
@@ -1749,6 +1768,7 @@ class _$AddOrUpdateCouponImpl implements _AddOrUpdateCoupon {
     TResult? Function(_UpdateItemQun value)? updateItemQun,
     TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
   }) {
     return addOrUpdateCoupon?.call(this);
   }
@@ -1766,6 +1786,7 @@ class _$AddOrUpdateCouponImpl implements _AddOrUpdateCoupon {
     TResult Function(_UpdateItemQun value)? updateItemQun,
     TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
     TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
     required TResult orElse(),
   }) {
     if (addOrUpdateCoupon != null) {
@@ -1777,6 +1798,162 @@ class _$AddOrUpdateCouponImpl implements _AddOrUpdateCoupon {
 
 abstract class _AddOrUpdateCoupon implements CartEvent {
   const factory _AddOrUpdateCoupon() = _$AddOrUpdateCouponImpl;
+}
+
+/// @nodoc
+abstract class _$$CloseCartImplCopyWith<$Res> {
+  factory _$$CloseCartImplCopyWith(
+          _$CloseCartImpl value, $Res Function(_$CloseCartImpl) then) =
+      __$$CloseCartImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$CloseCartImplCopyWithImpl<$Res>
+    extends _$CartEventCopyWithImpl<$Res, _$CloseCartImpl>
+    implements _$$CloseCartImplCopyWith<$Res> {
+  __$$CloseCartImplCopyWithImpl(
+      _$CloseCartImpl _value, $Res Function(_$CloseCartImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$CloseCartImpl implements _CloseCart {
+  const _$CloseCartImpl();
+
+  @override
+  String toString() {
+    return 'CartEvent.closeCart()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$CloseCartImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() getUserCart,
+    required TResult Function() getCartDetails,
+    required TResult Function() clearCart,
+    required TResult Function() getCartLength,
+    required TResult Function() getPreparingTime,
+    required TResult Function(Map<String, dynamic> item) addItemToCart,
+    required TResult Function(String uuid) removeItemFromCart,
+    required TResult Function(String itemId, String operation) updateItemQun,
+    required TResult Function() getOftenOrderdWith,
+    required TResult Function() addOrUpdateCoupon,
+    required TResult Function() closeCart,
+  }) {
+    return closeCart();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getUserCart,
+    TResult? Function()? getCartDetails,
+    TResult? Function()? clearCart,
+    TResult? Function()? getCartLength,
+    TResult? Function()? getPreparingTime,
+    TResult? Function(Map<String, dynamic> item)? addItemToCart,
+    TResult? Function(String uuid)? removeItemFromCart,
+    TResult? Function(String itemId, String operation)? updateItemQun,
+    TResult? Function()? getOftenOrderdWith,
+    TResult? Function()? addOrUpdateCoupon,
+    TResult? Function()? closeCart,
+  }) {
+    return closeCart?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? getUserCart,
+    TResult Function()? getCartDetails,
+    TResult Function()? clearCart,
+    TResult Function()? getCartLength,
+    TResult Function()? getPreparingTime,
+    TResult Function(Map<String, dynamic> item)? addItemToCart,
+    TResult Function(String uuid)? removeItemFromCart,
+    TResult Function(String itemId, String operation)? updateItemQun,
+    TResult Function()? getOftenOrderdWith,
+    TResult Function()? addOrUpdateCoupon,
+    TResult Function()? closeCart,
+    required TResult orElse(),
+  }) {
+    if (closeCart != null) {
+      return closeCart();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GetUserCart value) getUserCart,
+    required TResult Function(_GetCartDetails value) getCartDetails,
+    required TResult Function(_ClearCart value) clearCart,
+    required TResult Function(_GetCartLength value) getCartLength,
+    required TResult Function(_GetPreparingTime value) getPreparingTime,
+    required TResult Function(_AddItemToCart value) addItemToCart,
+    required TResult Function(_RemoveItemFromCart value) removeItemFromCart,
+    required TResult Function(_UpdateItemQun value) updateItemQun,
+    required TResult Function(_GetOftenOrderdWith value) getOftenOrderdWith,
+    required TResult Function(_AddOrUpdateCoupon value) addOrUpdateCoupon,
+    required TResult Function(_CloseCart value) closeCart,
+  }) {
+    return closeCart(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_GetUserCart value)? getUserCart,
+    TResult? Function(_GetCartDetails value)? getCartDetails,
+    TResult? Function(_ClearCart value)? clearCart,
+    TResult? Function(_GetCartLength value)? getCartLength,
+    TResult? Function(_GetPreparingTime value)? getPreparingTime,
+    TResult? Function(_AddItemToCart value)? addItemToCart,
+    TResult? Function(_RemoveItemFromCart value)? removeItemFromCart,
+    TResult? Function(_UpdateItemQun value)? updateItemQun,
+    TResult? Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
+    TResult? Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult? Function(_CloseCart value)? closeCart,
+  }) {
+    return closeCart?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GetUserCart value)? getUserCart,
+    TResult Function(_GetCartDetails value)? getCartDetails,
+    TResult Function(_ClearCart value)? clearCart,
+    TResult Function(_GetCartLength value)? getCartLength,
+    TResult Function(_GetPreparingTime value)? getPreparingTime,
+    TResult Function(_AddItemToCart value)? addItemToCart,
+    TResult Function(_RemoveItemFromCart value)? removeItemFromCart,
+    TResult Function(_UpdateItemQun value)? updateItemQun,
+    TResult Function(_GetOftenOrderdWith value)? getOftenOrderdWith,
+    TResult Function(_AddOrUpdateCoupon value)? addOrUpdateCoupon,
+    TResult Function(_CloseCart value)? closeCart,
+    required TResult orElse(),
+  }) {
+    if (closeCart != null) {
+      return closeCart(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CloseCart implements CartEvent {
+  const factory _CloseCart() = _$CloseCartImpl;
 }
 
 /// @nodoc
@@ -1930,9 +2107,6 @@ class _$CartStateCopyWithImpl<$Res, $Val extends CartState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1949,9 +2123,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2148,9 +2319,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2347,9 +2515,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2546,9 +2711,6 @@ class __$$SuccessAddedImplCopyWithImpl<$Res>
   __$$SuccessAddedImplCopyWithImpl(
       _$SuccessAddedImpl _value, $Res Function(_$SuccessAddedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2745,9 +2907,6 @@ class __$$SuccessDeletedImplCopyWithImpl<$Res>
   __$$SuccessDeletedImplCopyWithImpl(
       _$SuccessDeletedImpl _value, $Res Function(_$SuccessDeletedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2944,9 +3103,6 @@ class __$$SuccessClearedImplCopyWithImpl<$Res>
   __$$SuccessClearedImplCopyWithImpl(
       _$SuccessClearedImpl _value, $Res Function(_$SuccessClearedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3143,9 +3299,6 @@ class __$$SuccessUpdateImplCopyWithImpl<$Res>
   __$$SuccessUpdateImplCopyWithImpl(
       _$SuccessUpdateImpl _value, $Res Function(_$SuccessUpdateImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3345,8 +3498,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3385,9 +3536,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -3554,10 +3703,7 @@ abstract class _Failure implements CartState {
   const factory _Failure(final String err) = _$FailureImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3579,8 +3725,6 @@ class __$$FailureGetUserCartImplCopyWithImpl<$Res>
       $Res Function(_$FailureGetUserCartImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3619,9 +3763,7 @@ class _$FailureGetUserCartImpl implements _FailureGetUserCart {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureGetUserCartImplCopyWith<_$FailureGetUserCartImpl> get copyWith =>
@@ -3790,10 +3932,7 @@ abstract class _FailureGetUserCart implements CartState {
       _$FailureGetUserCartImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureGetUserCartImplCopyWith<_$FailureGetUserCartImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3816,8 +3955,6 @@ class __$$FailureGetCartDetailsImplCopyWithImpl<$Res>
       $Res Function(_$FailureGetCartDetailsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3856,9 +3993,7 @@ class _$FailureGetCartDetailsImpl implements _FailureGetCartDetails {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureGetCartDetailsImplCopyWith<_$FailureGetCartDetailsImpl>
@@ -4027,10 +4162,7 @@ abstract class _FailureGetCartDetails implements CartState {
       _$FailureGetCartDetailsImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureGetCartDetailsImplCopyWith<_$FailureGetCartDetailsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -4054,8 +4186,6 @@ class __$$FailureGetOftenProductCartImplCopyWithImpl<$Res>
       $Res Function(_$FailureGetOftenProductCartImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4094,9 +4224,7 @@ class _$FailureGetOftenProductCartImpl implements _FailureGetOftenProductCart {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureGetOftenProductCartImplCopyWith<_$FailureGetOftenProductCartImpl>
@@ -4265,10 +4393,7 @@ abstract class _FailureGetOftenProductCart implements CartState {
       _$FailureGetOftenProductCartImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureGetOftenProductCartImplCopyWith<_$FailureGetOftenProductCartImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -4290,8 +4415,6 @@ class __$$FailureClearCartImplCopyWithImpl<$Res>
       $Res Function(_$FailureClearCartImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4330,9 +4453,7 @@ class _$FailureClearCartImpl implements _FailureClearCart {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureClearCartImplCopyWith<_$FailureClearCartImpl> get copyWith =>
@@ -4500,10 +4621,7 @@ abstract class _FailureClearCart implements CartState {
   const factory _FailureClearCart(final String err) = _$FailureClearCartImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureClearCartImplCopyWith<_$FailureClearCartImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4525,8 +4643,6 @@ class __$$FailureRemoveItemImplCopyWithImpl<$Res>
       $Res Function(_$FailureRemoveItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4565,9 +4681,7 @@ class _$FailureRemoveItemImpl implements _FailureRemoveItem {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureRemoveItemImplCopyWith<_$FailureRemoveItemImpl> get copyWith =>
@@ -4735,10 +4849,7 @@ abstract class _FailureRemoveItem implements CartState {
   const factory _FailureRemoveItem(final String err) = _$FailureRemoveItemImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureRemoveItemImplCopyWith<_$FailureRemoveItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4760,8 +4871,6 @@ class __$$FailureUpdateItemImplCopyWithImpl<$Res>
       $Res Function(_$FailureUpdateItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4800,9 +4909,7 @@ class _$FailureUpdateItemImpl implements _FailureUpdateItem {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureUpdateItemImplCopyWith<_$FailureUpdateItemImpl> get copyWith =>
@@ -4970,10 +5077,7 @@ abstract class _FailureUpdateItem implements CartState {
   const factory _FailureUpdateItem(final String err) = _$FailureUpdateItemImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureUpdateItemImplCopyWith<_$FailureUpdateItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4995,8 +5099,6 @@ class __$$FailureAddCouponImplCopyWithImpl<$Res>
       $Res Function(_$FailureAddCouponImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5035,9 +5137,7 @@ class _$FailureAddCouponImpl implements _FailureAddCoupon {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureAddCouponImplCopyWith<_$FailureAddCouponImpl> get copyWith =>
@@ -5205,10 +5305,7 @@ abstract class _FailureAddCoupon implements CartState {
   const factory _FailureAddCoupon(final String err) = _$FailureAddCouponImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureAddCouponImplCopyWith<_$FailureAddCouponImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5230,8 +5327,6 @@ class __$$FailureAddItemImplCopyWithImpl<$Res>
       _$FailureAddItemImpl _value, $Res Function(_$FailureAddItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5270,9 +5365,7 @@ class _$FailureAddItemImpl implements _FailureAddItem {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureAddItemImplCopyWith<_$FailureAddItemImpl> get copyWith =>
@@ -5440,10 +5533,7 @@ abstract class _FailureAddItem implements CartState {
   const factory _FailureAddItem(final String err) = _$FailureAddItemImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureAddItemImplCopyWith<_$FailureAddItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5465,8 +5555,6 @@ class __$$FailurePreparingTImeImplCopyWithImpl<$Res>
       $Res Function(_$FailurePreparingTImeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5505,9 +5593,7 @@ class _$FailurePreparingTImeImpl implements _FailurePreparingTIme {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailurePreparingTImeImplCopyWith<_$FailurePreparingTImeImpl>
@@ -5677,10 +5763,7 @@ abstract class _FailurePreparingTIme implements CartState {
       _$FailurePreparingTImeImpl;
 
   String get err;
-
-  /// Create a copy of CartState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailurePreparingTImeImplCopyWith<_$FailurePreparingTImeImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

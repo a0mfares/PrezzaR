@@ -34,7 +34,7 @@ class _AddStoryWidgetState extends State<AddStoryWidget> {
       child: BlocListener<NewsfeedBloc, NewsfeedState>(
         listener: (context, state) {
           state.maybeMap(
-            success: (v) async {},
+           // : (v) async {},
             orElse: () {},
           );
         },

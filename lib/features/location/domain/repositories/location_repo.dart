@@ -19,6 +19,6 @@ abstract class LocationRepo {
   Future<Either<FailureServices, void>> updateBranche(
       Map<String, dynamic> data);
 
-  Future<Either<FailureServices, String>> getArrivelTime(
+  Future<Either<FailureServices, Duration>> getArrivelTime(
       Map<String, dynamic> query);
 }

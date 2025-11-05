@@ -8,7 +8,6 @@ import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/service/hive_storage.dart';
 import 'package:prezza/core/service/routes.gr.dart';
-import 'package:prezza/core/shared/widgets/qun_widget.dart';
 import 'package:prezza/core/shared/widgets/under_montains.dart';
 import 'package:prezza/features/cart/presentation/bloc/cart_bloc.dart';
 import 'package:prezza/features/products/presentation/bloc/product_bloc.dart';
@@ -47,7 +46,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
   }
 
   void scrollToTargetAndShowTutorial() async {
-    await Future.delayed(Duration(milliseconds: 500)); // Ensure UI is loaded
+    await Future.delayed(const Duration(milliseconds: 500)); // Ensure UI is loaded
 
     // Get the position of the center target
     RenderBox renderBox =
@@ -57,6 +56,7 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     // Calculate the scroll position to bring the target into the center
     double targetScrollPosition = _scrollController.offset +
         offset.dy -
+        // ignore: use_build_context_synchronously
         (MediaQuery.of(context).size.height / 2) +
         (renderBox.size.height / 2);
 
@@ -69,12 +69,12 @@ class _ProductDetailsPageState extends State<ProductDetailsPage> {
     // Scroll to the target position
     _scrollController.animateTo(
       finalScrollPosition,
-      duration: Duration(seconds: 1),
+      duration: const Duration(seconds: 1),
       curve: Curves.easeInOut,
     );
 
     // Wait for the scroll to complete before showing tutorial
-    await Future.delayed(Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 1));
 
     showTutorial(); // Show tutorial after scrolling
   }

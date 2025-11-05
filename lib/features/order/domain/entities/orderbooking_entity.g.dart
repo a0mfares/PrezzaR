@@ -240,7 +240,7 @@ class OrderBookingEntityAdapter extends TypeAdapter<OrderBookingEntity> {
     return OrderBookingEntity(
       uuid: fields[0] as String,
       arrival_date: fields[1] as String,
-      customer_phone: fields[2] as String,
+      customer_phone: fields[2] as String?,
       number_of_seats: fields[3] as int,
       branch_info: fields[4] as Branch_info,
     );

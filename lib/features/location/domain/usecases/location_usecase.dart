@@ -104,12 +104,12 @@ class UpdateAddressUsecase extends UsecaseHelper<void> {
   }
 }
 
-class GetArrivelTimeUsecase extends UsecaseHelper<String> {
+class GetArrivelTimeUsecase extends UsecaseHelper<Duration> {
   final LocationRepo _repo;
   GetArrivelTimeUsecase(this._repo);
 
   @override
-  Future<Either<FailureServices, String>> call(
+  Future<Either<FailureServices, Duration>> call(
       {Map<String, dynamic> parm = const {}}) {
     return _repo.getArrivelTime(parm);
   }

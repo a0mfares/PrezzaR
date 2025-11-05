@@ -8,7 +8,6 @@ import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/core/service/hive_storage.dart';
 import 'package:prezza/features/auth/domain/entities/user_entity.dart';
 import 'package:prezza/features/category/domain/entities/category_entity.dart';
-import 'package:prezza/features/location/domain/entities/address_entity.dart';
 import 'package:prezza/features/profile/domain/entities/businessdetails_entity.dart';
 import 'package:prezza/prezza_page.dart';
 import 'package:sizer/sizer.dart';
@@ -200,6 +199,22 @@ String formatDuration(Duration duration) {
   return formattedDuration;
 }
 
+String calculateArrivalTime(Duration arrivelIn, Duration scheduleOrder) {
+  // Get current time and add the durations
+  DateTime now = DateTime.now();
+  log(now.toString(), name: "calculateArrivalTime: Now");
+  log(arrivelIn.toString(), name: "calculateArrivalTime: arrivelIn");
+  log(scheduleOrder.toString(), name: "calculateArrivalTime: scheduleOrder");
+  DateTime arrivalDateTime = now.add(arrivelIn).add(scheduleOrder);
+  log(arrivalDateTime.toString(), name: "calculateArrivalTime: arrivalDateTime");
+  // Format as HH:MM:SS (time of day)
+  String formattedTime = 
+      '${arrivalDateTime.hour.toString().padLeft(2, '0')}:'
+      '${arrivalDateTime.minute.toString().padLeft(2, '0')}:'
+      '${arrivalDateTime.second.toString().padLeft(2, '0')}';
+  log(formattedTime);
+  return formattedTime;
+}
 Duration toDuration(String duration) {
   // Extract hours and minutes
   int hours = int.parse(duration.split(':')[0]);

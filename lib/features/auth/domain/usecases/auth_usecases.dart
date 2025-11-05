@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/helper/usecase_helper.dart';
 import 'package:prezza/features/auth/domain/repositories/auth_repo.dart';
 
@@ -101,10 +102,13 @@ class DeleteAcountUseCase implements UsecaseHelper<void> {
   final AuthRepo _repo;
 
   DeleteAcountUseCase(this._repo);
+  final String token = usr.tokens.access;
   @override
   Future<Either<FailureServices, void>> call(
       {Map<String, dynamic> parm = const {}}) async {
-    return _repo.deleteaccount();
+    return _repo.deleteaccount(
+      authHeader: token
+    );
   }
 }
 class RefereshTokenUsecase implements UsecaseHelper<String> {

@@ -294,17 +294,23 @@ class ProductinfoAdapter extends TypeAdapter<Product_info> {
     return Product_info(
       uuid: fields[0] as String,
       name: fields[1] as String,
+      main_image: fields[2] as String?,
+      prepare_time: fields[3] as num?,
     );
   }
 
   @override
   void write(BinaryWriter writer, Product_info obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.uuid)
       ..writeByte(1)
-      ..write(obj.name);
+      ..write(obj.name)
+      ..writeByte(2)
+      ..write(obj.main_image)
+      ..writeByte(3)
+      ..write(obj.prepare_time);
   }
 
   @override

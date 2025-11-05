@@ -170,7 +170,9 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
               sizes.addAll(product.product_sizes.map((e) => e.toMap()));
             }
 
-            productImg = File(product.main_image);
+            productImg = Image.network(product.main_image).image is FileImage
+                ? (Image.network(product.main_image).image as FileImage).file
+                : File('');
             // preparingTime = Duration(hours: product.)
             emit(const ProductState.success());
           },

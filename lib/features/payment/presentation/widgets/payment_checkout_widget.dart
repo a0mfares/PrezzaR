@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:sizer/sizer.dart';
 
 import '../../../../config/custom_colors.dart';
-import '../../../../core/constants/assets.dart';
 import '../../../../core/helper/tools.dart';
 import '../../../../core/service/routes.gr.dart';
 import '../../../../core/shared/widgets/prezza_btn.dart';

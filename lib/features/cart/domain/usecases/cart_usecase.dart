@@ -115,3 +115,16 @@ class AddOrUpdateCouponUsecase extends UsecaseHelper<void> {
     return _repo.addOrUpdateCoupon(parm);
   }
 }
+
+class CloseCartUsecase extends UsecaseHelper<void> {
+  final CartRepo _repo;
+
+  CloseCartUsecase(this._repo);
+
+  @override
+  Future<Either<FailureServices, void>> call(
+      {Map<String, dynamic> parm = const {}}) {
+    final String uuid = parm['uuid'] as String;
+    return _repo.closeCart(uuid);
+  }
+}

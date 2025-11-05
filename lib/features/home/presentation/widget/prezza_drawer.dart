@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/service/routes.gr.dart';
+import 'package:prezza/features/auth/domain/entities/user_entity.dart';
 import 'package:prezza/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:prezza/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:prezza/prezza_page.dart';
 
 import '../../../../core/constants/assets.dart';
@@ -24,17 +26,28 @@ class PrezzaDrawer extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               vSpace(5),
-              ListTile(
-                leading: const CircleAvatar(
-                  // radius: 70,
-                  child: Icon(
-                    Icons.person,
-                  ),
-                ),
-                title: Text(
-                  usr.user.first_name,
-                  style: tstyle.headlineSmall,
-                ),
+             BlocBuilder<ProfileBloc, ProfileState>(
+                builder: (context, state) {
+                  final UserEntity user = state.when(
+                    initial: () => usr,
+                    loading: () => usr,
+                    loadingField: (fieldName) => usr,
+                    success: (user) => user ?? usr,
+                    successUpdated: (message, user) => user ?? usr,
+                    failure: (error, rollbackData) => usr,
+                    optimisticUpdate: (user) => user ?? usr,
+                  );
+
+                  return ListTile(
+                    leading: const CircleAvatar(
+                      child: Icon(Icons.person),
+                    ),
+                    title: Text(
+                      user.user.first_name,
+                      style: tstyle.headlineSmall,
+                    ),
+                  );
+                },
               ),
               vSpace(5),
               const Divider(thickness: 2),
@@ -109,18 +122,17 @@ class PrezzaDrawer extends StatelessWidget {
               const Divider(thickness: 2),
               ListTile(
                 leading: const Icon(Icons.delete_forever_outlined),
-                title: const Text("Delete account"),
+                title:  Text(tr.deleteAccount),
                 trailing: const Icon(Icons.arrow_forward_ios),
                 onTap: () {
                   showDialogPrezza(
                       context: context,
-                      title: "Are you sure ?",
+                      title: tr.areYouSure,
                       onTap: () async {
                         context
                             .read<AuthBloc>()
                             .add(const AuthEvent.deleteAccount());
                         appRoute.removeLast();
-                        HiveStorage.set(kUser, null);
                         appRoute.navigate(LoginRoute());
                       },
                       showCancel: true);

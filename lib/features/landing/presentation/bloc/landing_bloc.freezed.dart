@@ -102,9 +102,6 @@ class _$LandingEventCopyWithImpl<$Res, $Val extends LandingEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -121,9 +118,6 @@ class __$$GetAppReviewsImplCopyWithImpl<$Res>
   __$$GetAppReviewsImplCopyWithImpl(
       _$GetAppReviewsImpl _value, $Res Function(_$GetAppReviewsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -256,9 +250,6 @@ class __$$AddAppReviewImplCopyWithImpl<$Res>
   __$$AddAppReviewImplCopyWithImpl(
       _$AddAppReviewImpl _value, $Res Function(_$AddAppReviewImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -391,9 +382,6 @@ class __$$GetCommonIssueImplCopyWithImpl<$Res>
   __$$GetCommonIssueImplCopyWithImpl(
       _$GetCommonIssueImpl _value, $Res Function(_$GetCommonIssueImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -526,9 +514,6 @@ class __$$GetFaqImplCopyWithImpl<$Res>
   __$$GetFaqImplCopyWithImpl(
       _$GetFaqImpl _value, $Res Function(_$GetFaqImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -661,9 +646,6 @@ class __$$GetDownloadPlatformsImplCopyWithImpl<$Res>
   __$$GetDownloadPlatformsImplCopyWithImpl(_$GetDownloadPlatformsImpl _value,
       $Res Function(_$GetDownloadPlatformsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -797,9 +779,6 @@ class __$$GetSocialPlatformsImplCopyWithImpl<$Res>
   __$$GetSocialPlatformsImplCopyWithImpl(_$GetSocialPlatformsImpl _value,
       $Res Function(_$GetSocialPlatformsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -935,8 +914,6 @@ class __$$ChangeRateImplCopyWithImpl<$Res>
       _$ChangeRateImpl _value, $Res Function(_$ChangeRateImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -975,9 +952,7 @@ class _$ChangeRateImpl implements _ChangeRate {
   @override
   int get hashCode => Object.hash(runtimeType, rate);
 
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ChangeRateImplCopyWith<_$ChangeRateImpl> get copyWith =>
@@ -1080,10 +1055,7 @@ abstract class _ChangeRate implements LandingEvent {
   const factory _ChangeRate(final double rate) = _$ChangeRateImpl;
 
   double get rate;
-
-  /// Create a copy of LandingEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ChangeRateImplCopyWith<_$ChangeRateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1170,9 +1142,6 @@ class _$LandingStateCopyWithImpl<$Res, $Val extends LandingState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of LandingState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1189,9 +1158,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1318,9 +1284,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1447,9 +1410,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1579,8 +1539,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of LandingState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1619,9 +1577,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of LandingState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -1718,10 +1674,7 @@ abstract class _Failure implements LandingState {
   const factory _Failure(final String err) = _$FailureImpl;
 
   String get err;
-
-  /// Create a copy of LandingState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1740,9 +1693,6 @@ class __$$SuccesUIImplCopyWithImpl<$Res>
   __$$SuccesUIImplCopyWithImpl(
       _$SuccesUIImpl _value, $Res Function(_$SuccesUIImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1869,9 +1819,6 @@ class __$$UpdateUIImplCopyWithImpl<$Res>
   __$$UpdateUIImplCopyWithImpl(
       _$UpdateUIImpl _value, $Res Function(_$UpdateUIImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of LandingState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

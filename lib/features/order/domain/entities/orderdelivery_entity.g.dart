@@ -238,7 +238,7 @@ class OrderDeliveryEntityAdapter extends TypeAdapter<OrderDeliveryEntity> {
     return OrderDeliveryEntity(
       uuid: fields[0] as String,
       delivery_address: fields[1] as String,
-      customer_phone: fields[2] as String,
+      customer_phone: fields[2] as String?,
     );
   }
 

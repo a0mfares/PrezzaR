@@ -77,9 +77,6 @@ class _$FavEventCopyWithImpl<$Res, $Val extends FavEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of FavEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -99,8 +96,6 @@ class __$$AddFavVendorImplCopyWithImpl<$Res>
       _$AddFavVendorImpl _value, $Res Function(_$AddFavVendorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FavEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -139,9 +134,7 @@ class _$AddFavVendorImpl implements _AddFavVendor {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of FavEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddFavVendorImplCopyWith<_$AddFavVendorImpl> get copyWith =>
@@ -220,10 +213,7 @@ abstract class _AddFavVendor implements FavEvent {
   const factory _AddFavVendor(final String id) = _$AddFavVendorImpl;
 
   String get id;
-
-  /// Create a copy of FavEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AddFavVendorImplCopyWith<_$AddFavVendorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -245,8 +235,6 @@ class __$$DeleteFavVendorImplCopyWithImpl<$Res>
       _$DeleteFavVendorImpl _value, $Res Function(_$DeleteFavVendorImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FavEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -285,9 +273,7 @@ class _$DeleteFavVendorImpl implements _DeleteFavVendor {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of FavEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteFavVendorImplCopyWith<_$DeleteFavVendorImpl> get copyWith =>
@@ -367,10 +353,7 @@ abstract class _DeleteFavVendor implements FavEvent {
   const factory _DeleteFavVendor(final String id) = _$DeleteFavVendorImpl;
 
   String get id;
-
-  /// Create a copy of FavEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DeleteFavVendorImplCopyWith<_$DeleteFavVendorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -389,9 +372,6 @@ class __$$GetFavVendorsImplCopyWithImpl<$Res>
   __$$GetFavVendorsImplCopyWithImpl(
       _$GetFavVendorsImpl _value, $Res Function(_$GetFavVendorsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of FavEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -579,9 +559,6 @@ class _$FavStateCopyWithImpl<$Res, $Val extends FavState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -598,9 +575,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -739,9 +713,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -880,9 +851,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1024,8 +992,6 @@ class __$$VendorLoadingImplCopyWithImpl<$Res>
       _$VendorLoadingImpl _value, $Res Function(_$VendorLoadingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1065,9 +1031,7 @@ class _$VendorLoadingImpl implements _VendorLoading {
   @override
   int get hashCode => Object.hash(runtimeType, vendorId);
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$VendorLoadingImplCopyWith<_$VendorLoadingImpl> get copyWith =>
@@ -1176,10 +1140,7 @@ abstract class _VendorLoading implements FavState {
   const factory _VendorLoading(final String vendorId) = _$VendorLoadingImpl;
 
   String get vendorId;
-
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$VendorLoadingImplCopyWith<_$VendorLoadingImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1201,8 +1162,6 @@ class __$$SuccessAddedImplCopyWithImpl<$Res>
       _$SuccessAddedImpl _value, $Res Function(_$SuccessAddedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1242,9 +1201,7 @@ class _$SuccessAddedImpl implements _SuccessAdded {
   @override
   int get hashCode => Object.hash(runtimeType, vendorId);
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessAddedImplCopyWith<_$SuccessAddedImpl> get copyWith =>
@@ -1353,10 +1310,7 @@ abstract class _SuccessAdded implements FavState {
   const factory _SuccessAdded(final String vendorId) = _$SuccessAddedImpl;
 
   String get vendorId;
-
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SuccessAddedImplCopyWith<_$SuccessAddedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1378,8 +1332,6 @@ class __$$SuccessDeletedImplCopyWithImpl<$Res>
       _$SuccessDeletedImpl _value, $Res Function(_$SuccessDeletedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1419,9 +1371,7 @@ class _$SuccessDeletedImpl implements _SuccessDeleted {
   @override
   int get hashCode => Object.hash(runtimeType, vendorId);
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessDeletedImplCopyWith<_$SuccessDeletedImpl> get copyWith =>
@@ -1531,10 +1481,7 @@ abstract class _SuccessDeleted implements FavState {
   const factory _SuccessDeleted(final String vendorId) = _$SuccessDeletedImpl;
 
   String get vendorId;
-
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SuccessDeletedImplCopyWith<_$SuccessDeletedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1556,8 +1503,6 @@ class __$$VendorsLoadedImplCopyWithImpl<$Res>
       _$VendorsLoadedImpl _value, $Res Function(_$VendorsLoadedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1603,9 +1548,7 @@ class _$VendorsLoadedImpl implements _VendorsLoaded {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_vendors));
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$VendorsLoadedImplCopyWith<_$VendorsLoadedImpl> get copyWith =>
@@ -1715,10 +1658,7 @@ abstract class _VendorsLoaded implements FavState {
       _$VendorsLoadedImpl;
 
   List<FavVendorEntity> get vendors;
-
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$VendorsLoadedImplCopyWith<_$VendorsLoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1740,8 +1680,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1780,9 +1718,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -1891,10 +1827,7 @@ abstract class _Failure implements FavState {
   const factory _Failure(final String err) = _$FailureImpl;
 
   String get err;
-
-  /// Create a copy of FavState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

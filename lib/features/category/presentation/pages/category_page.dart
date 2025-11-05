@@ -86,7 +86,7 @@ class _CategoryPageState extends State<CategoryPage> {
                   }
 
                   final category = bloc.categories[index];
-                  log(category.imageUrl.toString(), name: 'Category Image URL');
+                  log(category.image_url.toString(), name: 'Category Image URL');
                   return InkWell(
                     onTap: () {
                       if (!ifUserAuthenticated()) {
@@ -116,7 +116,7 @@ class _CategoryPageState extends State<CategoryPage> {
                             // Replace SvgPicture.asset with Image.network that uses the category imageUrl
                             Center(
                               child: CachedImage(
-                                imageUrl: category.imageUrl ??
+                                imageUrl: category.image_url ??
                                     Assets.assetsImagesDrink,
                                 height: 60,
                                 width: 60,

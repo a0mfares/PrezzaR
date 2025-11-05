@@ -29,6 +29,7 @@ mixin _$AuthEvent {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,6 +45,7 @@ mixin _$AuthEvent {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +61,7 @@ mixin _$AuthEvent {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -75,6 +78,7 @@ mixin _$AuthEvent {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -90,6 +94,7 @@ mixin _$AuthEvent {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -105,6 +110,7 @@ mixin _$AuthEvent {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -125,9 +131,6 @@ class _$AuthEventCopyWithImpl<$Res, $Val extends AuthEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -147,8 +150,6 @@ class __$$SigninImplCopyWithImpl<$Res>
       _$SigninImpl _value, $Res Function(_$SigninImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -187,9 +188,7 @@ class _$SigninImpl implements _Signin {
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SigninImplCopyWith<_$SigninImpl> get copyWith =>
@@ -209,6 +208,7 @@ class _$SigninImpl implements _Signin {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return signin(type);
   }
@@ -227,6 +227,7 @@ class _$SigninImpl implements _Signin {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return signin?.call(type);
   }
@@ -245,6 +246,7 @@ class _$SigninImpl implements _Signin {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (signin != null) {
@@ -267,6 +269,7 @@ class _$SigninImpl implements _Signin {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return signin(this);
   }
@@ -285,6 +288,7 @@ class _$SigninImpl implements _Signin {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return signin?.call(this);
   }
@@ -303,6 +307,7 @@ class _$SigninImpl implements _Signin {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (signin != null) {
@@ -316,10 +321,7 @@ abstract class _Signin implements AuthEvent {
   const factory _Signin(final String type) = _$SigninImpl;
 
   String get type;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SigninImplCopyWith<_$SigninImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -341,8 +343,6 @@ class __$$SignupImplCopyWithImpl<$Res>
       _$SignupImpl _value, $Res Function(_$SignupImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -381,9 +381,7 @@ class _$SignupImpl implements _Signup {
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SignupImplCopyWith<_$SignupImpl> get copyWith =>
@@ -403,6 +401,7 @@ class _$SignupImpl implements _Signup {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return signup(type);
   }
@@ -421,6 +420,7 @@ class _$SignupImpl implements _Signup {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return signup?.call(type);
   }
@@ -439,6 +439,7 @@ class _$SignupImpl implements _Signup {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (signup != null) {
@@ -461,6 +462,7 @@ class _$SignupImpl implements _Signup {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return signup(this);
   }
@@ -479,6 +481,7 @@ class _$SignupImpl implements _Signup {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return signup?.call(this);
   }
@@ -497,6 +500,7 @@ class _$SignupImpl implements _Signup {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (signup != null) {
@@ -510,10 +514,7 @@ abstract class _Signup implements AuthEvent {
   const factory _Signup(final String type) = _$SignupImpl;
 
   String get type;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SignupImplCopyWith<_$SignupImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -535,8 +536,6 @@ class __$$ConfirmSignupImplCopyWithImpl<$Res>
       _$ConfirmSignupImpl _value, $Res Function(_$ConfirmSignupImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -575,9 +574,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ConfirmSignupImplCopyWith<_$ConfirmSignupImpl> get copyWith =>
@@ -597,6 +594,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return confirmSignup(type);
   }
@@ -615,6 +613,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return confirmSignup?.call(type);
   }
@@ -633,6 +632,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (confirmSignup != null) {
@@ -655,6 +655,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return confirmSignup(this);
   }
@@ -673,6 +674,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return confirmSignup?.call(this);
   }
@@ -691,6 +693,7 @@ class _$ConfirmSignupImpl implements _ConfirmSignup {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (confirmSignup != null) {
@@ -704,10 +707,7 @@ abstract class _ConfirmSignup implements AuthEvent {
   const factory _ConfirmSignup(final String type) = _$ConfirmSignupImpl;
 
   String get type;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ConfirmSignupImplCopyWith<_$ConfirmSignupImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -729,8 +729,6 @@ class __$$ResendOtpImplCopyWithImpl<$Res>
       _$ResendOtpImpl _value, $Res Function(_$ResendOtpImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -769,9 +767,7 @@ class _$ResendOtpImpl implements _ResendOtp {
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ResendOtpImplCopyWith<_$ResendOtpImpl> get copyWith =>
@@ -791,6 +787,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return resendOtp(type);
   }
@@ -809,6 +806,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return resendOtp?.call(type);
   }
@@ -827,6 +825,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (resendOtp != null) {
@@ -849,6 +848,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return resendOtp(this);
   }
@@ -867,6 +867,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return resendOtp?.call(this);
   }
@@ -885,6 +886,7 @@ class _$ResendOtpImpl implements _ResendOtp {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (resendOtp != null) {
@@ -898,10 +900,7 @@ abstract class _ResendOtp implements AuthEvent {
   const factory _ResendOtp(final String type) = _$ResendOtpImpl;
 
   String get type;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ResendOtpImplCopyWith<_$ResendOtpImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -923,8 +922,6 @@ class __$$ForgotPassImplCopyWithImpl<$Res>
       _$ForgotPassImpl _value, $Res Function(_$ForgotPassImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -963,9 +960,7 @@ class _$ForgotPassImpl implements _ForgotPass {
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ForgotPassImplCopyWith<_$ForgotPassImpl> get copyWith =>
@@ -985,6 +980,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return forgotPass(type);
   }
@@ -1003,6 +999,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return forgotPass?.call(type);
   }
@@ -1021,6 +1018,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (forgotPass != null) {
@@ -1043,6 +1041,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return forgotPass(this);
   }
@@ -1061,6 +1060,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return forgotPass?.call(this);
   }
@@ -1079,6 +1079,7 @@ class _$ForgotPassImpl implements _ForgotPass {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (forgotPass != null) {
@@ -1092,10 +1093,7 @@ abstract class _ForgotPass implements AuthEvent {
   const factory _ForgotPass(final String type) = _$ForgotPassImpl;
 
   String get type;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ForgotPassImplCopyWith<_$ForgotPassImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1114,9 +1112,6 @@ class __$$CreateProfileImplCopyWithImpl<$Res>
   __$$CreateProfileImplCopyWithImpl(
       _$CreateProfileImpl _value, $Res Function(_$CreateProfileImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1152,6 +1147,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return createProfile();
   }
@@ -1170,6 +1166,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return createProfile?.call();
   }
@@ -1188,6 +1185,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (createProfile != null) {
@@ -1210,6 +1208,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return createProfile(this);
   }
@@ -1228,6 +1227,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return createProfile?.call(this);
   }
@@ -1246,6 +1246,7 @@ class _$CreateProfileImpl implements _CreateProfile {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (createProfile != null) {
@@ -1273,9 +1274,6 @@ class __$$ChooseUserTypeImplCopyWithImpl<$Res>
   __$$ChooseUserTypeImplCopyWithImpl(
       _$ChooseUserTypeImpl _value, $Res Function(_$ChooseUserTypeImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1311,6 +1309,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return chooseUserType();
   }
@@ -1329,6 +1328,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return chooseUserType?.call();
   }
@@ -1347,6 +1347,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (chooseUserType != null) {
@@ -1369,6 +1370,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return chooseUserType(this);
   }
@@ -1387,6 +1389,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return chooseUserType?.call(this);
   }
@@ -1405,6 +1408,7 @@ class _$ChooseUserTypeImpl implements _ChooseUserType {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (chooseUserType != null) {
@@ -1432,9 +1436,6 @@ class __$$ResetPasswordImplCopyWithImpl<$Res>
   __$$ResetPasswordImplCopyWithImpl(
       _$ResetPasswordImpl _value, $Res Function(_$ResetPasswordImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1470,6 +1471,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return resetPassword();
   }
@@ -1488,6 +1490,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return resetPassword?.call();
   }
@@ -1506,6 +1509,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -1528,6 +1532,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return resetPassword(this);
   }
@@ -1546,6 +1551,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return resetPassword?.call(this);
   }
@@ -1564,6 +1570,7 @@ class _$ResetPasswordImpl implements _ResetPassword {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (resetPassword != null) {
@@ -1594,8 +1601,6 @@ class __$$GetTokenImplCopyWithImpl<$Res>
       _$GetTokenImpl _value, $Res Function(_$GetTokenImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1634,9 +1639,7 @@ class _$GetTokenImpl implements _GetToken {
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetTokenImplCopyWith<_$GetTokenImpl> get copyWith =>
@@ -1656,6 +1659,7 @@ class _$GetTokenImpl implements _GetToken {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return getToken(type);
   }
@@ -1674,6 +1678,7 @@ class _$GetTokenImpl implements _GetToken {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return getToken?.call(type);
   }
@@ -1692,6 +1697,7 @@ class _$GetTokenImpl implements _GetToken {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (getToken != null) {
@@ -1714,6 +1720,7 @@ class _$GetTokenImpl implements _GetToken {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return getToken(this);
   }
@@ -1732,6 +1739,7 @@ class _$GetTokenImpl implements _GetToken {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return getToken?.call(this);
   }
@@ -1750,6 +1758,7 @@ class _$GetTokenImpl implements _GetToken {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (getToken != null) {
@@ -1763,10 +1772,7 @@ abstract class _GetToken implements AuthEvent {
   const factory _GetToken(final String type) = _$GetTokenImpl;
 
   String get type;
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetTokenImplCopyWith<_$GetTokenImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1785,9 +1791,6 @@ class __$$GetUserInfoImplCopyWithImpl<$Res>
   __$$GetUserInfoImplCopyWithImpl(
       _$GetUserInfoImpl _value, $Res Function(_$GetUserInfoImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1823,6 +1826,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return getUserInfo();
   }
@@ -1841,6 +1845,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return getUserInfo?.call();
   }
@@ -1859,6 +1864,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (getUserInfo != null) {
@@ -1881,6 +1887,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return getUserInfo(this);
   }
@@ -1899,6 +1906,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return getUserInfo?.call(this);
   }
@@ -1917,6 +1925,7 @@ class _$GetUserInfoImpl implements _GetUserInfo {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (getUserInfo != null) {
@@ -1944,9 +1953,6 @@ class __$$DeleteAccountImplCopyWithImpl<$Res>
   __$$DeleteAccountImplCopyWithImpl(
       _$DeleteAccountImpl _value, $Res Function(_$DeleteAccountImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1982,6 +1988,7 @@ class _$DeleteAccountImpl implements _DeleteAccount {
     required TResult Function(String type) getToken,
     required TResult Function() getUserInfo,
     required TResult Function() deleteAccount,
+    required TResult Function() resetState,
   }) {
     return deleteAccount();
   }
@@ -2000,6 +2007,7 @@ class _$DeleteAccountImpl implements _DeleteAccount {
     TResult? Function(String type)? getToken,
     TResult? Function()? getUserInfo,
     TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
   }) {
     return deleteAccount?.call();
   }
@@ -2018,6 +2026,7 @@ class _$DeleteAccountImpl implements _DeleteAccount {
     TResult Function(String type)? getToken,
     TResult Function()? getUserInfo,
     TResult Function()? deleteAccount,
+    TResult Function()? resetState,
     required TResult orElse(),
   }) {
     if (deleteAccount != null) {
@@ -2040,6 +2049,7 @@ class _$DeleteAccountImpl implements _DeleteAccount {
     required TResult Function(_GetToken value) getToken,
     required TResult Function(_GetUserInfo value) getUserInfo,
     required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
   }) {
     return deleteAccount(this);
   }
@@ -2058,6 +2068,7 @@ class _$DeleteAccountImpl implements _DeleteAccount {
     TResult? Function(_GetToken value)? getToken,
     TResult? Function(_GetUserInfo value)? getUserInfo,
     TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
   }) {
     return deleteAccount?.call(this);
   }
@@ -2076,6 +2087,7 @@ class _$DeleteAccountImpl implements _DeleteAccount {
     TResult Function(_GetToken value)? getToken,
     TResult Function(_GetUserInfo value)? getUserInfo,
     TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
     required TResult orElse(),
   }) {
     if (deleteAccount != null) {
@@ -2090,6 +2102,168 @@ abstract class _DeleteAccount implements AuthEvent {
 }
 
 /// @nodoc
+abstract class _$$RestStateImplCopyWith<$Res> {
+  factory _$$RestStateImplCopyWith(
+          _$RestStateImpl value, $Res Function(_$RestStateImpl) then) =
+      __$$RestStateImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RestStateImplCopyWithImpl<$Res>
+    extends _$AuthEventCopyWithImpl<$Res, _$RestStateImpl>
+    implements _$$RestStateImplCopyWith<$Res> {
+  __$$RestStateImplCopyWithImpl(
+      _$RestStateImpl _value, $Res Function(_$RestStateImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RestStateImpl implements _RestState {
+  const _$RestStateImpl();
+
+  @override
+  String toString() {
+    return 'AuthEvent.resetState()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RestStateImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String type) signin,
+    required TResult Function(String type) signup,
+    required TResult Function(String type) confirmSignup,
+    required TResult Function(String type) resendOtp,
+    required TResult Function(String type) forgotPass,
+    required TResult Function() createProfile,
+    required TResult Function() chooseUserType,
+    required TResult Function() resetPassword,
+    required TResult Function(String type) getToken,
+    required TResult Function() getUserInfo,
+    required TResult Function() deleteAccount,
+    required TResult Function() resetState,
+  }) {
+    return resetState();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(String type)? signin,
+    TResult? Function(String type)? signup,
+    TResult? Function(String type)? confirmSignup,
+    TResult? Function(String type)? resendOtp,
+    TResult? Function(String type)? forgotPass,
+    TResult? Function()? createProfile,
+    TResult? Function()? chooseUserType,
+    TResult? Function()? resetPassword,
+    TResult? Function(String type)? getToken,
+    TResult? Function()? getUserInfo,
+    TResult? Function()? deleteAccount,
+    TResult? Function()? resetState,
+  }) {
+    return resetState?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String type)? signin,
+    TResult Function(String type)? signup,
+    TResult Function(String type)? confirmSignup,
+    TResult Function(String type)? resendOtp,
+    TResult Function(String type)? forgotPass,
+    TResult Function()? createProfile,
+    TResult Function()? chooseUserType,
+    TResult Function()? resetPassword,
+    TResult Function(String type)? getToken,
+    TResult Function()? getUserInfo,
+    TResult Function()? deleteAccount,
+    TResult Function()? resetState,
+    required TResult orElse(),
+  }) {
+    if (resetState != null) {
+      return resetState();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Signin value) signin,
+    required TResult Function(_Signup value) signup,
+    required TResult Function(_ConfirmSignup value) confirmSignup,
+    required TResult Function(_ResendOtp value) resendOtp,
+    required TResult Function(_ForgotPass value) forgotPass,
+    required TResult Function(_CreateProfile value) createProfile,
+    required TResult Function(_ChooseUserType value) chooseUserType,
+    required TResult Function(_ResetPassword value) resetPassword,
+    required TResult Function(_GetToken value) getToken,
+    required TResult Function(_GetUserInfo value) getUserInfo,
+    required TResult Function(_DeleteAccount value) deleteAccount,
+    required TResult Function(_RestState value) resetState,
+  }) {
+    return resetState(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Signin value)? signin,
+    TResult? Function(_Signup value)? signup,
+    TResult? Function(_ConfirmSignup value)? confirmSignup,
+    TResult? Function(_ResendOtp value)? resendOtp,
+    TResult? Function(_ForgotPass value)? forgotPass,
+    TResult? Function(_CreateProfile value)? createProfile,
+    TResult? Function(_ChooseUserType value)? chooseUserType,
+    TResult? Function(_ResetPassword value)? resetPassword,
+    TResult? Function(_GetToken value)? getToken,
+    TResult? Function(_GetUserInfo value)? getUserInfo,
+    TResult? Function(_DeleteAccount value)? deleteAccount,
+    TResult? Function(_RestState value)? resetState,
+  }) {
+    return resetState?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Signin value)? signin,
+    TResult Function(_Signup value)? signup,
+    TResult Function(_ConfirmSignup value)? confirmSignup,
+    TResult Function(_ResendOtp value)? resendOtp,
+    TResult Function(_ForgotPass value)? forgotPass,
+    TResult Function(_CreateProfile value)? createProfile,
+    TResult Function(_ChooseUserType value)? chooseUserType,
+    TResult Function(_ResetPassword value)? resetPassword,
+    TResult Function(_GetToken value)? getToken,
+    TResult Function(_GetUserInfo value)? getUserInfo,
+    TResult Function(_DeleteAccount value)? deleteAccount,
+    TResult Function(_RestState value)? resetState,
+    required TResult orElse(),
+  }) {
+    if (resetState != null) {
+      return resetState(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RestState implements AuthEvent {
+  const factory _RestState() = _$RestStateImpl;
+}
+
+/// @nodoc
 mixin _$AuthState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
@@ -2099,6 +2273,9 @@ mixin _$AuthState {
     required TResult Function(String errMsg) failure,
     required TResult Function() successForgot,
     required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2109,6 +2286,9 @@ mixin _$AuthState {
     TResult? Function(String errMsg)? failure,
     TResult? Function()? successForgot,
     TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2119,6 +2299,9 @@ mixin _$AuthState {
     TResult Function(String errMsg)? failure,
     TResult Function()? successForgot,
     TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2130,6 +2313,9 @@ mixin _$AuthState {
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessForgot value) successForgot,
     required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2140,6 +2326,9 @@ mixin _$AuthState {
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessForgot value)? successForgot,
     TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2150,6 +2339,9 @@ mixin _$AuthState {
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessForgot value)? successForgot,
     TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2170,9 +2362,6 @@ class _$AuthStateCopyWithImpl<$Res, $Val extends AuthState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2189,9 +2378,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2222,6 +2408,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String errMsg) failure,
     required TResult Function() successForgot,
     required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
   }) {
     return initial();
   }
@@ -2235,6 +2424,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String errMsg)? failure,
     TResult? Function()? successForgot,
     TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
   }) {
     return initial?.call();
   }
@@ -2248,6 +2440,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(String errMsg)? failure,
     TResult Function()? successForgot,
     TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -2265,6 +2460,9 @@ class _$InitialImpl implements _Initial {
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessForgot value) successForgot,
     required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
   }) {
     return initial(this);
   }
@@ -2278,6 +2476,9 @@ class _$InitialImpl implements _Initial {
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessForgot value)? successForgot,
     TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
   }) {
     return initial?.call(this);
   }
@@ -2291,6 +2492,9 @@ class _$InitialImpl implements _Initial {
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessForgot value)? successForgot,
     TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -2318,9 +2522,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2351,6 +2552,9 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(String errMsg) failure,
     required TResult Function() successForgot,
     required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
   }) {
     return loading();
   }
@@ -2364,6 +2568,9 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(String errMsg)? failure,
     TResult? Function()? successForgot,
     TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
   }) {
     return loading?.call();
   }
@@ -2377,6 +2584,9 @@ class _$LoadingImpl implements _Loading {
     TResult Function(String errMsg)? failure,
     TResult Function()? successForgot,
     TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -2394,6 +2604,9 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessForgot value) successForgot,
     required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
   }) {
     return loading(this);
   }
@@ -2407,6 +2620,9 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessForgot value)? successForgot,
     TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
   }) {
     return loading?.call(this);
   }
@@ -2420,6 +2636,9 @@ class _$LoadingImpl implements _Loading {
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessForgot value)? successForgot,
     TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -2447,9 +2666,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2480,6 +2696,9 @@ class _$SuccessImpl implements _Success {
     required TResult Function(String errMsg) failure,
     required TResult Function() successForgot,
     required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
   }) {
     return success();
   }
@@ -2493,6 +2712,9 @@ class _$SuccessImpl implements _Success {
     TResult? Function(String errMsg)? failure,
     TResult? Function()? successForgot,
     TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
   }) {
     return success?.call();
   }
@@ -2506,6 +2728,9 @@ class _$SuccessImpl implements _Success {
     TResult Function(String errMsg)? failure,
     TResult Function()? successForgot,
     TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -2523,6 +2748,9 @@ class _$SuccessImpl implements _Success {
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessForgot value) successForgot,
     required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
   }) {
     return success(this);
   }
@@ -2536,6 +2764,9 @@ class _$SuccessImpl implements _Success {
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessForgot value)? successForgot,
     TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
   }) {
     return success?.call(this);
   }
@@ -2549,6 +2780,9 @@ class _$SuccessImpl implements _Success {
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessForgot value)? successForgot,
     TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -2579,8 +2813,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2619,9 +2851,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, errMsg);
 
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -2636,6 +2866,9 @@ class _$FailureImpl implements _Failure {
     required TResult Function(String errMsg) failure,
     required TResult Function() successForgot,
     required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
   }) {
     return failure(errMsg);
   }
@@ -2649,6 +2882,9 @@ class _$FailureImpl implements _Failure {
     TResult? Function(String errMsg)? failure,
     TResult? Function()? successForgot,
     TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
   }) {
     return failure?.call(errMsg);
   }
@@ -2662,6 +2898,9 @@ class _$FailureImpl implements _Failure {
     TResult Function(String errMsg)? failure,
     TResult Function()? successForgot,
     TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -2679,6 +2918,9 @@ class _$FailureImpl implements _Failure {
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessForgot value) successForgot,
     required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
   }) {
     return failure(this);
   }
@@ -2692,6 +2934,9 @@ class _$FailureImpl implements _Failure {
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessForgot value)? successForgot,
     TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
   }) {
     return failure?.call(this);
   }
@@ -2705,6 +2950,9 @@ class _$FailureImpl implements _Failure {
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessForgot value)? successForgot,
     TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -2718,10 +2966,7 @@ abstract class _Failure implements AuthState {
   const factory _Failure(final String errMsg) = _$FailureImpl;
 
   String get errMsg;
-
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2740,9 +2985,6 @@ class __$$SuccessForgotImplCopyWithImpl<$Res>
   __$$SuccessForgotImplCopyWithImpl(
       _$SuccessForgotImpl _value, $Res Function(_$SuccessForgotImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2773,6 +3015,9 @@ class _$SuccessForgotImpl implements _SuccessForgot {
     required TResult Function(String errMsg) failure,
     required TResult Function() successForgot,
     required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
   }) {
     return successForgot();
   }
@@ -2786,6 +3031,9 @@ class _$SuccessForgotImpl implements _SuccessForgot {
     TResult? Function(String errMsg)? failure,
     TResult? Function()? successForgot,
     TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
   }) {
     return successForgot?.call();
   }
@@ -2799,6 +3047,9 @@ class _$SuccessForgotImpl implements _SuccessForgot {
     TResult Function(String errMsg)? failure,
     TResult Function()? successForgot,
     TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
     required TResult orElse(),
   }) {
     if (successForgot != null) {
@@ -2816,6 +3067,9 @@ class _$SuccessForgotImpl implements _SuccessForgot {
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessForgot value) successForgot,
     required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
   }) {
     return successForgot(this);
   }
@@ -2829,6 +3083,9 @@ class _$SuccessForgotImpl implements _SuccessForgot {
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessForgot value)? successForgot,
     TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
   }) {
     return successForgot?.call(this);
   }
@@ -2842,6 +3099,9 @@ class _$SuccessForgotImpl implements _SuccessForgot {
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessForgot value)? successForgot,
     TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
     required TResult orElse(),
   }) {
     if (successForgot != null) {
@@ -2869,9 +3129,6 @@ class __$$SuccessOtpImplCopyWithImpl<$Res>
   __$$SuccessOtpImplCopyWithImpl(
       _$SuccessOtpImpl _value, $Res Function(_$SuccessOtpImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of AuthState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2902,6 +3159,9 @@ class _$SuccessOtpImpl implements _SuccessOtp {
     required TResult Function(String errMsg) failure,
     required TResult Function() successForgot,
     required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
   }) {
     return successOtp();
   }
@@ -2915,6 +3175,9 @@ class _$SuccessOtpImpl implements _SuccessOtp {
     TResult? Function(String errMsg)? failure,
     TResult? Function()? successForgot,
     TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
   }) {
     return successOtp?.call();
   }
@@ -2928,6 +3191,9 @@ class _$SuccessOtpImpl implements _SuccessOtp {
     TResult Function(String errMsg)? failure,
     TResult Function()? successForgot,
     TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
     required TResult orElse(),
   }) {
     if (successOtp != null) {
@@ -2945,6 +3211,9 @@ class _$SuccessOtpImpl implements _SuccessOtp {
     required TResult Function(_Failure value) failure,
     required TResult Function(_SuccessForgot value) successForgot,
     required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
   }) {
     return successOtp(this);
   }
@@ -2958,6 +3227,9 @@ class _$SuccessOtpImpl implements _SuccessOtp {
     TResult? Function(_Failure value)? failure,
     TResult? Function(_SuccessForgot value)? successForgot,
     TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
   }) {
     return successOtp?.call(this);
   }
@@ -2971,6 +3243,9 @@ class _$SuccessOtpImpl implements _SuccessOtp {
     TResult Function(_Failure value)? failure,
     TResult Function(_SuccessForgot value)? successForgot,
     TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
     required TResult orElse(),
   }) {
     if (successOtp != null) {
@@ -2982,4 +3257,436 @@ class _$SuccessOtpImpl implements _SuccessOtp {
 
 abstract class _SuccessOtp implements AuthState {
   const factory _SuccessOtp() = _$SuccessOtpImpl;
+}
+
+/// @nodoc
+abstract class _$$OtpSentImplCopyWith<$Res> {
+  factory _$$OtpSentImplCopyWith(
+          _$OtpSentImpl value, $Res Function(_$OtpSentImpl) then) =
+      __$$OtpSentImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$OtpSentImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$OtpSentImpl>
+    implements _$$OtpSentImplCopyWith<$Res> {
+  __$$OtpSentImplCopyWithImpl(
+      _$OtpSentImpl _value, $Res Function(_$OtpSentImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$OtpSentImpl implements _OtpSent {
+  const _$OtpSentImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.otpSent()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$OtpSentImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errMsg) failure,
+    required TResult Function() successForgot,
+    required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
+  }) {
+    return otpSent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errMsg)? failure,
+    TResult? Function()? successForgot,
+    TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
+  }) {
+    return otpSent?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errMsg)? failure,
+    TResult Function()? successForgot,
+    TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
+    required TResult orElse(),
+  }) {
+    if (otpSent != null) {
+      return otpSent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessForgot value) successForgot,
+    required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
+  }) {
+    return otpSent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessForgot value)? successForgot,
+    TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
+  }) {
+    return otpSent?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessForgot value)? successForgot,
+    TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
+    required TResult orElse(),
+  }) {
+    if (otpSent != null) {
+      return otpSent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _OtpSent implements AuthState {
+  const factory _OtpSent() = _$OtpSentImpl;
+}
+
+/// @nodoc
+abstract class _$$LoginSuccessImplCopyWith<$Res> {
+  factory _$$LoginSuccessImplCopyWith(
+          _$LoginSuccessImpl value, $Res Function(_$LoginSuccessImpl) then) =
+      __$$LoginSuccessImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$LoginSuccessImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$LoginSuccessImpl>
+    implements _$$LoginSuccessImplCopyWith<$Res> {
+  __$$LoginSuccessImplCopyWithImpl(
+      _$LoginSuccessImpl _value, $Res Function(_$LoginSuccessImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$LoginSuccessImpl implements _LoginSuccess {
+  const _$LoginSuccessImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.loginSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$LoginSuccessImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errMsg) failure,
+    required TResult Function() successForgot,
+    required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
+  }) {
+    return loginSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errMsg)? failure,
+    TResult? Function()? successForgot,
+    TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
+  }) {
+    return loginSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errMsg)? failure,
+    TResult Function()? successForgot,
+    TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
+    required TResult orElse(),
+  }) {
+    if (loginSuccess != null) {
+      return loginSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessForgot value) successForgot,
+    required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
+  }) {
+    return loginSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessForgot value)? successForgot,
+    TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
+  }) {
+    return loginSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessForgot value)? successForgot,
+    TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
+    required TResult orElse(),
+  }) {
+    if (loginSuccess != null) {
+      return loginSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoginSuccess implements AuthState {
+  const factory _LoginSuccess() = _$LoginSuccessImpl;
+}
+
+/// @nodoc
+abstract class _$$ChoseUserTypeImplCopyWith<$Res> {
+  factory _$$ChoseUserTypeImplCopyWith(
+          _$ChoseUserTypeImpl value, $Res Function(_$ChoseUserTypeImpl) then) =
+      __$$ChoseUserTypeImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$ChoseUserTypeImplCopyWithImpl<$Res>
+    extends _$AuthStateCopyWithImpl<$Res, _$ChoseUserTypeImpl>
+    implements _$$ChoseUserTypeImplCopyWith<$Res> {
+  __$$ChoseUserTypeImplCopyWithImpl(
+      _$ChoseUserTypeImpl _value, $Res Function(_$ChoseUserTypeImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$ChoseUserTypeImpl implements _ChoseUserType {
+  const _$ChoseUserTypeImpl();
+
+  @override
+  String toString() {
+    return 'AuthState.choseUserType()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ChoseUserTypeImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function() success,
+    required TResult Function(String errMsg) failure,
+    required TResult Function() successForgot,
+    required TResult Function() successOtp,
+    required TResult Function() otpSent,
+    required TResult Function() loginSuccess,
+    required TResult Function() choseUserType,
+  }) {
+    return choseUserType();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function()? success,
+    TResult? Function(String errMsg)? failure,
+    TResult? Function()? successForgot,
+    TResult? Function()? successOtp,
+    TResult? Function()? otpSent,
+    TResult? Function()? loginSuccess,
+    TResult? Function()? choseUserType,
+  }) {
+    return choseUserType?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function()? success,
+    TResult Function(String errMsg)? failure,
+    TResult Function()? successForgot,
+    TResult Function()? successOtp,
+    TResult Function()? otpSent,
+    TResult Function()? loginSuccess,
+    TResult Function()? choseUserType,
+    required TResult orElse(),
+  }) {
+    if (choseUserType != null) {
+      return choseUserType();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Success value) success,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_SuccessForgot value) successForgot,
+    required TResult Function(_SuccessOtp value) successOtp,
+    required TResult Function(_OtpSent value) otpSent,
+    required TResult Function(_LoginSuccess value) loginSuccess,
+    required TResult Function(_ChoseUserType value) choseUserType,
+  }) {
+    return choseUserType(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Success value)? success,
+    TResult? Function(_Failure value)? failure,
+    TResult? Function(_SuccessForgot value)? successForgot,
+    TResult? Function(_SuccessOtp value)? successOtp,
+    TResult? Function(_OtpSent value)? otpSent,
+    TResult? Function(_LoginSuccess value)? loginSuccess,
+    TResult? Function(_ChoseUserType value)? choseUserType,
+  }) {
+    return choseUserType?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Success value)? success,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_SuccessForgot value)? successForgot,
+    TResult Function(_SuccessOtp value)? successOtp,
+    TResult Function(_OtpSent value)? otpSent,
+    TResult Function(_LoginSuccess value)? loginSuccess,
+    TResult Function(_ChoseUserType value)? choseUserType,
+    required TResult orElse(),
+  }) {
+    if (choseUserType != null) {
+      return choseUserType(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChoseUserType implements AuthState {
+  const factory _ChoseUserType() = _$ChoseUserTypeImpl;
 }

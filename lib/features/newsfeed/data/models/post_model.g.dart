@@ -16,6 +16,8 @@ PostModel _$PostModelFromJson(Map<String, dynamic> json) => PostModel(
           json['auther_info'] as Map<String, dynamic>),
       post_tags: PostEntity.post_tagsFromMap(json['post_tags'] as List),
       post_images: PostEntity.post_imagesFromMap(json['post_images'] as List),
+      is_liked: json['is_liked'] as bool? ?? false,
+      is_saved: json['is_saved'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$PostModelToJson(PostModel instance) => <String, dynamic>{
@@ -27,4 +29,6 @@ Map<String, dynamic> _$PostModelToJson(PostModel instance) => <String, dynamic>{
       'auther_info': PostEntity.auther_infoToMap(instance.auther_info),
       'post_tags': PostEntity.post_tagsToMap(instance.post_tags),
       'post_images': PostEntity.post_imagesToMap(instance.post_images),
+      'is_liked': instance.is_liked,
+      'is_saved': instance.is_saved,
     };

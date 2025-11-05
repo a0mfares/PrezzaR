@@ -239,7 +239,7 @@ class OrderPickupEntityAdapter extends TypeAdapter<OrderPickupEntity> {
     return OrderPickupEntity(
       uuid: fields[0] as String,
       arrival_date: fields[1] as String,
-      customer_phone: fields[2] as String,
+      customer_phone: fields[2] as String?,
       car: fields[3] as Car,
     );
   }

@@ -22,4 +22,5 @@ abstract class CartRepo {
       Map<String, dynamic> body);
   Future<Either<FailureServices, void>> addOrUpdateCoupon(
       Map<String, dynamic> body);
+  Future<Either<FailureServices, void>> closeCart(String uuid);
 }

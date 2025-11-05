@@ -12,8 +12,10 @@ class OrderDetailsModel extends OrderDetailsEntity {
       required super.item_total_price,
       required super.product_info,
       required super.extras,
-      required super.side_items});
+      required super.side_items,
+      });
 
-  factory OrderDetailsModel.fromMap(Map<String, dynamic> json) =>
+  factory OrderDetailsModel.fromJson(Map<String, dynamic> json) =>
       _$OrderDetailsModelFromJson(json);
+   Map<String, dynamic> toJson() => _$OrderDetailsModelToJson(this);
 }

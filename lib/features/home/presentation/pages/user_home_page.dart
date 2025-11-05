@@ -1,3 +1,6 @@
+
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
@@ -5,9 +8,11 @@ import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/core/constants/assets.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/shared/widgets/cached_image.dart';
+import 'package:prezza/features/auth/domain/entities/user_entity.dart';
 import 'package:prezza/features/category/presentation/pages/category_page.dart';
 import 'package:prezza/features/category/presentation/pages/sponsors_page.dart';
 import 'package:prezza/features/location/presentation/pages/current_location_page.dart';
+import 'package:prezza/features/profile/presentation/bloc/profile_bloc.dart';
 import 'package:prezza/features/vendor/presentation/pages/nearby_places_page.dart';
 import 'package:prezza/prezza_page.dart';
 import 'package:sizer/sizer.dart';
@@ -37,23 +42,38 @@ class _UserHomePageState extends State<UserHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    log("Building UserHomePage with isBooking: ${widget.isBooking}");
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: RichText(
-          text: TextSpan(
-            style: tstyle.headlineSmall!.copyWith(fontSize: 16.sp),
-            children: [
-              TextSpan(
-                text: tr.hiMsg(usr.user.first_name),
+        title: BlocBuilder<ProfileBloc, ProfileState>(
+          builder: (context, state) {
+            final UserEntity user = state.when(
+              initial: () => usr,
+              loading: () => usr,
+              loadingField: (fieldName) => usr,
+              success: (user) => user ?? usr,
+              successUpdated: (message, user) => user ?? usr,
+              failure: (error, rollbackData) => usr,
+              optimisticUpdate: (user) => user ?? usr,
+            );
+
+            return RichText(
+              text: TextSpan(
+                style: tstyle.headlineSmall!.copyWith(fontSize: 16.sp),
+                children: [
+                  TextSpan(
+                    text: tr.hiMsg(user.user.first_name),
+                  ),
+                  TextSpan(
+                    style: tstyle.headlineSmall!
+                        .copyWith(fontWeight: FontWeight.w800, fontSize: 16.sp),
+                    text: tr.goodAfterNon,
+                  )
+                ],
               ),
-              TextSpan(
-                style: tstyle.headlineSmall!
-                    .copyWith(fontWeight: FontWeight.w800, fontSize: 16.sp),
-                text: tr.goodAfterNon,
-              )
-            ],
-          ),
+            );
+          },
         ),
         elevation: 0,
         toolbarHeight: 90,

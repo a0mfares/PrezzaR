@@ -78,9 +78,6 @@ class _$NotifyEventCopyWithImpl<$Res, $Val extends NotifyEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of NotifyEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -100,8 +97,6 @@ class __$$GetAllNotificationsImplCopyWithImpl<$Res>
       $Res Function(_$GetAllNotificationsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of NotifyEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -140,9 +135,7 @@ class _$GetAllNotificationsImpl implements _GetAllNotifications {
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  /// Create a copy of NotifyEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetAllNotificationsImplCopyWith<_$GetAllNotificationsImpl> get copyWith =>
@@ -223,10 +216,7 @@ abstract class _GetAllNotifications implements NotifyEvent {
       _$GetAllNotificationsImpl;
 
   String get type;
-
-  /// Create a copy of NotifyEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetAllNotificationsImplCopyWith<_$GetAllNotificationsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -248,8 +238,6 @@ class __$$MarkNotifyReadImplCopyWithImpl<$Res>
       _$MarkNotifyReadImpl _value, $Res Function(_$MarkNotifyReadImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of NotifyEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -289,9 +277,7 @@ class _$MarkNotifyReadImpl implements _MarkNotifyRead {
   @override
   int get hashCode => Object.hash(runtimeType, notifyId);
 
-  /// Create a copy of NotifyEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$MarkNotifyReadImplCopyWith<_$MarkNotifyReadImpl> get copyWith =>
@@ -371,10 +357,7 @@ abstract class _MarkNotifyRead implements NotifyEvent {
   const factory _MarkNotifyRead(final String notifyId) = _$MarkNotifyReadImpl;
 
   String get notifyId;
-
-  /// Create a copy of NotifyEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$MarkNotifyReadImplCopyWith<_$MarkNotifyReadImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -393,9 +376,6 @@ class __$$MarkAllNotifyImplCopyWithImpl<$Res>
   __$$MarkAllNotifyImplCopyWithImpl(
       _$MarkAllNotifyImpl _value, $Res Function(_$MarkAllNotifyImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of NotifyEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -560,9 +540,6 @@ class _$NotifyStateCopyWithImpl<$Res, $Val extends NotifyState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of NotifyState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -579,9 +556,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of NotifyState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -696,9 +670,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of NotifyState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -813,9 +784,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of NotifyState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -933,8 +901,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of NotifyState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -973,9 +939,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of NotifyState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -1060,10 +1024,7 @@ abstract class _Failure implements NotifyState {
   const factory _Failure(final String err) = _$FailureImpl;
 
   String get err;
-
-  /// Create a copy of NotifyState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

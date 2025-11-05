@@ -84,9 +84,6 @@ class _$ReviewEventCopyWithImpl<$Res, $Val extends ReviewEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of ReviewEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -103,9 +100,6 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ReviewEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -223,8 +217,6 @@ class __$$AddProductReviewImplCopyWithImpl<$Res>
       $Res Function(_$AddProductReviewImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ReviewEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -264,9 +256,7 @@ class _$AddProductReviewImpl implements _AddProductReview {
   @override
   int get hashCode => Object.hash(runtimeType, productId);
 
-  /// Create a copy of ReviewEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$AddProductReviewImplCopyWith<_$AddProductReviewImpl> get copyWith =>
@@ -353,10 +343,7 @@ abstract class _AddProductReview implements ReviewEvent {
       _$AddProductReviewImpl;
 
   String get productId;
-
-  /// Create a copy of ReviewEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$AddProductReviewImplCopyWith<_$AddProductReviewImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -378,8 +365,6 @@ class __$$GetProductReviewsImplCopyWithImpl<$Res>
       $Res Function(_$GetProductReviewsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ReviewEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -419,9 +404,7 @@ class _$GetProductReviewsImpl implements _GetProductReviews {
   @override
   int get hashCode => Object.hash(runtimeType, productId);
 
-  /// Create a copy of ReviewEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetProductReviewsImplCopyWith<_$GetProductReviewsImpl> get copyWith =>
@@ -508,10 +491,7 @@ abstract class _GetProductReviews implements ReviewEvent {
       _$GetProductReviewsImpl;
 
   String get productId;
-
-  /// Create a copy of ReviewEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetProductReviewsImplCopyWith<_$GetProductReviewsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -530,9 +510,6 @@ class __$$SelectImgImplCopyWithImpl<$Res>
   __$$SelectImgImplCopyWithImpl(
       _$SelectImgImpl _value, $Res Function(_$SelectImgImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ReviewEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -703,9 +680,6 @@ class _$ReviewStateCopyWithImpl<$Res, $Val extends ReviewState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of ReviewState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -722,9 +696,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ReviewState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -839,9 +810,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ReviewState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -956,9 +924,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ReviewState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1076,8 +1041,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ReviewState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1116,9 +1079,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, msg);
 
-  /// Create a copy of ReviewState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -1203,10 +1164,7 @@ abstract class _Failure implements ReviewState {
   const factory _Failure(final String msg) = _$FailureImpl;
 
   String get msg;
-
-  /// Create a copy of ReviewState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

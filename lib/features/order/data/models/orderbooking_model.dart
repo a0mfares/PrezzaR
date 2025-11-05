@@ -8,7 +8,7 @@ class OrderBookingModel extends OrderBookingEntity {
   OrderBookingModel(
       {required super.uuid,
       required super.arrival_date,
-      required super.customer_phone,
+      super.customer_phone,
       required super.number_of_seats,
       required super.branch_info});
 

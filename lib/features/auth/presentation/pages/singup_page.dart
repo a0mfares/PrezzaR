@@ -48,7 +48,7 @@ class _SignUpPPageState extends State<SignUpPage> {
   }
 
   bool obsureText = true;
-
+  bool approve = false;
   @override
   Widget build(BuildContext context) {
     log(bloc.selectedType);
@@ -230,16 +230,21 @@ class _SignUpPPageState extends State<SignUpPage> {
               ),
               vSpace(1),
               buildValidationRules(),
-              RadioListTile(
-                value: true,
-                toggleable: true,
-                groupValue: '',
+              
+              CheckboxListTile(
                 title: Text(
                   tr.iwantRecive,
                   style: redText.copyWith(fontSize: 15.sp),
                 ),
-                onChanged: (v) {},
+                value: approve,
+                onChanged: (bool? newValue) {
+                  setState(() {
+                    approve = newValue ?? false;
+                  });
+                },
+                controlAffinity: ListTileControlAffinity.leading, 
               ),
+             
               vSpace(2),
               BlocConsumer<AuthBloc, AuthState>(
                 listener: (context, state) {
@@ -247,9 +252,9 @@ class _SignUpPPageState extends State<SignUpPage> {
                     failure: (err) {
                       BotToast.showText(text: err.errMsg);
                     },
-                    success: (_) {
+                    otpSent: (_) {
                       if (mounted) {
-                        appRoute.replaceAll([
+                        appRoute.push(
                           OtpVerificationRoute(
                             onSubmit: () {
                               bloc.add(AuthEvent.confirmSignup(
@@ -262,10 +267,10 @@ class _SignUpPPageState extends State<SignUpPage> {
                               ));
                             },
                             onSuccess: () {
-                              appRoute.navigate(LoginRoute());
+                              appRoute.replace(LoginRoute());
                             },
                           ),
-                        ]);
+                        );
                       }
                     },
                     orElse: () {},
@@ -283,17 +288,7 @@ class _SignUpPPageState extends State<SignUpPage> {
                         color: Colors.white,
                         size: 15.w,
                       ),
-                      success: () {
-                        bool isDone = true;
-                        Future.delayed(const Duration(milliseconds: 500), () {
-                          if (!mounted) return;
-                          isDone = false;
-                          setState(() {});
-                        });
-                        return isDone
-                            ? const Icon(Icons.check)
-                            : Text(tr.createAccount);
-                      },
+                      
                       orElse: () => Text(tr.createAccount),
                     ),
                   );
@@ -335,7 +330,6 @@ class _SignUpPPageState extends State<SignUpPage> {
       ),
     );
   }
-
   buildValidationRules() {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),

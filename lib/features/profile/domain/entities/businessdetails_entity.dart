@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 import 'package:equatable/equatable.dart';
@@ -77,7 +77,7 @@ class BusinessDetailsEntity extends $BusinessDetailsEntity {
       has_booking: false,
       service: '',
       business_logo: '',
-      business_category: CategoryEntity(id: 0, name: '', imageUrl: ''));
+      business_category: CategoryEntity(id: 0, name: '', image_url: ''));
 }
 
 @HiveType(typeId: 54)

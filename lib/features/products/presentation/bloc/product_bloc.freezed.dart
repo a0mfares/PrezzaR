@@ -49,6 +49,7 @@ mixin _$ProductEvent {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +83,7 @@ mixin _$ProductEvent {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -115,6 +117,7 @@ mixin _$ProductEvent {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -150,6 +153,7 @@ mixin _$ProductEvent {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -183,6 +187,7 @@ mixin _$ProductEvent {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -216,6 +221,7 @@ mixin _$ProductEvent {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -237,9 +243,6 @@ class _$ProductEventCopyWithImpl<$Res, $Val extends ProductEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -257,9 +260,6 @@ class __$$CreateProductInstanceImplCopyWithImpl<$Res>
   __$$CreateProductInstanceImplCopyWithImpl(_$CreateProductInstanceImpl _value,
       $Res Function(_$CreateProductInstanceImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -316,6 +316,7 @@ class _$CreateProductInstanceImpl implements _CreateProductInstance {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return createProductInstance();
   }
@@ -352,6 +353,7 @@ class _$CreateProductInstanceImpl implements _CreateProductInstance {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return createProductInstance?.call();
   }
@@ -388,6 +390,7 @@ class _$CreateProductInstanceImpl implements _CreateProductInstance {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (createProductInstance != null) {
@@ -429,6 +432,7 @@ class _$CreateProductInstanceImpl implements _CreateProductInstance {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return createProductInstance(this);
   }
@@ -465,6 +469,7 @@ class _$CreateProductInstanceImpl implements _CreateProductInstance {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return createProductInstance?.call(this);
   }
@@ -501,6 +506,7 @@ class _$CreateProductInstanceImpl implements _CreateProductInstance {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (createProductInstance != null) {
@@ -528,9 +534,6 @@ class __$$AddProductDetailsImplCopyWithImpl<$Res>
   __$$AddProductDetailsImplCopyWithImpl(_$AddProductDetailsImpl _value,
       $Res Function(_$AddProductDetailsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -586,6 +589,7 @@ class _$AddProductDetailsImpl implements _AddProductDetails {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return addProductDetails();
   }
@@ -622,6 +626,7 @@ class _$AddProductDetailsImpl implements _AddProductDetails {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return addProductDetails?.call();
   }
@@ -658,6 +663,7 @@ class _$AddProductDetailsImpl implements _AddProductDetails {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductDetails != null) {
@@ -699,6 +705,7 @@ class _$AddProductDetailsImpl implements _AddProductDetails {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return addProductDetails(this);
   }
@@ -735,6 +742,7 @@ class _$AddProductDetailsImpl implements _AddProductDetails {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return addProductDetails?.call(this);
   }
@@ -771,6 +779,7 @@ class _$AddProductDetailsImpl implements _AddProductDetails {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductDetails != null) {
@@ -798,9 +807,6 @@ class __$$AddProductCategoryImplCopyWithImpl<$Res>
   __$$AddProductCategoryImplCopyWithImpl(_$AddProductCategoryImpl _value,
       $Res Function(_$AddProductCategoryImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -856,6 +862,7 @@ class _$AddProductCategoryImpl implements _AddProductCategory {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return addProductCategory();
   }
@@ -892,6 +899,7 @@ class _$AddProductCategoryImpl implements _AddProductCategory {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return addProductCategory?.call();
   }
@@ -928,6 +936,7 @@ class _$AddProductCategoryImpl implements _AddProductCategory {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductCategory != null) {
@@ -969,6 +978,7 @@ class _$AddProductCategoryImpl implements _AddProductCategory {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return addProductCategory(this);
   }
@@ -1005,6 +1015,7 @@ class _$AddProductCategoryImpl implements _AddProductCategory {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return addProductCategory?.call(this);
   }
@@ -1041,6 +1052,7 @@ class _$AddProductCategoryImpl implements _AddProductCategory {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductCategory != null) {
@@ -1068,9 +1080,6 @@ class __$$AddProductExtraImplCopyWithImpl<$Res>
   __$$AddProductExtraImplCopyWithImpl(
       _$AddProductExtraImpl _value, $Res Function(_$AddProductExtraImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1126,6 +1135,7 @@ class _$AddProductExtraImpl implements _AddProductExtra {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return addProductExtra();
   }
@@ -1162,6 +1172,7 @@ class _$AddProductExtraImpl implements _AddProductExtra {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return addProductExtra?.call();
   }
@@ -1198,6 +1209,7 @@ class _$AddProductExtraImpl implements _AddProductExtra {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductExtra != null) {
@@ -1239,6 +1251,7 @@ class _$AddProductExtraImpl implements _AddProductExtra {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return addProductExtra(this);
   }
@@ -1275,6 +1288,7 @@ class _$AddProductExtraImpl implements _AddProductExtra {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return addProductExtra?.call(this);
   }
@@ -1311,6 +1325,7 @@ class _$AddProductExtraImpl implements _AddProductExtra {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductExtra != null) {
@@ -1338,9 +1353,6 @@ class __$$AddProductSizeImplCopyWithImpl<$Res>
   __$$AddProductSizeImplCopyWithImpl(
       _$AddProductSizeImpl _value, $Res Function(_$AddProductSizeImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1396,6 +1408,7 @@ class _$AddProductSizeImpl implements _AddProductSize {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return addProductSize();
   }
@@ -1432,6 +1445,7 @@ class _$AddProductSizeImpl implements _AddProductSize {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return addProductSize?.call();
   }
@@ -1468,6 +1482,7 @@ class _$AddProductSizeImpl implements _AddProductSize {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductSize != null) {
@@ -1509,6 +1524,7 @@ class _$AddProductSizeImpl implements _AddProductSize {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return addProductSize(this);
   }
@@ -1545,6 +1561,7 @@ class _$AddProductSizeImpl implements _AddProductSize {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return addProductSize?.call(this);
   }
@@ -1581,6 +1598,7 @@ class _$AddProductSizeImpl implements _AddProductSize {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductSize != null) {
@@ -1608,9 +1626,6 @@ class __$$AddProductSideItemImplCopyWithImpl<$Res>
   __$$AddProductSideItemImplCopyWithImpl(_$AddProductSideItemImpl _value,
       $Res Function(_$AddProductSideItemImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1666,6 +1681,7 @@ class _$AddProductSideItemImpl implements _AddProductSideItem {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return addProductSideItem();
   }
@@ -1702,6 +1718,7 @@ class _$AddProductSideItemImpl implements _AddProductSideItem {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return addProductSideItem?.call();
   }
@@ -1738,6 +1755,7 @@ class _$AddProductSideItemImpl implements _AddProductSideItem {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductSideItem != null) {
@@ -1779,6 +1797,7 @@ class _$AddProductSideItemImpl implements _AddProductSideItem {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return addProductSideItem(this);
   }
@@ -1815,6 +1834,7 @@ class _$AddProductSideItemImpl implements _AddProductSideItem {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return addProductSideItem?.call(this);
   }
@@ -1851,6 +1871,7 @@ class _$AddProductSideItemImpl implements _AddProductSideItem {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addProductSideItem != null) {
@@ -1881,8 +1902,6 @@ class __$$DeleteProductImplCopyWithImpl<$Res>
       _$DeleteProductImpl _value, $Res Function(_$DeleteProductImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1922,9 +1941,7 @@ class _$DeleteProductImpl implements _DeleteProduct {
   @override
   int get hashCode => Object.hash(runtimeType, productId);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteProductImplCopyWith<_$DeleteProductImpl> get copyWith =>
@@ -1964,6 +1981,7 @@ class _$DeleteProductImpl implements _DeleteProduct {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return deleteProduct(productId);
   }
@@ -2000,6 +2018,7 @@ class _$DeleteProductImpl implements _DeleteProduct {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return deleteProduct?.call(productId);
   }
@@ -2036,6 +2055,7 @@ class _$DeleteProductImpl implements _DeleteProduct {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (deleteProduct != null) {
@@ -2077,6 +2097,7 @@ class _$DeleteProductImpl implements _DeleteProduct {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return deleteProduct(this);
   }
@@ -2113,6 +2134,7 @@ class _$DeleteProductImpl implements _DeleteProduct {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return deleteProduct?.call(this);
   }
@@ -2149,6 +2171,7 @@ class _$DeleteProductImpl implements _DeleteProduct {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (deleteProduct != null) {
@@ -2162,10 +2185,7 @@ abstract class _DeleteProduct implements ProductEvent {
   const factory _DeleteProduct(final String productId) = _$DeleteProductImpl;
 
   String get productId;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DeleteProductImplCopyWith<_$DeleteProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2184,9 +2204,6 @@ class __$$GetVendorProductsImplCopyWithImpl<$Res>
   __$$GetVendorProductsImplCopyWithImpl(_$GetVendorProductsImpl _value,
       $Res Function(_$GetVendorProductsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2242,6 +2259,7 @@ class _$GetVendorProductsImpl implements _GetVendorProducts {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return getVendorProducts();
   }
@@ -2278,6 +2296,7 @@ class _$GetVendorProductsImpl implements _GetVendorProducts {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return getVendorProducts?.call();
   }
@@ -2314,6 +2333,7 @@ class _$GetVendorProductsImpl implements _GetVendorProducts {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getVendorProducts != null) {
@@ -2355,6 +2375,7 @@ class _$GetVendorProductsImpl implements _GetVendorProducts {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return getVendorProducts(this);
   }
@@ -2391,6 +2412,7 @@ class _$GetVendorProductsImpl implements _GetVendorProducts {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return getVendorProducts?.call(this);
   }
@@ -2427,6 +2449,7 @@ class _$GetVendorProductsImpl implements _GetVendorProducts {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getVendorProducts != null) {
@@ -2457,8 +2480,6 @@ class __$$GetProductDetailsImplCopyWithImpl<$Res>
       $Res Function(_$GetProductDetailsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2497,9 +2518,7 @@ class _$GetProductDetailsImpl implements _GetProductDetails {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetProductDetailsImplCopyWith<_$GetProductDetailsImpl> get copyWith =>
@@ -2540,6 +2559,7 @@ class _$GetProductDetailsImpl implements _GetProductDetails {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return getProductDetails(id);
   }
@@ -2576,6 +2596,7 @@ class _$GetProductDetailsImpl implements _GetProductDetails {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return getProductDetails?.call(id);
   }
@@ -2612,6 +2633,7 @@ class _$GetProductDetailsImpl implements _GetProductDetails {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProductDetails != null) {
@@ -2653,6 +2675,7 @@ class _$GetProductDetailsImpl implements _GetProductDetails {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return getProductDetails(this);
   }
@@ -2689,6 +2712,7 @@ class _$GetProductDetailsImpl implements _GetProductDetails {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return getProductDetails?.call(this);
   }
@@ -2725,6 +2749,7 @@ class _$GetProductDetailsImpl implements _GetProductDetails {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProductDetails != null) {
@@ -2738,10 +2763,7 @@ abstract class _GetProductDetails implements ProductEvent {
   const factory _GetProductDetails(final String id) = _$GetProductDetailsImpl;
 
   String get id;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetProductDetailsImplCopyWith<_$GetProductDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2763,8 +2785,6 @@ class __$$GetProductCateogriesImplCopyWithImpl<$Res>
       $Res Function(_$GetProductCateogriesImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2812,9 +2832,7 @@ class _$GetProductCateogriesImpl implements _GetProductCateogries {
   @override
   int get hashCode => Object.hash(runtimeType, category, type);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetProductCateogriesImplCopyWith<_$GetProductCateogriesImpl>
@@ -2856,6 +2874,7 @@ class _$GetProductCateogriesImpl implements _GetProductCateogries {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return getProductCateogries(category, type);
   }
@@ -2892,6 +2911,7 @@ class _$GetProductCateogriesImpl implements _GetProductCateogries {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return getProductCateogries?.call(category, type);
   }
@@ -2928,6 +2948,7 @@ class _$GetProductCateogriesImpl implements _GetProductCateogries {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProductCateogries != null) {
@@ -2969,6 +2990,7 @@ class _$GetProductCateogriesImpl implements _GetProductCateogries {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return getProductCateogries(this);
   }
@@ -3005,6 +3027,7 @@ class _$GetProductCateogriesImpl implements _GetProductCateogries {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return getProductCateogries?.call(this);
   }
@@ -3041,6 +3064,7 @@ class _$GetProductCateogriesImpl implements _GetProductCateogries {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProductCateogries != null) {
@@ -3056,10 +3080,7 @@ abstract class _GetProductCateogries implements ProductEvent {
 
   String get category;
   String get type;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetProductCateogriesImplCopyWith<_$GetProductCateogriesImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3078,9 +3099,6 @@ class __$$AddExtraUiImplCopyWithImpl<$Res>
   __$$AddExtraUiImplCopyWithImpl(
       _$AddExtraUiImpl _value, $Res Function(_$AddExtraUiImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3136,6 +3154,7 @@ class _$AddExtraUiImpl implements _AddExtraUi {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return addExtraUi();
   }
@@ -3172,6 +3191,7 @@ class _$AddExtraUiImpl implements _AddExtraUi {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return addExtraUi?.call();
   }
@@ -3208,6 +3228,7 @@ class _$AddExtraUiImpl implements _AddExtraUi {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addExtraUi != null) {
@@ -3249,6 +3270,7 @@ class _$AddExtraUiImpl implements _AddExtraUi {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return addExtraUi(this);
   }
@@ -3285,6 +3307,7 @@ class _$AddExtraUiImpl implements _AddExtraUi {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return addExtraUi?.call(this);
   }
@@ -3321,6 +3344,7 @@ class _$AddExtraUiImpl implements _AddExtraUi {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addExtraUi != null) {
@@ -3351,8 +3375,6 @@ class __$$RemoveExtraUiImplCopyWithImpl<$Res>
       _$RemoveExtraUiImpl _value, $Res Function(_$RemoveExtraUiImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3391,9 +3413,7 @@ class _$RemoveExtraUiImpl implements _RemoveExtraUi {
   @override
   int get hashCode => Object.hash(runtimeType, index);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoveExtraUiImplCopyWith<_$RemoveExtraUiImpl> get copyWith =>
@@ -3433,6 +3453,7 @@ class _$RemoveExtraUiImpl implements _RemoveExtraUi {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return removeExtraUi(index);
   }
@@ -3469,6 +3490,7 @@ class _$RemoveExtraUiImpl implements _RemoveExtraUi {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return removeExtraUi?.call(index);
   }
@@ -3505,6 +3527,7 @@ class _$RemoveExtraUiImpl implements _RemoveExtraUi {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (removeExtraUi != null) {
@@ -3546,6 +3569,7 @@ class _$RemoveExtraUiImpl implements _RemoveExtraUi {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return removeExtraUi(this);
   }
@@ -3582,6 +3606,7 @@ class _$RemoveExtraUiImpl implements _RemoveExtraUi {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return removeExtraUi?.call(this);
   }
@@ -3618,6 +3643,7 @@ class _$RemoveExtraUiImpl implements _RemoveExtraUi {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (removeExtraUi != null) {
@@ -3631,10 +3657,7 @@ abstract class _RemoveExtraUi implements ProductEvent {
   const factory _RemoveExtraUi(final int index) = _$RemoveExtraUiImpl;
 
   int get index;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$RemoveExtraUiImplCopyWith<_$RemoveExtraUiImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -3653,9 +3676,6 @@ class __$$AddSideItemUiImplCopyWithImpl<$Res>
   __$$AddSideItemUiImplCopyWithImpl(
       _$AddSideItemUiImpl _value, $Res Function(_$AddSideItemUiImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3711,6 +3731,7 @@ class _$AddSideItemUiImpl implements _AddSideItemUi {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return addSideItemUi();
   }
@@ -3747,6 +3768,7 @@ class _$AddSideItemUiImpl implements _AddSideItemUi {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return addSideItemUi?.call();
   }
@@ -3783,6 +3805,7 @@ class _$AddSideItemUiImpl implements _AddSideItemUi {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addSideItemUi != null) {
@@ -3824,6 +3847,7 @@ class _$AddSideItemUiImpl implements _AddSideItemUi {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return addSideItemUi(this);
   }
@@ -3860,6 +3884,7 @@ class _$AddSideItemUiImpl implements _AddSideItemUi {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return addSideItemUi?.call(this);
   }
@@ -3896,6 +3921,7 @@ class _$AddSideItemUiImpl implements _AddSideItemUi {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addSideItemUi != null) {
@@ -3926,8 +3952,6 @@ class __$$RemoveSideItemImplCopyWithImpl<$Res>
       _$RemoveSideItemImpl _value, $Res Function(_$RemoveSideItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3966,9 +3990,7 @@ class _$RemoveSideItemImpl implements _RemoveSideItem {
   @override
   int get hashCode => Object.hash(runtimeType, index);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$RemoveSideItemImplCopyWith<_$RemoveSideItemImpl> get copyWith =>
@@ -4009,6 +4031,7 @@ class _$RemoveSideItemImpl implements _RemoveSideItem {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return removeSideItem(index);
   }
@@ -4045,6 +4068,7 @@ class _$RemoveSideItemImpl implements _RemoveSideItem {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return removeSideItem?.call(index);
   }
@@ -4081,6 +4105,7 @@ class _$RemoveSideItemImpl implements _RemoveSideItem {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (removeSideItem != null) {
@@ -4122,6 +4147,7 @@ class _$RemoveSideItemImpl implements _RemoveSideItem {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return removeSideItem(this);
   }
@@ -4158,6 +4184,7 @@ class _$RemoveSideItemImpl implements _RemoveSideItem {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return removeSideItem?.call(this);
   }
@@ -4194,6 +4221,7 @@ class _$RemoveSideItemImpl implements _RemoveSideItem {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (removeSideItem != null) {
@@ -4207,10 +4235,7 @@ abstract class _RemoveSideItem implements ProductEvent {
   const factory _RemoveSideItem(final int index) = _$RemoveSideItemImpl;
 
   int get index;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$RemoveSideItemImplCopyWith<_$RemoveSideItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4229,9 +4254,6 @@ class __$$GetProdcutsImplCopyWithImpl<$Res>
   __$$GetProdcutsImplCopyWithImpl(
       _$GetProdcutsImpl _value, $Res Function(_$GetProdcutsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -4287,6 +4309,7 @@ class _$GetProdcutsImpl implements _GetProdcuts {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return getProdcuts();
   }
@@ -4323,6 +4346,7 @@ class _$GetProdcutsImpl implements _GetProdcuts {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return getProdcuts?.call();
   }
@@ -4359,6 +4383,7 @@ class _$GetProdcutsImpl implements _GetProdcuts {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProdcuts != null) {
@@ -4400,6 +4425,7 @@ class _$GetProdcutsImpl implements _GetProdcuts {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return getProdcuts(this);
   }
@@ -4436,6 +4462,7 @@ class _$GetProdcutsImpl implements _GetProdcuts {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return getProdcuts?.call(this);
   }
@@ -4472,6 +4499,7 @@ class _$GetProdcutsImpl implements _GetProdcuts {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProdcuts != null) {
@@ -4502,8 +4530,6 @@ class __$$GetProductByIdImplCopyWithImpl<$Res>
       _$GetProductByIdImpl _value, $Res Function(_$GetProductByIdImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4542,9 +4568,7 @@ class _$GetProductByIdImpl implements _GetProductById {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetProductByIdImplCopyWith<_$GetProductByIdImpl> get copyWith =>
@@ -4585,6 +4609,7 @@ class _$GetProductByIdImpl implements _GetProductById {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return getProductById(id);
   }
@@ -4621,6 +4646,7 @@ class _$GetProductByIdImpl implements _GetProductById {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return getProductById?.call(id);
   }
@@ -4657,6 +4683,7 @@ class _$GetProductByIdImpl implements _GetProductById {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProductById != null) {
@@ -4698,6 +4725,7 @@ class _$GetProductByIdImpl implements _GetProductById {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return getProductById(this);
   }
@@ -4734,6 +4762,7 @@ class _$GetProductByIdImpl implements _GetProductById {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return getProductById?.call(this);
   }
@@ -4770,6 +4799,7 @@ class _$GetProductByIdImpl implements _GetProductById {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProductById != null) {
@@ -4783,10 +4813,7 @@ abstract class _GetProductById implements ProductEvent {
   const factory _GetProductById(final String id) = _$GetProductByIdImpl;
 
   String get id;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetProductByIdImplCopyWith<_$GetProductByIdImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -4808,8 +4835,6 @@ class __$$ChangeStatusImplCopyWithImpl<$Res>
       _$ChangeStatusImpl _value, $Res Function(_$ChangeStatusImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -4848,9 +4873,7 @@ class _$ChangeStatusImpl implements _ChangeStatus {
   @override
   int get hashCode => Object.hash(runtimeType, status);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ChangeStatusImplCopyWith<_$ChangeStatusImpl> get copyWith =>
@@ -4890,6 +4913,7 @@ class _$ChangeStatusImpl implements _ChangeStatus {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return changeStatus(status);
   }
@@ -4926,6 +4950,7 @@ class _$ChangeStatusImpl implements _ChangeStatus {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return changeStatus?.call(status);
   }
@@ -4962,6 +4987,7 @@ class _$ChangeStatusImpl implements _ChangeStatus {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (changeStatus != null) {
@@ -5003,6 +5029,7 @@ class _$ChangeStatusImpl implements _ChangeStatus {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return changeStatus(this);
   }
@@ -5039,6 +5066,7 @@ class _$ChangeStatusImpl implements _ChangeStatus {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return changeStatus?.call(this);
   }
@@ -5075,6 +5103,7 @@ class _$ChangeStatusImpl implements _ChangeStatus {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (changeStatus != null) {
@@ -5088,10 +5117,7 @@ abstract class _ChangeStatus implements ProductEvent {
   const factory _ChangeStatus(final bool status) = _$ChangeStatusImpl;
 
   bool get status;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ChangeStatusImplCopyWith<_$ChangeStatusImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5113,8 +5139,6 @@ class __$$ToggleSelectImplCopyWithImpl<$Res>
       _$ToggleSelectImpl _value, $Res Function(_$ToggleSelectImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -5153,9 +5177,7 @@ class _$ToggleSelectImpl implements _ToggleSelect {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$ToggleSelectImplCopyWith<_$ToggleSelectImpl> get copyWith =>
@@ -5195,6 +5217,7 @@ class _$ToggleSelectImpl implements _ToggleSelect {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return toggleSelect(id);
   }
@@ -5231,6 +5254,7 @@ class _$ToggleSelectImpl implements _ToggleSelect {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return toggleSelect?.call(id);
   }
@@ -5267,6 +5291,7 @@ class _$ToggleSelectImpl implements _ToggleSelect {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (toggleSelect != null) {
@@ -5308,6 +5333,7 @@ class _$ToggleSelectImpl implements _ToggleSelect {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return toggleSelect(this);
   }
@@ -5344,6 +5370,7 @@ class _$ToggleSelectImpl implements _ToggleSelect {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return toggleSelect?.call(this);
   }
@@ -5380,6 +5407,7 @@ class _$ToggleSelectImpl implements _ToggleSelect {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (toggleSelect != null) {
@@ -5393,10 +5421,7 @@ abstract class _ToggleSelect implements ProductEvent {
   const factory _ToggleSelect(final String id) = _$ToggleSelectImpl;
 
   String get id;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$ToggleSelectImplCopyWith<_$ToggleSelectImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -5415,9 +5440,6 @@ class __$$InitalizeInEditModImplCopyWithImpl<$Res>
   __$$InitalizeInEditModImplCopyWithImpl(_$InitalizeInEditModImpl _value,
       $Res Function(_$InitalizeInEditModImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -5473,6 +5495,7 @@ class _$InitalizeInEditModImpl implements _InitalizeInEditMod {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return initalizeInEditMod();
   }
@@ -5509,6 +5532,7 @@ class _$InitalizeInEditModImpl implements _InitalizeInEditMod {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return initalizeInEditMod?.call();
   }
@@ -5545,6 +5569,7 @@ class _$InitalizeInEditModImpl implements _InitalizeInEditMod {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (initalizeInEditMod != null) {
@@ -5586,6 +5611,7 @@ class _$InitalizeInEditModImpl implements _InitalizeInEditMod {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return initalizeInEditMod(this);
   }
@@ -5622,6 +5648,7 @@ class _$InitalizeInEditModImpl implements _InitalizeInEditMod {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return initalizeInEditMod?.call(this);
   }
@@ -5658,6 +5685,7 @@ class _$InitalizeInEditModImpl implements _InitalizeInEditMod {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (initalizeInEditMod != null) {
@@ -5685,9 +5713,6 @@ class __$$getOftenProductsImplCopyWithImpl<$Res>
   __$$getOftenProductsImplCopyWithImpl(_$getOftenProductsImpl _value,
       $Res Function(_$getOftenProductsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -5743,6 +5768,7 @@ class _$getOftenProductsImpl implements _getOftenProducts {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return getOftenProducts();
   }
@@ -5779,6 +5805,7 @@ class _$getOftenProductsImpl implements _getOftenProducts {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return getOftenProducts?.call();
   }
@@ -5815,6 +5842,7 @@ class _$getOftenProductsImpl implements _getOftenProducts {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getOftenProducts != null) {
@@ -5856,6 +5884,7 @@ class _$getOftenProductsImpl implements _getOftenProducts {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return getOftenProducts(this);
   }
@@ -5892,6 +5921,7 @@ class _$getOftenProductsImpl implements _getOftenProducts {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return getOftenProducts?.call(this);
   }
@@ -5928,6 +5958,7 @@ class _$getOftenProductsImpl implements _getOftenProducts {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getOftenProducts != null) {
@@ -5958,8 +5989,6 @@ class __$$GetProductByVendorIdImplCopyWithImpl<$Res>
       $Res Function(_$GetProductByVendorIdImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6007,9 +6036,7 @@ class _$GetProductByVendorIdImpl implements _GetProductByVendorId {
   @override
   int get hashCode => Object.hash(runtimeType, id, categoryId);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetProductByVendorIdImplCopyWith<_$GetProductByVendorIdImpl>
@@ -6051,6 +6078,7 @@ class _$GetProductByVendorIdImpl implements _GetProductByVendorId {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return getProductByVendorId(id, categoryId);
   }
@@ -6087,6 +6115,7 @@ class _$GetProductByVendorIdImpl implements _GetProductByVendorId {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return getProductByVendorId?.call(id, categoryId);
   }
@@ -6123,6 +6152,7 @@ class _$GetProductByVendorIdImpl implements _GetProductByVendorId {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProductByVendorId != null) {
@@ -6164,6 +6194,7 @@ class _$GetProductByVendorIdImpl implements _GetProductByVendorId {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return getProductByVendorId(this);
   }
@@ -6200,6 +6231,7 @@ class _$GetProductByVendorIdImpl implements _GetProductByVendorId {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return getProductByVendorId?.call(this);
   }
@@ -6236,6 +6268,7 @@ class _$GetProductByVendorIdImpl implements _GetProductByVendorId {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (getProductByVendorId != null) {
@@ -6251,10 +6284,7 @@ abstract class _GetProductByVendorId implements ProductEvent {
 
   String get id;
   String? get categoryId;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetProductByVendorIdImplCopyWith<_$GetProductByVendorIdImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -6276,8 +6306,6 @@ class __$$SelectExtraImplCopyWithImpl<$Res>
       _$SelectExtraImpl _value, $Res Function(_$SelectExtraImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6316,9 +6344,7 @@ class _$SelectExtraImpl implements _SelectExtra {
   @override
   int get hashCode => Object.hash(runtimeType, extra);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectExtraImplCopyWith<_$SelectExtraImpl> get copyWith =>
@@ -6358,6 +6384,7 @@ class _$SelectExtraImpl implements _SelectExtra {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return selectExtra(extra);
   }
@@ -6394,6 +6421,7 @@ class _$SelectExtraImpl implements _SelectExtra {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return selectExtra?.call(extra);
   }
@@ -6430,6 +6458,7 @@ class _$SelectExtraImpl implements _SelectExtra {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selectExtra != null) {
@@ -6471,6 +6500,7 @@ class _$SelectExtraImpl implements _SelectExtra {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return selectExtra(this);
   }
@@ -6507,6 +6537,7 @@ class _$SelectExtraImpl implements _SelectExtra {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return selectExtra?.call(this);
   }
@@ -6543,6 +6574,7 @@ class _$SelectExtraImpl implements _SelectExtra {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selectExtra != null) {
@@ -6556,10 +6588,7 @@ abstract class _SelectExtra implements ProductEvent {
   const factory _SelectExtra(final Extras extra) = _$SelectExtraImpl;
 
   Extras get extra;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectExtraImplCopyWith<_$SelectExtraImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6581,8 +6610,6 @@ class __$$SelecteSideItemImplCopyWithImpl<$Res>
       _$SelecteSideItemImpl _value, $Res Function(_$SelecteSideItemImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -6627,9 +6654,7 @@ class _$SelecteSideItemImpl implements _SelecteSideItem {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_item));
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelecteSideItemImplCopyWith<_$SelecteSideItemImpl> get copyWith =>
@@ -6670,6 +6695,7 @@ class _$SelecteSideItemImpl implements _SelecteSideItem {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return selecteSideItem(item);
   }
@@ -6706,6 +6732,7 @@ class _$SelecteSideItemImpl implements _SelecteSideItem {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return selecteSideItem?.call(item);
   }
@@ -6742,6 +6769,7 @@ class _$SelecteSideItemImpl implements _SelecteSideItem {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selecteSideItem != null) {
@@ -6783,6 +6811,7 @@ class _$SelecteSideItemImpl implements _SelecteSideItem {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return selecteSideItem(this);
   }
@@ -6819,6 +6848,7 @@ class _$SelecteSideItemImpl implements _SelecteSideItem {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return selecteSideItem?.call(this);
   }
@@ -6855,6 +6885,7 @@ class _$SelecteSideItemImpl implements _SelecteSideItem {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selecteSideItem != null) {
@@ -6869,10 +6900,7 @@ abstract class _SelecteSideItem implements ProductEvent {
       _$SelecteSideItemImpl;
 
   Map<String, dynamic> get item;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelecteSideItemImplCopyWith<_$SelecteSideItemImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -6891,9 +6919,6 @@ class __$$AddToCartImplCopyWithImpl<$Res>
   __$$AddToCartImplCopyWithImpl(
       _$AddToCartImpl _value, $Res Function(_$AddToCartImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -6949,6 +6974,7 @@ class _$AddToCartImpl implements _AddToCart {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return addToCart();
   }
@@ -6985,6 +7011,7 @@ class _$AddToCartImpl implements _AddToCart {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return addToCart?.call();
   }
@@ -7021,6 +7048,7 @@ class _$AddToCartImpl implements _AddToCart {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addToCart != null) {
@@ -7062,6 +7090,7 @@ class _$AddToCartImpl implements _AddToCart {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return addToCart(this);
   }
@@ -7098,6 +7127,7 @@ class _$AddToCartImpl implements _AddToCart {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return addToCart?.call(this);
   }
@@ -7134,6 +7164,7 @@ class _$AddToCartImpl implements _AddToCart {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (addToCart != null) {
@@ -7164,8 +7195,6 @@ class __$$SelectCategoryImplCopyWithImpl<$Res>
       _$SelectCategoryImpl _value, $Res Function(_$SelectCategoryImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7214,9 +7243,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
   @override
   int get hashCode => Object.hash(runtimeType, category, isAddPage);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectCategoryImplCopyWith<_$SelectCategoryImpl> get copyWith =>
@@ -7257,6 +7284,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return selectCategory(category, isAddPage);
   }
@@ -7293,6 +7321,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return selectCategory?.call(category, isAddPage);
   }
@@ -7329,6 +7358,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selectCategory != null) {
@@ -7370,6 +7400,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return selectCategory(this);
   }
@@ -7406,6 +7437,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return selectCategory?.call(this);
   }
@@ -7442,6 +7474,7 @@ class _$SelectCategoryImpl implements _SelectCategory {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selectCategory != null) {
@@ -7457,10 +7490,7 @@ abstract class _SelectCategory implements ProductEvent {
 
   String get category;
   bool get isAddPage;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectCategoryImplCopyWith<_$SelectCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7482,8 +7512,6 @@ class __$$SearchProductImplCopyWithImpl<$Res>
       _$SearchProductImpl _value, $Res Function(_$SearchProductImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7522,9 +7550,7 @@ class _$SearchProductImpl implements _SearchProduct {
   @override
   int get hashCode => Object.hash(runtimeType, query);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith =>
@@ -7564,6 +7590,7 @@ class _$SearchProductImpl implements _SearchProduct {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return searchProduct(query);
   }
@@ -7600,6 +7627,7 @@ class _$SearchProductImpl implements _SearchProduct {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return searchProduct?.call(query);
   }
@@ -7636,6 +7664,7 @@ class _$SearchProductImpl implements _SearchProduct {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (searchProduct != null) {
@@ -7677,6 +7706,7 @@ class _$SearchProductImpl implements _SearchProduct {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return searchProduct(this);
   }
@@ -7713,6 +7743,7 @@ class _$SearchProductImpl implements _SearchProduct {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return searchProduct?.call(this);
   }
@@ -7749,6 +7780,7 @@ class _$SearchProductImpl implements _SearchProduct {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (searchProduct != null) {
@@ -7762,10 +7794,7 @@ abstract class _SearchProduct implements ProductEvent {
   const factory _SearchProduct(final String query) = _$SearchProductImpl;
 
   String get query;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SearchProductImplCopyWith<_$SearchProductImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -7787,8 +7816,6 @@ class __$$SelectSizeImplCopyWithImpl<$Res>
       _$SelectSizeImpl _value, $Res Function(_$SelectSizeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -7827,9 +7854,7 @@ class _$SelectSizeImpl implements _SelectSize {
   @override
   int get hashCode => Object.hash(runtimeType, size);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectSizeImplCopyWith<_$SelectSizeImpl> get copyWith =>
@@ -7869,6 +7894,7 @@ class _$SelectSizeImpl implements _SelectSize {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return selectSize(size);
   }
@@ -7905,6 +7931,7 @@ class _$SelectSizeImpl implements _SelectSize {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return selectSize?.call(size);
   }
@@ -7941,6 +7968,7 @@ class _$SelectSizeImpl implements _SelectSize {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selectSize != null) {
@@ -7982,6 +8010,7 @@ class _$SelectSizeImpl implements _SelectSize {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return selectSize(this);
   }
@@ -8018,6 +8047,7 @@ class _$SelectSizeImpl implements _SelectSize {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return selectSize?.call(this);
   }
@@ -8054,6 +8084,7 @@ class _$SelectSizeImpl implements _SelectSize {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selectSize != null) {
@@ -8067,10 +8098,7 @@ abstract class _SelectSize implements ProductEvent {
   const factory _SelectSize(final String size) = _$SelectSizeImpl;
 
   String get size;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectSizeImplCopyWith<_$SelectSizeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -8092,8 +8120,6 @@ class __$$SelectPreparingTimeImplCopyWithImpl<$Res>
       $Res Function(_$SelectPreparingTimeImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8132,9 +8158,7 @@ class _$SelectPreparingTimeImpl implements _SelectPreparingTime {
   @override
   int get hashCode => Object.hash(runtimeType, time);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectPreparingTimeImplCopyWith<_$SelectPreparingTimeImpl> get copyWith =>
@@ -8175,6 +8199,7 @@ class _$SelectPreparingTimeImpl implements _SelectPreparingTime {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return selectPreparingTime(time);
   }
@@ -8211,6 +8236,7 @@ class _$SelectPreparingTimeImpl implements _SelectPreparingTime {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return selectPreparingTime?.call(time);
   }
@@ -8247,6 +8273,7 @@ class _$SelectPreparingTimeImpl implements _SelectPreparingTime {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selectPreparingTime != null) {
@@ -8288,6 +8315,7 @@ class _$SelectPreparingTimeImpl implements _SelectPreparingTime {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return selectPreparingTime(this);
   }
@@ -8324,6 +8352,7 @@ class _$SelectPreparingTimeImpl implements _SelectPreparingTime {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return selectPreparingTime?.call(this);
   }
@@ -8360,6 +8389,7 @@ class _$SelectPreparingTimeImpl implements _SelectPreparingTime {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (selectPreparingTime != null) {
@@ -8374,10 +8404,7 @@ abstract class _SelectPreparingTime implements ProductEvent {
       _$SelectPreparingTimeImpl;
 
   Duration get time;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectPreparingTimeImplCopyWith<_$SelectPreparingTimeImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -8399,8 +8426,6 @@ class __$$PickImageImplCopyWithImpl<$Res>
       _$PickImageImpl _value, $Res Function(_$PickImageImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -8439,9 +8464,7 @@ class _$PickImageImpl implements _PickImage {
   @override
   int get hashCode => Object.hash(runtimeType, img);
 
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$PickImageImplCopyWith<_$PickImageImpl> get copyWith =>
@@ -8481,6 +8504,7 @@ class _$PickImageImpl implements _PickImage {
     required TResult Function(String size) selectSize,
     required TResult Function(Duration time) selectPreparingTime,
     required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
   }) {
     return pickImage(img);
   }
@@ -8517,6 +8541,7 @@ class _$PickImageImpl implements _PickImage {
     TResult? Function(String size)? selectSize,
     TResult? Function(Duration time)? selectPreparingTime,
     TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
   }) {
     return pickImage?.call(img);
   }
@@ -8553,6 +8578,7 @@ class _$PickImageImpl implements _PickImage {
     TResult Function(String size)? selectSize,
     TResult Function(Duration time)? selectPreparingTime,
     TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (pickImage != null) {
@@ -8594,6 +8620,7 @@ class _$PickImageImpl implements _PickImage {
     required TResult Function(_SelectSize value) selectSize,
     required TResult Function(_SelectPreparingTime value) selectPreparingTime,
     required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
   }) {
     return pickImage(this);
   }
@@ -8630,6 +8657,7 @@ class _$PickImageImpl implements _PickImage {
     TResult? Function(_SelectSize value)? selectSize,
     TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
   }) {
     return pickImage?.call(this);
   }
@@ -8666,6 +8694,7 @@ class _$PickImageImpl implements _PickImage {
     TResult Function(_SelectSize value)? selectSize,
     TResult Function(_SelectPreparingTime value)? selectPreparingTime,
     TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
     required TResult orElse(),
   }) {
     if (pickImage != null) {
@@ -8679,11 +8708,323 @@ abstract class _PickImage implements ProductEvent {
   const factory _PickImage(final File img) = _$PickImageImpl;
 
   File get img;
-
-  /// Create a copy of ProductEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$PickImageImplCopyWith<_$PickImageImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$UpdateSizePriceImplCopyWith<$Res> {
+  factory _$$UpdateSizePriceImplCopyWith(_$UpdateSizePriceImpl value,
+          $Res Function(_$UpdateSizePriceImpl) then) =
+      __$$UpdateSizePriceImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String size, double price});
+}
+
+/// @nodoc
+class __$$UpdateSizePriceImplCopyWithImpl<$Res>
+    extends _$ProductEventCopyWithImpl<$Res, _$UpdateSizePriceImpl>
+    implements _$$UpdateSizePriceImplCopyWith<$Res> {
+  __$$UpdateSizePriceImplCopyWithImpl(
+      _$UpdateSizePriceImpl _value, $Res Function(_$UpdateSizePriceImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? size = null,
+    Object? price = null,
+  }) {
+    return _then(_$UpdateSizePriceImpl(
+      null == size
+          ? _value.size
+          : size // ignore: cast_nullable_to_non_nullable
+              as String,
+      null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as double,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$UpdateSizePriceImpl implements _UpdateSizePrice {
+  const _$UpdateSizePriceImpl(this.size, this.price);
+
+  @override
+  final String size;
+  @override
+  final double price;
+
+  @override
+  String toString() {
+    return 'ProductEvent.updateSizePrice(size: $size, price: $price)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$UpdateSizePriceImpl &&
+            (identical(other.size, size) || other.size == size) &&
+            (identical(other.price, price) || other.price == price));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, size, price);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$UpdateSizePriceImplCopyWith<_$UpdateSizePriceImpl> get copyWith =>
+      __$$UpdateSizePriceImplCopyWithImpl<_$UpdateSizePriceImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() createProductInstance,
+    required TResult Function() addProductDetails,
+    required TResult Function() addProductCategory,
+    required TResult Function() addProductExtra,
+    required TResult Function() addProductSize,
+    required TResult Function() addProductSideItem,
+    required TResult Function(String productId) deleteProduct,
+    required TResult Function() getVendorProducts,
+    required TResult Function(String id) getProductDetails,
+    required TResult Function(String category, String type)
+        getProductCateogries,
+    required TResult Function() addExtraUi,
+    required TResult Function(int index) removeExtraUi,
+    required TResult Function() addSideItemUi,
+    required TResult Function(int index) removeSideItem,
+    required TResult Function() getProdcuts,
+    required TResult Function(String id) getProductById,
+    required TResult Function(bool status) changeStatus,
+    required TResult Function(String id) toggleSelect,
+    required TResult Function() initalizeInEditMod,
+    required TResult Function() getOftenProducts,
+    required TResult Function(String id, String? categoryId)
+        getProductByVendorId,
+    required TResult Function(Extras extra) selectExtra,
+    required TResult Function(Map<String, dynamic> item) selecteSideItem,
+    required TResult Function() addToCart,
+    required TResult Function(String category, bool isAddPage) selectCategory,
+    required TResult Function(String query) searchProduct,
+    required TResult Function(String size) selectSize,
+    required TResult Function(Duration time) selectPreparingTime,
+    required TResult Function(File img) pickImage,
+    required TResult Function(String size, double price) updateSizePrice,
+  }) {
+    return updateSizePrice(size, price);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? createProductInstance,
+    TResult? Function()? addProductDetails,
+    TResult? Function()? addProductCategory,
+    TResult? Function()? addProductExtra,
+    TResult? Function()? addProductSize,
+    TResult? Function()? addProductSideItem,
+    TResult? Function(String productId)? deleteProduct,
+    TResult? Function()? getVendorProducts,
+    TResult? Function(String id)? getProductDetails,
+    TResult? Function(String category, String type)? getProductCateogries,
+    TResult? Function()? addExtraUi,
+    TResult? Function(int index)? removeExtraUi,
+    TResult? Function()? addSideItemUi,
+    TResult? Function(int index)? removeSideItem,
+    TResult? Function()? getProdcuts,
+    TResult? Function(String id)? getProductById,
+    TResult? Function(bool status)? changeStatus,
+    TResult? Function(String id)? toggleSelect,
+    TResult? Function()? initalizeInEditMod,
+    TResult? Function()? getOftenProducts,
+    TResult? Function(String id, String? categoryId)? getProductByVendorId,
+    TResult? Function(Extras extra)? selectExtra,
+    TResult? Function(Map<String, dynamic> item)? selecteSideItem,
+    TResult? Function()? addToCart,
+    TResult? Function(String category, bool isAddPage)? selectCategory,
+    TResult? Function(String query)? searchProduct,
+    TResult? Function(String size)? selectSize,
+    TResult? Function(Duration time)? selectPreparingTime,
+    TResult? Function(File img)? pickImage,
+    TResult? Function(String size, double price)? updateSizePrice,
+  }) {
+    return updateSizePrice?.call(size, price);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? createProductInstance,
+    TResult Function()? addProductDetails,
+    TResult Function()? addProductCategory,
+    TResult Function()? addProductExtra,
+    TResult Function()? addProductSize,
+    TResult Function()? addProductSideItem,
+    TResult Function(String productId)? deleteProduct,
+    TResult Function()? getVendorProducts,
+    TResult Function(String id)? getProductDetails,
+    TResult Function(String category, String type)? getProductCateogries,
+    TResult Function()? addExtraUi,
+    TResult Function(int index)? removeExtraUi,
+    TResult Function()? addSideItemUi,
+    TResult Function(int index)? removeSideItem,
+    TResult Function()? getProdcuts,
+    TResult Function(String id)? getProductById,
+    TResult Function(bool status)? changeStatus,
+    TResult Function(String id)? toggleSelect,
+    TResult Function()? initalizeInEditMod,
+    TResult Function()? getOftenProducts,
+    TResult Function(String id, String? categoryId)? getProductByVendorId,
+    TResult Function(Extras extra)? selectExtra,
+    TResult Function(Map<String, dynamic> item)? selecteSideItem,
+    TResult Function()? addToCart,
+    TResult Function(String category, bool isAddPage)? selectCategory,
+    TResult Function(String query)? searchProduct,
+    TResult Function(String size)? selectSize,
+    TResult Function(Duration time)? selectPreparingTime,
+    TResult Function(File img)? pickImage,
+    TResult Function(String size, double price)? updateSizePrice,
+    required TResult orElse(),
+  }) {
+    if (updateSizePrice != null) {
+      return updateSizePrice(size, price);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_CreateProductInstance value)
+        createProductInstance,
+    required TResult Function(_AddProductDetails value) addProductDetails,
+    required TResult Function(_AddProductCategory value) addProductCategory,
+    required TResult Function(_AddProductExtra value) addProductExtra,
+    required TResult Function(_AddProductSize value) addProductSize,
+    required TResult Function(_AddProductSideItem value) addProductSideItem,
+    required TResult Function(_DeleteProduct value) deleteProduct,
+    required TResult Function(_GetVendorProducts value) getVendorProducts,
+    required TResult Function(_GetProductDetails value) getProductDetails,
+    required TResult Function(_GetProductCateogries value) getProductCateogries,
+    required TResult Function(_AddExtraUi value) addExtraUi,
+    required TResult Function(_RemoveExtraUi value) removeExtraUi,
+    required TResult Function(_AddSideItemUi value) addSideItemUi,
+    required TResult Function(_RemoveSideItem value) removeSideItem,
+    required TResult Function(_GetProdcuts value) getProdcuts,
+    required TResult Function(_GetProductById value) getProductById,
+    required TResult Function(_ChangeStatus value) changeStatus,
+    required TResult Function(_ToggleSelect value) toggleSelect,
+    required TResult Function(_InitalizeInEditMod value) initalizeInEditMod,
+    required TResult Function(_getOftenProducts value) getOftenProducts,
+    required TResult Function(_GetProductByVendorId value) getProductByVendorId,
+    required TResult Function(_SelectExtra value) selectExtra,
+    required TResult Function(_SelecteSideItem value) selecteSideItem,
+    required TResult Function(_AddToCart value) addToCart,
+    required TResult Function(_SelectCategory value) selectCategory,
+    required TResult Function(_SearchProduct value) searchProduct,
+    required TResult Function(_SelectSize value) selectSize,
+    required TResult Function(_SelectPreparingTime value) selectPreparingTime,
+    required TResult Function(_PickImage value) pickImage,
+    required TResult Function(_UpdateSizePrice value) updateSizePrice,
+  }) {
+    return updateSizePrice(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_CreateProductInstance value)? createProductInstance,
+    TResult? Function(_AddProductDetails value)? addProductDetails,
+    TResult? Function(_AddProductCategory value)? addProductCategory,
+    TResult? Function(_AddProductExtra value)? addProductExtra,
+    TResult? Function(_AddProductSize value)? addProductSize,
+    TResult? Function(_AddProductSideItem value)? addProductSideItem,
+    TResult? Function(_DeleteProduct value)? deleteProduct,
+    TResult? Function(_GetVendorProducts value)? getVendorProducts,
+    TResult? Function(_GetProductDetails value)? getProductDetails,
+    TResult? Function(_GetProductCateogries value)? getProductCateogries,
+    TResult? Function(_AddExtraUi value)? addExtraUi,
+    TResult? Function(_RemoveExtraUi value)? removeExtraUi,
+    TResult? Function(_AddSideItemUi value)? addSideItemUi,
+    TResult? Function(_RemoveSideItem value)? removeSideItem,
+    TResult? Function(_GetProdcuts value)? getProdcuts,
+    TResult? Function(_GetProductById value)? getProductById,
+    TResult? Function(_ChangeStatus value)? changeStatus,
+    TResult? Function(_ToggleSelect value)? toggleSelect,
+    TResult? Function(_InitalizeInEditMod value)? initalizeInEditMod,
+    TResult? Function(_getOftenProducts value)? getOftenProducts,
+    TResult? Function(_GetProductByVendorId value)? getProductByVendorId,
+    TResult? Function(_SelectExtra value)? selectExtra,
+    TResult? Function(_SelecteSideItem value)? selecteSideItem,
+    TResult? Function(_AddToCart value)? addToCart,
+    TResult? Function(_SelectCategory value)? selectCategory,
+    TResult? Function(_SearchProduct value)? searchProduct,
+    TResult? Function(_SelectSize value)? selectSize,
+    TResult? Function(_SelectPreparingTime value)? selectPreparingTime,
+    TResult? Function(_PickImage value)? pickImage,
+    TResult? Function(_UpdateSizePrice value)? updateSizePrice,
+  }) {
+    return updateSizePrice?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_CreateProductInstance value)? createProductInstance,
+    TResult Function(_AddProductDetails value)? addProductDetails,
+    TResult Function(_AddProductCategory value)? addProductCategory,
+    TResult Function(_AddProductExtra value)? addProductExtra,
+    TResult Function(_AddProductSize value)? addProductSize,
+    TResult Function(_AddProductSideItem value)? addProductSideItem,
+    TResult Function(_DeleteProduct value)? deleteProduct,
+    TResult Function(_GetVendorProducts value)? getVendorProducts,
+    TResult Function(_GetProductDetails value)? getProductDetails,
+    TResult Function(_GetProductCateogries value)? getProductCateogries,
+    TResult Function(_AddExtraUi value)? addExtraUi,
+    TResult Function(_RemoveExtraUi value)? removeExtraUi,
+    TResult Function(_AddSideItemUi value)? addSideItemUi,
+    TResult Function(_RemoveSideItem value)? removeSideItem,
+    TResult Function(_GetProdcuts value)? getProdcuts,
+    TResult Function(_GetProductById value)? getProductById,
+    TResult Function(_ChangeStatus value)? changeStatus,
+    TResult Function(_ToggleSelect value)? toggleSelect,
+    TResult Function(_InitalizeInEditMod value)? initalizeInEditMod,
+    TResult Function(_getOftenProducts value)? getOftenProducts,
+    TResult Function(_GetProductByVendorId value)? getProductByVendorId,
+    TResult Function(_SelectExtra value)? selectExtra,
+    TResult Function(_SelecteSideItem value)? selecteSideItem,
+    TResult Function(_AddToCart value)? addToCart,
+    TResult Function(_SelectCategory value)? selectCategory,
+    TResult Function(_SearchProduct value)? searchProduct,
+    TResult Function(_SelectSize value)? selectSize,
+    TResult Function(_SelectPreparingTime value)? selectPreparingTime,
+    TResult Function(_PickImage value)? pickImage,
+    TResult Function(_UpdateSizePrice value)? updateSizePrice,
+    required TResult orElse(),
+  }) {
+    if (updateSizePrice != null) {
+      return updateSizePrice(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdateSizePrice implements ProductEvent {
+  const factory _UpdateSizePrice(final String size, final double price) =
+      _$UpdateSizePriceImpl;
+
+  String get size;
+  double get price;
+  @JsonKey(ignore: true)
+  _$$UpdateSizePriceImplCopyWith<_$UpdateSizePriceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -8818,9 +9159,6 @@ class _$ProductStateCopyWithImpl<$Res, $Val extends ProductState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -8837,9 +9175,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -9015,9 +9350,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -9193,9 +9525,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -9371,9 +9700,6 @@ class __$$SucessAddedImplCopyWithImpl<$Res>
   __$$SucessAddedImplCopyWithImpl(
       _$SucessAddedImpl _value, $Res Function(_$SucessAddedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -9549,9 +9875,6 @@ class __$$DeleteSuccessImplCopyWithImpl<$Res>
   __$$DeleteSuccessImplCopyWithImpl(
       _$DeleteSuccessImpl _value, $Res Function(_$DeleteSuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -9727,9 +10050,6 @@ class __$$EreaseProductDetailsImplCopyWithImpl<$Res>
   __$$EreaseProductDetailsImplCopyWithImpl(_$EreaseProductDetailsImpl _value,
       $Res Function(_$EreaseProductDetailsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -9906,9 +10226,6 @@ class __$$SuccessCateegoryImplCopyWithImpl<$Res>
   __$$SuccessCateegoryImplCopyWithImpl(_$SuccessCateegoryImpl _value,
       $Res Function(_$SuccessCateegoryImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -10084,9 +10401,6 @@ class __$$LoadingCategoryImplCopyWithImpl<$Res>
   __$$LoadingCategoryImplCopyWithImpl(
       _$LoadingCategoryImpl _value, $Res Function(_$LoadingCategoryImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -10265,8 +10579,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -10305,9 +10617,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -10453,10 +10763,7 @@ abstract class _Failure implements ProductState {
   const factory _Failure(final String err) = _$FailureImpl;
 
   String get err;
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -10475,9 +10782,6 @@ class __$$UpdateUiImplCopyWithImpl<$Res>
   __$$UpdateUiImplCopyWithImpl(
       _$UpdateUiImpl _value, $Res Function(_$UpdateUiImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -10653,9 +10957,6 @@ class __$$SuccessUiImplCopyWithImpl<$Res>
   __$$SuccessUiImplCopyWithImpl(
       _$SuccessUiImpl _value, $Res Function(_$SuccessUiImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -10831,9 +11132,6 @@ class __$$SuccessCreatedImplCopyWithImpl<$Res>
   __$$SuccessCreatedImplCopyWithImpl(
       _$SuccessCreatedImpl _value, $Res Function(_$SuccessCreatedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -11013,8 +11311,6 @@ class __$$FailureProductDetailsImplCopyWithImpl<$Res>
       $Res Function(_$FailureProductDetailsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11053,9 +11349,7 @@ class _$FailureProductDetailsImpl implements _FailureProductDetails {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureProductDetailsImplCopyWith<_$FailureProductDetailsImpl>
@@ -11203,10 +11497,7 @@ abstract class _FailureProductDetails implements ProductState {
       _$FailureProductDetailsImpl;
 
   String get err;
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureProductDetailsImplCopyWith<_$FailureProductDetailsImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -11228,8 +11519,6 @@ class __$$FailureProductsImplCopyWithImpl<$Res>
       _$FailureProductsImpl _value, $Res Function(_$FailureProductsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -11268,9 +11557,7 @@ class _$FailureProductsImpl implements _FailureProducts {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureProductsImplCopyWith<_$FailureProductsImpl> get copyWith =>
@@ -11417,10 +11704,7 @@ abstract class _FailureProducts implements ProductState {
   const factory _FailureProducts(final String err) = _$FailureProductsImpl;
 
   String get err;
-
-  /// Create a copy of ProductState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureProductsImplCopyWith<_$FailureProductsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

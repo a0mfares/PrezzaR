@@ -132,6 +132,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get verifyEmail => 'تأكيد البريد الإلكتروني';
 
   @override
+  String get plsActivatePhone => 'يرجى تفعيل رقم هاتفك';
+
+  @override
+  String get verifyPhone => 'تأكيد رقم الهاتف';
+
+  @override
   String get continueWithPhoneInst => 'استخدام رقم الهاتف بدلاً من ذلك';
 
   @override
@@ -463,7 +469,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get extraCharge => 'رسوم إضافية';
 
   @override
-  String get nameCategory => 'سمِّ الفئة الجديدة';
+  String get nameCategory => 'سمِّ الفئة الجديدة';
 
   @override
   String get addCategory => 'إضافة فئة';
@@ -811,7 +817,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get more => 'المزيد';
 
   @override
-  String get yourReferralCode => 'رمز الدعوه الخاص بكس';
+  String get yourReferralCode => 'رمز الدعوه الخاص بك';
 
   @override
   String get enjoy => 'استمتع';
@@ -835,6 +841,18 @@ class AppLocalizationsAr extends AppLocalizations {
       'إشعارات تتعلق بالتغييرات المهمة في التطبيق، الميزات الجديدة، أو التحديثات.';
 
   @override
+  String get orderNotifications =>
+      'إشعارات حول الطلبات المقدمة، الجارية، والمسلّمة.';
+
+  @override
+  String get discountNotifications =>
+      'إشعارات حول الخصومات، العروض الخاصة، والعروض الموسمية.';
+
+  @override
+  String get importantNotifications =>
+      'إشعارات حول تغييرات التطبيق الهامة أو التحديثات الجديدة.';
+
+  @override
   String get applePay => 'الدفع با ابل';
 
   @override
@@ -847,7 +865,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get chooseCar => 'اختر السيارة';
 
   @override
-  String youCanCanel(String time) {
+  String youCanCancel(String time) {
     return 'يمكنك إلغاؤه خلال $time دقيقة كحد أقصى';
   }
 
@@ -1132,12 +1150,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get anySpecialRequest => 'أي طلبات خاصة ؟';
 
   @override
-  String get plsActivatePhone => 'يرجى تفعيل رقم هاتفك';
-
-  @override
-  String get verifyPhone => 'تأكيد رقم الهاتف';
-
-  @override
   String get searchITem => 'البحث عن العناصر';
 
   @override
@@ -1151,4 +1163,686 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get retry => 'إعادة المحاولة';
+
+  @override
+  String get numberOfSeats => 'عدد المقاعد';
+
+  @override
+  String get enterNumberOfSeats => 'أدخل عدد المقاعد';
+
+  @override
+  String get bookingDate => 'تاريخ الحجز';
+
+  @override
+  String get selectDate => 'اختر التاريخ';
+
+  @override
+  String get numberOfSeatsRequired => 'عدد المقاعد مطلوب';
+
+  @override
+  String get bookingDateRequired => 'تاريخ الحجز مطلوب';
+
+  @override
+  String get selectBranch => 'الرجاء اختيار الفرع';
+
+  @override
+  String get completeSetup => 'أكمل الإعداد';
+
+  @override
+  String get userIdNotFound => 'لم يتم العثور على معرف المستخدم';
+
+  @override
+  String get selectMake => 'اختر الماركة';
+
+  @override
+  String get selectModel => 'اختر الموديل';
+
+  @override
+  String get carAddedSuccess => 'تمت إضافة السيارة بنجاح';
+
+  @override
+  String get carUpdatedSuccess => 'تم تحديث السيارة بنجاح';
+
+  @override
+  String get carDeletedSuccess => 'تم حذف السيارة بنجاح';
+
+  @override
+  String get fillAllCarFields => 'يرجى ملء جميع الحقول واختيار صورة';
+
+  @override
+  String get cartIdEmpty => 'معرف السلة فارغ';
+
+  @override
+  String get missingRequiredParams => 'معلمات مطلوبة مفقودة';
+
+  @override
+  String get itemUuidEmpty => 'معرف العنصر فارغ';
+
+  @override
+  String get cartClearedSuccess => 'تم إفراغ السلة بنجاح';
+
+  @override
+  String get itemAddedSuccess => 'تم إضافة العنصر إلى السلة بنجاح';
+
+  @override
+  String get itemRemovedSuccess => 'تم إزالة العنصر من السلة بنجاح';
+
+  @override
+  String get itemUpdatedSuccess => 'تم تحديث كمية العنصر بنجاح';
+
+  @override
+  String get couponAddedSuccess => 'تم تطبيق الكوبون بنجاح';
+
+  @override
+  String get couponRemovedSuccess => 'تم إزالة الكوبون بنجاح';
+
+  @override
+  String get cartClosedSuccess => 'تم إغلاق السلة بنجاح';
+
+  @override
+  String get failureGetUserCart => 'فشل في الحصول على سلة المستخدم';
+
+  @override
+  String get failureGetCartDetails => 'فشل في الحصول على تفاصيل السلة';
+
+  @override
+  String get failureClearCart => 'فشل في إفراغ السلة';
+
+  @override
+  String get failureGetPreparingTime => 'فشل في الحصول على وقت التحضير';
+
+  @override
+  String get failureAddItem => 'فشل في إضافة العنصر إلى السلة';
+
+  @override
+  String get failureRemoveItem => 'فشل في إزالة العنصر من السلة';
+
+  @override
+  String get failureUpdateItem => 'فشل في تحديث كمية العنصر';
+
+  @override
+  String get failureGetOftenProductCart =>
+      'فشل في الحصول على المنتجات المطلوبة بشكل متكرر';
+
+  @override
+  String get failureAddCoupon => 'فشل في تطبيق الكوبون';
+
+  @override
+  String get failureCloseCart => 'فشل في إغلاق السلة';
+
+  @override
+  String get failureGetCategories => 'فشل في الحصول على الفئات';
+
+  @override
+  String get failureGetSponsors => 'فشل في الحصول على الرعاة';
+
+  @override
+  String get noSponsorsAvailable => 'لا توجد رعاة متاحة';
+
+  @override
+  String get categoryLoadingError => 'خطأ في تحميل الفئات';
+
+  @override
+  String get sponsorsLoadingError => 'خطأ في تحميل الرعاة';
+
+  @override
+  String get alreadyInFavorites => 'موجود بالفعل في المفضلة';
+
+  @override
+  String get vendorNotInFavorites => 'البائع ليس في المفضلة';
+
+  @override
+  String get addedToFavorites => 'تمت الإضافة إلى المفضلة';
+
+  @override
+  String get removedFromFavorites => 'تمت الإزالة من المفضلة';
+
+  @override
+  String get failedToLoadFavorites => 'فشل في تحميل المفضلة';
+
+  @override
+  String vendorsInFavorites(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'بائعين',
+      one: 'بائع',
+    );
+    return '$count $_temp0 في المفضلة';
+  }
+
+  @override
+  String get errorLoadingFavorites => 'خطأ في تحميل المفضلة';
+
+  @override
+  String get noFavoritesFound => 'لم يتم العثور على مفضلات';
+
+  @override
+  String get refreshFavorites => 'تحديث المفضلة';
+
+  @override
+  String get failedToLoadBusinessDetails => 'فشل في تحميل تفاصيل العمل';
+
+  @override
+  String get error => 'خطأ';
+
+  @override
+  String get deleteAccount => 'حذف الحساب';
+
+  @override
+  String get areYouSure => 'هل أنت متأكد؟';
+
+  @override
+  String get tutorialSkip => 'تخطي';
+
+  @override
+  String get clickToShowItems => 'اضغط هنا لعرض العناصر';
+
+  @override
+  String get clickToAddNewItem => 'اضغط مرة أخرى لإضافة عنصر جديد';
+
+  @override
+  String get averageRating => 'متوسط التقييم';
+
+  @override
+  String get totalReviews => 'إجمالي التقييمات';
+
+  @override
+  String get vendorBalance => 'رصيد البائع';
+
+  @override
+  String get noOrdersAvailable => 'لا توجد طلبات متاحة';
+
+  @override
+  String get noProductsAvailable => 'لا توجد منتجات متاحة';
+
+  @override
+  String get noNotificationsAvailable => 'لا توجد إشعارات متاحة';
+
+  @override
+  String get businessDetails => 'تفاصيل العمل';
+
+  @override
+  String get orderStatus => 'حالة الطلب';
+
+  @override
+  String get revenue => 'الإيرادات';
+
+  @override
+  String get customerReviews => 'تقييمات العملاء';
+
+  @override
+  String get popularProducts => 'المنتجات الشائعة';
+
+  @override
+  String get failedToLoadReviews => 'فشل في تحميل التقييمات';
+
+  @override
+  String get failedToLoadCommonIssues => 'فشل في تحميل المشاكل الشائعة';
+
+  @override
+  String get failedToLoadFAQ => 'فشل في تحميل الأسئلة الشائعة';
+
+  @override
+  String get failedToLoadSocialPlatforms =>
+      'فشل في تحميل منصات التواصل الاجتماعي';
+
+  @override
+  String get failedToLoadDownloadPlatforms => 'فشل في تحميل منصات التنزيل';
+
+  @override
+  String get failedToAddReview => 'فشل في إضافة التقييم';
+
+  @override
+  String get reviewAddedSuccessfully => 'تم إضافة التقييم بنجاح';
+
+  @override
+  String get searchIssues => 'البحث عن المشاكل';
+
+  @override
+  String get noReviewsFound => 'لم يتم العثور على تقييمات';
+
+  @override
+  String get noCommonIssuesFound => 'لم يتم العثور على مشاكل شائعة';
+
+  @override
+  String get noFAQFound => 'لم يتم العثور على أسئلة شائعة';
+
+  @override
+  String get noSocialPlatformsFound => 'لم يتم العثور على منصات تواصل اجتماعي';
+
+  @override
+  String get noDownloadPlatformsFound => 'لم يتم العثور على منصات تنزيل';
+
+  @override
+  String get successAdded => 'تمت الإضافة بنجاح';
+
+  @override
+  String get successUpdated => 'تم التحديث بنجاح';
+
+  @override
+  String get successDeleted => 'تم الحذف بنجاح';
+
+  @override
+  String get locationServicesDisabled => 'خدمات الموقع معطلة';
+
+  @override
+  String get locationPermissionsDenied => 'تم رفض أذونات الموقع';
+
+  @override
+  String get locationPermissionsDeniedForever =>
+      'تم رفض أذونات الموقع بشكل دائم';
+
+  @override
+  String get houseNumberHint => 'رقم المنزل / الشقة / المبنى';
+
+  @override
+  String get landmarkHint => 'مثلاً بالقرب من مدرسة ABC';
+
+  @override
+  String get searchForLocation => 'ابحث عن مبنى أو شارع أو ...';
+
+  @override
+  String get noLocationsFound => 'لم يتم العثور على مواقع';
+
+  @override
+  String get selectLocation => 'اختر الموقع';
+
+  @override
+  String get authRequired => 'مطلوب مصادقة';
+
+  @override
+  String get biometricAuth => 'استخدم المصادقة البيومترية';
+
+  @override
+  String get passwordAuth => 'أدخل كلمة المرور';
+
+  @override
+  String get locationPicker => 'منتقي الموقع';
+
+  @override
+  String get confirmLocation => 'تأكيد الموقع';
+
+  @override
+  String get locationUpdated => 'تم تحديث الموقع بنجاح';
+
+  @override
+  String get locationAdded => 'تم إضافة الموقع بنجاح';
+
+  @override
+  String get locationDeleted => 'تم حذف الموقع بنجاح';
+
+  @override
+  String get locationError => 'خطأ في الموقع';
+
+  @override
+  String get emptyLocationList => 'لم تتم إضافة مواقع بعد';
+
+  @override
+  String get addLocationButton => 'إضافة موقع جديد';
+
+  @override
+  String get editLocation => 'تعديل الموقع';
+
+  @override
+  String get confirmDeleteLocation => 'هل أنت متأكد من حذف هذا الموقع؟';
+
+  @override
+  String get confirmDeleteBranch => 'هل أنت متأكد من حذف هذا الفرع؟';
+
+  @override
+  String get branchDeleted => 'تم حذف الفرع بنجاح';
+
+  @override
+  String get branchUpdated => 'تم تحديث الفرع بنجاح';
+
+  @override
+  String get branchAdded => 'تم إضافة الفرع بنجاح';
+
+  @override
+  String get locationPermissionRequired =>
+      'مطلوب إذن الموقع لاستخدام هذه الميزة';
+
+  @override
+  String get enableLocationServices => 'يرجى تمكين خدمات الموقع للمتابعة';
+
+  @override
+  String get locationAccessRequired =>
+      'مطلوب الوصول إلى الموقع لعمل هذه الميزة بشكل صحيح';
+
+  @override
+  String get failedToLoadPosts => 'فشل في تحميل المنشورات';
+
+  @override
+  String get failedToCreatePost => 'فشل في إنشاء المنشور';
+
+  @override
+  String get failedToLoadUserPosts => 'فشل في تحميل منشورات المستخدم';
+
+  @override
+  String get failedToLoadSavedPosts => 'فشل في تحميل المنشورات المحفوظة';
+
+  @override
+  String get failedToLoadProfile => 'فشل في تحميل الملف الشخصي';
+
+  @override
+  String get failedToLoadComments => 'فشل في تحميل التعليقات';
+
+  @override
+  String get failedToLoadReplies => 'فشل في تحميل الردود';
+
+  @override
+  String get failedToLoadLikes => 'فشل في تحميل الإعجابات';
+
+  @override
+  String get failedToLoadUsers => 'فشل في تحميل المستخدمين';
+
+  @override
+  String get failedToLoadVendors => 'فشل في تحميل البائعين';
+
+  @override
+  String get failedToLoadProducts => 'فشل في تحميل المنتجات';
+
+  @override
+  String get failedToFollowUser => 'فشل في متابعة المستخدم';
+
+  @override
+  String get failedToUnfollowUser => 'فشل في إلغاء متابعة المستخدم';
+
+  @override
+  String get failedToLikePost => 'فشل في الإعجاب بالمنشور';
+
+  @override
+  String get failedToUnlikePost => 'فشل في إلغاء الإعجاب بالمنشور';
+
+  @override
+  String get failedToLikeComment => 'فشل في الإعجاب بالتعليق';
+
+  @override
+  String get failedToUnlikeComment => 'فشل في إلغاء الإعجاب بالتعليق';
+
+  @override
+  String get failedToAddComment => 'فشل في إضافة التعليق';
+
+  @override
+  String get failedToAddReply => 'فشل في إضافة الرد';
+
+  @override
+  String get failedToDeleteComment => 'فشل في حذف التعليق';
+
+  @override
+  String get failedToDeleteReply => 'فشل في حذف الرد';
+
+  @override
+  String get failedToSavePost => 'فشل في حفظ المنشور';
+
+  @override
+  String get postCreatedSuccessfully => 'تم إنشاء المنشور بنجاح';
+
+  @override
+  String get postSavedSuccessfully => 'تم حفظ المنشور بنجاح';
+
+  @override
+  String get postUnsavedSuccessfully => 'تم إلغاء حفظ المنشور بنجاح';
+
+  @override
+  String get userFollowedSuccessfully => 'تم متابعة المستخدم بنجاح';
+
+  @override
+  String get userUnfollowedSuccessfully => 'تم إلغاء متابعة المستخدم بنجاح';
+
+  @override
+  String get commentAddedSuccessfully => 'تم إضافة التعليق بنجاح';
+
+  @override
+  String get replyAddedSuccessfully => 'تم إضافة الرد بنجاح';
+
+  @override
+  String get commentDeletedSuccessfully => 'تم حذف التعليق بنجاح';
+
+  @override
+  String get replyDeletedSuccessfully => 'تم حذف الرد بنجاح';
+
+  @override
+  String get uploading => 'جاري الرفع';
+
+  @override
+  String get noUsersFound => 'لم يتم العثور على مستخدمين';
+
+  @override
+  String get noVendorsFound => 'لم يتم العثور على بائعين';
+
+  @override
+  String get noProductsFound => 'لم يتم العثور على منتجات';
+
+  @override
+  String get noCommentsFound => 'لم يتم العثور على تعليقات';
+
+  @override
+  String get noRepliesFound => 'لم يتم العثور على ردود';
+
+  @override
+  String get noLikesFound => 'لم يتم العثور على إعجابات';
+
+  @override
+  String get searchForUsers => 'البحث عن مستخدمين';
+
+  @override
+  String get searchForVendors => 'البحث عن بائعين';
+
+  @override
+  String get searchForProducts => 'البحث عن منتجات';
+
+  @override
+  String get selectVendor => 'اختر البائع';
+
+  @override
+  String get selectProduct => 'اختر المنتج';
+
+  @override
+  String get writeComment => 'اكتب تعليق';
+
+  @override
+  String get writeReply => 'اكتب رد';
+
+  @override
+  String get confirmDeleteComment => 'هل أنت متأكد من حذف هذا التعليق؟';
+
+  @override
+  String get confirmDeleteReply => 'هل أنت متأكد من حذف هذا الرد؟';
+
+  @override
+  String get posts => 'المنشورات';
+
+  @override
+  String get loadingProfile => 'جاري تحميل الملف الشخصي...';
+
+  @override
+  String get loadingPosts => 'جاري تحميل المنشورات...';
+
+  @override
+  String get loadingComments => 'جاري تحميل التعليقات...';
+
+  @override
+  String get loadingReplies => 'جاري تحميل الردود...';
+
+  @override
+  String get loadingLikes => 'جاري تحميل الإعجابات...';
+
+  @override
+  String get loadingUsers => 'جاري تحميل المستخدمين...';
+
+  @override
+  String get loadingVendors => 'جاري تحميل البائعين...';
+
+  @override
+  String get loadingProducts => 'جاري تحميل المنتجات...';
+
+  @override
+  String get refresh => 'تحديث';
+
+  @override
+  String get uploadProgress => 'تقدم الرفع';
+
+  @override
+  String get optimisticUpdate => 'جاري التحديث...';
+
+  @override
+  String get temporaryState => 'حالة مؤقتة';
+
+  @override
+  String get postDeleted => 'تم حذف المنشور';
+
+  @override
+  String get editPost => 'تعديل المنشور';
+
+  @override
+  String get deletePost => 'حذف المنشور';
+
+  @override
+  String get confirmDeletePost =>
+      'هل أنت متأكد من حذف هذا المنشور؟ لا يمكن التراجع عن هذا الإجراء.';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get sharePost => 'مشاركة المنشور';
+
+  @override
+  String get shareFunctionality => 'سيتم تنفيذ وظيفة المشاركة هنا';
+
+  @override
+  String get yourPost => 'منشورك';
+
+  @override
+  String get you => 'أنت';
+
+  @override
+  String get commentAdded => 'تمت إضافة التعليق';
+
+  @override
+  String get replyAdded => 'تمت إضافة الرد';
+
+  @override
+  String get commentDeleted => 'تم حذف التعليق';
+
+  @override
+  String get replyDeleted => 'تم حذف الرد';
+
+  @override
+  String get noUserPosts => 'لا توجد منشورات للمستخدم';
+
+  @override
+  String get shimmerLoading => 'جاري التحميل...';
+
+  @override
+  String get noDataAvailable => 'لا توجد بيانات متاحة';
+
+  @override
+  String get errorLoadingData => 'خطأ في تحميل البيانات';
+
+  @override
+  String get story => 'قصة';
+
+  @override
+  String get addStory => 'إضافة قصة';
+
+  @override
+  String get noStoriesAvailable => 'لا توجد قصص متاحة';
+
+  @override
+  String get loadingStory => 'جاري تحميل القصة...';
+
+  @override
+  String get storyAdded => 'تمت إضافة القصة';
+
+  @override
+  String get failedToAddStory => 'فشل في إضافة القصة';
+
+  @override
+  String get storyDeleted => 'تم حذف القصة';
+
+  @override
+  String get failedToDeleteStory => 'فشل في حذف القصة';
+
+  @override
+  String get viewStory => 'عرض القصة';
+
+  @override
+  String get storyViewed => 'تم عرض القصة';
+
+  @override
+  String get failedToViewStory => 'فشل في عرض القصة';
+
+  @override
+  String get storyExpired => 'انتهت صلاحية القصة';
+
+  @override
+  String get uploadingStory => 'جاري رفع القصة...';
+
+  @override
+  String get storyUploadProgress => 'تقدم رفع القصة';
+
+  @override
+  String get storyUploadComplete => 'اكتمل رفع القصة';
+
+  @override
+  String get storyUploadFailed => 'فشل رفع القصة';
+
+  @override
+  String get addPhotoToStory => 'إضافة صورة إلى القصة';
+
+  @override
+  String get addVideoToStory => 'إضافة فيديو إلى القصة';
+
+  @override
+  String get failedToLoadNotifications => 'فشل في تحميل الإشعارات';
+
+  @override
+  String get failedToMarkNotificationAsRead => 'فشل في تحديد الإشعار كمقروء';
+
+  @override
+  String get failedToMarkAllNotificationsAsRead =>
+      'فشل في تحديد جميع الإشعارات كمقروءة';
+
+  @override
+  String get notificationMarkedAsRead => 'تم تحديد الإشعار كمقروء';
+
+  @override
+  String get allNotificationsMarkedAsRead => 'تم تحديد جميع الإشعارات كمقروءة';
+
+  @override
+  String get notificationsEmpty => 'لقد اطلعت على كل شيء!';
+
+  @override
+  String get notificationsEmptySubtitle => 'لا توجد إشعارات بعد';
+
+  @override
+  String get loadingNotifications => 'جاري تحميل الإشعارات...';
+
+  @override
+  String get refreshNotifications => 'تحديث الإشعارات';
+
+  @override
+  String get markAllAsRead => 'تحديد الكل كمقروء';
+
+  @override
+  String get notificationSettings => 'إعدادات الإشعارات';
+
+  @override
+  String get notificationPreferences => 'تفضيلات الإشعارات';
+
+  @override
+  String get notificationHistory => 'سجل الإشعارات';
+
+  @override
+  String get clearAllNotifications => 'مسح جميع الإشعارات';
+
+  @override
+  String get confirmClearAllNotifications =>
+      'هل أنت متأكد من مسح جميع الإشعارات؟';
+
+  @override
+  String get notificationsCleared => 'تم مسح الإشعارات';
 }

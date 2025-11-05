@@ -26,10 +26,13 @@ class CommentEntity extends $CommentEntity {
   final String created_at;
 
   @HiveField(5)
-  final bool? is_i_comment_owner;
+  final bool is_i_comment_owner;
 
   @HiveField(7)
-  final bool? is_i_replay_owner;
+  final bool is_i_replay_owner;
+
+  @HiveField(8)
+  final bool is_liked;
 
   @HiveField(6)
   @JsonKey(fromJson: user_infoFromMap, toJson: user_infoToMap)
@@ -41,14 +44,14 @@ class CommentEntity extends $CommentEntity {
     this.number_of_likes,
     this.number_of_replies,
     required this.created_at,
-    this.is_i_comment_owner,
-    this.is_i_replay_owner,
+    this.is_i_comment_owner = false,
+    this.is_i_replay_owner = false,
     required this.user_info,
+    this.is_liked = false,
   });
 
   factory CommentEntity.fromModel(CommentModel model) =>
       const $CommentEntity().convert<CommentModel, CommentEntity>(model);
-
   factory CommentEntity.empty() => CommentEntity(
         uuid: '',
         content: '',
@@ -57,15 +60,39 @@ class CommentEntity extends $CommentEntity {
         is_i_replay_owner: false,
         created_at: '',
         is_i_comment_owner: false,
+        is_liked: false,
         user_info: UserInfoEntity.empty(),
       );
-
   static UserInfoEntity user_infoFromMap(Map<String, dynamic> json) {
     return UserInfoEntity.fromJson(json);
   }
 
   static Map<String, dynamic> user_infoToMap(UserInfoEntity instance) {
     return instance.toJson();
+  }
+
+  CommentEntity copyWith({
+    String? uuid,
+    String? content,
+    int? number_of_likes,
+    int? number_of_replies,
+    String? created_at,
+    bool? is_i_comment_owner,
+    bool? is_i_replay_owner,
+    UserInfoEntity? user_info,
+    bool? is_liked,
+  }) {
+    return CommentEntity(
+      uuid: uuid ?? this.uuid,
+      content: content ?? this.content,
+      number_of_likes: number_of_likes ?? this.number_of_likes,
+      number_of_replies: number_of_replies ?? this.number_of_replies,
+      created_at: created_at ?? this.created_at,
+      is_i_comment_owner: is_i_comment_owner ?? this.is_i_comment_owner,
+      is_i_replay_owner: is_i_replay_owner ?? this.is_i_replay_owner,
+      user_info: user_info ?? this.user_info,
+      is_liked: is_liked ?? this.is_liked,
+    );
   }
 }
 

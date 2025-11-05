@@ -126,9 +126,6 @@ class _$PaymentEventCopyWithImpl<$Res, $Val extends PaymentEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -144,9 +141,6 @@ class __$$AuthImplCopyWithImpl<$Res>
     implements _$$AuthImplCopyWith<$Res> {
   __$$AuthImplCopyWithImpl(_$AuthImpl _value, $Res Function(_$AuthImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -303,9 +297,6 @@ class __$$AddVendorCardImplCopyWithImpl<$Res>
   __$$AddVendorCardImplCopyWithImpl(
       _$AddVendorCardImpl _value, $Res Function(_$AddVendorCardImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -465,8 +456,6 @@ class __$$DeleteVendorCardImplCopyWithImpl<$Res>
       $Res Function(_$DeleteVendorCardImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -505,9 +494,7 @@ class _$DeleteVendorCardImpl implements _DeleteVendorCard {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteVendorCardImplCopyWith<_$DeleteVendorCardImpl> get copyWith =>
@@ -635,10 +622,7 @@ abstract class _DeleteVendorCard implements PaymentEvent {
   const factory _DeleteVendorCard(final String id) = _$DeleteVendorCardImpl;
 
   String get id;
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DeleteVendorCardImplCopyWith<_$DeleteVendorCardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -657,9 +641,6 @@ class __$$UpdateVendorCardImplCopyWithImpl<$Res>
   __$$UpdateVendorCardImplCopyWithImpl(_$UpdateVendorCardImpl _value,
       $Res Function(_$UpdateVendorCardImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -816,9 +797,6 @@ class __$$GetVendorCardImplCopyWithImpl<$Res>
   __$$GetVendorCardImplCopyWithImpl(
       _$GetVendorCardImpl _value, $Res Function(_$GetVendorCardImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -975,9 +953,6 @@ class __$$AddCustomerCardImplCopyWithImpl<$Res>
   __$$AddCustomerCardImplCopyWithImpl(
       _$AddCustomerCardImpl _value, $Res Function(_$AddCustomerCardImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1134,9 +1109,6 @@ class __$$GetCustomerCardImplCopyWithImpl<$Res>
   __$$GetCustomerCardImplCopyWithImpl(
       _$GetCustomerCardImpl _value, $Res Function(_$GetCustomerCardImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1296,8 +1268,6 @@ class __$$DeleteCustomerCardImplCopyWithImpl<$Res>
       $Res Function(_$DeleteCustomerCardImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1336,9 +1306,7 @@ class _$DeleteCustomerCardImpl implements _DeleteCustomerCard {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$DeleteCustomerCardImplCopyWith<_$DeleteCustomerCardImpl> get copyWith =>
@@ -1466,10 +1434,7 @@ abstract class _DeleteCustomerCard implements PaymentEvent {
   const factory _DeleteCustomerCard(final String id) = _$DeleteCustomerCardImpl;
 
   String get id;
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$DeleteCustomerCardImplCopyWith<_$DeleteCustomerCardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1488,9 +1453,6 @@ class __$$InitializeEditModeImplCopyWithImpl<$Res>
   __$$InitializeEditModeImplCopyWithImpl(_$InitializeEditModeImpl _value,
       $Res Function(_$InitializeEditModeImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1647,9 +1609,6 @@ class __$$ProcessToPayImplCopyWithImpl<$Res>
   __$$ProcessToPayImplCopyWithImpl(
       _$ProcessToPayImpl _value, $Res Function(_$ProcessToPayImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1806,9 +1765,6 @@ class __$$GetAccessTokenImplCopyWithImpl<$Res>
   __$$GetAccessTokenImplCopyWithImpl(
       _$GetAccessTokenImpl _value, $Res Function(_$GetAccessTokenImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2039,9 +1995,6 @@ class _$PaymentStateCopyWithImpl<$Res, $Val extends PaymentState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2058,9 +2011,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2193,9 +2143,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2328,9 +2275,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2463,9 +2407,6 @@ class __$$SuccessAddedImplCopyWithImpl<$Res>
   __$$SuccessAddedImplCopyWithImpl(
       _$SuccessAddedImpl _value, $Res Function(_$SuccessAddedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2598,9 +2539,6 @@ class __$$SuccessUpdateImplCopyWithImpl<$Res>
   __$$SuccessUpdateImplCopyWithImpl(
       _$SuccessUpdateImpl _value, $Res Function(_$SuccessUpdateImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2733,9 +2671,6 @@ class __$$SuccessDeletedImplCopyWithImpl<$Res>
   __$$SuccessDeletedImplCopyWithImpl(
       _$SuccessDeletedImpl _value, $Res Function(_$SuccessDeletedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -2871,8 +2806,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2911,9 +2844,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -3016,10 +2947,7 @@ abstract class _Failure implements PaymentState {
   const factory _Failure(final String err) = _$FailureImpl;
 
   String get err;
-
-  /// Create a copy of PaymentState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

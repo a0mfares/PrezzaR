@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:intl/intl.dart';
 import 'package:prezza/core/helper/network.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/features/location/data/datasources/location_service.dart';
@@ -71,19 +70,15 @@ class LocationRepoImpl implements LocationRepo {
   }
 
   @override
-  Future<Either<FailureServices, String>> getArrivelTime(
+  Future<Either<FailureServices, Duration>> getArrivelTime(
       Map<String, dynamic> query) {
     return execute(() async {
       final res = await _mapService.getArrivelTime(query);
       final arrivel =
           res.data['routes'][0]['legs'][0]['duration']['value'] as int;
 
-      DateTime arrivalTime =
-          DateTime.now().add(Duration(seconds: arrivel)); // Add travel time
-
-      String formattedTime =
-          DateFormat.Hm().format(arrivalTime); // Convert to HH:MM format
-      return formattedTime;
+     Duration arrivalTime = Duration(seconds: arrivel);
+      return arrivalTime;
     });
   }
 }

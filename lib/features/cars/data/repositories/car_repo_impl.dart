@@ -33,6 +33,7 @@ class CarRepoImpl implements CarRepo {
   @override
   Future<Either<FailureServices, List<CarEntity>>> getCars() {
     return execute(() async {
+      await authorizationApi();
       final result = await _service.getCars(bearerToken);
 
       return List<CarEntity>.from(result.data['data']
@@ -70,7 +71,6 @@ class CarRepoImpl implements CarRepo {
 
   @override
   Future<Either<FailureServices, List<String>>> getYeaser() {
-    // TODO: implement getYeaser
     throw UnimplementedError();
   }
 
@@ -87,26 +87,56 @@ class CarRepoImpl implements CarRepo {
     });
   }
 
-  Future<void> authorizationApi() async {
-    if (HiveStorage.get(kCarApitoken, defaultValue: null).toString() !=
-        "null") {
-      log('is not empty token');
+ Future<void> authorizationApi() async {
+  try {
+    // Get the token properly without converting to string
+    final storedToken = HiveStorage.get(kCarApitoken);
+    
+    if (storedToken != null && storedToken.isNotEmpty) {
+      log('Token exists, checking expiration');
       final isExpire = await FlutterSessionJwt.isTokenExpired();
+      
       if (isExpire) {
-        final token =
-            ((await _service.authorizeCarApi(bearerToken)).data['data'] as List)
-                .join();
-        HiveStorage.set(kCarApitoken, token);
-        final t = await FlutterSessionJwt.saveToken(token);
-        log(t, name: 'token');
+        log('Token expired, refreshing');
+        await _refreshAndSaveToken();
       }
     } else {
-      log('is empty token');
-      final token =
-          ((await _service.authorizeCarApi(bearerToken)).data['data'] as List)
-              .join();
+      log('No token found, getting new one');
+      await _refreshAndSaveToken();
+    }
+  } catch (e) {
+    log('Error in authorizationApi: $e');
+    // Handle error appropriately
+  }
+}
+
+Future<void> _refreshAndSaveToken() async {
+  try {
+    final response = await _service.authorizeCarApi(bearerToken);
+    
+    // Check the response structure before casting
+    if (response.data != null && response.data['data'] != null) {
+      final data = response.data['data'];
+      
+      String token;
+      if (data is List) {
+        token = data.join();
+      } else if (data is String) {
+        token = data;
+      } else {
+        throw Exception('Unexpected token format: ${data.runtimeType}');
+      }
+      
+      // Save the token
       HiveStorage.set(kCarApitoken, token);
       await FlutterSessionJwt.saveToken(token);
+      log('Token saved successfully', name: 'token');
+    } else {
+      throw Exception('Invalid response structure');
     }
+  } catch (e) {
+    log('Error refreshing token: $e');
+    rethrow;
   }
+}
 }

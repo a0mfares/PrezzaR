@@ -1,51 +1,52 @@
-import '../../data/models/order_user_model.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 
 part 'order_user_entity.g.dart';
 
 @HiveType(typeId: 3)
-@AutoMappr([
-  MapType<OrderUserItemModel, OrderUserItemEntity>(),
-])
-class OrderUserItemEntity extends $OrderUserItemEntity {
+class OrderUserItemEntity {
   @HiveField(0)
   final String uuid;
-
+  
   @HiveField(1)
-  final int total_price;
-
+  final int totalPrice;
+  
   @HiveField(2)
-  final String created_at;
-
+  final String createdAt;
+  
   @HiveField(3)
-  final String bussiness_name;
-
+  final String businessName;
+  
   @HiveField(4)
-  final String bussiness_logo;
-
+  final String businessLogo;
+  
   @HiveField(5)
-  final String cart_uuid;
+  final String cartUuid;
 
   OrderUserItemEntity({
     required this.uuid,
-    required this.total_price,
-    required this.created_at,
-    required this.bussiness_name,
-    required this.bussiness_logo,
-    required this.cart_uuid,
+    required this.totalPrice,
+    required this.createdAt,
+    required this.businessName,
+    required this.businessLogo,
+    required this.cartUuid,
   });
-
-  factory OrderUserItemEntity.fromModel(OrderUserItemModel model) =>
-      const $OrderUserItemEntity()
-          .convert<OrderUserItemModel, OrderUserItemEntity>(model);
 
   factory OrderUserItemEntity.empty() => OrderUserItemEntity(
         uuid: '',
-        total_price: 0,
-        created_at: '',
-        bussiness_name: '',
-        bussiness_logo: '',
-        cart_uuid: '',
+        totalPrice: 0,
+        createdAt: '',
+        businessName: '',
+        businessLogo: '',
+        cartUuid: '',
       );
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is OrderUserItemEntity &&
+          runtimeType == other.runtimeType &&
+          uuid == other.uuid;
+
+  @override
+  int get hashCode => uuid.hashCode;
 }

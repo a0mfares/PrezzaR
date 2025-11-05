@@ -66,11 +66,9 @@ class _OtpVerificationState extends State<OtpVerificationPage> {
   }
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      countDownTimer.cancel();
-    });
+  void dispose() {
+    countDownTimer.cancel();
+    super.dispose();
   }
 
   @override
@@ -128,7 +126,7 @@ class _OtpVerificationState extends State<OtpVerificationPage> {
                 failure: (err) {
                   BotToast.showText(text: err.errMsg);
                 },
-                success: (_) {
+                successOtp: (_) {
                   if (mounted) {
                     widget.onSuccess();
                   }

@@ -89,5 +89,10 @@ class CartRepoImpl implements CartRepo {
           .where((e) => e.smallest_size_id != null)
           .toList();
     });
+
   }
+  @override
+  Future<Either<FailureServices, void>> closeCart(String uuid) {
+    return execute(() => _service.closeCart(bearerToken, {"uuid": uuid}));
+  } 
 }

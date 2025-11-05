@@ -54,7 +54,7 @@ class _LocationPageState extends State<LocationPage> {
           listener: (context, state) {
             state.maybeMap(
               successDelete: (v) {
-                BotToast.showText(text: 'Success deleted');
+                BotToast.showText(text: tr.successDeleted);
               },
               failure: (v) {
                 BotToast.showText(text: v.err);
@@ -215,7 +215,7 @@ class _LocationPageState extends State<LocationPage> {
                                         subTitle: tr.areUSureDeleteBranche,
                                         onTap: () {
                                           bloc.add(LocationEvent.deleteBranche(
-                                              branches.id.toString()));
+                                              branches.branch_uuid.toString()));
                                           context.maybePop();
                                         },
                                       );

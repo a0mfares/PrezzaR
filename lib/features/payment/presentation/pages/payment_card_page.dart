@@ -1,3 +1,5 @@
+// ignore_for_file: no_wildcard_variable_uses
+
 import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +40,6 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
   @override
   Widget build(BuildContext context) {
     final w = MediaQuery.of(context).size.width;
-    final h = MediaQuery.of(context).size.height;
 
     return Scaffold(
       appBar: AppBar(

@@ -23,7 +23,7 @@ class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
   int star = 0;
   File reviewImg = File('');
   ReviewBloc(this._addProductReviewUsecase, this._getProductReviewsUsecase)
-      : super(_Initial()) {
+      : super(const _Initial()) {
     on<ReviewEvent>((event, emit) async {
       await event.maybeWhen(
         addProductReview: (productId) async {

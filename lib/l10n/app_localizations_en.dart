@@ -132,6 +132,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get verifyEmail => 'Verify Email';
 
   @override
+  String get plsActivatePhone => 'Please activate your phone';
+
+  @override
+  String get verifyPhone => 'Verify Phone';
+
+  @override
   String get continueWithPhoneInst => 'Continue with phone number instead';
 
   @override
@@ -836,6 +842,18 @@ class AppLocalizationsEn extends AppLocalizations {
       'Notifications regarding important app changes, new features, or updates.';
 
   @override
+  String get orderNotifications =>
+      'Notifications about placed, ongoing, and delivered orders.';
+
+  @override
+  String get discountNotifications =>
+      'Notifications about discounts, special offers, and seasonal promotions.';
+
+  @override
+  String get importantNotifications =>
+      'Notifications about important app changes or new updates.';
+
+  @override
   String get applePay => 'Apple pay';
 
   @override
@@ -848,7 +866,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get chooseCar => 'choose your car';
 
   @override
-  String youCanCanel(String time) {
+  String youCanCancel(String time) {
     return 'You can cancel it within $time mins max';
   }
 
@@ -1058,7 +1076,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get welcome => 'Welcome';
 
   @override
-  String get welcomeTitle => 'we’re glad that that you are here';
+  String get welcomeTitle => 'we\'re glad that that you are here';
 
   @override
   String get orderAhead => 'Order Ahead';
@@ -1136,12 +1154,6 @@ class AppLocalizationsEn extends AppLocalizations {
   String get anySpecialRequest => 'Any Special Request?';
 
   @override
-  String get plsActivatePhone => 'please activate you phone';
-
-  @override
-  String get verifyPhone => 'very phone';
-
-  @override
   String get searchITem => 'Search Items';
 
   @override
@@ -1156,4 +1168,693 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get retry => 'Retry';
+
+  @override
+  String get numberOfSeats => 'Number of Seats';
+
+  @override
+  String get enterNumberOfSeats => 'Enter number of seats';
+
+  @override
+  String get bookingDate => 'Booking Date';
+
+  @override
+  String get selectDate => 'Select Date';
+
+  @override
+  String get numberOfSeatsRequired => 'Number of seats is required';
+
+  @override
+  String get bookingDateRequired => 'Booking date is required';
+
+  @override
+  String get selectBranch => 'Please select a branch';
+
+  @override
+  String get completeSetup => 'Complete setup';
+
+  @override
+  String get userIdNotFound => 'User ID not found';
+
+  @override
+  String get selectMake => 'Select Make';
+
+  @override
+  String get selectModel => 'Select Model';
+
+  @override
+  String get carAddedSuccess => 'Car added successfully';
+
+  @override
+  String get carUpdatedSuccess => 'Car updated successfully';
+
+  @override
+  String get carDeletedSuccess => 'Car deleted successfully';
+
+  @override
+  String get fillAllCarFields => 'Please fill all fields and select an image';
+
+  @override
+  String get cartIdEmpty => 'Cart ID is empty';
+
+  @override
+  String get missingRequiredParams => 'Missing required parameters';
+
+  @override
+  String get itemUuidEmpty => 'Item UUID is empty';
+
+  @override
+  String get cartClearedSuccess => 'Cart cleared successfully';
+
+  @override
+  String get itemAddedSuccess => 'Item added to cart successfully';
+
+  @override
+  String get itemRemovedSuccess => 'Item removed from cart successfully';
+
+  @override
+  String get itemUpdatedSuccess => 'Item quantity updated successfully';
+
+  @override
+  String get couponAddedSuccess => 'Coupon applied successfully';
+
+  @override
+  String get couponRemovedSuccess => 'Coupon removed successfully';
+
+  @override
+  String get cartClosedSuccess => 'Cart closed successfully';
+
+  @override
+  String get failureGetUserCart => 'Failed to get user cart';
+
+  @override
+  String get failureGetCartDetails => 'Failed to get cart details';
+
+  @override
+  String get failureClearCart => 'Failed to clear cart';
+
+  @override
+  String get failureGetPreparingTime => 'Failed to get preparing time';
+
+  @override
+  String get failureAddItem => 'Failed to add item to cart';
+
+  @override
+  String get failureRemoveItem => 'Failed to remove item from cart';
+
+  @override
+  String get failureUpdateItem => 'Failed to update item quantity';
+
+  @override
+  String get failureGetOftenProductCart =>
+      'Failed to get often ordered products';
+
+  @override
+  String get failureAddCoupon => 'Failed to apply coupon';
+
+  @override
+  String get failureCloseCart => 'Failed to close cart';
+
+  @override
+  String get failureGetCategories => 'Failed to get categories';
+
+  @override
+  String get failureGetSponsors => 'Failed to get sponsors';
+
+  @override
+  String get noSponsorsAvailable => 'No sponsors available';
+
+  @override
+  String get categoryLoadingError => 'Error loading categories';
+
+  @override
+  String get sponsorsLoadingError => 'Error loading sponsors';
+
+  @override
+  String get alreadyInFavorites => 'Already in favorites';
+
+  @override
+  String get vendorNotInFavorites => 'Vendor not in favorites';
+
+  @override
+  String get addedToFavorites => 'Added to favorites';
+
+  @override
+  String get removedFromFavorites => 'Removed from favorites';
+
+  @override
+  String get failedToLoadFavorites => 'Failed to load favorites';
+
+  @override
+  String vendorsInFavorites(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'vendors',
+      one: 'vendor',
+    );
+    return '$count $_temp0 in favorites';
+  }
+
+  @override
+  String get errorLoadingFavorites => 'Error loading favorites';
+
+  @override
+  String get noFavoritesFound => 'No favorites found';
+
+  @override
+  String get refreshFavorites => 'Refresh favorites';
+
+  @override
+  String get failedToLoadBusinessDetails => 'Failed to load business details';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get deleteAccount => 'Delete account';
+
+  @override
+  String get areYouSure => 'Are you sure?';
+
+  @override
+  String get tutorialSkip => 'SKIP';
+
+  @override
+  String get clickToShowItems => 'Click here to show your items';
+
+  @override
+  String get clickToAddNewItem => 'Click again to add a new item';
+
+  @override
+  String get averageRating => 'Average Rating';
+
+  @override
+  String get totalReviews => 'Total Reviews';
+
+  @override
+  String get vendorBalance => 'Vendor Balance';
+
+  @override
+  String get noOrdersAvailable => 'No orders available';
+
+  @override
+  String get noProductsAvailable => 'No products available';
+
+  @override
+  String get noNotificationsAvailable => 'No notifications available';
+
+  @override
+  String get businessDetails => 'Business Details';
+
+  @override
+  String get orderStatus => 'Order Status';
+
+  @override
+  String get revenue => 'Revenue';
+
+  @override
+  String get customerReviews => 'Customer Reviews';
+
+  @override
+  String get popularProducts => 'Popular Products';
+
+  @override
+  String get failedToLoadReviews => 'Failed to load reviews';
+
+  @override
+  String get failedToLoadCommonIssues => 'Failed to load common issues';
+
+  @override
+  String get failedToLoadFAQ => 'Failed to load FAQ';
+
+  @override
+  String get failedToLoadSocialPlatforms => 'Failed to load social platforms';
+
+  @override
+  String get failedToLoadDownloadPlatforms =>
+      'Failed to load download platforms';
+
+  @override
+  String get failedToAddReview => 'Failed to add review';
+
+  @override
+  String get reviewAddedSuccessfully => 'Review added successfully';
+
+  @override
+  String get searchIssues => 'Search issues';
+
+  @override
+  String get noReviewsFound => 'No reviews found';
+
+  @override
+  String get noCommonIssuesFound => 'No common issues found';
+
+  @override
+  String get noFAQFound => 'No FAQ found';
+
+  @override
+  String get noSocialPlatformsFound => 'No social platforms found';
+
+  @override
+  String get noDownloadPlatformsFound => 'No download platforms found';
+
+  @override
+  String get successAdded => 'Success added';
+
+  @override
+  String get successUpdated => 'Success updated';
+
+  @override
+  String get successDeleted => 'Success deleted';
+
+  @override
+  String get locationServicesDisabled => 'Location services are disabled';
+
+  @override
+  String get locationPermissionsDenied => 'Location permissions are denied';
+
+  @override
+  String get locationPermissionsDeniedForever =>
+      'Location permissions are permanently denied';
+
+  @override
+  String get houseNumberHint => 'House Number / Flat / Block No.';
+
+  @override
+  String get landmarkHint => 'e.g. Near ABC School';
+
+  @override
+  String get searchForLocation => 'Search for a building, street or ...';
+
+  @override
+  String get noLocationsFound => 'No locations found';
+
+  @override
+  String get selectLocation => 'Select Location';
+
+  @override
+  String get authRequired => 'Authentication Required';
+
+  @override
+  String get biometricAuth => 'Use biometric authentication';
+
+  @override
+  String get passwordAuth => 'Enter your password';
+
+  @override
+  String get locationPicker => 'Location Picker';
+
+  @override
+  String get confirmLocation => 'Confirm Location';
+
+  @override
+  String get locationUpdated => 'Location updated successfully';
+
+  @override
+  String get locationAdded => 'Location added successfully';
+
+  @override
+  String get locationDeleted => 'Location deleted successfully';
+
+  @override
+  String get locationError => 'Location error';
+
+  @override
+  String get emptyLocationList => 'No locations added yet';
+
+  @override
+  String get addLocationButton => 'Add New Location';
+
+  @override
+  String get editLocation => 'Edit Location';
+
+  @override
+  String get confirmDeleteLocation =>
+      'Are you sure you want to delete this location?';
+
+  @override
+  String get confirmDeleteBranch =>
+      'Are you sure you want to delete this branch?';
+
+  @override
+  String get branchDeleted => 'Branch deleted successfully';
+
+  @override
+  String get branchUpdated => 'Branch updated successfully';
+
+  @override
+  String get branchAdded => 'Branch added successfully';
+
+  @override
+  String get locationPermissionRequired =>
+      'Location permission is required to use this feature';
+
+  @override
+  String get enableLocationServices =>
+      'Please enable location services to continue';
+
+  @override
+  String get locationAccessRequired =>
+      'Location access is required for this feature to work properly';
+
+  @override
+  String get failedToLoadPosts => 'Failed to load posts';
+
+  @override
+  String get failedToCreatePost => 'Failed to create post';
+
+  @override
+  String get failedToLoadUserPosts => 'Failed to load user posts';
+
+  @override
+  String get failedToLoadSavedPosts => 'Failed to load saved posts';
+
+  @override
+  String get failedToLoadProfile => 'Failed to load profile';
+
+  @override
+  String get failedToLoadComments => 'Failed to load comments';
+
+  @override
+  String get failedToLoadReplies => 'Failed to load replies';
+
+  @override
+  String get failedToLoadLikes => 'Failed to load likes';
+
+  @override
+  String get failedToLoadUsers => 'Failed to load users';
+
+  @override
+  String get failedToLoadVendors => 'Failed to load vendors';
+
+  @override
+  String get failedToLoadProducts => 'Failed to load products';
+
+  @override
+  String get failedToFollowUser => 'Failed to follow user';
+
+  @override
+  String get failedToUnfollowUser => 'Failed to unfollow user';
+
+  @override
+  String get failedToLikePost => 'Failed to like post';
+
+  @override
+  String get failedToUnlikePost => 'Failed to unlike post';
+
+  @override
+  String get failedToLikeComment => 'Failed to like comment';
+
+  @override
+  String get failedToUnlikeComment => 'Failed to unlike comment';
+
+  @override
+  String get failedToAddComment => 'Failed to add comment';
+
+  @override
+  String get failedToAddReply => 'Failed to add reply';
+
+  @override
+  String get failedToDeleteComment => 'Failed to delete comment';
+
+  @override
+  String get failedToDeleteReply => 'Failed to delete reply';
+
+  @override
+  String get failedToSavePost => 'Failed to save post';
+
+  @override
+  String get postCreatedSuccessfully => 'Post created successfully';
+
+  @override
+  String get postSavedSuccessfully => 'Post saved successfully';
+
+  @override
+  String get postUnsavedSuccessfully => 'Post unsaved successfully';
+
+  @override
+  String get userFollowedSuccessfully => 'User followed successfully';
+
+  @override
+  String get userUnfollowedSuccessfully => 'User unfollowed successfully';
+
+  @override
+  String get commentAddedSuccessfully => 'Comment added successfully';
+
+  @override
+  String get replyAddedSuccessfully => 'Reply added successfully';
+
+  @override
+  String get commentDeletedSuccessfully => 'Comment deleted successfully';
+
+  @override
+  String get replyDeletedSuccessfully => 'Reply deleted successfully';
+
+  @override
+  String get uploading => 'Uploading';
+
+  @override
+  String get noUsersFound => 'No users found';
+
+  @override
+  String get noVendorsFound => 'No vendors found';
+
+  @override
+  String get noProductsFound => 'No products found';
+
+  @override
+  String get noCommentsFound => 'No comments found';
+
+  @override
+  String get noRepliesFound => 'No replies found';
+
+  @override
+  String get noLikesFound => 'No likes found';
+
+  @override
+  String get searchForUsers => 'Search for users';
+
+  @override
+  String get searchForVendors => 'Search for vendors';
+
+  @override
+  String get searchForProducts => 'Search for products';
+
+  @override
+  String get selectVendor => 'Select Vendor';
+
+  @override
+  String get selectProduct => 'Select Product';
+
+  @override
+  String get writeComment => 'Write a comment';
+
+  @override
+  String get writeReply => 'Write a reply';
+
+  @override
+  String get confirmDeleteComment =>
+      'Are you sure you want to delete this comment?';
+
+  @override
+  String get confirmDeleteReply =>
+      'Are you sure you want to delete this reply?';
+
+  @override
+  String get posts => 'Posts';
+
+  @override
+  String get loadingProfile => 'Loading profile...';
+
+  @override
+  String get loadingPosts => 'Loading posts...';
+
+  @override
+  String get loadingComments => 'Loading comments...';
+
+  @override
+  String get loadingReplies => 'Loading replies...';
+
+  @override
+  String get loadingLikes => 'Loading likes...';
+
+  @override
+  String get loadingUsers => 'Loading users...';
+
+  @override
+  String get loadingVendors => 'Loading vendors...';
+
+  @override
+  String get loadingProducts => 'Loading products...';
+
+  @override
+  String get refresh => 'Refresh';
+
+  @override
+  String get uploadProgress => 'Upload Progress';
+
+  @override
+  String get optimisticUpdate => 'Updating...';
+
+  @override
+  String get temporaryState => 'Temporary state';
+
+  @override
+  String get postDeleted => 'Post deleted';
+
+  @override
+  String get editPost => 'Edit Post';
+
+  @override
+  String get deletePost => 'Delete Post';
+
+  @override
+  String get confirmDeletePost =>
+      'Are you sure you want to delete this post? This action cannot be undone.';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get sharePost => 'Share Post';
+
+  @override
+  String get shareFunctionality =>
+      'Share functionality would be implemented here';
+
+  @override
+  String get yourPost => 'Your post';
+
+  @override
+  String get you => 'You';
+
+  @override
+  String get commentAdded => 'Comment added';
+
+  @override
+  String get replyAdded => 'Reply added';
+
+  @override
+  String get commentDeleted => 'Comment deleted';
+
+  @override
+  String get replyDeleted => 'Reply deleted';
+
+  @override
+  String get noUserPosts => 'No user posts';
+
+  @override
+  String get shimmerLoading => 'Loading...';
+
+  @override
+  String get noDataAvailable => 'No data available';
+
+  @override
+  String get errorLoadingData => 'Error loading data';
+
+  @override
+  String get story => 'Story';
+
+  @override
+  String get addStory => 'Add Story';
+
+  @override
+  String get noStoriesAvailable => 'No stories available';
+
+  @override
+  String get loadingStory => 'Loading story...';
+
+  @override
+  String get storyAdded => 'Story added';
+
+  @override
+  String get failedToAddStory => 'Failed to add story';
+
+  @override
+  String get storyDeleted => 'Story deleted';
+
+  @override
+  String get failedToDeleteStory => 'Failed to delete story';
+
+  @override
+  String get viewStory => 'View Story';
+
+  @override
+  String get storyViewed => 'Story viewed';
+
+  @override
+  String get failedToViewStory => 'Failed to view story';
+
+  @override
+  String get storyExpired => 'Story expired';
+
+  @override
+  String get uploadingStory => 'Uploading story...';
+
+  @override
+  String get storyUploadProgress => 'Story upload progress';
+
+  @override
+  String get storyUploadComplete => 'Story upload complete';
+
+  @override
+  String get storyUploadFailed => 'Story upload failed';
+
+  @override
+  String get addPhotoToStory => 'Add photo to story';
+
+  @override
+  String get addVideoToStory => 'Add video to story';
+
+  @override
+  String get failedToLoadNotifications => 'Failed to load notifications';
+
+  @override
+  String get failedToMarkNotificationAsRead =>
+      'Failed to mark notification as read';
+
+  @override
+  String get failedToMarkAllNotificationsAsRead =>
+      'Failed to mark all notifications as read';
+
+  @override
+  String get notificationMarkedAsRead => 'Notification marked as read';
+
+  @override
+  String get allNotificationsMarkedAsRead => 'All notifications marked as read';
+
+  @override
+  String get notificationsEmpty => 'You\'re all caught up!';
+
+  @override
+  String get notificationsEmptySubtitle => 'No notifications yet';
+
+  @override
+  String get loadingNotifications => 'Loading notifications...';
+
+  @override
+  String get refreshNotifications => 'Refresh notifications';
+
+  @override
+  String get markAllAsRead => 'Mark all as read';
+
+  @override
+  String get notificationSettings => 'Notification settings';
+
+  @override
+  String get notificationPreferences => 'Notification preferences';
+
+  @override
+  String get notificationHistory => 'Notification history';
+
+  @override
+  String get clearAllNotifications => 'Clear all notifications';
+
+  @override
+  String get confirmClearAllNotifications =>
+      'Are you sure you want to clear all notifications?';
+
+  @override
+  String get notificationsCleared => 'Notifications cleared';
 }

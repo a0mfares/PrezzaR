@@ -144,7 +144,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                       child: Row(
                         children: [
                           Text(
-                            '${vendors.length} ${vendors.length == 1 ? 'vendor' : 'vendors'} in favorites',
+                            tr.vendorsInFavorites(vendors.length),
                             style: Theme.of(context)
                                 .textTheme
                                 .bodyMedium
@@ -169,7 +169,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                   failure: (error) {
                     BotToast.showWidget(toastBuilder: (context) {
                       return SnackBarAction(
-                        label: 'Retry',
+                        label: tr.retry,
                         textColor: Colors.white,
                         onPressed: () {
                           bloc.add(const FavEvent.getFavVendors());
@@ -178,7 +178,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                     });
                   },
                   successDeleted: (vendorId) {
-                    BotToast.showText(text: "Removed from favorites");
+                    BotToast.showText(text: tr.removedFromFavorites);
                   },
                   orElse: () {},
                 );
@@ -200,7 +200,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                           ),
                           const SizedBox(height: 16),
                           Text(
-                            'Failed to load favorites',
+                            tr.failedToLoadFavorites,
                             style: Theme.of(context)
                                 .textTheme
                                 .headlineSmall
@@ -228,7 +228,7 @@ class _FavoritesPageState extends State<FavoritesPage> {
                               bloc.add(const FavEvent.getFavVendors());
                             },
                             icon: const Icon(Icons.refresh),
-                            label: const Text('Retry'),
+                            label:  Text(tr.retry),
                           ),
                         ],
                       ),

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:prezza/core/helper/tools.dart';
 
-import '../../../../core/shared/widgets/under_montains.dart';
 import '../bloc/order_bloc.dart';
 import 'order_item_customer.dart';
 import 'order_item_vendor.dart';

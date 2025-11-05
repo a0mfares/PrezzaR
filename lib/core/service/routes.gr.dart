@@ -1268,9 +1268,8 @@ class ReasonRoute extends _i53.PageRouteInfo<ReasonRouteArgs> {
     required String icon,
     required String title,
     required String subTitle,
+    required String orderId,
     bool isRejected = false,
-    _i54.VoidCallback? onReject,
-    required _i54.VoidCallback onSend,
     List<_i53.PageRouteInfo>? children,
   }) : super(
           ReasonRoute.name,
@@ -1279,9 +1278,8 @@ class ReasonRoute extends _i53.PageRouteInfo<ReasonRouteArgs> {
             icon: icon,
             title: title,
             subTitle: subTitle,
+            orderId: orderId,
             isRejected: isRejected,
-            onReject: onReject,
-            onSend: onSend,
           ),
           initialChildren: children,
         );
@@ -1297,9 +1295,8 @@ class ReasonRoute extends _i53.PageRouteInfo<ReasonRouteArgs> {
         icon: args.icon,
         title: args.title,
         subTitle: args.subTitle,
+        orderId: args.orderId,
         isRejected: args.isRejected,
-        onReject: args.onReject,
-        onSend: args.onSend,
       );
     },
   );
@@ -1311,9 +1308,8 @@ class ReasonRouteArgs {
     required this.icon,
     required this.title,
     required this.subTitle,
+    required this.orderId,
     this.isRejected = false,
-    this.onReject,
-    required this.onSend,
   });
 
   final _i54.Key? key;
@@ -1324,15 +1320,13 @@ class ReasonRouteArgs {
 
   final String subTitle;
 
+  final String orderId;
+
   final bool isRejected;
-
-  final _i54.VoidCallback? onReject;
-
-  final _i54.VoidCallback onSend;
 
   @override
   String toString() {
-    return 'ReasonRouteArgs{key: $key, icon: $icon, title: $title, subTitle: $subTitle, isRejected: $isRejected, onReject: $onReject, onSend: $onSend}';
+    return 'ReasonRouteArgs{key: $key, icon: $icon, title: $title, subTitle: $subTitle, orderId: $orderId, isRejected: $isRejected}';
   }
 }
 

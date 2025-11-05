@@ -12,9 +12,11 @@ class CommentModel extends CommentEntity {
     super.number_of_likes,
     super.number_of_replies,
     required super.created_at,
-    super.is_i_replay_owner,
-    super.is_i_comment_owner,
+    super.is_i_replay_owner=false,
+    super.is_i_comment_owner =false,
     required super.user_info,
+    super.is_liked=false,
+
   });
 
   factory CommentModel.fromMap(Map<String, dynamic> json) =>

@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:connectivity_plus/connectivity_plus.dart';
@@ -26,7 +27,7 @@ Future<Either<FailureServices, T>> execute<T>(
         }
         return Left(FailureServices(e.response?.data));
       } catch (e) {
-        print(e);
+        log(e.toString());
         return Left(FailureServices(e));
       }
     }

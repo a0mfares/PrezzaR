@@ -8,7 +8,7 @@ class CategoryModel extends CategoryEntity {
   CategoryModel({
     required super.id,
     required super.name,
-    required super.imageUrl,
+    required super.image_url,
   });
 
   factory CategoryModel.fromMap(Map<String, dynamic> json) =>

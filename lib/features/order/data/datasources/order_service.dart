@@ -22,7 +22,7 @@ abstract class OrderService {
   @GET(Urls.getOrderProducts)
   Future<HttpResponse> getOrderDetails(
     @Header('Authorization') String token,
-    @Query('order_uuid') String status,
+    @Query('order_uuid') String id,
   );
   @GET(Urls.getDeliveryOrPickupOrderDetails)
   Future<HttpResponse> getOrderPickupDelivery(
@@ -30,6 +30,12 @@ abstract class OrderService {
     @Query('order_uuid') String status,
   );
 
+  @GET(Urls.trackOrder)
+  Future<HttpResponse> trackOrder(
+    @Header('Authorization') String token,
+    @Query('uuid') String orderUuid, 
+   );
+  
   @POST(Urls.acceptOrder)
   Future<HttpResponse> acceptOrder(
     @Header('Authorization') String token,

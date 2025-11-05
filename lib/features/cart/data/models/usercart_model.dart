@@ -6,7 +6,7 @@ part 'usercart_model.g.dart';
 
 @JsonSerializable()
 class UserCartModel extends UserCartEntity {
-  UserCartModel({required super.uuid, required super.bussiness_info});
+  UserCartModel({required super.uuid, required super.bussiness_info, required super.is_closed});
 
   factory UserCartModel.fromJson(Map<String, dynamic> json) =>
       _$UserCartModelFromJson(json);

@@ -132,15 +132,15 @@ class _FavWidgetState extends State<FavWidget> {
         state.maybeWhen(
           failure: (error) {
             // Show error message but don't navigate away
-            BotToast.showText(text: "Error $error");
+            BotToast.showText(text: '${tr.error}: $error');
           },
           successAdded: (vendorId) {
             // Show success message for added vendor
-            BotToast.showText(text: "Added to favorites");
+            BotToast.showText(text: tr.addedToFavorites);
           },
           successDeleted: (vendorId) {
             // Show success message for deleted vendor
-            BotToast.showText(text: "Removed from favorites");
+            BotToast.showText(text: tr.removedFromFavorites);
           },
           orElse: () {},
         );
@@ -175,7 +175,7 @@ class _FavWidgetState extends State<FavWidget> {
                         ),
                         const SizedBox(height: 16),
                         Text(
-                          'Failed to load favorites',
+                          tr.failedToLoadFavorites,
                           style: tstyle.bodyLarge?.copyWith(
                             color: Colors.red.shade600,
                             fontWeight: FontWeight.w500,
@@ -194,7 +194,7 @@ class _FavWidgetState extends State<FavWidget> {
                           onPressed: () {
                             bloc.add(const FavEvent.getFavVendors());
                           },
-                          child: const Text('Retry'),
+                          child:  Text(tr.retry),
                         ),
                       ],
                     ),

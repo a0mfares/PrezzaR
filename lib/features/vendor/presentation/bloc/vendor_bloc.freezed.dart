@@ -146,9 +146,6 @@ class _$VendorEventCopyWithImpl<$Res, $Val extends VendorEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -165,9 +162,6 @@ class __$$GetOrderStatusImplCopyWithImpl<$Res>
   __$$GetOrderStatusImplCopyWithImpl(
       _$GetOrderStatusImpl _value, $Res Function(_$GetOrderStatusImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -344,9 +338,6 @@ class __$$GetReviewAnalysisImplCopyWithImpl<$Res>
   __$$GetReviewAnalysisImplCopyWithImpl(_$GetReviewAnalysisImpl _value,
       $Res Function(_$GetReviewAnalysisImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -523,9 +514,6 @@ class __$$GetVendorBalanceImplCopyWithImpl<$Res>
   __$$GetVendorBalanceImplCopyWithImpl(_$GetVendorBalanceImpl _value,
       $Res Function(_$GetVendorBalanceImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -702,9 +690,6 @@ class __$$getMostOrderedImplCopyWithImpl<$Res>
   __$$getMostOrderedImplCopyWithImpl(
       _$getMostOrderedImpl _value, $Res Function(_$getMostOrderedImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -884,8 +869,6 @@ class __$$GetNearbyPlacesImplCopyWithImpl<$Res>
       _$GetNearbyPlacesImpl _value, $Res Function(_$GetNearbyPlacesImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -924,9 +907,7 @@ class _$GetNearbyPlacesImpl implements _GetNearbyPlaces {
   @override
   int get hashCode => Object.hash(runtimeType, type);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetNearbyPlacesImplCopyWith<_$GetNearbyPlacesImpl> get copyWith =>
@@ -1074,10 +1055,7 @@ abstract class _GetNearbyPlaces implements VendorEvent {
   const factory _GetNearbyPlaces(final String type) = _$GetNearbyPlacesImpl;
 
   String get type;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetNearbyPlacesImplCopyWith<_$GetNearbyPlacesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1099,8 +1077,6 @@ class __$$GetVendorByFilterImplCopyWithImpl<$Res>
       $Res Function(_$GetVendorByFilterImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1147,9 +1123,7 @@ class _$GetVendorByFilterImpl implements _GetVendorByFilter {
   @override
   int get hashCode => Object.hash(runtimeType, id, type);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetVendorByFilterImplCopyWith<_$GetVendorByFilterImpl> get copyWith =>
@@ -1299,10 +1273,7 @@ abstract class _GetVendorByFilter implements VendorEvent {
 
   String get id;
   String get type;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetVendorByFilterImplCopyWith<_$GetVendorByFilterImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1324,8 +1295,6 @@ class __$$SelectedLocationImplCopyWithImpl<$Res>
       $Res Function(_$SelectedLocationImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1364,9 +1333,7 @@ class _$SelectedLocationImpl implements _SelectedLocation {
   @override
   int get hashCode => Object.hash(runtimeType, loc);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectedLocationImplCopyWith<_$SelectedLocationImpl> get copyWith =>
@@ -1515,10 +1482,7 @@ abstract class _SelectedLocation implements VendorEvent {
       _$SelectedLocationImpl;
 
   LocationResult get loc;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectedLocationImplCopyWith<_$SelectedLocationImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1540,8 +1504,6 @@ class __$$GetBranchesImplCopyWithImpl<$Res>
       _$GetBranchesImpl _value, $Res Function(_$GetBranchesImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1580,9 +1542,7 @@ class _$GetBranchesImpl implements _GetBranches {
   @override
   int get hashCode => Object.hash(runtimeType, id);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetBranchesImplCopyWith<_$GetBranchesImpl> get copyWith =>
@@ -1729,10 +1689,7 @@ abstract class _GetBranches implements VendorEvent {
   const factory _GetBranches(final String id) = _$GetBranchesImpl;
 
   String get id;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetBranchesImplCopyWith<_$GetBranchesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1754,8 +1711,6 @@ class __$$SelecteSortImplCopyWithImpl<$Res>
       _$SelecteSortImpl _value, $Res Function(_$SelecteSortImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1800,9 +1755,7 @@ class _$SelecteSortImpl implements _SelecteSort {
   int get hashCode => Object.hash(
       runtimeType, sortBy, const DeepCollectionEquality().hash(type));
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelecteSortImplCopyWith<_$SelecteSortImpl> get copyWith =>
@@ -1951,10 +1904,7 @@ abstract class _SelecteSort implements VendorEvent {
 
   String get sortBy;
   dynamic get type;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelecteSortImplCopyWith<_$SelecteSortImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1976,8 +1926,6 @@ class __$$GetVendorByCategoryImplCopyWithImpl<$Res>
       $Res Function(_$GetVendorByCategoryImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2024,9 +1972,7 @@ class _$GetVendorByCategoryImpl implements _GetVendorByCategory {
   @override
   int get hashCode => Object.hash(runtimeType, id, type);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetVendorByCategoryImplCopyWith<_$GetVendorByCategoryImpl> get copyWith =>
@@ -2176,10 +2122,7 @@ abstract class _GetVendorByCategory implements VendorEvent {
 
   String get id;
   String get type;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetVendorByCategoryImplCopyWith<_$GetVendorByCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2201,8 +2144,6 @@ class __$$GetVendorDetailsImplCopyWithImpl<$Res>
       $Res Function(_$GetVendorDetailsImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2242,9 +2183,7 @@ class _$GetVendorDetailsImpl implements _GetVendorDetails {
   @override
   int get hashCode => Object.hash(runtimeType, vendorId);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetVendorDetailsImplCopyWith<_$GetVendorDetailsImpl> get copyWith =>
@@ -2393,10 +2332,7 @@ abstract class _GetVendorDetails implements VendorEvent {
       _$GetVendorDetailsImpl;
 
   String get vendorId;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetVendorDetailsImplCopyWith<_$GetVendorDetailsImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2418,8 +2354,6 @@ class __$$SelectOperatingHourImplCopyWithImpl<$Res>
       $Res Function(_$SelectOperatingHourImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2467,9 +2401,7 @@ class _$SelectOperatingHourImpl implements _SelectOperatingHour {
   @override
   int get hashCode => Object.hash(runtimeType, operating, type);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectOperatingHourImplCopyWith<_$SelectOperatingHourImpl> get copyWith =>
@@ -2619,10 +2551,7 @@ abstract class _SelectOperatingHour implements VendorEvent {
 
   String get operating;
   String get type;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectOperatingHourImplCopyWith<_$SelectOperatingHourImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2644,8 +2573,6 @@ class __$$SelectDistanceImplCopyWithImpl<$Res>
       _$SelectDistanceImpl _value, $Res Function(_$SelectDistanceImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2693,9 +2620,7 @@ class _$SelectDistanceImpl implements _SelectDistance {
   @override
   int get hashCode => Object.hash(runtimeType, distance, type);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$SelectDistanceImplCopyWith<_$SelectDistanceImpl> get copyWith =>
@@ -2845,10 +2770,7 @@ abstract class _SelectDistance implements VendorEvent {
 
   String get distance;
   String get type;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$SelectDistanceImplCopyWith<_$SelectDistanceImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -2872,8 +2794,6 @@ class __$$GetVendorDetailsBookingImplCopyWithImpl<$Res>
       $Res Function(_$GetVendorDetailsBookingImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -2913,9 +2833,7 @@ class _$GetVendorDetailsBookingImpl implements _GetVendorDetailsBooking {
   @override
   int get hashCode => Object.hash(runtimeType, vendorId);
 
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetVendorDetailsBookingImplCopyWith<_$GetVendorDetailsBookingImpl>
@@ -3064,10 +2982,7 @@ abstract class _GetVendorDetailsBooking implements VendorEvent {
       _$GetVendorDetailsBookingImpl;
 
   String get vendorId;
-
-  /// Create a copy of VendorEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetVendorDetailsBookingImplCopyWith<_$GetVendorDetailsBookingImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
@@ -3148,9 +3063,6 @@ class _$VendorStateCopyWithImpl<$Res, $Val extends VendorState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of VendorState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3167,9 +3079,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of VendorState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3290,9 +3199,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of VendorState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3413,9 +3319,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of VendorState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3536,9 +3439,6 @@ class __$$UpdateUiImplCopyWithImpl<$Res>
   __$$UpdateUiImplCopyWithImpl(
       _$UpdateUiImpl _value, $Res Function(_$UpdateUiImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of VendorState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -3662,8 +3562,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of VendorState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -3702,9 +3600,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of VendorState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -3795,10 +3691,7 @@ abstract class _Failure implements VendorState {
   const factory _Failure(final String err) = _$FailureImpl;
 
   String get err;
-
-  /// Create a copy of VendorState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

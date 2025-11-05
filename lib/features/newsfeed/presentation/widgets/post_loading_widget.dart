@@ -10,7 +10,7 @@ class LoadingPostWidget extends StatelessWidget {
       baseColor: Colors.grey[300]!,
       highlightColor: Colors.grey[100]!,
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
+        margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
@@ -28,7 +28,7 @@ class LoadingPostWidget extends StatelessWidget {
                     radius: 24,
                     backgroundColor: Colors.grey[300],
                   ),
-                  SizedBox(width: 10),
+                  const SizedBox(width: 10),
                   // Name and Handle
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +38,7 @@ class LoadingPostWidget extends StatelessWidget {
                         height: 12,
                         color: Colors.grey[300],
                       ),
-                      SizedBox(height: 5),
+                      const SizedBox(height: 5),
                       Container(
                         width: 80,
                         height: 10,
@@ -46,7 +46,7 @@ class LoadingPostWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   // More Options Icon
                   Container(
                     width: 20,
@@ -74,7 +74,7 @@ class LoadingPostWidget extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
             // Post Image
             Container(
@@ -83,7 +83,7 @@ class LoadingPostWidget extends StatelessWidget {
               color: Colors.grey[300],
             ),
 
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
             // Tags Section (Blurred Icons)
             Padding(
@@ -98,7 +98,7 @@ class LoadingPostWidget extends StatelessWidget {
                           radius: 14,
                           backgroundColor: Colors.grey[300],
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Container(
                           width: 60,
                           height: 12,
@@ -111,7 +111,7 @@ class LoadingPostWidget extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 15),
+            const SizedBox(height: 15),
 
             // Like & Comment Count
             Padding(
@@ -123,7 +123,7 @@ class LoadingPostWidget extends StatelessWidget {
                     height: 12,
                     color: Colors.grey[300],
                   ),
-                  Spacer(),
+                  const Spacer(),
                   Container(
                     width: 50,
                     height: 12,
@@ -133,7 +133,7 @@ class LoadingPostWidget extends StatelessWidget {
               ),
             ),
 
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
 
             // Like, Comment, Save Buttons
             Padding(

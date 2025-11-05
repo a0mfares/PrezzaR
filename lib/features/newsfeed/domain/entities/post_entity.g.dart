@@ -220,6 +220,8 @@ class $PostEntity implements AutoMapprInterface {
       auther_info: model.auther_info,
       post_tags: model.post_tags,
       post_images: model.post_images,
+      is_liked: model.is_liked,
+      is_saved: model.is_saved,
     );
   }
 }
@@ -247,13 +249,15 @@ class PostEntityAdapter extends TypeAdapter<PostEntity> {
       auther_info: fields[5] as AutherInfoEntity,
       post_tags: (fields[6] as List).cast<PostTagsEntity>(),
       post_images: (fields[7] as List).cast<PostImagesEntity>(),
+      is_liked: fields[8] as bool,
+      is_saved: fields[9] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, PostEntity obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.uuid)
       ..writeByte(1)
@@ -269,7 +273,11 @@ class PostEntityAdapter extends TypeAdapter<PostEntity> {
       ..writeByte(6)
       ..write(obj.post_tags)
       ..writeByte(7)
-      ..write(obj.post_images);
+      ..write(obj.post_images)
+      ..writeByte(8)
+      ..write(obj.is_liked)
+      ..writeByte(9)
+      ..write(obj.is_saved);
   }
 
   @override

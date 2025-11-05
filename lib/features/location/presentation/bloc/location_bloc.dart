@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,7 +45,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
       branch_landmark: '',
       longitude: 0,
       latitude: 0,
-      id: 0);
+      branch_uuid: '');
 
   AddressEntity selectedAdress =
       AddressEntity(uuid: '', address: '', landmark: '', title: '');
@@ -89,7 +90,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
               // Check if biometrics are available on the device
               bool canCheckBiometrics = await _localAuth.canCheckBiometrics;
               if (canCheckBiometrics) {
-                // Perform biometric authentication (Fingerprint or Face ID)
+                // Perform biometric authentication (Fingerlog or Face ID)
                 isAuthenticated = await _localAuth.authenticate(
                   localizedReason: tr.plsAuth,
                   options: const AuthenticationOptions(
@@ -100,7 +101,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
                 );
               }
             } catch (e) {
-              print('Error during authentication: $e');
+              log('Error during authentication: $e');
             }
             if (isAuthenticated) {
               if (HiveStorage.get(kPass, defaultValue: null) == null) {
@@ -207,7 +208,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
             try {
               final result = await _updateBrancheUsecase(
                 parm: {
-                  'branche_id': selectedBranche.id,
+                  'branche_id': selectedBranche.branch_uuid,
                   'user_uuid': usr.user.uuid,
                   'password': HiveStorage.get(kPass, defaultValue: ''),
                   'branch_address': brancheAddress.text,
@@ -288,7 +289,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
               if (!serviceEnabled) {
                 // Location services are not enabled, don't continue.
                 // Optionally, prompt the user to enable the location services.
-                return Future.error('Location services are disabled.');
+                return Future.error(tr.locationServicesDisabled);
               }
 
               permission = await Geolocator.checkPermission();
@@ -296,7 +297,7 @@ class LocationBloc extends Bloc<LocationEvent, LocationState> {
                 permission = await Geolocator.requestPermission();
                 if (permission == LocationPermission.denied) {
                   // Permissions are denied, next time you could try requesting permissions again.
-                  return Future.error('Location permissions are denied');
+                  return Future.error(tr.locationPermissionsDenied);
                 }
               }
 

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -68,10 +66,10 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       : super(const _Initial()) {
     on<AuthEvent>((event, emit) async {
       await event.maybeWhen(
+        
         signin: (type) async {
           if (!loginForm.currentState!.validate()) return;
           emit(const AuthState.loading());
-
           try {
             final result = await _signinUsecase(parm: {
               'type': type,
@@ -83,23 +81,17 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               'email': email.text,
               'password': password.text,
             });
+            result.fold((failure) {
+              emit(AuthState.failure(failure.getMsg));
+            }, (success) {
+              HiveStorage.set(kUser, success);
 
-            // Handle the result with proper async/await
-            await result.fold(
-              (failure) async {
-                emit(AuthState.failure(failure.getMsg));
-              },
-              (success) async {
-                // Await the storage operation to ensure token is saved
-                await HiveStorage.set(kUser, success);
-
-                if (ifNewUser) {
-                  emit(const AuthState.failure('complete setup'));
-                } else {
-                  emit(const AuthState.success());
-                }
-              },
-            );
+              if (ifNewUser) {
+                emit(AuthState.failure(tr.completeSetup));
+              } else {
+                emit(const AuthState.loginSuccess());
+              }
+            });
           } catch (e) {
             emit(AuthState.failure(e.toString()));
           }
@@ -140,7 +132,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
                 add(const AuthEvent.createProfile());
                 return;
               }
-              emit(const AuthState.success());
+              emit(const AuthState.otpSent());
             });
           } catch (e) {
             emit(AuthState.failure(e.toString()));
@@ -152,7 +144,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           try {
             final result = await _createProfileUsecase(
               parm: {
-                'user_uuid': HiveStorage.get(kUid, defaultValue: ''),
+                'user_uuid': HiveStorage.get(kUid),
                 'first_name': firstName.text,
                 'last_name': lastName.text,
                 'confirm_password': confirmPass.text,
@@ -178,19 +170,20 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           try {
             final result = await _confirmSignUpUsecase(parm: {
               'type': type,
-              'user_uuid': HiveStorage.get(kUid, defaultValue: ''),
+              'user_uuid': HiveStorage.get(kUid),
               'otp': otp,
             });
 
             result.fold((failure) {
               emit(AuthState.failure(failure.getMsg));
             }, (success) {
-              emit(const AuthState.success());
+              emit(const AuthState.successOtp());
             });
           } catch (e) {
             emit(AuthState.failure(e.toString()));
           }
         },
+        
         resendOtp: (type) async {
           emit(const AuthState.loading());
           try {
@@ -207,7 +200,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             result.fold((failure) {
               emit(AuthState.failure(failure.getMsg));
             }, (success) {
-              emit(const AuthState.successOtp());
+              emit(const AuthState.otpSent());
             });
           } catch (e) {
             emit(AuthState.failure(e.toString()));
@@ -232,7 +225,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
                 emit(AuthState.failure(err.getMsg));
               },
               (res) {
-                emit(const AuthState.successForgot());
+                emit(const AuthState.successForgot()); 
               },
             );
           } catch (e) {
@@ -260,7 +253,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
               },
               (res) {
                 HiveStorage.set(kToken, res);
-                emit(const AuthState.success());
+                emit(const AuthState.successOtp()); // Fixed state name
               },
             );
           } catch (e) {
@@ -273,7 +266,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             final result = await _resetPasswordUsecase(parm: {
               'new_password': password.text,
               'confirm_password': confirmPass.text,
-              'token': HiveStorage.get(kToken, defaultValue: '')
+              'token': HiveStorage.get(kToken)
             });
 
             result.fold(
@@ -291,9 +284,9 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         chooseUserType: () async {
           emit(const AuthState.loading());
           try {
-            final userId = HiveStorage.get(kUid, defaultValue: '');
-            if (userId.isEmpty) {
-              emit(const AuthState.failure('User ID not found'));
+            final userId = HiveStorage.get(kUid);
+            if (userId == null) {
+              emit(AuthState.failure(tr.userIdNotFound));
               return;
             }
 
@@ -336,7 +329,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             emit(AuthState.failure(e.toString()));
           }
         },
-        deleteAccount: () async {
+        deleteAccount: () async{
           emit(const AuthState.loading());
           try {
             final result = await _deleteAccountUseCase();
@@ -346,7 +339,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
                 emit(AuthState.failure(err.getMsg));
               },
               (res) {
-                HiveStorage.set(kUser, res);
+                HiveStorage.set(kUser, null);
+                HiveStorage.set(kToken, null);
                 emit(const AuthState.success());
               },
             );

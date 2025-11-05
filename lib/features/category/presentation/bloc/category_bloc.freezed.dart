@@ -72,9 +72,6 @@ class _$CategoryEventCopyWithImpl<$Res, $Val extends CategoryEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of CategoryEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -94,8 +91,6 @@ class __$$GetCategoriesImplCopyWithImpl<$Res>
       _$GetCategoriesImpl _value, $Res Function(_$GetCategoriesImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CategoryEvent
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -135,9 +130,7 @@ class _$GetCategoriesImpl implements _GetCategories {
   @override
   int get hashCode => Object.hash(runtimeType, isBooking);
 
-  /// Create a copy of CategoryEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GetCategoriesImplCopyWith<_$GetCategoriesImpl> get copyWith =>
@@ -210,10 +203,7 @@ abstract class _GetCategories implements CategoryEvent {
   const factory _GetCategories([final bool? isBooking]) = _$GetCategoriesImpl;
 
   bool? get isBooking;
-
-  /// Create a copy of CategoryEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$GetCategoriesImplCopyWith<_$GetCategoriesImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -232,9 +222,6 @@ class __$$GetSponsorsImplCopyWithImpl<$Res>
   __$$GetSponsorsImplCopyWithImpl(
       _$GetSponsorsImpl _value, $Res Function(_$GetSponsorsImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CategoryEvent
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -411,9 +398,6 @@ class _$CategoryStateCopyWithImpl<$Res, $Val extends CategoryState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -430,9 +414,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -565,9 +546,6 @@ class __$$LoadingImplCopyWithImpl<$Res>
   __$$LoadingImplCopyWithImpl(
       _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -700,9 +678,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -835,9 +810,6 @@ class __$$LoadingCategoryImplCopyWithImpl<$Res>
   __$$LoadingCategoryImplCopyWithImpl(
       _$LoadingCategoryImpl _value, $Res Function(_$LoadingCategoryImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -970,9 +942,6 @@ class __$$SuccessCategoryImplCopyWithImpl<$Res>
   __$$SuccessCategoryImplCopyWithImpl(
       _$SuccessCategoryImpl _value, $Res Function(_$SuccessCategoryImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -1108,8 +1077,6 @@ class __$$FailureImplCopyWithImpl<$Res>
       _$FailureImpl _value, $Res Function(_$FailureImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1148,9 +1115,7 @@ class _$FailureImpl implements _Failure {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
@@ -1253,10 +1218,7 @@ abstract class _Failure implements CategoryState {
   const factory _Failure(final String err) = _$FailureImpl;
 
   String get err;
-
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$FailureImplCopyWith<_$FailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -1278,8 +1240,6 @@ class __$$failureCategoryImplCopyWithImpl<$Res>
       _$failureCategoryImpl _value, $Res Function(_$failureCategoryImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -1318,9 +1278,7 @@ class _$failureCategoryImpl implements _failureCategory {
   @override
   int get hashCode => Object.hash(runtimeType, err);
 
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$failureCategoryImplCopyWith<_$failureCategoryImpl> get copyWith =>
@@ -1424,10 +1382,7 @@ abstract class _failureCategory implements CategoryState {
   const factory _failureCategory(final String err) = _$failureCategoryImpl;
 
   String get err;
-
-  /// Create a copy of CategoryState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$failureCategoryImplCopyWith<_$failureCategoryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
@@ -25,25 +27,17 @@ class PersonalInfoPage extends StatefulWidget {
 
 class _PersonalInfoPageState extends State<PersonalInfoPage> {
   late final ProfileBloc bloc;
+  Timer? _timeoutTimer;
 
-  late final TextEditingController firstName;
-  late final TextEditingController lastName;
-  late final TextEditingController userName;
   @override
   void initState() {
     bloc = ProfileBloc.get(context);
-
-    firstName = TextEditingController(text: usr.user.first_name);
-    lastName = TextEditingController(text: usr.user.last_name);
-    userName = TextEditingController(text: usr.user.username);
     super.initState();
   }
 
   @override
   void dispose() {
-    firstName.dispose();
-    lastName.dispose();
-    userName.dispose();
+    _timeoutTimer?.cancel();
     super.dispose();
   }
 
@@ -57,7 +51,33 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
         listener: (context, state) {
           state.maybeMap(
             successUpdated: (v) {
-              BotToast.showText(text: 'Profile Update Success');
+              BotToast.showText(text: v.message);
+              _timeoutTimer?.cancel();
+            },
+            failure: (v) {
+              BotToast.showText(text: v.error);
+              _timeoutTimer?.cancel();
+              // Reset the editing state on failure
+              if (v.rollbackData != null) {
+                // The bloc already handled rollback, just need to refresh UI
+                setState(() {});
+              }
+            },
+            loadingField: (field) {
+              // Start a timeout timer to prevent infinite loading
+              _timeoutTimer?.cancel();
+              _timeoutTimer = Timer(const Duration(seconds: 30), () {
+                // Check if we're still in loading state after timeout
+                final currentState = bloc.state;
+                if (currentState.maybeWhen(
+                  loadingField: (field) => true,
+                  orElse: () => false,
+                )) {
+                  // Force a failure state if still loading
+                  bloc.add(const ProfileEvent.resetState());
+                  BotToast.showText(text: 'Request timed out. Please try again.');
+                }
+              });
             },
             orElse: () {},
           );
@@ -69,15 +89,8 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 vSpace(3),
-                BlocConsumer<ProfileBloc, ProfileState>(
-                  listener: (context, state) {
-                    state.maybeMap(
-                      successUpdated: (_) {
-                        bloc.add(const ProfileEvent.changeStatus('fname'));
-                      },
-                      orElse: () {},
-                    );
-                  },
+                // Wrap the entire card in BlocBuilder to rebuild on state changes
+                BlocBuilder<ProfileBloc, ProfileState>(
                   builder: (context, state) {
                     return Card(
                       color: lightCream,
@@ -88,158 +101,59 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           vSpace(2),
-                          ListTile(
-                            title: SizedBox(
-                              width: 20.w,
-                              child: TextFormField(
-                                readOnly: bloc.fName,
-                                validator: (v) {
-                                  if (v!.isEmpty) {
-                                    return tr.plsEnterFName;
-                                  }
-                                  return null;
-                                },
-                                onChanged: (v) {
-                                  bloc.personalInfoForm.currentState!
-                                      .validate();
-                                },
-                                controller: firstName,
-                                decoration: InputDecoration(
-                                  fillColor: lightCream,
-                                  labelText: tr.firstName,
-                                ),
-                              ),
+                          _buildEditableField(
+                            controller: bloc.firstName,
+                            label: tr.firstName,
+                            isEditing: !bloc.fName,
+                            fieldType: 'fname',
+                            validator: (v) {
+                              if (v!.isEmpty) return tr.plsEnterFName;
+                              return null;
+                            },
+                            state: state,
+                            isLoading: state.maybeWhen(
+                              loadingField: (field) => field == 'firstName',
+                              orElse: () => false,
                             ),
-                            trailing: InkWell(
-                              onTap: () {
-                                if (bloc.fName) {
-                                  bloc.add(
-                                      const ProfileEvent.changeStatus('fname'));
-                                } else {
-                                  updateUserBtm(context);
-                                }
-                              },
-                              child: state.maybeWhen(
-                                loadingFName: () => defLoading,
-                                orElse: () {
-                                  if (!bloc.fName) {
-                                    return Text(tr.save, style: redText);
-                                  }
-                                  return SvgPicture.asset(
-                                    Assets.assetsImagesEdit,
-                                    colorFilter: ColorFilter.mode(
-                                        primary, BlendMode.srcIn),
-                                  );
-                                },
-                              ),
-                            ),
-                          ).prezza(padding: EdgeInsets.zero),
+                          ),
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 20),
                             child: Divider(thickness: 2),
                           ),
-                          ListTile(
-                            title: SizedBox(
-                              width: 20.w,
-                              child: TextFormField(
-                                readOnly: bloc.lName,
-                                controller: lastName,
-                                validator: (v) {
-                                  if (v!.isEmpty) {
-                                    return tr.plsEnterLName;
-                                  }
-                                  return null;
-                                },
-                                onChanged: (v) {
-                                  bloc.personalInfoForm.currentState!
-                                      .validate();
-                                },
-                                decoration: InputDecoration(
-                                  fillColor: lightCream,
-                                  labelText: tr.lastName,
-                                ),
-                              ),
+                          _buildEditableField(
+                            controller: bloc.lastName,
+                            label: tr.lastName,
+                            isEditing: !bloc.lName,
+                            fieldType: 'lname',
+                            validator: (v) {
+                              if (v!.isEmpty) return tr.plsEnterLName;
+                              return null;
+                            },
+                            state: state,
+                            isLoading: state.maybeWhen(
+                              loadingField: (field) => field == 'lastName',
+                              orElse: () => false,
                             ),
-                            trailing: InkWell(
-                              onTap: () {
-                                if (bloc.lName) {
-                                  bloc.add(
-                                      const ProfileEvent.changeStatus('lname'));
-                                } else {
-                                  updateUserBtm(context);
-                                }
-                              },
-                              child: state.maybeWhen(
-                                loadingLName: () => defLoading,
-                                orElse: () {
-                                  if (!bloc.lName) {
-                                    return Text(
-                                      tr.save,
-                                      style: redText,
-                                    );
-                                  }
-                                  return SvgPicture.asset(
-                                    Assets.assetsImagesEdit,
-                                    colorFilter: ColorFilter.mode(
-                                        primary, BlendMode.srcIn),
-                                  );
-                                },
-                              ),
-                            ),
-                          ).prezza(padding: EdgeInsets.zero),
+                          ),
                           const Padding(
                             padding: EdgeInsets.symmetric(horizontal: 20),
                             child: Divider(thickness: 2),
                           ),
-                          ListTile(
-                            title: SizedBox(
-                              width: 20.w,
-                              child: TextFormField(
-                                readOnly: bloc.username,
-                                validator: (v) {
-                                  if (v!.isEmpty) {
-                                    return tr.username;
-                                  }
-                                  return null;
-                                },
-                                onChanged: (v) {
-                                  bloc.personalInfoForm.currentState!
-                                      .validate();
-                                },
-                                controller: userName,
-                                decoration: InputDecoration(
-                                  fillColor: lightCream,
-                                  labelText: tr.username,
-                                ),
-                              ),
+                          _buildEditableField(
+                            controller: bloc.userName,
+                            label: tr.username,
+                            isEditing: !bloc.username,
+                            fieldType: 'username',
+                            validator: (v) {
+                              if (v!.isEmpty) return tr.username;
+                              return null;
+                            },
+                            state: state,
+                            isLoading: state.maybeWhen(
+                              loadingField: (field) => field == 'username',
+                              orElse: () => false,
                             ),
-                            trailing: InkWell(
-                              onTap: () {
-                                if (bloc.username) {
-                                  bloc.add(const ProfileEvent.changeStatus(
-                                      'username'));
-                                } else {
-                                  updateUserBtm(context);
-                                }
-                              },
-                              child: state.maybeWhen(
-                                loadingUserName: () => defLoading,
-                                orElse: () {
-                                  if (!bloc.username) {
-                                    return Text(
-                                      tr.save,
-                                      style: redText,
-                                    );
-                                  }
-                                  return SvgPicture.asset(
-                                    Assets.assetsImagesEdit,
-                                    colorFilter: ColorFilter.mode(
-                                        primary, BlendMode.srcIn),
-                                  );
-                                },
-                              ),
-                            ),
-                          ).prezza(padding: EdgeInsets.zero),
+                          ),
                         ],
                       ),
                     );
@@ -366,55 +280,106 @@ class _PersonalInfoPageState extends State<PersonalInfoPage> {
     );
   }
 
+  Widget _buildEditableField({
+    required TextEditingController controller,
+    required String label,
+    required bool isEditing,
+    required String fieldType,
+    required String? Function(String?) validator,
+    required ProfileState state,
+    required bool isLoading,
+  }) {
+    return ListTile(
+      title: SizedBox(
+        width: 20.w,
+        child: TextFormField(
+          readOnly: !isEditing,
+          validator: validator,
+          onChanged: (v) {
+            bloc.personalInfoForm.currentState!.validate();
+          },
+          controller: controller,
+          decoration: InputDecoration(
+            fillColor: lightCream,
+            labelText: label,
+          ),
+        ),
+      ),
+      trailing: InkWell(
+        onTap: isLoading
+            ? null
+            : () {
+                if (!isEditing) {
+                  // Enable editing mode
+                  bloc.add(ProfileEvent.changeStatus(fieldType));
+                } else {
+                  // Save the changes
+                  updateUserBtm(context);
+                }
+              },
+        child: isLoading
+            ? SizedBox(
+                width: 20,
+                height: 20,
+                child: CircularProgressIndicator(
+                  strokeWidth: 2,
+                  valueColor: AlwaysStoppedAnimation<Color>(primary),
+                ),
+              )
+            : isEditing
+                ? Text(tr.save, style: redText)
+                : SvgPicture.asset(
+                    Assets.assetsImagesEdit,
+                    colorFilter: ColorFilter.mode(primary, BlendMode.srcIn),
+                  ),
+      ),
+    ).prezza(padding: EdgeInsets.zero);
+  }
+
   Future<dynamic> updateUserBtm(BuildContext context) {
     return showPrezzaBtm(
       context,
-      BlocBuilder<ProfileBloc, ProfileState>(
-        builder: (context, state) {
-          return state.maybeWhen(
-            orElse: () {
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    tr.passwordIsRequired,
-                    style: tstyle.bodyLarge!
-                        .copyWith(fontWeight: FontWeight.bold, fontSize: 17.sp),
-                  ),
-                  vSpace(5),
-                  TextFormField(
-                    controller: bloc.password,
-                    onChanged: (v) {
-                      bloc.personalInfoForm.currentState!.validate();
-                    },
-                    validator: (v) {
-                      if (v!.isEmpty) {
-                        return tr.plsEnterPass;
-                      }
-                      if (!bloc.passwordRegex.hasMatch(v)) {
-                        return tr.plsEnterValidPass;
-                      }
-                      return null;
-                    },
-                    decoration: InputDecoration(
-                      hintText: tr.password,
-                    ),
-                  ),
-                  vSpace(2),
-                  ElevatedButton(
-                    onPressed: () {
-                      context.maybePop();
-                      bloc.add(const ProfileEvent.updateUserInfo());
-                    },
-                    child: Text(tr.confirm),
-                  ),
-                  vSpace(10),
-                ],
-              );
+      Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            tr.passwordIsRequired,
+            style: tstyle.bodyLarge!
+                .copyWith(fontWeight: FontWeight.bold, fontSize: 17.sp),
+          ),
+          vSpace(5),
+          TextFormField(
+            controller: bloc.password,
+            onChanged: (v) {
+              bloc.personalInfoForm.currentState!.validate();
             },
-          );
-        },
+            validator: (v) {
+              if (v!.isEmpty) {
+                return tr.plsEnterPass;
+              }
+              if (!bloc.passwordRegex.hasMatch(v)) {
+                return tr.plsEnterValidPass;
+              }
+              return null;
+            },
+            obscureText: true,
+            decoration: InputDecoration(
+              hintText: tr.password,
+            ),
+          ),
+          vSpace(2),
+          ElevatedButton(
+            onPressed: () {
+              if (bloc.personalInfoForm.currentState!.validate()) {
+                context.maybePop();
+                bloc.add(const ProfileEvent.updateUserInfo());
+              }
+            },
+            child: Text(tr.confirm),
+          ),
+          vSpace(10),
+        ],
       ),
       true,
     );

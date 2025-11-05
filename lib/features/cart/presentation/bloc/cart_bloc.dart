@@ -23,6 +23,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   final UpdateItemQunUsecase _updateItemQunUsecase;
   final AddOrUpdateCouponUsecase _addOrUpdateCoponUsecase;
   final GetOftenOrderedWithUsecase _getOftenOrderedWithUsecase;
+  final CloseCartUsecase _closeCartUsecase;
 
   // State variables
   CartDetailsEntity cartDetails = CartDetailsEntity.empty();
@@ -44,6 +45,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     this._updateItemQunUsecase,
     this._addOrUpdateCoponUsecase,
     this._getOftenOrderedWithUsecase,
+    this._closeCartUsecase,
   ) : super(const CartState.initial()) {
     on<_GetUserCart>(_onGetUserCart);
     on<_GetCartDetails>(_onGetCartDetails);
@@ -55,8 +57,38 @@ class CartBloc extends Bloc<CartEvent, CartState> {
     on<_UpdateItemQun>(_onUpdateItemQun);
     on<_GetOftenOrderdWith>(_onGetOftenOrderdWith);
     on<_AddOrUpdateCoupon>(_onAddOrUpdateCoupon);
+    on<_CloseCart>(_onCloseCart);
   }
+  Future<void> _onCloseCart(
+      _CloseCart event, Emitter<CartState> emit) async {
+    if (cartId.isEmpty) {
+      emit(CartState.failureClearCart(tr.cartIdEmpty));
+      return;
+    }
 
+    emit(const CartState.loading());
+
+    try {
+      final result = await _closeCartUsecase(parm: {'uuid': cartId});
+
+      result.fold(
+        (failure) => emit(CartState.failureClearCart(failure.getMsg)),
+        (success) {
+          // Clear local state
+          cartDetails = CartDetailsEntity.empty();
+          cartLength = 0;
+          preparingTime = 0;
+          products.clear();
+
+          emit(const CartState.successCleared());
+          // Refresh user cart after closing
+          add(const CartEvent.getUserCart());
+        },
+      );
+    } catch (e) {
+      emit(CartState.failure(e.toString()));
+    }
+  }
   Future<void> _onGetUserCart(
       _GetUserCart event, Emitter<CartState> emit) async {
     emit(const CartState.loading());
@@ -73,7 +105,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
           if (carts.isNotEmpty) {
             cartId = carts[0].uuid;
             emit(const CartState.success());
-            // Automatically get cart details after getting user cart
             add(const CartEvent.getCartDetails());
           } else {
             emit(const CartState.success());
@@ -88,7 +119,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   Future<void> _onGetCartDetails(
       _GetCartDetails event, Emitter<CartState> emit) async {
     if (cartId.isEmpty) {
-      emit(const CartState.failureGetCartDetails('Cart ID is empty'));
+      emit( CartState.failureGetCartDetails(tr.cartIdEmpty));
       return;
     }
 
@@ -107,7 +138,6 @@ class CartBloc extends Bloc<CartEvent, CartState> {
               color: "cyan");
 
           emit(const CartState.success());
-          // Automatically get preparing time after getting cart details
           add(const CartEvent.getPreparingTime());
         },
       );
@@ -118,7 +148,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
 
   Future<void> _onClearCart(_ClearCart event, Emitter<CartState> emit) async {
     if (cartId.isEmpty) {
-      emit(const CartState.failureClearCart('Cart ID is empty'));
+      emit(CartState.failureClearCart(tr.cartIdEmpty));
       return;
     }
 
@@ -193,7 +223,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   Future<void> _onGetPreparingTime(
       _GetPreparingTime event, Emitter<CartState> emit) async {
     if (cartId.isEmpty) {
-      emit(const CartState.failurePreparingTIme('Cart ID is empty'));
+      emit(CartState.failurePreparingTIme(tr.cartIdEmpty));
       return;
     }
 
@@ -220,7 +250,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
       _AddItemToCart event, Emitter<CartState> emit) async {
     // Validate required parameters
     if (event.item['product_uuid'] == null || event.item['qun'] == null) {
-      emit(const CartState.failureAddItem('Missing required parameters'));
+      emit( CartState.failureAddItem(tr.missingRequiredParams));
       return;
     }
 
@@ -252,7 +282,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   Future<void> _onRemoveItemFromCart(
       _RemoveItemFromCart event, Emitter<CartState> emit) async {
     if (event.uuid.isEmpty) {
-      emit(const CartState.failureRemoveItem('Item UUID is empty'));
+      emit( CartState.failureRemoveItem(tr.itemUuidEmpty));
       return;
     }
 
@@ -278,7 +308,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   Future<void> _onUpdateItemQun(
       _UpdateItemQun event, Emitter<CartState> emit) async {
     if (event.itemId.isEmpty || event.operation.isEmpty) {
-      emit(const CartState.failureUpdateItem('Missing required parameters'));
+      emit( CartState.failureUpdateItem(tr.missingRequiredParams));
       return;
     }
 
@@ -306,7 +336,7 @@ class CartBloc extends Bloc<CartEvent, CartState> {
   Future<void> _onGetOftenOrderdWith(
       _GetOftenOrderdWith event, Emitter<CartState> emit) async {
     if (cartId.isEmpty) {
-      emit(const CartState.failureGetOftenProductCart('Cart ID is empty'));
+      emit(CartState.failureGetOftenProductCart(tr.cartIdEmpty));
       return;
     }
 

@@ -14,6 +14,8 @@ class AuthEvent with _$AuthEvent {
   const factory AuthEvent.getToken(String type) = _GetToken;
   const factory AuthEvent.getUserInfo() = _GetUserInfo;
   const factory AuthEvent.deleteAccount() = _DeleteAccount;
+  const factory AuthEvent.resetState() = _RestState;
+
 
 }
   

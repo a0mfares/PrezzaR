@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 import 'package:equatable/equatable.dart';
@@ -35,7 +35,7 @@ class OrderDetailsEntity extends $OrderDetailsEntity {
   @HiveField(6)
   @JsonKey(fromJson: sideItemsfromMap, toJson: sideItemsToMap)
   final List<Side_items> side_items;
-
+  
   OrderDetailsEntity({
     required this.uuid,
     required this.size_name,
@@ -60,11 +60,16 @@ class OrderDetailsEntity extends $OrderDetailsEntity {
       const $OrderDetailsEntity()
           .convert<OrderDetailsModel, OrderDetailsEntity>(model);
 
+  
+
   // Static serialization methods for nested objects
   static Map<String, dynamic> product_infoToMap(Product_info productInfo) =>
       productInfo.toMap();
   static List<Side_items> sideItemsfromMap(List json) {
     return List<Side_items>.from(json.map((e) => Side_items.fromMap(e)));
+  }
+  static List<Map<String, dynamic>> sideItemsToMap(List<Side_items> items) {
+    return items.map((e) => e.toMap()).toList();
   }
 
   static List<Extras> extrafromMap(List json) {
@@ -75,40 +80,52 @@ class OrderDetailsEntity extends $OrderDetailsEntity {
     return items.map((e) => e.toMap()).toList();
   }
 
-  static List<Map<String, dynamic>> sideItemsToMap(List<Side_items> items) {
-    return items.map((e) => e.toMap()).toList();
-  }
+  
+}
+extension OrderDetailsMapper on OrderDetailsEntity {
+  OrderDetailsModel toModel() =>
+      const $OrderDetailsEntity()
+          .convert<OrderDetailsEntity, OrderDetailsModel>(this);
 }
 
 @HiveType(typeId: 82)
 class Product_info extends Equatable {
   @HiveField(0)
   final String uuid;
-
   @HiveField(1)
   final String name;
+  @HiveField(2)
+  final String? main_image;  // Add optional fields
+  @HiveField(3)
+  final num? prepare_time;
 
   const Product_info({
     required this.uuid,
     required this.name,
+    this.main_image,
+    this.prepare_time,
   });
 
   Map<String, dynamic> toMap() {
     return {
       'uuid': uuid,
       'name': name,
+      'main_image': main_image,
+      'prepare_time': prepare_time,
     };
   }
 
   factory Product_info.fromMap(Map<String, dynamic> map) {
     return Product_info(
-      uuid: map['uuid'],
-      name: map['name'],
+      uuid: map['uuid']?.toString() ?? '',  
+      name: map['name']?.toString() ?? '', 
+      main_image: map['main_image']?.toString(),
+      prepare_time: map['prepare_time'],
     );
   }
 
   @override
-  List<Object?> get props => [uuid, name];
+  List<Object?> get props => [uuid, name, main_image, prepare_time];
 }
 
 @HiveType(typeId: 58)

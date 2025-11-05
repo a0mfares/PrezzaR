@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:dartz/dartz.dart';
 import 'package:prezza/core/helper/usecase_helper.dart';
 import 'package:prezza/core/service/failure_services.dart';
+import 'package:prezza/features/order/domain/entities/order_tracking_details_entity.dart';
 import 'package:prezza/features/order/domain/entities/orderdetails_entity.dart';
 import 'package:prezza/features/order/domain/repositories/order_repo.dart';
 
@@ -33,7 +34,17 @@ class GetUserOrdersUsecase extends UsecaseHelper<List<OrderUserItemEntity>> {
     return _repo.getUserOrders(parm['status']);
   }
 }
+class TrackOrder extends UsecaseHelper<OrderTrackingDetailsEntity> {
+  final OrderRepo _repo;
 
+  TrackOrder(this._repo);
+
+  @override
+  Future<Either<FailureServices,OrderTrackingDetailsEntity>> call(
+      {Map<String, dynamic> parm = const {}}) {
+    return _repo.trackOrder(parm);
+  }
+}
 class GetOrderDetailsUsecase extends UsecaseHelper<List<OrderDetailsEntity>> {
   final OrderRepo _repo;
 
@@ -66,7 +77,7 @@ class AcceptOrderUsecase extends UsecaseHelper<void> {
   @override
   Future<Either<FailureServices, void>> call(
       {Map<String, dynamic> parm = const {}}) {
-    return _repo.rejectOrder(parm);
+    return _repo.acceptOrder(parm);
   }
 }
 
@@ -115,7 +126,7 @@ class CancelOrderUsecase extends UsecaseHelper<void> {
   @override
   Future<Either<FailureServices, void>> call(
       {Map<String, dynamic> parm = const {}}) {
-    return _repo.cancelOrder(parm['orderId']);
+    return _repo.cancelOrder(parm['order_uuid']);
   }
 }
 

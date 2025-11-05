@@ -255,8 +255,9 @@ class ServiceLocator {
         CreateOrderInstaceUsecase(sl()));
     sl.registerSingleton<AddOrderDetailsUsecase>(AddOrderDetailsUsecase(sl()));
     sl.registerSingleton<GetUserOrdersUsecase>(GetUserOrdersUsecase(sl()));
+    sl.registerSingleton<TrackOrder>(TrackOrder(sl()));
     sl.registerFactory(() => OrderBloc(
-        sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
+        sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(),sl()));
     //* order
 
     //$ landing
@@ -320,8 +321,9 @@ class ServiceLocator {
     sl.registerSingleton<UpdateItemQunUsecase>(UpdateItemQunUsecase(sl()));
     sl.registerSingleton<AddOrUpdateCouponUsecase>(
         AddOrUpdateCouponUsecase(sl()));
+    sl.registerSingleton<CloseCartUsecase>(CloseCartUsecase(sl()));
     sl.registerFactory(
-        () => CartBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl()));
+        () => CartBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(), sl(),sl()));
     //! end cart
 
     //* newsfeed

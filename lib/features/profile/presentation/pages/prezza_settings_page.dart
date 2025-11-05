@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
-import 'package:prezza/core/service/hive_storage.dart';
 import 'package:prezza/prezza_page.dart';
 
 import '../../../../core/helper/tools.dart';
@@ -63,7 +62,7 @@ class _PrezzaSettingsPageState extends State<PrezzaSettingsPage> {
             title: Text(tr.languagePreference),
             trailing: DropdownButton(
               hint: Text(currentLocal == 'ar' ? 'Arabic' : 'English'),
-              items: [
+              items: const [
                 DropdownMenuItem(
                   value: 'en',
                   child: Text('English'),

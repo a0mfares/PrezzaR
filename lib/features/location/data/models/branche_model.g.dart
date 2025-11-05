@@ -11,7 +11,7 @@ BrancheModel _$BrancheModelFromJson(Map<String, dynamic> json) => BrancheModel(
       branch_landmark: json['branch_landmark'] as String,
       longitude: (json['longitude'] as num).toDouble(),
       latitude: (json['latitude'] as num).toDouble(),
-      id: (json['id'] as num?)?.toInt(),
+      branch_uuid: json['branch_uuid'] as String,
     );
 
 Map<String, dynamic> _$BrancheModelToJson(BrancheModel instance) =>
@@ -20,5 +20,5 @@ Map<String, dynamic> _$BrancheModelToJson(BrancheModel instance) =>
       'branch_landmark': instance.branch_landmark,
       'longitude': instance.longitude,
       'latitude': instance.latitude,
-      'id': instance.id,
+      'branch_uuid': instance.branch_uuid,
     };

@@ -1,8 +1,10 @@
+// post_widget.dart
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:prezza/core/constants/assets.dart';
+import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/shared/widgets/cached_image.dart';
 import 'package:prezza/features/newsfeed/presentation/widgets/comment_widget.dart';
@@ -12,351 +14,179 @@ import '../../../../config/custom_colors.dart';
 import '../../domain/entities/post_entity.dart';
 import '../bloc/newsfeed_bloc.dart';
 
-class PostWidget extends StatefulWidget {
+class PostWidget extends StatelessWidget {
   const PostWidget({super.key, required this.post});
   final PostEntity post;
 
   @override
-  State<PostWidget> createState() => _PostWidgetState();
-}
-
-class _PostWidgetState extends State<PostWidget> with TickerProviderStateMixin {
-  late final NewsfeedBloc bloc;
-
-  // Local state for immediate UI feedback
-  late bool isLiked;
-  late bool isSaved;
-  late int likesCount;
-  late int commentsCount;
-  bool isLikeLoading = false;
-  bool isSaveLoading = false;
-
-  @override
-  void initState() {
-    super.initState();
-    bloc = NewsfeedBloc.get(context);
-
-    // Initialize local state from post data
-    isLiked = false;
-    isSaved = false;
-    likesCount = widget.post.number_of_likes;
-    commentsCount = widget.post.number_of_comments;
-
-    // Load likes data
-    bloc.add(NewsfeedEvent.getLikes(widget.post.uuid));
-  }
-
-  void _handleLikePress() {
-    if (isLikeLoading) return;
-
-    setState(() {
-      isLikeLoading = true;
-      // Optimistic update
-      if (isLiked) {
-        isLiked = false;
-        likesCount = (likesCount - 1).clamp(0, double.infinity).toInt();
-        bloc.add(NewsfeedEvent.unLikePost(widget.post.uuid));
-      } else {
-        isLiked = true;
-        likesCount = likesCount + 1;
-        bloc.add(NewsfeedEvent.likePost(widget.post.uuid));
-      }
-    });
-  }
-
-  void _handleSavePress() {
-    if (isSaveLoading) return;
-
-    setState(() {
-      isSaveLoading = true;
-      // Optimistic update
-      isSaved = !isSaved;
-      bloc.add(NewsfeedEvent.savePost(widget.post.uuid));
-    });
-  }
-
-  void _showComments() {
-    showModalBottomSheet(
-      context: context,
-      useSafeArea: true,
-      isScrollControlled: true,
-      backgroundColor: Colors.transparent,
-      builder: (context) {
-        return Container(
-          height: MediaQuery.of(context).size.height * 0.8,
-          decoration: const BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.vertical(
-              top: Radius.circular(20),
-            ),
-          ),
-          child: CommentWidget(
-            uuid: widget.post.uuid,
-            onLoadData: () {
-              bloc.add(NewsfeedEvent.getComments(widget.post.uuid));
-            },
-          ),
-        );
-      },
-    );
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final bloc = NewsfeedBloc.get(context);
+    
     return BlocListener<NewsfeedBloc, NewsfeedState>(
       listener: (context, state) {
-        state.maybeWhen(
-          postLiked: () {
-            setState(() {
-              isLikeLoading = false;
-            });
-          },
-          postUnliked: () {
-            setState(() {
-              isLikeLoading = false;
-            });
-          },
-          postSaved: () {
-            setState(() {
-              isSaveLoading = false;
-            });
+        state.maybeMap(
+          successPostSaved: (_) {
             BotToast.showText(text: tr.postSaved);
           },
-          failure: (error) {
-            setState(() {
-              isLikeLoading = false;
-              isSaveLoading = false;
-              // Revert to original states
-              // isLiked = widget.post.is_liked ?? false;
-              // isSaved = widget.post.is_saved ?? false;
-              likesCount = widget.post.number_of_likes;
-            });
-            BotToast.showText(text: error);
+          failurePostSaved: (err) {
+            BotToast.showText(text: err.err);
           },
-          likesLoaded: (post, likes) {
-            setState(() {
-              likesCount = likes.length;
-            });
+          successLikePost: (_) {
+            BotToast.showText(text: tr.myLikeAdd);
           },
-          commentsLoaded: (post, comments) {
-            setState(() {
-              commentsCount = comments.length;
-            });
+          failureLikePost: (err) {
+            BotToast.showText(text: err.err);
+          },
+          successUnlikePost: (_) {
+            BotToast.showText(text: tr.likes);
+          },
+          failureUnlikePost: (err) {
+            BotToast.showText(text: err.err);
           },
           orElse: () {},
         );
       },
-      child: Container(
-        margin: const EdgeInsets.only(bottom: 16),
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              color: Colors.grey.shade200,
-              width: 8,
+      child: Column(
+        children: [
+          BlocBuilder<NewsfeedBloc, NewsfeedState>(
+            builder: (context, state) {
+              return state.maybeWhen(
+                creatingPost: (progress) {
+                  return LinearProgressIndicator(value: progress / 100);
+                },
+                orElse: () => const SizedBox(),
+              );
+            },
+          ),
+          ListTile(
+            leading: CircleAvatar(
+              child: CachedImage(
+                  imageUrl: post.auther_info.profile_picture_url
+                          .contains('https%3A')
+                      ? post.auther_info.profile_picture_url.replaceAll(
+                          '/https%3A/prezza-media-state-bucket.s3.us-east-1.amazonaws.com',
+                          '',
+                        )
+                      : post.auther_info.profile_picture_url),
+            ),
+            title: Text(post.auther_info.user_name),
+            subtitle: const Text(''),
+          
+          ),
+          vSpace(2),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Align(
+                alignment: AlignmentDirectional.centerStart,
+                child: Text(post.contant)),
+          ),
+          vSpace(2),
+          InkWell(
+            onDoubleTap: () {
+              if (!post.is_liked) {
+                bloc.add(NewsfeedEvent.likePost(post.uuid));
+              }
+            },
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                CachedImage(
+                  key: Key(post.uuid),
+                  imageUrl: post.post_images.first.image,
+                  fit: BoxFit.cover,
+                  width: 100.w,
+                  height: 40.h,
+                ),
+              ],
             ),
           ),
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Upload progress bar
-            BlocBuilder<NewsfeedBloc, NewsfeedState>(
-              builder: (context, state) {
-                return state.maybeWhen(
-                  progress: (progress) => LinearProgressIndicator(
-                    value: progress / 100,
-                    backgroundColor: Colors.grey.shade200,
-                    valueColor: AlwaysStoppedAnimation<Color>(primary),
-                  ),
-                  orElse: () => const SizedBox.shrink(),
-                );
-              },
-            ),
 
-            // Post header
-            ListTile(
-                contentPadding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                leading: CircleAvatar(
-                  radius: 20,
-                  child: ClipOval(
-                    child: CachedImage(
-                      imageUrl: widget.post.auther_info.profile_picture_url
-                              .contains('https%3A')
-                          ? widget.post.auther_info.profile_picture_url
-                              .replaceAll(
-                              '/https%3A/prezza-media-state-bucket.s3.us-east-1.amazonaws.com',
-                              '',
-                            )
-                          : widget.post.auther_info.profile_picture_url,
-                      width: 40,
-                      height: 40,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+          Row(
+            children: [
+              IconButton(
+                icon: Icon(
+                  post.is_liked ? Icons.favorite : Icons.favorite_border,
+                  color: post.is_liked ? Colors.red : primary,
                 ),
-                title: Text(
-                  widget.post.auther_info.user_name,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 14,
-                  ),
-                ),
-                subtitle: Text(
-                  widget.post.created_at,
-                  style: TextStyle(
-                    color: Colors.grey.shade600,
-                    fontSize: 12,
-                  ),
-                )),
-
-            // Post text
-            if (widget.post.contant.isNotEmpty)
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                child: Text(
-                  widget.post.contant,
-                  style: const TextStyle(fontSize: 14),
-                ),
+                onPressed: () {
+                 
+                },
               ),
-
-            // Post image
-            if (widget.post.post_images.isNotEmpty)
-              GestureDetector(
-                onDoubleTap: _handleLikePress,
-                child: Container(
-                  width: double.infinity,
-                  height: 40.h,
-                  color: Colors.grey.shade100,
-                  child: CachedImage(
-                    key: Key(widget.post.uuid),
-                    imageUrl: widget.post.post_images.first.image,
-                    fit: BoxFit.cover,
+              Text(post.number_of_likes.toString()),
+              IconButton(
+                icon: SvgPicture.asset(Assets.assetsImagesComment),
+                onPressed: () {},
+              ),
+              Text(post.number_of_comments.toString()),
+            ],
+          ).margin(
+            margin: const EdgeInsets.symmetric(horizontal: 10),
+          ),
+          // vSpace(1),
+          Row(
+            children: [
+              InkWell(
+                onTap: () {
+                   if (post.is_liked) {
+                    bloc.add(NewsfeedEvent.unLikePost(post.uuid));
+                  } else {
+                    bloc.add(NewsfeedEvent.likePost(post.uuid));
+                  }
+                },
+                child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor:  lightCream,
+                  child: Icon(
+                    post.is_liked ? Icons.favorite : Icons.favorite_border,
+                    color: post.is_liked ? Colors.red : primary,
                   ),
                 ),
               ),
-
-            // Likes & comments info row
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Row(
-                children: [
-                  const Icon(
-                    Icons.favorite_rounded,
-                    color: Colors.red,
-                  ),
-                  SizedBox(
-                    width: 2.w,
-                  ),
-                  Text("${widget.post.number_of_likes} ${tr.likes}"),
-                  SizedBox(
-                    width: 2.w,
-                  ),
-                  const Icon(
-                    Icons.chat_bubble_rounded,
-                    color: Colors.blueGrey,
-                  ),
-                  SizedBox(
-                    width: 2.w,
-                  ),
-                  Text("${widget.post.number_of_comments} ${tr.comments}"),
-                ],
+              hSpace(3),
+              InkWell(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    useSafeArea: true,
+                    enableDrag: false,
+                    isScrollControlled: true,
+                    builder: (context) {
+                      return CommentWidget(
+                        uuid: post.uuid,
+                        onLoadData: () {
+                          bloc.add(NewsfeedEvent.getComments(post.uuid));
+                        },
+                        onCommentsClosed: () {
+                          bloc.add(NewsfeedEvent.getUserPosts(usr.user.uuid));
+                        },
+                      );
+                    },
+                  );
+                },
+                child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: lightCream,
+                  child: SvgPicture.asset(Assets.assetsImagesCommentOutlin),
+                ),
               ),
-            ),
-
-            // Action buttons row
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-              child: Row(
-                children: [
-                  // Like button
-                  // Like button
-                  IconButton(
-                    onPressed: _handleLikePress,
-                    icon: isLikeLoading
-                        ? SizedBox(
-                            width: 20.w,
-                            height: 20,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                isLiked ? Colors.red : Colors.grey.shade600,
-                              ),
-                            ),
-                          )
-                        : Icon(
-                            isLiked ? Icons.favorite : Icons.favorite_border,
-                            color: primary,
-                            size: 20,
-                          ),
-                    style: IconButton.styleFrom(
-                      foregroundColor:
-                          isLiked ? Colors.red : Colors.grey.shade600,
-                      side: const BorderSide(
-                        color: Colors.red,
-                        width: 1,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
+              const Spacer(),
+              InkWell(
+                onTap: () {
+                  bloc.add(NewsfeedEvent.savePost(post.uuid));
+                },
+                child: CircleAvatar(
+                  radius: 30,
+                  backgroundColor: post.is_saved ? primary : lightCream,
+                  child: SvgPicture.asset(
+                    Assets.assetsImagesSaveAdd,
+                    color: post.is_saved ? Colors.white : primary,
                   ),
-// Comment button
-                  IconButton(
-                    onPressed: _showComments,
-                    icon: SvgPicture.asset(
-                      Assets.assetsImagesComment,
-                      colorFilter: const ColorFilter.linearToSrgbGamma(),
-                      width: 20,
-                      height: 20,
-                    ),
-                    style: IconButton.styleFrom(
-                      foregroundColor: Colors.grey.shade600,
-                      side: BorderSide(
-                        color: Colors.grey.shade600,
-                        width: 1,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                  ),
-// Save button
-                  IconButton(
-                    onPressed: _handleSavePress,
-                    icon: isSaveLoading
-                        ? SizedBox(
-                            width: 20,
-                            height: 20,
-                            child: CircularProgressIndicator(
-                              strokeWidth: 2,
-                              valueColor: AlwaysStoppedAnimation<Color>(
-                                isSaved ? primary : Colors.grey.shade600,
-                              ),
-                            ),
-                          )
-                        : Icon(
-                            isSaved ? Icons.bookmark : Icons.bookmark_border,
-                            color: primary,
-                            size: 20,
-                          ),
-                    style: IconButton.styleFrom(
-                      foregroundColor: isSaved ? primary : Colors.grey.shade600,
-                      side: BorderSide(
-                        color: primary,
-                        width: 1,
-                      ),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ).margin(margin: const EdgeInsets.symmetric(horizontal: 15)),
+          vSpace(8),
+        ],
       ),
     );
   }

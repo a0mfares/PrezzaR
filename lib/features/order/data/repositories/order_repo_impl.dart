@@ -1,16 +1,17 @@
 import 'dart:developer';
 
 import 'package:dartz/dartz.dart';
-import 'package:dio/dio.dart';
 import 'package:prezza/core/helper/network.dart';
 import 'package:prezza/core/helper/tools.dart';
 import 'package:prezza/core/service/failure_services.dart';
 import 'package:prezza/features/order/data/datasources/order_service.dart';
+import 'package:prezza/features/order/data/models/order_tracking_details_model.dart';
 import 'package:prezza/features/order/data/models/orderbooking_model.dart';
 import 'package:prezza/features/order/data/models/orderdelivery_model.dart';
 import 'package:prezza/features/order/data/models/orderdetails_model.dart';
 import 'package:prezza/features/order/data/models/orderitem_model.dart';
 import 'package:prezza/features/order/data/models/orderpickup_model.dart';
+import 'package:prezza/features/order/domain/entities/order_tracking_details_entity.dart';
 import 'package:prezza/features/order/domain/entities/orderbooking_entity.dart';
 import 'package:prezza/features/order/domain/entities/orderdelivery_entity.dart';
 import 'package:prezza/features/order/domain/entities/orderdetails_entity.dart';
@@ -37,17 +38,19 @@ class OrderRepoImpl extends OrderRepo {
     });
   }
 
-  @override
-  Future<Either<FailureServices, List<OrderDetailsEntity>>> getOrderDetails(
-      String orderId) {
-    return execute(() async {
-      final result = await _service.getOrderDetails(bearerToken, orderId);
-
-      return List<OrderDetailsEntity>.from(
-          (result.response.data['data'] as List).map((e) =>
-              OrderDetailsEntity.fromModel(OrderDetailsModel.fromMap(e))));
-    });
-  }
+ @override
+Future<Either<FailureServices, List<OrderDetailsEntity>>> getOrderDetails(
+    String orderId) {
+  return execute(() async {
+    final result = await _service.getOrderDetails(bearerToken, orderId);
+    final dataList = result.response.data["data"] as List;
+    
+    return dataList
+        .map((json) => OrderDetailsEntity.fromModel(
+              OrderDetailsModel.fromJson(json)))
+        .toList();
+  });
+}
 
   @override
   Future<Either<FailureServices, dynamic>> getOrderPickUpDelivery(
@@ -111,8 +114,19 @@ class OrderRepoImpl extends OrderRepo {
       String status) {
     return execute(() async {
       final result = await _service.getUserOrders(bearerToken, status);
-      return List<OrderUserItemEntity>.from(result.response.data['data'].map(
-          (e) => OrderUserItemEntity.fromModel(OrderUserItemModel.fromMap(e))));
+      return List<OrderUserItemEntity>.from(
+        result.response.data['data'].map(
+          (e) => OrderUserItemModel.fromJson(e).toEntity()
+        )
+      );
+    });
+
+  }
+  @override
+  Future<Either<FailureServices, OrderTrackingDetailsEntity>> trackOrder(Map<String, dynamic> body) {
+    return execute(() async {
+      final result =await _service.trackOrder(bearerToken, body["order_uuid"]);
+      return OrderTrackingDetailsModel.fromJson(result.data["data"]).toEntity();
     });
   }
 }

@@ -1,7 +1,7 @@
-import 'package:hive/hive.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 import 'package:equatable/equatable.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
 import '../../data/models/usercart_model.dart';
 
@@ -18,16 +18,19 @@ class UserCartEntity extends $UserCartEntity {
   @HiveField(1)
   @JsonKey(fromJson: Bussiness_info.fromMap, toJson: bussiness_infoToMap)
   final Bussiness_info bussiness_info;
-
+  @HiveField(2)
+  final bool is_closed;
   UserCartEntity({
     required this.uuid,
     required this.bussiness_info,
+    required this.is_closed,
   });
 
   factory UserCartEntity.empty() => UserCartEntity(
       uuid: '',
       bussiness_info:
-          Bussiness_info(id: 0, business_name: '', business_logo: ''));
+          const Bussiness_info(id: 0, business_name: '', business_logo: ''),
+      is_closed: false);
 
   factory UserCartEntity.fromModel(UserCartModel model) =>
       const $UserCartEntity().convert<UserCartModel, UserCartEntity>(model);

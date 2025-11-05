@@ -8,7 +8,7 @@ class OrderPickupModel extends OrderPickupEntity {
   OrderPickupModel(
       {required super.uuid,
       required super.arrival_date,
-      required super.customer_phone,
+      super.customer_phone,
       required super.car});
 
   factory OrderPickupModel.fromMap(Map<String, dynamic> json) =>

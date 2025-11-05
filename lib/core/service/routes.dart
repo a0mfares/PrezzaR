@@ -9,227 +9,177 @@ class AppRouter extends RootStackRouter {
   List<AutoRoute> get routes => [
         AutoRoute(
           page: LoginRoute.page,
-          // initial: ,
         ),
         AutoRoute(
           page: SignUpRoute.page,
-          // initial: true,
         ),
         AutoRoute(
           page: ProfileSocialRoute.page,
-          // initial: true,
+          guards: [PrezzaGuard()],
+
         ),
         AutoRoute(
           page: UsersSearchRoute.page,
-          // initial: true,
+          guards: [PrezzaGuard()],
+
         ),
         AutoRoute(
           page: SearchRoute.page,
-          // initial: true,
         ),
         AutoRoute(
           page: PassChangeRoute.page,
-          // initial: true,
         ),
         AutoRoute(
           page: LoginLoadingRoute.page,
-          //
           initial: true,
         ),
         AutoRoute(
           page: OnboardingRoute.page,
-          //
         ),
         AutoRoute(
           page: CreatePostRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: TagVendorRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: MentionItemRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: SocialRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: LocationRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: AddCarsRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: CarsRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: FeedbackRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: FavoritesRoute.page,
-
-          // initial: true,
-        ),
-        AutoRoute(
-          page: OtpVerificationRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: CartDetailsRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: ProductDetailsRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: VendorDetailsRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: CartRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: HelpRoute.page,
-          // initial: true,
         ),
         AutoRoute(
           page: AllVendorRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: PersonalInfoRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: InviteFriendRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: NotificationRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: VendorLayoutRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: OrderRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: OrderDetailsRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: LocationAddRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: PrezzaSettingsRoute.page,
-          //
-          // initial: true,
         ),
         AutoRoute(
           page: CheckoutRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: UserProfileRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: BusinesProfileRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: UserLayoutHomeRoute.page,
         ),
         AutoRoute(
           page: PaymentCardRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: CardDetailsRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: VendorLayoutRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: OrderDetailsVendorRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: ReviewRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: ProductAddRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: ReasonRoute.page,
-
-          // initial: true,
+          guards: [PrezzaGuard()],
         ),
         AutoRoute(
           page: ResetPassRoute.page,
-          // initial: true,
         ),
         AutoRoute(
           page: ForgotPassRoute.page,
-          // initial: true,
         ),
         AutoRoute(
           page: OtpVerificationRoute.page,
-          // initial: true,
         ),
         AutoRoute(
           page: ChooseUserTypeRoute.page,
-
-          // guards: [
-          //   AuthGuard(),
-          // ],
         ),
       ];
 }
@@ -247,8 +197,10 @@ class PrezzaGuard extends AutoRouteGuard {
     if (isAuthenticated) {
       resolver.next(true);
     } else {
-      router.replace(LoginRoute());
-      resolver.next(false);
+      resolver.redirect(
+        LoginRoute(),
+      
+      );
     }
   }
 }

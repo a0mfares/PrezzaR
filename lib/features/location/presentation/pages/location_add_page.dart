@@ -50,11 +50,11 @@ class _LocationAddPageState extends State<LocationAddPage> {
         listener: (context, state) {
           state.maybeMap(
             successAdded: (v) {
-              BotToast.showText(text: 'Success added');
+              BotToast.showText(text: tr.successAdded);
               bloc.add(const LocationEvent.getAddresses());
             },
             successUpdated: (v) {
-              BotToast.showText(text: 'Success updated');
+              BotToast.showText(text: tr.successUpdated);
             },
             failure: (v) {
               BotToast.showText(text: v.err);
@@ -83,8 +83,8 @@ class _LocationAddPageState extends State<LocationAddPage> {
                     children: [
                       TextFormField(
                         controller: bloc.brancheAddress,
-                        decoration: const InputDecoration(
-                          hintText: 'House Number / Flat / Block No.',
+                        decoration:  InputDecoration(
+                          hintText: tr.houseNumberHint,
                         ),
                       ).prezaa(
                         label: tr.address,
@@ -92,8 +92,8 @@ class _LocationAddPageState extends State<LocationAddPage> {
                       vSpace(3),
                       TextFormField(
                         controller: bloc.brancheLandMark,
-                        decoration: const InputDecoration(
-                          hintText: 'e.g. Near ABC School',
+                        decoration:  InputDecoration(
+                          hintText: tr.landmarkHint,
                         ),
                       ).prezaa(
                         label: tr.landmark,
@@ -137,9 +137,9 @@ class _LocationAddPageState extends State<LocationAddPage> {
                                   textDirection: TextDirection.ltr,
                                 ),
                                 searchInputDecorationConfig:
-                                    const SearchInputDecorationConfig(
+                                     SearchInputDecorationConfig(
                                   hintText:
-                                      "Search for a building, street or ...",
+                                      tr.searchForLocation,
                                 ),
                               ),
                             ),

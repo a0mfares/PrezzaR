@@ -460,6 +460,26 @@ class S {
     );
   }
 
+  /// `Please activate your phone`
+  String get plsActivatePhone {
+    return Intl.message(
+      'Please activate your phone',
+      name: 'plsActivatePhone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify Phone`
+  String get verifyPhone {
+    return Intl.message(
+      'Verify Phone',
+      name: 'verifyPhone',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Continue with phone number instead`
   String get continueWithPhoneInst {
     return Intl.message(
@@ -2720,6 +2740,36 @@ class S {
     );
   }
 
+  /// `Notifications about placed, ongoing, and delivered orders.`
+  String get orderNotifications {
+    return Intl.message(
+      'Notifications about placed, ongoing, and delivered orders.',
+      name: 'orderNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications about discounts, special offers, and seasonal promotions.`
+  String get discountNotifications {
+    return Intl.message(
+      'Notifications about discounts, special offers, and seasonal promotions.',
+      name: 'discountNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications about important app changes or new updates.`
+  String get importantNotifications {
+    return Intl.message(
+      'Notifications about important app changes or new updates.',
+      name: 'importantNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Apple pay`
   String get applePay {
     return Intl.message(
@@ -2761,10 +2811,10 @@ class S {
   }
 
   /// `You can cancel it within {time} mins max`
-  String youCanCanel(String time) {
+  String youCanCancel(String time) {
     return Intl.message(
       'You can cancel it within $time mins max',
-      name: 'youCanCanel',
+      name: 'youCanCancel',
       desc: '',
       args: [time],
     );
@@ -3440,10 +3490,10 @@ class S {
     );
   }
 
-  /// `we’re glad that that you are here`
+  /// `we're glad that that you are here`
   String get welcomeTitle {
     return Intl.message(
-      'we’re glad that that you are here',
+      'we\'re glad that that you are here',
       name: 'welcomeTitle',
       desc: '',
       args: [],
@@ -3680,26 +3730,6 @@ class S {
     );
   }
 
-  /// `please activate you phone`
-  String get plsActivatePhone {
-    return Intl.message(
-      'please activate you phone',
-      name: 'plsActivatePhone',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `very phone`
-  String get verifyPhone {
-    return Intl.message(
-      'very phone',
-      name: 'verifyPhone',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `Search Items`
   String get searchITem {
     return Intl.message(
@@ -3745,6 +3775,2226 @@ class S {
     return Intl.message(
       'Retry',
       name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of Seats`
+  String get numberOfSeats {
+    return Intl.message(
+      'Number of Seats',
+      name: 'numberOfSeats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter number of seats`
+  String get enterNumberOfSeats {
+    return Intl.message(
+      'Enter number of seats',
+      name: 'enterNumberOfSeats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking Date`
+  String get bookingDate {
+    return Intl.message(
+      'Booking Date',
+      name: 'bookingDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Date`
+  String get selectDate {
+    return Intl.message(
+      'Select Date',
+      name: 'selectDate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Number of seats is required`
+  String get numberOfSeatsRequired {
+    return Intl.message(
+      'Number of seats is required',
+      name: 'numberOfSeatsRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking date is required`
+  String get bookingDateRequired {
+    return Intl.message(
+      'Booking date is required',
+      name: 'bookingDateRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please select a branch`
+  String get selectBranch {
+    return Intl.message(
+      'Please select a branch',
+      name: 'selectBranch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Complete setup`
+  String get completeSetup {
+    return Intl.message(
+      'Complete setup',
+      name: 'completeSetup',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User ID not found`
+  String get userIdNotFound {
+    return Intl.message(
+      'User ID not found',
+      name: 'userIdNotFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Make`
+  String get selectMake {
+    return Intl.message(
+      'Select Make',
+      name: 'selectMake',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Model`
+  String get selectModel {
+    return Intl.message(
+      'Select Model',
+      name: 'selectModel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Car added successfully`
+  String get carAddedSuccess {
+    return Intl.message(
+      'Car added successfully',
+      name: 'carAddedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Car updated successfully`
+  String get carUpdatedSuccess {
+    return Intl.message(
+      'Car updated successfully',
+      name: 'carUpdatedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Car deleted successfully`
+  String get carDeletedSuccess {
+    return Intl.message(
+      'Car deleted successfully',
+      name: 'carDeletedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please fill all fields and select an image`
+  String get fillAllCarFields {
+    return Intl.message(
+      'Please fill all fields and select an image',
+      name: 'fillAllCarFields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cart ID is empty`
+  String get cartIdEmpty {
+    return Intl.message(
+      'Cart ID is empty',
+      name: 'cartIdEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Missing required parameters`
+  String get missingRequiredParams {
+    return Intl.message(
+      'Missing required parameters',
+      name: 'missingRequiredParams',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item UUID is empty`
+  String get itemUuidEmpty {
+    return Intl.message(
+      'Item UUID is empty',
+      name: 'itemUuidEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cart cleared successfully`
+  String get cartClearedSuccess {
+    return Intl.message(
+      'Cart cleared successfully',
+      name: 'cartClearedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item added to cart successfully`
+  String get itemAddedSuccess {
+    return Intl.message(
+      'Item added to cart successfully',
+      name: 'itemAddedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item removed from cart successfully`
+  String get itemRemovedSuccess {
+    return Intl.message(
+      'Item removed from cart successfully',
+      name: 'itemRemovedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Item quantity updated successfully`
+  String get itemUpdatedSuccess {
+    return Intl.message(
+      'Item quantity updated successfully',
+      name: 'itemUpdatedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coupon applied successfully`
+  String get couponAddedSuccess {
+    return Intl.message(
+      'Coupon applied successfully',
+      name: 'couponAddedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Coupon removed successfully`
+  String get couponRemovedSuccess {
+    return Intl.message(
+      'Coupon removed successfully',
+      name: 'couponRemovedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cart closed successfully`
+  String get cartClosedSuccess {
+    return Intl.message(
+      'Cart closed successfully',
+      name: 'cartClosedSuccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to get user cart`
+  String get failureGetUserCart {
+    return Intl.message(
+      'Failed to get user cart',
+      name: 'failureGetUserCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to get cart details`
+  String get failureGetCartDetails {
+    return Intl.message(
+      'Failed to get cart details',
+      name: 'failureGetCartDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to clear cart`
+  String get failureClearCart {
+    return Intl.message(
+      'Failed to clear cart',
+      name: 'failureClearCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to get preparing time`
+  String get failureGetPreparingTime {
+    return Intl.message(
+      'Failed to get preparing time',
+      name: 'failureGetPreparingTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to add item to cart`
+  String get failureAddItem {
+    return Intl.message(
+      'Failed to add item to cart',
+      name: 'failureAddItem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to remove item from cart`
+  String get failureRemoveItem {
+    return Intl.message(
+      'Failed to remove item from cart',
+      name: 'failureRemoveItem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to update item quantity`
+  String get failureUpdateItem {
+    return Intl.message(
+      'Failed to update item quantity',
+      name: 'failureUpdateItem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to get often ordered products`
+  String get failureGetOftenProductCart {
+    return Intl.message(
+      'Failed to get often ordered products',
+      name: 'failureGetOftenProductCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to apply coupon`
+  String get failureAddCoupon {
+    return Intl.message(
+      'Failed to apply coupon',
+      name: 'failureAddCoupon',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to close cart`
+  String get failureCloseCart {
+    return Intl.message(
+      'Failed to close cart',
+      name: 'failureCloseCart',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to get categories`
+  String get failureGetCategories {
+    return Intl.message(
+      'Failed to get categories',
+      name: 'failureGetCategories',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to get sponsors`
+  String get failureGetSponsors {
+    return Intl.message(
+      'Failed to get sponsors',
+      name: 'failureGetSponsors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No sponsors available`
+  String get noSponsorsAvailable {
+    return Intl.message(
+      'No sponsors available',
+      name: 'noSponsorsAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error loading categories`
+  String get categoryLoadingError {
+    return Intl.message(
+      'Error loading categories',
+      name: 'categoryLoadingError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error loading sponsors`
+  String get sponsorsLoadingError {
+    return Intl.message(
+      'Error loading sponsors',
+      name: 'sponsorsLoadingError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already in favorites`
+  String get alreadyInFavorites {
+    return Intl.message(
+      'Already in favorites',
+      name: 'alreadyInFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vendor not in favorites`
+  String get vendorNotInFavorites {
+    return Intl.message(
+      'Vendor not in favorites',
+      name: 'vendorNotInFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Added to favorites`
+  String get addedToFavorites {
+    return Intl.message(
+      'Added to favorites',
+      name: 'addedToFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Removed from favorites`
+  String get removedFromFavorites {
+    return Intl.message(
+      'Removed from favorites',
+      name: 'removedFromFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load favorites`
+  String get failedToLoadFavorites {
+    return Intl.message(
+      'Failed to load favorites',
+      name: 'failedToLoadFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{count} {count, plural, =1{vendor} other{vendors}} in favorites`
+  String vendorsInFavorites(int count) {
+    return Intl.message(
+      '$count ${Intl.plural(count, one: 'vendor', other: 'vendors')} in favorites',
+      name: 'vendorsInFavorites',
+      desc: '',
+      args: [count],
+    );
+  }
+
+  /// `Error loading favorites`
+  String get errorLoadingFavorites {
+    return Intl.message(
+      'Error loading favorites',
+      name: 'errorLoadingFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No favorites found`
+  String get noFavoritesFound {
+    return Intl.message(
+      'No favorites found',
+      name: 'noFavoritesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refresh favorites`
+  String get refreshFavorites {
+    return Intl.message(
+      'Refresh favorites',
+      name: 'refreshFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load business details`
+  String get failedToLoadBusinessDetails {
+    return Intl.message(
+      'Failed to load business details',
+      name: 'failedToLoadBusinessDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get error {
+    return Intl.message(
+      'Error',
+      name: 'error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete account`
+  String get deleteAccount {
+    return Intl.message(
+      'Delete account',
+      name: 'deleteAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure?`
+  String get areYouSure {
+    return Intl.message(
+      'Are you sure?',
+      name: 'areYouSure',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `SKIP`
+  String get tutorialSkip {
+    return Intl.message(
+      'SKIP',
+      name: 'tutorialSkip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click here to show your items`
+  String get clickToShowItems {
+    return Intl.message(
+      'Click here to show your items',
+      name: 'clickToShowItems',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Click again to add a new item`
+  String get clickToAddNewItem {
+    return Intl.message(
+      'Click again to add a new item',
+      name: 'clickToAddNewItem',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Average Rating`
+  String get averageRating {
+    return Intl.message(
+      'Average Rating',
+      name: 'averageRating',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total Reviews`
+  String get totalReviews {
+    return Intl.message(
+      'Total Reviews',
+      name: 'totalReviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Vendor Balance`
+  String get vendorBalance {
+    return Intl.message(
+      'Vendor Balance',
+      name: 'vendorBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No orders available`
+  String get noOrdersAvailable {
+    return Intl.message(
+      'No orders available',
+      name: 'noOrdersAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No products available`
+  String get noProductsAvailable {
+    return Intl.message(
+      'No products available',
+      name: 'noProductsAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No notifications available`
+  String get noNotificationsAvailable {
+    return Intl.message(
+      'No notifications available',
+      name: 'noNotificationsAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Business Details`
+  String get businessDetails {
+    return Intl.message(
+      'Business Details',
+      name: 'businessDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Status`
+  String get orderStatus {
+    return Intl.message(
+      'Order Status',
+      name: 'orderStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Revenue`
+  String get revenue {
+    return Intl.message(
+      'Revenue',
+      name: 'revenue',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Customer Reviews`
+  String get customerReviews {
+    return Intl.message(
+      'Customer Reviews',
+      name: 'customerReviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Popular Products`
+  String get popularProducts {
+    return Intl.message(
+      'Popular Products',
+      name: 'popularProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load reviews`
+  String get failedToLoadReviews {
+    return Intl.message(
+      'Failed to load reviews',
+      name: 'failedToLoadReviews',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load common issues`
+  String get failedToLoadCommonIssues {
+    return Intl.message(
+      'Failed to load common issues',
+      name: 'failedToLoadCommonIssues',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load FAQ`
+  String get failedToLoadFAQ {
+    return Intl.message(
+      'Failed to load FAQ',
+      name: 'failedToLoadFAQ',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load social platforms`
+  String get failedToLoadSocialPlatforms {
+    return Intl.message(
+      'Failed to load social platforms',
+      name: 'failedToLoadSocialPlatforms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load download platforms`
+  String get failedToLoadDownloadPlatforms {
+    return Intl.message(
+      'Failed to load download platforms',
+      name: 'failedToLoadDownloadPlatforms',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to add review`
+  String get failedToAddReview {
+    return Intl.message(
+      'Failed to add review',
+      name: 'failedToAddReview',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Review added successfully`
+  String get reviewAddedSuccessfully {
+    return Intl.message(
+      'Review added successfully',
+      name: 'reviewAddedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search issues`
+  String get searchIssues {
+    return Intl.message(
+      'Search issues',
+      name: 'searchIssues',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No reviews found`
+  String get noReviewsFound {
+    return Intl.message(
+      'No reviews found',
+      name: 'noReviewsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No common issues found`
+  String get noCommonIssuesFound {
+    return Intl.message(
+      'No common issues found',
+      name: 'noCommonIssuesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No FAQ found`
+  String get noFAQFound {
+    return Intl.message(
+      'No FAQ found',
+      name: 'noFAQFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No social platforms found`
+  String get noSocialPlatformsFound {
+    return Intl.message(
+      'No social platforms found',
+      name: 'noSocialPlatformsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No download platforms found`
+  String get noDownloadPlatformsFound {
+    return Intl.message(
+      'No download platforms found',
+      name: 'noDownloadPlatformsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success added`
+  String get successAdded {
+    return Intl.message(
+      'Success added',
+      name: 'successAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success updated`
+  String get successUpdated {
+    return Intl.message(
+      'Success updated',
+      name: 'successUpdated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Success deleted`
+  String get successDeleted {
+    return Intl.message(
+      'Success deleted',
+      name: 'successDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location services are disabled`
+  String get locationServicesDisabled {
+    return Intl.message(
+      'Location services are disabled',
+      name: 'locationServicesDisabled',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permissions are denied`
+  String get locationPermissionsDenied {
+    return Intl.message(
+      'Location permissions are denied',
+      name: 'locationPermissionsDenied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permissions are permanently denied`
+  String get locationPermissionsDeniedForever {
+    return Intl.message(
+      'Location permissions are permanently denied',
+      name: 'locationPermissionsDeniedForever',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `House Number / Flat / Block No.`
+  String get houseNumberHint {
+    return Intl.message(
+      'House Number / Flat / Block No.',
+      name: 'houseNumberHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `e.g. Near ABC School`
+  String get landmarkHint {
+    return Intl.message(
+      'e.g. Near ABC School',
+      name: 'landmarkHint',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for a building, street or ...`
+  String get searchForLocation {
+    return Intl.message(
+      'Search for a building, street or ...',
+      name: 'searchForLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No locations found`
+  String get noLocationsFound {
+    return Intl.message(
+      'No locations found',
+      name: 'noLocationsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Location`
+  String get selectLocation {
+    return Intl.message(
+      'Select Location',
+      name: 'selectLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Authentication Required`
+  String get authRequired {
+    return Intl.message(
+      'Authentication Required',
+      name: 'authRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Use biometric authentication`
+  String get biometricAuth {
+    return Intl.message(
+      'Use biometric authentication',
+      name: 'biometricAuth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Enter your password`
+  String get passwordAuth {
+    return Intl.message(
+      'Enter your password',
+      name: 'passwordAuth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location Picker`
+  String get locationPicker {
+    return Intl.message(
+      'Location Picker',
+      name: 'locationPicker',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm Location`
+  String get confirmLocation {
+    return Intl.message(
+      'Confirm Location',
+      name: 'confirmLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location updated successfully`
+  String get locationUpdated {
+    return Intl.message(
+      'Location updated successfully',
+      name: 'locationUpdated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location added successfully`
+  String get locationAdded {
+    return Intl.message(
+      'Location added successfully',
+      name: 'locationAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location deleted successfully`
+  String get locationDeleted {
+    return Intl.message(
+      'Location deleted successfully',
+      name: 'locationDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location error`
+  String get locationError {
+    return Intl.message(
+      'Location error',
+      name: 'locationError',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No locations added yet`
+  String get emptyLocationList {
+    return Intl.message(
+      'No locations added yet',
+      name: 'emptyLocationList',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Location`
+  String get addLocationButton {
+    return Intl.message(
+      'Add New Location',
+      name: 'addLocationButton',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Location`
+  String get editLocation {
+    return Intl.message(
+      'Edit Location',
+      name: 'editLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this location?`
+  String get confirmDeleteLocation {
+    return Intl.message(
+      'Are you sure you want to delete this location?',
+      name: 'confirmDeleteLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this branch?`
+  String get confirmDeleteBranch {
+    return Intl.message(
+      'Are you sure you want to delete this branch?',
+      name: 'confirmDeleteBranch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Branch deleted successfully`
+  String get branchDeleted {
+    return Intl.message(
+      'Branch deleted successfully',
+      name: 'branchDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Branch updated successfully`
+  String get branchUpdated {
+    return Intl.message(
+      'Branch updated successfully',
+      name: 'branchUpdated',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Branch added successfully`
+  String get branchAdded {
+    return Intl.message(
+      'Branch added successfully',
+      name: 'branchAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location permission is required to use this feature`
+  String get locationPermissionRequired {
+    return Intl.message(
+      'Location permission is required to use this feature',
+      name: 'locationPermissionRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enable location services to continue`
+  String get enableLocationServices {
+    return Intl.message(
+      'Please enable location services to continue',
+      name: 'enableLocationServices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Location access is required for this feature to work properly`
+  String get locationAccessRequired {
+    return Intl.message(
+      'Location access is required for this feature to work properly',
+      name: 'locationAccessRequired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load posts`
+  String get failedToLoadPosts {
+    return Intl.message(
+      'Failed to load posts',
+      name: 'failedToLoadPosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to create post`
+  String get failedToCreatePost {
+    return Intl.message(
+      'Failed to create post',
+      name: 'failedToCreatePost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load user posts`
+  String get failedToLoadUserPosts {
+    return Intl.message(
+      'Failed to load user posts',
+      name: 'failedToLoadUserPosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load saved posts`
+  String get failedToLoadSavedPosts {
+    return Intl.message(
+      'Failed to load saved posts',
+      name: 'failedToLoadSavedPosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load profile`
+  String get failedToLoadProfile {
+    return Intl.message(
+      'Failed to load profile',
+      name: 'failedToLoadProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load comments`
+  String get failedToLoadComments {
+    return Intl.message(
+      'Failed to load comments',
+      name: 'failedToLoadComments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load replies`
+  String get failedToLoadReplies {
+    return Intl.message(
+      'Failed to load replies',
+      name: 'failedToLoadReplies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load likes`
+  String get failedToLoadLikes {
+    return Intl.message(
+      'Failed to load likes',
+      name: 'failedToLoadLikes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load users`
+  String get failedToLoadUsers {
+    return Intl.message(
+      'Failed to load users',
+      name: 'failedToLoadUsers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load vendors`
+  String get failedToLoadVendors {
+    return Intl.message(
+      'Failed to load vendors',
+      name: 'failedToLoadVendors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load products`
+  String get failedToLoadProducts {
+    return Intl.message(
+      'Failed to load products',
+      name: 'failedToLoadProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to follow user`
+  String get failedToFollowUser {
+    return Intl.message(
+      'Failed to follow user',
+      name: 'failedToFollowUser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to unfollow user`
+  String get failedToUnfollowUser {
+    return Intl.message(
+      'Failed to unfollow user',
+      name: 'failedToUnfollowUser',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to like post`
+  String get failedToLikePost {
+    return Intl.message(
+      'Failed to like post',
+      name: 'failedToLikePost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to unlike post`
+  String get failedToUnlikePost {
+    return Intl.message(
+      'Failed to unlike post',
+      name: 'failedToUnlikePost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to like comment`
+  String get failedToLikeComment {
+    return Intl.message(
+      'Failed to like comment',
+      name: 'failedToLikeComment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to unlike comment`
+  String get failedToUnlikeComment {
+    return Intl.message(
+      'Failed to unlike comment',
+      name: 'failedToUnlikeComment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to add comment`
+  String get failedToAddComment {
+    return Intl.message(
+      'Failed to add comment',
+      name: 'failedToAddComment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to add reply`
+  String get failedToAddReply {
+    return Intl.message(
+      'Failed to add reply',
+      name: 'failedToAddReply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to delete comment`
+  String get failedToDeleteComment {
+    return Intl.message(
+      'Failed to delete comment',
+      name: 'failedToDeleteComment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to delete reply`
+  String get failedToDeleteReply {
+    return Intl.message(
+      'Failed to delete reply',
+      name: 'failedToDeleteReply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to save post`
+  String get failedToSavePost {
+    return Intl.message(
+      'Failed to save post',
+      name: 'failedToSavePost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post created successfully`
+  String get postCreatedSuccessfully {
+    return Intl.message(
+      'Post created successfully',
+      name: 'postCreatedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post saved successfully`
+  String get postSavedSuccessfully {
+    return Intl.message(
+      'Post saved successfully',
+      name: 'postSavedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post unsaved successfully`
+  String get postUnsavedSuccessfully {
+    return Intl.message(
+      'Post unsaved successfully',
+      name: 'postUnsavedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User followed successfully`
+  String get userFollowedSuccessfully {
+    return Intl.message(
+      'User followed successfully',
+      name: 'userFollowedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User unfollowed successfully`
+  String get userUnfollowedSuccessfully {
+    return Intl.message(
+      'User unfollowed successfully',
+      name: 'userUnfollowedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comment added successfully`
+  String get commentAddedSuccessfully {
+    return Intl.message(
+      'Comment added successfully',
+      name: 'commentAddedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reply added successfully`
+  String get replyAddedSuccessfully {
+    return Intl.message(
+      'Reply added successfully',
+      name: 'replyAddedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comment deleted successfully`
+  String get commentDeletedSuccessfully {
+    return Intl.message(
+      'Comment deleted successfully',
+      name: 'commentDeletedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reply deleted successfully`
+  String get replyDeletedSuccessfully {
+    return Intl.message(
+      'Reply deleted successfully',
+      name: 'replyDeletedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Uploading`
+  String get uploading {
+    return Intl.message(
+      'Uploading',
+      name: 'uploading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No users found`
+  String get noUsersFound {
+    return Intl.message(
+      'No users found',
+      name: 'noUsersFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No vendors found`
+  String get noVendorsFound {
+    return Intl.message(
+      'No vendors found',
+      name: 'noVendorsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No products found`
+  String get noProductsFound {
+    return Intl.message(
+      'No products found',
+      name: 'noProductsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No comments found`
+  String get noCommentsFound {
+    return Intl.message(
+      'No comments found',
+      name: 'noCommentsFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No replies found`
+  String get noRepliesFound {
+    return Intl.message(
+      'No replies found',
+      name: 'noRepliesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No likes found`
+  String get noLikesFound {
+    return Intl.message(
+      'No likes found',
+      name: 'noLikesFound',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for users`
+  String get searchForUsers {
+    return Intl.message(
+      'Search for users',
+      name: 'searchForUsers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for vendors`
+  String get searchForVendors {
+    return Intl.message(
+      'Search for vendors',
+      name: 'searchForVendors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search for products`
+  String get searchForProducts {
+    return Intl.message(
+      'Search for products',
+      name: 'searchForProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Vendor`
+  String get selectVendor {
+    return Intl.message(
+      'Select Vendor',
+      name: 'selectVendor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Product`
+  String get selectProduct {
+    return Intl.message(
+      'Select Product',
+      name: 'selectProduct',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write a comment`
+  String get writeComment {
+    return Intl.message(
+      'Write a comment',
+      name: 'writeComment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write a reply`
+  String get writeReply {
+    return Intl.message(
+      'Write a reply',
+      name: 'writeReply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this comment?`
+  String get confirmDeleteComment {
+    return Intl.message(
+      'Are you sure you want to delete this comment?',
+      name: 'confirmDeleteComment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this reply?`
+  String get confirmDeleteReply {
+    return Intl.message(
+      'Are you sure you want to delete this reply?',
+      name: 'confirmDeleteReply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Posts`
+  String get posts {
+    return Intl.message(
+      'Posts',
+      name: 'posts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading profile...`
+  String get loadingProfile {
+    return Intl.message(
+      'Loading profile...',
+      name: 'loadingProfile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading posts...`
+  String get loadingPosts {
+    return Intl.message(
+      'Loading posts...',
+      name: 'loadingPosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading comments...`
+  String get loadingComments {
+    return Intl.message(
+      'Loading comments...',
+      name: 'loadingComments',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading replies...`
+  String get loadingReplies {
+    return Intl.message(
+      'Loading replies...',
+      name: 'loadingReplies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading likes...`
+  String get loadingLikes {
+    return Intl.message(
+      'Loading likes...',
+      name: 'loadingLikes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading users...`
+  String get loadingUsers {
+    return Intl.message(
+      'Loading users...',
+      name: 'loadingUsers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading vendors...`
+  String get loadingVendors {
+    return Intl.message(
+      'Loading vendors...',
+      name: 'loadingVendors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading products...`
+  String get loadingProducts {
+    return Intl.message(
+      'Loading products...',
+      name: 'loadingProducts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refresh`
+  String get refresh {
+    return Intl.message(
+      'Refresh',
+      name: 'refresh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Upload Progress`
+  String get uploadProgress {
+    return Intl.message(
+      'Upload Progress',
+      name: 'uploadProgress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Updating...`
+  String get optimisticUpdate {
+    return Intl.message(
+      'Updating...',
+      name: 'optimisticUpdate',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Temporary state`
+  String get temporaryState {
+    return Intl.message(
+      'Temporary state',
+      name: 'temporaryState',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Post deleted`
+  String get postDeleted {
+    return Intl.message(
+      'Post deleted',
+      name: 'postDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Post`
+  String get editPost {
+    return Intl.message(
+      'Edit Post',
+      name: 'editPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Post`
+  String get deletePost {
+    return Intl.message(
+      'Delete Post',
+      name: 'deletePost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this post? This action cannot be undone.`
+  String get confirmDeletePost {
+    return Intl.message(
+      'Are you sure you want to delete this post? This action cannot be undone.',
+      name: 'confirmDeletePost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message(
+      'Delete',
+      name: 'delete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share Post`
+  String get sharePost {
+    return Intl.message(
+      'Share Post',
+      name: 'sharePost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share functionality would be implemented here`
+  String get shareFunctionality {
+    return Intl.message(
+      'Share functionality would be implemented here',
+      name: 'shareFunctionality',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your post`
+  String get yourPost {
+    return Intl.message(
+      'Your post',
+      name: 'yourPost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You`
+  String get you {
+    return Intl.message(
+      'You',
+      name: 'you',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comment added`
+  String get commentAdded {
+    return Intl.message(
+      'Comment added',
+      name: 'commentAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reply added`
+  String get replyAdded {
+    return Intl.message(
+      'Reply added',
+      name: 'replyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Comment deleted`
+  String get commentDeleted {
+    return Intl.message(
+      'Comment deleted',
+      name: 'commentDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reply deleted`
+  String get replyDeleted {
+    return Intl.message(
+      'Reply deleted',
+      name: 'replyDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No user posts`
+  String get noUserPosts {
+    return Intl.message(
+      'No user posts',
+      name: 'noUserPosts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading...`
+  String get shimmerLoading {
+    return Intl.message(
+      'Loading...',
+      name: 'shimmerLoading',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No data available`
+  String get noDataAvailable {
+    return Intl.message(
+      'No data available',
+      name: 'noDataAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error loading data`
+  String get errorLoadingData {
+    return Intl.message(
+      'Error loading data',
+      name: 'errorLoadingData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Story`
+  String get story {
+    return Intl.message(
+      'Story',
+      name: 'story',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Story`
+  String get addStory {
+    return Intl.message(
+      'Add Story',
+      name: 'addStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No stories available`
+  String get noStoriesAvailable {
+    return Intl.message(
+      'No stories available',
+      name: 'noStoriesAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading story...`
+  String get loadingStory {
+    return Intl.message(
+      'Loading story...',
+      name: 'loadingStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Story added`
+  String get storyAdded {
+    return Intl.message(
+      'Story added',
+      name: 'storyAdded',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to add story`
+  String get failedToAddStory {
+    return Intl.message(
+      'Failed to add story',
+      name: 'failedToAddStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Story deleted`
+  String get storyDeleted {
+    return Intl.message(
+      'Story deleted',
+      name: 'storyDeleted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to delete story`
+  String get failedToDeleteStory {
+    return Intl.message(
+      'Failed to delete story',
+      name: 'failedToDeleteStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View Story`
+  String get viewStory {
+    return Intl.message(
+      'View Story',
+      name: 'viewStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Story viewed`
+  String get storyViewed {
+    return Intl.message(
+      'Story viewed',
+      name: 'storyViewed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to view story`
+  String get failedToViewStory {
+    return Intl.message(
+      'Failed to view story',
+      name: 'failedToViewStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Story expired`
+  String get storyExpired {
+    return Intl.message(
+      'Story expired',
+      name: 'storyExpired',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Uploading story...`
+  String get uploadingStory {
+    return Intl.message(
+      'Uploading story...',
+      name: 'uploadingStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Story upload progress`
+  String get storyUploadProgress {
+    return Intl.message(
+      'Story upload progress',
+      name: 'storyUploadProgress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Story upload complete`
+  String get storyUploadComplete {
+    return Intl.message(
+      'Story upload complete',
+      name: 'storyUploadComplete',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Story upload failed`
+  String get storyUploadFailed {
+    return Intl.message(
+      'Story upload failed',
+      name: 'storyUploadFailed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add photo to story`
+  String get addPhotoToStory {
+    return Intl.message(
+      'Add photo to story',
+      name: 'addPhotoToStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add video to story`
+  String get addVideoToStory {
+    return Intl.message(
+      'Add video to story',
+      name: 'addVideoToStory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to load notifications`
+  String get failedToLoadNotifications {
+    return Intl.message(
+      'Failed to load notifications',
+      name: 'failedToLoadNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to mark notification as read`
+  String get failedToMarkNotificationAsRead {
+    return Intl.message(
+      'Failed to mark notification as read',
+      name: 'failedToMarkNotificationAsRead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Failed to mark all notifications as read`
+  String get failedToMarkAllNotificationsAsRead {
+    return Intl.message(
+      'Failed to mark all notifications as read',
+      name: 'failedToMarkAllNotificationsAsRead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification marked as read`
+  String get notificationMarkedAsRead {
+    return Intl.message(
+      'Notification marked as read',
+      name: 'notificationMarkedAsRead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All notifications marked as read`
+  String get allNotificationsMarkedAsRead {
+    return Intl.message(
+      'All notifications marked as read',
+      name: 'allNotificationsMarkedAsRead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You're all caught up!`
+  String get notificationsEmpty {
+    return Intl.message(
+      'You\'re all caught up!',
+      name: 'notificationsEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No notifications yet`
+  String get notificationsEmptySubtitle {
+    return Intl.message(
+      'No notifications yet',
+      name: 'notificationsEmptySubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Loading notifications...`
+  String get loadingNotifications {
+    return Intl.message(
+      'Loading notifications...',
+      name: 'loadingNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Refresh notifications`
+  String get refreshNotifications {
+    return Intl.message(
+      'Refresh notifications',
+      name: 'refreshNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Mark all as read`
+  String get markAllAsRead {
+    return Intl.message(
+      'Mark all as read',
+      name: 'markAllAsRead',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification settings`
+  String get notificationSettings {
+    return Intl.message(
+      'Notification settings',
+      name: 'notificationSettings',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification preferences`
+  String get notificationPreferences {
+    return Intl.message(
+      'Notification preferences',
+      name: 'notificationPreferences',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notification history`
+  String get notificationHistory {
+    return Intl.message(
+      'Notification history',
+      name: 'notificationHistory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Clear all notifications`
+  String get clearAllNotifications {
+    return Intl.message(
+      'Clear all notifications',
+      name: 'clearAllNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to clear all notifications?`
+  String get confirmClearAllNotifications {
+    return Intl.message(
+      'Are you sure you want to clear all notifications?',
+      name: 'confirmClearAllNotifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications cleared`
+  String get notificationsCleared {
+    return Intl.message(
+      'Notifications cleared',
+      name: 'notificationsCleared',
       desc: '',
       args: [],
     );

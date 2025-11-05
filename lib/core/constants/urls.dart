@@ -73,6 +73,7 @@ class Urls {
   static const String getPrepareTime = '/Cart/get_prepare_time/';
   static const String getOftenOrderdWith = '/Cart/get_ofen_orderd_with/';
   static const String addItemToCart = '/Cart/items/add_item_to_cart/';
+  static const String closeCart = '/Cart/close_cart/';
   static const String updateItemQun = '/Cart/items/update_item_quantity/';
   static const String removeItemFromCart = '/Cart/items/remove_item_from_cart/';
   static const String addOrUpdateCopon = '/Cart/coupon/add_coupon_to_cart/';

@@ -38,4 +38,5 @@ class ProductEvent with _$ProductEvent {
   const factory ProductEvent.selectPreparingTime(Duration time) =
       _SelectPreparingTime;
   const factory ProductEvent.pickImage(File img) = _PickImage;
+  const factory ProductEvent.updateSizePrice(String size, double price) = _UpdateSizePrice;
 }

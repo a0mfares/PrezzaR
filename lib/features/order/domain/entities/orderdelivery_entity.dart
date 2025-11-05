@@ -1,4 +1,4 @@
-import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:auto_mappr_annotation/auto_mappr_annotation.dart';
 
 import '../../data/models/orderdelivery_model.dart';
@@ -17,12 +17,12 @@ class OrderDeliveryEntity extends $OrderDeliveryEntity {
   final String delivery_address;
 
   @HiveField(2)
-  final String customer_phone;
+  final String? customer_phone;
 
   OrderDeliveryEntity({
     required this.uuid,
     required this.delivery_address,
-    required this.customer_phone,
+    this.customer_phone,
   });
 
   factory OrderDeliveryEntity.empty() => OrderDeliveryEntity(

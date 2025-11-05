@@ -50,7 +50,7 @@ class FavVendorItemWidget extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(vendor.bussiness_name, style: tstyle.headlineSmall),
-                  Text('Restaurant name', style: tstyle.bodySmall),
+                  Text(tr.brandName, style: tstyle.bodySmall),
                   Row(
                     children: [
                       const Icon(Icons.star, color: Colors.yellow),
@@ -67,7 +67,7 @@ class FavVendorItemWidget extends StatelessWidget {
                 listener: (context, state) {
                   state.maybeMap(
                     successDeleted: (v) {
-                      BotToast.showText(text: 'success Removed');
+                      BotToast.showText(text: tr.removedFromFavorites);
                     },
                     failure: (v) {
                       BotToast.showText(text: v.err);
