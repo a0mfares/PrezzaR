@@ -71,6 +71,8 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                   Row(
                     children: [
                       BlocBuilder<ProfileBloc, ProfileState>(
+                    bloc: bloc,
+                        buildWhen: (previous, current) => true,
                         builder: (context, state) {
                           return ProfileAvater(
                             onTap: () {
@@ -131,6 +133,8 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                       Expanded(
                         flex: 2,
                         child: BlocBuilder<ProfileBloc, ProfileState>(
+                    bloc: bloc,
+                          buildWhen: (previous, current) => true,
                           builder: (context, state) {
                             return TextFormField(
                               onChanged: (v) {
@@ -252,6 +256,8 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                   ),
                   vSpace(3),
                   BlocBuilder<ProfileBloc, ProfileState>(
+                    bloc: bloc,
+                    buildWhen: (previous, current) => true,
                     builder: (context, state) {
                       return Row(
                         children: [
@@ -319,6 +325,8 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                     },
                   ),
                   BlocBuilder<ProfileBloc, ProfileState>(
+                    bloc: bloc,
+                    buildWhen: (previous, current) => true,
                     builder: (context, state) {
                       return CheckboxListTile(
                         value: bloc.isOpen24,
@@ -335,6 +343,8 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                   ),
                   vSpace(3),
                   BlocBuilder<ProfileBloc, ProfileState>(
+                    bloc: bloc,
+                    buildWhen: (previous, current) => true,
                     builder: (context, state) {
                       return SwitchListTile(
                         value: bloc.canBook,
@@ -354,6 +364,8 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                     style: tstyle.bodyLarge,
                   ),
                   BlocBuilder<ProfileBloc, ProfileState>(
+                    bloc: bloc,
+                    buildWhen: (previous, current) => true,
                     builder: (context, state) {
                       return Column(
                         children: [
@@ -390,6 +402,7 @@ class _BusinesProfilePageState extends State<BusinesProfilePage> {
                   ),
                   vSpace(3),
                   BlocBuilder<ProfileBloc, ProfileState>(
+                    bloc: bloc,
                     builder: (context, state) {
                       final isLoading = state.maybeWhen(
                         loading: () => true,

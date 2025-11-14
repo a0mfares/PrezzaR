@@ -3052,7 +3052,7 @@ mixin _$ProfileState {
     required TResult Function(String message, UserEntity? user) successUpdated,
     required TResult Function(String error, Map<String, dynamic>? rollbackData)
         failure,
-    required TResult Function(UserEntity? user) optimisticUpdate,
+    required TResult Function(UserEntity user, int timestamp) optimisticUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3064,7 +3064,7 @@ mixin _$ProfileState {
     TResult? Function(String message, UserEntity? user)? successUpdated,
     TResult? Function(String error, Map<String, dynamic>? rollbackData)?
         failure,
-    TResult? Function(UserEntity? user)? optimisticUpdate,
+    TResult? Function(UserEntity user, int timestamp)? optimisticUpdate,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -3075,7 +3075,7 @@ mixin _$ProfileState {
     TResult Function(UserEntity? user)? success,
     TResult Function(String message, UserEntity? user)? successUpdated,
     TResult Function(String error, Map<String, dynamic>? rollbackData)? failure,
-    TResult Function(UserEntity? user)? optimisticUpdate,
+    TResult Function(UserEntity user, int timestamp)? optimisticUpdate,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -3178,7 +3178,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function(String message, UserEntity? user) successUpdated,
     required TResult Function(String error, Map<String, dynamic>? rollbackData)
         failure,
-    required TResult Function(UserEntity? user) optimisticUpdate,
+    required TResult Function(UserEntity user, int timestamp) optimisticUpdate,
   }) {
     return initial();
   }
@@ -3193,7 +3193,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function(String message, UserEntity? user)? successUpdated,
     TResult? Function(String error, Map<String, dynamic>? rollbackData)?
         failure,
-    TResult? Function(UserEntity? user)? optimisticUpdate,
+    TResult? Function(UserEntity user, int timestamp)? optimisticUpdate,
   }) {
     return initial?.call();
   }
@@ -3207,7 +3207,7 @@ class _$InitialImpl implements _Initial {
     TResult Function(UserEntity? user)? success,
     TResult Function(String message, UserEntity? user)? successUpdated,
     TResult Function(String error, Map<String, dynamic>? rollbackData)? failure,
-    TResult Function(UserEntity? user)? optimisticUpdate,
+    TResult Function(UserEntity user, int timestamp)? optimisticUpdate,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -3312,7 +3312,7 @@ class _$LoadingImpl implements _Loading {
     required TResult Function(String message, UserEntity? user) successUpdated,
     required TResult Function(String error, Map<String, dynamic>? rollbackData)
         failure,
-    required TResult Function(UserEntity? user) optimisticUpdate,
+    required TResult Function(UserEntity user, int timestamp) optimisticUpdate,
   }) {
     return loading();
   }
@@ -3327,7 +3327,7 @@ class _$LoadingImpl implements _Loading {
     TResult? Function(String message, UserEntity? user)? successUpdated,
     TResult? Function(String error, Map<String, dynamic>? rollbackData)?
         failure,
-    TResult? Function(UserEntity? user)? optimisticUpdate,
+    TResult? Function(UserEntity user, int timestamp)? optimisticUpdate,
   }) {
     return loading?.call();
   }
@@ -3341,7 +3341,7 @@ class _$LoadingImpl implements _Loading {
     TResult Function(UserEntity? user)? success,
     TResult Function(String message, UserEntity? user)? successUpdated,
     TResult Function(String error, Map<String, dynamic>? rollbackData)? failure,
-    TResult Function(UserEntity? user)? optimisticUpdate,
+    TResult Function(UserEntity user, int timestamp)? optimisticUpdate,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -3473,7 +3473,7 @@ class _$LoadingFieldImpl implements _LoadingField {
     required TResult Function(String message, UserEntity? user) successUpdated,
     required TResult Function(String error, Map<String, dynamic>? rollbackData)
         failure,
-    required TResult Function(UserEntity? user) optimisticUpdate,
+    required TResult Function(UserEntity user, int timestamp) optimisticUpdate,
   }) {
     return loadingField(fieldName);
   }
@@ -3488,7 +3488,7 @@ class _$LoadingFieldImpl implements _LoadingField {
     TResult? Function(String message, UserEntity? user)? successUpdated,
     TResult? Function(String error, Map<String, dynamic>? rollbackData)?
         failure,
-    TResult? Function(UserEntity? user)? optimisticUpdate,
+    TResult? Function(UserEntity user, int timestamp)? optimisticUpdate,
   }) {
     return loadingField?.call(fieldName);
   }
@@ -3502,7 +3502,7 @@ class _$LoadingFieldImpl implements _LoadingField {
     TResult Function(UserEntity? user)? success,
     TResult Function(String message, UserEntity? user)? successUpdated,
     TResult Function(String error, Map<String, dynamic>? rollbackData)? failure,
-    TResult Function(UserEntity? user)? optimisticUpdate,
+    TResult Function(UserEntity user, int timestamp)? optimisticUpdate,
     required TResult orElse(),
   }) {
     if (loadingField != null) {
@@ -3639,7 +3639,7 @@ class _$SuccessImpl implements _Success {
     required TResult Function(String message, UserEntity? user) successUpdated,
     required TResult Function(String error, Map<String, dynamic>? rollbackData)
         failure,
-    required TResult Function(UserEntity? user) optimisticUpdate,
+    required TResult Function(UserEntity user, int timestamp) optimisticUpdate,
   }) {
     return success(user);
   }
@@ -3654,7 +3654,7 @@ class _$SuccessImpl implements _Success {
     TResult? Function(String message, UserEntity? user)? successUpdated,
     TResult? Function(String error, Map<String, dynamic>? rollbackData)?
         failure,
-    TResult? Function(UserEntity? user)? optimisticUpdate,
+    TResult? Function(UserEntity user, int timestamp)? optimisticUpdate,
   }) {
     return success?.call(user);
   }
@@ -3668,7 +3668,7 @@ class _$SuccessImpl implements _Success {
     TResult Function(UserEntity? user)? success,
     TResult Function(String message, UserEntity? user)? successUpdated,
     TResult Function(String error, Map<String, dynamic>? rollbackData)? failure,
-    TResult Function(UserEntity? user)? optimisticUpdate,
+    TResult Function(UserEntity user, int timestamp)? optimisticUpdate,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -3813,7 +3813,7 @@ class _$SuccessUpdatedImpl implements _SuccessUpdated {
     required TResult Function(String message, UserEntity? user) successUpdated,
     required TResult Function(String error, Map<String, dynamic>? rollbackData)
         failure,
-    required TResult Function(UserEntity? user) optimisticUpdate,
+    required TResult Function(UserEntity user, int timestamp) optimisticUpdate,
   }) {
     return successUpdated(message, user);
   }
@@ -3828,7 +3828,7 @@ class _$SuccessUpdatedImpl implements _SuccessUpdated {
     TResult? Function(String message, UserEntity? user)? successUpdated,
     TResult? Function(String error, Map<String, dynamic>? rollbackData)?
         failure,
-    TResult? Function(UserEntity? user)? optimisticUpdate,
+    TResult? Function(UserEntity user, int timestamp)? optimisticUpdate,
   }) {
     return successUpdated?.call(message, user);
   }
@@ -3842,7 +3842,7 @@ class _$SuccessUpdatedImpl implements _SuccessUpdated {
     TResult Function(UserEntity? user)? success,
     TResult Function(String message, UserEntity? user)? successUpdated,
     TResult Function(String error, Map<String, dynamic>? rollbackData)? failure,
-    TResult Function(UserEntity? user)? optimisticUpdate,
+    TResult Function(UserEntity user, int timestamp)? optimisticUpdate,
     required TResult orElse(),
   }) {
     if (successUpdated != null) {
@@ -4000,7 +4000,7 @@ class _$FailureImpl implements _Failure {
     required TResult Function(String message, UserEntity? user) successUpdated,
     required TResult Function(String error, Map<String, dynamic>? rollbackData)
         failure,
-    required TResult Function(UserEntity? user) optimisticUpdate,
+    required TResult Function(UserEntity user, int timestamp) optimisticUpdate,
   }) {
     return failure(error, rollbackData);
   }
@@ -4015,7 +4015,7 @@ class _$FailureImpl implements _Failure {
     TResult? Function(String message, UserEntity? user)? successUpdated,
     TResult? Function(String error, Map<String, dynamic>? rollbackData)?
         failure,
-    TResult? Function(UserEntity? user)? optimisticUpdate,
+    TResult? Function(UserEntity user, int timestamp)? optimisticUpdate,
   }) {
     return failure?.call(error, rollbackData);
   }
@@ -4029,7 +4029,7 @@ class _$FailureImpl implements _Failure {
     TResult Function(UserEntity? user)? success,
     TResult Function(String message, UserEntity? user)? successUpdated,
     TResult Function(String error, Map<String, dynamic>? rollbackData)? failure,
-    TResult Function(UserEntity? user)? optimisticUpdate,
+    TResult Function(UserEntity user, int timestamp)? optimisticUpdate,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -4103,7 +4103,7 @@ abstract class _$$OptimisticUpdateImplCopyWith<$Res> {
           $Res Function(_$OptimisticUpdateImpl) then) =
       __$$OptimisticUpdateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserEntity? user});
+  $Res call({UserEntity user, int timestamp});
 }
 
 /// @nodoc
@@ -4117,13 +4117,18 @@ class __$$OptimisticUpdateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? user = freezed,
+    Object? user = null,
+    Object? timestamp = null,
   }) {
     return _then(_$OptimisticUpdateImpl(
-      user: freezed == user
+      user: null == user
           ? _value.user
           : user // ignore: cast_nullable_to_non_nullable
-              as UserEntity?,
+              as UserEntity,
+      timestamp: null == timestamp
+          ? _value.timestamp
+          : timestamp // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -4131,14 +4136,17 @@ class __$$OptimisticUpdateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$OptimisticUpdateImpl implements _OptimisticUpdate {
-  const _$OptimisticUpdateImpl({this.user});
+  const _$OptimisticUpdateImpl({required this.user, this.timestamp = 0});
 
   @override
-  final UserEntity? user;
+  final UserEntity user;
+  @override
+  @JsonKey()
+  final int timestamp;
 
   @override
   String toString() {
-    return 'ProfileState.optimisticUpdate(user: $user)';
+    return 'ProfileState.optimisticUpdate(user: $user, timestamp: $timestamp)';
   }
 
   @override
@@ -4146,11 +4154,13 @@ class _$OptimisticUpdateImpl implements _OptimisticUpdate {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OptimisticUpdateImpl &&
-            (identical(other.user, user) || other.user == user));
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.timestamp, timestamp) ||
+                other.timestamp == timestamp));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, user);
+  int get hashCode => Object.hash(runtimeType, user, timestamp);
 
   @JsonKey(ignore: true)
   @override
@@ -4169,9 +4179,9 @@ class _$OptimisticUpdateImpl implements _OptimisticUpdate {
     required TResult Function(String message, UserEntity? user) successUpdated,
     required TResult Function(String error, Map<String, dynamic>? rollbackData)
         failure,
-    required TResult Function(UserEntity? user) optimisticUpdate,
+    required TResult Function(UserEntity user, int timestamp) optimisticUpdate,
   }) {
-    return optimisticUpdate(user);
+    return optimisticUpdate(user, timestamp);
   }
 
   @override
@@ -4184,9 +4194,9 @@ class _$OptimisticUpdateImpl implements _OptimisticUpdate {
     TResult? Function(String message, UserEntity? user)? successUpdated,
     TResult? Function(String error, Map<String, dynamic>? rollbackData)?
         failure,
-    TResult? Function(UserEntity? user)? optimisticUpdate,
+    TResult? Function(UserEntity user, int timestamp)? optimisticUpdate,
   }) {
-    return optimisticUpdate?.call(user);
+    return optimisticUpdate?.call(user, timestamp);
   }
 
   @override
@@ -4198,11 +4208,11 @@ class _$OptimisticUpdateImpl implements _OptimisticUpdate {
     TResult Function(UserEntity? user)? success,
     TResult Function(String message, UserEntity? user)? successUpdated,
     TResult Function(String error, Map<String, dynamic>? rollbackData)? failure,
-    TResult Function(UserEntity? user)? optimisticUpdate,
+    TResult Function(UserEntity user, int timestamp)? optimisticUpdate,
     required TResult orElse(),
   }) {
     if (optimisticUpdate != null) {
-      return optimisticUpdate(user);
+      return optimisticUpdate(user, timestamp);
     }
     return orElse();
   }
@@ -4255,10 +4265,12 @@ class _$OptimisticUpdateImpl implements _OptimisticUpdate {
 }
 
 abstract class _OptimisticUpdate implements ProfileState {
-  const factory _OptimisticUpdate({final UserEntity? user}) =
-      _$OptimisticUpdateImpl;
+  const factory _OptimisticUpdate(
+      {required final UserEntity user,
+      final int timestamp}) = _$OptimisticUpdateImpl;
 
-  UserEntity? get user;
+  UserEntity get user;
+  int get timestamp;
   @JsonKey(ignore: true)
   _$$OptimisticUpdateImplCopyWith<_$OptimisticUpdateImpl> get copyWith =>
       throw _privateConstructorUsedError;

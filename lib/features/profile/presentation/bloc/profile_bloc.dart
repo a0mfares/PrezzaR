@@ -121,7 +121,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
       log('Error parsing time: $e');
     }
     
-    emit(const ProfileState.success());
+    // Emit success with timestamp to ensure state change
+    emit(ProfileState.success(user: usr));
   }
 
   Future<void> _changeStatusEvent(Emitter<ProfileState> emit, String type) async {
@@ -136,7 +137,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         username = !username;
         break;
     }
-    emit(const ProfileState.optimisticUpdate());
+    // Create a new state instance to trigger rebuild
+    emit(ProfileState.optimisticUpdate(user: usr,    timestamp: DateTime.now().millisecondsSinceEpoch,));
   }
 
   Future<void> _updatePassEvent(Emitter<ProfileState> emit) async {
@@ -182,7 +184,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
           emit(ProfileState.failure(error: err.getMsg));
         },
         (res) async {
-          emit(const ProfileState.success());
+          emit(ProfileState.success(user: res));
         },
       );
     } on TimeoutException {
@@ -335,7 +337,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         },
         (res) async {
           await HiveStorage.set(kBusiness, res);
-          emit(const ProfileState.success());
+          emit(ProfileState.success(user: usr));
         },
       );
     } on TimeoutException {
@@ -347,29 +349,34 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
 
   Future<void> _canBookEvent(Emitter<ProfileState> emit) async {
     canBook = !canBook;
-    emit(const ProfileState.optimisticUpdate());
+    // Create new state instance with current timestamp to force rebuild
+    emit(ProfileState.optimisticUpdate(user: usr,     timestamp: DateTime.now().millisecondsSinceEpoch,));
   }
 
   Future<void> _selectOpen24Event(Emitter<ProfileState> emit) async {
     isOpen24 = !isOpen24;
     openTime = isOpen24 ? const Duration(hours: 0, minutes: 0) : const Duration();
     closeTime = isOpen24 ? const Duration(hours: 23, minutes: 59) : const Duration();
-    emit(const ProfileState.optimisticUpdate());
+    // Create new state instance to force rebuild
+    emit(ProfileState.optimisticUpdate(user: usr,     timestamp: DateTime.now().millisecondsSinceEpoch,));
   }
 
   Future<void> _selectProvidingEvent(Emitter<ProfileState> emit, String providing) async {
     selectedProviding = providing;
-    emit(const ProfileState.optimisticUpdate());
+    // Create new state instance to force rebuild
+    emit(ProfileState.optimisticUpdate(user: usr,     timestamp: DateTime.now().millisecondsSinceEpoch,));
   }
 
   Future<void> _selectCategoryEvent(Emitter<ProfileState> emit, String category) async {
     selectedCategory = category;
-    emit(const ProfileState.optimisticUpdate());
+    // Create new state instance to force rebuild
+    emit(ProfileState.optimisticUpdate(user: usr,    timestamp: DateTime.now().millisecondsSinceEpoch,));
   }
 
   Future<void> _pickImageEvent(Emitter<ProfileState> emit, File logo) async {
     brandLogo = logo;
-    emit(const ProfileState.optimisticUpdate());
+    // Create new state instance to force rebuild
+    emit(ProfileState.optimisticUpdate(user: usr,    timestamp: DateTime.now().millisecondsSinceEpoch,));
   }
 
   Future<void> _selectTimeEvent(Emitter<ProfileState> emit, bool isOpen, Duration duration) async {
@@ -378,7 +385,8 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     } else {
       closeTime = duration;
     }
-    emit(const ProfileState.optimisticUpdate());
+    // Create new state instance to force rebuild
+    emit(ProfileState.optimisticUpdate(user: usr,    timestamp: DateTime.now().millisecondsSinceEpoch,));
   }
 
   void enableEdit(String field) {

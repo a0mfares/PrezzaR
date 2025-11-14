@@ -23,14 +23,17 @@ class BrancheEntity extends $BrancheEntity {
   @HiveField(3)
   final double latitude;
   @HiveField(4)
-  final String branch_uuid;
+  final int id;
 
+  @HiveField(5)
+  final String uuid;
   BrancheEntity({
     required this.branch_address,
     required this.branch_landmark,
     required this.longitude,
     required this.latitude,
-    required this.branch_uuid,
+    required this.id,
+        required this.uuid
   });
 
   factory BrancheEntity.empty() => BrancheEntity(
@@ -38,7 +41,8 @@ class BrancheEntity extends $BrancheEntity {
         branch_landmark: '',
         longitude: 0.0,
         latitude: 0.0,
-        branch_uuid: '',
+        id: 0,
+        uuid: ''
       );
 
   factory BrancheEntity.fromModel(BrancheModel model) =>

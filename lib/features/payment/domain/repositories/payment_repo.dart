@@ -16,4 +16,6 @@ abstract class PaymentRepo {
   Future<Either<FailureServices, List<CreditCardEntity>>> getCardCustomer();
   Future<Either<FailureServices, void>> deleteCardCustomer(
       Map<String, dynamic> data);
+  Future<Either<FailureServices, void>> deleteCardVendor(
+      Map<String, dynamic> data);
 }

@@ -39,7 +39,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
   final TextEditingController cvv = TextEditingController();
   final LocalAuthentication _localAuth = LocalAuthentication();
   VendorCardEntity vendorCard = VendorCardEntity(
-      bank_name: '', card_holder_name: '', card_last_four_digits: '');
+      bank_name: '', card_holder_name: '', card_last_four_digits: '', uuid: '');
   final GlobalKey<FormState> formCard = GlobalKey();
   List<CreditCardEntity> customerCard = [];
   PaymentBloc(
@@ -109,7 +109,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
               },
               (res) {
                 emit(const PaymentState.successDeleted());
-                add(const PaymentEvent.getCustomerCard());
+                add(const PaymentEvent.getVendorCard());
               },
             );
           } catch (e) {
@@ -173,6 +173,7 @@ class PaymentBloc extends Bloc<PaymentEvent, PaymentState> {
               },
             );
           } catch (e) {
+            
             emit(PaymentState.failure(e.toString()));
           }
         },

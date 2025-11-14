@@ -11,6 +11,7 @@ VendorCardModel _$VendorCardModelFromJson(Map<String, dynamic> json) =>
       bank_name: json['bank_name'] as String,
       card_holder_name: json['card_holder_name'] as String,
       card_last_four_digits: json['card_last_four_digits'] as String,
+      uuid: json['uuid'] as String,
     );
 
 Map<String, dynamic> _$VendorCardModelToJson(VendorCardModel instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$VendorCardModelToJson(VendorCardModel instance) =>
       'bank_name': instance.bank_name,
       'card_holder_name': instance.card_holder_name,
       'card_last_four_digits': instance.card_last_four_digits,
+      'uuid': instance.uuid,
     };

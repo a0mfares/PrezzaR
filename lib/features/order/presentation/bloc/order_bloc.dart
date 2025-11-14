@@ -238,7 +238,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
               'booking_date': bookingDate != null
                   ? DateFormat('yyyy-MM-dd').format(bookingDate!)
                   : '',
-              'branch_uuid': selectedBranch.branch_uuid,
+              'branch_uuid': selectedBranch.id,
               'status': 'pending',
               'cart_uuid': CartBloc.get(currentCTX).cartDetails.uuid,
               'customer_phone': phoneController.text,
@@ -339,7 +339,7 @@ class OrderBloc extends Bloc<OrderEvent, OrderState> {
               emit(OrderState.failure(tr.bookingDateRequired));
               return;
             }
-            if (selectedBranch.branch_uuid.isEmpty) {
+            if (selectedBranch.id.toString().isEmpty) {
               emit(OrderState.failure(tr.selectBranch));
               return;
             }

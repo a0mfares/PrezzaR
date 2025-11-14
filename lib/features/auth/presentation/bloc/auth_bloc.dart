@@ -83,12 +83,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             });
             result.fold((failure) {
               emit(AuthState.failure(failure.getMsg));
-            }, (success) {
+            }, (success)  {
               HiveStorage.set(kUser, success);
 
               if (ifNewUser) {
                 emit(AuthState.failure(tr.completeSetup));
               } else {
+                 HiveStorage.set<String>(kPass, password.text);
+
                 emit(const AuthState.loginSuccess());
               }
             });

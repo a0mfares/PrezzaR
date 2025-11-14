@@ -81,6 +81,10 @@ class AppRouter extends RootStackRouter {
           guards: [PrezzaGuard()],
         ),
         AutoRoute(
+          page: ProductVendorDetailsRoute.page,
+          guards: [PrezzaGuard()],
+        ),
+        AutoRoute(
           page: VendorDetailsRoute.page,
           guards: [PrezzaGuard()],
         ),

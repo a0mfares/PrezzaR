@@ -1,10 +1,14 @@
 // ignore_for_file: no_wildcard_variable_uses
 
+import 'dart:math';
+
+import 'dart:developer';
 import 'package:auto_route/auto_route.dart';
 import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/core/constants/assets.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
@@ -26,15 +30,46 @@ class PaymentCardPage extends StatefulWidget {
   State<PaymentCardPage> createState() => _PaymentCardPageState();
 }
 
-class _PaymentCardPageState extends State<PaymentCardPage> {
+class _PaymentCardPageState extends State<PaymentCardPage> with TickerProviderStateMixin {
   late final PaymentBloc bloc;
+  late AnimationController _animationController;
+  late Animation<double> _fadeAnimation;
+  late AnimationController _cardAnimationController;
+  final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
+  final List<int> _cardItems = [];
 
   @override
   void initState() {
     bloc = PaymentBloc.get(context);
-    // bloc.add(const PaymentEvent.getCreditCards());
-
+    _animationController = AnimationController(
+      duration: const Duration(milliseconds: 1000),
+      vsync: this,
+    );
+    _fadeAnimation = Tween<double>(begin: 0.0, end: 1.0).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.easeInOut,
+      ),
+    );
+    _cardAnimationController = AnimationController(
+      duration: const Duration(milliseconds: 300),
+      vsync: this,
+    );
+    
+    // Initialize card items
+    if (isCustomer && bloc.customerCard.isNotEmpty) {
+      _cardItems.addAll(List.generate(bloc.customerCard.length, (index) => index));
+    }
+    
+    _animationController.forward();
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    _cardAnimationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -44,196 +79,168 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        // actions: [],
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        titleTextStyle: TextStyle(
+          color: Colors.black87,
+          fontSize: 18.sp,
+          fontWeight: FontWeight.w600,
+        ),
       ).prezzaLeading(),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 25),
-        child: BlocBuilder<PaymentBloc, PaymentState>(
-          builder: (context, state) {
-            return state.maybeWhen(
-              success: () {
-                if (isCustomer) {
-                  return ListView.builder(
-                    itemCount: bloc.customerCard.length + 1,
-                    itemBuilder: (context, index) {
-                      if (bloc.customerCard.length == index) {
-                        return PrezzaBtn(
-                          onTap: () {
-                            appRoute.navigate(const CardDetailsRoute());
-                          },
-                          icon: Icon(
-                            Icons.add,
-                            color: primary,
-                          ),
-                          title: tr.addPaymentMethod,
-                        );
-                      }
-                      final card = bloc.customerCard[index];
-                      return SizedBox(
-                        width: 100.w,
-                        height: 30.w,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SvgPicture.asset(Assets.assetsImagesCard),
-                            hSpace(3),
-                            Expanded(
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Text(
-                                    card.card_holder_name,
-                                    style: tstyle.headlineSmall,
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                  vSpace(1),
-                                  Text(
-                                      '* * * * * * * * * * * * * * * * ${card.last_4_digits}'),
-                                ],
-                              ),
-                            ),
-                            hSpace(3),
-                            InkWell(
-                              onTap: () {
-                                showDialogPrezza(
-                                  context: context,
-                                  title: tr.deleteCard,
-                                  subTitle: tr.areUSureDeleteCard,
-                                  onTap: () {
-                                    bloc.add(
-                                      PaymentEvent.deleteCustomerCard(
-                                          card.uuid),
-                                    );
-                                    context.maybePop();
-                                  },
-                                );
-                              },
-                              child: CircleAvatar(
-                                backgroundColor: lightCream,
-                                child:
-                                    SvgPicture.asset(Assets.assetsImagesTrash),
-                              ),
-                            )
-                          ],
-                        ),
-                      );
-                    },
-                  );
-                }
-                return InkWell(
-                  onTap: () {},
-                  child: SizedBox(
-                    width: 100.w,
-                    height: 30.w,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SvgPicture.asset(Assets.assetsImagesCard),
-                        hSpace(3),
-                        Expanded(
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Text(
-                                bloc.vendorCard.bank_name,
-                                style: tstyle.headlineSmall,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              Text(
-                                bloc.vendorCard.card_holder_name,
-                                style: tstyle.bodyLarge,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              vSpace(1),
-                              Text(
-                                  '* * * * * * * * * * * * * * * * ${bloc.vendorCard.card_last_four_digits}'),
-                            ],
-                          ),
-                        ),
-                        hSpace(3),
-                        InkWell(
-                          onTap: () {
-                            showDialogPrezza(
-                              context: context,
-                              title: tr.deleteCard,
-                              subTitle: tr.areUSureDeleteCard,
-                              onTap: () {
-                                bloc.add(
-                                  PaymentEvent.deleteVendorCard(
-                                      bloc.vendorCard.card_last_four_digits),
-                                );
-                                context.maybePop();
-                              },
-                            );
-                          },
-                          child: CircleAvatar(
-                            backgroundColor: lightCream,
-                            child: SvgPicture.asset(Assets.assetsImagesTrash),
-                          ),
-                        )
-                      ],
+      body: FadeTransition(
+        opacity: _fadeAnimation,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: BlocConsumer<PaymentBloc, PaymentState>(
+            listener: (context, state) {
+              state.maybeWhen(
+                failure: (err) {
+                  logWithColor(err, color: "red");
+                  if (err.toString().contains("Card not found")) {
+                    BotToast.showText(text: tr.noCreditCards);
+                  } else {
+                    BotToast.showText(text: err);
+                  }
+                },
+                successDeleted: () {
+                  BotToast.showText(text: tr.successDeleted);
+                },
+                orElse: () {},
+              );
+            },
+            builder: (context, state) {
+              return state.maybeWhen(
+                loading: () => Center(
+                      child: LoadingAnimationWidget.beat(color: primary, size: 30),
                     ),
-                  ),
-                );
-              },
-              orElse: () {
-                if (isCustomer) {
+                success: () {
+                  if (isCustomer) {
+                    return Column(
+                      children: [
+                        SizedBox(height: 2.h),
+                        // Cards section
+                        Expanded(
+                          child: AnimatedList(
+                            key: _listKey,
+                            initialItemCount: bloc.customerCard.length + 1,
+                            padding: EdgeInsets.only(bottom: 10.h),
+                            itemBuilder: (context, index, animation) {
+                              if (bloc.customerCard.length == index) {
+                                // Add new card button
+                                return SlideTransition(
+                                  position: Tween<Offset>(
+                                    begin: const Offset(0, 0.3),
+                                    end: Offset.zero,
+                                  ).animate(CurvedAnimation(
+                                    parent: animation,
+                                    curve: Curves.easeOut,
+                                  )),
+                                  child: FadeTransition(
+                                    opacity: animation,
+                                    child: Padding(
+                                      padding: EdgeInsets.symmetric(vertical: 1.h),
+                                      child: _buildAddCardButton(),
+                                    ),
+                                  ),
+                                );
+                              }
+                              
+                              final card = bloc.customerCard[index];
+                              return SlideTransition(
+                                position: Tween<Offset>(
+                                  begin: const Offset(0.3, 0),
+                                  end: Offset.zero,
+                                ).animate(CurvedAnimation(
+                                  parent: animation,
+                                  curve: Curves.easeOut,
+                                )),
+                                child: FadeTransition(
+                                  opacity: animation,
+                                  child: Padding(
+                                    padding: EdgeInsets.only(bottom: 2.h),
+                                    child: _buildCustomerCard(card, index),
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ],
+                    );
+                  }
+                  
+                  // Vendor card
+                  return Column(
+                    children: [
+                      SizedBox(height: 5.h),
+                      _buildVendorCard(),
+                    ],
+                  );
+                },
+                orElse: () {
+                  if (isCustomer) {
+                    return Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SvgPicture.asset(
+                            Assets.assetsImagesEmptyLocation,
+                            width: 40.w,
+                          ),
+                          SizedBox(height: 3.h),
+                          Text(
+                            tr.noCreditCards,
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.grey[600],
+                            ),
+                          ),
+                          SizedBox(height: 4.h),
+                          _buildAddCardButton(),
+                        ],
+                      ),
+                    );
+                  }
+
                   return Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SvgPicture.asset(Assets.assetsImagesEmptyLocation,
-                            width: 30.w),
-                        vSpace(3),
-                        PrezzaBtn(
-                          onTap: () {
-                            appRoute.navigate(const CardDetailsRoute());
-                          },
-                          icon: Icon(
-                            Icons.add,
-                            color: primary,
-                          ),
-                          title: tr.addPaymentMethod,
-                        )
-                      ],
-                    ),
-                  );
-                }
-
-                return Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      TextButton.icon(
-                        onPressed: () {
-                          if (HiveStorage.get(kPass, defaultValue: null)
-                                  .toString() ==
-                              "null") {
-                            showPrezzaBtm(
+                        TextButton.icon(
+                          onPressed: () {
+                            if (HiveStorage.get(kPass, defaultValue: '').toString() == "") {
+                              showPrezzaBtm(
                                 context,
                                 Column(
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
-                                    vSpace(3),
-                                    Text(tr.plsAuth),
-                                    vSpace(3),
+                                    SizedBox(height: 3.h),
+                                    Text(
+                                      tr.plsAuth,
+                                      style: TextStyle(fontSize: 16.sp),
+                                    ),
+                                    SizedBox(height: 3.h),
                                     TextFormField(
                                       controller: bloc.password,
                                       decoration: InputDecoration(
                                         hintText: tr.password,
+                                        border: OutlineInputBorder(
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                        contentPadding: const EdgeInsets.symmetric(
+                                          horizontal: 15,
+                                          vertical: 15,
+                                        ),
                                       ),
                                     ).prezaa(),
-                                    vSpace(3),
+                                    SizedBox(height: 3.h),
                                     BlocConsumer<PaymentBloc, PaymentState>(
                                       listener: (context, state) {
                                         if (bloc.isAuthenticated) {
                                           context.maybePop();
                                         }
                                         state.maybeMap(
-                                          failure: (_) {
-                                            BotToast.showText(text: _.err);
-                                          },
                                           success: (v) {
                                             context.maybePop();
                                             context.maybePop();
@@ -241,26 +248,41 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
                                               context,
                                               Center(
                                                 child: Column(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceEvenly,
+                                                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                   children: [
-                                                    Text(tr.useBiometrics),
-                                                    vSpace(3),
+                                                    Text(
+                                                      tr.useBiometrics,
+                                                      style: TextStyle(fontSize: 16.sp),
+                                                    ),
+                                                    SizedBox(height: 3.h),
                                                     ElevatedButton(
                                                       onPressed: () {
-                                                        bloc.add(
-                                                            const PaymentEvent
-                                                                .auth());
+                                                        bloc.add(const PaymentEvent.auth());
                                                       },
-                                                      child: Text(tr.ok),
+                                                      style: ElevatedButton.styleFrom(
+                                                        backgroundColor: primary,
+                                                        padding: EdgeInsets.symmetric(
+                                                          horizontal: 5.w,
+                                                          vertical: 1.5.h,
+                                                        ),
+                                                        shape: RoundedRectangleBorder(
+                                                          borderRadius: BorderRadius.circular(10),
+                                                        ),
+                                                      ),
+                                                      child: Text(
+                                                        tr.ok,
+                                                        style: const TextStyle(color: Colors.white),
+                                                      ),
                                                     ),
-                                                    vSpace(2),
+                                                    SizedBox(height: 2.h),
                                                     TextButton(
                                                       onPressed: () {
                                                         context.maybePop();
                                                       },
-                                                      child: Text(tr.cancel),
+                                                      child: Text(
+                                                        tr.cancel,
+                                                        style: TextStyle(color: primary),
+                                                      ),
                                                     ),
                                                   ],
                                                 ),
@@ -272,12 +294,9 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
                                       },
                                       builder: (context, state) {
                                         return Padding(
-                                          padding: const EdgeInsets.only(
-                                            bottom: 30,
-                                          ),
+                                          padding: const EdgeInsets.only(bottom: 30),
                                           child: Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceAround,
+                                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                                             children: [
                                               SizedBox(
                                                 width: w * 0.4,
@@ -286,23 +305,42 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
                                                   onPressed: () {
                                                     context.maybePop();
                                                   },
+                                                  style: TextButton.styleFrom(
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius: BorderRadius.circular(10),
+                                                      side: BorderSide(color: Colors.grey[300]!),
+                                                    ),
+                                                  ),
                                                   child: Text(tr.cancel),
                                                 ),
                                               ),
-                                              hSpace(1),
+                                              SizedBox(width: 2.w),
                                               SizedBox(
                                                 width: w * 0.4,
                                                 height: 50,
                                                 child: ElevatedButton(
                                                   onPressed: () {
-                                                    bloc.add(const PaymentEvent
-                                                        .getVendorCard());
+                                                    bloc.add(const PaymentEvent.getVendorCard());
                                                   },
+                                                  style: ElevatedButton.styleFrom(
+                                                    backgroundColor: primary,
+                                                    shape: RoundedRectangleBorder(
+                                                      borderRadius: BorderRadius.circular(10),
+                                                    ),
+                                                  ),
                                                   child: state.maybeWhen(
-                                                    loading: () =>
-                                                        defLoadingCenter,
-                                                    orElse: () =>
-                                                        Text(tr.confirm),
+                                                    loading: () => const SizedBox(
+                                                      width: 20,
+                                                      height: 20,
+                                                      child: CircularProgressIndicator(
+                                                        color: Colors.white,
+                                                        strokeWidth: 2,
+                                                      ),
+                                                    ),
+                                                    orElse: () => Text(
+                                                      tr.confirm,
+                                                      style: const TextStyle(color: Colors.white),
+                                                    ),
                                                   ),
                                                 ),
                                               ),
@@ -313,40 +351,620 @@ class _PaymentCardPageState extends State<PaymentCardPage> {
                                     ),
                                   ],
                                 ),
-                                true);
-                          } else {
-                            bloc.add(const PaymentEvent.auth());
-                          }
-                        },
-                        icon: const Icon(Icons.payment),
-                        label: Text(tr.viewCard),
-                      ),
-                      Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            vSpace(3),
-                            PrezzaBtn(
-                              onTap: () {
-                                appRoute.navigate(const CardDetailsRoute());
-                              },
-                              icon: Icon(
-                                Icons.add,
-                                color: primary,
-                              ),
-                              title: tr.addPaymentMethod,
-                            )
-                          ],
+                                true,
+                              );
+                            } else {
+                              bloc.add(const PaymentEvent.auth());
+                            }
+                          },
+                          icon: const Icon(Icons.payment),
+                          label: Text(
+                            tr.viewCard,
+                            style: TextStyle(fontSize: 16.sp),
+                          ),
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            foregroundColor: primary,
+                            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 2.h),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15),
+                              side: BorderSide(color: primary),
+                            ),
+                            elevation: 2,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
-          },
+                        SizedBox(height: 5.h),
+                        _buildAddCardButton(),
+                      ],
+                    ),
+                  );
+                },
+              );
+            },
+          ),
         ),
       ),
+    );
+  }
+
+  Widget _buildAddCardButton() {
+    return Container(
+      width: 100.w,
+      height: 20.h,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(15),
+        border: Border.all(color: primary.withOpacity(0.3), width: 2, style: BorderStyle.solid),
+        color: Colors.white,
+      ),
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(15),
+          onTap: () {
+            appRoute.navigate(const CardDetailsRoute());
+          },
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: primary.withOpacity(0.1),
+                    shape: BoxShape.circle,
+                  ),
+                  child: Icon(
+                    Icons.add,
+                    color: primary,
+                    size: 30,
+                  ),
+                ),
+                SizedBox(height: 1.h),
+                Text(
+                  tr.addPaymentMethod,
+                  style: TextStyle(
+                    color: primary,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16.sp,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildCustomerCard(dynamic card, int index) {
+    // Generate random card type for demo purposes
+    final cardTypes = ['Visa', 'Mastercard', 'Amex'];
+    final cardType = cardTypes[index % cardTypes.length];
+    final cardColors = [
+      const Color(0xFF1A1F71), // Visa blue
+      const Color(0xFFEB001B), // Mastercard red
+      const Color(0xFF006FCF), // Amex blue
+    ];
+    final cardColor = cardColors[index % cardColors.length];
+    
+    return Container(
+      width: 100.w,
+      height: 22.h,
+      margin: EdgeInsets.symmetric(horizontal: 1.w),
+      child: Stack(
+        children: [
+          // Card shadow
+          Positioned(
+            top: 5,
+            left: 5,
+            right: 5,
+            bottom: 5,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+          ),
+          // Main card
+          Positioned.fill(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    cardColor,
+                    cardColor.withOpacity(0.8),
+                  ],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(15),
+                  onTap: () {
+                    // Card tap animation
+                    _cardAnimationController.forward().then((_) {
+                      _cardAnimationController.reverse();
+                    });
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.all(5.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Card type and chip
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Card type
+                            Text(
+                              cardType,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 1.0,
+                              ),
+                            ),
+                            // Simulated chip
+                            Container(
+                              width: 40,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                color: Colors.amber,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ],
+                        ),
+                        // Card number
+                        Container(
+                          height: 4.h,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              _buildDotsGroup(),
+                              Text(
+                                card.last_4_digits,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        // Card holder and expiry
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Card Holder',
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.7),
+                                    fontSize: 10.sp,
+                                  ),
+                                ),
+                                SizedBox(height: 0.5.h),
+                                Text(
+                                  card.card_holder_name,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  'Expires',
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.7),
+                                    fontSize: 10.sp,
+                                  ),
+                                ),
+                                SizedBox(height: 0.5.h),
+                                Text(
+                                  '${Random().nextInt(12) + 1}/${Random().nextInt(5) + 24}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          // Delete button
+          Positioned(
+            top: -5,
+            right: -5,
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 5,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(20),
+                  onTap: () {
+                    showDialogPrezza(
+                      context: context,
+                      title: tr.deleteCard,
+                      subTitle: tr.areUSureDeleteCard,
+                      onTap: () {
+                        // Remove from animated list
+                        final indexToRemove = _cardItems.indexOf(index);
+                        if (indexToRemove != -1) {
+                          _listKey.currentState?.removeItem(
+                            index,
+                            (context, animation) => SlideTransition(
+                              position: Tween<Offset>(
+                                begin: const Offset(0, 0),
+                                end: const Offset(0, -1),
+                              ).animate(CurvedAnimation(
+                                parent: animation,
+                                curve: Curves.easeIn,
+                              )),
+                              child: FadeTransition(
+                                opacity: animation,
+                                child: SizeTransition(
+                                  sizeFactor: animation,
+                                  child: _buildCustomerCard(card, index),
+                                ),
+                              ),
+                            ),
+                            duration: const Duration(milliseconds: 300),
+                          );
+                          _cardItems.removeAt(indexToRemove);
+                        }
+                        
+                        bloc.add(PaymentEvent.deleteCustomerCard(card.uuid));
+                        context.maybePop();
+                      },
+                    );
+                  },
+                  child: Center(
+                    child: SvgPicture.asset(
+                      Assets.assetsImagesTrashOutlin,
+                      width: 20,
+                      height: 20,
+                      
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildVendorCard() {
+    // Generate random card type for demo purposes
+    final cardTypes = ['Visa', 'Mastercard', 'Amex'];
+    final cardType = cardTypes[Random().nextInt(cardTypes.length)];
+    final cardColors = [
+      const Color(0xFF1A1F71), // Visa blue
+      const Color(0xFFEB001B), // Mastercard red
+      const Color(0xFF006FCF), // Amex blue
+    ];
+    final cardColor = cardColors[Random().nextInt(cardColors.length)];
+    
+    return Container(
+      width: 100.w,
+      height: 24.h,
+      margin: EdgeInsets.symmetric(horizontal: 1.w),
+      child: Stack(
+        children: [
+          // Card shadow
+          Positioned(
+            top: 5,
+            left: 5,
+            right: 5,
+            bottom: 5,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.1),
+                borderRadius: BorderRadius.circular(15),
+              ),
+            ),
+          ),
+          // Main card
+          Positioned.fill(
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    cardColor,
+                    cardColor.withOpacity(0.8),
+                  ],
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 10,
+                    offset: const Offset(0, 5),
+                  ),
+                ],
+              ),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(15),
+                  onTap: () {
+                    // Card tap animation
+                    _cardAnimationController.forward().then((_) {
+                      _cardAnimationController.reverse();
+                    });
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.all(5.w),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        // Card type and chip
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            // Card type
+                            Text(
+                              cardType,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18.sp,
+                                fontWeight: FontWeight.bold,
+                                letterSpacing: 1.0,
+                              ),
+                            ),
+                            // Simulated chip
+                            Container(
+                              width: 40,
+                              height: 30,
+                              decoration: BoxDecoration(
+                                color: Colors.amber,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ],
+                        ),
+                        // Bank name
+                        Text(
+                          bloc.vendorCard.bank_name,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                          ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        // Card number
+                        Container(
+                          height: 4.h,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              _buildDotsGroup(),
+                              Text(
+                                bloc.vendorCard.card_last_four_digits,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18.sp,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 1.5,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        // Card holder and expiry
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'Card Holder',
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.7),
+                                    fontSize: 10.sp,
+                                  ),
+                                ),
+                                SizedBox(height: 0.5.h),
+                                Text(
+                                  bloc.vendorCard.card_holder_name,
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ],
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Text(
+                                  'Expires',
+                                  style: TextStyle(
+                                    color: Colors.white.withOpacity(0.7),
+                                    fontSize: 10.sp,
+                                  ),
+                                ),
+                                SizedBox(height: 0.5.h),
+                                Text(
+                                  '${Random().nextInt(12) + 1}/${Random().nextInt(5) + 24}',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 14.sp,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+          // Delete button
+          Positioned(
+            top: -5,
+            right: -5,
+            child: Container(
+              width: 40,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.2),
+                    blurRadius: 5,
+                    offset: const Offset(0, 2),
+                  ),
+                ],
+              ),
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(20),
+                  onTap: () {
+                    showDialogPrezza(
+                      context: context,
+                      title: tr.deleteCard,
+                      subTitle: tr.areUSureDeleteCard,
+                      onTap: () {
+                        bloc.add(
+                          PaymentEvent.deleteVendorCard(
+                            bloc.vendorCard.uuid,
+                          ),
+                        );
+                        context.maybePop();
+                      },
+                    );
+                  },
+                  child: Center(
+                    child: SvgPicture.asset(
+                      Assets.assetsImagesTrashOutlin,
+                      width: 20,
+                      height: 20,
+                      colorFilter: ColorFilter.mode(
+                        Colors.red[400]!,
+                        BlendMode.srcIn,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildDotsGroup() {
+    return Row(
+      children: [
+        _buildDots(),
+        SizedBox(width: 2.w),
+        _buildDots(),
+        SizedBox(width: 2.w),
+        _buildDots(),
+      ],
+    );
+  }
+
+  Widget _buildDots() {
+    return Row(
+      children: [
+        Container(
+          width: 6,
+          height: 6,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.circle,
+          ),
+        ),
+        const SizedBox(width: 3),
+        Container(
+          width: 6,
+          height: 6,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.circle,
+          ),
+        ),
+        const SizedBox(width: 3),
+        Container(
+          width: 6,
+          height: 6,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.circle,
+          ),
+        ),
+        const SizedBox(width: 3),
+        Container(
+          width: 6,
+          height: 6,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.circle,
+          ),
+        ),
+      ],
     );
   }
 }

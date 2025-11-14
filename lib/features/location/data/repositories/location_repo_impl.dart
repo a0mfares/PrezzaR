@@ -24,7 +24,9 @@ class LocationRepoImpl implements LocationRepo {
   @override
   Future<Either<FailureServices, void>> deleteBranche(
       Map<String, dynamic> data) {
-    return execute(() async {});
+    return execute(() async {
+      await _service.deleteBranches(data);
+    });
   }
 
   @override

@@ -698,7 +698,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                                       text: tr.bookingDateRequired);
                                   return;
                                 }
-                                if (bloc.selectedBranch.branch_uuid.isEmpty) {
+                                if (bloc.selectedBranch.id.toString().isEmpty) {
                                   BotToast.showText(text: tr.selectBranch);
                                   return;
                                 }

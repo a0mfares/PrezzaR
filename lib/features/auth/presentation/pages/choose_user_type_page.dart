@@ -48,6 +48,7 @@ class _ChooseUserTypePageState extends State<ChooseUserTypePage> {
                         },
                         choseUserType: (_) {
                           if (mounted) {
+                            appRoute.removeLast();
                             appRoute.replace(LoginRoute());
                           }
                         },

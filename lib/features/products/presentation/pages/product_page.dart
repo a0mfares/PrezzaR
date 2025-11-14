@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:prezza/config/custom_colors.dart';
 import 'package:prezza/core/extension/widget_ext.dart';
 import 'package:prezza/core/helper/tools.dart';
@@ -46,7 +47,9 @@ class _ProductsPageState extends State<ProductsPage> {
     widget.onStartPage?.call();
     return BlocConsumer<ProductBloc, ProductState>(
       listener: (context, state) {
+
         state.maybeMap(
+          
           deleteSuccess: (r) {
             if (mounted) {
               showDialogPrezza(
@@ -65,6 +68,9 @@ class _ProductsPageState extends State<ProductsPage> {
         );
       },
       builder: (context, state) => state.maybeWhen(
+        loading: () => Center(
+                      child: LoadingAnimationWidget.beat(color: primary, size: 30),
+                    ),
         orElse: () {
           return Scaffold(
             backgroundColor: floralWhite,

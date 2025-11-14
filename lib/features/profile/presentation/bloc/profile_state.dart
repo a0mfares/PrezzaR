@@ -14,5 +14,8 @@ class ProfileState with _$ProfileState {
     required String error,
     Map<String, dynamic>? rollbackData,
   }) = _Failure;
-  const factory ProfileState.optimisticUpdate({UserEntity? user}) = _OptimisticUpdate;
-}
+  const factory ProfileState.optimisticUpdate({
+    required UserEntity user,
+    @Default(0) int timestamp, 
+  }) = _OptimisticUpdate;
+  }

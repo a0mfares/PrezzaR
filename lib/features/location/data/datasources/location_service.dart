@@ -15,11 +15,11 @@ abstract class LocationService {
   );
   @DELETE(Urls.vendorBusinessBrances)
   Future<HttpResponse> deleteBranches(
-    @Queries() Map<String, dynamic> data,
+    @Body() Map<String, dynamic> data,
   );
   @PATCH(Urls.vendorBusinessBrances)
   Future<HttpResponse> updateBranches(
-    @Queries() Map<String, dynamic> data,
+    @Body() Map<String, dynamic> data,
   );
   @POST(Urls.vendorBusinessBrances)
   Future<HttpResponse> addBranch(

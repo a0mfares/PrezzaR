@@ -11,7 +11,8 @@ class BrancheModel extends BrancheEntity {
     required super.branch_landmark,
     required super.longitude,
     required super.latitude,
-    required super.branch_uuid,
+    required super.id,
+    required super.uuid
   });
 
   factory BrancheModel.fromMap(Map<String, dynamic> json) =>

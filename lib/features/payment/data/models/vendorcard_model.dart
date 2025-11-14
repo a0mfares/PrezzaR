@@ -8,7 +8,9 @@ class VendorCardModel extends VendorCardEntity {
   VendorCardModel(
       {required super.bank_name,
       required super.card_holder_name,
-      required super.card_last_four_digits});
+      required super.card_last_four_digits,
+            required super.uuid
+      });
 
   factory VendorCardModel.fromMap(Map<String, dynamic> json) =>
       _$VendorCardModelFromJson(json);

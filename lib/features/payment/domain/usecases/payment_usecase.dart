@@ -64,7 +64,7 @@ class DeleteVendorCardUsecase implements UsecaseHelper<void> {
   @override
   Future<Either<FailureServices, void>> call(
       {Map<String, dynamic> parm = const {}}) {
-    return _repo.deleteCardCustomer(parm);
+    return _repo.deleteCardVendor(parm);
   }
 }
 

@@ -19,10 +19,15 @@ class VendorCardEntity extends $VendorCardEntity {
   @HiveField(2)
   final String card_last_four_digits;
 
+@HiveField(3)
+  final String uuid;
+ 
+
   VendorCardEntity({
     required this.bank_name,
     required this.card_holder_name,
     required this.card_last_four_digits,
+        required this.uuid
   });
 
   factory VendorCardEntity.fromModel(VendorCardModel model) =>

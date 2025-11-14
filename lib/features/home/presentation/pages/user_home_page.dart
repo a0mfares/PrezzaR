@@ -55,7 +55,7 @@ class _UserHomePageState extends State<UserHomePage> {
               success: (user) => user ?? usr,
               successUpdated: (message, user) => user ?? usr,
               failure: (error, rollbackData) => usr,
-              optimisticUpdate: (user) => user ?? usr,
+              optimisticUpdate: (user,t) => user ?? usr,
             );
 
             return RichText(

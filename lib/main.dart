@@ -18,7 +18,6 @@ void main() async {
   ServiceLocator().initializeServiceLocator();
   Bloc.observer = BlocPrezzaOberser();
   HiveStorage.get(kOnBoard, defaultValue: false);
-
   HiveStorage.get(kLocale, defaultValue: 'en');
 
   runApp(const PrezzaPage());

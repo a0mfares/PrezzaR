@@ -217,6 +217,7 @@ class $VendorCardEntity implements AutoMapprInterface {
       bank_name: model.bank_name,
       card_holder_name: model.card_holder_name,
       card_last_four_digits: model.card_last_four_digits,
+      uuid: model.uuid,
     );
   }
 }
@@ -239,19 +240,22 @@ class VendorCardEntityAdapter extends TypeAdapter<VendorCardEntity> {
       bank_name: fields[0] as String,
       card_holder_name: fields[1] as String,
       card_last_four_digits: fields[2] as String,
+      uuid: fields[3] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, VendorCardEntity obj) {
     writer
-      ..writeByte(3)
+      ..writeByte(4)
       ..writeByte(0)
       ..write(obj.bank_name)
       ..writeByte(1)
       ..write(obj.card_holder_name)
       ..writeByte(2)
-      ..write(obj.card_last_four_digits);
+      ..write(obj.card_last_four_digits)
+      ..writeByte(3)
+      ..write(obj.uuid);
   }
 
   @override

@@ -43,6 +43,11 @@ class PaymentRepoImpl implements PaymentRepo {
       Map<String, dynamic> data) {
     return execute(() => _service.deleteCustomerCard(bearerToken, data));
   }
+  @override
+  Future<Either<FailureServices, void>> deleteCardVendor(
+      Map<String, dynamic> data) {
+    return execute(() => _service.deleteVendorCards(bearerToken, data));
+  }
 
   @override
   Future<Either<FailureServices, VendorCardEntity>> getCardVendor(

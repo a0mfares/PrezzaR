@@ -1,3 +1,4 @@
+import 'package:bot_toast/bot_toast.dart';
 import 'package:flutter/material.dart';
 import 'package:prezza/core/service/routes.gr.dart';
 import 'package:prezza/core/shared/widgets/cached_image.dart';
@@ -19,7 +20,21 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        appRoute.navigate(ProductDetailsRoute(id: product.uuid));
+        // Validate product UUID before navigation
+        if (product.uuid.isEmpty) {
+          // Show error message if UUID is empty
+                    BotToast.showText(text: "Product ID is missing");
+          return;
+        }
+        
+        try {
+                      appRoute.navigate(ProductDetailsRoute(id: product.uuid));
+
+        } catch (e) {
+          // Handle navigation errors
+          debugPrint('Navigation error: $e');
+          BotToast.showText(text: "Failed to open product details");
+        }
       },
       onLongPress: () {
         if (!isCustomer) {

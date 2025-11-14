@@ -340,24 +340,53 @@ class _VendorHomePageState extends State<VendorHomePage> {
       ),
       // The body now listens to the ProfileBloc state
       body: BlocBuilder<ProfileBloc, ProfileState>(
-        builder: (context, profileState) {
-          return profileState.maybeWhen(
-            loading: () => const Center(child: CircularProgressIndicator()),
-            failure: (error,data) => Center(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Text(
-                  '${tr.failedToLoadBusinessDetails}: $error',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: Colors.red[700]),
-                ),
+  builder: (context, profileState) {
+    return profileState.maybeWhen(
+      loading: () => const Center(child: CircularProgressIndicator()),
+      failure: (error, data) => Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('${tr.failedToLoadBusinessDetails}: $error'),
+            vSpace(2),
+            ElevatedButton(
+              onPressed: () {
+                appRoute.navigate(const BusinesProfileRoute());
+              },
+              child: Row(
+                children: [
+                  const Icon(Icons.add),
+                  Text(tr.businessDetails),
+                ],
               ),
             ),
-            success: (usr) => _buildContent(),
-            orElse: () => const Center(child: CircularProgressIndicator()),
-          );
-        },
+          ],
+        ),
       ),
+      success: (usr) {
+        // Check if business is empty
+        if (business.business_name.isEmpty) {
+          return Center(
+            child: ElevatedButton(
+              onPressed: () {
+                appRoute.navigate(const BusinesProfileRoute());
+              },
+              child: Row(
+                children: [
+                  const Icon(Icons.add),
+
+                  Text(tr.businessDetails),
+                ],
+              ),
+            ),
+          );
+        }
+        return _buildContent();
+      },
+      orElse: () => const Center(child: CircularProgressIndicator()),
+    );
+  },
+),
     );
   }
 }

@@ -78,101 +78,103 @@ class _LocationAddPageState extends State<LocationAddPage> {
               return state.maybeWhen(
                 loading: () => defLoadingCenter,
                 success: () {
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      TextFormField(
-                        controller: bloc.brancheAddress,
-                        decoration:  InputDecoration(
-                          hintText: tr.houseNumberHint,
-                        ),
-                      ).prezaa(
-                        label: tr.address,
-                      ),
-                      vSpace(3),
-                      TextFormField(
-                        controller: bloc.brancheLandMark,
-                        decoration:  InputDecoration(
-                          hintText: tr.landmarkHint,
-                        ),
-                      ).prezaa(
-                        label: tr.landmark,
-                      ),
-                      vSpace(3),
-                      Visibility(
-                        visible: isCustomer,
-                        child: TextFormField(
-                          controller: bloc.addressTitle,
-                          decoration: InputDecoration(
-                            hintText: tr.addressTitle,
+                  return SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        TextFormField(
+                          controller: bloc.brancheAddress,
+                          decoration:  InputDecoration(
+                            hintText: tr.houseNumberHint,
                           ),
                         ).prezaa(
-                          label: tr.addressTitle,
+                          label: tr.address,
                         ),
-                      ),
-                      vSpace(3),
-                      ListTile(
-                        onTap: () {
-                          showPrezzaBtm(
-                            context,
-                            SizedBox(
-                              height: h * 0.55,
-                              child: PlacePicker(
-                                apiKey: Platform.isAndroid
-                                    ? mapApiKeyAndroid
-                                    : mapApiKeyIos,
-                                onPlacePicked: (LocationResult result) {
-                                  bloc.add(LocationEvent.onPickPlace(result));
-                                  context.maybePop();
-                                },
-                                enableNearbyPlaces: false,
-                                myLocationButtonEnabled: true,
-                                initialLocation: bloc.initialLocation,
-                                searchInputConfig: const SearchInputConfig(
-                                  padding: EdgeInsets.symmetric(
-                                    horizontal: 16.0,
-                                    vertical: 8.0,
+                        vSpace(3),
+                        TextFormField(
+                          controller: bloc.brancheLandMark,
+                          decoration:  InputDecoration(
+                            hintText: tr.landmarkHint,
+                          ),
+                        ).prezaa(
+                          label: tr.landmark,
+                        ),
+                        vSpace(3),
+                        Visibility(
+                          visible: isCustomer,
+                          child: TextFormField(
+                            controller: bloc.addressTitle,
+                            decoration: InputDecoration(
+                              hintText: tr.addressTitle,
+                            ),
+                          ).prezaa(
+                            label: tr.addressTitle,
+                          ),
+                        ),
+                        vSpace(3),
+                        ListTile(
+                          onTap: () {
+                            showPrezzaBtm(
+                              context,
+                              SizedBox(
+                                height: h * 0.55,
+                                child: PlacePicker(
+                                  apiKey: Platform.isAndroid
+                                      ? mapApiKeyAndroid
+                                      : mapApiKeyIos,
+                                  onPlacePicked: (LocationResult result) {
+                                    bloc.add(LocationEvent.onPickPlace(result));
+                                    context.maybePop();
+                                  },
+                                  enableNearbyPlaces: false,
+                                  myLocationButtonEnabled: true,
+                                  initialLocation: bloc.initialLocation,
+                                  searchInputConfig: const SearchInputConfig(
+                                    padding: EdgeInsets.symmetric(
+                                      horizontal: 16.0,
+                                      vertical: 8.0,
+                                    ),
+                                    autofocus: false,
+                                    textDirection: TextDirection.ltr,
                                   ),
-                                  autofocus: false,
-                                  textDirection: TextDirection.ltr,
-                                ),
-                                searchInputDecorationConfig:
-                                     SearchInputDecorationConfig(
-                                  hintText:
-                                      tr.searchForLocation,
+                                  searchInputDecorationConfig:
+                                       SearchInputDecorationConfig(
+                                    hintText:
+                                        tr.searchForLocation,
+                                  ),
                                 ),
                               ),
-                            ),
-                            true,
-                          );
-                        },
-                        leading: CircleAvatar(
-                          backgroundColor: lightCream,
-                          child:
-                              SvgPicture.asset(Assets.assetsImagesPinLocation),
+                              true,
+                            );
+                          },
+                          leading: CircleAvatar(
+                            backgroundColor: lightCream,
+                            child:
+                                SvgPicture.asset(Assets.assetsImagesPinLocation),
+                          ),
+                          title: Text(tr.currentLocation),
                         ),
-                        title: Text(tr.currentLocation),
-                      ),
-                      vSpace(3),
-                      ElevatedButton(
-                        onPressed: () {
-                          if (isCustomer) {
-                            if (widget.editMod) {
-                              bloc.add(const LocationEvent.updateAddress());
+                        vSpace(3),
+                        ElevatedButton(
+                          onPressed: () {
+                            if (isCustomer) {
+                              if (widget.editMod) {
+                                bloc.add(const LocationEvent.updateAddress());
+                              } else {
+                                bloc.add(const LocationEvent.addAddress());
+                              }
                             } else {
-                              bloc.add(const LocationEvent.addAddress());
+                              if (widget.editMod) {
+                                bloc.add(const LocationEvent.updateBranche());
+                              } else {
+                                bloc.add(const LocationEvent.addBranche());
+                              }
                             }
-                          } else {
-                            if (widget.editMod) {
-                              bloc.add(const LocationEvent.updateBranche());
-                            } else {
-                              bloc.add(const LocationEvent.addBranche());
-                            }
-                          }
-                        },
-                        child: Text(tr.confirm),
-                      ),
-                    ],
+                          },
+                          child: Text(tr.confirm),
+                        ),
+                      ],
+                    ),
                   );
                 },
                 orElse: () {

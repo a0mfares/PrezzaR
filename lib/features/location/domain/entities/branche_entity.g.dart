@@ -217,7 +217,8 @@ class $BrancheEntity implements AutoMapprInterface {
       branch_landmark: model.branch_landmark,
       longitude: model.longitude,
       latitude: model.latitude,
-      branch_uuid: model.branch_uuid,
+      id: model.id,
+      uuid: model.uuid,
     );
   }
 }
@@ -241,14 +242,15 @@ class BrancheEntityAdapter extends TypeAdapter<BrancheEntity> {
       branch_landmark: fields[1] as String,
       longitude: fields[2] as double,
       latitude: fields[3] as double,
-      branch_uuid: fields[4] as String,
+      id: fields[4] as int,
+      uuid: fields[5] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, BrancheEntity obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.branch_address)
       ..writeByte(1)
@@ -258,7 +260,9 @@ class BrancheEntityAdapter extends TypeAdapter<BrancheEntity> {
       ..writeByte(3)
       ..write(obj.latitude)
       ..writeByte(4)
-      ..write(obj.branch_uuid);
+      ..write(obj.id)
+      ..writeByte(5)
+      ..write(obj.uuid);
   }
 
   @override

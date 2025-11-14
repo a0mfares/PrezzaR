@@ -38,7 +38,6 @@ class _ProductAddPageState extends State<ProductAddPage> {
     } else {
       bloc.add(const ProductEvent.initalizeInEditMod());
     }
-    // bloc.add(const ProductEvent.getProductCateogries());
     super.initState();
   }
 
@@ -94,7 +93,7 @@ class _ProductAddPageState extends State<ProductAddPage> {
             elevation: 0,
             backgroundColor: floralWhite,
             title: Text(
-              widget.isEditMod ? "Edit Product": tr.newItems,
+              widget.isEditMod ? "Edit Product" : tr.newItems,
               style: TextStyle(
                 color: Colors.black87,
                 fontWeight: FontWeight.bold,
@@ -126,11 +125,9 @@ class _ProductAddPageState extends State<ProductAddPage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Product Image Section
                   _buildImageSection(),
                   vSpace(3),
                   
-                  // Product Name Section
                   _buildSectionTitle(tr.itemName),
                   vSpace(1),
                   BlocBuilder<ProductBloc, ProductState>(
@@ -175,19 +172,16 @@ class _ProductAddPageState extends State<ProductAddPage> {
                   ),
                   vSpace(3),
                   
-                  // Categories Section
                   _buildSectionTitle(tr.categories),
                   vSpace(1),
                   _buildCategoriesSection(),
                   vSpace(3),
                   
-                  // Size Section
                   _buildSectionTitle(tr.size),
                   vSpace(1),
                   _buildSizeSection(),
                   vSpace(3),
                   
-                  // Price Section
                   _buildSectionTitle(tr.price),
                   vSpace(1),
                   BlocBuilder<ProductBloc, ProductState>(
@@ -195,6 +189,7 @@ class _ProductAddPageState extends State<ProductAddPage> {
                       return state.maybeWhen(
                         orElse: () {
                           return Container(
+                            width: double.infinity,
                             padding: EdgeInsets.symmetric(
                               horizontal: 4.w,
                               vertical: 2.h,
@@ -213,18 +208,19 @@ class _ProductAddPageState extends State<ProductAddPage> {
                             ),
                             child: Row(
                               children: [
-                                Text(
-                                  bloc.selectedSize['name'].isEmpty
-                                      ? tr.pleaseSelectSize
-                                      : "${bloc.selectedSize['name']}: ${bloc.selectedSize['price']}",
-                                  style: TextStyle(
-                                    fontSize: 14.sp,
-                                    color: bloc.selectedSize['name'].isEmpty
-                                        ? Colors.grey[500]
-                                        : Colors.black87,
+                                Expanded(
+                                  child: Text(
+                                    bloc.selectedSize['name'].isEmpty
+                                        ? tr.pleaseSelectSize
+                                        : "${bloc.selectedSize['name']}: ${bloc.selectedSize['price']}",
+                                    style: TextStyle(
+                                      fontSize: 14.sp,
+                                      color: bloc.selectedSize['name'].isEmpty
+                                          ? Colors.grey[500]
+                                          : Colors.black87,
+                                    ),
                                   ),
                                 ),
-                                const Spacer(),
                                 Icon(
                                   Icons.arrow_drop_down,
                                   color: Colors.grey[500],
@@ -238,7 +234,6 @@ class _ProductAddPageState extends State<ProductAddPage> {
                   ),
                   vSpace(3),
                   
-                  // Preparing Time Section
                   _buildSectionTitle(tr.preparingTime),
                   vSpace(1),
                   BlocBuilder<ProductBloc, ProductState>(
@@ -250,6 +245,7 @@ class _ProductAddPageState extends State<ProductAddPage> {
                           });
                         },
                         child: Container(
+                          width: double.infinity,
                           padding: EdgeInsets.symmetric(
                             horizontal: 4.w,
                             vertical: 2.h,
@@ -274,16 +270,17 @@ class _ProductAddPageState extends State<ProductAddPage> {
                                 size: 20.sp,
                               ),
                               SizedBox(width: 3.w),
-                              Text(
-                                formatDuration(bloc.preparingTime),
-                                style: TextStyle(
-                                  fontSize: 14.sp,
-                                  color: bloc.preparingTime.inMinutes == 0
-                                      ? Colors.grey[500]
-                                      : Colors.black87,
+                              Expanded(
+                                child: Text(
+                                  formatDuration(bloc.preparingTime),
+                                  style: TextStyle(
+                                    fontSize: 14.sp,
+                                    color: bloc.preparingTime.inMinutes == 0
+                                        ? Colors.grey[500]
+                                        : Colors.black87,
+                                  ),
                                 ),
                               ),
-                              const Spacer(),
                               Icon(
                                 Icons.arrow_drop_down,
                                 color: Colors.grey[500],
@@ -296,7 +293,6 @@ class _ProductAddPageState extends State<ProductAddPage> {
                   ),
                   vSpace(3),
                   
-                  // Description Section
                   _buildSectionTitle(tr.description),
                   vSpace(1),
                   BlocBuilder<ProductBloc, ProductState>(
@@ -343,7 +339,6 @@ class _ProductAddPageState extends State<ProductAddPage> {
                   ),
                   vSpace(3),
                   
-                  // Extras Section
                   if (bloc.extras.isNotEmpty) ...[
                     _buildSectionTitle(tr.extras),
                     vSpace(1),
@@ -351,7 +346,6 @@ class _ProductAddPageState extends State<ProductAddPage> {
                     vSpace(3),
                   ],
                   
-                  // Side Items Section
                   if (bloc.sideItems.isNotEmpty) ...[
                     _buildSectionTitle(tr.sideItems),
                     vSpace(1),
@@ -359,7 +353,6 @@ class _ProductAddPageState extends State<ProductAddPage> {
                     vSpace(3),
                   ],
                   
-                  // Add some bottom padding to prevent the floating buttons from covering content
                   SizedBox(height: 10.h),
                 ],
               ),
@@ -589,31 +582,34 @@ class _ProductAddPageState extends State<ProductAddPage> {
                         Expanded(
                           child: BlocBuilder<ProductBloc, ProductState>(
                             builder: (context, state) {
-                              return ElevatedButton(
-                                onPressed: () {
-                                  if (bloc.categoryName.text.isNotEmpty) {
-                                    bloc.add(const ProductEvent.addProductCategory());
-                                  } else {
-                                    BotToast.showText(text: tr.requiredField);
-                                  }
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: primary,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                ),
-                                child: state.maybeWhen(
-                                  loading: () => defLoadingCenter,
-                                  orElse: () {
-                                    return Text(
-                                      tr.add,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14.sp,
-                                      ),
-                                    );
+                              return SizedBox(
+                                height: 6.h,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    if (bloc.categoryName.text.isNotEmpty) {
+                                      bloc.add(const ProductEvent.addProductCategory());
+                                    } else {
+                                      BotToast.showText(text: tr.requiredField);
+                                    }
                                   },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: primary,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                  child: state.maybeWhen(
+                                    loading: () => defLoadingCenter,
+                                    orElse: () {
+                                      return Text(
+                                        tr.add,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14.sp,
+                                        ),
+                                      );
+                                    },
+                                  ),
                                 ),
                               );
                             },
@@ -770,31 +766,34 @@ class _ProductAddPageState extends State<ProductAddPage> {
                               );
                             },
                             builder: (context, state) {
-                              return ElevatedButton(
-                                onPressed: () {
-                                  if (bloc.sizeName.text.isNotEmpty && bloc.price.text.isNotEmpty) {
-                                    bloc.add(const ProductEvent.addProductSize());
-                                  } else {
-                                    BotToast.showText(text: tr.requiredField);
-                                  }
-                                },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: primary,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                ),
-                                child: state.maybeWhen(
-                                  loading: () => defLoadingCenter,
-                                  orElse: () {
-                                    return Text(
-                                      tr.add,
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14.sp,
-                                      ),
-                                    );
+                              return SizedBox(
+                                height: 6.h,
+                                child: ElevatedButton(
+                                  onPressed: () {
+                                    if (bloc.sizeName.text.isNotEmpty && bloc.price.text.isNotEmpty) {
+                                      bloc.add(const ProductEvent.addProductSize());
+                                    } else {
+                                      BotToast.showText(text: tr.requiredField);
+                                    }
                                   },
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: primary,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(12),
+                                    ),
+                                  ),
+                                  child: state.maybeWhen(
+                                    loading: () => defLoadingCenter,
+                                    orElse: () {
+                                      return Text(
+                                        tr.add,
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 14.sp,
+                                        ),
+                                      );
+                                    },
+                                  ),
                                 ),
                               );
                             },
@@ -1177,33 +1176,36 @@ class _ProductAddPageState extends State<ProductAddPage> {
                                   );
                                 },
                                 builder: (context, state) {
-                                  return ElevatedButton(
-                                    onPressed: () {
-                                      if (bloc.extraUI.every((e) =>
-                                          (e['nameCn'] as TextEditingController).text.isNotEmpty &&
-                                          (e['priceCn'] as TextEditingController).text.isNotEmpty)) {
-                                        bloc.add(const ProductEvent.addProductExtra());
-                                      } else {
-                                        BotToast.showText(text: tr.requiredField);
-                                      }
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: primary,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                    ),
-                                    child: state.maybeWhen(
-                                      loading: () => defLoadingCenter,
-                                      orElse: () {
-                                        return Text(
-                                          tr.add,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 14.sp,
-                                          ),
-                                        );
+                                  return SizedBox(
+                                    height: 6.h,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        if (bloc.extraUI.every((e) =>
+                                            (e['nameCn'] as TextEditingController).text.isNotEmpty &&
+                                            (e['priceCn'] as TextEditingController).text.isNotEmpty)) {
+                                          bloc.add(const ProductEvent.addProductExtra());
+                                        } else {
+                                          BotToast.showText(text: tr.requiredField);
+                                        }
                                       },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: primary,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                      ),
+                                      child: state.maybeWhen(
+                                        loading: () => defLoadingCenter,
+                                        orElse: () {
+                                          return Text(
+                                            tr.add,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14.sp,
+                                            ),
+                                          );
+                                        },
+                                      ),
                                     ),
                                   );
                                 },
@@ -1372,33 +1374,36 @@ class _ProductAddPageState extends State<ProductAddPage> {
                                   );
                                 },
                                 builder: (context, state) {
-                                  return ElevatedButton(
-                                    onPressed: () {
-                                      if (bloc.sideItemsUI.every((e) =>
-                                              (e['nameCn'] as TextEditingController).text.isNotEmpty) &&
-                                          bloc.question.text.isNotEmpty) {
-                                        bloc.add(const ProductEvent.addProductSideItem());
-                                      } else {
-                                        BotToast.showText(text: tr.requiredField);
-                                      }
-                                    },
-                                    style: ElevatedButton.styleFrom(
-                                      backgroundColor: primary,
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
-                                      ),
-                                    ),
-                                    child: state.maybeWhen(
-                                      loading: () => defLoadingCenter,
-                                      orElse: () {
-                                        return Text(
-                                          tr.add,
-                                          style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 14.sp,
-                                          ),
-                                        );
+                                  return SizedBox(
+                                    height: 6.h,
+                                    child: ElevatedButton(
+                                      onPressed: () {
+                                        if (bloc.sideItemsUI.every((e) =>
+                                                (e['nameCn'] as TextEditingController).text.isNotEmpty) &&
+                                            bloc.question.text.isNotEmpty) {
+                                          bloc.add(const ProductEvent.addProductSideItem());
+                                        } else {
+                                          BotToast.showText(text: tr.requiredField);
+                                        }
                                       },
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: primary,
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius: BorderRadius.circular(10),
+                                        ),
+                                      ),
+                                      child: state.maybeWhen(
+                                        loading: () => defLoadingCenter,
+                                        orElse: () {
+                                          return Text(
+                                            tr.add,
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 14.sp,
+                                            ),
+                                          );
+                                        },
+                                      ),
                                     ),
                                   );
                                 },
@@ -1440,29 +1445,32 @@ class _ProductAddPageState extends State<ProductAddPage> {
             builder: (context, state) {
               return Visibility(
                 visible: !widget.isEditMod,
-                child: ElevatedButton(
-                  onPressed: () {
-                    bloc.add(const ProductEvent.addProductDetails());
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: primary,
-                    minimumSize: Size(double.infinity, 6.h),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
-                  child: state.maybeWhen(
-                    loading: () => defLoadingCenter,
-                    orElse: () {
-                      return Text(
-                        tr.addItem,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16.sp,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      );
+                child: SizedBox(
+                  width: double.infinity,
+                  height: 6.h,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      bloc.add(const ProductEvent.addProductDetails());
                     },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: primary,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                    ),
+                    child: state.maybeWhen(
+                      loading: () => defLoadingCenter,
+                      orElse: () {
+                        return Text(
+                          tr.addItem,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 16.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        );
+                      },
+                    ),
                   ),
                 ),
               );

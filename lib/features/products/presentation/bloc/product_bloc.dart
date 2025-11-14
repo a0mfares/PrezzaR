@@ -390,38 +390,57 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
               emit(const ProductState.sucessAdded());
             });
           },
-          addProductSideItem: () async {
-            emit(const ProductState.loading());
-            final result = await _addProductSideItemUsecase(
-              parm: {
-                'product_uuid': productId,
-                'question': question.text,
-                'side_items': sideItemsUI
-                    .map(
-                      (e) => e['nameCn'].text,
-                    )
-                    .toList()
-                    .join(','),
-              },
-            );
+         addProductSideItem: () async {
+  emit(const ProductState.loading());
+  
+  // Create a list of side item names from the controllers
+  final sideItemNames = sideItemsUI
+      .map((e) => (e['nameCn'] as TextEditingController).text)
+      .where((text) => text.isNotEmpty) // Filter out empty items
+      .toList();
 
-            result.fold((err) {
-              emit(ProductState.failure(err.getMsg));
-            }, (res) {
-              final sideI = Side_items(
-                  Question: question.text,
-                  side_items: sideItemsUI
-                      .map((e) => {
-                            'name': e['nameCn'].text,
-                            'id': '',
-                          })
-                      .toList());
-              sideItems.add(sideI);
-              sideItemsUI.clear();
-              question.clear();
-              emit(const ProductState.sucessAdded());
-            });
-          },
+  if (sideItemNames.isEmpty) {
+    emit(ProductState.failure('Please add at least one side item'));
+    return;
+  }
+
+  final result = await _addProductSideItemUsecase(
+    parm: {
+      'product_uuid': productId,
+      'question': question.text,
+      'side_items': sideItemNames.join(','),
+    },
+  );
+
+  result.fold((err) {
+    emit(ProductState.failure(err.getMsg));
+  }, (res) {
+    // Create the side items list properly
+    final sideItemsList = sideItemsUI
+        .map((e) => {
+              'name': (e['nameCn'] as TextEditingController).text,
+              'id': '',
+            })
+        .where((item) => item['name'].toString().isNotEmpty) 
+        .toList();
+    
+    final sideI = Side_items(
+      Question: question.text,
+      side_items: sideItemsList,
+    );
+    
+    sideItems.add(sideI);
+    
+    // Properly dispose of controllers before clearing
+    for (final item in sideItemsUI) {
+      (item['nameCn'] as TextEditingController).dispose();
+    }
+    
+    sideItemsUI.clear();
+    question.clear();
+    emit(const ProductState.sucessAdded());
+  });
+},
           addProductSize: () async {
             emit(const ProductState.loading());
             final result = await _addProductSizeUsecase(parm: {
